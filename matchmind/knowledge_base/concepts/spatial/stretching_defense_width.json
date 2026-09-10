@@ -1,0 +1,12 @@
+{
+  "concept_id": "stretching_defense_width",
+  "category": "spatial_principles",
+  "phase": "possession",
+  "title": "Stretching the Defense with Width",
+  "content": "Stretching the defensive structure horizontally forces defenders to cover a larger area, creating gaps between players that can be exploited centrally. Wide players position as close to the touchlines as possible, forcing fullbacks and wide midfielders to track them. The stretch is most effective when combined with depth: wingers high and wide while central players position between defensive and midfield lines. As the defense stretches to cover width, the central channels open for through balls, diagonal runs, and combination play. Key: wide players must hold their positions even when not receiving — leaving the touchline allows the defense to compress. The wider the defensive shape is forced, the larger the gaps become between center-backs and fullbacks (the channel run zones).",
+  "conditions": ["wide_players_positioned_near_touchlines", "defensive_team_stretched_trying_to_cover", "central_channels_available"],
+  "objective": ["force_defensive_structure_wide", "create_central_channels", "overload_central_area"],
+  "possible_actions": ["hold_wide_position", "channel_run_between_cb_and_fb", "cut_inside_from_wide"],
+  "contraindications": ["opponent_not_pressing_wide_players", "opponent_in_very_narrow_low_block"],
+  "trigger_conditions": ["attacking_width_high", "overload_left_or_right", "switch_play_viable"]
+}

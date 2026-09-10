@@ -1,0 +1,12 @@
+{
+  "concept_id": "width_depth_balance",
+  "category": "spatial_principles",
+  "phase": "possession",
+  "title": "Width and Depth Balance in Possession",
+  "content": "Maintaining proper width and depth while in possession maximises the space available and forces the opponent to cover the maximum possible area. Width: wide players position at or near the touchlines, stretching the defense horizontally. Depth: at least one player positioned ahead of the ball (striker) and one behind (deep midfielder or goalkeeper), giving passing options in both directions. The combination of maximum width and depth means the defending team must cover more than 70m wide by 105m long — impossible without gaps. When a team loses width (wide players drift inside) or depth (all players at the same horizontal line), they give the opponent permission to compress into a manageable defensive shape. Every player must actively maintain their positional responsibility, not just react to where the ball goes.",
+  "conditions": ["team_in_possession_building_from_back", "sufficient_players_to_maintain_width_and_depth", "opponent_pressing_high_or_medium"],
+  "objective": ["maximise_space_available_in_possession", "stretch_defensive_shape_in_all_directions", "create_passing_options_everywhere"],
+  "possible_actions": ["hold_wide_position", "drop_to_provide_depth", "switch_play_to_exploit_width"],
+  "contraindications": ["under_extreme_press_with_no_time", "late_game_defending_lead"],
+  "trigger_conditions": ["switch_play_viable", "attacking_width_high", "team_compactness_low"]
+}

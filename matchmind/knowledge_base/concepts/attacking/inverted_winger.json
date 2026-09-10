@@ -1,0 +1,12 @@
+{
+  "concept_id": "inverted_winger",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Inverted Winger (Cutting Inside)",
+  "content": "An inverted winger starts wide but cuts inside onto their stronger foot rather than delivering a cross from wide positions. A right-footed player on the left wing (or left-footed on the right) moves inward, creating shooting angles and half-space combinations. The cut inside is most effective when the full-back overlaps simultaneously, creating a dilemma: track the inward-cutting winger and leave space wide, or cover the overlap and allow the winger a shooting angle. The inverted winger's role is to threaten the goal directly (shoot from distance or enter the box) while also stretching the defensive shape. This movement demands high technical quality: the player must be comfortable with 1v1s, able to cut inside at pace, and possess a threat from distance.",
+  "conditions": ["wrong_foot_winger_positioned_wide", "fullback_overlapping_to_create_2v1", "half_space_available_inside"],
+  "objective": ["create_shooting_angle", "half_space_exploitation", "draw_defenders_wide"],
+  "possible_actions": ["cut_inside_shoot", "cut_inside_pass_to_arriving_runner", "dummy_for_overlapper"],
+  "contraindications": ["defensive_block_narrow_no_space_inside", "fullback_not_providing_width_overlap"],
+  "trigger_conditions": ["winger_on_opposite_foot", "half_space_occupied_or_available", "overload_flank"]
+}

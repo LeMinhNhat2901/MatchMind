@@ -1,0 +1,17 @@
+{
+  "concept_id": "false_9_drop",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "False 9 Drop (Striker Dropping Deep)",
+  "content": "The false 9 movement involves the nominal striker dropping deep into midfield to receive the ball, pulling center-backs out of the defensive line. This creates two simultaneous problems for the defense: if the center-back follows the false 9, a gap opens in the backline that an arriving midfielder can exploit. If the center-back stays, the false 9 receives the ball with time in space and can turn, dribble, or play a through ball. The effectiveness depends on the arriving runs of the midfielders — they must time their runs to exploit the gap created by the false 9's movement. The technique is most potent when the false 9 has excellent technical ability to turn and face goal, or can combine quickly with arriving runners.",
+  "conditions": [
+    "striker_pulling_into_midfield",
+    "centerbacks_must_decide_to_follow_or_stay",
+    "midfielders_ready_to_arrive_into_space",
+    "space_between_defensive_and_midfield_lines"
+  ],
+  "objective": ["disorganise_defense", "create_space_in_channels", "overload_midfield"],
+  "possible_actions": ["drop_receive_turn", "lay_off_to_arriving_runner", "through_ball_channel"],
+  "contraindications": ["deep_defensive_block_no_space_to_exploit", "no_runners_arriving_from_deep"],
+  "trigger_conditions": ["striker_role", "space_between_lines", "midfielders_positioned_to_run"]
+}

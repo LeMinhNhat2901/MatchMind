@@ -1,0 +1,12 @@
+{
+  "concept_id": "counter_attack_transition",
+  "category": "attacking_movement",
+  "phase": "attacking_transition",
+  "title": "Counter-Attack Transition",
+  "content": "A counter-attack exploits the disorganised defensive state of the opponent immediately after possession is won. Speed of transition is the primary weapon: the first touch after winning possession should already be directed forward where possible. Key decisions in the first 3–5 seconds: (1) can I play forward immediately to a running teammate? (2) do I carry the ball to buy time for runners? (3) is the opportunity genuine or should we consolidate? False counter-attacks (slow transitions) gift the opponent time to reorganise and are often worse than consolidating possession. The ideal counter-attack has 2–3 players in forward positions against 2 or fewer defenders, exploiting the channel between full-back and center-back.",
+  "conditions": ["possession_just_won", "opponent_disorganised_high_up_pitch", "space_behind_defensive_line", "forward_runners_available"],
+  "objective": ["exploit_transition_moment", "reach_opponent_goal_before_defense_reorganises"],
+  "possible_actions": ["immediate_forward_pass", "carry_and_release", "direct_run_to_goal"],
+  "contraindications": ["opponents_already_reorganised_deep", "no_forward_runners_available", "high_counterattack_risk_if_failed"],
+  "trigger_conditions": ["phase_of_play_attacking_transition", "space_ahead_large", "progressive_pass_available"]
+}

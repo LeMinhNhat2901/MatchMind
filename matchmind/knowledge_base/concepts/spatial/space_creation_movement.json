@@ -1,0 +1,12 @@
+{
+  "concept_id": "space_creation_movement",
+  "category": "spatial_principles",
+  "phase": "possession",
+  "title": "Space Creation Through Movement",
+  "content": "Creating space is the art of moving without the ball to open up areas for teammates. Effective space creation requires understanding which zones the opponent prioritises protecting and moving in ways that pull defenders away from those zones. Three fundamental methods: (1) Run to drag — sprint into a zone knowing you will not receive, but pulling a defender with you and opening space for a teammate. (2) Decoy route — fake a run one direction, then change direction to receive in the vacated space. (3) Width and depth combination — wide players hold high and wide to stretch the defensive line, creating channels for central players. Key: space creation movements must be made with conviction even when the ball will not come — half-hearted runs do not pull defenders.",
+  "conditions": ["opponent_compressed_and_marking_tightly", "space_available_if_defender_is_pulled", "teammate_ready_to_exploit_created_space"],
+  "objective": ["open_space_for_teammates", "disorganise_defensive_structure", "create_passing_opportunities"],
+  "possible_actions": ["decoy_run", "third_man_movement", "width_and_depth_positioning"],
+  "contraindications": ["opponent_sitting_in_deep_low_block", "no_teammate_to_exploit_space_created"],
+  "trigger_conditions": ["nearest_opponent_distance_low", "space_ahead_small", "local_numerical_advantage_negative"]
+}

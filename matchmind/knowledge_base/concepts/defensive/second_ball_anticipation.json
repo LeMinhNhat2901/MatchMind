@@ -1,0 +1,12 @@
+{
+  "concept_id": "second_ball_anticipation",
+  "category": "defensive_organization",
+  "phase": "out_of_possession",
+  "title": "Second Ball Anticipation",
+  "content": "Second ball situations arise after long passes, clearances, or aerial duels where the ball drops loose. Winning the second ball requires anticipating where the ball will land and positioning to arrive there fractionally before the opponent. Key principles: (1) read the trajectory of the first ball as soon as it is struck, (2) position between the ball's projected landing zone and your own goal, (3) arrive at controlled pace (not sprinting past the landing zone), (4) make a positive aggressive first contact. Teams that win second balls dominate possession statistics and momentum in transitional phases. Common mistake: players chase the trajectory of the ball upward rather than positioning for where it will land. Second ball anticipation is particularly important during set pieces and in midfield battles.",
+  "conditions": ["long_pass_or_clearance_in_air", "contested_aerial_duel_expected", "second_ball_zone_identifiable"],
+  "objective": ["win_loose_ball_after_aerial_duel", "maintain_possession_or_win_territory", "prevent_opponent_counterattack"],
+  "possible_actions": ["position_for_second_ball", "aggressive_challenge_for_loose_ball", "screen_opponent_from_ball"],
+  "contraindications": ["ball_too_unpredictable_to_anticipate", "opponent_has_significant_aerial_advantage"],
+  "trigger_conditions": ["phase_of_play_transition", "local_numerical_advantage"]
+}

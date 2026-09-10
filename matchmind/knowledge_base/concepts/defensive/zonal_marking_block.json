@@ -1,0 +1,12 @@
+{
+  "concept_id": "zonal_marking_block",
+  "category": "defensive_organization",
+  "phase": "out_of_possession",
+  "title": "Zonal Marking Block",
+  "content": "Zonal marking organises the defensive block by assigning each defender a zone of the pitch to protect rather than a specific player to follow. When the ball enters a zone, the nearest defender engages the ball carrier while teammates compress to eliminate space. The key advantage: the defensive shape remains coherent even as attackers move around — no defender is dragged out of position by individual movement runs. The block works by maintaining defensive compactness: the distance between the defensive and midfield lines should stay under 35m, forcing the opposition to play in front of the block and rely on long shots or set pieces. When the ball is on one side, the entire block shifts collectively to overload that side, leaving only one player covering the far post.",
+  "conditions": ["team_organised_in_defensive_block", "opponent_in_possession_in_final_third", "defensive_and_midfield_lines_compact"],
+  "objective": ["deny_space_between_lines", "force_opponent_to_wide_areas_or_long_shots", "maintain_defensive_shape"],
+  "possible_actions": ["maintain_block_shape", "compact_toward_ball", "deny_penetrating_passes"],
+  "contraindications": ["opponent_quickly_changing_point_of_attack", "runners_arriving_from_deep_exploiting_zones"],
+  "trigger_conditions": ["team_compactness_low", "defensive_line_height_low", "phase_of_play_defensive"]
+}

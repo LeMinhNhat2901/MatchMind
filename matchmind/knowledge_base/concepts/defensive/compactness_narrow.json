@@ -1,0 +1,12 @@
+{
+  "concept_id": "compactness_narrow",
+  "category": "defensive_organization",
+  "phase": "out_of_possession",
+  "title": "Defensive Compactness (Narrow Shape)",
+  "content": "Defensive compactness maintains a tight, narrow defensive block that protects the central channels and forces the opponent to play wide. The team keeps short distances between all players — typically less than 25m horizontally and 30m vertically between the midfield and defensive lines. When the opponent plays wide, the block shifts laterally as a unit but does not stretch, maintaining its compact shape. The narrow block is designed to deny dangerous central passes and shots, conceding crosses from wide positions as a calculated risk. Modern compact defences rely on two key movements: (1) collective lateral shift when ball goes wide, and (2) collective forward press when ball goes backwards. Vulnerability: opposite flank switches of play that can find attackers before the block can shift across.",
+  "conditions": ["opponent_in_possession_final_third", "team_prioritising_central_protection", "defensive_block_organised"],
+  "objective": ["protect_central_channels", "deny_penetrating_passes", "force_crosses_from_wide"],
+  "possible_actions": ["lateral_block_shift", "central_denial", "close_central_passing_lanes"],
+  "contraindications": ["opponent_has_quality_crossers", "team_lacks_aerial_ability"],
+  "trigger_conditions": ["team_compactness_high", "local_numerical_advantage_negative", "phase_of_play_defensive"]
+}

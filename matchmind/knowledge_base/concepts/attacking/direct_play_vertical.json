@@ -1,0 +1,12 @@
+{
+  "concept_id": "direct_play_vertical",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Direct Play — Vertical Passes to Break Lines",
+  "content": "Direct vertical play prioritises forward passes that skip lines of the opponent's defensive structure rather than building patiently through horizontal possession. A line-breaking pass goes from behind one defensive line to a player between two defensive lines — from behind the midfield press directly to a player between the midfield and defensive lines, or from midfield directly over the defensive line. The key is identifying the pocket between defensive lines and having a player positioned there to receive. Direct play is most effective against high-pressing teams (who leave space behind), when the opposition is transitioning and not organised, or when the team needs to inject urgency (losing late in a game). Risk: technical demand is high, and lost balls often occur in dangerous central positions.",
+  "conditions": ["space_between_defensive_lines", "player_positioned_between_lines", "passing_lane_open_vertical"],
+  "objective": ["break_defensive_lines", "advance_quickly_bypassing_press", "create_danger_quickly"],
+  "possible_actions": ["line_breaking_pass", "direct_through_ball"],
+  "contraindications": ["no_space_between_lines", "high_press_winning_second_balls", "team_needs_to_manage_game_tempo"],
+  "trigger_conditions": ["progressive_pass_available", "space_ahead_large", "is_in_defensive_third"]
+}

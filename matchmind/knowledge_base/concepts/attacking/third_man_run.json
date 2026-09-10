@@ -1,0 +1,34 @@
+{
+  "concept_id": "third_man_run",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Third-Man Run (Combination Play)",
+  "content": "The third-man run is a three-player combination where player A passes to player B, and player C — the third man — arrives into space to receive a lay-off from B. The key is that player C's movement begins before the ball reaches B, so when B receives and turns, C is already arriving at pace into space behind the defensive line. This movement is extremely difficult to defend because the defensive line cannot track a runner who starts their run from outside their visual field. The combination requires excellent timing and spatial awareness: C must read when A will play to B, begin the run at the right moment, and arrive as B lays off. The third-man movement is most devastating when C is arriving from deep, generating pace into the channel.",
+  "conditions": [
+    "two_players_in_combination_near_ball",
+    "third_player_arriving_from_deep",
+    "space_behind_defensive_line",
+    "defensive_line_high_or_square"
+  ],
+  "objective": [
+    "break_defensive_line",
+    "create_1v1_with_goalkeeper",
+    "exploit_space_behind_high_line"
+  ],
+  "possible_actions": [
+    "through_ball_to_third_man",
+    "lay_off_to_arriving_runner",
+    "dummy_and_flick_on"
+  ],
+  "contraindications": [
+    "defensive_line_very_deep",
+    "players_not_in_sync_timing",
+    "high_offside_risk_if_run_too_early"
+  ],
+  "trigger_conditions": [
+    "third_man_opportunity",
+    "two_players_in_combination",
+    "space_behind_def_line",
+    "progressive_pass_available"
+  ]
+}

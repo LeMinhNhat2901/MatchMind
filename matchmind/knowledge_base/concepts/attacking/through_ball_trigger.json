@@ -1,0 +1,12 @@
+{
+  "concept_id": "through_ball_trigger",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Through Ball — When to Play It",
+  "content": "A through ball is a pass played into space behind the defensive line for a running teammate to chase. The key is identifying the precise moment when: (1) a teammate begins a forward run that puts them onside or times an offside trap, (2) a gap appears in the defensive line either from disorganisation or deliberate pulling, and (3) the passer has the technical ability and sight line to thread the ball accurately. The through ball is higher risk than a recycling pass but much higher reward if successful. Common mistakes: playing it too early (runner not yet moving), too late (defender has recovered), or inaccurately placed (too slow gives the GK time, too fast runs through). The pass weight is critical: it must be played into the space ahead of the runner, not at the runner's current position.",
+  "conditions": ["space_behind_defensive_line", "runner_making_forward_run_onside", "passing_lane_open", "high_defensive_line"],
+  "objective": ["break_defensive_line", "create_1v1_with_goalkeeper", "goalscoring_opportunity"],
+  "possible_actions": ["play_through_ball", "dummy_and_let_through", "lay_off_then_third_man"],
+  "contraindications": ["defensive_line_deep", "high_offside_risk", "runner_marked_tightly"],
+  "trigger_conditions": ["progressive_pass_available", "space_ahead_large", "defensive_line_height_high"]
+}

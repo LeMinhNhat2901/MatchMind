@@ -1,0 +1,12 @@
+{
+  "concept_id": "overload_flank_rotation",
+  "category": "spatial_principles",
+  "phase": "possession",
+  "title": "Flank Overload Through Rotation",
+  "content": "A flank overload positions three or more attacking players on the same side of the pitch, creating a numerical superiority the defense cannot cover. The rotation involves central players shifting to overload one side while another player holds the opposite flank to prevent compression. Typical pattern: winger + fullback + central midfielder all arriving on the right flank creates a 3v2 against the opposing fullback and winger. The ball circulates quickly until a free player finds a crossing, cut-inside, or through ball opportunity. Key: the rotation must happen before the defense has time to shift — ball speed through the overloaded zone is critical.",
+  "conditions": ["three_attackers_on_same_flank", "opponent_defensive_structure_not_adjusted", "central_player_available_to_join_flank"],
+  "objective": ["create_crossing_opportunity", "overwhelm_flank_defense", "draw_central_players_wide_to_create_central_space"],
+  "possible_actions": ["quick_combination_in_overload", "cross_from_overloaded_flank", "cut_inside_from_overload"],
+  "contraindications": ["defense_shifts_quickly_to_cover", "opposite_flank_completely_exposed"],
+  "trigger_conditions": ["overload_left_or_right", "local_numerical_advantage_positive", "switch_play_not_viable"]
+}

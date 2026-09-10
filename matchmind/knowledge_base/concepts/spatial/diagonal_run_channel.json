@@ -1,0 +1,12 @@
+{
+  "concept_id": "diagonal_run_channel",
+  "category": "spatial_principles",
+  "phase": "possession",
+  "title": "Diagonal Run into the Channel",
+  "content": "A diagonal run into the channel exploits the space between the opposing fullback and center-back — the channel — by a player running diagonally from a central or wide position into this gap. The diagonal direction makes the run harder to defend than a straight forward run: a straight runner can be tracked by stepping back, but a diagonal runner forces the fullback to choose between tracking (leaving the wide area) or holding (letting the runner in). Most effective when the winger drops deep to receive and immediately plays into the channel for an arriving midfielder or second striker. The run should be timed to arrive in the channel as the ball reaches the feed player, at pace. The runner must commit to the run before knowing whether they will receive.",
+  "conditions": ["channel_space_between_cb_and_fb", "runner_starting_position_diagonal_to_channel", "feed_player_can_play_into_channel"],
+  "objective": ["exploit_channel_between_defenders", "create_1v1_crossing_opportunity", "arrive_in_box_at_pace"],
+  "possible_actions": ["diagonal_run_into_channel", "receive_in_channel_and_cross", "cut_back_from_byline"],
+  "contraindications": ["channel_already_covered_by_tracking_defender", "runner_offside_risk_high"],
+  "trigger_conditions": ["half_space_occupied", "is_in_attacking_third", "space_ahead_large"]
+}

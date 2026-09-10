@@ -1,0 +1,36 @@
+{
+  "concept_id": "overlapping_run",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Overlapping Run",
+  "content": "An overlapping run occurs when a full-back or wide midfielder sprints beyond an attacking teammate who is in possession near the touchline, creating a 2v1 situation against the opposing winger or full-back. The runner takes a curved path around the outside of the ball carrier, timing the movement so they arrive into space just as the ball carrier is pressed. This creates two simultaneous threats: the ball carrier can either dribble inside or lay off to the overlapper who now has space to cross or advance. Key timing: the overlap should begin just as the opponent's pressure arrives on the ball carrier, not too early (giving defenders time to track) or too late (arriving after the moment has passed). The combination is most effective when the ball carrier can hold the ball under pressure for 1-2 seconds, drawing the defender before releasing.",
+  "conditions": [
+    "wide_player_has_ball",
+    "fullback_narrow_or_behind",
+    "outside_lane_available",
+    "opponent_fullback_marking_ball_carrier"
+  ],
+  "objective": [
+    "create_width",
+    "displace_defender",
+    "generate_crossing_opportunity",
+    "create_2v1_flank"
+  ],
+  "possible_actions": [
+    "overlap_outside",
+    "underlap_inside",
+    "dummy_run_to_create_space"
+  ],
+  "contraindications": [
+    "counterattack_risk_if_possession_lost",
+    "fullback_already_high_and_advanced",
+    "opponent_sits_deep_in_low_block",
+    "poor_cover_from_central_midfielder"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "teammate_wide_with_ball",
+    "opponent_fullback_narrow",
+    "space_behind_defensive_line"
+  ]
+}

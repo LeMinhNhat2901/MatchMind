@@ -1,0 +1,12 @@
+{
+  "concept_id": "offside_trap",
+  "category": "defensive_organization",
+  "phase": "out_of_possession",
+  "title": "Offside Trap",
+  "content": "The offside trap is a coordinated defensive technique where the entire defensive line steps forward simultaneously at the moment the ball is played forward, catching attacking runners in an offside position. The trap requires perfect timing and synchronisation: all four defenders must step as one unit at the exact moment the ball leaves the passer's foot, not before (giving attackers time to retreat) or after (allowing attackers to run through). The trap is most effective when: the defending team has recognised the opponent's pattern of play (e.g., they frequently try to play through balls), the defensive line has drilled the movement extensively, and there is a clear triggering cue (e.g., the passer's backswing). High risk: one defender failing to step ruins the entire trap. Modern use: most elite teams use selective offside traps in specific game situations rather than as a blanket strategy.",
+  "conditions": ["defensive_line_organised_and_high", "opponent_about_to_play_forward_pass", "all_defenders_aware_and_ready", "clear_triggering_cue_identified"],
+  "objective": ["catch_attackers_offside", "stop_through_balls_without_tracking_runs", "compact_defensive_shape"],
+  "possible_actions": ["step_defensive_line_simultaneously", "hold_line_against_forward_run", "goalkeeper_command_step_line"],
+  "contraindications": ["defenders_not_organised_or_aware", "opponent_has_runners_behind_line_already", "goalkeeper_not_commanding_line"],
+  "trigger_conditions": ["defensive_line_high", "space_ahead_large_for_opponent", "phase_of_play_defensive"]
+}

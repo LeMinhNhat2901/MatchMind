@@ -1,0 +1,12 @@
+{
+  "concept_id": "blind_side_run",
+  "category": "spatial_principles",
+  "phase": "possession",
+  "title": "Blind Side Run",
+  "content": "A blind side run approaches a defender from the side or angle they are not watching, exploiting their natural blind spot. When a defender is focused on the ball, a runner approaching from their far side enters the blind spot — by the time the defender becomes aware, the runner has already arrived in a dangerous position. The run is most effective timed to start just as the ball carrier attracts the defender's full attention. Common in set pieces (near-post runs behind a marker) and open play (overlapping runs arriving into the box from behind a marking defender). Critical: the runner must make curved, late runs — straight runs from far away give defenders time to adjust and track. The blind side run requires the ball carrier to delay their pass long enough to allow the runner to enter the blind spot.",
+  "conditions": ["defender_focused_on_ball_carrier", "space_behind_defender_shoulder", "runner_approaching_from_angle_outside_view"],
+  "objective": ["arrive_in_space_unmarked", "create_1v1_with_goalkeeper", "deliver_headed_or_first_time_shot"],
+  "possible_actions": ["curved_late_run_behind_defender", "near_post_blind_side_flick", "arriving_run_for_cutback"],
+  "contraindications": ["defender_tracking_movement_not_ball_watching", "no_space_behind_defensive_line"],
+  "trigger_conditions": ["space_ahead_large", "is_in_attacking_third", "third_man_opportunity"]
+}

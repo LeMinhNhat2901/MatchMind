@@ -1,0 +1,12 @@
+{
+  "concept_id": "pressing_trigger_pass",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Pressing Trigger Pass (Bait and Press)",
+  "content": "A pressing trigger pass deliberately invites the opponent to press by playing a pass to a slightly isolated player in a position where the team has pre-organised the press response. The isolated player receives under pressure, and the moment the opponent commits their pressing players, the team springs the press trap — the receiving player plays out quickly to a free teammate who is positioned to receive, and the pressing opponent is now out of position. This is a deliberate tactical move: the 'bait' player must have the composure to receive under pressure and execute a clean exit pass. Requires high off-ball synchronisation — the free player must already be in the exit position before the triggering pass is played.",
+  "conditions": ["opponent_pressing_high", "bait_position_available", "exit_pass_option_pre-positioned", "player_composure_under_pressure"],
+  "objective": ["break_opponent_press", "create_space_behind_pressing_line", "numerical_superiority_in_exit_zones"],
+  "possible_actions": ["play_to_bait_player_then_exit", "quick_one_touch_exit_pass"],
+  "contraindications": ["no_pre-positioned_exit_option", "player_not_composed_under_pressure", "opponent_not_pressing_high"],
+  "trigger_conditions": ["opponent_high_press", "local_numerical_advantage", "switch_play_viable"]
+}

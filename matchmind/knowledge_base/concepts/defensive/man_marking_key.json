@@ -1,0 +1,12 @@
+{
+  "concept_id": "man_marking_key",
+  "category": "defensive_organization",
+  "phase": "out_of_possession",
+  "title": "Man-Marking a Key Opponent",
+  "content": "Man-marking assigns one defender the primary responsibility of following a specific opponent wherever they move on the pitch, regardless of positional shape. This is typically deployed against a single opponent who is the creative hub of the opposition — a playmaker, a false 9, or a technically exceptional player. The marker's job is to deny that player time and space, forcing the opponent to use other (presumably lesser) players. Key requirements: the marker must have the physical and mental stamina to maintain the press for 90 minutes, excellent positional awareness to stay goal-side while tracking movement, and composure to not be drawn into dangerous positions by decoy runs. Risk: man-marking can pull defenders out of position, creating space for other attackers.",
+  "conditions": ["opponent_key_player_dominant_influence", "team_has_dedicated_marker_with_stamina", "opponent_relying_heavily_on_single_creator"],
+  "objective": ["nullify_opponent_key_player", "force_opponent_to_use_alternative_options", "disrupt_opponent_build_up"],
+  "possible_actions": ["tight_mark_ball_side", "goal-side_positioning_off_ball", "intercept_passes_to_marked_player"],
+  "contraindications": ["marker_not_physically_capable_for_90min", "opponent_uses_movement_to_drag_defender_out"],
+  "trigger_conditions": ["opponent_key_player_in_possession", "phase_of_play_defensive"]
+}

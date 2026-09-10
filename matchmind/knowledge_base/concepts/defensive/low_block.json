@@ -1,0 +1,12 @@
+{
+  "concept_id": "low_block",
+  "category": "defensive_organization",
+  "phase": "out_of_possession",
+  "title": "Low Block (Deep Defensive Shape)",
+  "content": "A low block positions the defending team with both defensive and midfield lines behind the ball, typically with all 10 outfield players below the halfway line or even inside their own half. The objective is to deny space behind the defensive line, force the opponent to play in front of the block, and absorb pressure until a counter-attack opportunity arises. The low block concedes possession deliberately, prioritising defensive solidity over offensive ambition. Key principles: defensive line very deep (x < 30m), midfield line compact directly ahead (x < 40m), wide players also tracking back to create two lines of four. Vulnerability: if the opponent passes patiently around the block, they can eventually find openings; also vulnerable to crosses if the team lacks aerial ability.",
+  "conditions": ["team_defending_lead_or_under_sustained_pressure", "opponent_significantly_stronger", "team_prioritising_defensive_solidity"],
+  "objective": ["deny_space_behind_defense", "absorb_pressure", "win_ball_for_counter"],
+  "possible_actions": ["hold_defensive_shape", "clear_to_flanks", "compress_centrally"],
+  "contraindications": ["team_needs_to_score_urgent", "opponent_has_high_quality_crossers_and_aerial_threat"],
+  "trigger_conditions": ["defensive_line_height_low", "team_compactness_high", "phase_of_play_defensive"]
+}

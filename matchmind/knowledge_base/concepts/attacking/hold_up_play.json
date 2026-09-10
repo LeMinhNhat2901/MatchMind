@@ -1,0 +1,12 @@
+{
+  "concept_id": "hold_up_play",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Hold-Up Play (Target Man)",
+  "content": "Hold-up play involves a striker receiving the ball with their back to goal and using their body strength to hold off a defender while teammates advance and support positions are established. The hold-up player is not primarily trying to turn and score — they are acting as an anchor who buys time for the team to push up the pitch and create an overload. Good hold-up play requires: physical strength and balance to hold under pressure, technical ability to protect the ball with the body, and awareness of support runners approaching. The hold-up player has several options: turn if they create separation, lay off to a supporting runner arriving from the side, or draw a foul. Most effective when the team is under pressure and needs to relieve that pressure by winning territory.",
+  "conditions": ["striker_receiving_back_to_goal", "supporting_runners_arriving", "opponent_pressing_high"],
+  "objective": ["win_territory", "allow_team_to_advance", "draw_fouls_in_dangerous_areas"],
+  "possible_actions": ["lay_off_to_support", "turn_and_shoot", "draw_foul"],
+  "contraindications": ["no_supporting_runners", "player_lacks_strength_to_hold"],
+  "trigger_conditions": ["striker_role", "nearest_opponent_distance_low", "progressive_pass_not_available"]
+}

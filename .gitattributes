@@ -1,0 +1,33 @@
+# Auto detect text files and perform LF normalization
+* text=auto
+
+# Python
+*.py text eol=lf
+*.pyi text eol=lf
+
+# Config / data
+*.toml text eol=lf
+*.yaml text eol=lf
+*.yml text eol=lf
+*.json text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.env text eol=lf
+*.cfg text eol=lf
+*.ini text eol=lf
+
+# Shell
+*.sh text eol=lf
+
+# Binary — never modify
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.gif binary
+*.ico binary
+*.bin binary
+*.pt binary
+*.pth binary
+*.onnx binary
+*.pkl binary
+*.h5 binary

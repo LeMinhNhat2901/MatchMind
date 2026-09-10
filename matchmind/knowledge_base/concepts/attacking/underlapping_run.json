@@ -1,0 +1,33 @@
+{
+  "concept_id": "underlapping_run",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Underlapping Run",
+  "content": "An underlapping run is the inside-out complement to the overlap: instead of running around the outside of the ball carrier, a teammate makes a diagonal run through the inside channel, between the ball carrier and the central area. This is especially effective with inverted wingers who hold wide and invite the fullback to run inside. The underlapper exploits the space in the half-space or between the opponent's defensive and midfield lines. The run forces the defensive midfielder or center-back to make a decision: track the runner (leaving space centrally) or hold position (leaving the runner free). Unlike the overlap, the underlap maintains better attacking shape and presents less counterattack risk because the runner stays compact with the team.",
+  "conditions": [
+    "winger_holding_ball_wide",
+    "half_space_available",
+    "opponent_fullback_committed_wide",
+    "central_space_between_def_and_mid_lines"
+  ],
+  "objective": [
+    "exploit_half_space",
+    "create_overload_central",
+    "draw_center_back_out_of_position"
+  ],
+  "possible_actions": [
+    "underlap_diagonal_run",
+    "third_man_combination",
+    "shot_from_half_space"
+  ],
+  "contraindications": [
+    "central_midfield_block_congested",
+    "opponent_sitting_deep_no_space_to_exploit",
+    "player_lacking_pace_to_exploit_channel"
+  ],
+  "trigger_conditions": [
+    "winger_wide_with_ball",
+    "half_space_free",
+    "teammate_near_ball_on_inside"
+  ]
+}

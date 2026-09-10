@@ -1,0 +1,12 @@
+{
+  "concept_id": "gegenpressing",
+  "category": "defensive_organization",
+  "phase": "attacking_transition",
+  "title": "Gegenpressing (Counter-Press After Losing Possession)",
+  "content": "Gegenpressing is an immediate, high-intensity collective press to win the ball back within 5–8 seconds of losing possession. The principle: in the first moments after losing the ball, the opponent is disorganised, ball-focused, and hasn't yet established their positional structure — this is the optimal moment to press and win the ball back in a dangerous position. All nearby players collapse on the ball carrier immediately, with the priority of stopping a counter-attack first and winning the ball back second. The press must be triggered automatically by any player losing the ball, not by a coach instruction. Key: nearby players must press from multiple angles simultaneously to eliminate passing options, not one at a time. Effectiveness falls off sharply after 6 seconds as the opponent has time to move the ball away from pressure.",
+  "conditions": ["possession_just_lost", "opponent_disorganised_in_possession", "multiple_players_near_ball", "high_energy_available"],
+  "objective": ["win_ball_back_immediately", "prevent_opponent_counterattack", "keep_opponent_disorganised"],
+  "possible_actions": ["immediate_collective_press", "cut_ball_carrier_passing_lanes", "aggressive_tackle_attempt"],
+  "contraindications": ["players_fatigued_or_too_spread_out", "late_in_game_protecting_lead", "opponent_already_played_ball_away_from_press"],
+  "trigger_conditions": ["phase_of_play_attacking_transition", "press_intensity_capable", "players_near_ball"]
+}

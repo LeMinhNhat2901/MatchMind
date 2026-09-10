@@ -1,0 +1,12 @@
+{
+  "concept_id": "recovery_run_positioning",
+  "category": "defensive_organization",
+  "phase": "defensive_transition",
+  "title": "Recovery Run Positioning",
+  "content": "A recovery run is a sprint made by an attacking player back toward their own goal when possession is lost, with the priority of getting goal-side of the ball as quickly as possible. The recovery runner's first objective is not to win the ball — it is to occupy a position between the ball and the goal, eliminating the direct route to goal for counter-attackers. Optimal recovery positioning: sprint toward the goal, then peel back to a position between the nearest attacker and the goal. The most common recovery error: sprinting laterally across the pitch instead of first getting goal-side. Two players in recovery should not chase the same attacker — one covers the ball carrier, the other covers the most dangerous runner ahead.",
+  "conditions": ["possession_just_lost", "opponents_launching_counter", "player_high_up_pitch_and_isolated"],
+  "objective": ["get_goal-side_of_counter-attackers", "eliminate_direct_route_to_goal", "delay_attack_until_teammates_recover"],
+  "possible_actions": ["immediate_sprint_goal-side", "goal-side_positioning", "delay_attacker_jockeying"],
+  "contraindications": ["too_far_from_goal_to_recover", "teammate_already_covering_zone"],
+  "trigger_conditions": ["phase_of_play_defensive_transition", "space_ahead_large_for_opponent"]
+}

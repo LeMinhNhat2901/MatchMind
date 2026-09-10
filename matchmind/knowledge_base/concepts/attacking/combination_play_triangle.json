@@ -1,0 +1,12 @@
+{
+  "concept_id": "combination_play_triangle",
+  "category": "attacking_movement",
+  "phase": "possession",
+  "title": "Combination Play Triangle (One-Two / Wall Pass)",
+  "content": "A passing triangle or wall pass combination involves three players forming a triangle shape, with the ball moving quickly among them to bypass pressing. The classic one-two (give-and-go): player A plays to B, makes a forward run, and B immediately returns the ball into the space behind A's marker. More complex triangles involve A-B-C sequences where the ball moves faster than defenders can track. Key principle: the player in possession must play at the right tempo — too slow and the press catches up, too fast and runners haven't positioned correctly. The combination is most effective in tight spaces near the final third, forcing the opponent to commit defenders and creating gaps. Requires excellent one-touch control and communication.",
+  "conditions": ["three_players_in_triangle_shape", "pressing_opponent_committed_to_ball_carrier", "space_available_for_return_pass"],
+  "objective": ["bypass_press", "create_space_behind_press", "maintain_possession_under_pressure"],
+  "possible_actions": ["one_two_wall_pass", "three_player_combination", "quick_switch_triangle"],
+  "contraindications": ["players_too_far_apart_for_quick_combination", "opponent_sitting_deep_not_pressing"],
+  "trigger_conditions": ["local_numerical_advantage", "passing_lane_open", "third_man_opportunity"]
+}
