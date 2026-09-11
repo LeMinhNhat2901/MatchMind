@@ -58,6 +58,36 @@ from matchmind.schema.match_state import MatchState, TacticalAdvice
 
 logger = logging.getLogger(__name__)
 
+# Bump applied to the OTHER team's colliding id so downstream `get_player(id)`
+# calls (which don't all thread `team` through) resolve unambiguously.
+_DISAMBIGUATION_OFFSET = 1_000_000
+
+
+def _disambiguate_by_team(state: MatchState, focus_player_id: int, focus_team: str) -> MatchState:
+    """
+    Resolve a shirt-number collision (both teams have a player with this id)
+    by relabelling the OTHER team's colliding player(s) to a synthetic id.
+
+    `focus_player_id` itself is left untouched, so every existing "Player N"
+    label, arrow, and candidate action stays correct for the player the
+    caller actually meant — only the id that would otherwise collide moves.
+    """
+    changed = False
+    new_players = []
+    for p in state.players:
+        if p.id == focus_player_id and p.team != focus_team:
+            new_players.append(p.model_copy(update={"id": p.id + _DISAMBIGUATION_OFFSET}))
+            changed = True
+        else:
+            new_players.append(p)
+    if not changed:
+        return state
+    logger.info(
+        f"Disambiguated player id {focus_player_id}: kept for team={focus_team}, "
+        f"relabelled the other team's same-numbered player."
+    )
+    return state.model_copy(update={"players": new_players})
+
 
 def build_tactical_graph() -> Any:
     """
@@ -131,13 +161,31 @@ class TacticalAgent:
     """
 
     def __init__(self) -> None:
+        # ── CRITICAL ORDER: load sentence-transformers / torch BEFORE matplotlib.
+        # On Windows + Python 3.13, importing matplotlib first corrupts torch's
+        # native DLL init and the next model load hard-crashes the process (no
+        # traceback). The renderers now import matplotlib lazily, and this
+        # pre-warm forces the retrieval model to load first, in the main thread.
+        logger.info("Pre-warming retrieval store (loads sentence-transformers first)...")
+        try:
+            from matchmind.agent.nodes.retrieve_node import _get_vector_store
+
+            store = _get_vector_store()
+            _ = store.retrieve_tactics(query_text="warm up tactical retrieval", k=1)
+            logger.info(f"Retrieval store ready: {store.count()} concepts")
+        except Exception as exc:
+            logger.warning(f"Store pre-warm failed (will retry at runtime): {exc}")
+
+        # Safe now — building the graph may import matplotlib via render_pitch_node.
         self._graph = build_tactical_graph()
-        logger.info("TacticalAgent initialised with LangGraph graph")
+        logger.info("TacticalAgent initialised")
+
 
     def analyze(
         self,
         match_state: MatchState,
         focus_player_id: int,
+        focus_team: str | None = None,
         question: str | None = None,
     ) -> TacticalAdvice:
         """
@@ -146,6 +194,11 @@ class TacticalAgent:
         Args:
             match_state: Unified MatchState from any adapter.
             focus_player_id: Which player to analyse.
+            focus_team: "home" or "away", if known. `player_id` is NOT
+                guaranteed globally unique — some sources (Metrica shirt
+                numbers) reuse 1-11 on both teams. Passing focus_team resolves
+                that ambiguity for this run; omit it only when you're sure
+                `focus_player_id` can't collide (e.g. StatsBomb's global ids).
             question: Natural language question. Defaults to generic question.
 
         Returns:
@@ -154,6 +207,9 @@ class TacticalAgent:
         Raises:
             RuntimeError: If agent cannot produce valid advice after max retries.
         """
+        if focus_team is not None and match_state.has_ambiguous_id(focus_player_id):
+            match_state = _disambiguate_by_team(match_state, focus_player_id, focus_team)
+
         if question is None:
             player = match_state.get_player(focus_player_id)
             role = f" ({player.role})" if player and player.role else ""
@@ -207,3 +263,55 @@ class TacticalAgent:
         )
 
         return advice, final_state.get("trace", [])
+
+    def analyze_dual(
+        self,
+        match_state: MatchState,
+    ) -> tuple[tuple[TacticalAdvice, list[dict]], tuple[TacticalAdvice, list[dict]]]:
+        """
+        Run TWO independent analyses on the same snapshot: one for the team in
+        possession (on-ball question) and one for the opposing team (defensive
+        question) — e.g. "home has the ball, what should home's carrier do?"
+        alongside "what should away do to stop it?".
+
+        This runs the full graph twice (2x LLM calls) — it is not a cheaper
+        shortcut, it is two full `analyze()` calls with auto-picked focus
+        players. See situation_engine.team_focus.pick_dual_focus_players for
+        how the two players are chosen.
+
+        Returns:
+            ((attacking_advice, attacking_trace), (defending_advice, defending_trace))
+        """
+        from matchmind.situation_engine.team_focus import pick_dual_focus_players
+
+        focus = pick_dual_focus_players(match_state)
+
+        # Attacking and defending ids CAN collide with each other (e.g. both
+        # #10) — always resolve with team here, not a bare id lookup.
+        att_player = match_state.get_player(focus.attacking_player_id, team=focus.attacking_team)
+        att_role = f" ({att_player.role})" if att_player and att_player.role else ""
+        attacking_question = (
+            f"Player {focus.attacking_player_id}{att_role} ({focus.attacking_team}) has the ball. "
+            f"What should they do right now to create a tactical advantage for their team?"
+        )
+
+        def_player = match_state.get_player(focus.defending_player_id, team=focus.defending_team)
+        def_role = f" ({def_player.role})" if def_player and def_player.role else ""
+        defending_question = (
+            f"Player {focus.defending_player_id}{def_role} ({focus.defending_team}) does not have "
+            f"the ball — the opponent does. What should they do right now to stop the attack and "
+            f"win the ball back?"
+        )
+
+        logger.info(
+            f"analyze_dual: attack=player {focus.attacking_player_id} ({focus.attacking_team}), "
+            f"defense=player {focus.defending_player_id} ({focus.defending_team})"
+        )
+
+        attacking = self.analyze(
+            match_state, focus.attacking_player_id, focus_team=focus.attacking_team, question=attacking_question
+        )
+        defending = self.analyze(
+            match_state, focus.defending_player_id, focus_team=focus.defending_team, question=defending_question
+        )
+        return attacking, defending

@@ -151,9 +151,8 @@ def compute_logical_consistency_llm(advice: TacticalAdvice) -> float | None:
     if feats is None:
         return None
     try:
-        import anthropic
+        from matchmind.llm_client import call_llm
 
-        client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
         facts = feats.model_dump(
             include={
                 "distance_to_ball",
@@ -175,13 +174,8 @@ def compute_logical_consistency_llm(advice: TacticalAdvice) -> float | None:
             "facts (e.g. claims the player is free when nearest_opponent_distance is 2m)?\n"
             "Answer with ONLY 'CONSISTENT' or 'CONTRADICTION'."
         )
-        resp = client.messages.create(
-            model=settings.llm_model,
-            max_tokens=10,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        verdict = resp.content[0].text.strip().upper()
-        return 0.0 if "CONTRADICT" in verdict else 1.0
+        text, _ = call_llm(prompt, max_tokens=24, temperature=0.0, thinking_budget=0)
+        return 0.0 if "CONTRADICT" in text.strip().upper() else 1.0
     except Exception as exc:  # noqa: BLE001
         logger.warning(f"Logical-consistency judge unavailable: {exc}")
         return None
@@ -233,12 +227,11 @@ def compute_actionability(
 
 
 def _llm_actionability_score(advice: TacticalAdvice) -> float:
-    """Use LLM to score actionability on 1–5 rubric."""
+    """Use the configured LLM (Gemini by default) to score actionability on a 1–5 rubric."""
     try:
-        import anthropic
-        client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
+        from matchmind.llm_client import call_llm
 
-        prompt = f"""Score this tactical football recommendation on Actionability (1–5):
+        prompt = f"""Score this tactical football recommendation on Actionability (1-5):
 
 Recommendation: "{advice.recommended_action}"
 Reasoning: "{advice.reasoning[:300]}"
@@ -252,13 +245,12 @@ Rubric:
 
 Respond with ONLY a single number (1.0 to 5.0).
 """
-        response = client.messages.create(
-            model=settings.llm_model,
-            max_tokens=10,
-            messages=[{"role": "user", "content": prompt}],
-        )
-        score_str = response.content[0].text.strip()
-        return float(score_str)
+        text, _ = call_llm(prompt, max_tokens=24, temperature=0.0, thinking_budget=0)
+        # keep the first float-looking token
+        import re
+
+        m = re.search(r"[0-5](?:\.\d+)?", text)
+        return float(m.group(0)) if m else compute_actionability(advice, use_llm=False)
     except Exception as exc:
         logger.warning(f"LLM actionability scoring failed: {exc} — using rule-based")
         return compute_actionability(advice, use_llm=False)

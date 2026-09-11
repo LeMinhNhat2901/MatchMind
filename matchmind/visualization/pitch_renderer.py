@@ -10,15 +10,28 @@ Adaptation: MatchMind project
 from __future__ import annotations
 
 import logging
-from typing import Literal
+from typing import TYPE_CHECKING, Literal
 
-import matplotlib.patches as patches
-import matplotlib.pyplot as plt
 import numpy as np
-from matplotlib.axes import Axes
-from matplotlib.figure import Figure
+
+# matplotlib is imported lazily inside plot_pitch(). Importing it at module load
+# time (before sentence-transformers / torch initialises) triggers a native DLL
+# crash on Windows + Python 3.13. See _lazy_pyplot().
+if TYPE_CHECKING:  # pragma: no cover
+    from matplotlib.axes import Axes
+    from matplotlib.figure import Figure
 
 logger = logging.getLogger(__name__)
+
+
+def _lazy_pyplot():
+    """Import matplotlib.pyplot with the Agg backend, on first use only."""
+    import matplotlib
+
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+
+    return plt
 
 PITCH_LENGTH = 105.0
 PITCH_WIDTH = 68.0
@@ -29,8 +42,8 @@ def plot_pitch(
     linewidth: float = 2,
     markersize: float = 20,
     figsize: tuple[float, float] = (10.5, 6.8),
-    ax: Axes | None = None,
-) -> tuple[Figure, Axes]:
+    ax: "Axes | None" = None,
+) -> "tuple[Figure, Axes]":
     """
     Plot a full football pitch with proper markings.
 
@@ -48,6 +61,7 @@ def plot_pitch(
         (fig, ax) — matplotlib figure and axes.
     """
     if ax is None:
+        plt = _lazy_pyplot()
         fig, ax = plt.subplots(figsize=figsize)
     else:
         fig = ax.get_figure()

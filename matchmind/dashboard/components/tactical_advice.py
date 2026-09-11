@@ -57,7 +57,7 @@ def render_advice_panel(advice: TacticalAdvice, trace: list[dict]) -> None:
                 delta_str = ""
                 if alt.delta_pitch_control is not None:
                     sign = "+" if alt.delta_pitch_control >= 0 else ""
-                    delta_str = f" | Δ PC: {sign}{alt.delta_pitch_control*100:.1f}%"
+                    delta_str = f" | Δ PC: {sign}{alt.delta_pitch_control:.1f}%"
 
                 with st.expander(f"❌ {alt.action[:40]}"):
                     st.markdown(f"**Why not:** {alt.why_not}{delta_str}")

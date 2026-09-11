@@ -74,7 +74,7 @@ poetry run python -m matchmind.scripts.build_kb
 
 ### 4. Run demo
 ```bash
-poetry run python -m matchmind.scripts.demo --player 14
+poetry run python -m matchmind.scripts.demo --player 10
 ```
 
 ### 5. Launch dashboard
@@ -125,7 +125,7 @@ matchmind/
 |-------|-----------|
 | Schema | Pydantic v2 |
 | Agent | LangGraph + LangChain |
-| LLM | Claude (Anthropic) / GPT-4o |
+| LLM | Gemini / Claude (Anthropic) / GPT-4o |
 | Vector DB | ChromaDB |
 | Embeddings | sentence-transformers |
 | Football data | StatsBombPy, kloppy |

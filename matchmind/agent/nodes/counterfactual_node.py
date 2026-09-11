@@ -115,7 +115,13 @@ def assemble_evidence_node(state: AgentState) -> AgentState:
     ]
 
     # ── Stats Evidence ────────────────────────────────────────
+    possession_fact = (
+        "Player HAS THE BALL"
+        if features.is_ball_carrier
+        else f"Player is OFF THE BALL (Player {features.ball_carrier_id} has it)"
+    )
     stats_facts = [
+        possession_fact,
         f"Distance to ball: {features.distance_to_ball:.1f}m",
         f"Nearest opponent: {features.nearest_opponent_distance:.1f}m",
         f"Space ahead: {features.space_ahead:.1f}m",

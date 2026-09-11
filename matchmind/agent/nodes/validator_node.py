@@ -20,6 +20,7 @@ from matchmind.agent.state import AgentState
 from matchmind.config import settings
 from matchmind.schema.match_state import (
     AlternativeAction,
+    CandidateAction,
     EvidenceItem,
     TacticalAdvice,
 )
@@ -46,6 +47,8 @@ def validator_node(state: AgentState) -> AgentState:
     retrieved = state.get("retrieved_tactics") or []
     retrieved_titles = [r["title"] for r in retrieved]
     features = state.get("situation_features")
+    candidate_actions = [CandidateAction(**c) for c in (state.get("candidate_actions") or [])]
+    candidate_ids = {c.action for c in candidate_actions}
 
     errors: list[str] = []
     advice: TacticalAdvice | None = None
@@ -66,12 +69,14 @@ def validator_node(state: AgentState) -> AgentState:
 
             advice = TacticalAdvice(
                 recommended_action=parsed.get("recommended_action", ""),
+                recommended_action_id=parsed.get("recommended_action_id"),
                 alternatives=alternatives,
                 reasoning=parsed.get("reasoning", ""),
                 confidence=float(parsed.get("confidence", 0.5)),
                 evidence=evidence,
                 cited_concepts=parsed.get("cited_concepts", []),
                 situation_features=features,
+                candidate_actions=candidate_actions,
                 focus_player_id=state.get("focus_player_id"),
                 match_id=state["match_state"].match_id,
                 timestamp=state["match_state"].timestamp,
@@ -102,6 +107,18 @@ def validator_node(state: AgentState) -> AgentState:
             errors.append("recommended_action is empty")
         elif any(vague in action_lower for vague in VAGUE_PHRASES):
             errors.append(f"recommended_action is too vague: '{advice.recommended_action}'")
+
+        # ── Step 6: Sanitize action_id references (soft — never triggers a
+        # regenerate; a bad/hallucinated id just means no arrow gets drawn) ──
+        if advice.recommended_action_id and advice.recommended_action_id not in candidate_ids:
+            logger.debug(f"recommended_action_id {advice.recommended_action_id!r} not in shortlist — clearing")
+            advice = advice.model_copy(update={"recommended_action_id": None})
+        if any(a.action_id and a.action_id not in candidate_ids for a in advice.alternatives):
+            cleaned = [
+                a.model_copy(update={"action_id": None}) if a.action_id not in candidate_ids else a
+                for a in advice.alternatives
+            ]
+            advice = advice.model_copy(update={"alternatives": cleaned})
 
     elapsed = (time.time() - t0) * 1000
     passed = len(errors) == 0

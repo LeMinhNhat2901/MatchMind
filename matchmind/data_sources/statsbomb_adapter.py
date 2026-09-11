@@ -24,6 +24,47 @@ from matchmind.schema.match_state import BallState, MatchState, PlayerState
 
 logger = logging.getLogger(__name__)
 
+# ── Coordinate systems ──────────────────────────────────────────────────────
+# StatsBomb's own pitch unit is 120 (x) x 80 (y) — NOT our schema's 105x68
+# metres. Every raw location coming out of statsbombpy (events, 360 freeze
+# frames, visible_area) must be rescaled before it goes into PlayerState/
+# BallState, or it silently distorts every distance-based feature and can
+# exceed the schema's [0,105]x[0,68] bounds (very common near either box).
+SB_PITCH_LENGTH = 120.0
+SB_PITCH_WIDTH = 80.0
+PITCH_LENGTH = 105.0
+PITCH_WIDTH = 68.0
+
+
+def _sb_to_metres(x: float, y: float) -> tuple[float, float]:
+    """Rescale a raw StatsBomb (0-120, 0-80) coordinate to our (0-105, 0-68) metres.
+
+    360 freeze-frame points are camera-estimated and occasionally fall a
+    little outside the nominal 120x80 box — clamp after scaling.
+    """
+    mx = x * (PITCH_LENGTH / SB_PITCH_LENGTH)
+    my = y * (PITCH_WIDTH / SB_PITCH_WIDTH)
+    return max(0.0, min(PITCH_LENGTH, mx)), max(0.0, min(PITCH_WIDTH, my))
+
+
+# Known StatsBomb Open Data (competition_id, season_id) pairs that actually
+# ship 360 freeze-frame data. La Liga 2015/16 (11, 37) — the season previously
+# hardcoded here — predates 360 entirely and returns 404 for every match.
+KNOWN_360_COMPETITIONS: list[tuple[int, int]] = [
+    (43, 106),   # FIFA World Cup 2022 — most complete public 360 dataset
+    (11, 90),    # La Liga 2020/2021
+    (55, 43),    # UEFA Euro 2020
+    (55, 282),   # UEFA Euro 2024
+    (53, 106),   # UEFA Women's Euro 2022
+    (53, 315),   # UEFA Women's Euro 2025
+    (9, 281),    # 1. Bundesliga 2023/2024
+    (7, 235),    # Ligue 1 2022/2023
+    (7, 108),    # Ligue 1 2021/2022
+    (44, 107),   # Major League Soccer 2023
+    (72, 107),   # Women's World Cup 2023
+    (1267, 107), # Africa Cup of Nations 2023
+]
+
 # Mapping from StatsBomb position names to our role strings
 SB_POSITION_MAP: dict[str, str] = {
     "Goalkeeper": "goalkeeper",
@@ -127,25 +168,30 @@ class StatsBombAdapter(BaseAdapter):
         """
         from statsbombpy import sb
 
-        # Use La Liga 2015/16 season — has good 360 data
-        matches = sb.matches(competition_id=11, season_id=37)  # La Liga 2015/16
-        if matches.empty:
-            # Fallback: Women's Champions League
-            matches = sb.matches(competition_id=37, season_id=42)
-
         test_cases: list[dict] = []
         target_event_types = ["Pass", "Shot", "Dribble", "Carry"]
 
-        for _, match in matches.iterrows():
+        for comp_id, season_id in KNOWN_360_COMPETITIONS:
             if len(test_cases) >= n:
                 break
-            mid = match["match_id"]
             try:
-                cases = self._extract_test_cases_from_match(mid, target_event_types, limit=5)
-                test_cases.extend(cases)
+                matches = sb.matches(competition_id=comp_id, season_id=season_id)
             except Exception as exc:
-                logger.warning(f"Skipping match {mid}: {exc}")
+                logger.debug(f"No matches for competition={comp_id} season={season_id}: {exc}")
                 continue
+            if matches.empty:
+                continue
+
+            for _, match in matches.iterrows():
+                if len(test_cases) >= n:
+                    break
+                mid = match["match_id"]
+                try:
+                    cases = self._extract_test_cases_from_match(mid, target_event_types, limit=5)
+                    test_cases.extend(cases)
+                except Exception as exc:
+                    logger.warning(f"Skipping match {mid}: {exc}")
+                    continue
 
         return test_cases[:n]
 
@@ -155,9 +201,7 @@ class StatsBombAdapter(BaseAdapter):
 
         all_competitions = sb.competitions()
         dfs = []
-        # Competitions known to have 360 data
-        comp_seasons = [(11, 37), (37, 42), (53, 106)]
-        for comp_id, season_id in comp_seasons:
+        for comp_id, season_id in KNOWN_360_COMPETITIONS:
             try:
                 m = sb.matches(competition_id=comp_id, season_id=season_id)
                 m["competition_id"] = comp_id
@@ -183,15 +227,12 @@ class StatsBombAdapter(BaseAdapter):
         # Get freeze frame for this event
         frame_rows = frames[frames["id"] == event_id]
         players = self._parse_freeze_frame(frame_rows, event)
+        visible_area = self._parse_visible_area(frame_rows)
 
-        # Ball position
-        location = event.get("location", [52.5, 34.0])
-        ball = BallState(x=float(location[0]), y=float(location[1]))
-
-        # Determine possession from event's team
-        event_team = event.get("team", "")
-        # StatsBomb uses home/away via match lineup — simplified heuristic here
-        possession: str | None = None  # set downstream if needed
+        # Ball position — StatsBomb units (0-120, 0-80) rescaled to metres
+        location = event.get("location", [60.0, 40.0])
+        bx, by = _sb_to_metres(float(location[0]), float(location[1]))
+        ball = BallState(x=bx, y=by)
 
         # Phase of play
         event_type = str(event.get("type", "Pass"))
@@ -210,6 +251,7 @@ class StatsBombAdapter(BaseAdapter):
             phase_of_play=phase,
             ball=ball,
             players=players,
+            visible_area=visible_area,
             # StatsBomb 360 is a single freeze-frame → no velocity → degraded pitch control.
             has_velocity=False,
             source="statsbomb",
@@ -222,7 +264,12 @@ class StatsBombAdapter(BaseAdapter):
         frame_rows: pd.DataFrame,
         event: pd.Series,
     ) -> list[PlayerState]:
-        """Parse StatsBomb 360 freeze_frame → list[PlayerState]."""
+        """Parse StatsBomb 360 freeze_frame → list[PlayerState].
+
+        A 360 freeze frame only contains players inside the broadcast camera's
+        field of view (see _parse_visible_area) — real matches range from ~4
+        to 21 tracked players, NEVER all 22. That is expected, not a bug.
+        """
         players: list[PlayerState] = []
 
         if frame_rows.empty:
@@ -234,9 +281,10 @@ class StatsBombAdapter(BaseAdapter):
             teammate = row.get("teammate", True)
             team: str = "home" if teammate else "away"
 
-            loc = row.get("location", [52.5, 34.0])
+            loc = row.get("location")
             if not isinstance(loc, (list, tuple)) or len(loc) < 2:
                 continue
+            px, py = _sb_to_metres(float(loc[0]), float(loc[1]))
 
             player_id = int(row.get("player_id", len(players) + 1)) if pd.notna(row.get("player_id", None)) else len(players) + 1
             position_name = str(row.get("position", ""))
@@ -247,8 +295,8 @@ class StatsBombAdapter(BaseAdapter):
                     id=player_id,
                     team=team,
                     role=role,
-                    x=float(loc[0]),
-                    y=float(loc[1]),
+                    x=px,
+                    y=py,
                 )
             )
 
@@ -257,20 +305,37 @@ class StatsBombAdapter(BaseAdapter):
         if len(teams) < 2 and players:
             # Add at least one opponent
             players.append(
-                PlayerState(id=999, team="away" if "home" in teams else "home", x=80.0, y=40.0)
+                PlayerState(id=999, team="away" if "home" in teams else "home", x=70.0, y=34.0)
             )
 
         return players or self._make_synthetic_players(event)
 
+    def _parse_visible_area(self, frame_rows: pd.DataFrame) -> list[tuple[float, float]] | None:
+        """Extract + rescale the 360 camera field-of-view polygon for this event.
+
+        Same polygon is repeated on every row of the freeze frame — take it
+        from the first row. Stored as [x0,y0,x1,y1,...] flat SB-unit pairs.
+        """
+        if frame_rows.empty:
+            return None
+        raw = frame_rows.iloc[0].get("visible_area")
+        if not isinstance(raw, (list, tuple)) or len(raw) < 6 or len(raw) % 2 != 0:
+            return None
+        points = [
+            _sb_to_metres(float(raw[i]), float(raw[i + 1]))
+            for i in range(0, len(raw), 2)
+        ]
+        return points
+
     def _make_synthetic_players(self, event: pd.Series) -> list[PlayerState]:
         """Create minimal synthetic player list when freeze frame is missing."""
-        loc = event.get("location", [52.5, 34.0])
-        x, y = float(loc[0]), float(loc[1])
+        loc = event.get("location", [60.0, 40.0])
+        x, y = _sb_to_metres(float(loc[0]), float(loc[1]))
         return [
             PlayerState(id=1, team="home", role="attacking_midfielder", x=x, y=y),
-            PlayerState(id=2, team="home", role="striker", x=x + 10, y=y + 5),
-            PlayerState(id=3, team="away", role="center_back", x=x + 15, y=y),
-            PlayerState(id=4, team="away", role="center_back", x=x + 15, y=y - 5),
+            PlayerState(id=2, team="home", role="striker", x=min(x + 10, PITCH_LENGTH), y=min(y + 5, PITCH_WIDTH)),
+            PlayerState(id=3, team="away", role="center_back", x=min(x + 15, PITCH_LENGTH), y=y),
+            PlayerState(id=4, team="away", role="center_back", x=min(x + 15, PITCH_LENGTH), y=max(y - 5, 0.0)),
         ]
 
     def _extract_test_cases_from_match(

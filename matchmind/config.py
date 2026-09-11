@@ -19,10 +19,15 @@ class Settings(BaseSettings):
     )
 
     # ── LLM ──────────────────────────────────────────────────
+    # MatchMind supports multiple providers. Set LLM_PROVIDER in .env.
+    gemini_api_key: str = Field(default="", alias="GEMINI_API_KEY")
     anthropic_api_key: str = Field(default="", alias="ANTHROPIC_API_KEY")
     openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
-    llm_provider: str = Field(default="anthropic", alias="LLM_PROVIDER")
-    llm_model: str = Field(default="claude-sonnet-4-5", alias="LLM_MODEL")
+    groq_api_key: str = Field(default="", alias="GROQ_API_KEY")
+
+    llm_provider: str = Field(default="gemini", alias="LLM_PROVIDER")  # gemini | anthropic | openai | groq
+    llm_model: str = Field(default="gemini-2.5-flash", alias="LLM_MODEL")
+    groq_model: str = Field(default="qwen/qwen3.8-27b", alias="GROQ_MODEL")
 
     # ── Vector Store ─────────────────────────────────────────
     chroma_persist_dir: str = Field(default="./tactics_db", alias="CHROMA_PERSIST_DIR")
@@ -32,6 +37,9 @@ class Settings(BaseSettings):
 
     # ── Embedding ────────────────────────────────────────────
     embedding_model: str = Field(default="all-MiniLM-L6-v2", alias="EMBEDDING_MODEL")
+    # "chroma_default" uses ChromaDB's ONNX EF (avoids sentence-transformers crash on Python 3.13)
+    # "sentence_transformers" uses SentenceTransformer directly (more flexible, may crash in threads)
+    embedding_backend: str = Field(default="chroma_default", alias="EMBEDDING_BACKEND")
 
     # ── Databases ────────────────────────────────────────────
     redis_url: str = Field(default="redis://localhost:6379/0", alias="REDIS_URL")

@@ -9,6 +9,11 @@ from __future__ import annotations
 import logging
 import time
 
+# NOTE: matplotlib is intentionally NOT imported here. On Windows + Python 3.13,
+# importing matplotlib before sentence-transformers / torch finish initialising
+# hard-crashes the process (0xC0000005, no traceback). snapshot_renderer imports
+# it lazily (Agg backend) only when a pitch is actually drawn — by which point
+# TacticalAgent.__init__ has already pre-warmed the retrieval model.
 from matchmind.agent.state import AgentState
 from matchmind.visualization.snapshot_renderer import render_snapshot
 

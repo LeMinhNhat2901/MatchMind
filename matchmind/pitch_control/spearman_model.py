@@ -35,6 +35,9 @@ PITCH_WIDTH = 68.0
 GRID_COLS = 50   # number of x cells
 GRID_ROWS = 32   # number of y cells
 
+# Match ids we've already warned about running degraded (no-velocity) pitch control.
+_DEGRADED_WARNED: set[str] = set()
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Model parameters (Spearman 2018 defaults)
@@ -227,11 +230,13 @@ def generate_pitch_control_for_match_state(
     if params is None:
         params = default_model_params()
 
-    if not state.has_velocity:
+    if not state.has_velocity and state.match_id not in _DEGRADED_WARNED:
+        _DEGRADED_WARNED.add(state.match_id)
         logger.warning(
             "Pitch control on '%s' data without velocities (has_velocity=False) — "
-            "running degraded (static-player) approximation.",
+            "running degraded (static-player) approximation for match %s.",
             state.source,
+            state.match_id,
         )
 
     opp_team = "away" if focus_team == "home" else "home"

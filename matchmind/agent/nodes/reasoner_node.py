@@ -6,14 +6,11 @@ to generate structured tactical advice with counterfactual reasoning.
 """
 from __future__ import annotations
 
-import base64
-import json
 import logging
 import time
-from pathlib import Path
 
 from matchmind.agent.state import AgentState
-from matchmind.config import settings
+from matchmind.llm_client import call_llm
 
 logger = logging.getLogger(__name__)
 
@@ -35,10 +32,18 @@ def reasoner_node(state: AgentState) -> AgentState:
 
     prompt = _build_prompt(state)
 
-    if settings.llm_provider == "anthropic":
-        raw_output, tokens = _call_anthropic(prompt, state.get("pitch_image_path"))
-    else:
-        raw_output, tokens = _call_openai(prompt, state.get("pitch_image_path"))
+    # Provider is chosen by settings.llm_provider (default: gemini). json_mode
+    # makes Gemini/OpenAI emit valid JSON directly; the validator still tolerates
+    # markdown-fenced JSON for providers that ignore it.
+    # Budget must cover reasoning + alternatives + evidence AND Gemini 3.x
+    # "thinking" tokens, or the JSON comes back truncated → parse failure.
+    raw_output, tokens = call_llm(
+        prompt,
+        image_path=state.get("pitch_image_path"),
+        max_tokens=8000,
+        temperature=0.3,
+        json_mode=True,
+    )
 
     elapsed = (time.time() - t0) * 1000
     logger.debug(f"[reasoner] {elapsed:.1f}ms | tokens={tokens}")
@@ -56,7 +61,6 @@ def reasoner_node(state: AgentState) -> AgentState:
 
 def _build_prompt(state: AgentState) -> str:
     """Build the full text prompt for the LLM."""
-    match_state = state["match_state"]
     features = state["situation_features"]
     evidence = state.get("evidence_set") or {}
     retrieved = state.get("retrieved_tactics") or []
@@ -90,7 +94,28 @@ def _build_prompt(state: AgentState) -> str:
     valid_titles = [r["title"] for r in retrieved]
     valid_titles_str = ", ".join(f'"{t}"' for t in valid_titles)
 
+    if features.is_ball_carrier:
+        possession_banner = f"Player {focus_id} HAS THE BALL."
+        possession_rule = (
+            "- Player HAS the ball: recommend an on-ball action (pass / dribble / "
+            "shoot / hold)."
+        )
+    else:
+        possession_banner = (
+            f"Player {focus_id} DOES NOT have the ball "
+            f"(Player {features.ball_carrier_id} has it)."
+        )
+        possession_rule = (
+            "- Player is OFF the ball: you MUST NOT recommend a pass, dribble, carry, "
+            "or shot FOR this player — they cannot pass a ball they don't have. "
+            "Recommend an OFF-BALL action instead: a run, a movement to create/exploit "
+            "space, or positioning to support the actual ball carrier "
+            f"(Player {features.ball_carrier_id})."
+        )
+
     prompt = f"""You are an expert football tactical analyst. Analyse the situation and provide specific, actionable tactical advice.
+
+{possession_banner}
 
 ═══════════════════════════════════════════════════════════════
 MATCH CONTEXT
@@ -132,9 +157,11 @@ Respond with ONLY valid JSON matching this exact structure:
 
 {{
   "recommended_action": "Specific, concrete action (not vague). Include player IDs if relevant.",
+  "recommended_action_id": "canonical_id_from_candidate_actions_or_null",
   "alternatives": [
     {{
       "action": "Alternative action description",
+      "action_id": "canonical_id_from_candidate_actions_or_null",
       "why_not": "Specific reason why this is inferior in this exact situation",
       "delta_pitch_control": null
     }}
@@ -151,12 +178,17 @@ Respond with ONLY valid JSON matching this exact structure:
 }}
 
 CRITICAL CONSTRAINTS:
+{possession_rule}
 - The computed statistics and pitch-control numbers above are the PRIMARY evidence.
   The pitch image is supporting context only — never override the numbers with it.
 - cited_concepts MUST ONLY contain titles copied verbatim from this list: [{valid_titles_str}]
 - Do NOT invent concepts not in the list above
 - recommended_action must be SPECIFIC (e.g., "Pass to player 9 in the channel" not "Pass forward")
 - Prefer an action from the CANDIDATE ACTIONS shortlist; if you deviate, justify why
+- recommended_action_id (and each alternative's action_id) MUST be copied EXACTLY (character
+  for character) from the "action" field shown in the CANDIDATE ACTIONS shortlist above —
+  this is how the pitch diagram draws an arrow for your recommendation. Use null ONLY if your
+  recommendation truly does not correspond to any shortlist entry.
 - Include at least 2 alternatives with why_not explanations
 - Use pitch control delta values from the quantitative analysis; note it assumes
   static defenders (upper bound) when you cite it
@@ -164,73 +196,3 @@ CRITICAL CONSTRAINTS:
 
     return prompt
 
-
-def _call_anthropic(prompt: str, image_path: str | None) -> tuple[str, int]:
-    """Call Claude API with optional pitch image."""
-    try:
-        import anthropic
-    except ImportError:
-        raise ImportError("anthropic not installed. Run: pip install anthropic")
-
-    client = anthropic.Anthropic(api_key=settings.anthropic_api_key)
-
-    content = []
-
-    # Add image if available
-    if image_path and Path(image_path).exists():
-        with open(image_path, "rb") as f:
-            img_b64 = base64.b64encode(f.read()).decode()
-        content.append({
-            "type": "image",
-            "source": {
-                "type": "base64",
-                "media_type": "image/png",
-                "data": img_b64,
-            },
-        })
-        content.append({
-            "type": "text",
-            "text": "Above is the current match situation visualised on the pitch (red = home, blue = away, white = ball). The highlighted player is the focus player.\n\n" + prompt,
-        })
-    else:
-        content.append({"type": "text", "text": prompt})
-
-    response = client.messages.create(
-        model=settings.llm_model,
-        max_tokens=1000,
-        messages=[{"role": "user", "content": content}],
-    )
-
-    raw = response.content[0].text
-    tokens = response.usage.input_tokens + response.usage.output_tokens
-    return raw, tokens
-
-
-def _call_openai(prompt: str, image_path: str | None) -> tuple[str, int]:
-    """Call OpenAI GPT-4V API with optional pitch image."""
-    try:
-        from openai import OpenAI
-    except ImportError:
-        raise ImportError("openai not installed. Run: pip install openai")
-
-    client = OpenAI(api_key=settings.openai_api_key)
-
-    content = []
-    if image_path and Path(image_path).exists():
-        with open(image_path, "rb") as f:
-            img_b64 = base64.b64encode(f.read()).decode()
-        content.append({
-            "type": "image_url",
-            "image_url": {"url": f"data:image/png;base64,{img_b64}"},
-        })
-    content.append({"type": "text", "text": prompt})
-
-    response = client.chat.completions.create(
-        model="gpt-4o",
-        max_tokens=1000,
-        messages=[{"role": "user", "content": content}],
-    )
-
-    raw = response.choices[0].message.content
-    tokens = response.usage.total_tokens
-    return raw, tokens

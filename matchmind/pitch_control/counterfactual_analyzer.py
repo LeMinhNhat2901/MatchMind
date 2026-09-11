@@ -101,8 +101,9 @@ class CounterfactualAnalyzer:
         for raw in candidate_actions:
             action_str = raw.action if isinstance(raw, CandidateAction) else str(raw)
             explicit_target = raw.target_xy if isinstance(raw, CandidateAction) else None
+            moves_ball = raw.moves_ball if isinstance(raw, CandidateAction) else True
             try:
-                analysis = self._analyze_single(action_str, baseline, explicit_target)
+                analysis = self._analyze_single(action_str, baseline, explicit_target, moves_ball)
                 results.append(analysis)
             except Exception as exc:
                 logger.warning(f"Could not analyze action '{action_str}': {exc}")
@@ -133,6 +134,7 @@ class CounterfactualAnalyzer:
         action_str: str,
         baseline: float,
         explicit_target: tuple[float, float] | None = None,
+        moves_ball: bool = True,
     ) -> ActionAnalysis:
         """Simulate one action and compute its pitch control effect."""
         focus = self.state.get_player(self.focus_player_id)
@@ -149,15 +151,33 @@ class CounterfactualAnalyzer:
         result: dict[str, Any]
         if explicit_target is not None:
             tx, ty = explicit_target
-            result = {
-                "target_x": tx,
-                "target_y": ty,
-                "description": f"{action_str} -> ({tx:.1f}, {ty:.1f})",
-                "feasibility": 0.75,
-            }
-            if "dribble" in action_lower or "carry" in action_lower:
-                result["focus_new_x"] = tx
-                result["focus_new_y"] = ty
+            if moves_ball:
+                # On-ball: the ball travels to the target (pass/dribble/shot/switch).
+                result = {
+                    "target_x": tx,
+                    "target_y": ty,
+                    "sim_ball_x": tx,
+                    "sim_ball_y": ty,
+                    "description": f"{action_str} -> ({tx:.1f}, {ty:.1f})",
+                    "feasibility": 0.75,
+                }
+                if "dribble" in action_lower or "carry" in action_lower:
+                    result["focus_new_x"] = tx
+                    result["focus_new_y"] = ty
+            else:
+                # Off-ball movement: the focus player runs to (tx,ty) but does NOT
+                # have the ball — it stays with the real carrier. "target_x/y" is
+                # still the point we score control at (is this run into good space?).
+                result = {
+                    "target_x": tx,
+                    "target_y": ty,
+                    "sim_ball_x": self.state.ball.x,
+                    "sim_ball_y": self.state.ball.y,
+                    "focus_new_x": tx,
+                    "focus_new_y": ty,
+                    "description": f"{action_str} (off-ball run) -> ({tx:.1f}, {ty:.1f}), ball stays with carrier",
+                    "feasibility": 0.7,
+                }
         elif "pass_to" in action_lower or "pass" in action_lower:
             result = self._simulate_pass(action_str, focus, teammates, opponents)
         elif "dribble" in action_lower or "carry" in action_lower:
@@ -172,10 +192,16 @@ class CounterfactualAnalyzer:
             result = self._simulate_generic(action_str, focus)
 
         # ── Compute pitch control after simulated action ────
-        if result["target_x"] is not None:
+        # sim_ball_x/y: where the BALL ends up (defaults to target_x/y — the
+        # historical behaviour for pass/dribble/shot/switch). Off-ball actions
+        # set this explicitly to the ball's real position instead.
+        sim_ball_x = result.get("sim_ball_x", result.get("target_x"))
+        sim_ball_y = result.get("sim_ball_y", result.get("target_y"))
+
+        if sim_ball_x is not None:
             sim_state = self._build_simulated_state(
-                result["target_x"],
-                result["target_y"],
+                sim_ball_x,
+                sim_ball_y,
                 result.get("focus_new_x", focus.x),
                 result.get("focus_new_y", focus.y),
             )
@@ -196,8 +222,10 @@ class CounterfactualAnalyzer:
         return ActionAnalysis(
             action_name=action_str,
             description=result["description"],
-            simulated_ball_x=result.get("target_x"),
-            simulated_ball_y=result.get("target_y"),
+            # Where the ball actually ends up in the simulation — NOT the same
+            # as target_x/y for an off-ball action (that's the run destination).
+            simulated_ball_x=sim_ball_x,
+            simulated_ball_y=sim_ball_y,
             pitch_control_after=pc_after,
             pitch_control_delta=delta,
             pitch_control_at_target=pc_target,

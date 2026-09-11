@@ -19,6 +19,38 @@ from matchmind.situation_engine.passing_analyzer import compute_passing_opportun
 
 logger = logging.getLogger(__name__)
 
+# Event types where event_player_id is the actual ball carrier at the snapshot.
+_ON_BALL_EVENT_TYPES = {"Pass", "Carry", "Dribble", "Shot", "Dispossessed", "Miscontrol", "Ball Receipt*"}
+
+
+def _determine_ball_carrier(state: MatchState) -> int | None:
+    """Best-effort id of the player who currently has the ball.
+
+    Prefers StatsBomb's event_player_id (ground truth for the acting player on
+    on-ball event types) and falls back to "nearest player to the ball" for
+    sources without that metadata (Metrica, synthetic, off-ball StatsBomb
+    events like Pressure).
+    """
+    if (
+        state.event_player_id is not None
+        and (state.event_type in _ON_BALL_EVENT_TYPES if state.event_type else False)
+        and state.get_player(state.event_player_id) is not None
+    ):
+        return state.event_player_id
+
+    if not state.players:
+        return None
+    nearest = min(
+        state.players,
+        key=lambda p: (p.x - state.ball.x) ** 2 + (p.y - state.ball.y) ** 2,
+    )
+    return nearest.id
+
+
+# Public alias — other modules (team_focus, dashboard, API) shouldn't reach
+# into a "private" name just because this lives in the same package.
+determine_ball_carrier = _determine_ball_carrier
+
 
 def encode_situation(
     state: MatchState,
@@ -67,6 +99,10 @@ def encode_situation(
         opponents=opponents,
     )
 
+    # ── Step 3b: Who has the ball ─────────────────────────────
+    carrier_id = _determine_ball_carrier(state)
+    is_ball_carrier = carrier_id == focus_player_id
+
     # ── Step 4: Natural language description ─────────────────
     nl_description = _build_nl_description(
         state=state,
@@ -74,6 +110,8 @@ def encode_situation(
         spatial=spatial,
         team_struct=team_struct,
         passing=passing,
+        carrier_id=carrier_id,
+        is_ball_carrier=is_ball_carrier,
     )
 
     # ── Step 5: Computed stats (for evidence assembly) ────────
@@ -120,6 +158,9 @@ def encode_situation(
         team_compactness=team_struct["team_compactness"],
         attacking_width=team_struct["attacking_width"],
         numerical_superiority_zone=team_struct["numerical_superiority_zone"],
+        # Possession
+        is_ball_carrier=is_ball_carrier,
+        ball_carrier_id=carrier_id,
         # NL description
         natural_language_description=nl_description,
         # Computed stats dict
@@ -137,6 +178,8 @@ def _build_nl_description(
     spatial: dict,
     team_struct: dict,
     passing: dict,
+    carrier_id: int | None,
+    is_ball_carrier: bool,
 ) -> str:
     """
     Build a human-readable situation description from computed features.
@@ -155,6 +198,22 @@ def _build_nl_description(
         f"Player {focus.id}{role_str} [{focus.team} team] at position "
         f"({focus.x:.1f}m, {focus.y:.1f}m)."
     )
+
+    # Possession — stated up front so retrieval + the LLM never confuse an
+    # off-ball player for the ball carrier.
+    if is_ball_carrier:
+        lines.append(f"Player {focus.id} CURRENTLY HAS THE BALL.")
+    else:
+        carrier = state.get_player(carrier_id) if carrier_id is not None else None
+        if carrier is not None:
+            same_team = "teammate" if carrier.team == focus.team else "opponent"
+            lines.append(
+                f"Player {focus.id} does NOT have the ball — Player {carrier.id} "
+                f"({same_team}) currently has it. Analyse Player {focus.id}'s "
+                f"OFF-THE-BALL movement/positioning, not a pass/dribble/shot decision."
+            )
+        else:
+            lines.append(f"Player {focus.id} does NOT have the ball.")
 
     # Minute and score
     score_desc = f"{state.score_home}–{state.score_away}"

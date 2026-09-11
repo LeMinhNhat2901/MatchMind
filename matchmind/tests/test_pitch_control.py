@@ -82,8 +82,11 @@ def test_analyze_accepts_plain_strings_and_candidate_objects():
 
 
 def test_degraded_warning_when_no_velocity(caplog):
-    state, _ = make_sample_match_state()
+    from matchmind.pitch_control import spearman_model
+
+    state, _ = make_sample_match_state(match_id="degraded_warn_test")
     assert state.has_velocity is False  # synthetic fixture
+    spearman_model._DEGRADED_WARNED.discard(state.match_id)  # warning is once-per-match
     with caplog.at_level("WARNING"):
         generate_pitch_control_for_match_state(state, "home")
     assert any("degraded" in m.lower() for m in caplog.messages)

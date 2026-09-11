@@ -154,6 +154,16 @@ class MatchState(BaseModel):
     ball: BallState
     players: list[PlayerState] = Field(..., min_length=1)
 
+    # StatsBomb 360 camera-visible polygon (pitch coords, closed ring — first
+    # point repeated at the end). Players outside it were never tracked, which
+    # is why a 360 snapshot legitimately has fewer than 22 players (typically
+    # ~16, StatsBomb's own data ranges 4-21 — never all 22). None for sources
+    # that track everyone (Metrica, CV) or don't provide the polygon.
+    visible_area: list[tuple[float, float]] | None = Field(
+        default=None,
+        description="360 camera field-of-view polygon in pitch metres, if known.",
+    )
+
     # True only when player velocities (vx, vy) are real (Metrica frames, CV tracking).
     # StatsBomb 360 is a single freeze-frame → False → pitch control runs degraded.
     has_velocity: bool = Field(
@@ -191,9 +201,26 @@ class MatchState(BaseModel):
             raise ValueError("MatchState must contain players from both 'home' and 'away' teams")
         return players
 
-    def get_player(self, player_id: int) -> PlayerState | None:
-        """Retrieve a player by ID, or None if not found."""
-        return next((p for p in self.players if p.id == player_id), None)
+    def get_player(
+        self, player_id: int, team: Literal["home", "away"] | None = None
+    ) -> PlayerState | None:
+        """Retrieve a player by ID, or None if not found.
+
+        `id` is NOT guaranteed globally unique — some sources (Metrica shirt
+        numbers) reuse 1-11 on both teams. Without `team`, this returns
+        whichever match comes first (matches historical behaviour). Pass
+        `team` whenever it's known to disambiguate correctly; see
+        `has_ambiguous_id()` / `agent.graph.TacticalAgent.analyze(focus_team=...)`.
+        """
+        candidates = (p for p in self.players if p.id == player_id)
+        if team is not None:
+            return next((p for p in candidates if p.team == team), None)
+        return next(candidates, None)
+
+    def has_ambiguous_id(self, player_id: int) -> bool:
+        """True if `player_id` matches players on BOTH teams (get_player(id) would be ambiguous)."""
+        teams = {p.team for p in self.players if p.id == player_id}
+        return len(teams) > 1
 
     def get_team_players(self, team: Literal["home", "away"]) -> list[PlayerState]:
         """All players belonging to a team."""
@@ -239,6 +266,17 @@ class SituationFeatures(BaseModel):
     focus_player_id: int
     focus_player_team: Literal["home", "away"]
     focus_player_role: str | None = None
+
+    # ── Possession — WHO has the ball ─────────────────────────
+    # Without this, candidate-action generation and the reasoner prompt have
+    # no way to tell an on-ball player from an off-ball one, and end up
+    # recommending passes/dribbles/shots for players who don't have the ball.
+    is_ball_carrier: bool = Field(
+        default=True, description="Whether the focus player currently has the ball"
+    )
+    ball_carrier_id: int | None = Field(
+        default=None, description="Player id presumed to currently have the ball"
+    )
 
     # ── Spatial (individual) ─────────────────────────────────
     distance_to_ball: float = Field(..., description="metres")
@@ -315,13 +353,23 @@ class SituationFeatures(BaseModel):
 class CandidateAction(BaseModel):
     """A single tactical option to be evaluated by the counterfactual engine."""
 
-    action: str = Field(..., description="Canonical id, e.g. 'pass_to_9', 'dribble_half_space'")
+    action: str = Field(..., description="Canonical id, e.g. 'pass_to_9', 'run_in_behind'")
     label: str = Field(..., description="Human-readable description")
     target_xy: tuple[float, float] | None = Field(
-        default=None, description="Simulated ball target (metres)"
+        default=None,
+        description="Simulated target (metres) — where the BALL goes if moves_ball, else where the PLAYER runs",
     )
     target_player_id: int | None = Field(
         default=None, description="Receiver id for pass_to_* actions"
+    )
+    moves_ball: bool = Field(
+        default=True,
+        description=(
+            "True: this action moves the ball to target_xy (pass/dribble/shot/switch — "
+            "requires the focus player to actually have the ball). "
+            "False: an OFF-BALL movement (run/positioning) — the ball stays with its "
+            "real carrier; only the focus player relocates to target_xy."
+        ),
     )
     origin: Literal["default", "situation", "passing_lane"] = "default"
 
@@ -387,11 +435,46 @@ class AlternativeAction(BaseModel):
     """A considered-but-rejected alternative tactical option."""
 
     action: str = Field(..., description="Description of the alternative action")
+    action_id: str | None = Field(
+        default=None,
+        description=(
+            "Canonical id copied verbatim from the CANDIDATE ACTIONS shortlist "
+            "(e.g. 'pass_to_9', 'run_in_behind') — lets the renderer draw this "
+            "alternative as an arrow. Null if it doesn't match a shortlist entry."
+        ),
+    )
     why_not: str = Field(..., description="Reason this alternative is inferior in this situation")
     delta_pitch_control: float | None = Field(
         default=None,
-        description="Change in pitch control area (%) vs recommended action. Negative = worse.",
+        description=(
+            "Change in controlled pitch area vs the recommended action, in "
+            "PERCENTAGE POINTS (e.g. -2.7 means 2.7pp worse). Display as-is with a '%'."
+        ),
     )
+
+    @field_validator("delta_pitch_control", mode="before")
+    @classmethod
+    def _coerce_delta(cls, v: Any) -> Any:
+        """LLMs return '+2.1%' / '-3%' / '0.021' / 'null' — normalise to percentage points."""
+        if v is None:
+            return None
+        if isinstance(v, (int, float)):
+            # A fraction like 0.021 almost certainly means 2.1 percentage points.
+            return round(float(v) * 100, 2) if abs(v) < 1 else float(v)
+        if isinstance(v, str):
+            s = v.strip().replace("+", "").strip()
+            had_pct = s.endswith("%")
+            s = s.rstrip("%").strip()
+            if s.lower() in ("", "null", "none", "n/a", "na"):
+                return None
+            try:
+                num = float(s)
+            except ValueError:
+                return None
+            if not had_pct and abs(num) < 1:
+                num *= 100  # bare fraction → percentage points
+            return round(num, 2)
+        return v
 
 
 class TacticalAdvice(BaseModel):
@@ -404,6 +487,16 @@ class TacticalAdvice(BaseModel):
 
     recommended_action: str = Field(
         ..., description="Specific, actionable recommendation (not vague)"
+    )
+    recommended_action_id: str | None = Field(
+        default=None,
+        description=(
+            "Canonical id copied verbatim from the CANDIDATE ACTIONS shortlist "
+            "(e.g. 'pass_to_9', 'run_in_behind', 'overlapping_run') that this "
+            "recommendation corresponds to. Lets the renderer draw an arrow for "
+            "it instead of leaving the reader to infer movement from coordinates. "
+            "Null if the recommendation doesn't match a shortlist entry."
+        ),
     )
     alternatives: list[AlternativeAction] = Field(
         default_factory=list,
@@ -423,9 +516,23 @@ class TacticalAdvice(BaseModel):
     situation_features: SituationFeatures | None = Field(
         default=None, description="The computed features used as input"
     )
+    candidate_actions: list[CandidateAction] = Field(
+        default_factory=list,
+        description=(
+            "The rule-based shortlist offered to the LLM (situation_engine.candidate_actions), "
+            "carried along so recommended_action_id / alternatives[].action_id can be resolved "
+            "to a target_xy for arrow rendering without re-running the situation engine."
+        ),
+    )
     focus_player_id: int | None = None
     match_id: str | None = None
     timestamp: float | None = None
+
+    def resolve_action(self, action_id: str | None) -> "CandidateAction | None":
+        """Look up a CandidateAction by id from this advice's shortlist, or None."""
+        if not action_id:
+            return None
+        return next((c for c in self.candidate_actions if c.action == action_id), None)
 
 
 # ──────────────────────────────────────────────────────────────────────────────

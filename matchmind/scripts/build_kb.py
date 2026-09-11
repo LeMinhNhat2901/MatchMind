@@ -5,9 +5,7 @@ Loads all concept JSON files, embeds them with SentenceTransformer,
 and upserts into ChromaDB.
 
 Usage:
-    python -m matchmind.scripts.build_kb
-    poetry run matchmind-build-kb
-    poetry run matchmind-build-kb --rebuild
+    python -m matchmind.scripts.build_kb --rebuild
 """
 from __future__ import annotations
 
@@ -17,9 +15,7 @@ from pathlib import Path
 
 import typer
 from rich.console import Console
-from rich.progress import Progress, SpinnerColumn, TextColumn
 
-# Setup path
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from matchmind.config import settings
@@ -31,6 +27,18 @@ console = Console()
 logger = logging.getLogger(__name__)
 
 
+def _safe_stdout() -> None:
+    """Best-effort UTF-8 stdout so Rich output never dies on a cp1252 console."""
+    for name in ("stdout", "stderr"):
+        s = getattr(sys, name, None)
+        rc = getattr(s, "reconfigure", None)
+        if rc is not None and (getattr(s, "encoding", "") or "").lower() not in ("utf-8", "utf8"):
+            try:
+                rc(encoding="utf-8", errors="replace")
+            except Exception:
+                pass
+
+
 @app.command()
 def main(
     rebuild: bool = typer.Option(False, "--rebuild", help="Delete existing collection and rebuild"),
@@ -38,73 +46,52 @@ def main(
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
     """Build (or rebuild) the MatchMind tactical knowledge base in ChromaDB."""
-
+    _safe_stdout()
     logging.basicConfig(level=logging.DEBUG if verbose else logging.INFO)
-    console.print("\n[bold green]🧠 MatchMind Knowledge Base Builder[/bold green]")
+    console.print("\n[bold green]MatchMind Knowledge Base Builder[/bold green]")
 
     # ── 1. Load concepts ───────────────────────────────────────
     concepts_path = Path(concepts_dir) if concepts_dir else settings.knowledge_base_dir
-    console.print(f"\nLoading concepts from: [cyan]{concepts_path}[/cyan]")
-
+    console.print(f"Loading concepts from: [cyan]{concepts_path}[/cyan]")
     concepts = load_all_concepts(concepts_path)
-
     if not concepts:
-        console.print("[bold red]ERROR: No concepts found! Run from project root.[/bold red]")
+        console.print("[bold red]ERROR: no concepts found (run from the project root).[/bold red]")
         raise typer.Exit(1)
 
-    console.print(f"✅ Loaded [bold]{len(concepts)}[/bold] concepts:")
-    categories = {}
+    cats: dict[str, int] = {}
     for c in concepts:
-        categories[c.category] = categories.get(c.category, 0) + 1
-    for cat, count in sorted(categories.items()):
-        console.print(f"   • {cat}: {count} concepts")
+        cats[c.category] = cats.get(c.category, 0) + 1
+    console.print(f"[green]Loaded {len(concepts)} concepts[/green]: " + ", ".join(f"{k}={v}" for k, v in sorted(cats.items())))
 
-    # ── 2. Initialise vector store ────────────────────────────
-    store = TacticalVectorStore()
+    # ── 2. Vector store ───────────────────────────────────────
+    store = TacticalVectorStore(use_chroma_ef=True)
     existing = store.count()
-
     if existing > 0 and not rebuild:
-        console.print(
-            f"\n[yellow]Knowledge base already has {existing} concepts.[/yellow] "
-            f"Use --rebuild to force rebuild."
-        )
+        console.print(f"[yellow]KB already has {existing} concepts. Use --rebuild to force.[/yellow]")
         raise typer.Exit(0)
-
     if rebuild and existing > 0:
-        console.print(f"\n[yellow]Deleting {existing} existing concepts...[/yellow]")
+        console.print(f"[yellow]Deleting {existing} existing concepts...[/yellow]")
         store.delete_all()
 
-    # ── 3. Embed ───────────────────────────────────────────────
-    console.print(f"\n[bold]Embedding with model:[/bold] {settings.embedding_model}")
+    # ── 3. Embed ──────────────────────────────────────────────
+    console.print(f"Embedding with model: [cyan]{settings.embedding_model}[/cyan]")
     embedder = TacticalEmbedder()
+    embeddings = embedder.embed_concepts(concepts)
+    console.print(f"[green]Embedded {len(concepts)} concepts -> {embeddings.shape[1]}-dim[/green]")
 
-    with Progress(
-        SpinnerColumn(),
-        TextColumn("[progress.description]{task.description}"),
-        transient=True,
-        console=console,
-    ) as progress:
-        task = progress.add_task("Embedding concepts...", total=None)
-        embeddings = embedder.embed_concepts(concepts)
-        progress.remove_task(task)
-
-    console.print(f"✅ Embedded {len(concepts)} concepts → {embeddings.shape[1]}-dim vectors")
-
-    # ── 4. Upsert ──────────────────────────────────────────────
+    # ── 4. Upsert ─────────────────────────────────────────────
     store.upsert_concepts(concepts, embeddings)
-    final_count = store.count()
-    console.print(f"\n✅ [bold green]Knowledge base built![/bold green] {final_count} concepts in ChromaDB at: {settings.chroma_persist_dir}")
+    console.print(
+        f"[bold green]KB built:[/bold green] {store.count()} concepts at {settings.chroma_persist_dir}"
+    )
 
-    # ── 5. Quick sanity test ──────────────────────────────────
-    console.print("\n[bold]Running retrieval sanity test...[/bold]")
-    test_query = "player in half-space with open passing lane and third-man opportunity"
-    results, confidence = store.retrieve_by_query_text(test_query, embedder, k=3)
-    console.print(f"Query: '{test_query[:60]}...'")
-    console.print(f"Confidence: [bold]{confidence:.3f}[/bold] | Top results:")
+    # ── 5. Sanity check ───────────────────────────────────────
+    q = "player in the half-space with an open passing lane and a third-man option"
+    results, confidence = store.retrieve_tactics(query_text=q, k=3)
+    console.print(f"Sanity query confidence: [bold]{confidence:.3f}[/bold]")
     for r in results:
-        console.print(f"  • [cyan]{r['title']}[/cyan] (sim={r['similarity']:.3f})")
-
-    console.print("\n[bold green]✅ Knowledge base is ready![/bold green]")
+        console.print(f"  - [cyan]{r['title']}[/cyan] (sim={r['similarity']:.3f})")
+    console.print("\n[bold green]Knowledge base is ready.[/bold green]")
 
 
 if __name__ == "__main__":
