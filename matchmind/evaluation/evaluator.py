@@ -121,7 +121,7 @@ def compute_groundedness(
         citation_validity = len(valid) / len(cited)
         no_invented = citation_validity == 1.0
 
-    valid_sources = {"rag", "stats", "context"}
+    valid_sources = {"rag", "stats", "context", "example"}
     evidence_coverage = (
         sum(1 for e in advice.evidence if e.source in valid_sources) / max(len(advice.evidence), 1)
     )

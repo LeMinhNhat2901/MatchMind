@@ -175,15 +175,18 @@ class TacticalAgent:
         # native DLL init and the next model load hard-crashes the process (no
         # traceback). The renderers now import matplotlib lazily, and this
         # pre-warm forces the retrieval model to load first, in the main thread.
-        logger.info("Pre-warming retrieval store (loads sentence-transformers first)...")
+        # Warms the object retrieve_node actually uses: the shared vector store,
+        # the BM25 index and (on the first retrieve) the cross-encoder reranker —
+        # all loaded here in the main thread, not inside the first LangGraph call.
+        logger.info("Pre-warming hybrid retrieval (loads sentence-transformers first)...")
         try:
-            from matchmind.agent.nodes.retrieve_node import _get_vector_store
+            from matchmind.retrieval import RetrievalQuery, get_hybrid_retriever
 
-            store = _get_vector_store()
-            _ = store.retrieve_tactics(query_text="warm up tactical retrieval", k=1)
-            logger.info(f"Retrieval store ready: {store.count()} concepts")
+            retriever = get_hybrid_retriever()
+            _ = retriever.retrieve(RetrievalQuery(question="warm up tactical retrieval"), k=1)
+            logger.info(f"Hybrid retrieval ready: {len(retriever.concepts)} concepts")
         except Exception as exc:
-            logger.warning(f"Store pre-warm failed (will retry at runtime): {exc}")
+            logger.warning(f"Retrieval pre-warm failed (will retry at runtime): {exc}")
 
         # Safe now — building the graph may import matplotlib via render_pitch_node.
         self._graph = build_tactical_graph()

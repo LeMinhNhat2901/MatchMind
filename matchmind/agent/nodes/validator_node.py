@@ -34,6 +34,22 @@ VAGUE_PHRASES = [
 ]
 
 
+def drop_unretrieved_examples(
+    evidence: list[EvidenceItem], similar_examples: list[dict]
+) -> list[EvidenceItem]:
+    """Soft-drop "example" evidence whose id the Example Library never returned.
+
+    An invented id (e.g. "sb_1234_5") would otherwise be shown to the user as a
+    real recorded situation. Same spirit as the cited_concepts ⊆ retrieved check,
+    but soft: dropping one evidence line is better than a full regenerate.
+    """
+    known = {e.get("example_id") for e in similar_examples}
+    kept = [e for e in evidence if e.source != "example" or e.id in known]
+    if len(kept) != len(evidence):
+        logger.warning(f"[validator] dropped {len(evidence) - len(kept)} invented example evidence item(s)")
+    return kept
+
+
 def validator_node(state: AgentState) -> AgentState:
     """
     Node: Parse and validate LLM output.
@@ -63,9 +79,10 @@ def validator_node(state: AgentState) -> AgentState:
             alternatives = [
                 AlternativeAction(**alt) for alt in parsed.get("alternatives", [])
             ]
-            evidence = [
-                EvidenceItem(**e) for e in parsed.get("evidence", [])
-            ]
+            evidence = drop_unretrieved_examples(
+                [EvidenceItem(**e) for e in parsed.get("evidence", [])],
+                state.get("similar_examples") or [],
+            )
 
             advice = TacticalAdvice(
                 recommended_action=parsed.get("recommended_action", ""),

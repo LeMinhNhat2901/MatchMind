@@ -51,11 +51,20 @@ def concept_scope(concept: TacticalConcept) -> Literal["open_play", "set_piece",
     return "open_play"
 
 
+# Title words that are also everyday tactical vocabulary ("overlap", "half-space",
+# "step up"): they may only unlock a technique as part of its full name.
+_GENERIC_TITLE_WORDS = {"over", "half", "step"}
+
+
 def _mentions_technique(concept: TacticalConcept, question: str) -> bool:
-    words = {w for w in re.findall(r"[a-z]+", concept.title.lower())
-             if len(w) > 3 and w not in _TITLE_STOPWORDS}
-    q = question.lower()
-    return any(w in q for w in words)
+    """Whole-token match: "rabona"/"volley" unlock their concept, but "overlap"
+    must not unlock Step Over via the substring "over"."""
+    core = [w for w in re.findall(r"[a-z]+", concept.title.lower())
+            if len(w) > 3 and w not in _TITLE_STOPWORDS]
+    q_tokens = re.findall(r"[a-z]+", question.lower())
+    if any(w in q_tokens for w in core if w not in _GENERIC_TITLE_WORDS):
+        return True
+    return bool(core) and f" {' '.join(core)} " in f" {' '.join(q_tokens)} "
 
 
 def is_allowed(concept: TacticalConcept, query: RetrievalQuery, *, relax: bool = False) -> bool:

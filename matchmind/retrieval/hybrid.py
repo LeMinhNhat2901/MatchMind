@@ -15,6 +15,7 @@ import logging
 from typing import Any
 
 from matchmind.config import settings
+from matchmind.knowledge_base.embedder import load_all_concepts
 from matchmind.retrieval.diversity import select_diverse
 from matchmind.retrieval.fusion import reciprocal_rank_fusion
 from matchmind.retrieval.lexical import BM25Index
@@ -42,8 +43,6 @@ class HybridRetriever:
         use_reranker: bool = True,
     ) -> None:
         if concepts is None:
-            from matchmind.knowledge_base.embedder import load_all_concepts
-
             concepts = load_all_concepts()
         if store is None:
             from matchmind.knowledge_base.vector_store import TacticalVectorStore
@@ -208,9 +207,18 @@ class HybridRetriever:
 _retriever: HybridRetriever | None = None
 
 
-def get_hybrid_retriever() -> HybridRetriever:
-    """Process-wide singleton (BM25 build + model loads happen once)."""
+def get_hybrid_retriever(use_reranker: bool = True) -> HybridRetriever:
+    """Process-wide singleton (BM25 build + model loads happen once).
+
+    Shares retrieve_node's TacticalVectorStore instead of building a second one
+    (a second MiniLM load, and the agent's main-thread pre-warm would otherwise
+    warm the wrong object).
+    """
     global _retriever
     if _retriever is None:
-        _retriever = HybridRetriever()
+        from matchmind.agent.nodes.retrieve_node import _get_vector_store  # lazy: avoids an import cycle
+
+        _retriever = HybridRetriever(
+            concepts=load_all_concepts(), store=_get_vector_store(), use_reranker=use_reranker
+        )
     return _retriever

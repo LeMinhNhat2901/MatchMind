@@ -35,10 +35,10 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           LLM_PROVIDER: gemini
           LLM_MODEL: gemini-3.6-flash
-        run: >
-          python -m matchmind.scripts.build_kb_youtube
-          --channel "${{ inputs.channel_url }}"
-          --max-videos "${{ inputs.max_videos }}"
+          # Inputs go through env, never interpolated into the script (Actions injection).
+          CHANNEL_URL: ${{ inputs.channel_url }}
+          MAX_VIDEOS: ${{ inputs.max_videos }}
+        run: python -m matchmind.scripts.build_kb_youtube --channel "$CHANNEL_URL" --max-videos "$MAX_VIDEOS"
       - name: Lint new concepts
         run: python -m matchmind.scripts.kb_lint
       - name: Golden regression with the new concepts
