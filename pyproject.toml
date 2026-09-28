@@ -57,6 +57,8 @@ scipy = "^1.13"
 # Knowledge base ingestion (Wikipedia + YouTube sources)
 youtube-transcript-api = "^1.2"
 yt-dlp = "^2026.8"
+rank-bm25 = "^0.2.2"
+pyyaml = "^6.0"
 
 # Utilities
 python-dotenv = "^1.0"

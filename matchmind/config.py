@@ -68,6 +68,26 @@ class Settings(BaseSettings):
     retrieval_top_k: int = Field(default=3, alias="RETRIEVAL_TOP_K")
     retrieval_phase_filter: bool = Field(default=True, alias="RETRIEVAL_PHASE_FILTER")
 
+    # ── Retrieval V1 (matchmind/retrieval/) ──────────────────
+    # "hybrid" = query builder + dense + BM25 + condition match + RRF + rerank.
+    # "dense"  = legacy single-query Chroma search (kept for A/B benchmarks).
+    retrieval_strategy: str = Field(default="hybrid", alias="RETRIEVAL_STRATEGY")
+    retrieval_pool_size: int = Field(default=20, alias="RETRIEVAL_POOL_SIZE")
+    # Empty string disables reranking (fusion order is used as-is).
+    reranker_model: str = Field(
+        default="cross-encoder/ms-marco-MiniLM-L-6-v2", alias="RERANKER_MODEL"
+    )
+    retrieval_diversity_max_sim: float = Field(default=0.92, alias="RETRIEVAL_DIVERSITY_MAX_SIM")
+
+    # ── Example Library (matchmind/examples/) ────────────────
+    statsbomb_open_data_dir: Path = Field(
+        default=Path("../open-data/data"), alias="STATSBOMB_OPEN_DATA_DIR"
+    )
+    example_library_dir: Path = Field(
+        default=Path("./output/example_library"), alias="EXAMPLE_LIBRARY_DIR"
+    )
+    example_top_k: int = Field(default=5, alias="EXAMPLE_TOP_K")
+
     # ── Paths ─────────────────────────────────────────────────
     knowledge_base_dir: Path = Field(
         default=Path("./matchmind/knowledge_base/concepts"),
