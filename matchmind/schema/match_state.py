@@ -652,6 +652,12 @@ class EvaluationReport(BaseModel):
     logical_consistency_rate: float | None = Field(default=None, ge=0.0, le=1.0)
     groundedness_score: float = Field(..., ge=0.0, le=1.0)
 
+    # RAG faithfulness + golden retrieval (V1)
+    concept_faithfulness_rate: float | None = Field(default=None, ge=0.0, le=1.0)
+    golden_hit_at_3: float | None = Field(default=None, ge=0.0, le=1.0)
+    golden_ndcg_at_5: float | None = Field(default=None, ge=0.0, le=1.0)
+    retrieval_strategy: str | None = None
+
     # Dim 3 — Actionability
     actionability_score: float | None = Field(default=None, ge=1.0, le=5.0)
 

@@ -23,7 +23,9 @@ from matchmind.evaluation.retrieval_quality import (
     aggregate_retrieval_quality,
     evaluate_retrieval,
 )
+from matchmind.agent.translation import _extract_json
 from matchmind.knowledge_base.embedder import load_all_concepts
+from matchmind.llm_client import call_llm
 from matchmind.schema.match_state import EvaluationReport, TacticalAdvice
 
 logger = logging.getLogger(__name__)
@@ -178,6 +180,42 @@ def compute_logical_consistency_llm(advice: TacticalAdvice) -> float | None:
         return 0.0 if "CONTRADICT" in text.strip().upper() else 1.0
     except Exception as exc:  # noqa: BLE001
         logger.warning(f"Logical-consistency judge unavailable: {exc}")
+        return None
+
+
+_FAITHFULNESS_PROMPT = """You are checking a football tactical recommendation for faithfulness to its sources.
+
+CITED CONCEPTS (the only definitions that count):
+{concepts}
+
+RECOMMENDATION REASONING:
+{reasoning}
+
+Does the reasoning use every cited concept in a way consistent with its definition above
+(no misdescribed concept, no property the definition does not support)?
+Respond with ONLY this JSON: {{"faithful": true or false, "issues": ["..."]}}"""
+
+
+def compute_concept_faithfulness_llm(
+    advice: TacticalAdvice, retrieved: list[dict], llm_call=call_llm
+) -> bool | None:
+    """RAG faithfulness: does the reasoning describe the cited concepts correctly?
+    None when there is nothing to judge or the judge call fails."""
+    cited = [r for r in retrieved if r.get("title") in set(advice.cited_concepts)]
+    if not cited or llm_call is None:
+        return None
+    concepts = "\n".join(
+        f"- {r['title']}: {r.get('definition') or (r.get('content') or '')[:400]}" for r in cited
+    )
+    try:
+        raw, _ = llm_call(
+            _FAITHFULNESS_PROMPT.format(concepts=concepts, reasoning=advice.reasoning),
+            max_tokens=300, temperature=0.0, json_mode=True, thinking_budget=0,
+        )
+        data = _extract_json(raw)
+        return bool(data["faithful"]) if isinstance(data, dict) and "faithful" in data else None
+    except Exception as exc:  # noqa: BLE001 — a judge failure is "unknown", not "unfaithful"
+        logger.warning(f"faithfulness judge failed: {exc}")
         return None
 
 
@@ -407,6 +445,17 @@ class MatchMindEvaluator:
                     counterfactual_best_action=case.get("counterfactual_best_action"),
                 )
 
+                # RAG faithfulness — the trace only keeps titles, so take the
+                # definitions from the KB itself.
+                if self.use_llm:
+                    advice_retrieved = [
+                        {"title": c.title, "definition": c.definition, "content": c.content}
+                        for c in self.concepts if c.title in retrieved_titles
+                    ]
+                    r["concept_faithful"] = compute_concept_faithfulness_llm(advice, advice_retrieved)
+                else:
+                    r["concept_faithful"] = None
+
                 # Dim 0: Retrieval Quality (proxy ground truth from trigger_conditions)
                 if advice.situation_features is not None and retrieved_ids:
                     try:
@@ -475,6 +524,16 @@ class MatchMindEvaluator:
         lat_sorted = sorted(latencies)
         p95 = lat_sorted[int(0.95 * (len(lat_sorted) - 1))] if lat_sorted else None
 
+        faithful = [r["concept_faithful"] for r in valid if r.get("concept_faithful") is not None]
+        concept_faithfulness_rate = round(sum(faithful) / len(faithful), 4) if faithful else None
+
+        # Golden retrieval metrics come from the offline bench (scripts/bench_retrieval.py).
+        bench_path = settings.evaluation_output_dir / "retrieval_bench.json"
+        golden: dict = {}
+        if bench_path.exists():
+            bench = json.loads(bench_path.read_text(encoding="utf-8"))
+            golden = bench.get(settings.retrieval_strategy) or bench.get("hybrid") or {}
+
         return EvaluationReport(
             n_cases=n_valid,
             # Dim 0
@@ -489,6 +548,10 @@ class MatchMindEvaluator:
             citation_validity_rate=round(avg_citation, 4),
             logical_consistency_rate=round(avg_lc, 4) if avg_lc is not None else None,
             groundedness_score=round(avg_groundedness, 4),
+            concept_faithfulness_rate=concept_faithfulness_rate,
+            golden_hit_at_3=golden.get("hit_at_3"),
+            golden_ndcg_at_5=golden.get("ndcg_at_5"),
+            retrieval_strategy=settings.retrieval_strategy,
             # Dim 3
             actionability_score=round(avg_actionability, 2),
             # Dim 4
