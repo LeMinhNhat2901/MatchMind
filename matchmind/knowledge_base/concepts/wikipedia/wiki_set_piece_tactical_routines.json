@@ -1,0 +1,37 @@
+{
+  "concept_id": "wiki_set_piece_tactical_routines",
+  "category": "terminology",
+  "phase": "general",
+  "title": "Set Piece Tactical Routines",
+  "content": "Set pieces, primarily free kicks and corners, represent high-value transitional moments where play resumes from a stoppage, often in advanced areas. Unlike open play, these situations allow teams to pre-plan specific tactical routines and movement patterns during training, reducing the element of chance. Because a significant proportion of goals are scored from these phases, either directly or through indirect setups, both attacking and defending units must execute rehearsed strategies. Attackers typically specialize in delivering the ball or occupying specific zones to create numerical or spatial advantages, while defenders must organize compact shapes to deny space and track runners. The key tactical advantage lies in the predictability of the initial setup, enabling coaches to design complex plays that exploit specific weaknesses in the opposition's defensive organization. Mastery of these routines is critical for maximizing scoring opportunities and minimizing defensive vulnerabilities during non-open-play phases.",
+  "conditions": [
+    "ball_stopped",
+    "forward_area",
+    "pre_planned_routine"
+  ],
+  "objective": [
+    "create_scoring_opportunity",
+    "prevent_opponent_score",
+    "execute_rehearsed_pattern"
+  ],
+  "possible_actions": [
+    "deliver_set_piece",
+    "occupy_marking_zone",
+    "make_screening_run",
+    "organize_defensive_shape"
+  ],
+  "contraindications": [
+    "improvisation_over_plan",
+    "poor_communication"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "source": {
+    "name": "Wikipedia: Set piece (football)",
+    "url": "https://en.wikipedia.org/wiki/Set_piece_(football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

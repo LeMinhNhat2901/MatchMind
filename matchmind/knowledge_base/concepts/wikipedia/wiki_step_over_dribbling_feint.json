@@ -1,0 +1,38 @@
+{
+  "concept_id": "wiki_step_over_dribbling_feint",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Step Over Dribbling Feint",
+  "content": "The step over is a fundamental dribbling technique used to deceive an opponent by simulating a change of direction without actually moving the ball. The player swings the outside of their foot over the ball, creating the visual illusion that they are about to drive in that direction. This action forces the defender to commit weight or shift their body in the wrong direction, creating a momentary imbalance. Once the defender is off-balance, the attacker can quickly accelerate in the opposite direction or perform a second feint to create space. This move is most effective when executed at moderate speed, allowing for precise control, and is particularly useful in 1v1 situations where the defender is close but not yet making contact. It is a versatile tool for breaking down defensive lines, especially when approaching the final third or navigating tight spaces near the flank. Mastery of this skill requires good ball control and the ability to read the defender's body language to time the feint correctly, ensuring the attacker gains a positional advantage before committing to the next move.",
+  "conditions": [
+    "one_on_one_situation",
+    "defender_close_proximity",
+    "moderate_ball_speed"
+  ],
+  "objective": [
+    "create_defensive_imbalance",
+    "gain_positional_advantage",
+    "open_passing_lane"
+  ],
+  "possible_actions": [
+    "accelerate_opposite_direction",
+    "perform_second_feint",
+    "cut_inside"
+  ],
+  "contraindications": [
+    "high_speed_dribbling",
+    "multiple_defenders_pressing",
+    "tight_space_no_room"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "is_in_attacking_third",
+    "ball_near_flank"
+  ],
+  "source": {
+    "name": "Wikipedia: Step over",
+    "url": "https://en.wikipedia.org/wiki/Step_over",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

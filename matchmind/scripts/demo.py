@@ -173,7 +173,12 @@ def _render(advice, trace: list[dict]) -> None:
             border_style="green",
         )
     )
-    console.print(Panel(f"[bold]Reasoning:[/bold]\n{advice.reasoning}", title="Reasoning", border_style="blue"))
+    if advice.narrative:
+        body = advice.narrative
+        if advice.rationale:
+            body += "\n\n" + "\n".join(f"• {b}" for b in advice.rationale)
+        console.print(Panel(body, title="Analyst Take", border_style="cyan"))
+    console.print(Panel(f"[bold]Reasoning:[/bold]\n{advice.reasoning}", title="Reasoning (structured)", border_style="blue"))
 
     ev = Table(title="Evidence Used")
     ev.add_column("Source", style="cyan", width=8)

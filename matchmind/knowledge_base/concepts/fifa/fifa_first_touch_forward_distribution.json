@@ -1,0 +1,55 @@
+{
+  "concept_id": "fifa_first_touch_forward_distribution",
+  "category": "individual",
+  "subcategory": "receiving",
+  "phase": "possession",
+  "title": "First Touch Forward Distribution",
+  "definition": "A technical-tactical skill where a player uses body orientation and precise first-touch control to immediately distribute the ball forward while under pressure.",
+  "content": "This concept focuses on accelerating play by combining immediate forward distribution with precise first-touch control under defensive pressure. The core principle involves receiving the ball in a position that allows for an immediate infield movement, executing a decisive pass before opponents can establish effective resistance. It relies on three interconnected dimensions: spatial awareness to recognize positioning relative to defensive lines and passing lanes; technical coordination involving timing, quick footwork, and balance to absorb passes cleanly while adjusting body angle; and visual communication through body positioning to synchronize team movement. Elite players use this to create an 'illusion of simplicity,' processing information and executing movements faster than opponents can react. For example, a midfielder receiving half-turned can pivot infield, evade a defender, and release a weighted pass behind the defensive line. Developing this requires specific training: young players need high-repetition drills for two-footed comfort and half-turn receiving, while advanced players benefit from constraints like limited touches or forward-pass-only rules to elevate decision-making urgency and spatial exploitation.",
+  "conditions": [
+    "under_defensive_pressure",
+    "ball_in_possession",
+    "forward_passing_lane_available"
+  ],
+  "objective": [
+    "accelerate_play",
+    "bypass_defensive_line",
+    "maintain_possession_under_pressure"
+  ],
+  "possible_actions": [
+    "orient_body_infield",
+    "shield_ball_with_body",
+    "execute_immediate_forward_pass",
+    "pivot_to_face_space"
+  ],
+  "contraindications": [
+    "no_forward_passing_lane",
+    "surrounded_by_multiple_pressers",
+    "poor_ball_quality"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "passing_lane_open",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "clear_forward_passing_lane",
+    "supporting_players_in_space"
+  ],
+  "player_behaviours": [
+    "half_turn_receiving",
+    "body_shielding",
+    "quick_second_touch"
+  ],
+  "related_concepts": [
+    "body_orientation",
+    "progressive_pass",
+    "scanning"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Speed of the Game 4: Turning the game forward",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/speed-of-the-game/speed-of-the-game-4--turning-the-game-forward.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

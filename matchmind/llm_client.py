@@ -40,6 +40,7 @@ def call_llm(
     json_mode: bool = False,
     thinking_budget: int | None = None,
     model: str | None = None,
+    provider: str | None = None,
 ) -> tuple[str, int]:
     """Call the configured LLM provider.
 
@@ -51,11 +52,13 @@ def call_llm(
         json_mode: ask the provider to emit application/json (Gemini/OpenAI).
         thinking_budget: Gemini 2.5 only — 0 disables "thinking" for cheap calls.
         model: override settings.llm_model.
+        provider: override settings.llm_provider (pass `model` too — the
+            default model name belongs to the default provider).
 
     Returns:
         (text, total_tokens)
     """
-    provider = (settings.llm_provider or "gemini").lower()
+    provider = (provider or settings.llm_provider or "gemini").lower()
     model = model or settings.llm_model
 
     if provider == "gemini":
@@ -69,6 +72,28 @@ def call_llm(
     raise ValueError(
         f"Unknown LLM_PROVIDER={settings.llm_provider!r}. Use one of: gemini | anthropic | openai | groq"
     )
+
+
+def call_narrator_llm(prompt: str, **kwargs) -> tuple[str, int]:
+    """call_llm for the user-facing narration/translation step.
+
+    Uses NARRATOR_LLM_PROVIDER/NARRATOR_LLM_MODEL when set, and retries once on
+    the default provider if that override fails (e.g. a free-tier daily quota),
+    so configuring a better-but-scarcer model can never break the chat.
+    """
+    override_provider = settings.narrator_llm_provider.strip()
+    override_model = settings.narrator_llm_model.strip()
+    if override_provider or override_model:
+        try:
+            return call_llm(
+                prompt,
+                provider=override_provider or None,
+                model=override_model or None,
+                **kwargs,
+            )
+        except Exception as exc:  # noqa: BLE001 — fall back to the default provider below
+            logger.warning(f"Narrator LLM override failed, using default provider: {exc}")
+    return call_llm(prompt, **kwargs)
 
 
 def _image_bytes(image_path: str | None) -> bytes | None:

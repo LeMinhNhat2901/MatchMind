@@ -28,6 +28,12 @@ class Settings(BaseSettings):
     llm_provider: str = Field(default="gemini", alias="LLM_PROVIDER")  # gemini | anthropic | openai | groq
     llm_model: str = Field(default="gemini-2.5-flash", alias="LLM_MODEL")
     groq_model: str = Field(default="qwen/qwen3.8-27b", alias="GROQ_MODEL")
+    # Optional override for the user-facing narration/translation step only
+    # (narrator_node, translation.translate_from_english) — e.g. a model that
+    # writes better Vietnamese than the default. Empty = use LLM_PROVIDER/LLM_MODEL.
+    # On any error with the override, callers retry once on the default provider.
+    narrator_llm_provider: str = Field(default="", alias="NARRATOR_LLM_PROVIDER")
+    narrator_llm_model: str = Field(default="", alias="NARRATOR_LLM_MODEL")
 
     # ── Vector Store ─────────────────────────────────────────
     chroma_persist_dir: str = Field(default="./tactics_db", alias="CHROMA_PERSIST_DIR")

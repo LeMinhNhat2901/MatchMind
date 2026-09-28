@@ -66,11 +66,11 @@ def plot_pitch(
     else:
         fig = ax.get_figure()
 
-    # Colour scheme
+    # Colour scheme ("stripe" = alternate mowing band, broadcast-pitch look)
     colors = {
-        "green": {"bg": "#4CAF50", "line": "white", "spot": "white"},
-        "dark_green": {"bg": "#2D6A2D", "line": "#F0F0E8", "spot": "#F0F0E8"},
-        "white": {"bg": "white", "line": "black", "spot": "black"},
+        "green": {"bg": "#4CAF50", "line": "white", "spot": "white", "stripe": None},
+        "dark_green": {"bg": "#1F6B35", "line": "#F0F0E8", "spot": "#F0F0E8", "stripe": "#24773C"},
+        "white": {"bg": "white", "line": "black", "spot": "black", "stripe": None},
     }
     c = colors.get(field_color, colors["dark_green"])
 
@@ -78,6 +78,16 @@ def plot_pitch(
     fig.patch.set_facecolor(c["bg"])
     lc = c["line"]  # line colour
     pc = c["spot"]  # spot colour
+
+    if c["stripe"]:
+        from matplotlib.patches import Rectangle
+
+        n_bands = 12
+        band = PITCH_LENGTH / n_bands
+        for i in range(1, n_bands, 2):
+            ax.add_patch(
+                Rectangle((i * band, 0), band, PITCH_WIDTH, facecolor=c["stripe"], edgecolor="none", zorder=0)
+            )
 
     # ── Pitch dimensions ──────────────────────────────────────
     hl = PITCH_LENGTH / 2  # half length

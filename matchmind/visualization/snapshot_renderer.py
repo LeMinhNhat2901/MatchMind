@@ -19,9 +19,10 @@ from matchmind.visualization.pitch_renderer import _lazy_pyplot, plot_pitch
 # / torch initialises causes a native DLL crash on Windows + Python 3.13.
 logger = logging.getLogger(__name__)
 
-# Team colours
-HOME_COLOR = "#E74C3C"   # red
-AWAY_COLOR = "#3498DB"   # blue
+# Team colours — kept identical to the dashboard theme tokens (--mm-home /
+# --mm-away in dashboard/theme.css) so the pitch and the HTML legend match.
+HOME_COLOR = "#EF4444"   # red
+AWAY_COLOR = "#3B82F6"   # blue
 # White filled "+" — a distinct shape AND colour from the round red/blue
 # player dots, so the ball never gets lost among them (was a yellow circle).
 BALL_COLOR = "#FFFFFF"
@@ -29,23 +30,23 @@ BALL_EDGE_COLOR = "#111111"
 BALL_MARKER = "P"        # matplotlib "filled plus"
 BALL_SIZE = 220
 FOCUS_RING_COLOR = "#FFFFFF"
-FOCUS_RING_SIZE = 600
-PLAYER_SIZE = 350
+FOCUS_RING_SIZE = 720
+PLAYER_SIZE = 420
 VISIBLE_AREA_COLOR = "#FFFFFF"
 
 # Recommendation arrows (render_advice_snapshot): solid gold = the ball travels
 # there (pass/dribble/shot/switch); dashed cyan = the PLAYER runs there and the
 # ball stays with its real carrier (off-ball movement) — same colour coding as
 # the moves_ball split in pitch_control/counterfactual_analyzer.py.
-ARROW_BALL_COLOR = "#FFD700"
-ARROW_RUN_COLOR = "#00E5FF"
-ARROW_ALT_COLOR = "#CCCCCC"
+ARROW_BALL_COLOR = "#FACC15"
+ARROW_RUN_COLOR = "#22D3EE"
+ARROW_ALT_COLOR = "#CBD5E1"
 
 # Dual (attack vs defense) rendering: the attacking focus keeps the standard
 # white ring + gold/cyan arrow; the defending focus gets its own ring + arrow
 # colour so the two recommendations never get confused on one image.
-DEFENSE_RING_COLOR = "#FFA500"
-DEFENSE_ARROW_COLOR = "#FF33CC"
+DEFENSE_RING_COLOR = "#F59E0B"
+DEFENSE_ARROW_COLOR = "#EC4899"
 
 # Fixed direction (up-right) the ball glyph is nudged toward when it would
 # otherwise sit on top of a player dot and hide the jersey number.
@@ -129,14 +130,14 @@ def _draw_scene(
                 linewidths=0,
             )
 
-        # Player dot
+        # Player dot — thin dark outline separates overlapping dots on the grass
         ax.scatter(
             player.x, player.y,
             c=color,
             s=PLAYER_SIZE,
             zorder=4,
-            edgecolors="white" if is_focus else "none",
-            linewidths=2 if is_focus else 0,
+            edgecolors="white" if is_focus else "#0B1120",
+            linewidths=2 if is_focus else 0.8,
         )
 
         # Player ID label
@@ -144,7 +145,7 @@ def _draw_scene(
             str(player.id),
             (player.x, player.y),
             ha="center", va="center",
-            fontsize=7, fontweight="bold",
+            fontsize=8.5, fontweight="bold",
             color="white",
             zorder=5,
         )
@@ -203,6 +204,7 @@ def render_snapshot(
     pitch_control_grid: np.ndarray | None = None,
     field_color: str = "dark_green",
     dpi: int = 120,
+    annotate: bool = True,
 ) -> str:
     """
     Render a MatchState as a pitch image PNG.
@@ -215,6 +217,8 @@ def render_snapshot(
         pitch_control_grid: 2D array from spearman_model (optional).
         field_color: Pitch background colour.
         dpi: Image DPI.
+        annotate: Draw the in-image title + legend. The dashboard passes False
+            because it renders both as HTML around the image instead.
 
     Returns:
         save_path (for convenience).
@@ -224,31 +228,29 @@ def render_snapshot(
 
     _draw_scene(ax, fig, state, focus_player_id, show_pitch_control, pitch_control_grid)
 
-    # ── Title ──────────────────────────────────────────────────
-    min_str = f"{state.minute}'"
-    score_str = f"Home {state.score_home}–{state.score_away} Away"
-    title = f"Match: {state.match_id} | {min_str} | {score_str}"
-    if focus_player_id is not None:
-        title += f" | Focus: Player {focus_player_id} (●)"
-    if state.visible_area:
-        # StatsBomb 360 only tracks players inside the broadcast camera view —
-        # real games run ~4-21 of 22 players, never all 22. Not a data bug.
-        title += f" | {len(state.players)} players in 360 view (dashed outline)"
-    ax.set_title(
-        title,
-        fontsize=9, pad=8,
-        color="white" if field_color == "dark_green" else "black",
-    )
-
-    # ── Legend ─────────────────────────────────────────────────
-    ax.legend(
-        handles=_base_legend(),
-        loc="upper right",
-        facecolor="black",
-        labelcolor="white",
-        fontsize=7,
-        framealpha=0.7,
-    )
+    if annotate:
+        min_str = f"{state.minute}'"
+        score_str = f"Home {state.score_home}–{state.score_away} Away"
+        title = f"Match: {state.match_id} | {min_str} | {score_str}"
+        if focus_player_id is not None:
+            title += f" | Focus: Player {focus_player_id} (●)"
+        if state.visible_area:
+            # StatsBomb 360 only tracks players inside the broadcast camera view —
+            # real games run ~4-21 of 22 players, never all 22. Not a data bug.
+            title += f" | {len(state.players)} players in 360 view (dashed outline)"
+        ax.set_title(
+            title,
+            fontsize=9, pad=8,
+            color="white" if field_color == "dark_green" else "black",
+        )
+        ax.legend(
+            handles=_base_legend(),
+            loc="upper right",
+            facecolor="black",
+            labelcolor="white",
+            fontsize=7,
+            framealpha=0.7,
+        )
 
     # ── Save ───────────────────────────────────────────────────
     save_path = str(save_path)
@@ -307,6 +309,7 @@ def render_advice_snapshot(
     field_color: str = "dark_green",
     dpi: int = 120,
     show_alternatives: bool = True,
+    annotate: bool = True,
 ) -> str:
     """
     Render the pitch AFTER the agent has produced advice, drawing the
@@ -357,27 +360,27 @@ def render_advice_snapshot(
             if drew_alt:
                 legend_extra.append(_arrow_legend_entry("Alternative", ARROW_ALT_COLOR, "dotted"))
 
-    # ── Title: the recommendation itself, not just match metadata ─────
-    action_text = advice.recommended_action
-    if len(action_text) > 80:
-        action_text = action_text[:77] + "..."
-    title = f"Player {focus_id}: {action_text} (confidence {advice.confidence:.0%})"
-    if not drew_recommended:
-        title += "  [no geometric match — arrow not drawn]"
-    ax.set_title(
-        title,
-        fontsize=9, pad=8,
-        color="white" if field_color == "dark_green" else "black",
-    )
-
-    ax.legend(
-        handles=_base_legend(legend_extra),
-        loc="upper right",
-        facecolor="black",
-        labelcolor="white",
-        fontsize=7,
-        framealpha=0.7,
-    )
+    if annotate:
+        # Title = the recommendation itself, not just match metadata.
+        action_text = advice.recommended_action
+        if len(action_text) > 80:
+            action_text = action_text[:77] + "..."
+        title = f"Player {focus_id}: {action_text} (confidence {advice.confidence:.0%})"
+        if not drew_recommended:
+            title += "  [no geometric match — arrow not drawn]"
+        ax.set_title(
+            title,
+            fontsize=9, pad=8,
+            color="white" if field_color == "dark_green" else "black",
+        )
+        ax.legend(
+            handles=_base_legend(legend_extra),
+            loc="upper right",
+            facecolor="black",
+            labelcolor="white",
+            fontsize=7,
+            framealpha=0.7,
+        )
 
     save_path = str(save_path)
     Path(save_path).parent.mkdir(parents=True, exist_ok=True)
@@ -397,6 +400,7 @@ def render_dual_advice_snapshot(
     pitch_control_grid: np.ndarray | None = None,
     field_color: str = "dark_green",
     dpi: int = 120,
+    annotate: bool = True,
 ) -> str:
     """
     Render ONE pitch image with both sides' recommendations at once — the
@@ -438,26 +442,26 @@ def render_dual_advice_snapshot(
             _draw_action_arrow(ax, (def_focus.x, def_focus.y), rec2.target_xy, DEFENSE_ARROW_COLOR, style2, 3.2, 1.0, zorder=8)
             legend_extra.append(_arrow_legend_entry(f"Defense (P{def_id})", DEFENSE_ARROW_COLOR, style2))
 
-    # ── Two-line title: one recommendation per side ──
-    att_text = attacking_advice.recommended_action
-    def_text = defending_advice.recommended_action
-    att_text = att_text[:62] + ("..." if len(att_text) > 62 else "")
-    def_text = def_text[:62] + ("..." if len(def_text) > 62 else "")
-    title = f"ATTACK P{att_id}: {att_text}\nDEFENSE P{def_id}: {def_text}"
-    ax.set_title(
-        title,
-        fontsize=8, pad=12,
-        color="white" if field_color == "dark_green" else "black",
-    )
-
-    ax.legend(
-        handles=_base_legend(legend_extra),
-        loc="upper right",
-        facecolor="black",
-        labelcolor="white",
-        fontsize=6.5,
-        framealpha=0.7,
-    )
+    if annotate:
+        # Two-line title: one recommendation per side.
+        att_text = attacking_advice.recommended_action
+        def_text = defending_advice.recommended_action
+        att_text = att_text[:62] + ("..." if len(att_text) > 62 else "")
+        def_text = def_text[:62] + ("..." if len(def_text) > 62 else "")
+        title = f"ATTACK P{att_id}: {att_text}\nDEFENSE P{def_id}: {def_text}"
+        ax.set_title(
+            title,
+            fontsize=8, pad=12,
+            color="white" if field_color == "dark_green" else "black",
+        )
+        ax.legend(
+            handles=_base_legend(legend_extra),
+            loc="upper right",
+            facecolor="black",
+            labelcolor="white",
+            fontsize=6.5,
+            framealpha=0.7,
+        )
 
     save_path = str(save_path)
     Path(save_path).parent.mkdir(parents=True, exist_ok=True)

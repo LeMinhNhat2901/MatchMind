@@ -1,0 +1,53 @@
+{
+  "concept_id": "fifa_corner_kick_defensive_systems",
+  "category": "defending",
+  "subcategory": "set_piece_defense",
+  "phase": "out_of_possession",
+  "title": "Corner Kick Defensive Systems",
+  "definition": "Two primary tactical frameworks for defending corner kicks: zonal marking of specific areas or man-to-man marking of specific opponents.",
+  "content": "Defending corner kicks is a critical tactical challenge, as a significant proportion of goals in major tournaments originate from set pieces. Teams primarily utilize two defensive frameworks: zonal and player-to-player (man-marking). In the zonal system, four or more defenders are assigned to specific sectors of the penalty box, focusing on the ball's trajectory to win first contact. This approach relies on spatial control but can be vulnerable to attackers timing runs into gaps between zones or exploiting reduced jumping leverage from fixed positions. Conversely, the player-to-player method assigns defenders to track specific opposition players, preventing them from gaining advantageous positions or clear shooting opportunities. This system aims to deny clean attempts but requires high individual tracking ability. Statistical evidence does not definitively favor one system over the other; success depends more on coaching philosophy, personnel, and disciplined execution. Many teams maintain a consistent structure throughout a tournament, adjusting only individual roles to counter specific opponent routines. A notable trend is the deployment of all ten outfield players defensively, sacrificing high-pressing counter-attack outlets to minimize onside risks from flick-ons. Coaches must select the system that best fits their squad's strengths and the specific threats posed by the opposition.",
+  "conditions": [
+    "corner_kick_incoming",
+    "set_piece_defense"
+  ],
+  "objective": [
+    "win_first_contact",
+    "prevent_clean_shooting_opportunity",
+    "minimize_onside_risks"
+  ],
+  "possible_actions": [
+    "assign_zonal_responsibility",
+    "assign_man_marking",
+    "track_ball_trajectory",
+    "track_assigned_opponent",
+    "deploy_all_outfield_players_defensively"
+  ],
+  "contraindications": [
+    "poor_discipline_in_execution",
+    "mismatched_personnel_for_system"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "penalty_box_coverage",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "jump_for_ball",
+    "track_opponent_movement",
+    "communicate_zone_coverage"
+  ],
+  "related_concepts": [
+    "set_piece_defense",
+    "zonal_defending",
+    "man_marking"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Defending corners: Zonal or player-to-player?",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/defending-corners-zonal-or-player-to-player.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

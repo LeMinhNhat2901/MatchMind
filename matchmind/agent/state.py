@@ -28,6 +28,9 @@ class AgentState(TypedDict, total=False):
     match_state: MatchState
     focus_player_id: int
     question: str
+    # Language the user-facing answer should be written in (narrator_node only —
+    # every other node stays English-only). Defaults to "English".
+    response_language: str
 
     # ── Situation encoding (encode_situation node) ──────────
     situation_features: SituationFeatures | None

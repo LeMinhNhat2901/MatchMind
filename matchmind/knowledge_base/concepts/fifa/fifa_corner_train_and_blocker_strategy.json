@@ -1,0 +1,54 @@
+{
+  "concept_id": "fifa_corner_train_and_blocker_strategy",
+  "category": "attacking",
+  "subcategory": "set_pieces",
+  "phase": "possession",
+  "title": "Corner Train and Blocker Strategy",
+  "definition": "A coordinated corner routine using a linear 'train' formation and a designated blocker to exploit visual tracking limitations in man-to-man defensive systems.",
+  "content": "The 'train and blocker' strategy is a tactical set-piece routine designed to create separation for attackers during corners. Offensive players initially align in a compact linear formation, which forces defenders into a tactical dilemma: they cannot simultaneously track the flight of the ball and maintain visual contact with their assigned marks. A designated 'blocker,' typically positioned closest to the goal, does not attempt to win the ball but instead acts as a physical impediment, standing in passing lanes or occupying space to obstruct the defender's view of the other attackers. While the blocker holds their ground, the remaining players in the 'train' execute diverging runs toward specific zones. This movement creates confusion and allows the target player to gain crucial separation from their marker, often resulting in a flick-on or a clear shooting opportunity. The system is highly versatile; teams can vary the starting position, the identity of the blocker, and the delivery method. It is particularly effective against man-to-man marking systems, where individual accountability makes it difficult for defenders to cover for their teammates' loss of visual contact. By combining spatial geometry with deliberate physical positioning, this routine turns a standard set piece into a structural mismatch, neutralizing traditional marking responsibilities and creating high-probability scoring chances.",
+  "conditions": [
+    "man_to_man_defense",
+    "corner_kick_situation",
+    "attacking_set_piece"
+  ],
+  "objective": [
+    "create_separation",
+    "obstruct_defensive_view",
+    "generate_scoring_chance"
+  ],
+  "possible_actions": [
+    "form_linear_train",
+    "hold_blocker_position",
+    "execute_diverging_runs",
+    "flick_on_ball"
+  ],
+  "contraindications": [
+    "zonal_defense_system",
+    "poor_delivery_accuracy",
+    "lack_of_communication"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_set_piece",
+    "ball_near_flank"
+  ],
+  "spatial_requirements": [
+    "compact_initial_alignment",
+    "blocker_near_goal"
+  ],
+  "player_behaviours": [
+    "stand_ground_as_shield",
+    "track_ball_flight",
+    "run_to_target_zone"
+  ],
+  "related_concepts": [
+    "set_piece_routine",
+    "visual_obstruction",
+    "man_marking_exploitation"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Senegal: The train and blocker strategy",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/the-train-and-blocker.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "concept_id": "fifa_3_4_3_attacking_structure",
+  "category": "formations",
+  "subcategory": "343",
+  "phase": "possession",
+  "title": "3-4-3 Attacking Structure",
+  "definition": "A 3-4-3 system that transforms into a 3-2-5 in attack, using wing-backs for width and central midfielders for defensive security.",
+  "content": "This tactical structure leverages the 3-4-3 formation to create a 3-2-5 attacking shape, utilizing wing-backs as primary outlets to stretch the pitch across five vertical channels. This width forces opponents into defensive dilemmas, compelling them to either expand their defensive line or risk being exploited on the flanks. Central midfielders maintain a 'rest defence' posture, positioning themselves outside the penalty area to protect the back line during possession and anticipate counter-attacks. Modern centre-backs are integral to the build-up, requiring enhanced ball-carrying and distribution skills to advance the ball into midfield spaces. To prevent the middle from becoming congested, coordinated movement is essential; for instance, an attacking midfielder dropping deep can pull defenders out of position, creating space for central midfielders to accelerate forward. Once the defensive line is penetrated, the system generates numerical superiority by sending five players into the penalty area. Additionally, the goalkeeper plays a proactive role, stepping off the line to intercept through-balls and maintaining a close blocking zone to improve save probability against high-pressing threats.",
+  "conditions": [
+    "possession_phase",
+    "wing_backs_available",
+    "central_midfielders_in_rest_defence"
+  ],
+  "objective": [
+    "create_width",
+    "penetrate_defensive_line",
+    "maintain_defensive_security"
+  ],
+  "possible_actions": [
+    "wing_backs_push_high",
+    "centre_backs_carry_ball",
+    "attacking_midfielder_drop_deep",
+    "goalkeeper_step_off_line"
+  ],
+  "contraindications": [
+    "wide_players_drift_central",
+    "lack_of_midfield_coverage"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "attacking_width_high",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "five_vertical_channels",
+    "compact_midfield_block"
+  ],
+  "player_behaviours": [
+    "carry_ball_into_midfield",
+    "drop_deep_to_receive",
+    "accelerate_forward"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "width_exploitation",
+    "numerical_superiority"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Chelsea's principles of attack in a 3-4-3 system",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-insights/chelsea_principles_of_attack_in_3_4_3_system.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

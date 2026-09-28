@@ -1,0 +1,60 @@
+{
+  "concept_id": "fifa_short_corner_overload_structure",
+  "category": "attacking",
+  "subcategory": "set_piece_execution",
+  "phase": "possession",
+  "title": "Short Corner Overload Structure",
+  "definition": "A structured short corner routine that uses wide numerical overloads to stretch the defense and create central penetration or shooting opportunities.",
+  "content": "This tactical approach replaces traditional aerial deliveries with a flexible, possession-based setup designed to disrupt defensive organization. The structure typically involves nine players: two near the ball-taker (one on the goal line) to force extra defensive coverage, three circulating around the box perimeter, and four positioned inside the penalty area. This arrangement creates a defensive dilemma, as opponents cannot simultaneously maintain central strength and cover wide passing options. The primary objective is to exploit the resulting defensive disorganization through three avenues: quick combination play along the sideline to generate superior crossing angles, opportunistic shots from the top of the box as attention shifts wide, and tempo control by a creative playmaker to recycle possession until favorable angles emerge. The method blurs the line between set pieces and open play, requiring players to maintain decision-making flexibility rather than committing to a predetermined outcome. If the defense crowds the short option, space opens elsewhere; if they commit minimally, the team progresses into vulnerable areas. This strategy relies on constant repositioning by defenders to create momentary gaps for attackers to exploit.",
+  "conditions": [
+    "set_piece_short_corner",
+    "defensive_line_compact",
+    "opponent_defensive_line_high"
+  ],
+  "objective": [
+    "create_wide_overload",
+    "stretch_defensive_shape",
+    "generate_central_penetration",
+    "force_defensive_repositioning"
+  ],
+  "possible_actions": [
+    "short_pass_exchange",
+    "circulate_perimeter",
+    "quick_combination_play",
+    "shoot_from_top_of_box",
+    "cross_from_wide_angle"
+  ],
+  "contraindications": [
+    "strong_aerial_defense",
+    "lack_of_wide_support",
+    "opponent_low_block_compact"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "ball_near_flank"
+  ],
+  "spatial_requirements": [
+    "wide_player_distribution",
+    "central_box_occupancy",
+    "perimeter_circulation_space"
+  ],
+  "player_behaviours": [
+    "hold_wide_position",
+    "circulate_ball",
+    "scan_for_passing_lanes",
+    "adjust_defensive_shape"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "decision_making",
+    "set_piece_execution"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Short corners: structure and decision-making in Chelsea's set plays",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/short-corners-structure-and-decision-making-in-chelseas-set-plays.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

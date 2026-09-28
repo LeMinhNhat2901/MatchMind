@@ -1,0 +1,58 @@
+{
+  "concept_id": "fifa_synchronized_offensive_transition_execution",
+  "category": "transitions",
+  "subcategory": "counter_attack",
+  "phase": "attacking_transition",
+  "title": "Synchronized Offensive Transition Execution",
+  "definition": "A coordinated sequence where individual technical and cognitive actions synchronize to exploit high defensive lines during rapid offensive transitions.",
+  "content": "This concept describes the tactical synergy required to convert defensive recovery into a lethal counter-attack when opponents commit heavily forward. It begins with recognizing the vulnerability of an exposed backline and choosing to retain possession rather than clear the ball. The execution relies on 'complex simplicity,' where few players touch the ball, but all contribute through off-ball facilitation. The initial receiver uses body positioning to shield the ball and deliberately slows the tempo with an extra touch, buying time for supporting teammates to advance. Simultaneously, the next receiver scans the field before receiving, pre-visualizing the run of the forward. The forward maintains constant over-the-shoulder checks, synchronizing their sprint speed with the incoming pass to ensure precise timing. This coordination culminates in the final third, where the forward manipulates the goalkeeper’s positioning through feints and delayed contact to create finishing space. Success depends on high mental agility, spatial awareness, and precise timing; removing any single component, such as the shielding touch or the forward’s scanning, disrupts the sequence. This approach transforms reactive defending into proactive attacking by leveraging individual intelligence within a collective tactical framework.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "phase_of_play_attacking_transition",
+    "local_numerical_advantage_positive"
+  ],
+  "objective": [
+    "exploit_space_behind_defensive_line",
+    "synchronize_team_movement",
+    "create_finishing_opportunity"
+  ],
+  "possible_actions": [
+    "shield_ball_with_body",
+    "slow_tempo_with_extra_touch",
+    "scan_before_receiving",
+    "synchronize_sprint_with_pass",
+    "feint_goalkeeper"
+  ],
+  "contraindications": [
+    "opponent_defensiveline_low",
+    "lack_of_supporting_players",
+    "high_press_intensity"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_attacking_transition",
+    "opponent_defensiveline_high",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "space_behind_defensive_line",
+    "supporting_players_advancing"
+  ],
+  "player_behaviours": [
+    "shield_ball",
+    "scan_field",
+    "over_the_shoulder_check",
+    "adjust_sprint_speed"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "scanning",
+    "body_orientation",
+    "timing"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: The individuality behind the collective 2: Offensive transitions",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/individuality-behind-collective/the-individuality-behind-the-collective-2-offensive-transitions.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

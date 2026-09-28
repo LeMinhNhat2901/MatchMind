@@ -109,12 +109,19 @@ class TacticalVectorStore:
             {
                 "title": c.title,
                 "category": c.category,
+                "subcategory": c.subcategory or "",
                 "phase": c.phase,
+                "definition": c.definition or "",
                 "conditions": ",".join(c.conditions),
                 "objective": ",".join(c.objective),
                 "possible_actions": ",".join(c.possible_actions),
                 "contraindications": ",".join(c.contraindications),
                 "trigger_conditions": ",".join(c.trigger_conditions),
+                "spatial_requirements": ",".join(c.spatial_requirements),
+                "player_behaviours": ",".join(c.player_behaviours),
+                "related_concepts": ",".join(c.related_concepts),
+                "source_name": c.source.name if c.source else "",
+                "source_url": c.source.url if c.source else "",
             }
             for c in concepts
         ]
@@ -209,11 +216,15 @@ class TacticalVectorStore:
                 "title": meta.get("title", cid),
                 "content": doc,
                 "category": meta.get("category", ""),
+                "subcategory": meta.get("subcategory") or None,
                 "phase": meta.get("phase", ""),
+                "definition": meta.get("definition") or None,
                 "conditions": meta.get("conditions", "").split(","),
                 "possible_actions": meta.get("possible_actions", "").split(","),
                 "contraindications": meta.get("contraindications", "").split(","),
                 "similarity": round(sim, 4),
+                "source_name": meta.get("source_name") or None,
+                "source_url": meta.get("source_url") or None,
             }
             for cid, doc, meta, sim in zip(ids, docs, metas, similarities)
         ]

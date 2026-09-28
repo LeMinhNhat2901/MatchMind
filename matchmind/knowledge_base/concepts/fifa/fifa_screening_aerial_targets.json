@@ -1,0 +1,53 @@
+{
+  "concept_id": "fifa_screening_aerial_targets",
+  "category": "attacking",
+  "subcategory": "set_pieces",
+  "phase": "possession",
+  "title": "Screening Aerial Targets",
+  "definition": "A coordinated set-piece tactic where teammates actively block or drag away defenders to isolate a dominant aerial threat from tight man-to-man marking.",
+  "content": "This tactical approach addresses the challenge of neutralizing a team's primary aerial weapon, which is often subjected to tight man-to-man marking by the opponent's best defender. Instead of relying solely on the target player's individual dueling ability, the team employs structured movement patterns to create separation. The strategy involves deploying five to six attackers in coordinated sub-groups within the penalty area. Key to this system is the role of 'screeners'—teammates whose primary responsibility is to physically block the marker or drag them away from the target, rather than seeking scoring opportunities themselves. The target player typically positions themselves far from the goal, making it geometrically difficult for the defender to maintain suffocating pressure without losing their marker. Support players near the goal line deliberately pull their markers away to create vacant space. The target and support units often initiate movement away from the goal to confuse the marker before curving back into the danger zone. This coordinated orchestration allows the aerial threat to receive the ball in optimal conditions, significantly increasing the win-rate on first contact and generating high-volume, high-quality corner attempts by transforming individual duels into team-based spatial advantages.",
+  "conditions": [
+    "dominant_aerial_threat_present",
+    "tight_man_to_man_marking",
+    "attacking_corner_kick"
+  ],
+  "objective": [
+    "isolate_target_player",
+    "create_separation_from_marker",
+    "win_first_contact"
+  ],
+  "possible_actions": [
+    "block_passing_lane",
+    "drag_marker_away",
+    "curved_run_from_deep_position",
+    "screen_defender"
+  ],
+  "contraindications": [
+    "lack_of_coordinated_movement",
+    "target_player_isolated_without_support"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_cluster_in_box",
+    "target_far_from_goal"
+  ],
+  "player_behaviours": [
+    "screen_marker",
+    "drag_defender_away",
+    "confuse_marker_positioning"
+  ],
+  "related_concepts": [
+    "set_piece_tactics",
+    "overload",
+    "positional_play"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: England: Finding the target player and blocking man-to-man markers",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/finding-the-target-player-and-blocking-man-to-man-markers.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

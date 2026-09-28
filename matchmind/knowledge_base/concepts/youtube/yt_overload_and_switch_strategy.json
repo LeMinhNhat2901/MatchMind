@@ -1,0 +1,38 @@
+{
+  "concept_id": "yt_overload_and_switch_strategy",
+  "category": "fundamentals",
+  "phase": "possession",
+  "title": "Overload and Switch Strategy",
+  "content": "The overload and switch strategy is an attacking tactical approach designed to manipulate the opponent's defensive block by intentionally overloading one side of the pitch before rapidly changing the point of attack. During possession, a team commits multiple players—such as the full-back, winger, and central midfielders—to a specific flank. This concentration of players forces the defending team to shift horizontally to maintain compactness and match numbers, leaving significant space under-defended on the opposite side. Once the opposition's defensive block is pulled across, the team in possession executes a quick diagonal switch of play via a long pass to an isolated far-side winger or advancing full-back. Upon receiving the ball, this far-side player gains a favorable 1v1 situation or open space to drive forward, deliver a cross, or shoot before the scrambling defense can recover. To execute this effectively, the team must maintain patient short passing during the overload phase to draw in defenders, while ensuring the weak-side player maintains maximum width to exploit the resulting spatial advantage.",
+  "conditions": [
+    "opponent_shifted_horizontally",
+    "weak_side_space_available",
+    "flank_overloaded"
+  ],
+  "objective": [
+    "isolate_far_side_player",
+    "disrupt_opponent_shape",
+    "exploit_unmarked_space"
+  ],
+  "possible_actions": [
+    "combine_on_overloaded_flank",
+    "execute_diagonal_switch",
+    "attack_isolated_flank"
+  ],
+  "contraindications": [
+    "slow_ball_transfer",
+    "far_side_player_lacking_width"
+  ],
+  "trigger_conditions": [
+    "overload_flank",
+    "switch_play_viable",
+    "space_ahead_large",
+    "attacking_width_high"
+  ],
+  "source": {
+    "name": "football explained",
+    "url": "https://www.youtube.com/watch?v=c3zzDOYvtJc&t=316s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-11"
+  }
+}

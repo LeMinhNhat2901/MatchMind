@@ -54,6 +54,10 @@ numpy = "^1.26"
 pandas = "^2.2"
 scipy = "^1.13"
 
+# Knowledge base ingestion (Wikipedia + YouTube sources)
+youtube-transcript-api = "^1.2"
+yt-dlp = "^2026.8"
+
 # Utilities
 python-dotenv = "^1.0"
 structlog = "^24.1"
@@ -74,6 +78,8 @@ pre-commit = "^3.7"
 
 [tool.poetry.scripts]
 matchmind-build-kb = "matchmind.scripts.build_kb:main"
+matchmind-build-kb-wikipedia = "matchmind.scripts.build_kb_wikipedia:main"
+matchmind-build-kb-youtube = "matchmind.scripts.build_kb_youtube:main"
 matchmind-demo = "matchmind.scripts.demo:main"
 matchmind-eval = "matchmind.scripts.run_evaluation:main"
 

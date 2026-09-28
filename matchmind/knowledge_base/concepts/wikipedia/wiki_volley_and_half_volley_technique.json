@@ -1,0 +1,39 @@
+{
+  "concept_id": "wiki_volley_and_half_volley_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Volley and Half-Volley Technique",
+  "content": "A volley is a strike executed while the ball is airborne, eliminating the need for a preliminary trap. This technique is primarily used offensively in the final third, particularly when receiving crosses or corners, to score directly. By striking the ball with the laces, toes down, and ankle locked, players impart topspin to keep the shot on target and difficult for goalkeepers to handle. The key tactical advantage is speed; removing the touch allows for a faster release than a controlled shot, catching defenders and keepers off guard. A half-volley, where the ball is struck immediately after bouncing, offers a compromise for balls that are too high for a pure volley but too low for a standard strike, providing better accuracy than a full volley. Defensively, volleys serve as a rapid clearance method to remove danger from the box without the time-consuming process of trapping and turning. While less precise than grounded passes, volleys can also be used for quick flick-ons to teammates, utilizing the inside of the foot or heel for softer, controlled distribution in tight spaces.",
+  "conditions": [
+    "ball_in_air",
+    "ball_just_bounced",
+    "inside_penalty_area",
+    "cross_received"
+  ],
+  "objective": [
+    "score_directly",
+    "clear_danger_rapidly",
+    "flick_on_to_teammate"
+  ],
+  "possible_actions": [
+    "strike_with_laces",
+    "use_inside_foot_for_control",
+    "execute_bicycle_kick"
+  ],
+  "contraindications": [
+    "ball_too_high_for_control",
+    "need_for_precise_long_pass",
+    "poor_foot_eye_coordination"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "ball_near_flank",
+    "space_ahead_small"
+  ],
+  "source": {
+    "name": "Wikipedia: Volley (association football)",
+    "url": "https://en.wikipedia.org/wiki/Volley_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

@@ -90,12 +90,19 @@ def test_tactical_advice_structure():
 
 
 def test_alternative_action_delta_coercion():
-    """LLMs return '+2.1%' / bare fractions — normalise to percentage points."""
+    """Deltas are percentage points; strings like '+2.1%' are parsed, never rescaled."""
     assert AlternativeAction(action="a", why_not="b", delta_pitch_control="+2.1%").delta_pitch_control == 2.1
     assert AlternativeAction(action="a", why_not="b", delta_pitch_control="-3%").delta_pitch_control == -3.0
-    assert AlternativeAction(action="a", why_not="b", delta_pitch_control=-0.05).delta_pitch_control == -5.0
     assert AlternativeAction(action="a", why_not="b", delta_pitch_control="null").delta_pitch_control is None
     assert AlternativeAction(action="a", why_not="b", delta_pitch_control=12.0).delta_pitch_control == 12.0
+
+
+def test_alternative_action_small_delta_not_inflated():
+    """Regression: a real LLM answer gave delta 0.1 while its own why_not said
+    '+0.1%'. The old fraction heuristic displayed that as +10.0%."""
+    assert AlternativeAction(action="a", why_not="b", delta_pitch_control=0.1).delta_pitch_control == 0.1
+    assert AlternativeAction(action="a", why_not="b", delta_pitch_control=-0.05).delta_pitch_control == -0.05
+    assert AlternativeAction(action="a", why_not="b", delta_pitch_control="0.4").delta_pitch_control == 0.4
 
 
 def test_match_state_property_minute():

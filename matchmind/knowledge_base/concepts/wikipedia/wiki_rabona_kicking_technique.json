@@ -1,0 +1,37 @@
+{
+  "concept_id": "wiki_rabona_kicking_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Rabona Kicking Technique",
+  "content": "The rabona is a specialized kicking technique where the player crosses their kicking leg behind the standing leg to strike the ball. This move is primarily utilized when a player is positioned such that their dominant foot is not naturally aligned with the target, allowing them to maintain power and accuracy without needing to turn their body. For instance, a right-footed attacker on the left flank can shoot or cross effectively using a rabona, bypassing the need for a time-consuming turn. It is also a tactical tool for deception, as the unusual motion can confuse defenders and create momentary hesitation. While often associated with flair, the rabona serves a functional purpose in tight spaces or specific angles where standard striking mechanics are suboptimal. Coaches should advise players to use this technique only when they have sufficient control and space, as it requires high technical proficiency and balance. It is less effective under heavy pressure or when the ball is moving unpredictably, as the complex leg movement increases the risk of losing possession.",
+  "conditions": [
+    "dominant_foot_misaligned",
+    "tight_space_angle",
+    "defender_close_proximity"
+  ],
+  "objective": [
+    "maintain_shooting_power",
+    "bypass_body_turn",
+    "confuse_defender"
+  ],
+  "possible_actions": [
+    "execute_rabona_shot",
+    "execute_rabona_cross",
+    "feint_rabona_then_normal_kick"
+  ],
+  "contraindications": [
+    "high_pressure_situation",
+    "unstable_ball_contact",
+    "low_confidence_player"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "nearest_opponent_distance_low"
+  ],
+  "source": {
+    "name": "Wikipedia: Rabona",
+    "url": "https://en.wikipedia.org/wiki/Rabona",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "concept_id": "yt_principles_of_positional_play",
+  "category": "fundamentals",
+  "phase": "possession",
+  "title": "Principles of Positional Play",
+  "content": "Positional play focuses on manipulating opponent structures to create positional, qualitative, or numerical superiority across the pitch. By occupying specific vertical and horizontal zones, teams establish natural passing options in triangles and diamonds, making it easier to progress through opposition lines. Key mechanics include isolating dynamic attackers against weaker defenders on the far flank, using third-man runs to exploit spaces created when opponents are drawn toward short-passing overloads, and utilizing central floating roles like a false nine to pull central defenders out of position. Occupying spaces between the lines grants players extra time and vision to make progressive decisions. Defensively, this structured spatial distribution facilitates immediate counter-pressing upon turnover, as multiple options remain nearby to compress space and regain possession high up the pitch before expanding the playing area again in possession.",
+  "conditions": [
+    "team_structured_in_grid_zones",
+    "opponent_defensive_line_compact",
+    "passing_lanes_between_lines_available"
+  ],
+  "objective": [
+    "create_positional_superiority",
+    "exploit_space_behind_lines",
+    "enable_third_man_runs",
+    "facilitate_effective_counterpressing"
+  ],
+  "possible_actions": [
+    "form_passing_triangles_and_diamonds",
+    "overload_flank_and_switch_play",
+    "execute_third_man_run",
+    "occupy_zones_between_lines",
+    "drop_as_false_nine"
+  ],
+  "contraindications": [
+    "forcing_direct_passes_without_structure",
+    "lacking_width_on_weak_side",
+    "static_positioning_without_rotations"
+  ],
+  "trigger_conditions": [
+    "half_space_occupied_or_available",
+    "space_between_lines",
+    "third_man_opportunity",
+    "overload_flank"
+  ],
+  "source": {
+    "name": "Tifo Football by The Athletic",
+    "url": "https://www.youtube.com/watch?v=dhmCwI5vAlE&t=184s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-11"
+  }
+}

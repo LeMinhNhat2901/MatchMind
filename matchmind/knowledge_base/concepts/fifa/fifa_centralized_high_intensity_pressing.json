@@ -1,0 +1,54 @@
+{
+  "concept_id": "fifa_centralized_high_intensity_pressing",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Centralized High-Intensity Pressing",
+  "definition": "A defensive strategy that forces opponents into central areas through coordinated, high-intensity pressing to leverage midfield dominance and limit wide play.",
+  "content": "This tactical approach prioritizes forcing the opposition into the center of the pitch rather than allowing them to exploit wide areas. It relies on a compact, coordinated unit spanning from the goalkeeper to the strikers, creating a structure that suffocates attacks by squeezing the ball carrier through collective movement. A key feature is the dynamic role of wing-backs, who balance aggression with positional responsibility by initiating challenges when appropriate but retreating to provide cover against runners from behind. The system leverages midfield dominance and specific forward positioning, often sparing veteran forwards from early defensive duties to preserve their energy for later phases. By maintaining high intensity and shape, the team wins the ball predominantly in the midfield, preventing the opponent from establishing comfortable possession. This method requires high psychological resilience and commitment to loose balls, ensuring that defensive responsibilities are executed with exceptional consistency. The strategy is effective when a team possesses strong midfield control and can maintain compactness, allowing them to dictate the flow of the game by denying space on the flanks and forcing errors in central zones.",
+  "conditions": [
+    "midfield_dominance",
+    "compact_team_shape",
+    "wing_back_positional_awareness"
+  ],
+  "objective": [
+    "force_central_play",
+    "win_ball_midfield",
+    "limit_wide_options"
+  ],
+  "possible_actions": [
+    "coordinated_pressing_unit",
+    "wing_back_retreat_for_cover",
+    "squeeze_ball_carrier"
+  ],
+  "contraindications": [
+    "lack_of_midfield_control",
+    "fatigue_in_wing_backs",
+    "opponent_wide_superiority"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "dynamic_wing_back_positioning",
+    "collective_squeeze_movement",
+    "commit_to_loose_balls"
+  ],
+  "related_concepts": [
+    "pressing_traps",
+    "defensive_compactness",
+    "midfield_dominance"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Canada at the Women's Olympic Football Tournament Tokyo 2020",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-insights/canada-at-womens-olympic-football-tournament-tokyo-2020.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

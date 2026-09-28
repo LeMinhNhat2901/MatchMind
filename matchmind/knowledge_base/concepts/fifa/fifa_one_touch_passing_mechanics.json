@@ -1,0 +1,54 @@
+{
+  "concept_id": "fifa_one_touch_passing_mechanics",
+  "category": "individual",
+  "subcategory": "receiving",
+  "phase": "possession",
+  "title": "One-Touch Passing Mechanics",
+  "definition": "A technical and cognitive skill where a player redirects the ball immediately upon receipt without stabilizing possession, driven by pre-processed spatial awareness.",
+  "content": "One-touch passing is not merely a quick redirect but a complex integration of cognitive and physical competencies executed in fractions of a second. It requires the player to maintain constant environmental assessment, tracking defensive lines, teammate movements, and peripheral gaps simultaneously. When receiving under pressure, this accumulated data allows for instantaneous decision-making regarding pass direction and weight, eliminating the need for an extra touch to control the ball. This technique fundamentally alters match momentum by accelerating play faster than opponents can react. For instance, a winger can deflect a diagonal pass into space using the outside of the foot, creating a scoring opportunity in under four seconds, or a midfielder can let the ball run across their body to grant a full-back crucial acceleration time. Success depends on superior spatial reading and the ability to process information reflexively. Developing this skill requires structured, repeated unopposed drills focusing on one-touch patterns, combined with possession-based exercises in varied spatial constraints to build the neural pathways that convert deliberate awareness into automatic, high-speed decision-making.",
+  "conditions": [
+    "high_spatial_awareness",
+    "pressure_from_opponents",
+    "clear_passing_lane_identified"
+  ],
+  "objective": [
+    "accelerate_play_tempo",
+    "bypass_defensive_structure",
+    "create_numerical_advantage"
+  ],
+  "possible_actions": [
+    "deflect_ball_immediately",
+    "use_outside_of_foot",
+    "let_ball_run_across_body"
+  ],
+  "contraindications": [
+    "low_confidence_in_touch",
+    "no_clear_passing_option",
+    "heavy_physical_pressure_without_support"
+  ],
+  "trigger_conditions": [
+    "passing_lane_open",
+    "nearest_opponent_distance_low",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "supporting_players_in_position",
+    "gaps_in_opposing_formation"
+  ],
+  "player_behaviours": [
+    "scan_peripheral_space",
+    "read_defensive_lines",
+    "execute_weighted_pass"
+  ],
+  "related_concepts": [
+    "third_man_run",
+    "positional_play",
+    "scanning"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Speed of the Game 5: The minimalistic beauty of one-touch football",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/speed-of-the-game/speed-of-the-game-5--the-minimalistic-beauty-of-one-touch-football-.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

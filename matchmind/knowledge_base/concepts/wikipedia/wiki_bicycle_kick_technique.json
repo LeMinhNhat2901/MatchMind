@@ -1,0 +1,35 @@
+{
+  "concept_id": "wiki_bicycle_kick_technique",
+  "category": "individual",
+  "phase": "general",
+  "title": "Bicycle Kick Technique",
+  "content": "The bicycle kick, also known as the overhead or scissors kick, is an advanced acrobatic technique used to strike an airborne ball while the player is mid-air. The movement involves throwing the body backward and executing a shearing leg motion to strike the ball rearward. This skill serves dual tactical purposes: offensively, it allows a player to score from difficult angles where the ball is high and behind them; defensively, it can be used to clear danger from the goalmouth when a player is out of position. Due to its high physical demand and risk of injury, it is primarily executed by highly athletic and experienced players. The technique is most effective when the ball is in a specific trajectory that cannot be reached by conventional headers or ground shots, often occurring in tight spaces near the goal or during chaotic set-piece situations. Coaches should view this as a specialized finishing or clearing option rather than a standard part of the tactical repertoire, reserving it for moments where conventional options are exhausted and the ball's position dictates an acrobatic response.",
+  "conditions": [
+    "ball_airborne_high",
+    "player_unbalanced",
+    "limited_ground_options"
+  ],
+  "objective": [
+    "score_from_difficult_angle",
+    "clear_goal_mouth_danger"
+  ],
+  "possible_actions": [
+    "execute_overhead_strike",
+    "attempt_acrobatic_clearance"
+  ],
+  "contraindications": [
+    "inexperienced_player",
+    "high_injury_risk",
+    "ball_low_to_ground"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "is_in_defensive_third"
+  ],
+  "source": {
+    "name": "Wikipedia: Bicycle kick",
+    "url": "https://en.wikipedia.org/wiki/Bicycle_kick",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "concept_id": "wiki_push_and_run_combination",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Push and Run Combination",
+  "content": "The push-and-run, also known as a wall pass, one-two, or give-and-go, is a fundamental short-passing combination used to bypass defenders and advance the ball quickly. The sequence involves a player with the ball making a short, controlled pass to a nearby teammate (the 'wall') and immediately making a diagonal run past the marking opponent. The wall player then returns the ball into the space vacated by the initial passer, allowing them to receive it in a more advanced position. This tactic relies on precise timing, accurate passing, and fluid positional interchange, where players swap roles dynamically. It is particularly effective for breaking through compact defensive lines or creating numerical overloads in tight spaces. By using the teammate as a shield and pivot, the ball carrier can isolate a defender or create a clear passing lane. The success of this move depends on the initial pass being firm enough to allow the runner to accelerate but soft enough to be controlled easily. It is a cornerstone of possession-based football, enabling teams to maintain rhythm and penetrate defensive structures without relying on individual dribbling.",
+  "conditions": [
+    "close_proximity_to_teammate",
+    "defender_marking_tightly",
+    "space_available_behind_defender"
+  ],
+  "objective": [
+    "bypass_marking_defender",
+    "advance_ball_position",
+    "create_numerical_overload"
+  ],
+  "possible_actions": [
+    "short_pass_to_wall",
+    "diagonal_run_past_opponent",
+    "return_pass_to_runner"
+  ],
+  "contraindications": [
+    "no_space_behind_defender",
+    "teammate_out_of_position",
+    "high_press_intensity"
+  ],
+  "trigger_conditions": [
+    "players_near_ball",
+    "passing_lane_open",
+    "local_numerical_advantage_positive"
+  ],
+  "source": {
+    "name": "Wikipedia: Push and run",
+    "url": "https://en.wikipedia.org/wiki/Push_and_run",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

@@ -1,0 +1,37 @@
+{
+  "concept_id": "wiki_set_piece_tactical_framework",
+  "category": "terminology",
+  "phase": "general",
+  "title": "Set Piece Tactical Framework",
+  "content": "Set pieces, primarily free kicks and corners, represent critical moments in football where play resumes from a static position, often in advanced areas of the pitch. Unlike open play, these situations allow teams to pre-plan specific tactical routines and movement patterns during training, reducing the element of improvisation. Because a significant proportion of goals are scored directly or indirectly from these restarts, both attacking and defensive units must dedicate substantial preparation time to mastering these scenarios. Attackers can exploit rehearsed runs, decoy movements, and specialized delivery techniques to create high-probability scoring chances. Conversely, defenders must organize structured marking systems, zonal coverage, or hybrid approaches to neutralize these threats. The concept emphasizes that set pieces are not merely technical exercises but distinct tactical phases where spatial positioning and coordinated team shape are paramount. Coaches should treat these moments as separate tactical entities, designing specific game plans that leverage numerical advantages or exploit defensive vulnerabilities created by the static nature of the restart.",
+  "conditions": [
+    "ball_static_restart",
+    "pre_planned_routine",
+    "advanced_pitch_area"
+  ],
+  "objective": [
+    "score_directly",
+    "create_indirect_chance",
+    "neutralize_threat"
+  ],
+  "possible_actions": [
+    "execute_rehearsed_run",
+    "form_defensive_wall",
+    "assign_man_to_man_marks",
+    "use_decoy_movement"
+  ],
+  "contraindications": [
+    "improvisation_over_planning",
+    "lack_of_communication"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "source": {
+    "name": "Wikipedia: Set piece (football)",
+    "url": "https://en.wikipedia.org/wiki/Set_piece_(football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

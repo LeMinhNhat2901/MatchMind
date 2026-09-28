@@ -1,0 +1,56 @@
+{
+  "concept_id": "fifa_counter_pressing_strategy",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Counter-Pressing Strategy",
+  "definition": "A tactical approach where a team immediately pressures the opponent to regain possession in advanced areas after losing the ball.",
+  "content": "Counter-pressing, or gegenpressing, is a high-intensity defensive tactic executed immediately after losing possession. Instead of retreating to a deep block, the team aggressively seeks to win the ball back in the opponent's half, often within the first seven seconds. This strategy relies on two core principles: maintaining structural balance during the attacking phase and executing a swift, coordinated reaction upon the turnover. Before losing the ball, players must position themselves to provide defensive cover, ensuring that even if possession is lost, the team remains compact and ready to press. When the turnover occurs, the nearest players initiate immediate pressure, while the rest of the unit closes down passing lanes to prevent the opposition from escaping the press. This collective effort creates local numerical superiority in the pressing zone, forcing errors or clearances that can lead to quick scoring opportunities. The tactic is most effective when a team maintains a high or medium-high defensive line, as it allows for immediate engagement with the ball carrier. Training should focus on rapid transitions and coordinated movement to exploit the brief window where the opponent is disorganized.",
+  "conditions": [
+    "possession_lost",
+    "high_defensive_line",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "regain_possession_rapidly",
+    "prevent_opponent_escape",
+    "create_scoring_opportunity"
+  ],
+  "possible_actions": [
+    "immediate_pressure_on_ball_carrier",
+    "close_passing_lanes",
+    "coordinate_team_press",
+    "maintain_defensive_cover"
+  ],
+  "contraindications": [
+    "low_defensive_line",
+    "lack_of_structural_balance",
+    "opponent_has_clear_passing_options"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "defensive_line_height_high",
+    "team_compactness_high",
+    "players_near_ball"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "sprint_to_ball"
+  ],
+  "related_concepts": [
+    "high_press",
+    "defensive_transition",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Regaining possession high up the pitch (counter-press)",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/transition-to-defending/regaining-possession-high-up-the-pitch.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

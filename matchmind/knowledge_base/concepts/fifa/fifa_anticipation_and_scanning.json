@@ -1,0 +1,51 @@
+{
+  "concept_id": "fifa_anticipation_and_scanning",
+  "category": "individual",
+  "subcategory": "scanning",
+  "phase": "general",
+  "title": "Anticipation and Scanning",
+  "definition": "The cognitive skill of continuously observing the game to predict future states and position advantageously before events unfold.",
+  "content": "Anticipation and alertness refer to the mental preparedness that allows players to read the game before situations fully develop, shifting their role from reactive to proactive. This concept relies on concentrated observation and predictive thinking, where players simultaneously process opponent positioning, teammate locations, passing lanes, and defensive vulnerabilities. By building a mental database of probabilities through repeated exposure to varied scenarios, players can identify opportunities microseconds before they become obvious to opponents. This cognitive edge enables more efficient movement and precise execution, such as accelerating into space created by displaced defenders or selecting creative passes based on pre-assessed teammate positioning. Developing this quality requires specific training approaches, including two-footed technical proficiency to reduce hesitation, high-tempo practice under pressure to force rapid adaptation, and multipositional training to expand contextual understanding. Coaches must encourage forward-thinking play rather than safety-first approaches, as players who constantly scan their surroundings accumulate greater situational awareness. Beyond tactical drills, disciplined habits like maintaining focus during warm-ups and demanding quickness in transition moments help turn anticipation from an occasional flash of brilliance into an instinctive component of consistent game intelligence, allowing players to gain a competitive edge through superior mental processing speed.",
+  "conditions": [
+    "high_cognitive_load",
+    "dynamic_game_situation"
+  ],
+  "objective": [
+    "predict_opponent_movement",
+    "identify_opening_before_it_forms",
+    "reduce_reaction_time"
+  ],
+  "possible_actions": [
+    "continuous_scanning",
+    "pre_positioning",
+    "early_acceleration",
+    "anticipatory_pass_selection"
+  ],
+  "contraindications": [
+    "tunnel_vision",
+    "passive_reaction_mode"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_transition",
+    "players_near_ball"
+  ],
+  "spatial_requirements": [
+    "awareness_of_surrounding_space"
+  ],
+  "player_behaviours": [
+    "head_on_a_pivot",
+    "monitor_opponent_body_orientation",
+    "track_teammate_movement"
+  ],
+  "related_concepts": [
+    "scanning",
+    "decision_making",
+    "game_intelligence"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Speed of the Game 2: Being one step ahead of the game",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/speed-of-the-game/speed-of-the-game-2--being-one-step-ahead-of-the-game.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

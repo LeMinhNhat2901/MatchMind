@@ -1,0 +1,57 @@
+{
+  "concept_id": "fifa_penetrating_passes_behind_defense",
+  "category": "attacking",
+  "subcategory": "penetration",
+  "phase": "possession",
+  "title": "Penetrating Passes Behind Defense",
+  "definition": "A tactical method involving timed runs and through-balls to bypass the opposition's defensive line and create high-probability scoring chances.",
+  "content": "This concept focuses on executing penetrating passes that bypass the opponent's defensive line, creating high-probability scoring opportunities when receiving players make well-timed runs. It is effective against both retreating backlines and deep defensive structures, provided there is precise coordination between the passer and the receiver. Success relies heavily on spatial awareness; players must not only watch the ball but also scan for available space behind the defense to position themselves for movement. Against retreating defenses, strikers use specific movement patterns: opening runs through gaps between defenders, lateral movements to drag markers and create lanes, and drop-offs to force central defenders into difficult decisions. Against deep blocks, the key is minimizing the space between midfield and the defensive line to identify poor defensive positioning that allows for angled through-passes. The tactic requires a combination of the dribbler's vision and the striker's awareness of out-of-position defenders. Wide movements and overlapping runs can also create diagonal passing opportunities between the lines. Developmentally, this requires combining technical passing skills with scanning and vision training, as teams that effectively execute deep runs into opponent territory consistently achieve success at the highest levels.",
+  "conditions": [
+    "space_behind_defensive_line",
+    "passing_lane_open",
+    "opponent_defensiveline_high"
+  ],
+  "objective": [
+    "bypass_defensive_line",
+    "create_scoring_opportunity",
+    "isolate_defender"
+  ],
+  "possible_actions": [
+    "through_ball",
+    "curved_run",
+    "lateral_drag",
+    "drop_off_movement",
+    "scan_space"
+  ],
+  "contraindications": [
+    "defensive_line_compact",
+    "no_supporting_run",
+    "poor_timing"
+  ],
+  "trigger_conditions": [
+    "space_behind_defensive_line",
+    "passing_lane_open",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "space_between_lines",
+    "width_available"
+  ],
+  "player_behaviours": [
+    "scan_space",
+    "time_run",
+    "execute_through_pass",
+    "drag_defender"
+  ],
+  "related_concepts": [
+    "third_man_run",
+    "overload",
+    "positional_play"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Playing balls in behind the opposition's backline",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-insights/balls-in-behind-the-defence.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

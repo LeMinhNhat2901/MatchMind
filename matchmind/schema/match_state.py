@@ -401,19 +401,67 @@ class MatchEvent(BaseModel):
 # ──────────────────────────────────────────────────────────────────────────────
 
 
+class ConceptSource(BaseModel):
+    """Attribution for a concept adapted from an external work (Wikipedia, a
+    YouTube video, a paper, ...). Required whenever a concept isn't original
+    hand-written content, so the repo can show provenance per knowledge_bonus.md."""
+
+    name: str = Field(..., description="e.g. 'Wikipedia: Gegenpressing' or 'Tifo Football — video title'")
+    url: str
+    license: str = Field(
+        default="CC BY-SA 4.0",
+        description="'CC BY-SA 4.0' for Wikipedia; 'fair-use paraphrase' for YouTube transcripts",
+    )
+    retrieved_at: str | None = Field(default=None, description="ISO date the source was fetched")
+
+
 class TacticalConcept(BaseModel):
-    """A single entry in the Tactical Knowledge Base."""
+    """A single entry in the Tactical Knowledge Base.
+
+    Schema v2 (2026-09): adds definition/subcategory/spatial_requirements/
+    player_behaviours/related_concepts per knowledge_base.md's richer taxonomy
+    proposal. All new fields are optional with empty/None defaults so the 66
+    existing concepts (schema v1: concept_id/category/phase/title/content/
+    conditions/objective/possible_actions/contraindications/trigger_conditions/
+    source) keep loading and validating without being rewritten.
+    """
 
     concept_id: str
-    category: str
+    category: str = Field(
+        ...,
+        description=(
+            "Top-level taxonomy bucket: fundamentals | attacking | defending | "
+            "transitions | formations | individual | terminology (the last for "
+            "glossary-style entries that don't fit a tactical family)."
+        ),
+    )
+    subcategory: str | None = Field(
+        default=None,
+        description="Specific concept family within the category, e.g. 'high_press', 'half_space', '433'.",
+    )
     phase: str
     title: str
+    definition: str | None = Field(
+        default=None, description="Concise 1-2 sentence definition, distinct from the fuller `content` explanation."
+    )
     content: str
     conditions: list[str] = Field(default_factory=list)
     objective: list[str] = Field(default_factory=list)
     possible_actions: list[str] = Field(default_factory=list)
-    contraindications: list[str] = Field(default_factory=list)
-    trigger_conditions: list[str] = Field(default_factory=list)
+    contraindications: list[str] = Field(default_factory=list, description="a.k.a. risks")
+    trigger_conditions: list[str] = Field(default_factory=list, description="a.k.a. triggers")
+    spatial_requirements: list[str] = Field(
+        default_factory=list, description="e.g. 'compact_team_shape', 'short_distance_between_lines'"
+    )
+    player_behaviours: list[str] = Field(
+        default_factory=list, description="e.g. 'angle_press', 'cover_passing_lane', 'squeeze_space'"
+    )
+    related_concepts: list[str] = Field(
+        default_factory=list, description="concept_ids of related concepts, e.g. ['pressing_trap', 'counter_press']"
+    )
+    source: ConceptSource | None = Field(
+        default=None, description="Attribution when adapted from an external source; None for original hand-written concepts"
+    )
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -455,25 +503,27 @@ class AlternativeAction(BaseModel):
     @field_validator("delta_pitch_control", mode="before")
     @classmethod
     def _coerce_delta(cls, v: Any) -> Any:
-        """LLMs return '+2.1%' / '-3%' / '0.021' / 'null' — normalise to percentage points."""
+        """LLMs return 2.1 / '+2.1%' / '-3%' / 'null' — normalise to a float in
+        percentage points.
+
+        No "small number = fraction, multiply by 100" guessing: the reasoner
+        only ever sees deltas already formatted in percentage points
+        (counterfactual_analyzer prints `delta*100:.1f%`), and real deltas are
+        routinely below 1pp — that heuristic turned an LLM's 0.1 (for "+0.1%")
+        into a displayed +10.0%.
+        """
         if v is None:
             return None
         if isinstance(v, (int, float)):
-            # A fraction like 0.021 almost certainly means 2.1 percentage points.
-            return round(float(v) * 100, 2) if abs(v) < 1 else float(v)
+            return round(float(v), 2)
         if isinstance(v, str):
-            s = v.strip().replace("+", "").strip()
-            had_pct = s.endswith("%")
-            s = s.rstrip("%").strip()
+            s = v.strip().replace("+", "").rstrip("%").strip()
             if s.lower() in ("", "null", "none", "n/a", "na"):
                 return None
             try:
-                num = float(s)
+                return round(float(s), 2)
             except ValueError:
                 return None
-            if not had_pct and abs(num) < 1:
-                num *= 100  # bare fraction → percentage points
-            return round(num, 2)
         return v
 
 
@@ -527,6 +577,30 @@ class TacticalAdvice(BaseModel):
     focus_player_id: int | None = None
     match_id: str | None = None
     timestamp: float | None = None
+    narrative: str | None = Field(
+        default=None,
+        description=(
+            "Natural-language, analyst-style retelling of this advice (generated by "
+            "narrator_node from the fields above, never the other way around) — for "
+            "display to end users. reasoning/evidence/alternatives remain the source "
+            "of truth for validation, citation-checking, and logging; this field must "
+            "not introduce any fact not already present in them. None if narration "
+            "wasn't run or failed — callers should fall back to `reasoning`."
+        ),
+    )
+    rationale: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Short bullets (from narrator_node) justifying the decision with the "
+            "concrete numbers — distances, numerical advantage, pitch-control changes, "
+            "why each alternative lost. Kept separate from `narrative` so the answer "
+            "itself can stay persuasive prose instead of a list of figures."
+        ),
+    )
+    narrative_language: str | None = Field(
+        default=None,
+        description="Language `narrative`/`rationale` were written in (e.g. 'Vietnamese').",
+    )
 
     def resolve_action(self, action_id: str | None) -> "CandidateAction | None":
         """Look up a CandidateAction by id from this advice's shortlist, or None."""

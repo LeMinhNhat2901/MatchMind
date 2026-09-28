@@ -1,0 +1,40 @@
+{
+  "concept_id": "wiki_tiki_taka_possession_style",
+  "category": "attacking",
+  "phase": "possession",
+  "title": "Tiki-Taka Possession Style",
+  "content": "Tiki-taka is a tactical system defined by rapid, short passing and constant off-ball movement to maintain possession and control the game. It relies on high technical proficiency, vision, and spatial awareness to create numerical advantages and exploit gaps in the opponent's defensive structure. The core principle is efficient space management: teams narrow the pitch when defending to limit passing lanes and expand it when attacking to stretch the opposition. Key elements include positional interchange, where players swap roles to confuse markers, and the use of a 'false nine' to drag defenders out of position, creating space for midfielders to advance. The goalkeeper is integrated into the build-up play, initiating attacks from the back. This style requires high team compactness and intense pressing to regain possession quickly if lost. It is most effective against opponents who sit deep or lack the physicality to disrupt rhythm, as the constant movement and passing force errors. Success depends on players having excellent first touches and the ability to find progressive passes under pressure, turning possession into a weapon rather than just a defensive measure.",
+  "conditions": [
+    "high_technical_quality",
+    "opponent_sits_deep",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "maintain_possession",
+    "create_numerical_advantage",
+    "exploit_defensive_gaps"
+  ],
+  "possible_actions": [
+    "short_passing_combinations",
+    "positional_interchange",
+    "build_up_from_goalkeeper",
+    "false_nine_movement"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "low_technical_ability",
+    "space_ahead_small"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "passing_lane_open",
+    "team_compactness_high"
+  ],
+  "source": {
+    "name": "Wikipedia: Tiki-taka",
+    "url": "https://en.wikipedia.org/wiki/Tiki-taka",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

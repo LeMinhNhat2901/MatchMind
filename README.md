@@ -71,6 +71,9 @@ cp .env.example .env
 ```bash
 poetry run python -m matchmind.scripts.build_kb
 ```
+The 30 hand-written concepts above ship with the repo. To grow the KB from
+Wikipedia (and optionally YouTube transcripts), see
+[matchmind/knowledge_base/README.md](matchmind/knowledge_base/README.md).
 
 ### 4. Run demo
 ```bash

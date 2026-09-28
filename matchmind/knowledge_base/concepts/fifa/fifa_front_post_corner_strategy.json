@@ -1,0 +1,54 @@
+{
+  "concept_id": "fifa_front_post_corner_strategy",
+  "category": "attacking",
+  "subcategory": "set_piece",
+  "phase": "possession",
+  "title": "Front Post Corner Strategy",
+  "definition": "A corner kick tactic that directs deliveries to the near post to exploit gaps in man-marking systems through early contact and flick-ons.",
+  "content": "This tactical approach is designed to disrupt player-to-player marking systems by concentrating attacking effort at the front post rather than the back post. The core mechanism involves positioning five to six attackers across the goal-mouth width, with a designated target player timing a run to win initial contact near the near post. By arriving early and winning the header, this player flicks the ball toward the goal or to teammates making angled runs across the goal line. This strategy exploits the cognitive load on defenders in man-marking systems, who are preoccupied with tracking individual runners rather than protecting spatial zones. The congestion at the near post forces defensive breakdowns, creating chaos through rapid sequences of flick-ons, blocks, and second-ball opportunities. The tactic is particularly effective when defenders cannot easily switch marks or cover space, as the initial contact disrupts their personal coverage. Teams can enhance unpredictability by combining short corner passes with subsequent front-post deliveries, forcing defenders to reset their focus. The objective is to generate high-volume shot attempts and capitalize on deflections or rebounds that result from the initial aerial duel.",
+  "conditions": [
+    "opponent_uses_man_marking",
+    "corner_kick_situation",
+    "attacking_players_available_near_post"
+  ],
+  "objective": [
+    "win_initial_contact",
+    "create_second_ball_opportunity",
+    "disrupt_defensive_marking"
+  ],
+  "possible_actions": [
+    "deliver_to_front_post",
+    "flick_header_toward_goal",
+    "make_angled_run_across_goal_line",
+    "converge_on_rebound"
+  ],
+  "contraindications": [
+    "opponent_uses_zonal_defending",
+    "strong_aerial_defenders_at_front_post"
+  ],
+  "trigger_conditions": [
+    "corner_kick",
+    "opponent_man_marking"
+  ],
+  "spatial_requirements": [
+    "congestion_at_front_post",
+    "players_spread_across_goal_mouth"
+  ],
+  "player_behaviours": [
+    "time_run_to_front_post",
+    "win_aerial_duel",
+    "flick_ball_forward",
+    "track_rebound"
+  ],
+  "related_concepts": [
+    "set_piece_tactics",
+    "man_marking_exploitation",
+    "second_ball_control"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Korea Republic: Targeting the front post against player-to-player marking",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/targeting-the-front-post.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

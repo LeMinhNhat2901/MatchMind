@@ -1,0 +1,57 @@
+{
+  "concept_id": "fifa_switching_play_to_create_overloads",
+  "category": "attacking",
+  "subcategory": "switching_play",
+  "phase": "possession",
+  "title": "Switching Play to Create Overloads",
+  "definition": "A tactical maneuver involving a rapid cross-field pass to reposition the defense and create numerical superiority on the opposite flank.",
+  "content": "This concept prioritizes moving the opponent rather than just circulating the ball. By using a deep-lying playmaker to execute a precise cross-field pass, the attacking team forces defenders into reactive decisions, thereby exposing structural vulnerabilities. The primary goal is to generate local numerical advantages, such as 2v1 or 1v1 situations, on the receiving flank. Successful execution relies on three key elements: the passer must have sufficient time and space to deliver the ball accurately without pressure; the receiving player must proactively exploit the full width of the pitch to create separation and unpredictability; and supporting attackers must anticipate the switch to make positioning runs that facilitate overloads. Against compact, narrow defenses, this tactic allows wide players to receive in spacious areas, choosing to attack down the flank or cut infield, while the supporting full-back adds further complexity. Against disorganized opposition, the switch creates immediate penetration into vacant zones before the defense can reorganize. This approach forces the opposing team into a dilemma: commit the full-back to mark the wide player, leaving gaps in the defensive unit, or yield dangerous attacking territory. It exemplifies how intelligent positional play and forcing opposition movement generate scoring chances and maintain attacking momentum.",
+  "conditions": [
+    "passer_has_time_and_space",
+    "receiving_player_creates_separation",
+    "supporting_attackers_anticipate_switch"
+  ],
+  "objective": [
+    "create_numerical_superiority",
+    "expose_defensive_vulnerabilities",
+    "force_opponent_repositioning"
+  ],
+  "possible_actions": [
+    "execute_crossfield_pass",
+    "run_to_width",
+    "make_positioning_run",
+    "cut_infield",
+    "attack_down_flank"
+  ],
+  "contraindications": [
+    "passer_under_high_pressure",
+    "receiving_player_poorly_positioned",
+    "lack_of_supporting_runs"
+  ],
+  "trigger_conditions": [
+    "switch_play_viable",
+    "passing_lane_open",
+    "local_numerical_advantage_negative",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "wide_team_shape",
+    "space_between_lines"
+  ],
+  "player_behaviours": [
+    "accurate_distribution",
+    "proactive_separation",
+    "anticipatory_positioning"
+  ],
+  "related_concepts": [
+    "overload",
+    "positional_play",
+    "width"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Switching the play to create superiority",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/in-possession/switch-of-play.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

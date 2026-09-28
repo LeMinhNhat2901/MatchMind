@@ -1,0 +1,38 @@
+{
+  "concept_id": "wiki_cruyff_turn_evasive_dribble",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Cruyff Turn Evasive Dribble",
+  "content": "The Cruyff turn is a fundamental evasive dribbling technique designed to bypass a tight defender by exploiting their commitment to a feint. The player initiates the move by dragging the ball slightly behind the standing leg while simultaneously performing a deceptive body movement or head turn that mimics a pass or shot. This action lures the opponent into stepping forward or shifting weight, creating a momentary imbalance. The player then quickly rotates 180 degrees, pulling the ball around the standing leg to accelerate in the opposite direction. This move is most effective when the defender is close and engaged, as it relies on the opponent’s reaction to the initial deception. It is particularly useful in tight spaces where a simple change of direction is insufficient to break free. By combining a visual feint with a rapid change of body orientation, the player can create immediate separation and regain control of the game’s tempo, allowing for a progressive pass or a drive into open space.",
+  "conditions": [
+    "nearest_opponent_distance_low",
+    "space_ahead_small",
+    "defender_committed_to_feint"
+  ],
+  "objective": [
+    "bypass_close_defender",
+    "create_immediate_separation",
+    "regain_tempo_control"
+  ],
+  "possible_actions": [
+    "feint_pass_or_shot",
+    "drag_ball_behind_standing_leg",
+    "rotate_180_degrees",
+    "accelerate_away"
+  ],
+  "contraindications": [
+    "open_space_available",
+    "defender_not_engaged",
+    "high_speed_dribble"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "space_ahead_small"
+  ],
+  "source": {
+    "name": "Wikipedia: Cruyff turn",
+    "url": "https://en.wikipedia.org/wiki/Cruyff_turn",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

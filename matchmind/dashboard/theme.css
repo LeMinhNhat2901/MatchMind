@@ -1,0 +1,991 @@
+/* MatchMind — "Matchday Broadcast" theme.
+   Night-match surfaces, pitch-green accent, condensed scoreboard typography.
+   Every color/size below comes from the tokens in :root — no raw hex in components. */
+
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700;800&family=Barlow:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&display=swap');
+
+:root {
+    /* Surfaces */
+    --mm-bg: #0B1120;
+    --mm-surface: #111A2B;
+    --mm-surface-2: #16223A;
+    --mm-surface-3: #1C2A45;
+    --mm-border: #22314D;
+    --mm-border-strong: #31456B;
+
+    /* Text (all >= 4.5:1 on --mm-surface) */
+    --mm-text: #E6EDF7;
+    --mm-text-2: #AAB7CC;
+    --mm-text-3: #8392AC;
+
+    /* Brand + semantic */
+    --mm-pitch: #22C55E;
+    --mm-pitch-strong: #4ADE80;
+    --mm-pitch-soft: rgba(34, 197, 94, 0.14);
+    --mm-pitch-line: rgba(34, 197, 94, 0.35);
+    --mm-home: #EF4444;
+    --mm-home-soft: rgba(239, 68, 68, 0.14);
+    --mm-away: #3B82F6;
+    --mm-away-soft: rgba(59, 130, 246, 0.14);
+    --mm-gold: #FACC15;
+    --mm-cyan: #22D3EE;
+    --mm-magenta: #EC4899;
+    --mm-amber: #F59E0B;
+    --mm-amber-soft: rgba(245, 158, 11, 0.14);
+    --mm-danger: #F87171;
+    --mm-danger-soft: rgba(239, 68, 68, 0.14);
+    --mm-info: #38BDF8;
+    --mm-info-soft: rgba(56, 189, 248, 0.12);
+
+    /* Type */
+    --mm-font-display: 'Barlow Condensed', 'Arial Narrow', sans-serif;
+    --mm-font-body: 'Barlow', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    --mm-font-mono: 'JetBrains Mono', ui-monospace, Consolas, monospace;
+
+    /* Shape + motion */
+    --mm-radius-sm: 4px;
+    --mm-radius: 8px;
+    --mm-radius-lg: 12px;
+    --mm-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+    --mm-ease: cubic-bezier(0.2, 0.8, 0.2, 1);
+    --mm-dur: 180ms;
+}
+
+/* ── Base ─────────────────────────────────────────────────────────────── */
+html, body, .stApp, [data-testid="stMarkdownContainer"], button, input, textarea, select {
+    font-family: var(--mm-font-body);
+}
+
+.stApp {
+    background:
+        radial-gradient(1200px 500px at 20% -10%, rgba(34, 197, 94, 0.07), transparent 60%),
+        radial-gradient(900px 500px at 100% 110%, rgba(59, 130, 246, 0.06), transparent 60%),
+        var(--mm-bg);
+}
+
+header[data-testid="stHeader"] {
+    background: transparent;
+    height: 0;
+}
+
+.main .block-container, [data-testid="stMainBlockContainer"] {
+    padding-top: 1.25rem;
+    padding-bottom: 2rem;
+    max-width: 1520px;
+}
+
+.mm-icon {
+    display: inline-block;
+    flex-shrink: 0;
+    vertical-align: -0.15em;
+}
+
+.mono, .num {
+    font-variant-numeric: tabular-nums;
+}
+
+/* Visible keyboard focus everywhere (Streamlit widgets + our links/buttons). */
+:focus-visible {
+    outline: 2px solid var(--mm-pitch-strong) !important;
+    outline-offset: 2px;
+}
+
+/* Section kicker — condensed caps with a slanted pitch-green tab (broadcast lower-third feel). */
+.mm-kicker, .section-subheading {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-family: var(--mm-font-display);
+    font-size: 0.86rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mm-text-2);
+    margin: 1rem 0 0.5rem;
+}
+.mm-kicker::before, .section-subheading::before {
+    content: "";
+    width: 14px;
+    height: 10px;
+    background: var(--mm-pitch);
+    transform: skewX(-20deg);
+    border-radius: 1px;
+    flex-shrink: 0;
+}
+
+/* ── Sidebar ──────────────────────────────────────────────────────────── */
+section[data-testid="stSidebar"] {
+    border-right: 1px solid var(--mm-border);
+}
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+    padding-top: 0.5rem;
+}
+.sidebar-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.25rem 0 1rem;
+    border-bottom: 1px solid var(--mm-border);
+    margin-bottom: 0.9rem;
+}
+.sidebar-section-title {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    font-family: var(--mm-font-display);
+    font-size: 0.95rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mm-text);
+    margin: 0.25rem 0 0.6rem;
+}
+.sidebar-section-title .mm-icon {
+    color: var(--mm-pitch);
+}
+section[data-testid="stSidebar"] hr {
+    margin: 1rem 0;
+    border-color: var(--mm-border);
+}
+
+/* ── Brand mark (shared by sidebar + scoreboard) ─────────────────────── */
+.brand-logo-badge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 42px;
+    height: 32px;
+    padding: 0 0.5rem;
+    background: var(--mm-pitch);
+    color: #052E14;
+    font-family: var(--mm-font-display);
+    font-weight: 800;
+    font-size: 1.15rem;
+    letter-spacing: 0.02em;
+    clip-path: polygon(10% 0, 100% 0, 90% 100%, 0 100%);
+}
+.brand-name {
+    font-family: var(--mm-font-display);
+    font-size: 1.45rem;
+    font-weight: 800;
+    letter-spacing: 0.01em;
+    color: #FFFFFF;
+    line-height: 1;
+    text-transform: uppercase;
+}
+.brand-sub {
+    font-family: var(--mm-font-display);
+    font-size: 0.78rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--mm-text-3);
+}
+
+/* ── Scoreboard (TV score bug) ────────────────────────────────────────── */
+.broadcast-banner {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr);
+    align-items: center;
+    gap: 1rem;
+    padding: 0.75rem 1.1rem;
+    margin-bottom: 1.1rem;
+    background:
+        repeating-linear-gradient(90deg, rgba(34, 197, 94, 0.035) 0 56px, transparent 56px 112px),
+        linear-gradient(180deg, var(--mm-surface-2), var(--mm-surface));
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius-lg);
+    box-shadow: var(--mm-shadow);
+}
+.broadcast-brand {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+}
+.brand-title-wrap {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    min-width: 0;
+}
+.scorebug {
+    display: flex;
+    align-items: stretch;
+    white-space: nowrap;
+    border-radius: var(--mm-radius);
+    overflow: hidden;
+    border: 1px solid var(--mm-border-strong);
+    background: #070B15;
+}
+.scorebug-team {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.35rem 0.85rem;
+    font-family: var(--mm-font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+}
+.scorebug-team.home {
+    background: linear-gradient(90deg, var(--mm-home) 0 5px, var(--mm-home-soft) 5px);
+}
+.scorebug-team.away {
+    background: linear-gradient(270deg, var(--mm-away) 0 5px, var(--mm-away-soft) 5px);
+}
+.scorebug-score {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0 1rem;
+    font-family: var(--mm-font-display);
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1;
+    color: #FFFFFF;
+    font-variant-numeric: tabular-nums;
+    background: var(--mm-surface-3);
+}
+.scorebug-score .sep {
+    color: var(--mm-text-3);
+    font-weight: 600;
+}
+.scorebug-clock {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding: 0 0.85rem;
+    font-family: var(--mm-font-display);
+    font-size: 1.15rem;
+    font-weight: 700;
+    color: var(--mm-gold);
+    font-variant-numeric: tabular-nums;
+    border-left: 1px solid var(--mm-border-strong);
+}
+.live-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--mm-pitch);
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+    animation: mm-pulse 1.8s var(--mm-ease) infinite;
+}
+@keyframes mm-pulse {
+    0% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55); }
+    70% { box-shadow: 0 0 0 7px rgba(34, 197, 94, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+}
+.match-status-wrap {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 0.45rem;
+}
+
+/* ── Badges / pills ───────────────────────────────────────────────────── */
+.tactical-badge, .tactical-phase-pill, .pressure-pill, .copilot-target-badge, .translation-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.55rem;
+    border-radius: var(--mm-radius-sm);
+    font-family: var(--mm-font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    border: 1px solid transparent;
+    line-height: 1.2;
+}
+.badge-green, .tactical-phase-pill, .pressure-low, .copilot-target-badge {
+    background: var(--mm-pitch-soft);
+    color: var(--mm-pitch-strong);
+    border-color: var(--mm-pitch-line);
+}
+.badge-blue, .translation-pill {
+    background: var(--mm-info-soft);
+    color: var(--mm-info);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+.badge-amber, .pressure-med {
+    background: var(--mm-amber-soft);
+    color: var(--mm-amber);
+    border-color: rgba(245, 158, 11, 0.35);
+}
+.badge-red, .pressure-high {
+    background: var(--mm-danger-soft);
+    color: var(--mm-danger);
+    border-color: rgba(239, 68, 68, 0.35);
+}
+.badge-carrier {
+    background: var(--mm-pitch);
+    color: #052E14;
+}
+.badge-offball {
+    background: var(--mm-surface-3);
+    color: var(--mm-text-2);
+    border-color: var(--mm-border-strong);
+}
+.status-dot {
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: currentColor;
+}
+
+/* ── Pitch card (header + image + legend as ONE unit) ────────────────── */
+.pitch-card {
+    container-type: inline-size;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius-lg);
+    overflow: hidden;
+    box-shadow: var(--mm-shadow);
+}
+.pitch-monitor-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.75rem;
+    padding: 0.6rem 0.9rem;
+    border-bottom: 1px solid var(--mm-border);
+    background: var(--mm-surface-2);
+}
+.pitch-monitor-title {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+    font-family: var(--mm-font-display);
+    font-size: 1.05rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mm-text);
+    white-space: nowrap;
+}
+.pitch-monitor-title .mm-icon {
+    color: var(--mm-pitch);
+}
+.pitch-meta-specs {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-family: var(--mm-font-display);
+    font-size: 0.82rem;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mm-text-3);
+    white-space: nowrap;
+}
+.pitch-image {
+    display: block;
+    width: 100%;
+    height: auto;
+    background: #1F5C2A;
+}
+.tactical-legend-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.1rem;
+    padding: 0.6rem 0.9rem;
+    border-top: 1px solid var(--mm-border);
+    font-size: 0.82rem;
+    font-weight: 600;
+    color: var(--mm-text-2);
+}
+.legend-item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    white-space: nowrap;
+}
+.legend-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.red-dot { background: var(--mm-home); }
+.blue-dot { background: var(--mm-away); }
+.ball-dot { background: #FFFFFF; box-shadow: 0 0 0 1.5px #0B1120 inset; }
+.ring-dot { background: transparent; border: 2px solid #FFFFFF; }
+.gold-line, .cyan-dash, .magenta-line, .grey-line {
+    width: 18px;
+    height: 3px;
+    border-radius: 2px;
+}
+.gold-line { background: var(--mm-gold); }
+.magenta-line { background: var(--mm-magenta); }
+.grey-line { background: #CBD5E1; opacity: 0.7; }
+.cyan-dash { background: repeating-linear-gradient(90deg, var(--mm-cyan) 0 5px, transparent 5px 8px); }
+
+.scrubber-strip {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 0.4rem 1.25rem;
+    margin-top: 0.75rem;
+    padding: 0.55rem 0.9rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius);
+    font-size: 0.85rem;
+    color: var(--mm-text-2);
+}
+.scrubber-strip .k {
+    font-family: var(--mm-font-display);
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mm-text-3);
+    margin-right: 0.35rem;
+}
+.scrubber-strip .v {
+    color: var(--mm-text);
+    font-weight: 600;
+}
+
+/* ── Tabs ─────────────────────────────────────────────────────────────── */
+.stTabs [data-baseweb="tab-list"] {
+    gap: 0.25rem;
+    background: var(--mm-surface);
+    padding: 0.3rem;
+    border-radius: var(--mm-radius);
+    border: 1px solid var(--mm-border);
+    margin-bottom: 0.9rem;
+}
+.stTabs [data-baseweb="tab"] {
+    height: 38px;
+    padding: 0 0.9rem;
+    border-radius: 6px;
+    background: transparent;
+    color: var(--mm-text-2);
+    transition: background var(--mm-dur) var(--mm-ease), color var(--mm-dur) var(--mm-ease);
+}
+.stTabs [data-baseweb="tab"] p {
+    font-family: var(--mm-font-display);
+    font-size: 0.98rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+}
+.stTabs [data-baseweb="tab"]:hover {
+    color: var(--mm-text);
+    background: var(--mm-surface-2);
+}
+.stTabs [aria-selected="true"] {
+    background: var(--mm-surface-3) !important;
+    color: var(--mm-pitch-strong) !important;
+}
+.stTabs [data-baseweb="tab-highlight"], .stTabs [data-baseweb="tab-border"] {
+    display: none;
+}
+
+/* ── Buttons ──────────────────────────────────────────────────────────── */
+.stButton > button, .stFormSubmitButton > button {
+    font-family: var(--mm-font-body);
+    font-weight: 600;
+    border-radius: var(--mm-radius);
+    transition: border-color var(--mm-dur) var(--mm-ease), background var(--mm-dur) var(--mm-ease), color var(--mm-dur) var(--mm-ease);
+    cursor: pointer;
+}
+.stButton > button[kind="secondary"] {
+    background: var(--mm-surface-2);
+    border: 1px solid var(--mm-border-strong);
+    color: var(--mm-text);
+}
+.stButton > button[kind="secondary"]:hover {
+    border-color: var(--mm-pitch);
+    color: var(--mm-pitch-strong);
+    background: var(--mm-surface-3);
+}
+.stButton > button[kind="primary"] {
+    font-family: var(--mm-font-display);
+    font-size: 1.05rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #052E14;
+}
+
+/* ── Copilot (chat) ───────────────────────────────────────────────────── */
+.copilot-header-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem 0.75rem;
+    padding: 0.55rem 0.8rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius);
+    min-height: 42px;
+}
+.copilot-title-wrap {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    min-width: 0;
+    font-family: var(--mm-font-display);
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--mm-text);
+    white-space: nowrap;
+}
+.copilot-title-wrap .mm-icon {
+    color: var(--mm-pitch);
+}
+.copilot-meta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-size: 0.8rem;
+    color: var(--mm-text-3);
+    white-space: nowrap;
+}
+.copilot-welcome-card {
+    margin: 0.75rem 0 0.6rem;
+    padding: 1rem 1.1rem;
+    background:
+        linear-gradient(135deg, rgba(34, 197, 94, 0.09), transparent 45%),
+        var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-left: 3px solid var(--mm-pitch);
+    border-radius: var(--mm-radius);
+}
+.welcome-title {
+    font-family: var(--mm-font-display);
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 0.02em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    margin-bottom: 0.35rem;
+}
+.welcome-desc {
+    font-size: 0.92rem;
+    line-height: 1.55;
+    color: var(--mm-text-2);
+}
+.welcome-desc b {
+    color: var(--mm-text);
+}
+.suggested-label {
+    margin-top: 0.8rem;
+    font-family: var(--mm-font-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mm-text-3);
+}
+div[data-testid="stChatMessage"] {
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius);
+    padding: 0.8rem 1rem;
+}
+div[data-testid="stChatMessageContent"] {
+    font-size: 0.95rem;
+    line-height: 1.6;
+}
+.translation-pill {
+    margin-top: 0.5rem;
+    text-transform: none;
+    letter-spacing: 0.02em;
+    font-family: var(--mm-font-body);
+    font-weight: 600;
+    font-size: 0.78rem;
+}
+div[data-testid="stChatInput"] {
+    border-radius: var(--mm-radius);
+}
+
+/* ── Player dossier ───────────────────────────────────────────────────── */
+.scout-card {
+    padding: 0.9rem 1rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius-lg);
+}
+.scout-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.6rem;
+}
+.scout-identity {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    min-width: 0;
+}
+.jersey-circle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 46px;
+    height: 46px;
+    border-radius: var(--mm-radius);
+    font-family: var(--mm-font-display);
+    font-size: 1.35rem;
+    font-weight: 800;
+    color: #FFFFFF;
+    font-variant-numeric: tabular-nums;
+    clip-path: polygon(20% 0, 80% 0, 100% 18%, 88% 32%, 88% 100%, 12% 100%, 12% 32%, 0 18%);
+}
+.team-home-badge { background: var(--mm-home); }
+.team-away-badge { background: var(--mm-away); }
+.scout-role {
+    font-family: var(--mm-font-display);
+    font-size: 1.25rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+    text-transform: uppercase;
+    color: #FFFFFF;
+    line-height: 1.1;
+}
+.scout-team-sub {
+    font-size: 0.85rem;
+    color: var(--mm-text-2);
+}
+.scout-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.coords-strip {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.35rem 1rem;
+    margin-top: 0.7rem;
+    padding-top: 0.6rem;
+    border-top: 1px solid var(--mm-border);
+    font-family: var(--mm-font-mono);
+    font-size: 0.78rem;
+    color: var(--mm-text-2);
+}
+.metric-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.6rem;
+}
+.metric-box, .shape-box {
+    padding: 0.7rem 0.8rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius);
+    min-width: 0;
+}
+.metric-label, .shape-title {
+    font-family: var(--mm-font-display);
+    font-size: 0.8rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    color: var(--mm-text-3);
+    min-height: 2.4em; /* labels may wrap to 2 lines; keep the value rows aligned */
+}
+.metric-value, .shape-val {
+    font-family: var(--mm-font-display);
+    font-size: 1.9rem;
+    font-weight: 800;
+    line-height: 1.05;
+    color: #FFFFFF;
+    font-variant-numeric: tabular-nums;
+    margin: 0.15rem 0;
+}
+.metric-value.good { color: var(--mm-pitch-strong); }
+.metric-value.warn { color: var(--mm-amber); }
+.metric-value.bad { color: var(--mm-danger); }
+.metric-unit {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--mm-text-3);
+    margin-left: 2px;
+}
+.metric-footer, .shape-sub {
+    font-size: 0.8rem;
+    color: var(--mm-text-2);
+}
+.flag-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.45rem;
+}
+.tactical-flag-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    padding: 0.5rem 0.7rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius-sm);
+    font-size: 0.88rem;
+}
+.tactical-flag-row.on {
+    border-left: 3px solid var(--mm-pitch);
+}
+.flag-label {
+    display: flex;
+    align-items: center;
+    gap: 0.45rem;
+    color: var(--mm-text);
+    font-weight: 600;
+}
+.flag-val {
+    font-family: var(--mm-font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.val-active { color: var(--mm-pitch-strong); }
+.val-dim { color: var(--mm-text-3); }
+.analyst-memo {
+    font-size: 0.92rem;
+    line-height: 1.6;
+    color: var(--mm-text-2);
+}
+
+/* ── Directive + decision matrix ──────────────────────────────────────── */
+.directive-card {
+    padding: 0.95rem 1.1rem;
+    background: linear-gradient(180deg, var(--mm-surface-2), var(--mm-surface));
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius-lg);
+    box-shadow: var(--mm-shadow);
+}
+.directive-border-green { border-left: 5px solid var(--mm-pitch); }
+.directive-border-amber { border-left: 5px solid var(--mm-amber); }
+.directive-border-red { border-left: 5px solid var(--mm-danger); }
+.directive-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 0.45rem;
+}
+.directive-primary-badge {
+    font-family: var(--mm-font-display);
+    font-size: 0.85rem;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--mm-pitch-strong);
+}
+.directive-main-text {
+    font-family: var(--mm-font-display);
+    font-size: 1.45rem;
+    font-weight: 700;
+    line-height: 1.2;
+    color: #FFFFFF;
+}
+.directive-card-bottom {
+    margin-top: 0.6rem;
+    padding-top: 0.5rem;
+    border-top: 1px solid var(--mm-border);
+}
+.action-id-pill {
+    font-family: var(--mm-font-mono);
+    font-size: 0.75rem;
+    color: var(--mm-text-2);
+    background: var(--mm-bg);
+    padding: 0.15rem 0.5rem;
+    border-radius: var(--mm-radius-sm);
+    border: 1px solid var(--mm-border);
+}
+.decision-deck {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.decision-card {
+    padding: 0.7rem 0.9rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius);
+}
+.decision-card-preferred {
+    border-left: 4px solid var(--mm-pitch);
+    background: linear-gradient(90deg, rgba(34, 197, 94, 0.07), transparent 60%), var(--mm-surface);
+}
+.decision-card-alt {
+    border-left: 4px solid var(--mm-border-strong);
+}
+.decision-card-top {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.5rem;
+    margin-bottom: 0.3rem;
+}
+.decision-status-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    font-family: var(--mm-font-display);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+.status-pref-pill { color: var(--mm-pitch-strong); }
+.status-alt-pill { color: var(--mm-text-3); }
+.delta-chip {
+    font-family: var(--mm-font-mono);
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.12rem 0.45rem;
+    border-radius: var(--mm-radius-sm);
+    white-space: nowrap;
+    font-variant-numeric: tabular-nums;
+}
+.delta-pos { background: var(--mm-pitch-soft); color: var(--mm-pitch-strong); }
+.delta-neg { background: var(--mm-danger-soft); color: var(--mm-danger); }
+.delta-neutral { background: var(--mm-surface-3); color: var(--mm-text-3); }
+.decision-action-title {
+    font-weight: 700;
+    font-size: 0.98rem;
+    color: var(--mm-text);
+    line-height: 1.35;
+    margin-bottom: 0.2rem;
+}
+.decision-risk-text {
+    font-size: 0.86rem;
+    line-height: 1.5;
+    color: var(--mm-text-2);
+}
+.decision-risk-label {
+    font-weight: 700;
+    color: var(--mm-text);
+}
+
+.briefing-box {
+    padding: 0.85rem 1rem;
+    background: var(--mm-surface);
+    border: 1px solid var(--mm-border);
+    border-radius: var(--mm-radius);
+    font-size: 0.95rem;
+    line-height: 1.65;
+    color: var(--mm-text);
+}
+.briefing-list {
+    margin: 0;
+    padding-left: 1.1rem;
+}
+.briefing-li {
+    margin-bottom: 0.35rem;
+}
+.concept-chips-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+}
+.concept-chip {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.25rem 0.6rem;
+    border-radius: 999px;
+    background: var(--mm-info-soft);
+    border: 1px solid rgba(56, 189, 248, 0.3);
+    color: var(--mm-info);
+    font-size: 0.82rem;
+    font-weight: 600;
+}
+.ev-container { font-size: 0.85rem; color: var(--mm-text-2); }
+.ev-row { margin-bottom: 0.35rem; line-height: 1.45; }
+.ev-tag { font-family: var(--mm-font-mono); color: var(--mm-info); font-weight: 600; margin-right: 0.3rem; }
+
+.candidate-pre-box {
+    padding: 1.2rem;
+    text-align: center;
+    background: var(--mm-surface);
+    border: 1px dashed var(--mm-border-strong);
+    border-radius: var(--mm-radius-lg);
+    color: var(--mm-text-2);
+}
+.candidate-pre-box .mm-icon { color: var(--mm-pitch); margin-bottom: 0.4rem; }
+.candidate-pre-box .t {
+    font-family: var(--mm-font-display);
+    font-size: 1.15rem;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--mm-text);
+    margin-bottom: 0.3rem;
+}
+
+/* ── Footer ───────────────────────────────────────────────────────────── */
+.mm-footer {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 0.4rem 1rem;
+    margin-top: 1.5rem;
+    padding-top: 0.9rem;
+    border-top: 1px solid var(--mm-border);
+    font-size: 0.8rem;
+    color: var(--mm-text-3);
+}
+
+/* ── Responsive ───────────────────────────────────────────────────────── */
+/* The pitch card's own width decides its header density (it lives in a
+   column, so viewport media queries can't see how narrow it really is). */
+@container (max-width: 560px) {
+    .pitch-meta-specs { display: none; }
+}
+@container (max-width: 380px) {
+    .pitch-monitor-title .tactical-badge { display: none; }
+}
+
+/* Below ~1200px (sidebar open) the 57/43 split leaves the console too narrow
+   for its tabs and chat, so stack pitch above console instead. Scoped with
+   :has() to the one row that holds the pitch card, not every st.columns row. */
+@media (max-width: 1200px) {
+    [data-testid="stHorizontalBlock"]:has(.pitch-card) {
+        flex-wrap: wrap;
+    }
+    [data-testid="stHorizontalBlock"]:has(.pitch-card) > [data-testid="stColumn"] {
+        flex: 1 1 100% !important;
+        width: 100% !important;
+        min-width: 100% !important;
+    }
+}
+
+@media (max-width: 1280px) {
+    .broadcast-banner { grid-template-columns: 1fr auto; }
+    .match-status-wrap { grid-column: 1 / -1; justify-content: flex-start; }
+    .brand-sub { display: none; }
+}
+@media (max-width: 900px) {
+    .broadcast-banner { grid-template-columns: 1fr; }
+    .scorebug { justify-self: start; }
+    .metric-grid { grid-template-columns: 1fr; }
+    .flag-grid { grid-template-columns: 1fr; }
+    .pitch-meta-specs { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+}

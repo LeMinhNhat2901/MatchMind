@@ -1,0 +1,53 @@
+{
+  "concept_id": "fifa_front_post_overload_vs_zonal_defense",
+  "category": "attacking",
+  "subcategory": "set_piece",
+  "phase": "possession",
+  "title": "Front Post Overload vs Zonal Defense",
+  "definition": "A set-piece strategy that creates numerical superiority at the front post to exploit the rigid positional constraints of zonal defenders.",
+  "content": "This tactical routine is specifically designed to counter zone-based defensive systems by concentrating attacking players in the front-post region, where zonal defenders are most vulnerable due to their fixed geographic responsibilities. The mechanism involves a tiered approach: a primary group of attackers creates a local overload at the front post, while a secondary group positions at the back post and penalty spot to cover secondary options. This structure forces zonal defenders into a dilemma; once the initial delivery penetrates the first line, defenders behind it lack the freedom to shift positions to cover the threat because their roles are tied to specific zones rather than individual opponents. Success relies on precise synchronization between the delivery and the runners' timing. The ball must bypass the nearest defender to reach the overloaded front post, where a flick-on or direct shot can be executed. If the initial threat is not converted, the ball is often redirected to the back post, where the secondary attackers are ready to finish. This approach highlights that while zonal defending offers compactness, it creates exploitable gaps when attackers time their runs to coincide with the ball's arrival, effectively overwhelming specific zones with numerical superiority.",
+  "conditions": [
+    "opponent_uses_zonal_defense",
+    "set_piece_corner_kick"
+  ],
+  "objective": [
+    "create_local_numerical_superiority",
+    "exploit_rigid_defensive_positions",
+    "generate_finishing_opportunity_front_or_back_post"
+  ],
+  "possible_actions": [
+    "congregate_runners_front_post",
+    "position_secondary_attackers_back_post",
+    "deliver_ball_past_first_defender",
+    "flick_on_to_back_post"
+  ],
+  "contraindications": [
+    "opponent_uses_man_marking",
+    "poor_delivery_accuracy",
+    "unsynchronized_run_timing"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "concentrated_front_post_area",
+    "coverage_back_post_and_penalty_spot"
+  ],
+  "player_behaviours": [
+    "synchronize_run_timing",
+    "maintain_positional_discipline",
+    "execute_flick_on_redirect"
+  ],
+  "related_concepts": [
+    "zonal_defending",
+    "numerical_superiority",
+    "set_piece_routine"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Cameroon: Attacking the near post against zonal defences",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/attacking-corners-cameroon.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  }
+}

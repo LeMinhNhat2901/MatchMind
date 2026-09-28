@@ -27,7 +27,10 @@ Defines the full agent StateGraph with real conditional branching:
                                │
                     ├── errors → increment_retry → generate_reasoning (loop, max 2)
                     │
-                    └── valid → END
+                    └── valid → narrate_advice  (LLM call, Tier 2 — paraphrases
+                                     ↓            the validated advice into one
+                                    END           natural-language paragraph;
+                                                   never introduces new facts)
 """
 from __future__ import annotations
 
@@ -54,6 +57,7 @@ from matchmind.agent.nodes.validator_node import (
     check_validation,
     increment_generation_retry,
 )
+from matchmind.agent.nodes.narrator_node import narrator_node
 from matchmind.schema.match_state import MatchState, TacticalAdvice
 
 logger = logging.getLogger(__name__)
@@ -107,6 +111,7 @@ def build_tactical_graph() -> Any:
     builder.add_node("generate_reasoning", reasoner_node)
     builder.add_node("validate_output", validator_node)
     builder.add_node("increment_retry", increment_generation_retry)
+    builder.add_node("narrate_advice", narrator_node)
 
     # ── Linear edges ───────────────────────────────────────
     builder.set_entry_point("encode_situation")
@@ -135,10 +140,11 @@ def build_tactical_graph() -> Any:
         check_validation,
         {
             "regenerate": "increment_retry",
-            "end": END,
+            "end": "narrate_advice",
         },
     )
     builder.add_edge("increment_retry", "generate_reasoning")  # loop back
+    builder.add_edge("narrate_advice", END)
 
     return builder.compile()
 
@@ -187,6 +193,7 @@ class TacticalAgent:
         focus_player_id: int,
         focus_team: str | None = None,
         question: str | None = None,
+        language: str | None = None,
     ) -> TacticalAdvice:
         """
         Run the full agent pipeline on a match snapshot.
@@ -200,6 +207,9 @@ class TacticalAgent:
                 that ambiguity for this run; omit it only when you're sure
                 `focus_player_id` can't collide (e.g. StatsBomb's global ids).
             question: Natural language question. Defaults to generic question.
+            language: Language for the user-facing answer (advice.narrative /
+                advice.rationale), e.g. "Vietnamese". Reasoning stays English;
+                only narrator_node writes in this language. Defaults to English.
 
         Returns:
             TacticalAdvice — structured, validated output.
@@ -222,6 +232,7 @@ class TacticalAgent:
             "match_state": match_state,
             "focus_player_id": focus_player_id,
             "question": question,
+            "response_language": language or "English",
             "situation_features": None,
             "pitch_image_path": None,
             "candidate_actions": None,
@@ -315,3 +326,53 @@ class TacticalAgent:
             match_state, focus.defending_player_id, focus_team=focus.defending_team, question=defending_question
         )
         return attacking, defending
+
+    def analyze_followup(
+        self,
+        match_state: MatchState,
+        advice: TacticalAdvice,
+        focus_team: str,
+        action_id: str | None = None,
+        language: str | None = None,
+    ) -> tuple[TacticalAdvice, list[dict]] | None:
+        """
+        Optional "what happens next?" step — projects the match state forward
+        as if `action_id` (defaults to `advice.recommended_action_id`) had just
+        happened, then runs a full second `analyze()` call on the resulting
+        situation. E.g. "player 8 receives the pass just recommended — what
+        should THEY do now?", or for an off-ball run: "this run pulls opponent
+        #4 out of position — what does that open up?".
+
+        This is a second full LLM pass on top of the original recommendation —
+        never called automatically, only when the user explicitly asks for it
+        (see dashboard/app.py's "what happens next?" button).
+
+        Returns None when there's nothing meaningful to project (the action
+        doesn't resolve to a shortlist entry with target coordinates, or it's
+        a sequence-ending action like a shot) — never raises, since this is a
+        nice-to-have on top of an already-complete answer.
+        """
+        from matchmind.situation_engine.projection import project_after_action
+
+        if advice.focus_player_id is None:
+            return None
+
+        action = advice.resolve_action(action_id or advice.recommended_action_id)
+        if action is None:
+            return None
+
+        projection = project_after_action(match_state, advice.focus_player_id, focus_team, action)
+        if projection is None:
+            return None
+
+        logger.info(
+            f"analyze_followup: action={action.action!r} -> focus={projection.focus_player_id} "
+            f"({focus_team})"
+        )
+        return self.analyze(
+            projection.state,
+            projection.focus_player_id,
+            focus_team=focus_team,
+            question=projection.question,
+            language=language,
+        )
