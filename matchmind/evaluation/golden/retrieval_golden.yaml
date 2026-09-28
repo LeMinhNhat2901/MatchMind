@@ -1,0 +1,166 @@
+# Hand-labelled retrieval golden set. Independent of trigger_conditions on purpose.
+# Reviewed by: <điền tên người review + ngày trước khi dùng làm ngưỡng CI>
+- id: g01
+  question: "Should the full-back overlap outside the winger who has the ball near the touchline?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [overlapping_run]
+  acceptable: [underlapping_run, stretching_defense_width, fifa_wide_area_exploitation, overload_flank_rotation]
+  must_not: [offside_trap, low_block]
+- id: g02
+  question: "The full-back makes an inside run between the opposing full-back and centre-back while the winger holds the width"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [underlapping_run]
+  acceptable: [diagonal_run_channel, overlapping_run, half_space_exploitation]
+- id: g03
+  question: "The direct pass to the striker is blocked, so use a nearby midfielder to find the runner"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [third_man_run, fifa_third_player_combination, fifa_adaptive_third_player_combinations]
+  acceptable: [combination_play_triangle]
+- id: g04
+  question: "Play a quick one-two wall pass to get past the defender"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [combination_play_triangle, wiki_push_and_run_combination]
+  acceptable: [third_man_run, fifa_breaking_counter_press_via_triangular_play]
+- id: g05
+  question: "The attacking midfielder receives between the opponent's midfield and defensive lines"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [pocket_exploitation]
+  acceptable: [half_space_exploitation, false_9_drop, fifa_offering_to_receive]
+- id: g06
+  question: "Carry the ball into the half-space between the full-back and the centre-back"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [half_space_exploitation]
+  acceptable: [pocket_exploitation, diagonal_run_channel]
+- id: g07
+  question: "The ball side is overloaded, switch the play to the free winger on the far side"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [fifa_switching_play_to_create_overloads, wiki_long_cross_field_switch, yt_overload_and_switch_strategy]
+  acceptable: [overload_flank_rotation, stretching_defense_width]
+- id: g08
+  question: "The opponent's defensive line is high with space in behind, when should we play the through ball?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [through_ball_trigger, fifa_penetrating_passes_behind_defense]
+  acceptable: [blind_side_run, direct_play_vertical, diagonal_run_channel]
+- id: g09
+  question: "The striker runs off the centre-back's shoulder where the defender cannot see him"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [blind_side_run]
+  acceptable: [diagonal_run_channel, through_ball_trigger]
+- id: g10
+  question: "The ball carrier is under heavy pressure from the nearest opponent, how do we escape the press?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [fifa_breaking_counter_press_via_triangular_play, combination_play_triangle]
+  acceptable: [fifa_one_touch_passing_mechanics, third_man_run, fifa_ball_reception_and_game_tempo]
+- id: g11
+  question: "We just won the ball back and their defence is disorganised, attack quickly"
+  in_possession: true
+  phase_of_play: attacking_transition
+  relevant: [counter_attack_transition, fifa_rapid_counter_attack_execution, fifa_synchronized_offensive_transition_execution]
+  acceptable: [direct_play_vertical, wiki_long_ball_direct_attack]
+- id: g12
+  question: "We just lost the ball in the final third, win it back immediately"
+  in_possession: false
+  phase_of_play: defensive_transition
+  relevant: [gegenpressing, fifa_counter_pressing_strategy, fifa_individual_and_collective_counter_pressing]
+  must_not: [overlapping_run, counter_attack_transition]
+- id: g13
+  question: "When should our forwards start pressing the goalkeeper and the centre-backs?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [high_press_trigger, fifa_effective_high_press_principles, fifa_coordinated_high_pressing_system, wiki_high_pressing_system]
+  acceptable: [pressing_trap, fifa_centralized_high_intensity_pressing]
+- id: g14
+  question: "Show the opponent towards the touchline and trap them there"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [pressing_trap]
+  acceptable: [pressing_trigger_pass, high_press_trigger]
+- id: g15
+  question: "Protecting a lead late in the game, sit deep and protect the box"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [low_block]
+  acceptable: [compactness_narrow, wiki_catenaccio_defensive_system, wiki_ultra_defensive_catenaccio_strategy]
+- id: g16
+  question: "Defend in a mid block and only press when the ball goes wide"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [yt_mid_block_defensive_organization, fifa_conditional_mid_block_pressing]
+  acceptable: [compactness_narrow, fifa_compact_out_of_possession_organization]
+- id: g17
+  question: "The back line steps up together to catch the striker offside"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [offside_trap]
+  must_not: [overlapping_run]
+- id: g18
+  question: "Mark their playmaker tightly to take him out of the game"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [man_marking_key]
+  acceptable: [wiki_man_vs_zonal_marking, yt_hybrid_marking_systems]
+- id: g19
+  question: "After the long clearance, be ready to win the second ball"
+  phase_of_play: open_play
+  relevant: [second_ball_anticipation]
+- id: g20
+  question: "The defender has been beaten and must sprint back goal-side"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [recovery_run_positioning]
+- id: g21
+  question: "The target striker receives a long ball with his back to goal and waits for support"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [hold_up_play]
+  acceptable: [wiki_deep_lying_centre_forward_role, wiki_long_ball_direct_attack]
+- id: g22
+  question: "The centre-forward drops deep into midfield to drag the centre-back out"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [false_9_drop, wiki_deep_lying_centre_forward_role]
+  acceptable: [pocket_exploitation, space_creation_movement]
+- id: g23
+  question: "A left-footed winger playing on the right cuts inside onto his stronger foot"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [inverted_winger]
+- id: g24
+  question: "Create a 3 versus 2 near the ball to outnumber the defenders"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [numerical_superiority_local]
+  acceptable: [overload_flank_rotation, fifa_dynamic_ball_proximity_principle]
+- id: g25
+  question: "An off-ball player makes a decoy run to drag a marker away and open space for a teammate"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [space_creation_movement]
+  acceptable: [blind_side_run, fifa_five_receiving_movement_patterns]
+- id: g26
+  question: "Before receiving, look over the shoulder to know where the pressure is coming from"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [fifa_anticipation_and_scanning]
+  acceptable: [fifa_ball_reception_and_game_tempo, fifa_offering_to_receive]
+- id: g27
+  question: "What should we do from this corner kick?"
+  in_possession: true
+  phase_of_play: set_piece
+  relevant: [fifa_front_post_corner_strategy, fifa_short_corner_overload_structure, fifa_corner_train_and_blocker_strategy, fifa_short_corner_edge_isolation, fifa_front_post_overload_vs_zonal_defense]
+  acceptable: [wiki_set_piece_tactical_routines, wiki_set_piece_tactical_framework]
+- id: g28
+  question: "The player is on the edge of the box in open play with an open passing lane, what should he do?"
+  in_possession: true
+  phase_of_play: open_play
+  must_not: [fifa_front_post_corner_strategy, fifa_short_corner_overload_structure, fifa_mid_range_free_kick_strategy, fifa_short_range_direct_free_kick_strategy, wiki_scorpion_kick_technique, wiki_bicycle_kick_technique, wiki_rabona_kicking_technique]
