@@ -58,6 +58,7 @@ from matchmind.agent.nodes.validator_node import (
     increment_generation_retry,
 )
 from matchmind.agent.nodes.narrator_node import narrator_node
+from matchmind.agent.nodes.examples_node import retrieve_examples_node
 from matchmind.schema.match_state import MatchState, TacticalAdvice
 
 logger = logging.getLogger(__name__)
@@ -112,6 +113,7 @@ def build_tactical_graph() -> Any:
     builder.add_node("validate_output", validator_node)
     builder.add_node("increment_retry", increment_generation_retry)
     builder.add_node("narrate_advice", narrator_node)
+    builder.add_node("retrieve_examples", retrieve_examples_node)
 
     # ── Linear edges ───────────────────────────────────────
     builder.set_entry_point("encode_situation")
@@ -130,7 +132,8 @@ def build_tactical_graph() -> Any:
     builder.add_edge("expand_query", "retrieve_tactics")  # loop back
 
     # ── Linear edges after retrieval ───────────────────────
-    builder.add_edge("counterfactual_analysis", "assemble_evidence")
+    builder.add_edge("counterfactual_analysis", "retrieve_examples")
+    builder.add_edge("retrieve_examples", "assemble_evidence")
     builder.add_edge("assemble_evidence", "generate_reasoning")
     builder.add_edge("generate_reasoning", "validate_output")
 
@@ -244,6 +247,8 @@ class TacticalAgent:
             "retrieval_confidence": None,
             "retrieval_retry_count": 0,
             "expanded_query": None,
+            "similar_examples": None,
+            "similar_examples_summary": None,
             "evidence_set": None,
             "raw_llm_output": None,
             "tactical_advice": None,

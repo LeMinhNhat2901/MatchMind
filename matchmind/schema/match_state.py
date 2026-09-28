@@ -473,7 +473,7 @@ class EvidenceItem(BaseModel):
     """A single piece of evidence used by the agent."""
 
     id: str = Field(..., description="Concept ID (RAG), feature name (stats), or field name (context)")
-    source: Literal["rag", "stats", "context"] = Field(
+    source: Literal["rag", "stats", "context", "example"] = Field(
         ..., description="Which evidence bucket this came from"
     )
     content: str = Field(..., description="Human-readable evidence text")

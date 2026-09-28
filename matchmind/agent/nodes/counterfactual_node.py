@@ -157,8 +157,16 @@ def assemble_evidence_node(state: AgentState) -> AgentState:
     ]
     context_evidence = [{"id": "match_context", "source": "context", "content": " | ".join(context_facts)}]
 
+    # ── Example Evidence (real recorded situations) ──────────
+    example_evidence = [
+        {"id": e["example_id"], "source": "example",
+         "content": f"{e['summary']} (similarity {e['similarity']:.2f})"}
+        for e in (state.get("similar_examples") or [])
+    ]
+
     evidence_set = {
         "rag": rag_evidence,
+        "example": example_evidence,
         "stats": stats_evidence,
         "context": context_evidence,
     }

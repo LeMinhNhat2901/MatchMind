@@ -80,6 +80,20 @@ def _build_prompt(state: AgentState) -> str:
         for r in retrieved
     )
 
+    # Similar real situations (Example Library evidence)
+    examples_summary = state.get("similar_examples_summary") or ""
+    examples_text = "\n".join(
+        f"  • [{e['id']}] {e['content']}" for e in evidence.get("example", [])
+    )
+    examples_section = (
+        "═══════════════════════════════════════════════════════════════\n"
+        "SIMILAR REAL SITUATIONS (StatsBomb Open Data — what teams actually did)\n"
+        "═══════════════════════════════════════════════════════════════\n"
+        f"{examples_summary}\n{examples_text}\n"
+        'Use these as supporting evidence only; cite them with source "example" and their id.\n\n'
+        if examples_text else ""
+    )
+
     # Stats evidence
     stats_text = " | ".join(
         e["content"] for e in evidence.get("stats", [])
@@ -135,7 +149,7 @@ TACTICAL KNOWLEDGE (RETRIEVED FROM KNOWLEDGE BASE)
 ═══════════════════════════════════════════════════════════════
 {rag_text}
 
-═══════════════════════════════════════════════════════════════
+{examples_section}═══════════════════════════════════════════════════════════════
 CANDIDATE ACTIONS (rule-based shortlist — evaluate these first)
 ═══════════════════════════════════════════════════════════════
 {candidates_text}
@@ -173,6 +187,7 @@ Respond with ONLY valid JSON matching this exact structure:
     {{"id": "computed_features", "source": "stats", "content": "Key statistic used"}},
     {{"id": "match_context", "source": "context", "content": "How context influences decision"}}
   ],
+  (evidence "source" is one of "rag" | "stats" | "context" | "example"),
   "cited_concepts": ["Title1", "Title2"],
   "situation_features": null
 }}
