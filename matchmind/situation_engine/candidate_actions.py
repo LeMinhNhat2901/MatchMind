@@ -59,7 +59,16 @@ def generate_candidate_actions(
         seen.add(ca.action)
         actions.append(ca)
 
-    if feats.is_ball_carrier:
+    if _is_goalkeeper(focus):
+        # Keepers get keeper options only. Before this branch the outfield
+        # generators sent the home keeper (x=5) "into the half-space pocket
+        # near (35, 50)" while #10 attacked — a real user-reported answer.
+        for ca in _goalkeeper_actions(state, feats, focus):
+            add(ca)
+        if not feats.is_ball_carrier:
+            for name, label in _OFF_BALL_DEFAULTS:
+                add(CandidateAction(action=name, label=label, target_xy=(focus.x, focus.y), moves_ball=False, origin="default"))
+    elif feats.is_ball_carrier:
         for ca in _on_ball_actions(state, feats, focus):
             add(ca)
         for name, label in _ON_BALL_DEFAULTS:
@@ -184,6 +193,85 @@ def _off_ball_attacking_actions(feats: SituationFeatures, focus, carrier) -> lis
             target_xy=(tx, ty), moves_ball=False, origin="situation",
         ))
 
+    return out
+
+
+# ── Goalkeeper ─────────────────────────────────────────────────────────────
+
+_OWN_GOAL = (0.0, PITCH_WIDTH / 2)   # project convention: every team attacks toward +x
+_OWN_BOX_DEPTH = 16.5
+
+
+def _is_goalkeeper(player) -> bool:
+    return (player.role or "").lower() in {"goalkeeper", "gk", "keeper"}
+
+
+def _goalkeeper_actions(state: MatchState, feats: SituationFeatures, focus) -> list[CandidateAction]:
+    """Keeper options. The team's aim is still the opponent's goal: with the ball
+    the keeper starts attacks (distribution); while the team attacks, the keeper
+    supports it by covering the space behind a high back line; without the ball
+    the keeper protects the goal."""
+    out: list[CandidateAction] = []
+
+    if feats.is_ball_carrier:
+        for ca in _on_ball_actions(state, feats, focus):
+            if ca.action.startswith("pass_to_") or ca.action == "switch_play":
+                out.append(ca)
+        mates = [p for p in state.get_team_players(focus.team) if p.id != focus.id]
+        if mates:
+            far = max(mates, key=lambda p: p.x)
+            out.append(CandidateAction(
+                action="gk_long_distribution",
+                label=f"Long distribution to the most advanced teammate (Player {far.id}) at ({far.x:.0f}, {far.y:.0f})",
+                target_xy=(far.x, far.y), target_player_id=far.id, origin="situation",
+            ))
+        out.append(CandidateAction(action="hold_and_recycle", label="Keep the ball and reset the build-up", origin="default"))
+        return out
+
+    carrier = state.get_player(feats.ball_carrier_id) if feats.ball_carrier_id is not None else None
+    if carrier is None or carrier.team == focus.team:
+        # Own team attacking: sweeper-keeper behind the back line, ready for the
+        # ball played in behind if possession is lost.
+        outfield = [p for p in state.get_team_players(focus.team) if p.id != focus.id and not _is_goalkeeper(p)]
+        back_line = min((p.x for p in outfield), default=30.0)
+        sx = max(focus.x, min(back_line - 10.0, 25.0))
+        sy = PITCH_WIDTH / 2 + (state.ball.y - PITCH_WIDTH / 2) * 0.3
+        sx, sy = _clamp(sx, sy)
+        out.append(CandidateAction(
+            action="gk_sweeper_position",
+            label=(f"Step up to ({sx:.0f}, {sy:.0f}), just behind our own back line (x≈{back_line:.0f}), "
+                   "as a sweeper-keeper: cover the space between our defenders and our goal, ready to "
+                   "clear a long ball if we lose possession while attacking"),
+            target_xy=(sx, sy), moves_ball=False, origin="situation",
+        ))
+        if carrier is not None and carrier.x < PITCH_LENGTH / 2:
+            bx, by = _clamp(max(focus.x, 8.0), focus.y + (carrier.y - focus.y) * 0.3)
+            out.append(CandidateAction(
+                action="gk_offer_back_pass",
+                label=f"Offer a safe back-pass angle near ({bx:.0f}, {by:.0f}) to help the team keep the ball",
+                target_xy=(bx, by), moves_ball=False, origin="situation",
+            ))
+        return out
+
+    # Opponent has the ball: stand between the ball and the centre of the goal.
+    gx, gy = _OWN_GOAL
+    dx, dy = carrier.x - gx, carrier.y - gy
+    dist = max((dx**2 + dy**2) ** 0.5, 1e-6)
+    advance = min(6.0, dist * 0.15)
+    tx, ty = _clamp(max(gx + dx / dist * advance, 0.5), gy + dy / dist * advance)
+    out.append(CandidateAction(
+        action="gk_set_position",
+        label=f"Set position on the line between the ball and the centre of the goal at ({tx:.0f}, {ty:.0f})",
+        target_xy=(tx, ty), moves_ball=False, origin="situation",
+    ))
+    if dist < 25.0:
+        step = min(dist * 0.35, _OWN_BOX_DEPTH)
+        cx, cy = _clamp(gx + dx / dist * step, gy + dy / dist * step)
+        out.append(CandidateAction(
+            action="gk_close_down",
+            label=f"Come off the line toward ({cx:.0f}, {cy:.0f}) to narrow the shooting angle",
+            target_xy=(cx, cy), moves_ball=False, origin="situation",
+        ))
     return out
 
 

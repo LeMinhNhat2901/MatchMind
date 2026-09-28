@@ -20,6 +20,18 @@ def feature_phrases(
 ) -> list[str]:
     phrases: list[str] = []
     phase = s.phase_of_play
+    if (f.focus_player_role or "").lower() in {"goalkeeper", "gk", "keeper"}:
+        # A keeper is never "running in behind" — see candidate_actions._goalkeeper_actions.
+        if f.is_ball_carrier:
+            phrases += ["goalkeeper distribution", "build-up from the goalkeeper"]
+        elif in_possession is False:
+            phrases += ["goalkeeper positioning", "narrow the shooting angle", "defending the box"]
+        else:
+            phrases += ["goalkeeper positioning while the team attacks",
+                        "sweeper keeper covering space behind the defence", "rest defence"]
+        if phase == "set_piece":
+            phrases.append("set piece routine")
+        return phrases
     if in_possession is False:
         phrases.append("defending out of possession")
         if phase == "defensive_transition":
