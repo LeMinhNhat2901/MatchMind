@@ -7,7 +7,7 @@ readme = "README.md"
 packages = [{ include = "matchmind", from = "." }]
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = ">=3.11,<3.15"   # youtube-transcript-api supports <3.15
 
 # Core schema & validation
 pydantic = "^2.7"

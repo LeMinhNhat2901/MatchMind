@@ -1,0 +1,41 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    env:
+      ANONYMIZED_TELEMETRY: "False"
+      LLM_PROVIDER: groq            # never called by the unit tests; no secret needed
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Cache Hugging Face models
+        uses: actions/cache@v4
+        with:
+          path: ~/.cache/huggingface
+          key: hf-${{ hashFiles('matchmind/config.py') }}
+      - name: Install
+        run: |
+          pip install poetry
+          poetry config virtualenvs.create false
+          poetry install --no-interaction --no-root
+      - name: KB lint
+        run: python -m matchmind.scripts.kb_lint
+      - name: Build KB index
+        run: python -m matchmind.scripts.build_kb --rebuild
+      - name: Unit tests + golden retrieval regression
+        run: python -m pytest matchmind/tests -q -p no:cacheprovider
+      - name: Retrieval bench summary
+        if: always()
+        run: python -m matchmind.scripts.bench_retrieval --strategy hybrid >> "$GITHUB_STEP_SUMMARY"

@@ -1,0 +1,59 @@
+name: KB expansion (manual)
+
+# Human-in-the-loop (former cicd.md): extracts concepts from ONE YouTube channel
+# and opens a PR. It never merges. No schedule on purpose — run it by hand from
+# the Actions tab until the owner decides to turn on a cron.
+on:
+  workflow_dispatch:
+    inputs:
+      channel_url:
+        description: "YouTube channel URL (e.g. https://www.youtube.com/@TifoFootball)"
+        required: true
+      max_videos:
+        description: "Max new videos to process (keep small: every concept is reviewed by hand)"
+        default: "5"
+
+permissions:
+  contents: write
+  pull-requests: write
+
+jobs:
+  expand:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Install
+        run: |
+          pip install poetry
+          poetry config virtualenvs.create false
+          poetry install --no-interaction --no-root
+      - name: Extract concepts from channel
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          LLM_PROVIDER: gemini
+          LLM_MODEL: gemini-3.6-flash
+        run: >
+          python -m matchmind.scripts.build_kb_youtube
+          --channel "${{ inputs.channel_url }}"
+          --max-videos "${{ inputs.max_videos }}"
+      - name: Lint new concepts
+        run: python -m matchmind.scripts.kb_lint
+      - name: Golden regression with the new concepts
+        run: |
+          python -m matchmind.scripts.build_kb --rebuild
+          python -m pytest matchmind/tests/test_golden_retrieval.py -q
+      - name: Open pull request (never auto-merged)
+        uses: peter-evans/create-pull-request@v6
+        with:
+          branch: kb/expansion-${{ github.run_number }}
+          title: "KB: new concepts from ${{ inputs.channel_url }} — needs review"
+          labels: knowledge-base, needs-review
+          body: |
+            LLM-extracted concepts. **Do not merge before reading every file.**
+            - [ ] Each concept is described correctly (not a misreading of the source)
+            - [ ] No sentence copied verbatim from the transcript
+            - [ ] `category` / `phase` / `trigger_conditions` make sense (see kb_lint output in the run log)
+            - [ ] `source` url + licence present

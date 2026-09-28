@@ -122,15 +122,47 @@ matchmind/
 
 ---
 
+## Retrieval (V1)
+
+```
+question (EN) + SituationFeatures + MatchState
+   → build_retrieval_query  (question + number-free tactical phrases)
+   → scope gating           (no set-piece concepts in open play, no showboat
+                             techniques unless named, in/out-of-possession phase)
+   → dense (Chroma, multi-query) + BM25 + trigger-condition match
+   → Reciprocal Rank Fusion → cross-encoder rerank (blended with fusion score)
+   → top-k concepts
+   + Example Library: nearest real StatsBomb situations (kNN on situation features)
+```
+
+Measured on the hand-labelled golden set (`matchmind/evaluation/golden/retrieval_golden.yaml`):
+
+| Strategy | hit@3 | nDCG@5 | MRR | set-piece leak |
+|---|---|---|---|---|
+| dense (pre-V1) | 0.74 | 0.52 | 0.67 | 0.29 |
+| hybrid (V1) | 0.89 | 0.69 | 0.88 | 0.00 |
+
+```bash
+python -m matchmind.scripts.bench_retrieval          # compare strategies on the golden set
+python -m matchmind.scripts.download_data            # cache StatsBomb test cases from ../open-data
+python -m matchmind.scripts.build_example_library    # build the Example Library
+python -m matchmind.scripts.kb_lint                  # KB consistency checks
+```
+
+The Example Library is built from [StatsBomb Open Data](https://github.com/statsbomb/open-data),
+used non-commercially with attribution.
+
+---
+
 ## Tech Stack
 
 | Layer | Technology |
 |-------|-----------|
 | Schema | Pydantic v2 |
-| Agent | LangGraph + LangChain |
+| Agent | LangGraph |
 | LLM | Gemini / Claude (Anthropic) / GPT-4o |
 | Vector DB | ChromaDB |
-| Embeddings | sentence-transformers |
+| Retrieval | sentence-transformers (MiniLM) + rank-bm25 + cross-encoder rerank |
 | Football data | StatsBombPy, kloppy |
 | Pitch control | Spearman model (adapted from LaurieOnTracking) |
 | API | FastAPI + WebSocket |
