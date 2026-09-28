@@ -17,6 +17,7 @@ from typing import Any
 from matchmind.config import settings
 from matchmind.retrieval.fusion import reciprocal_rank_fusion
 from matchmind.retrieval.lexical import BM25Index
+from matchmind.retrieval.reranker import rerank_document
 from matchmind.retrieval.scope import allowed_ids
 from matchmind.retrieval.triggers import condition_ranking
 from matchmind.retrieval.types import RetrievalQuery, RetrievalResult, ScoredConcept
@@ -154,7 +155,17 @@ class HybridRetriever:
 
     # ── stages (overridden in later tasks) ────────────────────
     def _rerank(self, query: RetrievalQuery, items: list[ScoredConcept]) -> list[ScoredConcept]:
-        return items
+        if self.reranker is None or not items:
+            return items
+        try:
+            scores = self.reranker.score(
+                query.rerank_text(), [rerank_document(self.concepts[i.concept_id]) for i in items]
+            )
+        except Exception as exc:  # noqa: BLE001 — keep fusion order
+            logger.warning(f"[hybrid] reranker failed, keeping fusion order: {exc}")
+            return items
+        rescored = [i.model_copy(update={"rerank_score": round(s, 4)}) for i, s in zip(items, scores)]
+        return sorted(rescored, key=lambda i: -(i.rerank_score or 0.0))
 
     def _diversify(self, items: list[ScoredConcept], k: int) -> list[ScoredConcept]:
         return items

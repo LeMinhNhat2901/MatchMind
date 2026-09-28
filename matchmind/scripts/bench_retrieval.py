@@ -59,6 +59,7 @@ def _hybrid_strategy(use_reranker: bool) -> Callable[[], Callable[[GoldenCase, i
 STRATEGIES: dict[str, Callable[[], Callable[[GoldenCase, int], list[str]]]] = {
     "dense": _dense_strategy,
     "hybrid_norerank": _hybrid_strategy(False),
+    "hybrid": _hybrid_strategy(True),
 }
 
 
