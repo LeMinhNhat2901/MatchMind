@@ -52,6 +52,24 @@ def test_reranker_reorders_and_sets_confidence():
     assert res.strategy.startswith("hybrid+rerank")
 
 
+def test_rerank_is_blended_with_fusion_score():
+    """A concept every ranker agreed on should not be overturned by a slightly
+    higher cross-encoder score (golden bench: blending beat pure rerank)."""
+    from matchmind.retrieval.types import ScoredConcept
+
+    class FlatReranker:
+        def score(self, query, docs):
+            return [0.5, 0.6]
+
+    r = HybridRetriever(concepts=CONCEPTS, store=_store(), reranker=FlatReranker())
+    r.rerank_alpha = 0.3
+    items = [ScoredConcept(concept_id="overlapping_run", score=1.0),
+             ScoredConcept(concept_id="low_block", score=0.1)]
+    out = r._rerank(RetrievalQuery(question="q"), items)
+    assert [i.concept_id for i in out] == ["overlapping_run", "low_block"]
+    assert out[0].rerank_score == 0.5          # confidence still reads the raw rerank score
+
+
 def test_broken_reranker_falls_back_to_fusion_order():
     r = HybridRetriever(concepts=CONCEPTS, store=_store(), reranker=BrokenReranker())
     res = r.retrieve(RetrievalQuery(question="receive between the lines"), k=3)

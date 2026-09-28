@@ -27,6 +27,16 @@ def test_set_piece_only_in_set_piece_phase():
     assert is_allowed(CORNER, RetrievalQuery(phase_of_play="set_piece"))
 
 
+def test_set_piece_concepts_still_respect_possession():
+    """Golden g27: an attacking corner question returned defensive-corner concepts."""
+    defending_corner = make_concept("fifa_corner_kick_defensive_systems", category="defending",
+                                    phase="out_of_possession")
+    attacking = RetrievalQuery(phase_of_play="set_piece", in_possession=True)
+    assert not is_allowed(defending_corner, attacking)
+    assert is_allowed(CORNER, attacking)
+    assert is_allowed(defending_corner, RetrievalQuery(phase_of_play="set_piece", in_possession=False))
+
+
 def test_set_piece_never_allowed_even_when_relaxed_in_open_play():
     assert not is_allowed(CORNER, RetrievalQuery(phase_of_play="open_play"), relax=True)
 

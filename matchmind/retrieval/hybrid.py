@@ -61,6 +61,7 @@ class HybridRetriever:
 
             reranker = build_reranker(settings.reranker_model)
         self.reranker = reranker if use_reranker else None
+        self.rerank_alpha = settings.rerank_blend_alpha
 
     # ── public ────────────────────────────────────────────────
     def retrieve(
@@ -165,8 +166,18 @@ class HybridRetriever:
         except Exception as exc:  # noqa: BLE001 — keep fusion order
             logger.warning(f"[hybrid] reranker failed, keeping fusion order: {exc}")
             return items
-        rescored = [i.model_copy(update={"rerank_score": round(s, 4)}) for i, s in zip(items, scores)]
-        return sorted(rescored, key=lambda i: -(i.rerank_score or 0.0))
+        # Blend instead of replacing: RRF already encodes agreement between dense,
+        # BM25 and condition matching. Golden bench (Task 16): rerank-only nDCG@5
+        # 0.667, blended alpha 0.3/0.5/0.7 -> 0.692/0.688/0.681.
+        top_fused = max(i.score for i in items) or 1.0
+        rescored = [
+            i.model_copy(update={
+                "rerank_score": round(s, 4),
+                "score": self.rerank_alpha * s + (1 - self.rerank_alpha) * (i.score / top_fused),
+            })
+            for i, s in zip(items, scores)
+        ]
+        return sorted(rescored, key=lambda i: -i.score)
 
     def _diversify(self, items: list[ScoredConcept], k: int) -> list[ScoredConcept]:
         if len(items) <= k or self.diversity_max_sim >= 1.0:

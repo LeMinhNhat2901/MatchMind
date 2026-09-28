@@ -77,6 +77,8 @@ class Settings(BaseSettings):
     reranker_model: str = Field(
         default="cross-encoder/ms-marco-MiniLM-L-6-v2", alias="RERANKER_MODEL"
     )
+    # Final score = alpha * rerank + (1 - alpha) * normalised RRF score. 1.0 = rerank only.
+    rerank_blend_alpha: float = Field(default=0.3, alias="RERANK_BLEND_ALPHA")
     # 1.0 = off. Golden bench (Task 10): 0.88/0.92 cost nDCG@5 0.6599 -> 0.6572, because
     # near-duplicate concepts (e.g. several high-press concepts) are often all relevant.
     retrieval_diversity_max_sim: float = Field(default=1.0, alias="RETRIEVAL_DIVERSITY_MAX_SIM")

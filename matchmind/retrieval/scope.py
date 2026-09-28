@@ -60,8 +60,8 @@ def _mentions_technique(concept: TacticalConcept, question: str) -> bool:
 
 def is_allowed(concept: TacticalConcept, query: RetrievalQuery, *, relax: bool = False) -> bool:
     scope = concept_scope(concept)
-    if scope == "set_piece":
-        return query.phase_of_play == "set_piece"
+    if scope == "set_piece" and query.phase_of_play != "set_piece":
+        return False
     if scope == "technique" and not _mentions_technique(concept, query.question):
         return False
     if relax or query.in_possession is None:
