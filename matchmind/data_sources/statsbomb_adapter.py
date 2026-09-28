@@ -286,7 +286,15 @@ class StatsBombAdapter(BaseAdapter):
                 continue
             px, py = _sb_to_metres(float(loc[0]), float(loc[1]))
 
-            player_id = int(row.get("player_id", len(players) + 1)) if pd.notna(row.get("player_id", None)) else len(players) + 1
+            # `== True`, not `is True`: pandas hands back numpy.bool_, and NaN == True is False.
+            if row.get("actor") == True and pd.notna(event.get("player_id")):  # noqa: E712
+                # 360 frames have no player ids; the actor IS the event's player.
+                # Without this the case's focus_player_id never exists in the snapshot.
+                player_id = int(event.get("player_id"))
+            elif pd.notna(row.get("player_id", None)):
+                player_id = int(row.get("player_id"))
+            else:
+                player_id = len(players) + 1
             position_name = str(row.get("position", ""))
             role = SB_POSITION_MAP.get(position_name, position_name.lower().replace(" ", "_") or None)
 

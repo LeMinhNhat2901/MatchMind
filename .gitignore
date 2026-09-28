@@ -91,3 +91,6 @@ tmp/
 temp/
 *.tmp
 *.bak
+
+# Cached evaluation data (regenerate: python -m matchmind.scripts.download_data)
+data_cache/
