@@ -39,9 +39,26 @@ def _dense_strategy() -> Callable[[GoldenCase, int], list[str]]:
     return rank
 
 
-# Later tasks register more strategies here (hybrid, hybrid_norerank, ...).
+def _hybrid_strategy(use_reranker: bool) -> Callable[[], Callable[[GoldenCase, int], list[str]]]:
+    def factory():
+        from matchmind.retrieval.hybrid import HybridRetriever
+        from matchmind.retrieval.types import RetrievalQuery
+
+        retriever = HybridRetriever(use_reranker=use_reranker)
+
+        def rank(case: GoldenCase, k: int) -> list[str]:
+            q = RetrievalQuery(question=case.question, in_possession=case.in_possession,
+                               phase_of_play=case.phase_of_play)
+            return retriever.rank_ids(q, k)
+
+        return rank
+
+    return factory
+
+
 STRATEGIES: dict[str, Callable[[], Callable[[GoldenCase, int], list[str]]]] = {
     "dense": _dense_strategy,
+    "hybrid_norerank": _hybrid_strategy(False),
 }
 
 

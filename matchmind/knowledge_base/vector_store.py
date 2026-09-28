@@ -39,6 +39,12 @@ def _get_chroma_ef():
         return None
 
 
+def _distance_to_similarity(distance: float) -> float:
+    """Chroma cosine distance (0..2) -> similarity in [0, 1] (project-wide convention;
+    calibrate_retrieval.py thresholds are expressed in this unit)."""
+    return max(0.0, 1.0 - distance / 2.0)
+
+
 class TacticalVectorStore:
     """
     ChromaDB-backed vector store for football tactical concepts.
@@ -207,7 +213,7 @@ class TacticalVectorStore:
         metas = query_results["metadatas"][0]
         distances = query_results["distances"][0]
 
-        similarities = [max(0.0, 1.0 - d / 2.0) for d in distances]
+        similarities = [_distance_to_similarity(d) for d in distances]
         confidence = float(np.mean(similarities)) if similarities else 0.0
 
         results = [
@@ -249,6 +255,27 @@ class TacticalVectorStore:
             return self.retrieve_tactics(query_embedding=emb, k=k, filter_category=filter_category)
         else:
             raise ValueError("Need either ChromaDB EF or an embedder to query by text")
+
+    def dense_rank(self, query_texts: list[str], n: int) -> list[list[tuple[str, float]]]:
+        """One ranked (concept_id, similarity) list per query text, in one Chroma call."""
+        count = self._collection.count()
+        if not query_texts or count == 0:
+            return [[] for _ in query_texts]
+        if self._ef is None:
+            raise RuntimeError("dense_rank needs the Chroma embedding function (use_chroma_ef=True)")
+        res = self._collection.query(
+            query_texts=query_texts, n_results=min(n, count), include=["distances"]
+        )
+        return [
+            [(cid, _distance_to_similarity(d)) for cid, d in zip(ids, dists)]
+            for ids, dists in zip(res["ids"], res["distances"])
+        ]
+
+    def get_embeddings(self, ids: list[str]) -> dict[str, np.ndarray]:
+        if not ids:
+            return {}
+        res = self._collection.get(ids=ids, include=["embeddings"])
+        return {cid: np.asarray(e, dtype=float) for cid, e in zip(res["ids"], res["embeddings"])}
 
     def get_all_titles(self) -> list[str]:
         results = self._collection.get(include=["metadatas"])
