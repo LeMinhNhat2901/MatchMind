@@ -15,6 +15,7 @@ import logging
 from typing import Any
 
 from matchmind.config import settings
+from matchmind.retrieval.diversity import select_diverse
 from matchmind.retrieval.fusion import reciprocal_rank_fusion
 from matchmind.retrieval.lexical import BM25Index
 from matchmind.retrieval.reranker import rerank_document
@@ -168,7 +169,16 @@ class HybridRetriever:
         return sorted(rescored, key=lambda i: -(i.rerank_score or 0.0))
 
     def _diversify(self, items: list[ScoredConcept], k: int) -> list[ScoredConcept]:
-        return items
+        if len(items) <= k or self.diversity_max_sim >= 1.0:
+            return items
+        try:
+            emb = self.store.get_embeddings([i.concept_id for i in items])
+        except Exception as exc:  # noqa: BLE001
+            logger.warning(f"[hybrid] embeddings unavailable, skipping diversity: {exc}")
+            return items
+        keep = select_diverse([i.concept_id for i in items], emb, k, self.diversity_max_sim)
+        by_id = {i.concept_id: i for i in items}
+        return [by_id[cid] for cid in keep]
 
     @staticmethod
     def _confidence(top: list[ScoredConcept], dense_sim: dict[str, float]) -> float:
