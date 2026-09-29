@@ -142,11 +142,20 @@ def _build_data(state: AgentState, advice: TacticalAdvice) -> dict:
         "cited_tactical_concepts": advice.cited_concepts,
     }
     if match_state is not None:
-        data["match_context"] = {
-            "minute": match_state.minute,
-            "score_home": match_state.score_home,
-            "score_away": match_state.score_away,
-        }
+        data["match_context"] = {"minute": match_state.minute}
+        if features is not None:
+            # From the focus player's side — raw home/away scores were retold as
+            # "our team trails" for an away player whose team led.
+            own, opp = match_state.score_for(features.focus_player_team)
+            data["match_context"].update({
+                "focus_team": features.focus_player_team,
+                "focus_team_goals": own,
+                "opponent_goals": opp,
+                "focus_team_is": match_state.result_for(features.focus_player_team),
+            })
+        else:
+            data["match_context"].update({"score_home": match_state.score_home,
+                                          "score_away": match_state.score_away})
     if features is not None:
         data["key_measurements"] = {
             "focus_player_role": features.focus_player_role,

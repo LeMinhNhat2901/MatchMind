@@ -249,6 +249,23 @@ class MatchState(BaseModel):
         """Positive = home winning, negative = home losing."""
         return self.score_home - self.score_away
 
+    def score_for(self, team: Literal["home", "away"]) -> tuple[int, int]:
+        """(goals for `team`, goals against `team`)."""
+        return (self.score_home, self.score_away) if team == "home" else (self.score_away, self.score_home)
+
+    def result_for(self, team: Literal["home", "away"]) -> Literal["leading", "trailing", "drawing"]:
+        own, opp = self.score_for(team)
+        return "leading" if own > opp else "trailing" if own < opp else "drawing"
+
+    def score_line_for(self, player_id: int, team: Literal["home", "away"]) -> str:
+        """"Player 23's team (away) is leading 1–0" — told from the focus player's
+        side. A bare "home trailing" was read by the LLM as the focus player's own
+        team even when that player was on the away side."""
+        own, opp = self.score_for(team)
+        result = self.result_for(team)
+        verb = "drawing" if result == "drawing" else result
+        return f"Player {player_id}'s team ({team}) is {verb} {own}–{opp}"
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Situation representation (computed by Situation Engine, not adapters)

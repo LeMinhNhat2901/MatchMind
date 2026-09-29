@@ -124,7 +124,8 @@ def encode_situation(
         "focus_player_x": focus.x,
         "focus_player_y": focus.y,
         "minute": state.minute,
-        "score_diff": state.score_diff_from_home,
+        # From the focus player's team (positive = their team leads).
+        "score_diff": state.score_for(focus.team)[0] - state.score_for(focus.team)[1],
         "open_lanes_count": len(passing.get("open_passing_lane_player_ids", [])),
         "progressive_passes_available": passing.get("progressive_passes_available", 0),
     }
@@ -216,14 +217,11 @@ def _build_nl_description(
             lines.append(f"Player {focus.id} does NOT have the ball.")
 
     # Minute and score
-    score_desc = f"{state.score_home}–{state.score_away}"
-    lead_desc = (
-        "leading" if state.score_diff_from_home > 0 else
-        "trailing" if state.score_diff_from_home < 0 else "drawing"
-    )
+    # Told from the focus player's side ("home trailing" was misread as "our team
+    # is trailing" when the focus player was on the away team).
     lines.append(
-        f"Match situation: minute {state.minute}, score {score_desc} "
-        f"(home {lead_desc}). Phase: {state.phase_of_play or 'open play'}."
+        f"Match situation: minute {state.minute}, {state.score_line_for(focus.id, focus.team)}. "
+        f"Phase: {state.phase_of_play or 'open play'}."
     )
 
     # Distance to ball
