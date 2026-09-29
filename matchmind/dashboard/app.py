@@ -9,6 +9,7 @@ coaches, and scouts. Inspired by StatsBomb 360, Opta Pro, SofaScore, and Wyscout
 """
 from __future__ import annotations
 
+import html
 import sys
 from pathlib import Path
 
@@ -127,21 +128,24 @@ with st.sidebar:
     render_html(f'<div class="sidebar-section-title">{icon("target", 16)}Analysis target</div>')
 
     dual_mode = st.checkbox(
-        "Dual Mode (Attack vs Defense)",
+        "Dual Mode (both teams)",
         value=False,
-        help="Evaluates attacking ball carrier options alongside defensive counter-measures in parallel.",
+        help="Analyses the ball carrier and the nearest opponent side by side.",
     )
 
     focus_id: int | None = None
     focus_team: str | None = None
 
     if not dual_mode:
-        team_choice = st.radio(
+        # Real names when the source has them (StatsBomb: "home" = the team making
+        # the event, which is often the match's away side).
+        focus_team = st.radio(
             "Squad Scope",
-            options=["Home Team", "Away Team"],
+            options=["home", "away"],
+            format_func=lambda side: state.team_label(side).title() if state.team_label(side) in ("home", "away")
+            else state.team_label(side),
             horizontal=True,
         )
-        focus_team = "home" if team_choice == "Home Team" else "away"
         team_players = sorted(
             [p for p in state.players if p.team == focus_team], key=lambda p: p.id
         )
@@ -155,7 +159,7 @@ with st.sidebar:
             )
             focus_id = selected_player.id
         else:
-            st.warning(f"No {team_choice} players detected in this snapshot.")
+            st.warning(f"No {state.team_label(focus_team)} players detected in this snapshot.")
 
         with st.expander("Manual Jersey ID"):
             manual_id = st.text_input(
@@ -206,7 +210,9 @@ score_h = state.score_home
 score_a = state.score_away
 minute_str = f"{state.minute}'" if state.minute else "00'"
 phase_str = (state.phase_of_play or "open_play").replace("_", " ").upper()
-possession_team = (state.possession or "home").upper()
+home_label = state.home_team_name or "Home"
+away_label = state.away_team_name or "Away"
+possession_team = state.team_label(state.possession).upper() if state.possession else "UNKNOWN"
 
 render_html(
     f"""
@@ -218,10 +224,10 @@ render_html(
                 <span class="brand-sub">Tactical Intelligence Suite</span>
             </div>
         </div>
-        <div class="scorebug" aria-label="Score: Home {score_h}, Away {score_a}, minute {minute_str}">
-            <span class="scorebug-team home">Home</span>
+        <div class="scorebug" aria-label="Score: {home_label} {score_h}, {away_label} {score_a}, minute {minute_str}">
+            <span class="scorebug-team home">{html.escape(home_label)}</span>
             <span class="scorebug-score">{score_h}<span class="sep">–</span>{score_a}</span>
-            <span class="scorebug-team away">Away</span>
+            <span class="scorebug-team away">{html.escape(away_label)}</span>
             <span class="scorebug-clock"><span class="live-dot"></span>{minute_str}</span>
         </div>
         <div class="match-status-wrap">
@@ -287,9 +293,16 @@ with col_pitch:
 # ── RIGHT COLUMN: Tactical Decision & Performance Console ──────────────────────
 with col_console:
     if dual_mode:
+        # Named by team, not "Attack/Defense": the side with the ball isn't
+        # necessarily attacking (it may be recycling under pressure).
+        # Same choice as TacticalAgent.analyze_dual, so tabs and advice always match.
+        from matchmind.situation_engine.team_focus import pick_dual_focus_players
+
+        dual_focus = pick_dual_focus_players(state)
+        on_ball_side, off_ball_side = dual_focus.attacking_team, dual_focus.defending_team
         tab_att, tab_def, tab_scout = st.tabs([
-            ":material/sports_soccer: Attack",
-            ":material/shield: Defense",
+            f":material/sports_soccer: {state.team_label(on_ball_side).title()} · on the ball",
+            f":material/shield: {state.team_label(off_ball_side).title()} · off the ball",
             ":material/person: Dossier",
         ])
 

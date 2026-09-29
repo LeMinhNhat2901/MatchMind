@@ -123,11 +123,16 @@ def render_situation_panel(state: MatchState, focus_player_id: int) -> None:
     render_html(f'<div class="flag-grid">{rows}</div>')
 
     def_height = features.defensive_line_height
-    line_label = "High line" if def_height > 60 else ("Mid block" if def_height > 40 else "Low block")
+    if features.defensive_line_visible:
+        line_value, line_label = f"{def_height:.1f}", (
+            "High line" if def_height > 60 else ("Mid block" if def_height > 40 else "Low block"))
+    else:
+        # Partial camera view: the opponent's back line isn't in frame.
+        line_value, line_label = "—", "Not in camera view"
     render_html('<div class="mm-kicker">Team shape</div>')
     render_html(
         '<div class="metric-grid">'
-        + _metric("Defensive line", f"{def_height:.1f}", "m", line_label)
+        + _metric("Defensive line", line_value, "m" if features.defensive_line_visible else "", line_label)
         + _metric("Compactness", f"{features.team_compactness:.1f}", "m", "Block spread")
         + _metric("Attack width", f"{features.attacking_width:.1f}", "m", "Pitch coverage")
         + "</div>"

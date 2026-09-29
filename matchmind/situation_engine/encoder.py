@@ -162,6 +162,7 @@ def encode_situation(
         is_in_defensive_third=spatial["is_in_defensive_third"],
         # Team structure
         defensive_line_height=team_struct["defensive_line_height"],
+        defensive_line_visible=team_struct["defensive_line_visible"],
         team_compactness=team_struct["team_compactness"],
         attacking_width=team_struct["attacking_width"],
         numerical_superiority_zone=team_struct["numerical_superiority_zone"],
@@ -199,12 +200,19 @@ def _build_nl_description(
     """
     lines = []
 
-    # Player context
+    # Player context — the real team name when the source provides it (StatsBomb
+    # "home" is the acting team, not the match's home side).
     role_str = f" ({focus.role})" if focus.role else ""
+    named = state.home_team_name if focus.team == "home" else state.away_team_name
+    team_desc = f"({named})" if named else f"[{focus.team} team]"
     lines.append(
-        f"Player {focus.id}{role_str} [{focus.team} team] at position "
+        f"Player {focus.id}{role_str} {team_desc} at position "
         f"({focus.x:.1f}m, {focus.y:.1f}m)."
     )
+    # Partial camera views (StatsBomb 360, video) only show players near the ball;
+    # say so, so the LLM doesn't treat absent players as absent from the pitch.
+    if state.visible_area or len(state.players) < 22:
+        lines.append(f"Camera view shows {len(state.players)} of 22 players.")
 
     # Possession — stated up front so retrieval + the LLM never confuse an
     # off-ball player for the ball carrier.
@@ -236,12 +244,17 @@ def _build_nl_description(
 
     # Pressure
     d_opp = spatial["nearest_opponent_distance"]
-    pressure_desc = (
-        "under high pressure" if d_opp < 3 else
-        "with a nearby opponent" if d_opp < 7 else
-        "with space from nearest opponent"
-    )
-    lines.append(f"Player is {pressure_desc} ({d_opp:.1f}m away).")
+    if is_ball_carrier:
+        pressure_desc = (
+            "under high pressure" if d_opp < 3 else
+            "with a nearby opponent" if d_opp < 7 else
+            "with space from nearest opponent"
+        )
+        lines.append(f"Player is {pressure_desc} ({d_opp:.1f}m away).")
+    else:
+        # Off the ball "pressure" is ambiguous — a defender 2.7 m from the carrier
+        # is the one APPLYING pressure. State the fact only.
+        lines.append(f"Nearest opponent: {d_opp:.1f}m away.")
 
     # Space ahead
     space = spatial["space_ahead"]
@@ -289,8 +302,10 @@ def _build_nl_description(
         lines.append("Player is in the defensive third.")
 
     # Team structure
-    def_line = team_struct["defensive_line_height"]
-    lines.append(f"Opponent defensive line at x={def_line:.1f}m.")
+    if team_struct["defensive_line_visible"]:
+        lines.append(f"Opponent defensive line at x={team_struct['defensive_line_height']:.1f}m.")
+    else:
+        lines.append("Opponent back line is not in the camera view (only players near the ball are visible).")
     if spatial.get("overload_left"):
         lines.append("Numerical overload on left flank.")
     if spatial.get("overload_right"):

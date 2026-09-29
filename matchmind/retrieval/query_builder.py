@@ -40,7 +40,7 @@ def feature_phrases(
             phrases.append("press the ball carrier")
         else:
             phrases.append("defensive shape and compactness")
-        if f.defensive_line_height > 55.0:
+        if f.defensive_line_visible and f.defensive_line_height > 55.0:
             phrases.append("high defensive line")
     else:
         if not f.is_ball_carrier:

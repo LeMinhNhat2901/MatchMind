@@ -164,6 +164,12 @@ class MatchState(BaseModel):
         description="360 camera field-of-view polygon in pitch metres, if known.",
     )
 
+    # Real team names when the source knows them (StatsBomb: "home" is the team
+    # performing the event, which is often NOT the match's home side — so a bare
+    # "home"/"away" label misleads). None = fall back to "home"/"away".
+    home_team_name: str | None = Field(default=None, description="Name of the team labelled 'home' here")
+    away_team_name: str | None = Field(default=None, description="Name of the team labelled 'away' here")
+
     # Attacking direction. The situation engine analyses a team as attacking +x;
     # situation_engine/orientation.py rotates the pitch for a team attacking -x.
     # None = infer from the goalkeepers (see attacks_right). StatsBomb adapters
@@ -293,14 +299,21 @@ class MatchState(BaseModel):
         own, opp = self.score_for(team)
         return "leading" if own > opp else "trailing" if own < opp else "drawing"
 
+    def team_label(self, team: Literal["home", "away"]) -> str:
+        """The team's real name when known, else "home"/"away"."""
+        name = self.home_team_name if team == "home" else self.away_team_name
+        return name or team
+
     def score_line_for(self, player_id: int, team: Literal["home", "away"]) -> str:
         """"Player 23's team (away) is leading 1–0" — told from the focus player's
         side. A bare "home trailing" was read by the LLM as the focus player's own
-        team even when that player was on the away side."""
+        team even when that player was on the away side. With real names:
+        "Player 23's team (Turkey) is leading 1–0 against Italy"."""
         own, opp = self.score_for(team)
-        result = self.result_for(team)
-        verb = "drawing" if result == "drawing" else result
-        return f"Player {player_id}'s team ({team}) is {verb} {own}–{opp}"
+        other = "away" if team == "home" else "home"
+        line = f"Player {player_id}'s team ({self.team_label(team)}) is {self.result_for(team)} {own}–{opp}"
+        opponent_name = self.away_team_name if team == "home" else self.home_team_name
+        return f"{line} against {self.team_label(other)}" if opponent_name else line
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -368,7 +381,12 @@ class SituationFeatures(BaseModel):
 
     # ── Team structure ───────────────────────────────────────
     defensive_line_height: float = Field(
-        ..., description="y-coordinate of opposing defensive line"
+        ..., description="x of the opposing back line (focus team attacking +x)"
+    )
+    defensive_line_visible: bool = Field(
+        default=True,
+        description="False when a partial camera view cannot show the opponent's back line "
+                    "— defensive_line_height is then a guess and must not be stated as fact",
     )
     team_compactness: float = Field(
         ..., description="Average inter-player distance for focus player's team (m)"

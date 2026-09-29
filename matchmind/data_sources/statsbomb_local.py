@@ -85,6 +85,7 @@ class StatsBombLocalLoader:
         frame: dict,
         match_id: int,
         score: tuple[int, int] = (0, 0),
+        opponent_name: str | None = None,
     ) -> MatchState | None:
         """One on-ball event + its freeze frame -> MatchState, or None if the
         frame has no actor (the focus player would not exist)."""
@@ -145,6 +146,9 @@ class StatsBombLocalLoader:
             # StatsBomb coordinates put the acting team ("home") attacking +x;
             # 360 frames often miss the keepers, so don't leave this to inference.
             home_attacks_right=True,
+            # "home" here is the acting team, often the match's AWAY side.
+            home_team_name=(event.get("team") or {}).get("name"),
+            away_team_name=opponent_name,
             source="statsbomb",
             event_type=event["type"]["name"],
             event_player_id=actor_id,
@@ -162,14 +166,18 @@ class StatsBombLocalLoader:
         """
         events = self.events(match_id)
         frames = self.frames(match_id)
+        team_names = {
+            (e.get("team") or {}).get("id"): (e.get("team") or {}).get("name") for e in events if e.get("team")
+        }
         goals: dict[int, int] = {}
         for idx, event in enumerate(events):
             team_id = (event.get("team") or {}).get("id")
             if event["type"]["name"] in event_types and event["id"] in frames and event.get("location"):
                 own = goals.get(team_id, 0)
                 other = sum(v for k, v in goals.items() if k != team_id)
+                opponent = next((n for tid, n in team_names.items() if tid != team_id), None)
                 try:
-                    state = self.to_match_state(event, frames[event["id"]], match_id, (own, other))
+                    state = self.to_match_state(event, frames[event["id"]], match_id, (own, other), opponent)
                 except Exception as exc:  # noqa: BLE001 — one malformed frame must not stop a scan
                     logger.debug(f"skip {match_id}:{idx}: {exc}")
                     state = None

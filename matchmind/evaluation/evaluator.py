@@ -166,6 +166,7 @@ def compute_logical_consistency_llm(advice: TacticalAdvice) -> float | None:
                 "third_man_opportunity",
                 "switch_play_viable",
                 "defensive_line_height",
+                "defensive_line_visible",
             }
         )
         prompt = (

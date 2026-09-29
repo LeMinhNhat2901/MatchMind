@@ -320,16 +320,18 @@ class TacticalAgent:
         att_player = match_state.get_player(focus.attacking_player_id, team=focus.attacking_team)
         att_role = f" ({att_player.role})" if att_player and att_player.role else ""
         attacking_question = (
-            f"Player {focus.attacking_player_id}{att_role} ({focus.attacking_team}) has the ball. "
+            f"Player {focus.attacking_player_id}{att_role} ({match_state.team_label(focus.attacking_team)}) has the ball. "
             f"What should they do right now to create a tactical advantage for their team?"
         )
 
         def_player = match_state.get_player(focus.defending_player_id, team=focus.defending_team)
         def_role = f" ({def_player.role})" if def_player and def_player.role else ""
         defending_question = (
-            f"Player {focus.defending_player_id}{def_role} ({focus.defending_team}) does not have "
-            f"the ball — the opponent does. What should they do right now to stop the attack and "
-            f"win the ball back?"
+            # Neutral on purpose: having the ball doesn't make the other side "the
+            # attack" (they may be recycling it under pressure in their own half).
+            f"Player {focus.defending_player_id}{def_role} ({match_state.team_label(focus.defending_team)}) does not have "
+            f"the ball — the opponent does. What should they do right now against the opponent's "
+            f"possession?"
         )
 
         logger.info(

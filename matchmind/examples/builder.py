@@ -27,7 +27,10 @@ def feature_vector(f: SituationFeatures, s: MatchState) -> list[float]:
         float(f.nearest_opponent_distance), float(f.nearest_teammate_distance), float(f.space_ahead),
         float(f.local_numerical_advantage), float(f.progressive_passes_available),
         float(f.passing_lane_open), float(f.third_man_opportunity), float(f.switch_play_viable),
-        float(f.half_space_occupied), float(f.is_in_attacking_third), float(f.defensive_line_height),
+        float(f.half_space_occupied), float(f.is_in_attacking_third),
+        # A back line outside the camera view is unknown, not "wherever the deepest
+        # visible presser stands" — use a neutral value so it doesn't skew the kNN.
+        float(f.defensive_line_height if f.defensive_line_visible else 52.5),
         float(s.ball.x), float(abs(s.ball.y - 34.0)),
     ]
 

@@ -114,6 +114,13 @@ PHASE_MAP: dict[str, str] = {
 }
 
 
+def _team_names(events: pd.DataFrame) -> list[str]:
+    """Both teams' names from a statsbombpy events frame ("team" column)."""
+    if "team" not in events:
+        return []
+    return [str(n) for n in events["team"].dropna().unique()]
+
+
 class StatsBombAdapter(BaseAdapter):
     """
     Adapter for StatsBomb Open Data (including 360 freeze-frames).
@@ -157,7 +164,7 @@ class StatsBombAdapter(BaseAdapter):
         frames = sb.frames(match_id=match_id)
 
         event_row = events.iloc[event_index]
-        return self._event_to_match_state(event_row, frames, match_id)
+        return self._event_to_match_state(event_row, frames, match_id, _team_names(events))
 
     def load_test_cases(self, n: int = 25) -> list[dict]:
         """
@@ -220,9 +227,15 @@ class StatsBombAdapter(BaseAdapter):
         event: pd.Series,
         frames: pd.DataFrame,
         match_id: int,
+        team_names: list[str] | None = None,
     ) -> MatchState:
-        """Convert a StatsBomb event row + 360 frames → MatchState."""
+        """Convert a StatsBomb event row + 360 frames → MatchState.
+
+        team_names: both teams' names in this match; "home" becomes the acting
+        team's name and "away" the other one.
+        """
         event_id = event["id"]
+        acting_team = event.get("team") if isinstance(event.get("team"), str) else None
 
         # Get freeze frame for this event
         frame_rows = frames[frames["id"] == event_id]
@@ -256,6 +269,8 @@ class StatsBombAdapter(BaseAdapter):
             has_velocity=False,
             # The acting team ("home") attacks +x in StatsBomb coordinates.
             home_attacks_right=True,
+            home_team_name=acting_team,
+            away_team_name=next((n for n in (team_names or []) if n != acting_team), None),
             source="statsbomb",
             event_type=event_type,
             event_player_id=int(event.get("player_id", -1)) if pd.notna(event.get("player_id")) else None,
@@ -359,6 +374,7 @@ class StatsBombAdapter(BaseAdapter):
 
         events = sb.events(match_id=match_id, fmt="dataframe")
         frames = sb.frames(match_id=match_id)
+        names = _team_names(events)
 
         cases = []
         for idx, row in events.iterrows():
@@ -374,7 +390,7 @@ class StatsBombAdapter(BaseAdapter):
                 continue
 
             try:
-                snapshot = self._event_to_match_state(row, frames, match_id)
+                snapshot = self._event_to_match_state(row, frames, match_id, names)
             except Exception as exc:
                 logger.debug(f"Skipping event {idx}: {exc}")
                 continue

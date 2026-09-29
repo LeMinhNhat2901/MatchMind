@@ -135,10 +135,12 @@ def assemble_evidence_node(state: AgentState) -> AgentState:
             f"Progressive passes available: {features.progressive_passes_available}",
             f"Third-man opportunity: {features.third_man_opportunity}",
         ]
-    stats_facts += [
-        f"Half-space occupied: {features.half_space_occupied}",
-        f"Defensive line at x={features.defensive_line_height:.1f}m",
-    ]
+    stats_facts.append(f"Half-space occupied: {features.half_space_occupied}")
+    stats_facts.append(
+        f"Opponent defensive line at x={features.defensive_line_height:.1f}m"
+        if features.defensive_line_visible
+        else "Opponent back line: not in the camera view"
+    )
     if cf_analysis:
         best = cf_analysis[0]
         if best.get("pitch_control_delta") is not None:
