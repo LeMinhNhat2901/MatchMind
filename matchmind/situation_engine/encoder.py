@@ -13,6 +13,7 @@ from __future__ import annotations
 import logging
 
 from matchmind.schema.match_state import MatchState, SituationFeatures
+from matchmind.situation_engine.orientation import orient_for_team
 from matchmind.situation_engine.spatial_features import compute_spatial_features
 from matchmind.situation_engine.team_structure import compute_team_structure
 from matchmind.situation_engine.passing_analyzer import compute_passing_opportunities
@@ -81,6 +82,11 @@ def encode_situation(
         )
 
     logger.debug(f"Encoding situation for player {focus_player_id} in match {state.match_id}")
+
+    # Every calculation below assumes the focus team attacks toward +x; turn the
+    # pitch round when it doesn't (no-op for an already-oriented state).
+    state, _ = orient_for_team(state, focus.team)
+    focus = state.get_player(focus_player_id, focus.team)
 
     # ── Step 1: Spatial ──────────────────────────────────────
     spatial = compute_spatial_features(state, focus_player_id)

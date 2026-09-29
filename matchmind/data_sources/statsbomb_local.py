@@ -142,6 +142,9 @@ class StatsBombLocalLoader:
             players=players,
             visible_area=visible,
             has_velocity=False,
+            # StatsBomb coordinates put the acting team ("home") attacking +x;
+            # 360 frames often miss the keepers, so don't leave this to inference.
+            home_attacks_right=True,
             source="statsbomb",
             event_type=event["type"]["name"],
             event_player_id=actor_id,

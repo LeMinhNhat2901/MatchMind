@@ -198,7 +198,9 @@ def _off_ball_attacking_actions(feats: SituationFeatures, focus, carrier) -> lis
 
 # ── Goalkeeper ─────────────────────────────────────────────────────────────
 
-_OWN_GOAL = (0.0, PITCH_WIDTH / 2)   # project convention: every team attacks toward +x
+# The state reaching here is oriented so the focus team attacks +x
+# (situation_engine/orientation.py), so its own goal is always at x=0.
+_OWN_GOAL = (0.0, PITCH_WIDTH / 2)
 _OWN_BOX_DEPTH = 16.5
 
 

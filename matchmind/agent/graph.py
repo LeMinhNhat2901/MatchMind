@@ -59,6 +59,7 @@ from matchmind.agent.nodes.validator_node import (
 )
 from matchmind.agent.nodes.narrator_node import narrator_node
 from matchmind.agent.nodes.examples_node import retrieve_examples_node
+from matchmind.situation_engine.orientation import orient_for_team, unorient_advice
 from matchmind.schema.match_state import MatchState, TacticalAdvice
 
 logger = logging.getLogger(__name__)
@@ -234,6 +235,15 @@ class TacticalAgent:
                 f"to create tactical advantage for their team?"
             )
 
+        # The whole graph (features, candidate actions, pitch-control simulation)
+        # reasons as if the focus team attacks +x; turn the pitch round when it
+        # doesn't, and turn the advice's target coordinates back afterwards.
+        focus = (match_state.get_player(focus_player_id, focus_team) if focus_team
+                 else match_state.get_player(focus_player_id))
+        flipped = False
+        if focus is not None:
+            match_state, flipped = orient_for_team(match_state, focus.team)
+
         initial_state: AgentState = {
             "match_state": match_state,
             "focus_player_id": focus_player_id,
@@ -275,7 +285,7 @@ class TacticalAgent:
                 f"TacticalAgent failed to produce valid advice. Errors: {errors}"
             )
 
-        advice = final_state["tactical_advice"]
+        advice = unorient_advice(final_state["tactical_advice"], flipped)
         logger.info(
             f"Agent completed: action='{advice.recommended_action[:60]}', "
             f"confidence={advice.confidence:.2f}, tokens={final_state.get('total_tokens_used', 0)}"

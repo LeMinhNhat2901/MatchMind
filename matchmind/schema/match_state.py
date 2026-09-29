@@ -164,6 +164,15 @@ class MatchState(BaseModel):
         description="360 camera field-of-view polygon in pitch metres, if known.",
     )
 
+    # Attacking direction. The situation engine analyses a team as attacking +x;
+    # situation_engine/orientation.py rotates the pitch for a team attacking -x.
+    # None = infer from the goalkeepers (see attacks_right). StatsBomb adapters
+    # set True (their coordinates put the acting team, "home", attacking +x).
+    home_attacks_right: bool | None = Field(
+        default=None,
+        description="Whether the home team attacks toward x=105. None = inferred from keeper positions.",
+    )
+
     # True only when player velocities (vx, vy) are real (Metrica frames, CV tracking).
     # StatsBomb 360 is a single freeze-frame → False → pitch control runs degraded.
     has_velocity: bool = Field(
@@ -248,6 +257,33 @@ class MatchState(BaseModel):
     def score_diff_from_home(self) -> int:
         """Positive = home winning, negative = home losing."""
         return self.score_home - self.score_away
+
+    def attacks_right(self, team: Literal["home", "away"]) -> bool:
+        """Does `team` attack toward x=105 in this snapshot?"""
+        home_right = self.home_attacks_right
+        if home_right is None:
+            home_right = self._infer_home_attacks_right()
+        return home_right if team == "home" else not home_right
+
+    def _infer_home_attacks_right(self) -> bool:
+        # Keepers are the most reliable signal (Metrica swaps ends at half-time).
+        keepers: dict[str, float] = {}
+        for p in self.players:
+            if (p.role or "").lower() in {"goalkeeper", "gk", "keeper"}:
+                keepers.setdefault(p.team, p.x)
+        if "home" in keepers and "away" in keepers:
+            return keepers["home"] < keepers["away"]
+        if "home" in keepers:
+            return keepers["home"] < 52.5
+        if "away" in keepers:
+            return keepers["away"] > 52.5
+        # No keeper in frame (partial camera views): the deeper team defends the
+        # left goal. A heuristic, which is why adapters should set the field.
+        home = [p.x for p in self.players if p.team == "home"]
+        away = [p.x for p in self.players if p.team == "away"]
+        if home and away:
+            return sum(home) / len(home) <= sum(away) / len(away)
+        return True
 
     def score_for(self, team: Literal["home", "away"]) -> tuple[int, int]:
         """(goals for `team`, goals against `team`)."""

@@ -254,6 +254,8 @@ class StatsBombAdapter(BaseAdapter):
             visible_area=visible_area,
             # StatsBomb 360 is a single freeze-frame → no velocity → degraded pitch control.
             has_velocity=False,
+            # The acting team ("home") attacks +x in StatsBomb coordinates.
+            home_attacks_right=True,
             source="statsbomb",
             event_type=event_type,
             event_player_id=int(event.get("player_id", -1)) if pd.notna(event.get("player_id")) else None,

@@ -30,6 +30,7 @@ def test_actor_keeps_statsbomb_player_id(loader):
     assert actor is not None and actor.team == "home"
     assert state.event_player_id == 500
     assert state.possession == "home"
+    assert state.home_attacks_right is True       # set, not inferred (frames often lack keepers)
 
 
 def test_frame_without_actor_is_skipped(loader):
