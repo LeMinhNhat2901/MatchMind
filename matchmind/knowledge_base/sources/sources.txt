@@ -1,0 +1,22 @@
+# MatchMind — nguồn cho knowledge base
+#
+# Mỗi dòng một nguồn. Dòng trống và dòng bắt đầu bằng # được bỏ qua.
+# Phần sau " #" trên một dòng là ghi chú.
+#
+# Định dạng:   [Tên kênh |] link [| max=N]
+#
+#   Video YouTube (tên kênh có thể bỏ trống — sẽ tự tra):
+#     Tifo Football | https://www.youtube.com/watch?v=XXXXXXXXXXX
+#     https://youtu.be/YYYYYYYYYYY
+#
+#   Cả một kênh YouTube → lấy N video mới nhất (mặc định 10):
+#     https://www.youtube.com/@TifoFootball | max=20
+#
+#   Link khác (website, bài báo...) được liệt kê là "chưa hỗ trợ", không xử lý.
+#
+# Chạy:   python -m matchmind.scripts.ingest_sources
+#         python -m matchmind.scripts.ingest_sources --dry-run   (xem trước, không gọi LLM)
+#
+# Có thể để nguyên link cũ trong file: video đã xử lý sẽ tự bỏ qua, video lỗi
+# (hết quota, không có phụ đề) sẽ được thử lại ở lần chạy sau.
+

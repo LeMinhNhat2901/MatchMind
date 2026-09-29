@@ -44,10 +44,8 @@ Then embed the new concepts into the vector store:
 """
 from __future__ import annotations
 
-import datetime as _dt
 import logging
 import sys
-import time
 from pathlib import Path
 
 import typer
@@ -56,22 +54,17 @@ from rich.console import Console
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from matchmind.config import settings
-from matchmind.knowledge_base.concept_synthesis import existing_concept_ids, save_concept, synthesize_concept
-from matchmind.knowledge_base.youtube_source import (
-    chunk_transcript,
-    fetch_transcript,
-    list_channel_videos,
-    load_processed_videos,
-    parse_video_id,
-    save_processed_videos,
-    timestamped_url,
+from matchmind.knowledge_base.source_ingest import (
+    SourceEntry,
+    YouTubeIngestor,
+    classify_line,
+    parse_sources_text,
 )
 
 app = typer.Typer()
 console = Console()
 logger = logging.getLogger(__name__)
 
-ID_PREFIX = "yt_"
 OUT_SUBDIR = "youtube"
 
 
@@ -86,17 +79,25 @@ def _safe_stdout() -> None:
                 pass
 
 
-def _parse_line(line: str) -> tuple[str | None, str] | None:
-    """"Channel | url" or bare "url" -> (channel, url). channel is None when not given (the
-    caller looks it up via YouTube's oEmbed API instead of defaulting to a generic label).
-    None (the whole tuple) for blank/comment lines."""
-    line = line.strip()
-    if not line or line.startswith("#"):
-        return None
-    if "|" in line:
-        channel, url = line.split("|", 1)
-        return channel.strip(), url.strip()
-    return None, line
+def entries_from_cli(urls_file: str, url: list[str], channel_url: str, max_videos: int) -> list[SourceEntry]:
+    """CLI options -> the same SourceEntry list sources.txt produces, so this
+    script and ingest_sources.py share one ingest loop (YouTubeIngestor)."""
+    entries: list[SourceEntry] = []
+    if urls_file:
+        entries += parse_sources_text(Path(urls_file).read_text(encoding="utf-8"))
+    for u in url:
+        entry = classify_line(u)
+        if entry is not None:
+            entries.append(entry)
+    if channel_url:
+        entry = classify_line(f"{channel_url} | max={max_videos}")
+        if entry is not None:
+            if entry.kind != "youtube_channel":
+                # Accept any channel URL form yt-dlp understands, even ones the
+                # classifier doesn't recognise as a channel.
+                entry = SourceEntry("youtube_channel", channel_url, max_videos=max_videos)
+            entries.append(entry)
+    return entries
 
 
 @app.command()
@@ -122,125 +123,38 @@ def main(
     ),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
+    from matchmind.knowledge_base.concept_synthesis import existing_concept_ids
+
     _safe_stdout()
     logging.basicConfig(level=logging.DEBUG if verbose else logging.INFO)
     console.print("\n[bold green]MatchMind — YouTube Knowledge Base Ingestion[/bold green]")
 
-    entries: list[tuple[str | None, str]] = []
-    if urls_file:
-        for line in Path(urls_file).read_text(encoding="utf-8").splitlines():
-            parsed = _parse_line(line)
-            if parsed:
-                entries.append(parsed)
-    for u in url:
-        parsed = _parse_line(u)
-        if parsed:
-            entries.append(parsed)
-
-    if channel_url:
-        console.print(f"[dim]Listing up to {max_videos} videos from {channel_url}...[/dim]")
-        try:
-            channel_video_urls = list_channel_videos(channel_url, max_videos=max_videos)
-        except ImportError as exc:
-            console.print(f"[bold red]{exc}[/bold red]")
-            raise typer.Exit(1)
-        except Exception as exc:
-            console.print(f"[bold red]Could not list channel videos: {exc}[/bold red]")
-            raise typer.Exit(1)
-        console.print(f"[green]Found {len(channel_video_urls)} video(s)[/green]")
-        entries.extend((None, vurl) for vurl in channel_video_urls)
-
+    entries = entries_from_cli(urls_file, url, channel_url, max_videos)
     if not entries:
         console.print("[bold red]No videos given. Use --urls-file, --url, or --channel.[/bold red]")
         raise typer.Exit(1)
 
-    console.print(f"[green]{len(entries)} video(s) queued[/green]")
+    kb_dir = Path(settings.knowledge_base_dir)
+    concepts_root = Path(out_dir) if out_dir else kb_dir / OUT_SUBDIR
+    report = YouTubeIngestor(
+        concepts_root=concepts_root,
+        state_path=kb_dir / "_state" / "youtube_processed.json",
+        known_ids=existing_concept_ids(kb_dir),
+        sleep_s=sleep_s,
+        max_chunk_chars=max_chunk_chars,
+        log=lambda msg: console.print(f"[dim]{msg}[/dim]"),
+    ).run(entries)
 
-    concepts_root = Path(out_dir) if out_dir else Path(settings.knowledge_base_dir) / OUT_SUBDIR
-    known_ids = existing_concept_ids(Path(settings.knowledge_base_dir))
-    processed_state_path = Path(settings.knowledge_base_dir) / "_state" / "youtube_processed.json"
-    processed_videos = load_processed_videos(processed_state_path)
-    retrieved_at = _dt.date.today().isoformat()
-    written, skipped, failed = 0, 0, 0
-
-    for channel, raw_url in entries:
-        try:
-            video_id = parse_video_id(raw_url)
-        except ValueError as exc:
-            console.print(f"[red]{raw_url}: {exc}[/red]")
-            failed += 1
-            continue
-
-        if video_id in processed_videos:
-            console.print(f"[dim]{raw_url}: already processed (video-level state), skipping[/dim]")
-            skipped += 1
-            continue
-
-        if channel is None:
-            try:
-                from matchmind.knowledge_base.youtube_source import fetch_video_metadata
-
-                channel = fetch_video_metadata(video_id)["channel"]
-            except Exception as exc:
-                logger.debug(f"oEmbed lookup failed for {video_id}: {exc}")
-                channel = "YouTube"
-
-        console.print(f"\n[bold]{channel}[/bold] — {raw_url}")
-        try:
-            segments = fetch_transcript(video_id)
-        except ImportError as exc:
-            console.print(f"[bold red]{exc}[/bold red]")
-            raise typer.Exit(1)
-        except Exception as exc:
-            console.print(f"[red]transcript unavailable: {exc}[/red]")
-            failed += 1
-            continue
-
-        chunks = chunk_transcript(segments, max_chars=max_chunk_chars)
-        console.print(f"[dim]{len(segments)} transcript segments -> {len(chunks)} chunks[/dim]")
-
-        for i, chunk in enumerate(chunks, 1):
-            console.print(f"  chunk {i}/{len(chunks)}", end=" ")
-            concept = synthesize_concept(
-                source_title=f"{channel} transcript chunk {i}",
-                source_text=chunk.text,
-                source_name=channel,
-                source_url=timestamped_url(video_id, chunk.start_seconds),
-                source_license="fair-use paraphrase (transcript, not redistributed verbatim)",
-                retrieved_at=retrieved_at,
-                id_prefix=ID_PREFIX,
-            )
-            if concept is None:
-                console.print("[yellow]skipped[/yellow]")
-                skipped += 1
-                time.sleep(sleep_s)
-                continue
-            if concept.concept_id in known_ids:
-                console.print(f"[dim]already have {concept.concept_id}[/dim]")
-                skipped += 1
-                time.sleep(sleep_s)
-                continue
-            try:
-                path = save_concept(concept, concepts_root)
-                known_ids.add(concept.concept_id)
-                written += 1
-                console.print(f"[green]-> {path.name}[/green]")
-            except Exception as exc:
-                console.print(f"[red]write failed: {exc}[/red]")
-                failed += 1
-            time.sleep(sleep_s)
-
-        # Mark processed once we've genuinely attempted every chunk (whatever the
-        # per-chunk outcome) — NOT on a transcript-fetch failure above (that's
-        # often transient/environmental and worth retrying next run).
-        processed_videos.add(video_id)
-        save_processed_videos(processed_state_path, processed_videos)
-
+    for line in report.unsupported:
+        console.print(f"[yellow]not a YouTube link, skipped: {line}[/yellow]")
+    for err in report.errors:
+        console.print(f"[red]{err}[/red]")
     console.print(
-        f"\n[bold green]Done:[/bold green] {written} written, {skipped} skipped, {failed} failed "
-        f"-> {concepts_root}"
+        f"\n[bold green]Done:[/bold green] {report.videos_new} video(s) processed, "
+        f"{report.videos_skipped} already done, {report.videos_failed} failed; "
+        f"{report.concepts_written} concept(s) written -> {concepts_root}"
     )
-    if written:
+    if report.concepts_written:
         console.print(
             "\n[bold]Next:[/bold] embed the new concepts into the vector store:\n"
             "  python -m matchmind.scripts.build_kb --rebuild"
