@@ -25,6 +25,14 @@ class Settings(BaseSettings):
     openai_api_key: str = Field(default="", alias="OPENAI_API_KEY")
     groq_api_key: str = Field(default="", alias="GROQ_API_KEY")
 
+    # OpenAI-compatible fallbacks (llm_client._OPENAI_COMPATIBLE). Empty = skipped by the chain.
+    cerebras_api_key: str = Field(default="", alias="CEREBRAS_API_KEY")
+    mistral_api_key: str = Field(default="", alias="MISTRAL_API_KEY")
+    openrouter_api_key: str = Field(default="", alias="OPENROUTER_API_KEY")
+    # Ordered "provider:model" list tried by call_llm; providers without a key or
+    # with today's quota used up are skipped. Empty = LLM_PROVIDER/LLM_MODEL only.
+    llm_fallback_chain: str = Field(default="", alias="LLM_FALLBACK_CHAIN")
+
     llm_provider: str = Field(default="gemini", alias="LLM_PROVIDER")  # gemini | anthropic | openai | groq
     llm_model: str = Field(default="gemini-2.5-flash", alias="LLM_MODEL")
     groq_model: str = Field(default="qwen/qwen3.8-27b", alias="GROQ_MODEL")

@@ -53,7 +53,7 @@ from matchmind.agent.translation import (
     is_english,
     ungrounded_numbers,
 )
-from matchmind.llm_client import call_narrator_llm
+from matchmind.llm_client import call_narrator_llm, last_provider
 from matchmind.schema.match_state import TacticalAdvice
 
 logger = logging.getLogger(__name__)
@@ -264,7 +264,7 @@ def narrator_node(state: AgentState) -> AgentState:
 
     elapsed = (time.time() - t0) * 1000
     step = {"node": "narrator", "latency_ms": round(elapsed, 1), "tokens": tokens_total,
-            "language": advice.narrative_language}
+            "language": advice.narrative_language, "provider": last_provider()}
     if failures:
         step["rejected"] = failures
     trace.append(step)

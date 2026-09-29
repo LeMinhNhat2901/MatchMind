@@ -10,7 +10,7 @@ import logging
 import time
 
 from matchmind.agent.state import AgentState
-from matchmind.llm_client import call_llm
+from matchmind.llm_client import call_llm, last_provider
 
 logger = logging.getLogger(__name__)
 
@@ -49,7 +49,8 @@ def reasoner_node(state: AgentState) -> AgentState:
     logger.debug(f"[reasoner] {elapsed:.1f}ms | tokens={tokens}")
 
     trace = state.get("trace") or []
-    trace.append({"node": "reasoner", "latency_ms": round(elapsed, 1), "tokens": tokens})
+    trace.append({"node": "reasoner", "latency_ms": round(elapsed, 1), "tokens": tokens,
+                  "provider": last_provider()})
 
     return {
         **state,
