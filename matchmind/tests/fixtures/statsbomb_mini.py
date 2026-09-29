@@ -33,6 +33,17 @@ def _frame(uuid, with_actor=True, opponents=True):
             "freeze_frame": ff}
 
 
+def write_mini_lineups(root: Path) -> Path:
+    """Optional lineups/<match>.json: the actor (player 500) wears #8."""
+    (root / "lineups").mkdir(parents=True, exist_ok=True)
+    lineups = [{"team_id": 10, "team_name": "Acting FC", "lineup": [
+        {"player_id": 500, "player_name": "Andrea Pirlo Full", "player_nickname": "Pirlo", "jersey_number": 8},
+        {"player_id": 501, "player_name": "Other Mate", "player_nickname": None, "jersey_number": 51},
+    ]}]
+    (root / "lineups" / f"{MATCH_ID}.json").write_text(json.dumps(lineups), encoding="utf-8")
+    return root
+
+
 def write_mini_open_data(root: Path) -> Path:
     """Events: 0 pass (360, actor) · 1 carry (360, NO actor) · 2 corner pass (360)
     · 3 shot=goal by team 10 · 4 pass (360, only one team visible) · 5 pass w/o 360."""

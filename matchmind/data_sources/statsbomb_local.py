@@ -31,8 +31,18 @@ ON_BALL_TYPES: frozenset[str] = frozenset({"Pass", "Carry", "Dribble", "Shot"})
 SET_PIECE_PASS_TYPES: frozenset[str] = frozenset(
     {"Corner", "Free Kick", "Throw-in", "Goal Kick", "Kick Off"}
 )
+# 360 frames identify only the actor. Everyone else is anonymous in the data, so
+# they get placeholder numbers that can't pass for real shirt numbers.
+_TEAMMATE_ID_BASE = 50
 _OPPONENT_ID_BASE = 100
 _PADDING_OPPONENT_ID = 999
+
+Roster = dict[int, tuple[int, str]]   # StatsBomb player_id -> (jersey number, display name)
+
+
+def _next_placeholder(current: int, reserved: int) -> int:
+    nxt = current + 1
+    return nxt + 1 if nxt == reserved else nxt
 
 
 def _seconds(event: dict) -> float:
@@ -79,6 +89,19 @@ class StatsBombLocalLoader:
         path = self.root / "three-sixty" / f"{match_id}.json"
         return {f["event_uuid"]: f for f in json.loads(path.read_text(encoding="utf-8"))}
 
+    def roster(self, match_id: int) -> Roster:
+        """StatsBomb player_id -> (jersey number, nickname or name), from lineups/."""
+        path = self.root / "lineups" / f"{match_id}.json"
+        if not path.exists():
+            return {}
+        out: Roster = {}
+        for team in json.loads(path.read_text(encoding="utf-8")):
+            for p in team.get("lineup", []):
+                if p.get("jersey_number") is not None:
+                    out[int(p["player_id"])] = (int(p["jersey_number"]),
+                                                p.get("player_nickname") or p.get("player_name"))
+        return out
+
     def to_match_state(
         self,
         event: dict,
@@ -86,13 +109,19 @@ class StatsBombLocalLoader:
         match_id: int,
         score: tuple[int, int] = (0, 0),
         opponent_name: str | None = None,
+        roster: Roster | None = None,
     ) -> MatchState | None:
         """One on-ball event + its freeze frame -> MatchState, or None if the
-        frame has no actor (the focus player would not exist)."""
-        actor_id = int(event["player"]["id"])
+        frame has no actor (the focus player would not exist).
+
+        The actor is labelled with their real shirt number and name when the
+        roster knows them (else the StatsBomb player id)."""
+        sb_id = int(event["player"]["id"])
+        actor_id, actor_name = (roster or {}).get(sb_id, (sb_id, (event.get("player") or {}).get("name")))
         role_name = (event.get("position") or {}).get("name", "")
         players: list[PlayerState] = []
-        mate_id, opp_id, has_actor = 1, _OPPONENT_ID_BASE + 1, False
+        mate_id = _next_placeholder(_TEAMMATE_ID_BASE, actor_id)
+        opp_id, has_actor = _OPPONENT_ID_BASE + 1, False
 
         for row in frame.get("freeze_frame", []):
             loc = row.get("location")
@@ -102,7 +131,7 @@ class StatsBombLocalLoader:
             if row.get("actor"):
                 has_actor = True
                 players.append(PlayerState(
-                    id=actor_id, team="home",
+                    id=actor_id, team="home", name=actor_name,
                     role=SB_POSITION_MAP.get(role_name, role_name.lower().replace(" ", "_") or None),
                     x=x, y=y,
                 ))
@@ -111,7 +140,7 @@ class StatsBombLocalLoader:
                     id=mate_id, team="home",
                     role="goalkeeper" if row.get("keeper") else None, x=x, y=y,
                 ))
-                mate_id += 1
+                mate_id = _next_placeholder(mate_id, actor_id)
             else:
                 players.append(PlayerState(
                     id=opp_id, team="away",
@@ -166,6 +195,7 @@ class StatsBombLocalLoader:
         """
         events = self.events(match_id)
         frames = self.frames(match_id)
+        roster = self.roster(match_id)
         team_names = {
             (e.get("team") or {}).get("id"): (e.get("team") or {}).get("name") for e in events if e.get("team")
         }
@@ -177,7 +207,7 @@ class StatsBombLocalLoader:
                 other = sum(v for k, v in goals.items() if k != team_id)
                 opponent = next((n for tid, n in team_names.items() if tid != team_id), None)
                 try:
-                    state = self.to_match_state(event, frames[event["id"]], match_id, (own, other), opponent)
+                    state = self.to_match_state(event, frames[event["id"]], match_id, (own, other), opponent, roster)
                 except Exception as exc:  # noqa: BLE001 — one malformed frame must not stop a scan
                     logger.debug(f"skip {match_id}:{idx}: {exc}")
                     state = None
@@ -196,7 +226,7 @@ class StatsBombLocalLoader:
                 break
             usable = [(i, e, s) for i, e, s in self.iter_snapshots(match_id) if s.phase_of_play != "set_piece"]
             for _idx, event, state in rng.sample(usable, min(per_match, len(usable))):
-                focus = int(event["player"]["id"])
+                focus = state.event_player_id   # shirt number when the lineup knows it
                 cases.append({
                     "snapshot": state,
                     "focus_player_id": focus,

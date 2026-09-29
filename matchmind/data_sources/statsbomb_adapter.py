@@ -114,6 +114,24 @@ PHASE_MAP: dict[str, str] = {
 }
 
 
+def _roster(match_id: int) -> dict[int, tuple[int, str]]:
+    """StatsBomb player_id -> (jersey number, nickname or name) via statsbombpy
+    lineups. Empty on any failure — callers then fall back to StatsBomb ids."""
+    try:
+        from statsbombpy import sb
+
+        out: dict[int, tuple[int, str]] = {}
+        for df in sb.lineups(match_id=match_id).values():
+            for _, p in df.iterrows():
+                if pd.notna(p.get("jersey_number")):
+                    name = p.get("player_nickname") if pd.notna(p.get("player_nickname")) else p.get("player_name")
+                    out[int(p["player_id"])] = (int(p["jersey_number"]), name)
+        return out
+    except Exception as exc:  # noqa: BLE001 — names are a nicety, not a requirement
+        logger.debug(f"lineups unavailable for {match_id}: {exc}")
+        return {}
+
+
 def _team_names(events: pd.DataFrame) -> list[str]:
     """Both teams' names from a statsbombpy events frame ("team" column)."""
     if "team" not in events:
@@ -164,7 +182,7 @@ class StatsBombAdapter(BaseAdapter):
         frames = sb.frames(match_id=match_id)
 
         event_row = events.iloc[event_index]
-        return self._event_to_match_state(event_row, frames, match_id, _team_names(events))
+        return self._event_to_match_state(event_row, frames, match_id, _team_names(events), _roster(match_id))
 
     def load_test_cases(self, n: int = 25) -> list[dict]:
         """
@@ -228,18 +246,27 @@ class StatsBombAdapter(BaseAdapter):
         frames: pd.DataFrame,
         match_id: int,
         team_names: list[str] | None = None,
+        roster: dict[int, tuple[int, str]] | None = None,
     ) -> MatchState:
         """Convert a StatsBomb event row + 360 frames → MatchState.
 
         team_names: both teams' names in this match; "home" becomes the acting
         team's name and "away" the other one.
+        roster: StatsBomb player_id -> (jersey number, name) from the lineups, so
+        the actor is labelled with a real shirt number instead of an internal id.
         """
         event_id = event["id"]
         acting_team = event.get("team") if isinstance(event.get("team"), str) else None
+        actor_id: int | None = None
+        actor_name = event.get("player") if isinstance(event.get("player"), str) else None
+        if pd.notna(event.get("player_id")):
+            sb_id = int(event.get("player_id"))
+            actor_id, roster_name = (roster or {}).get(sb_id, (sb_id, None))
+            actor_name = roster_name or actor_name
 
         # Get freeze frame for this event
         frame_rows = frames[frames["id"] == event_id]
-        players = self._parse_freeze_frame(frame_rows, event)
+        players = self._parse_freeze_frame(frame_rows, event, actor_id, actor_name)
         visible_area = self._parse_visible_area(frame_rows)
 
         # Ball position — StatsBomb units (0-120, 0-80) rescaled to metres
@@ -273,13 +300,15 @@ class StatsBombAdapter(BaseAdapter):
             away_team_name=next((n for n in (team_names or []) if n != acting_team), None),
             source="statsbomb",
             event_type=event_type,
-            event_player_id=int(event.get("player_id", -1)) if pd.notna(event.get("player_id")) else None,
+            event_player_id=actor_id,
         )
 
     def _parse_freeze_frame(
         self,
         frame_rows: pd.DataFrame,
         event: pd.Series,
+        actor_id: int | None = None,
+        actor_name: str | None = None,
     ) -> list[PlayerState]:
         """Parse StatsBomb 360 freeze_frame → list[PlayerState].
 
@@ -294,6 +323,10 @@ class StatsBombAdapter(BaseAdapter):
             logger.debug(f"No freeze frame for event {event.get('id')} — using synthetic data")
             return self._make_synthetic_players(event)
 
+        # 360 frames identify only the actor; everyone else is anonymous in the
+        # data and gets a placeholder that can't pass for a shirt number
+        # (teammates 51+, opponents 101+, never the actor's own number).
+        next_mate, next_opp = 51, 101
         for _, row in frame_rows.iterrows():
             teammate = row.get("teammate", True)
             team: str = "home" if teammate else "away"
@@ -303,23 +336,28 @@ class StatsBombAdapter(BaseAdapter):
                 continue
             px, py = _sb_to_metres(float(loc[0]), float(loc[1]))
 
+            name = None
             # `== True`, not `is True`: pandas hands back numpy.bool_, and NaN == True is False.
-            if row.get("actor") == True and pd.notna(event.get("player_id")):  # noqa: E712
-                # 360 frames have no player ids; the actor IS the event's player.
-                # Without this the case's focus_player_id never exists in the snapshot.
-                player_id = int(event.get("player_id"))
-            elif pd.notna(row.get("player_id", None)):
-                player_id = int(row.get("player_id"))
+            if row.get("actor") == True and actor_id is not None:  # noqa: E712
+                # The actor IS the event's player (shirt number when the lineup
+                # knows it). Without this the case's focus player never exists.
+                player_id, name = actor_id, actor_name
+            elif team == "home":
+                next_mate += next_mate == actor_id
+                player_id, next_mate = next_mate, next_mate + 1
             else:
-                player_id = len(players) + 1
+                player_id, next_opp = next_opp, next_opp + 1
             position_name = str(row.get("position", ""))
             role = SB_POSITION_MAP.get(position_name, position_name.lower().replace(" ", "_") or None)
+            if row.get("keeper") == True:  # noqa: E712
+                role = "goalkeeper"
 
             players.append(
                 PlayerState(
                     id=player_id,
                     team=team,
                     role=role,
+                    name=name,
                     x=px,
                     y=py,
                 )
@@ -375,6 +413,7 @@ class StatsBombAdapter(BaseAdapter):
         events = sb.events(match_id=match_id, fmt="dataframe")
         frames = sb.frames(match_id=match_id)
         names = _team_names(events)
+        roster = _roster(match_id)
 
         cases = []
         for idx, row in events.iterrows():
@@ -390,13 +429,14 @@ class StatsBombAdapter(BaseAdapter):
                 continue
 
             try:
-                snapshot = self._event_to_match_state(row, frames, match_id, names)
+                snapshot = self._event_to_match_state(row, frames, match_id, names, roster)
             except Exception as exc:
                 logger.debug(f"Skipping event {idx}: {exc}")
                 continue
 
             # Focus on the player who performed the event
-            focus_id = int(row.get("player_id", snapshot.players[0].id)) if pd.notna(row.get("player_id", None)) else snapshot.players[0].id
+            # The actor's label in the snapshot (shirt number when the lineup knows it).
+            focus_id = snapshot.event_player_id if snapshot.event_player_id is not None else snapshot.players[0].id
 
             # Ground truth = the event_type itself
             gt_action = event_type.lower()

@@ -202,7 +202,8 @@ def _build_nl_description(
 
     # Player context — the real team name when the source provides it (StatsBomb
     # "home" is the acting team, not the match's home side).
-    role_str = f" ({focus.role})" if focus.role else ""
+    details = [d for d in (focus.name, focus.role) if d]
+    role_str = f" ({', '.join(details)})" if details else ""
     named = state.home_team_name if focus.team == "home" else state.away_team_name
     team_desc = f"({named})" if named else f"[{focus.team} team]"
     lines.append(
@@ -213,6 +214,12 @@ def _build_nl_description(
     # say so, so the LLM doesn't treat absent players as absent from the pitch.
     if state.visible_area or len(state.players) < 22:
         lines.append(f"Camera view shows {len(state.players)} of 22 players.")
+    if state.source == "statsbomb":
+        # 360 data identifies only the event's player; the rest are anonymous.
+        lines.append(
+            "Only the player making the event is identified in this data; the other players' "
+            "numbers (teammates 51+, opponents 101+) are placeholders, not shirt numbers."
+        )
 
     # Possession — stated up front so retrieval + the LLM never confuse an
     # off-ball player for the ball carrier.

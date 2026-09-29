@@ -101,6 +101,10 @@ class PlayerState(BaseModel):
         default=None,
         description="Positional role e.g. 'center_back', 'attacking_midfielder'",
     )
+    name: str | None = Field(
+        default=None,
+        description="Player name when the source identifies them (None = anonymous, e.g. 360 frames)",
+    )
     x: float = Field(..., ge=0.0, le=105.0)
     y: float = Field(..., ge=0.0, le=68.0)
     # Velocity components — required for pitch control model; default 0 when not available

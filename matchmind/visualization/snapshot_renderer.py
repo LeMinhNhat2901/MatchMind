@@ -147,16 +147,18 @@ def _draw_scene(
                 player.x, player.y,
                 c=FOCUS_RING_COLOR,
                 s=FOCUS_RING_SIZE,
-                zorder=3,
+                zorder=6,   # above other players' dots, below the focus dot
                 linewidths=0,
             )
 
-        # Player dot — thin dark outline separates overlapping dots on the grass
+        # Player dot — thin dark outline separates overlapping dots on the grass.
+        # The focus player sits above the other dots (below the ball): in a crowd
+        # around the ball the carrier was otherwise hidden under opponents' dots.
         ax.scatter(
             player.x, player.y,
             c=color,
             s=PLAYER_SIZE,
-            zorder=4,
+            zorder=7 if is_focus else 4,
             edgecolors="white" if is_focus else "#0B1120",
             linewidths=2 if is_focus else 0.8,
         )
@@ -168,7 +170,7 @@ def _draw_scene(
             ha="center", va="center",
             fontsize=8.5, fontweight="bold",
             color="white",
-            zorder=5,
+            zorder=8 if is_focus else 5,
         )
 
     # ── Draw ball ─────────────────────────────────────────────

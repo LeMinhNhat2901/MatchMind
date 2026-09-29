@@ -80,7 +80,7 @@ def build_examples(
             if state.phase_of_play == "set_piece":
                 continue
             try:
-                feats = encode_situation(state, int(event["player"]["id"]))
+                feats = encode_situation(state, state.event_player_id)
             except Exception as exc:  # noqa: BLE001 — skip unusable frames, keep scanning
                 logger.debug(f"skip example {match_id}:{idx}: {exc}")
                 continue
