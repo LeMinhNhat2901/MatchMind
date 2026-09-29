@@ -84,6 +84,7 @@ _OPENAI_COMPATIBLE: dict[str, tuple[str, str]] = {
     "mistral": ("https://api.mistral.ai/v1", "mistral_api_key"),
     "openrouter": ("https://openrouter.ai/api/v1", "openrouter_api_key"),
 }
+_ACCEPTS_REASONING_EFFORT = {"cerebras"}
 _KEY_ATTR: dict[str, str] = {
     "gemini": "gemini_api_key", "groq": "groq_api_key", "openai": "openai_api_key",
     "anthropic": "anthropic_api_key", **{p: attr for p, (_, attr) in _OPENAI_COMPATIBLE.items()},
@@ -157,7 +158,8 @@ def _call_provider(provider: str, model: str, prompt: str, *, image_path=None, m
     elif provider == "groq":
         result = _call_groq(prompt, image_path, max_tokens, temperature, json_mode, model)
     elif provider in _OPENAI_COMPATIBLE:
-        result = _call_openai_compatible(provider, prompt, max_tokens, temperature, json_mode, model)
+        result = _call_openai_compatible(provider, prompt, max_tokens, temperature, json_mode, model,
+                                         thinking_budget=thinking_budget)
     else:
         raise ValueError(
             f"Unknown LLM provider {provider!r}. Use one of: gemini | anthropic | openai | groq | "
@@ -174,10 +176,17 @@ def _openai_client(base_url: str, api_key: str, **kwargs):
 
 
 def _call_openai_compatible(
-    provider: str, prompt: str, max_tokens: int, temperature: float | None, json_mode: bool, model: str
+    provider: str, prompt: str, max_tokens: int, temperature: float | None, json_mode: bool, model: str,
+    thinking_budget: int | None = None,
 ) -> tuple[str, int]:
     """Cerebras / Mistral / OpenRouter — all speak the OpenAI chat API. Text only:
-    the pitch image is supporting context; the numbers in the prompt are primary."""
+    the pitch image is supporting context; the numbers in the prompt are primary.
+
+    thinking_budget=0 (the project's "cheap call, no thinking" signal) maps to
+    reasoning_effort="none" on providers that accept it: qwen-3.8-27b on Cerebras
+    otherwise spends hidden reasoning tokens INSIDE max_tokens (measured: 76 on a
+    one-line JSON request), so small calls come back empty.
+    """
     base_url, key_attr = _OPENAI_COMPATIBLE[provider]
     api_key = getattr(settings, key_attr, "")
     if not api_key:
@@ -188,8 +197,14 @@ def _call_openai_compatible(
         kwargs["temperature"] = temperature
     if json_mode:
         kwargs["response_format"] = {"type": "json_object"}
+    if thinking_budget == 0 and provider in _ACCEPTS_REASONING_EFFORT:
+        kwargs["reasoning_effort"] = "none"
     resp = client.chat.completions.create(**kwargs)
     text = resp.choices[0].message.content or ""
+    if not text.strip():
+        # An empty completion (e.g. the budget went to hidden reasoning) is a
+        # failure, not an answer — raising lets the failover chain move on.
+        raise RuntimeError(f"{provider} returned an empty completion (max_tokens={max_tokens})")
     tokens = int(resp.usage.total_tokens) if resp.usage else 0
     return text, tokens
 

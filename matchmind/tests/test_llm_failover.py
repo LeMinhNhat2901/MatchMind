@@ -131,6 +131,42 @@ def test_groq_daily_quota_raises_immediately_without_retry(monkeypatch):
     assert len(attempts) == 1
 
 
+def _fake_openai(monkeypatch, content, seen):
+    class FakeCompletions:
+        def create(self, **kwargs):
+            seen.update(kwargs)
+            return type("R", (), {
+                "choices": [type("C", (), {"message": type("M", (), {"content": content})})],
+                "usage": type("U", (), {"total_tokens": 9}),
+            })
+
+    class FakeClient:
+        def __init__(self, base_url, api_key, **kw):
+            self.chat = type("Chat", (), {"completions": FakeCompletions()})()
+
+    monkeypatch.setattr(llm_client, "_openai_client", FakeClient)
+    for key in ("cerebras_api_key", "mistral_api_key"):
+        monkeypatch.setattr(llm_client.settings, key, "k")
+
+
+def test_cerebras_disables_hidden_reasoning_when_thinking_budget_is_zero(monkeypatch):
+    """Measured: qwen-3.8-27b on Cerebras spent 76 hidden reasoning tokens inside
+    max_tokens, so a 40-token call came back empty."""
+    seen: dict = {}
+    _fake_openai(monkeypatch, "{}", seen)
+    llm_client._call_openai_compatible("cerebras", "p", 40, 0.0, True, "qwen-3.8-27b", thinking_budget=0)
+    assert seen["reasoning_effort"] == "none"
+    seen.clear()
+    llm_client._call_openai_compatible("mistral", "p", 40, 0.0, True, "mistral-small-latest", thinking_budget=0)
+    assert "reasoning_effort" not in seen          # not a Mistral parameter
+
+
+def test_empty_completion_is_an_error_so_failover_moves_on(monkeypatch):
+    _fake_openai(monkeypatch, "", {})
+    with pytest.raises(RuntimeError, match="empty"):
+        llm_client._call_openai_compatible("cerebras", "p", 40, 0.0, True, "qwen-3.8-27b")
+
+
 def test_openai_compatible_provider_uses_base_url_and_json_mode(monkeypatch):
     seen = {}
 
