@@ -255,22 +255,26 @@ def _build_nl_description(
     else:
         lines.append("Local numerical balance (equal numbers nearby).")
 
-    # Passing
-    if passing["passing_lane_open"]:
-        lane_ids = passing["open_passing_lane_player_ids"]
-        prog = passing["progressive_passes_available"]
-        lines.append(
-            f"Open passing lanes to {len(lane_ids)} teammate(s) "
-            f"(IDs: {lane_ids}), including {prog} progressive option(s)."
-        )
-    else:
-        lines.append("No clear passing lanes — under heavy press or congested area.")
+    # Passing — these are computed FROM the focus player's position, i.e. they are
+    # only this player's options if they hold the ball. For an off-ball player
+    # they read like the carrier's options and got misattributed ("the keeper's
+    # run opens 5 lanes for #10" — those were the keeper's own lanes).
+    if is_ball_carrier:
+        if passing["passing_lane_open"]:
+            lane_ids = passing["open_passing_lane_player_ids"]
+            prog = passing["progressive_passes_available"]
+            lines.append(
+                f"Open passing lanes to {len(lane_ids)} teammate(s) "
+                f"(IDs: {lane_ids}), including {prog} progressive option(s)."
+            )
+        else:
+            lines.append("No clear passing lanes — under heavy press or congested area.")
 
-    # Advanced opportunities
-    if passing["third_man_opportunity"]:
-        lines.append("Third-man run opportunity detected (combination play feasible).")
-    if passing["switch_play_viable"]:
-        lines.append("Switch of play viable — wide player free on opposite flank.")
+        # Advanced opportunities
+        if passing["third_man_opportunity"]:
+            lines.append("Third-man run opportunity detected (combination play feasible).")
+        if passing["switch_play_viable"]:
+            lines.append("Switch of play viable — wide player free on opposite flank.")
 
     # Zone context
     if spatial["half_space_occupied"]:

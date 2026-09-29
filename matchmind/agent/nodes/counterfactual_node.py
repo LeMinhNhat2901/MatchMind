@@ -126,10 +126,17 @@ def assemble_evidence_node(state: AgentState) -> AgentState:
         f"Nearest opponent: {features.nearest_opponent_distance:.1f}m",
         f"Space ahead: {features.space_ahead:.1f}m",
         f"Local advantage: {features.local_numerical_advantage:+d} players",
-        f"Open passing lanes: {len(features.open_passing_lane_player_ids)} (IDs: {features.open_passing_lane_player_ids})",
-        f"Progressive passes available: {features.progressive_passes_available}",
+    ]
+    if features.is_ball_carrier:
+        # Lanes are measured from the focus player's position: they are only
+        # this player's options when they hold the ball (see encoder.py).
+        stats_facts += [
+            f"Open passing lanes: {len(features.open_passing_lane_player_ids)} (IDs: {features.open_passing_lane_player_ids})",
+            f"Progressive passes available: {features.progressive_passes_available}",
+            f"Third-man opportunity: {features.third_man_opportunity}",
+        ]
+    stats_facts += [
         f"Half-space occupied: {features.half_space_occupied}",
-        f"Third-man opportunity: {features.third_man_opportunity}",
         f"Defensive line at x={features.defensive_line_height:.1f}m",
     ]
     if cf_analysis:

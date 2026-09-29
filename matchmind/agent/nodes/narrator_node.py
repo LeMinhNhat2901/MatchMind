@@ -155,10 +155,13 @@ def _build_data(state: AgentState, advice: TacticalAdvice) -> dict:
             "nearest_teammate_distance_m": _r(features.nearest_teammate_distance),
             "free_space_ahead_m": _r(features.space_ahead),
             "local_numerical_advantage": features.local_numerical_advantage,
-            "progressive_passes_available": features.progressive_passes_available,
-            "open_passing_lane_to_shirt_numbers": features.open_passing_lane_player_ids,
             "in_attacking_third": features.is_in_attacking_third,
         }
+        if features.is_ball_carrier:
+            # Only the carrier's own passing options — an off-ball player's
+            # "lanes" were misread as the carrier's (see encoder.py).
+            data["key_measurements"]["progressive_passes_available"] = features.progressive_passes_available
+            data["key_measurements"]["open_passing_lane_to_shirt_numbers"] = features.open_passing_lane_player_ids
 
     wanted = {advice.recommended_action_id} | {a.action_id for a in advice.alternatives}
     cf = state.get("counterfactual_analysis") or []
