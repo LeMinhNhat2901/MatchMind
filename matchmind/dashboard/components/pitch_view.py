@@ -9,6 +9,7 @@ own, so the frame never actually contained the image.)
 from __future__ import annotations
 
 import base64
+import html
 import tempfile
 from pathlib import Path
 
@@ -18,11 +19,14 @@ from matchmind.dashboard.components.ui import icon, render_html
 from matchmind.schema.match_state import MatchState, TacticalAdvice
 
 
-def _legend_items(advice: TacticalAdvice | None, dual: bool) -> list[str]:
-    """Only the marks actually drawn on this image — no dead legend entries."""
+def _legend_items(advice: TacticalAdvice | None, dual: bool, state: MatchState | None = None) -> list[str]:
+    """Only the marks actually drawn on this image — no dead legend entries.
+    Real team names when the source has them (red = the "home" side)."""
+    home = html.escape(state.home_team_name) if state and state.home_team_name else "Home"
+    away = html.escape(state.away_team_name) if state and state.away_team_name else "Away"
     items = [
-        '<span class="legend-item"><span class="legend-dot red-dot"></span>Home</span>',
-        '<span class="legend-item"><span class="legend-dot blue-dot"></span>Away</span>',
+        f'<span class="legend-item"><span class="legend-dot red-dot"></span>{home}</span>',
+        f'<span class="legend-item"><span class="legend-dot blue-dot"></span>{away}</span>',
         '<span class="legend-item"><span class="legend-dot ball-dot"></span>Ball</span>',
         '<span class="legend-item"><span class="legend-dot ring-dot"></span>Focus player</span>',
     ]
@@ -113,7 +117,7 @@ def render_pitch_panel(
 
     focus_txt = f"#{focus_player_id}" if focus_player_id is not None else "—"
     alt_text = f"Pitch minimap, {title.lower()}, focus player {focus_txt}"
-    legend = "".join(_legend_items(advice, dual_advice is not None))
+    legend = "".join(_legend_items(advice, dual_advice is not None, state))
 
     render_html(
         f"""
