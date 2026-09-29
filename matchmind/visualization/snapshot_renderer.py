@@ -70,6 +70,27 @@ def _touch_offset_metres(ax, fig, marker_s1: float, marker_s2: float, gap_pts: f
     return (r1 + r2 + gap_pts) * data_per_pt
 
 
+def ball_glyph_position(
+    ball_xy: tuple[float, float], players: list, player_radius_m: float
+) -> tuple[float, float]:
+    """Where to draw the ball '+'.
+
+    A loose ball is drawn exactly where it is. A ball inside a player's dot (the
+    carrier — event location ≈ actor position) is drawn ON the dot's rim, up-right,
+    overlapping it: contact stays visible and most of the jersey number is still
+    readable. It used to be pushed fully outside the dot plus a gap, which with
+    the larger dots read as the ball being away from its carrier.
+    """
+    bx, by = ball_xy
+    nearest = min(players, key=lambda p: (p.x - bx) ** 2 + (p.y - by) ** 2, default=None)
+    if nearest is None or math.hypot(nearest.x - bx, nearest.y - by) >= player_radius_m:
+        return bx, by
+    offset = 0.75 * player_radius_m
+    x = nearest.x + offset * math.cos(_BALL_OFFSET_ANGLE_RAD)
+    y = nearest.y + offset * math.sin(_BALL_OFFSET_ANGLE_RAD)
+    return max(0.0, min(105.0, x)), max(0.0, min(68.0, y))
+
+
 def _draw_scene(
     ax,
     fig,
@@ -151,25 +172,10 @@ def _draw_scene(
         )
 
     # ── Draw ball ─────────────────────────────────────────────
-    # Highest zorder — must never be hidden behind a player dot. If the ball
-    # sits on/inside the nearest player's dot (almost always true for the
-    # actual ball carrier, since event location ≈ actor position), nudge the
-    # ball glyph so the two markers are adjacent/touching instead of stacked —
-    # otherwise the ball glyph covers that player's jersey-number label.
-    draw_x, draw_y = state.ball.x, state.ball.y
-    nearest = min(
-        state.players,
-        key=lambda p: (p.x - draw_x) ** 2 + (p.y - draw_y) ** 2,
-        default=None,
-    )
-    if nearest is not None:
-        dist = math.hypot(nearest.x - draw_x, nearest.y - draw_y)
-        touch_dist = _touch_offset_metres(ax, fig, PLAYER_SIZE, BALL_SIZE)
-        if dist < touch_dist:
-            draw_x = nearest.x + touch_dist * math.cos(_BALL_OFFSET_ANGLE_RAD)
-            draw_y = nearest.y + touch_dist * math.sin(_BALL_OFFSET_ANGLE_RAD)
-            draw_x = max(0.0, min(105.0, draw_x))
-            draw_y = max(0.0, min(68.0, draw_y))
+    # Highest zorder — never hidden behind a dot. On its carrier it overlaps the
+    # dot's rim (see ball_glyph_position) so the contact is visible.
+    player_radius_m = _touch_offset_metres(ax, fig, PLAYER_SIZE, 0.0, gap_pts=0.0)
+    draw_x, draw_y = ball_glyph_position((state.ball.x, state.ball.y), state.players, player_radius_m)
 
     ax.scatter(
         draw_x, draw_y,
