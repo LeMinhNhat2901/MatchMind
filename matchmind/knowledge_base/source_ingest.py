@@ -6,7 +6,8 @@ one command (scripts/ingest_sources.py) that processes all of them. Each line
 is classified; only YouTube is automated today:
 
     youtube_video    "Label | https://youtu.be/…" or a bare video URL
-    youtube_channel  "https://www.youtube.com/@Handle [| max=N]" -> N newest uploads
+    youtube_channel  "https://www.youtube.com/@Handle [| max=N] [| sort=popular]"
+                     -> N newest uploads, or the N most-viewed with sort=popular
     unsupported      anything else (e.g. articles) — listed, never an error; other
                      source types need their own handler (websites have ToS and
                      per-site formats, see matchmind-kb-taxonomy-v2 decisions)
@@ -41,6 +42,11 @@ DEFAULT_CHANNEL_MAX = 10
 ID_PREFIX = "yt_"
 _CHANNEL_RE = re.compile(r"youtube\.com/(?:@[\w.\-]+|channel/[\w\-]+|c/[\w\-]+|user/[\w\-]+)", re.IGNORECASE)
 _MAX_RE = re.compile(r"^max\s*=\s*(\d+)$", re.IGNORECASE)
+_SORT_RE = re.compile(r"^sort\s*=\s*(newest|popular)$", re.IGNORECASE)
+
+
+def _is_option(part: str) -> bool:
+    return bool(_MAX_RE.match(part) or _SORT_RE.match(part))
 
 
 @dataclass(frozen=True)
@@ -51,28 +57,32 @@ class SourceEntry:
     video_id: str | None = None
     max_videos: int = DEFAULT_CHANNEL_MAX
     line_no: int = 0
+    sort: Literal["newest", "popular"] = "newest"
 
 
 def classify_line(line: str, line_no: int = 0) -> SourceEntry | None:
     """One sources.txt line -> SourceEntry, or None for blank/comment lines.
 
-    Format: [Label |] URL [| max=N]   — text after " #" is a comment.
+    Format: [Label |] URL [| max=N] [| sort=newest|popular]   — any order after
+    the URL; text after " #" is a comment.
     """
     line = line.split(" #", 1)[0].strip()
     if not line or line.startswith("#"):
         return None
     parts = [p.strip() for p in line.split("|")]
     url = next((p for p in parts if "://" in p or "youtu" in p.lower()), parts[-1])
-    label = next((p for p in parts if p is not url and not _MAX_RE.match(p) and p), None)
+    label = next((p for p in parts if p is not url and not _is_option(p) and p), None)
     max_match = next((_MAX_RE.match(p) for p in parts if _MAX_RE.match(p)), None)
     max_videos = int(max_match.group(1)) if max_match else DEFAULT_CHANNEL_MAX
+    sort_match = next((_SORT_RE.match(p) for p in parts if _SORT_RE.match(p)), None)
+    sort = sort_match.group(1).lower() if sort_match else "newest"
 
     try:
         return SourceEntry("youtube_video", url, label, video_id=parse_video_id(url), line_no=line_no)
     except ValueError:
         pass
     if _CHANNEL_RE.search(url):
-        return SourceEntry("youtube_channel", url, label, max_videos=max_videos, line_no=line_no)
+        return SourceEntry("youtube_channel", url, label, max_videos=max_videos, line_no=line_no, sort=sort)
     return SourceEntry("unsupported", url, label, line_no=line_no)
 
 
@@ -111,7 +121,7 @@ class YouTubeIngestor:
         synthesize: Callable | None = None,
         llm_call: Callable | None = None,
         fetch_transcript: Callable[[str], list[dict]] | None = None,
-        list_channel: Callable[[str, int], list[str]] | None = None,
+        list_channel: Callable[[str, int, str], list[str]] | None = None,
         lookup_channel: Callable[[str], str] | None = None,
         save: Callable | None = None,
         sleep_s: float = 2.0,
@@ -129,7 +139,8 @@ class YouTubeIngestor:
         self.synthesize = synthesize or concept_synthesis.synthesize_concept
         self.llm_call = llm_call or call_llm
         self.fetch_transcript = fetch_transcript or youtube_source.fetch_transcript
-        self.list_channel = list_channel or (lambda url, n: youtube_source.list_channel_videos(url, max_videos=n))
+        self.list_channel = list_channel or (
+            lambda url, n, sort="newest": youtube_source.list_channel_videos(url, max_videos=n, sort=sort))
         self.lookup_channel = lookup_channel or (lambda vid: youtube_source.fetch_video_metadata(vid)["channel"])
         self.save = save or concept_synthesis.save_concept
         self.sleep_s = sleep_s
@@ -164,7 +175,7 @@ class YouTubeIngestor:
                 queue.append((e.video_id, e.label, e.line_no))
             else:
                 try:
-                    urls = self.list_channel(e.url, e.max_videos)
+                    urls = self.list_channel(e.url, e.max_videos, e.sort)
                 except Exception as exc:  # noqa: BLE001 — one bad channel must not stop the file
                     report.errors.append(f"line {e.line_no}: cannot list channel {e.url}: {exc}")
                     continue

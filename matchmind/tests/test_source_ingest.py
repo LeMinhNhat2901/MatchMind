@@ -44,6 +44,43 @@ def test_channel_lines_default_and_override_max():
     assert classify_line("https://www.youtube.com/channel/UCabcdefghijk").kind == "youtube_channel"
 
 
+def test_channel_sort_option():
+    assert classify_line("https://www.youtube.com/@Tifo | max=10 | sort=popular").sort == "popular"
+    assert classify_line("https://www.youtube.com/@Tifo | sort=popular | max=5").max_videos == 5
+    assert classify_line("https://www.youtube.com/@Tifo").sort == "newest"
+
+
+def test_list_channel_popular_sorts_by_views(monkeypatch):
+    import sys
+    import types
+
+    from matchmind.knowledge_base.youtube_source import list_channel_videos
+
+    seen = {}
+    entries = [{"id": f"{c * 11}", "view_count": v} for c, v in zip("ABCDE", [10, 500, None, 90, 70])]
+
+    class FakeYDL:
+        def __init__(self, opts):
+            seen["opts"] = opts
+
+        def __enter__(self):
+            return self
+
+        def __exit__(self, *a):
+            return False
+
+        def extract_info(self, url, download=False):
+            seen["url"] = url
+            return {"entries": entries}
+
+    monkeypatch.setitem(sys.modules, "yt_dlp", types.SimpleNamespace(YoutubeDL=FakeYDL))
+    urls = list_channel_videos("https://www.youtube.com/@Tifo", max_videos=2, sort="popular")
+    assert urls == ["https://www.youtube.com/watch?v=BBBBBBBBBBB", "https://www.youtube.com/watch?v=DDDDDDDDDDD"]
+    assert seen["opts"]["playlistend"] >= 100          # scans many uploads, not just the newest 2
+    newest = list_channel_videos("https://www.youtube.com/@Tifo", max_videos=2)
+    assert newest == ["https://www.youtube.com/watch?v=AAAAAAAAAAA", "https://www.youtube.com/watch?v=BBBBBBBBBBB"]
+
+
 def test_other_websites_are_unsupported_not_errors():
     e = classify_line("https://www.fifatrainingcentre.com/en/game/some-article.php")
     assert e.kind == "unsupported"
@@ -65,7 +102,7 @@ class Fakes:
         self.llm_fails = llm_fails
         self.transcript_fails = transcript_fails
         self.saved: list[str] = []
-        self.channel_calls: list[tuple[str, int]] = []
+        self.channel_calls: list[tuple[str, int, str]] = []
 
     def llm(self, prompt, **kw):
         if self.llm_fails:
@@ -87,8 +124,8 @@ class Fakes:
             raise RuntimeError("no captions")
         return SEGMENTS
 
-    def list_channel(self, url, max_videos):
-        self.channel_calls.append((url, max_videos))
+    def list_channel(self, url, max_videos, sort="newest"):
+        self.channel_calls.append((url, max_videos, sort))
         return [VID_A, VID_B][:max_videos]
 
     def save(self, concept, out_dir):
@@ -146,8 +183,14 @@ def test_channel_line_expands_and_dedups_against_listed_video(tmp_path):
     fakes = Fakes()
     text = f"{VID_A}\nhttps://www.youtube.com/@Tifo | max=2\n"
     report = _ingestor(tmp_path, fakes).run(parse_sources_text(text))
-    assert fakes.channel_calls == [("https://www.youtube.com/@Tifo", 2)]
+    assert fakes.channel_calls == [("https://www.youtube.com/@Tifo", 2, "newest")]
     assert report.videos_new == 2                              # A once (not twice) + B
+
+
+def test_popular_channel_line_passes_sort(tmp_path):
+    fakes = Fakes()
+    _ingestor(tmp_path, fakes).run(parse_sources_text("https://www.youtube.com/@Tifo | max=1 | sort=popular\n"))
+    assert fakes.channel_calls == [("https://www.youtube.com/@Tifo", 1, "popular")]
 
 
 def test_unsupported_lines_are_listed(tmp_path):

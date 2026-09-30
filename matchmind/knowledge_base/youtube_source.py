@@ -69,8 +69,19 @@ def fetch_video_metadata(video_id: str) -> dict:
     return {"channel": data.get("author_name", "YouTube"), "title": data.get("title", video_id)}
 
 
-def list_channel_videos(channel_url: str, *, max_videos: int = 20) -> list[str]:
-    """Video URLs (newest first) from a channel's /videos tab.
+POPULAR_SCAN_LIMIT = 300
+
+
+def list_channel_videos(
+    channel_url: str, *, max_videos: int = 20, sort: str = "newest", scan_limit: int = POPULAR_SCAN_LIMIT
+) -> list[str]:
+    """Video URLs from a channel's /videos tab (Shorts and streams excluded).
+
+    sort="newest" (default): the most recent uploads.
+    sort="popular": the most-viewed among the channel's last `scan_limit`
+    uploads. The flat listing already carries view counts, so this needs no API
+    key; channels with more uploads than `scan_limit` are only ranked over that
+    recent window (keeps the listing to a few seconds).
 
     Uses yt-dlp in metadata-only ("flat playlist") mode — no download, just
     lists ids/titles, fast. Accepts a channel URL in any form (@handle,
@@ -104,14 +115,15 @@ def list_channel_videos(channel_url: str, *, max_videos: int = 20) -> list[str]:
         "quiet": True,
         "no_warnings": True,
         "skip_download": True,
-        "playlistend": max_videos,
+        "playlistend": max(max_videos, scan_limit) if sort == "popular" else max_videos,
     }
     with yt_dlp.YoutubeDL(opts) as ydl:
         info = ydl.extract_info(url, download=False)
 
-    entries = info.get("entries") or []
-    ids = [e["id"] for e in entries if e.get("id")]
-    return [video_url(vid) for vid in ids[:max_videos]]
+    entries = [e for e in (info.get("entries") or []) if e.get("id")]
+    if sort == "popular":
+        entries = sorted(entries, key=lambda e: e.get("view_count") or 0, reverse=True)
+    return [video_url(e["id"]) for e in entries[:max_videos]]
 
 
 def fetch_transcript(video_id: str, *, languages: tuple[str, ...] = ("en", "vi")) -> list[dict]:

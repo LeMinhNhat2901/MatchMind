@@ -3,14 +3,19 @@
 # Mỗi dòng một nguồn. Dòng trống và dòng bắt đầu bằng # được bỏ qua.
 # Phần sau " #" trên một dòng là ghi chú.
 #
-# Định dạng:   [Tên kênh |] link [| max=N]
+# Định dạng:   [Tên kênh |] link [| max=N] [| sort=newest|popular]
 #
 #   Video YouTube (tên kênh có thể bỏ trống — sẽ tự tra):
 #     Tifo Football | https://www.youtube.com/watch?v=XXXXXXXXXXX
 #     https://youtu.be/YYYYYYYYYYY
 #
-#   Cả một kênh YouTube → lấy N video mới nhất (mặc định 10):
+#   Cả một kênh YouTube:
+#     max=N          số video lấy từ kênh (mặc định 10 nếu bỏ trống)
+#     sort=newest    N video MỚI NHẤT (mặc định)
+#     sort=popular   N video NHIỀU LƯỢT XEM NHẤT (xét trong ~300 video gần nhất của kênh)
+#
 #     https://www.youtube.com/@TifoFootball | max=20
+#     https://www.youtube.com/@TifoFootball | max=10 | sort=popular
 #
 #   Link khác (website, bài báo...) được liệt kê là "chưa hỗ trợ", không xử lý.
 #
@@ -18,5 +23,14 @@
 #         python -m matchmind.scripts.ingest_sources --dry-run   (xem trước, không gọi LLM)
 #
 # Có thể để nguyên link cũ trong file: video đã xử lý sẽ tự bỏ qua, video lỗi
-# (hết quota, không có phụ đề) sẽ được thử lại ở lần chạy sau.
+# (hết quota, không có phụ đề) sẽ được thử lại ở lần chạy sau. Đổi sort/max
+# sau này cũng an toàn — chỉ video chưa xử lý mới tốn LLM.
 
+https://www.youtube.com/@DK_FALCON            | max=10 | sort=popular
+https://www.youtube.com/@TheCoachesVoice      | max=10 | sort=popular
+https://www.youtube.com/@FootballMadeSimple   | max=10 | sort=popular
+https://www.youtube.com/@thetacticsguy        | max=10 | sort=popular
+https://www.youtube.com/@thepurist_           | max=10 | sort=popular
+https://www.youtube.com/@GEDFUTBOL            | max=10 | sort=popular
+https://www.youtube.com/@footballexplained01  | max=10 | sort=popular
+https://www.youtube.com/@mitsojr              | max=10 | sort=popular
