@@ -54,6 +54,7 @@ from rich.console import Console
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from matchmind.config import settings
+from matchmind.knowledge_base.dedup import DuplicateGate
 from matchmind.knowledge_base.source_ingest import (
     SourceEntry,
     YouTubeIngestor,
@@ -142,6 +143,7 @@ def main(
         known_ids=existing_concept_ids(kb_dir),
         sleep_s=sleep_s,
         max_chunk_chars=max_chunk_chars,
+        dedup=DuplicateGate.from_kb(kb_dir),
         log=lambda msg: console.print(f"[dim]{msg}[/dim]"),
     ).run(entries)
 

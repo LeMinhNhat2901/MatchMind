@@ -12,6 +12,9 @@ is classified; only YouTube is automated today:
                      source types need their own handler (websites have ToS and
                      per-site formats, see matchmind-kb-taxonomy-v2 decisions)
 
+With a DuplicateGate (the CLI scripts always pass one), a concept that nearly
+copies one already in the KB is skipped and reported instead of saved.
+
 Re-running is safe and cheap: a video is marked processed only after every
 transcript chunk went through the LLM without an error, and its concepts are
 written only then (a video is atomic). So when the LLM quota runs out mid-run,
@@ -26,7 +29,7 @@ import re
 import time
 from dataclasses import dataclass, field
 from pathlib import Path
-from typing import Callable, Literal
+from typing import TYPE_CHECKING, Callable, Literal
 
 from matchmind.knowledge_base.youtube_source import (
     chunk_transcript,
@@ -35,6 +38,9 @@ from matchmind.knowledge_base.youtube_source import (
     save_processed_videos,
     timestamped_url,
 )
+
+if TYPE_CHECKING:
+    from matchmind.knowledge_base.dedup import DuplicateGate
 
 logger = logging.getLogger(__name__)
 
@@ -105,6 +111,7 @@ class IngestReport:
     unsupported: list[str] = field(default_factory=list)
     errors: list[str] = field(default_factory=list)
     planned: list[str] = field(default_factory=list)
+    duplicates_skipped: list[str] = field(default_factory=list)   # "new title ≈ existing_id (0.91)"
     aborted: bool = False
 
 
@@ -128,6 +135,7 @@ class YouTubeIngestor:
         max_chunk_chars: int = 3000,
         max_consecutive_llm_errors: int = 3,
         dry_run: bool = False,
+        dedup: "DuplicateGate | None" = None,
         log: Callable[..., None] = logger.info,
     ) -> None:
         from matchmind.knowledge_base import concept_synthesis, youtube_source
@@ -147,6 +155,7 @@ class YouTubeIngestor:
         self.max_chunk_chars = max_chunk_chars
         self.max_consecutive_llm_errors = max_consecutive_llm_errors
         self.dry_run = dry_run
+        self.dedup = dedup
         self.log = log
         self._llm_errors = 0
         self._consecutive_llm_errors = 0
@@ -246,7 +255,11 @@ class YouTubeIngestor:
             if concept is None:
                 report.chunks_without_concept += 1
             elif concept.concept_id not in self.known_ids:
-                concepts.append(concept)
+                dup = self.dedup.check(concept, pending=concepts) if self.dedup else None
+                if dup is None:
+                    concepts.append(concept)
+                else:
+                    report.duplicates_skipped.append(f"{concept.title} ≈ {dup[0]} ({dup[1]:.2f})")
 
         if self._llm_errors > errors_before:
             report.videos_failed += 1
@@ -256,6 +269,8 @@ class YouTubeIngestor:
         for concept in concepts:
             self.save(concept, self.concepts_root)
             self.known_ids.add(concept.concept_id)
+            if self.dedup:
+                self.dedup.add(concept)
             report.concepts_written += 1
         processed.add(video_id)
         save_processed_videos(self.state_path, processed)

@@ -22,6 +22,7 @@ from rich.console import Console
 from rich.table import Table
 
 from matchmind.config import settings
+from matchmind.knowledge_base.dedup import DuplicateGate
 
 app = typer.Typer()
 console = Console()
@@ -58,6 +59,7 @@ def main(
         known_ids=existing_concept_ids(kb_dir),
         sleep_s=sleep_s,
         dry_run=dry_run,
+        dedup=None if dry_run else DuplicateGate.from_kb(kb_dir),
         log=lambda msg: console.print(f"[dim]{msg}[/dim]"),
     )
     report = ingestor.run(entries)
@@ -71,11 +73,14 @@ def main(
     table.add_row("videos skipped (already processed)", str(report.videos_skipped))
     table.add_row("videos failed (retried next run)", str(report.videos_failed))
     table.add_row("new concepts", str(report.concepts_written))
+    table.add_row("near-duplicates skipped", str(len(report.duplicates_skipped)))
     table.add_row("chunks with no tactical concept", str(report.chunks_without_concept))
     table.add_row("unsupported lines", str(len(report.unsupported)))
     console.print(table)
     for line in report.unsupported:
         console.print(f"[yellow]unsupported (not processed yet): {line}[/yellow]")
+    for dup in report.duplicates_skipped:
+        console.print(f"[dim]duplicate skipped: {dup}[/dim]")
     for err in report.errors:
         console.print(f"[red]{err}[/red]")
     if report.planned:
