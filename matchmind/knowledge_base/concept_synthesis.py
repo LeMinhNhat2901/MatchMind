@@ -252,7 +252,9 @@ def synthesize_concept(
 def existing_concept_ids(concepts_dir: Path) -> set[str]:
     """Concept ids already on disk (hand-written or from a previous run), for idempotent re-runs."""
     ids: set[str] = set()
-    for fpath in Path(concepts_dir).rglob("*.json"):
+    from matchmind.knowledge_base.embedder import concept_files
+
+    for fpath in concept_files(concepts_dir):
         try:
             with open(fpath, encoding="utf-8-sig") as f:
                 data = json.load(f)

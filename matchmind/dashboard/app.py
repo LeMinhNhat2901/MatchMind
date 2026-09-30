@@ -532,7 +532,9 @@ with col_console:
         with tab_evidence:
             from matchmind.config import settings
 
-            kb_count = sum(1 for _ in Path(settings.knowledge_base_dir).rglob("*.json"))
+            from matchmind.knowledge_base.embedder import concept_files
+
+            kb_count = len(concept_files(settings.knowledge_base_dir))
             render_html('<div class="mm-kicker">How MatchMind decides</div>')
             render_html(
                 f"""

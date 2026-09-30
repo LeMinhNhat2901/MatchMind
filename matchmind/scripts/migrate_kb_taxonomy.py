@@ -30,6 +30,7 @@ from rich.table import Table
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from matchmind.config import settings
+from matchmind.knowledge_base.embedder import concept_files
 from matchmind.schema.match_state import TacticalConcept
 
 app = typer.Typer()
@@ -50,7 +51,7 @@ def main(
     dry_run: bool = typer.Option(False, help="Show what would change, write nothing"),
 ) -> None:
     root = Path(concepts_dir) if concepts_dir else Path(settings.knowledge_base_dir)
-    files = sorted(root.rglob("*.json"))
+    files = concept_files(root)
     console.print(f"[bold green]MatchMind KB Taxonomy Migration[/bold green] — scanning {root}")
 
     table = Table(title="Category remap")
