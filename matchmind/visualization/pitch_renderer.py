@@ -2,7 +2,9 @@
 Pitch Renderer — adapted from LaurieOnTracking/Metrica_Viz.py.
 
 Draws a proper football pitch with standard markings.
-Adapted to use our coordinate system (0–105m × 0–68m, origin bottom-left).
+Adapted to use our coordinate system (0–105m × 0–68m), drawn broadcast-style:
+y = 0 at the TOP. In StatsBomb/Metrica data y = 0 is the attacking team's left
+touchline, so a team attacking right shows its left flank at the top, as on TV.
 
 Original: @EightyFivePoint (Laurie Shaw)
 Adaptation: MatchMind project
@@ -48,7 +50,7 @@ def plot_pitch(
     Plot a full football pitch with proper markings.
 
     Adapted from LaurieOnTracking/Metrica_Viz.py (Laurie Shaw @EightyFivePoint).
-    Coordinate system: 0–105m (x, left→right) × 0–68m (y, bottom→top).
+    Coordinate system: 0–105m (x, left→right) × 0–68m (y, top→bottom).
 
     Args:
         field_color: Background colour.
@@ -169,7 +171,8 @@ def plot_pitch(
             )
 
     ax.set_xlim(-2, PITCH_LENGTH + 2)
-    ax.set_ylim(-2, PITCH_WIDTH + 2)
+    # Inverted: y = 0 (attacking team's left in the data) at the top.
+    ax.set_ylim(PITCH_WIDTH + 2, -2)
     ax.set_aspect("equal")
     ax.axis("off")
 

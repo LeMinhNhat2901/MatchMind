@@ -67,9 +67,15 @@ def project_after_action(
         # without StatsBomb on-ball event metadata (synthetic, Metrica, and
         # even StatsBomb once we're projecting a hypothetical), so this is
         # what makes the new carrier actually get recognised as such.
+        # The receiver is now the acting player: StatsBomb snapshots carry the
+        # PASSER as event_player_id, which the encoder trusts over ball
+        # proximity, so leaving it made the passer "still have the ball".
         new_state = state.model_copy(update={
             "players": new_players,
             "ball": state.ball.model_copy(update={"x": tx, "y": ty}),
+            "event_player_id": new_carrier_id,
+            "event_type": "Ball Receipt*",
+            "possession": focus_team,
         })
         question = (
             f"Player {new_carrier_id} has just received the ball at ({tx:.1f}, {ty:.1f}) as a "

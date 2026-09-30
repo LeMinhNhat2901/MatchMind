@@ -117,3 +117,18 @@ def test_off_ball_run_no_pull_note_when_marker_unchanged():
     assert projection is not None
     assert "pulls opponent" not in projection.question
     assert "#3 is now the nearest defender" in projection.question
+
+
+def test_pass_makes_the_receiver_the_carrier_even_for_statsbomb_snapshots():
+    """User report: after "#5 passes to #19" the projected situation still
+    treated #5 as the ball carrier. StatsBomb snapshots carry event_player_id
+    (the passer), which the encoder prefers over ball proximity."""
+    from matchmind.situation_engine.encoder import _determine_ball_carrier, encode_situation
+
+    state = _state().model_copy(update={"source": "statsbomb", "event_player_id": 10, "event_type": "Pass"})
+    action = CandidateAction(action="pass_to_8", label="Pass to player 8", target_xy=(55.0, 25.0),
+                             target_player_id=8, moves_ball=True)
+    projected = project_after_action(state, 10, "home", action).state
+    assert projected.event_player_id == 8
+    assert _determine_ball_carrier(projected) == 8
+    assert "Player 8 CURRENTLY HAS THE BALL" in encode_situation(projected, 8).natural_language_description

@@ -7,11 +7,13 @@ found ~9 inverted-full-back concepts). Retrieval then returns five versions of
 one idea and pushes everything else out of the top-k.
 
 The gate embeds "title. content" and skips a new concept whose cosine
-similarity to an existing (or same-run) concept is >= DEFAULT_THRESHOLD.
-0.88 was picked by reading pairs from the real KB with all-MiniLM-L6-v2:
-0.88+ were near-copies ("Inverted Full-Back Attacking Shape" /
+similarity to an existing (or same-run) concept is >= DEFAULT_THRESHOLD
+(0.90). Reading pairs from the real KB with all-MiniLM-L6-v2: 0.88+ were
+mostly near-copies ("Inverted Full-Back Attacking Shape" /
 "Inverted Fullback System"), 0.84–0.88 were related but distinct ideas
-("Low Block Counter-Attack" / "Narrow Block Counter-Strategy").
+("Low Block Counter-Attack" / "Narrow Block Counter-Strategy"). 0.88–0.90 also
+held a few distinct pairs (3-4-3 vs 4-3-3 structures), so the user chose 0.90:
+missing an occasional near-copy beats losing a distinct idea.
 """
 from __future__ import annotations
 
@@ -22,7 +24,7 @@ import numpy as np
 
 from matchmind.schema.match_state import TacticalConcept
 
-DEFAULT_THRESHOLD = 0.88
+DEFAULT_THRESHOLD = 0.90
 
 Embed = Callable[[list[str]], np.ndarray]
 

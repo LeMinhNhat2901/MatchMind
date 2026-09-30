@@ -50,7 +50,7 @@ DEFENSE_ARROW_COLOR = "#EC4899"
 
 # Fixed direction (up-right) the ball glyph is nudged toward when it would
 # otherwise sit on top of a player dot and hide the jersey number.
-_BALL_OFFSET_ANGLE_RAD = math.radians(50)
+_BALL_OFFSET_ANGLE_RAD = math.radians(-50)   # -y is UP on the inverted pitch
 
 
 def _touch_offset_metres(ax, fig, marker_s1: float, marker_s2: float, gap_pts: float = 2.0) -> float:
