@@ -15,12 +15,15 @@ Usage:
 from __future__ import annotations
 
 import logging
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
 from matchmind.data_sources.base_adapter import BaseAdapter
 from matchmind.schema.match_state import BallState, MatchState, PlayerState
+
+if TYPE_CHECKING:
+    from matchmind.data_sources.jersey_inference import JerseyInference
 
 logger = logging.getLogger(__name__)
 
@@ -182,7 +185,8 @@ class StatsBombAdapter(BaseAdapter):
         frames = sb.frames(match_id=match_id)
 
         event_row = events.iloc[event_index]
-        return self._event_to_match_state(event_row, frames, match_id, _team_names(events), _roster(match_id))
+        return self._event_to_match_state(event_row, frames, match_id, _team_names(events), _roster(match_id),
+                                          _jersey_inference(events))
 
     def load_test_cases(self, n: int = 25) -> list[dict]:
         """
@@ -247,6 +251,7 @@ class StatsBombAdapter(BaseAdapter):
         match_id: int,
         team_names: list[str] | None = None,
         roster: dict[int, tuple[int, str]] | None = None,
+        inference: "JerseyInference | None" = None,
     ) -> MatchState:
         """Convert a StatsBomb event row + 360 frames → MatchState.
 
@@ -254,11 +259,14 @@ class StatsBombAdapter(BaseAdapter):
         team's name and "away" the other one.
         roster: StatsBomb player_id -> (jersey number, name) from the lineups, so
         the actor is labelled with a real shirt number instead of an internal id.
+        inference: names anonymous players who touched the ball moments ago
+        (see jersey_inference); everyone else keeps a placeholder.
         """
         event_id = event["id"]
         acting_team = event.get("team") if isinstance(event.get("team"), str) else None
         actor_id: int | None = None
         actor_name = event.get("player") if isinstance(event.get("player"), str) else None
+        sb_id: int | None = None
         if pd.notna(event.get("player_id")):
             sb_id = int(event.get("player_id"))
             actor_id, roster_name = (roster or {}).get(sb_id, (sb_id, None))
@@ -266,7 +274,8 @@ class StatsBombAdapter(BaseAdapter):
 
         # Get freeze frame for this event
         frame_rows = frames[frames["id"] == event_id]
-        players = self._parse_freeze_frame(frame_rows, event, actor_id, actor_name)
+        known = _identify_rows(frame_rows, event_id, sb_id if actor_id is not None else None, roster, inference)
+        players = self._parse_freeze_frame(frame_rows, event, actor_id, actor_name, known)
         visible_area = self._parse_visible_area(frame_rows)
 
         # Ball position — StatsBomb units (0-120, 0-80) rescaled to metres
@@ -309,6 +318,7 @@ class StatsBombAdapter(BaseAdapter):
         event: pd.Series,
         actor_id: int | None = None,
         actor_name: str | None = None,
+        known: dict[int, tuple[int, str]] | None = None,
     ) -> list[PlayerState]:
         """Parse StatsBomb 360 freeze_frame → list[PlayerState].
 
@@ -326,8 +336,17 @@ class StatsBombAdapter(BaseAdapter):
         # 360 frames identify only the actor; everyone else is anonymous in the
         # data and gets a placeholder that can't pass for a shirt number
         # (teammates 51+, opponents 101+, never the actor's own number).
+        # `known` = rows jersey_inference could name: {row position: (number, name)}.
+        known = known or {}
+        reserved = {actor_id} | {num for num, _ in known.values()}
+
+        def placeholder(n: int) -> int:
+            while n in reserved:
+                n += 1
+            return n
+
         next_mate, next_opp = 51, 101
-        for _, row in frame_rows.iterrows():
+        for pos, (_, row) in enumerate(frame_rows.iterrows()):
             teammate = row.get("teammate", True)
             team: str = "home" if teammate else "away"
 
@@ -342,11 +361,14 @@ class StatsBombAdapter(BaseAdapter):
                 # The actor IS the event's player (shirt number when the lineup
                 # knows it). Without this the case's focus player never exists.
                 player_id, name = actor_id, actor_name
+            elif pos in known:
+                player_id, name = known[pos]
             elif team == "home":
-                next_mate += next_mate == actor_id
-                player_id, next_mate = next_mate, next_mate + 1
+                player_id = placeholder(next_mate)
+                next_mate = player_id + 1
             else:
-                player_id, next_opp = next_opp, next_opp + 1
+                player_id = placeholder(next_opp)
+                next_opp = player_id + 1
             position_name = str(row.get("position", ""))
             role = SB_POSITION_MAP.get(position_name, position_name.lower().replace(" ", "_") or None)
             if row.get("keeper") == True:  # noqa: E712
@@ -414,6 +436,7 @@ class StatsBombAdapter(BaseAdapter):
         frames = sb.frames(match_id=match_id)
         names = _team_names(events)
         roster = _roster(match_id)
+        inference = _jersey_inference(events)
 
         cases = []
         for idx, row in events.iterrows():
@@ -429,7 +452,7 @@ class StatsBombAdapter(BaseAdapter):
                 continue
 
             try:
-                snapshot = self._event_to_match_state(row, frames, match_id, names, roster)
+                snapshot = self._event_to_match_state(row, frames, match_id, names, roster, inference)
             except Exception as exc:
                 logger.debug(f"Skipping event {idx}: {exc}")
                 continue
@@ -452,3 +475,34 @@ class StatsBombAdapter(BaseAdapter):
             )
 
         return cases
+
+
+def _jersey_inference(events: pd.DataFrame) -> "JerseyInference | None":
+    """One per match, from statsbombpy's events DataFrame (None if it can't be built)."""
+    from matchmind.data_sources.jersey_inference import EventRecord, JerseyInference
+
+    try:
+        return JerseyInference(EventRecord.from_statsbombpy(r) for _, r in events.iterrows())
+    except Exception as exc:  # noqa: BLE001 — labels are a nicety; never block a snapshot
+        logger.debug(f"jersey inference unavailable: {exc}")
+        return None
+
+
+def _identify_rows(frame_rows: pd.DataFrame, event_id: str, actor_sb_id: int | None,
+                   roster: dict[int, tuple[int, str]] | None,
+                   inference: "JerseyInference | None") -> dict[int, tuple[int, str]]:
+    """{row position in frame_rows: (jersey number, name)} for anonymous rows
+    jersey_inference names with confidence."""
+    from matchmind.data_sources.jersey_inference import FrameDot
+
+    if inference is None or not roster or frame_rows.empty:
+        return {}
+    positions, dots = [], []
+    for pos, (_, row) in enumerate(frame_rows.iterrows()):
+        loc = row.get("location")
+        if isinstance(loc, (list, tuple)) and len(loc) >= 2:
+            positions.append(pos)
+            dots.append(FrameDot(row.get("teammate") == True, row.get("actor") == True,  # noqa: E712
+                                 row.get("keeper") == True, float(loc[0]), float(loc[1])))  # noqa: E712
+    got = inference.identify(str(event_id), dots, actor_sb_id)
+    return {positions[i]: roster[pid] for i, pid in got.items() if pid in roster}

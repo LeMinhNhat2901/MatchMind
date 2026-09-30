@@ -215,11 +215,19 @@ def _build_nl_description(
     if state.visible_area or len(state.players) < 22:
         lines.append(f"Camera view shows {len(state.players)} of 22 players.")
     if state.source == "statsbomb":
-        # 360 data identifies only the event's player; the rest are anonymous.
-        lines.append(
-            "Only the player making the event is identified in this data; the other players' "
-            "numbers (teammates 51+, opponents 101+) are placeholders, not shirt numbers."
-        )
+        # 360 data identifies only the event's player; jersey_inference may also
+        # name players who touched the ball moments ago. Everyone else is anonymous.
+        identified = [p for p in state.players if p.name]
+        if identified:
+            names = ", ".join(f"#{p.id} {p.name}" for p in identified)
+            lines.append(
+                f"Identified players: {names}; every other number is a placeholder "
+                "(anonymous in the data), not a shirt number."
+            )
+        else:
+            lines.append(
+                "Players are anonymous in this data: every number is a placeholder, not a shirt number."
+            )
 
     # Possession — stated up front so retrieval + the LLM never confuse an
     # off-ball player for the ball carrier.

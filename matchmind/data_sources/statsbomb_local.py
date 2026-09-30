@@ -9,7 +9,8 @@ by the Example Library builder, which both need thousands of events.
 360 freeze frames carry NO player ids — only teammate/actor/keeper flags. The
 actor is the event's player, so it gets the real StatsBomb player id (this is
 what keeps a test case's focus_player_id inside its own snapshot). Everyone
-else gets synthetic ids: teammates 1..n, opponents 101..n. The acting team is
+else gets a placeholder id (teammates 51+, opponents 101+) unless
+jersey_inference can name them from their touches moments earlier. The acting team is
 always "home" (same convention as StatsBombAdapter).
 
 Licence: StatsBomb Open Data — free for non-commercial use with attribution.
@@ -22,6 +23,7 @@ import random
 from pathlib import Path
 from typing import Iterator
 
+from matchmind.data_sources.jersey_inference import EventRecord, FrameDot, JerseyInference
 from matchmind.data_sources.statsbomb_adapter import SB_POSITION_MAP, _sb_to_metres
 from matchmind.schema.match_state import BallState, MatchState, PlayerState
 
@@ -40,9 +42,12 @@ _PADDING_OPPONENT_ID = 999
 Roster = dict[int, tuple[int, str]]   # StatsBomb player_id -> (jersey number, display name)
 
 
-def _next_placeholder(current: int, reserved: int) -> int:
+def _next_placeholder(current: int, reserved: int | set[int]) -> int:
+    reserved = {reserved} if isinstance(reserved, int) else reserved
     nxt = current + 1
-    return nxt + 1 if nxt == reserved else nxt
+    while nxt in reserved:
+        nxt += 1
+    return nxt
 
 
 def _seconds(event: dict) -> float:
@@ -110,6 +115,7 @@ class StatsBombLocalLoader:
         score: tuple[int, int] = (0, 0),
         opponent_name: str | None = None,
         roster: Roster | None = None,
+        inference: JerseyInference | None = None,
     ) -> MatchState | None:
         """One on-ball event + its freeze frame -> MatchState, or None if the
         frame has no actor (the focus player would not exist).
@@ -120,15 +126,30 @@ class StatsBombLocalLoader:
         actor_id, actor_name = (roster or {}).get(sb_id, (sb_id, (event.get("player") or {}).get("name")))
         role_name = (event.get("position") or {}).get("name", "")
         players: list[PlayerState] = []
-        mate_id = _next_placeholder(_TEAMMATE_ID_BASE, actor_id)
-        opp_id, has_actor = _OPPONENT_ID_BASE + 1, False
+        rows = [r for r in frame.get("freeze_frame", [])
+                if isinstance(r.get("location"), (list, tuple)) and len(r["location"]) >= 2]
+        # Anonymous players who touched the ball moments ago get their real
+        # number too (see jersey_inference); the rest keep placeholders.
+        known: dict[int, tuple[int, str]] = {}
+        if inference is not None and roster:
+            dots = [FrameDot(bool(r.get("teammate")), bool(r.get("actor")), bool(r.get("keeper")),
+                             float(r["location"][0]), float(r["location"][1])) for r in rows]
+            known = {i: roster[pid] for i, pid in inference.identify(event["id"], dots, sb_id).items()
+                     if pid in roster}
+        reserved = {actor_id} | {num for num, _ in known.values()}
+        mate_id = _next_placeholder(_TEAMMATE_ID_BASE, reserved)
+        opp_id, has_actor = _next_placeholder(_OPPONENT_ID_BASE, reserved), False
 
-        for row in frame.get("freeze_frame", []):
-            loc = row.get("location")
-            if not isinstance(loc, (list, tuple)) or len(loc) < 2:
-                continue
+        for i, row in enumerate(rows):
+            loc = row["location"]
             x, y = _sb_to_metres(float(loc[0]), float(loc[1]))
-            if row.get("actor"):
+            if i in known and not row.get("actor"):
+                num, name = known[i]
+                players.append(PlayerState(
+                    id=num, team="home" if row.get("teammate") else "away", name=name,
+                    role="goalkeeper" if row.get("keeper") else None, x=x, y=y,
+                ))
+            elif row.get("actor"):
                 has_actor = True
                 players.append(PlayerState(
                     id=actor_id, team="home", name=actor_name,
@@ -140,13 +161,13 @@ class StatsBombLocalLoader:
                     id=mate_id, team="home",
                     role="goalkeeper" if row.get("keeper") else None, x=x, y=y,
                 ))
-                mate_id = _next_placeholder(mate_id, actor_id)
+                mate_id = _next_placeholder(mate_id, reserved)
             else:
                 players.append(PlayerState(
                     id=opp_id, team="away",
                     role="goalkeeper" if row.get("keeper") else None, x=x, y=y,
                 ))
-                opp_id += 1
+                opp_id = _next_placeholder(opp_id, reserved)
 
         if not has_actor:
             return None
@@ -196,6 +217,7 @@ class StatsBombLocalLoader:
         events = self.events(match_id)
         frames = self.frames(match_id)
         roster = self.roster(match_id)
+        inference = JerseyInference(EventRecord.from_open_data(e) for e in events)
         team_names = {
             (e.get("team") or {}).get("id"): (e.get("team") or {}).get("name") for e in events if e.get("team")
         }
@@ -207,7 +229,8 @@ class StatsBombLocalLoader:
                 other = sum(v for k, v in goals.items() if k != team_id)
                 opponent = next((n for tid, n in team_names.items() if tid != team_id), None)
                 try:
-                    state = self.to_match_state(event, frames[event["id"]], match_id, (own, other), opponent, roster)
+                    state = self.to_match_state(event, frames[event["id"]], match_id, (own, other), opponent, roster,
+                                               inference)
                 except Exception as exc:  # noqa: BLE001 — one malformed frame must not stop a scan
                     logger.debug(f"skip {match_id}:{idx}: {exc}")
                     state = None
