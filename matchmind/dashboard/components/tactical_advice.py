@@ -24,6 +24,15 @@ def _delta_chip(delta: float | None) -> str:
     return f'<span class="delta-chip {cls}">{delta:+.1f}% PC</span>'
 
 
+def briefing_bullets(advice: TacticalAdvice) -> list[str]:
+    """The briefing card's bullets: the narrator's numbers-backed rationale, or —
+    when narration didn't run — the first sentences of the structured reasoning."""
+    if advice.rationale:
+        return list(advice.rationale)
+    sentences = [s.strip().rstrip(".") for s in advice.reasoning.replace("\n", ". ").split(". ")]
+    return [f"{s}." for s in sentences if len(s) > 8][:4] or [advice.reasoning]
+
+
 def render_advice_panel(advice: TacticalAdvice, trace: list[dict] | None = None) -> None:
     """Render the structured tactical analyst report and decision matrix."""
     conf = advice.confidence
@@ -106,27 +115,10 @@ def render_advice_panel(advice: TacticalAdvice, trace: list[dict] | None = None)
 
     render_html('<div class="mm-kicker">Coaching briefing</div>')
 
-    # advice.narrative (when present) is a second LLM pass that paraphrases the
-    # structured reasoning below into one analyst-style paragraph, constrained to
-    # restate only facts already in reasoning/alternatives/cited_concepts — never
-    # new ones. Prefer it: naive sentence-splitting of the raw structured
-    # `reasoning` field (the old fallback) reads like a spec sheet, not analysis.
-    if advice.narrative:
-        briefing_body = f'<div class="briefing-text">{html.escape(advice.narrative)}</div>'
-    else:
-        raw_reasoning = advice.reasoning
-        sentences = [s.strip() for s in raw_reasoning.replace("\n", ". ").split(". ") if len(s.strip()) > 8]
-        if len(sentences) >= 2:
-            bullet_items = "".join(f'<li class="briefing-li">{html.escape(s)}.</li>' for s in sentences[:4])
-            briefing_body = f'<ul class="briefing-list">{bullet_items}</ul>'
-        else:
-            briefing_body = f'<div class="briefing-text">{html.escape(raw_reasoning)}</div>'
-
-    if advice.narrative and advice.rationale:
-        rationale_items = "".join(f'<li class="briefing-li">{html.escape(b)}</li>' for b in advice.rationale)
-        briefing_body += f'<ul class="briefing-list">{rationale_items}</ul>'
-
-    render_html(f'<div class="briefing-box">{briefing_body}</div>')
+    # Bullets only — the narrative paragraph is already the chat answer, so
+    # repeating it here was just noise (user feedback 2026-09-30).
+    bullet_items = "".join(f'<li class="briefing-li">{html.escape(b)}</li>' for b in briefing_bullets(advice))
+    render_html(f'<div class="briefing-box"><ul class="briefing-list">{bullet_items}</ul></div>')
 
     if advice.narrative:
         with st.expander("Structured reasoning (pre-narration)", icon=":material/psychology:"):
