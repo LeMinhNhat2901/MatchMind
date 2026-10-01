@@ -98,6 +98,7 @@ def _draw_scene(
     focus_player_id: int | None,
     show_pitch_control: bool,
     pitch_control_grid: np.ndarray | None,
+    trails: list | None = None,
 ) -> None:
     """Draw the shared base layer: heatmap, 360 visible area, players, ball.
 
@@ -135,6 +136,15 @@ def _draw_scene(
                 zorder=2,
             )
         )
+
+    # ── Projection trails (estimated moves, see team_shift) ────
+    # Faded dot where the player was + a dashed line to where they are now, so
+    # a projected scene never passes for observed data.
+    for move in trails or []:
+        color = HOME_COLOR if move.team == "home" else AWAY_COLOR
+        (fx, fy), (tx, ty) = move.from_xy, move.to_xy
+        ax.scatter(fx, fy, c=color, s=PLAYER_SIZE, alpha=0.25, linewidths=0, zorder=3)
+        ax.plot([fx, tx], [fy, ty], color="white", alpha=0.55, linewidth=1.1, linestyle=(0, (3, 2)), zorder=3)
 
     # ── Draw players ─────────────────────────────────────────
     for player in state.players:
@@ -213,6 +223,7 @@ def render_snapshot(
     field_color: str = "dark_green",
     dpi: int = 120,
     annotate: bool = True,
+    trails: list | None = None,
 ) -> str:
     """
     Render a MatchState as a pitch image PNG.
@@ -234,7 +245,7 @@ def render_snapshot(
     plt = _lazy_pyplot()
     fig, ax = plot_pitch(field_color=field_color, figsize=(10.5, 6.8))
 
-    _draw_scene(ax, fig, state, focus_player_id, show_pitch_control, pitch_control_grid)
+    _draw_scene(ax, fig, state, focus_player_id, show_pitch_control, pitch_control_grid, trails)
 
     if annotate:
         min_str = f"{state.minute}'"
@@ -318,6 +329,7 @@ def render_advice_snapshot(
     dpi: int = 120,
     show_alternatives: bool = True,
     annotate: bool = True,
+    trails: list | None = None,
 ) -> str:
     """
     Render the pitch AFTER the agent has produced advice, drawing the
@@ -339,7 +351,7 @@ def render_advice_snapshot(
     fig, ax = plot_pitch(field_color=field_color, figsize=(10.5, 6.8))
 
     focus_id = advice.focus_player_id
-    _draw_scene(ax, fig, state, focus_id, show_pitch_control, pitch_control_grid)
+    _draw_scene(ax, fig, state, focus_id, show_pitch_control, pitch_control_grid, trails)
 
     focus = state.get_player(focus_id) if focus_id is not None else None
     legend_extra: list = []
@@ -409,6 +421,7 @@ def render_dual_advice_snapshot(
     field_color: str = "dark_green",
     dpi: int = 120,
     annotate: bool = True,
+    trails: list | None = None,
 ) -> str:
     """
     Render ONE pitch image with both sides' recommendations at once — the
@@ -426,7 +439,7 @@ def render_dual_advice_snapshot(
 
     # Base scene with the attacking player's ring (standard white); the
     # defending player's ring is added separately below in a different colour.
-    _draw_scene(ax, fig, state, att_id, show_pitch_control, pitch_control_grid)
+    _draw_scene(ax, fig, state, att_id, show_pitch_control, pitch_control_grid, trails)
 
     def_focus = state.get_player(def_id) if def_id is not None else None
     if def_focus is not None:

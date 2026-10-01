@@ -167,3 +167,23 @@ def test_dribble_uses_running_time_not_ball_speed():
     dist = ((cb.to_xy[0] - cb.from_xy[0]) ** 2 + (cb.to_xy[1] - cb.from_xy[1]) ** 2) ** 0.5
     assert dist > max_displacement(1.2)            # more than a pass-timed reaction would allow
     assert dist <= max_displacement(elapsed_for_run((50.0, 34.0), (60.0, 34.0))) + 1e-6
+
+
+def test_analyze_followup_returns_the_projection_for_the_pitch():
+    """The dashboard draws the projected scene (and chains the next follow-up
+    from it), so analyze_followup must hand the projection back."""
+    from matchmind.agent.graph import TacticalAgent
+    from matchmind.schema.match_state import TacticalAdvice
+
+    agent = TacticalAgent.__new__(TacticalAgent)
+    agent.analyze = lambda state, focus, **kw: ("advice", [{"node": "x"}])
+    action = CandidateAction(action="pass_to_8", label="Pass to player 8", target_xy=(55.0, 25.0),
+                             target_player_id=8, moves_ball=True)
+    advice = TacticalAdvice(recommended_action="pass", recommended_action_id="pass_to_8", reasoning="r",
+                            confidence=0.8, evidence=[], cited_concepts=[], alternatives=[],
+                            candidate_actions=[action], focus_player_id=10)
+    result = agent.analyze_followup(_state(), advice, "home")
+    assert result is not None
+    out_advice, trace, projection = result
+    assert out_advice == "advice" and projection.focus_player_id == 8
+    assert (projection.state.ball.x, projection.state.ball.y) == (55.0, 25.0)

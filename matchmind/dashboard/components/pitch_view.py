@@ -19,7 +19,8 @@ from matchmind.dashboard.components.ui import icon, render_html
 from matchmind.schema.match_state import MatchState, TacticalAdvice
 
 
-def _legend_items(advice: TacticalAdvice | None, dual: bool, state: MatchState | None = None) -> list[str]:
+def _legend_items(advice: TacticalAdvice | None, dual: bool, state: MatchState | None = None,
+                  trails: bool = False) -> list[str]:
     """Only the marks actually drawn on this image — no dead legend entries.
     Real team names when the source has them (red = the "home" side)."""
     home = html.escape(state.home_team_name) if state and state.home_team_name else "Home"
@@ -39,6 +40,8 @@ def _legend_items(advice: TacticalAdvice | None, dual: bool, state: MatchState |
         items.append('<span class="legend-item"><span class="legend-dot grey-line"></span>Alternative</span>')
     if dual:
         items.append('<span class="legend-item"><span class="legend-dot magenta-line"></span>Defensive action</span>')
+    if trails:
+        items.append('<span class="legend-item"><span class="legend-dot trail-dash"></span>Estimated move</span>')
     return items
 
 
@@ -48,6 +51,7 @@ def render_pitch_panel(
     show_pitch_control: bool = False,
     advice: TacticalAdvice | None = None,
     dual_advice: tuple[TacticalAdvice, TacticalAdvice] | None = None,
+    trails: list | None = None,
 ) -> None:
     """
     Render the minimap card.
@@ -95,6 +99,7 @@ def render_pitch_panel(
             show_pitch_control=show_pitch_control and pc_grid is not None,
             pitch_control_grid=pc_grid,
             annotate=False,
+            trails=trails,
         )
         if dual_advice is not None:
             from matchmind.visualization.snapshot_renderer import render_dual_advice_snapshot
@@ -117,7 +122,7 @@ def render_pitch_panel(
 
     focus_txt = f"#{focus_player_id}" if focus_player_id is not None else "—"
     alt_text = f"Pitch minimap, {title.lower()}, focus player {focus_txt}"
-    legend = "".join(_legend_items(advice, dual_advice is not None, state))
+    legend = "".join(_legend_items(advice, dual_advice is not None, state, trails=bool(trails)))
 
     render_html(
         f"""

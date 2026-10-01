@@ -11,7 +11,7 @@ with cheap geometric rules (zero tokens, < 1 ms):
   after a pass   defending side: the nearest outfielder presses the receiver,
                  goal-side; the next one covers behind him; the rest of the block
                  slides toward the ball; the keeper shuffles across his line.
-                 attacking side: teammates move up with the ball.
+                 attacking side: teammates move up with the ball but keep their width.
   after a run    the nearest defender tracks the runner; nobody else reacts
                  (the ball has not moved).
 
@@ -33,10 +33,10 @@ REACTION_S = 0.7
 BALL_SPEED_MS = 15.0
 CONTROL_TIME_S = 0.5        # receiver's first touch before the next decision
 
-PRESS_DISTANCE_M = 1.5      # presser stops this far from the ball, goal-side
+PRESS_DISTANCE_M = 2.0      # presser stops this far from the ball, goal-side (closer = easily beaten)
 COVER_DISTANCE_M = 8.0      # second defender sits this far behind the ball, goal-side
 DEF_SLIDE_X, DEF_SLIDE_Y = 0.5, 0.6     # share of the ball's displacement the block follows
-ATT_SLIDE_X, ATT_SLIDE_Y = 0.4, 0.4
+ATT_SLIDE_X, ATT_SLIDE_Y = 0.4, 0.15   # attackers keep their width; only the defence compacts
 GK_TRACK_Y = 0.3            # keeper moves this share of the ball's offset from the goal centre
 GOAL_HALF_WIDTH = 3.66
 PITCH_LENGTH, PITCH_WIDTH = 105.0, 68.0

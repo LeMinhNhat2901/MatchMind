@@ -68,8 +68,8 @@ def test_nearest_defender_presses_goal_side_of_the_receiver():
     before = _state()
     after, _ = shift_after_pass(before, _after_pass(before), attacking_team="home", carrier_id=19, elapsed_s=10.0)
     presser = after.get_player(4, "away")
-    # Plenty of time: ends ~1.5 m from the ball, between ball and the goal it defends (x=105).
-    assert _dist((presser.x, presser.y), (70.0, 15.0)) < 2.0
+    # Plenty of time: ends ~2 m from the ball, between ball and the goal it defends (x=105).
+    assert _dist((presser.x, presser.y), (70.0, 15.0)) < 2.5
     assert presser.x > 70.0
 
 
@@ -102,3 +102,12 @@ def test_run_is_tracked_by_the_nearest_defender_only():
     assert [(m.team, m.player_id) for m in moves] == [("away", 6)]
     tracker = after.get_player(6, "away")
     assert _dist((tracker.x, tracker.y), runner_to) < _dist((78.0, 30.0), runner_to)
+
+
+def test_attackers_keep_their_width_while_the_defence_compacts():
+    before = _state()
+    after, _ = shift_after_pass(before, _after_pass(before), attacking_team="home", carrier_id=19, elapsed_s=10.0)
+    # Ball moved 19 m toward low y. Home #8 (far side) barely narrows; away #10 slides much more.
+    home_shift = 50.0 - after.get_player(8, "home").y
+    away_shift = 50.0 - after.get_player(10, "away").y
+    assert home_shift < 4.0 < away_shift

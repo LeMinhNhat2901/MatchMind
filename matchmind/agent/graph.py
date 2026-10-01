@@ -35,7 +35,7 @@ Defines the full agent StateGraph with real conditional branching:
 from __future__ import annotations
 
 import logging
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from langgraph.graph import StateGraph, END
 
@@ -61,6 +61,9 @@ from matchmind.agent.nodes.narrator_node import narrator_node
 from matchmind.agent.nodes.examples_node import retrieve_examples_node
 from matchmind.situation_engine.orientation import orient_for_team, unorient_advice
 from matchmind.schema.match_state import MatchState, TacticalAdvice
+
+if TYPE_CHECKING:
+    from matchmind.situation_engine.projection import Projection
 
 logger = logging.getLogger(__name__)
 
@@ -354,7 +357,7 @@ class TacticalAgent:
         focus_team: str,
         action_id: str | None = None,
         language: str | None = None,
-    ) -> tuple[TacticalAdvice, list[dict]] | None:
+    ) -> "tuple[TacticalAdvice, list[dict], Projection] | None":
         """
         Optional "what happens next?" step — projects the match state forward
         as if `action_id` (defaults to `advice.recommended_action_id`) had just
@@ -366,6 +369,10 @@ class TacticalAgent:
         This is a second full LLM pass on top of the original recommendation —
         never called automatically, only when the user explicitly asks for it
         (see dashboard/app.py's "what happens next?" button).
+
+        Returns (advice, trace, projection): the projection carries the projected
+        scene + estimated moves so the dashboard can draw it and chain the next
+        follow-up from it.
 
         Returns None when there's nothing meaningful to project (the action
         doesn't resolve to a shortlist entry with target coordinates, or it's
@@ -389,10 +396,11 @@ class TacticalAgent:
             f"analyze_followup: action={action.action!r} -> focus={projection.focus_player_id} "
             f"({focus_team})"
         )
-        return self.analyze(
+        advice_next, trace = self.analyze(
             projection.state,
             projection.focus_player_id,
             focus_team=focus_team,
             question=projection.question,
             language=language,
         )
+        return advice_next, trace, projection

@@ -123,6 +123,10 @@ with st.sidebar:
         event_idx = None
 
     state = load_match_state(data_source, match_id, event_idx)
+    # A "what happens next?" projection belongs to one snapshot only.
+    snapshot_key = (data_source, match_id, event_idx)
+    if (st.session_state.get("projection") or (snapshot_key,))[0] != snapshot_key:
+        st.session_state.pop("projection", None)
 
     st.markdown("---")
     render_html(f'<div class="sidebar-section-title">{icon("target", 16)}Analysis target</div>')
@@ -203,6 +207,14 @@ if not dual_mode:
         st.session_state["chat_messages"] = []
         st.session_state.pop("last_advice", None)
         st.session_state.pop("last_trace", None)
+        st.session_state.pop("projection", None)
+
+# The scene on screen: the projected one after "what happens next?" (estimated
+# positions + trails), otherwise the real snapshot. Chat questions and further
+# follow-ups work on whatever is shown.
+_projection = None if dual_mode else (st.session_state.get("projection") or (None, None))[1]
+scene_state = _projection.state if _projection is not None else state
+scene_trails = _projection.moves if _projection is not None else None
 
 
 # ── Top Broadcast Scoreboard Banner ────────────────────────────────────────────
@@ -270,14 +282,15 @@ preview_focus_id = (
 # ── LEFT COLUMN: Pitch Canvas & Match Timeline ────────────────────────────────
 with col_pitch:
     render_pitch_panel(
-        state,
+        scene_state,
         preview_focus_id,
         show_pitch_control=show_pitch_control,
         advice=shown_advice,
         dual_advice=shown_dual,
+        trails=scene_trails,
     )
 
-    carrier_text = f"#{state.event_player_id}" if state.event_player_id else "Contested"
+    carrier_text = f"#{scene_state.event_player_id}" if scene_state.event_player_id else "Contested"
     render_html(
         f"""
         <div class="scrubber-strip">
@@ -376,6 +389,7 @@ with col_console:
                         st.session_state["chat_messages"] = []
                         st.session_state.pop("last_advice", None)
                         st.session_state.pop("last_trace", None)
+                        st.session_state.pop("projection", None)
                         st.rerun()
 
                 # 2. Welcome card + quick prompts while the chat is empty
@@ -456,7 +470,7 @@ with col_console:
                             mismatch = mentioned_player_mismatch(detected.english_text, focus_id)
                             agent = get_agent()
                             advice, trace = agent.analyze(
-                                state, focus_id, focus_team=focus_team,
+                                scene_state, focus_id, focus_team=focus_team,
                                 question=detected.english_text, language=detected.language,
                             )
                             localized = localize_advice(advice, detected.language)
@@ -503,11 +517,12 @@ with col_console:
                                 try:
                                     agent = get_agent()
                                     lang = st.session_state.get("last_chat_language", "English")
-                                    result = agent.analyze_followup(state, current_advice, focus_team, language=lang)
+                                    result = agent.analyze_followup(scene_state, current_advice, focus_team, language=lang)
                                     if result is None:
                                         st.info("Hành động này không có bước tiếp theo phù hợp để giả lập.")
                                     else:
-                                        followup_advice, followup_trace = result
+                                        followup_advice, followup_trace, projection = result
+                                        st.session_state["projection"] = (snapshot_key, projection)
                                         localized = localize_advice(followup_advice, lang)
                                         chat_messages.append({
                                             "role": "assistant",
