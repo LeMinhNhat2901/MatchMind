@@ -55,3 +55,31 @@ def test_ingestor_skips_duplicates_and_reports_them(tmp_path):
     # 2 chunks -> 2 concepts; the second duplicates the first.
     assert report.concepts_written == 1 and len(report.duplicates_skipped) == 1
     assert report.videos_new == 1
+
+
+# ── cluster review + archive (scripts/kb_dedup.py) ────────────────────────────
+
+def test_clusters_group_transitively_and_suggest_the_curated_keeper():
+    from matchmind.knowledge_base.dedup import find_clusters
+
+    concepts = [_c("yt_a", "Inverted one"), _c("fifa_b", "Inverted two"), _c("wiki_c", "Inverted three"),
+                _c("yt_d", "Pressing alone")]
+    clusters = find_clusters(concepts, embed=_fake_embed, threshold=0.9)
+    assert len(clusters) == 1
+    keep, others = clusters[0]
+    assert keep.concept_id == "fifa_b"                     # fifa > wiki > yt
+    assert [c.concept_id for c, _ in others] == ["wiki_c", "yt_a"]
+
+
+def test_archive_and_restore_move_files_without_deleting(tmp_path):
+    from matchmind.knowledge_base.dedup import archive_concepts, restore_concepts
+
+    (tmp_path / "youtube").mkdir()
+    f = tmp_path / "youtube" / "yt_a.json"
+    f.write_text(_c("yt_a", "x").model_dump_json(), encoding="utf-8")
+
+    moved = archive_concepts(tmp_path, ["yt_a", "missing_id"])
+    assert moved == ["yt_a"] and not f.exists()
+    assert (tmp_path / "_archive" / "youtube" / "yt_a.json").exists()
+
+    assert restore_concepts(tmp_path, ["yt_a"]) == ["yt_a"] and f.exists()

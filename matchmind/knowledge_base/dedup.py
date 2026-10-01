@@ -77,3 +77,105 @@ class DuplicateGate:
         v = _normalise(self.embed([_text(concept)]))
         self._vecs = v if not len(self._ids) else np.vstack([self._vecs, v])
         self._ids.append(concept.concept_id)
+
+
+# ── Reviewing what is already in the KB (scripts/kb_dedup.py) ─────────────────
+# The gate only stops NEW near-copies; these helpers find the ones already in
+# the KB and move them aside. Nothing is deleted: archived files go to
+# <concepts>/_archive/ (skipped by every loader, see embedder.concept_files)
+# and can be restored, which matters because ingested concepts are not in git.
+
+ARCHIVE_DIR = "_archive"
+_SOURCE_RANK = {"fifa": 0, "wiki": 1, "yt": 2}     # curated sources first
+
+
+def _keeper_rank(c: TacticalConcept) -> tuple:
+    d = c.model_dump()
+    richness = sum(bool(d.get(k)) for k in
+                   ("definition", "spatial_requirements", "player_behaviours", "triggers", "related_concepts"))
+    return (_SOURCE_RANK.get(c.concept_id.split("_", 1)[0], 3), -richness, -len(c.content), c.concept_id)
+
+
+def find_clusters(concepts: list[TacticalConcept], embed: Embed, threshold: float = DEFAULT_THRESHOLD,
+                  ) -> list[tuple[TacticalConcept, list[tuple[TacticalConcept, float]]]]:
+    """Groups of near-duplicates (A~B and B~C put A, B, C together), biggest first.
+    Each group: (suggested keeper, [(other concept, similarity to the keeper), ...])."""
+    if len(concepts) < 2:
+        return []
+    vecs = _normalise(embed([_text(c) for c in concepts]))
+    sims = vecs @ vecs.T
+    parent = list(range(len(concepts)))
+
+    def root(i: int) -> int:
+        while parent[i] != i:
+            parent[i] = parent[parent[i]]
+            i = parent[i]
+        return i
+
+    for i in range(len(concepts)):
+        for j in range(i + 1, len(concepts)):
+            if sims[i, j] >= threshold:
+                parent[root(i)] = root(j)
+    groups: dict[int, list[int]] = {}
+    for i in range(len(concepts)):
+        groups.setdefault(root(i), []).append(i)
+
+    out = []
+    for members in groups.values():
+        if len(members) < 2:
+            continue
+        members.sort(key=lambda i: _keeper_rank(concepts[i]))
+        keep = members[0]
+        out.append((concepts[keep], [(concepts[i], float(sims[i, keep])) for i in members[1:]]))
+    return sorted(out, key=lambda g: -len(g[1]))
+
+
+def _files_by_id(root: Path) -> dict[str, Path]:
+    import json
+
+    out = {}
+    for f in sorted(root.rglob("*.json")):
+        try:
+            cid = json.loads(f.read_text(encoding="utf-8-sig")).get("concept_id")
+        except Exception:  # noqa: BLE001 — not a concept file
+            continue
+        if cid:
+            out[cid] = f
+    return out
+
+
+def archive_concepts(concepts_dir: Path | str, ids: list[str]) -> list[str]:
+    """Move these concepts to <concepts_dir>/_archive/ (same sub-folder). Returns the ids moved."""
+    from matchmind.knowledge_base.embedder import concept_files
+
+    root = Path(concepts_dir)
+    live = {cid: f for cid, f in _files_by_id(root).items() if f in set(concept_files(root))}
+    moved = []
+    for cid in ids:
+        f = live.get(cid)
+        if f is None:
+            continue
+        dest = root / ARCHIVE_DIR / f.relative_to(root)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        f.replace(dest)
+        moved.append(cid)
+    return moved
+
+
+def restore_concepts(concepts_dir: Path | str, ids: list[str]) -> list[str]:
+    """Undo archive_concepts for these ids. Returns the ids restored."""
+    root = Path(concepts_dir)
+    archive = root / ARCHIVE_DIR
+    if not archive.exists():
+        return []
+    archived = _files_by_id(archive)
+    restored = []
+    for cid in ids:
+        f = archived.get(cid)
+        if f is None:
+            continue
+        dest = root / f.relative_to(archive)
+        dest.parent.mkdir(parents=True, exist_ok=True)
+        f.replace(dest)
+        restored.append(cid)
+    return restored
