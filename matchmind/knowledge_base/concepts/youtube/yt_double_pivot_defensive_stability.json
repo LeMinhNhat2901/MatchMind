@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_double_pivot_defensive_stability",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "out_of_possession",
+  "title": "Double Pivot Defensive Stability",
+  "definition": "A tactical structure where two central midfielders provide mutual cover to secure the defensive core, enabling fullbacks to advance.",
+  "content": "The double pivot serves as the foundational element for defensive stability in a 4-2-3-1 or similar structure. By establishing a solid, mobile pairing in central midfield, the team ensures that the space behind the defensive line is protected. This security allows the fullbacks to push higher up the pitch, providing width and attacking threat without leaving the team exposed to counter-attacks. When the fullbacks are advanced, the double pivot can shift laterally to cover the vacated zones or drop deeper to support the build-up. This structure creates a 'pseudo-diamond' shape during possession, where one pivot may drop to aid progression while the other stays high to link play. It is particularly effective against low blocks because it allows for controlled possession and the creation of overloads in the half-spaces. However, it requires high discipline from both midfielders to maintain compactness and cover for each other, preventing gaps that opponents can exploit. The success of this system relies on the ability of the pivots to switch roles dynamically, ensuring that the defensive core remains intact even when the team is in an advanced attacking position.",
+  "conditions": [
+    "possession_phase",
+    "fullbacks_advanced",
+    "central_midfield_pairing"
+  ],
+  "objective": [
+    "secure_defensive_core",
+    "enable_fullback_width",
+    "maintain_midfield_compactness"
+  ],
+  "possible_actions": [
+    "drop_deep_to_support_buildup",
+    "shift_laterally_to_cover_flank",
+    "link_play_between_lines"
+  ],
+  "contraindications": [
+    "lack_of_midfield_mobility",
+    "fullbacks_low_positioning"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "team_compactness_high",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "cover_passing_lane",
+    "angle_press",
+    "support_buildup"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "positional_play",
+    "fullback_overlap"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2545s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

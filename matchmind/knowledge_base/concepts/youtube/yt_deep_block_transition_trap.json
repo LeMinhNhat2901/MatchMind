@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_deep_block_transition_trap",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "defensive_transition",
+  "title": "Deep Block Transition Trap",
+  "definition": "A defensive strategy using a deep, compact block to lure opponents high, creating immediate counter-attacking opportunities in vacated wide spaces upon regaining possession.",
+  "content": "This tactical approach involves deploying a deep defensive structure, such as a 5-4-1 or similar compact shape, to deny the opponent space between the lines and in wide areas. By maintaining a low defensive line and compact midfield, the team forces the opposition to push their fullbacks and wingers higher up the pitch to create overloads. This positioning creates significant vulnerability behind the opponent's defensive line. The primary objective is not to dominate possession but to absorb pressure and trigger a rapid transition. When the ball is recovered, the team immediately exploits the large spaces left behind the opponent's advanced fullbacks. This method is particularly effective against teams that rely on high defensive lines and wide overloads. It sacrifices short-passing control and possession statistics in favor of defensive solidity and high-impact counter-attacks. The success of this tactic depends on the team's ability to maintain compactness, deny central penetration, and execute quick, direct transitions into the vacated flanks before the opponent can reorganize.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "team_compactness_high",
+    "defensive_line_height_low"
+  ],
+  "objective": [
+    "lure_opponents_high",
+    "exploit_vacated_wide_spaces",
+    "deny_central_penetration"
+  ],
+  "possible_actions": [
+    "maintain_deep_block",
+    "trigger_counter_attack",
+    "switch_play_to_wing"
+  ],
+  "contraindications": [
+    "low_passing_accuracy",
+    "lack_of_transition_speed"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "space_behind_defensive_line",
+    "phase_of_play_defensive_transition"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_into_defensive_line",
+    "cover_wide_areas",
+    "initiate_long_pass"
+  ],
+  "related_concepts": [
+    "low_block",
+    "counter_attack",
+    "defensive_compactness"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=gRheEuU8u7Y&t=161s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

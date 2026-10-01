@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_counter_pressing_and_sweeper_keeper",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Counter-Pressing and Sweeper Keeper",
+  "definition": "A high-intensity defensive transition strategy where the team immediately regains possession after losing the ball, supported by a sweeper keeper to cover space behind the defensive line.",
+  "content": "This tactical approach is designed to mitigate the risks of an aggressive, possession-based system where many players contribute to attacking play, leaving the team vulnerable to counterattacks. Upon losing possession, the team executes an immediate, high-energy counter-press in the attacking third, aiming to win the ball back before the opponent can organize. This requires significant stamina and quick reaction times from all players. To protect the space behind the high defensive line created by this pressing intensity, the goalkeeper acts as a sweeper, moving out of the box to intercept through balls or clear danger. Additionally, wide players may drop deep to provide defensive cover. This system is particularly effective against opponents who struggle under immediate pressure but carries a high risk of fatigue and injury due to the constant high-intensity running. It is often paired with specific individual roles, such as a striker dropping deeper to cover the opponent's pivot man if the team cannot maintain a full high press due to physical limitations.",
+  "conditions": [
+    "high_stamina_available",
+    "opponent_in_buildup",
+    "ball_lost_in_attacking_third"
+  ],
+  "objective": [
+    "immediate_ball_recovery",
+    "prevent_counter_attack",
+    "cover_space_behind_defense"
+  ],
+  "possible_actions": [
+    "immediate_press",
+    "keeper_sweep",
+    "winger_drop_deep",
+    "cover_pivot_man"
+  ],
+  "contraindications": [
+    "low_team_stamina",
+    "injury_crisis",
+    "opponent_long_ball_specialist"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "opponent_high_press",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "high_defensive_line",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "aggressive_press",
+    "sweeping_action",
+    "deep_run"
+  ],
+  "related_concepts": [
+    "sweeper_keeper",
+    "high_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=523s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

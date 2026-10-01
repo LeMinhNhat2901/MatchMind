@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_full_back_inversion_for_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Full-Back Inversion for Build-Up",
+  "definition": "A tactical adjustment where full-backs move into central midfield positions during the initial build-up phase to create numerical superiority and facilitate progression against high pressing.",
+  "content": "This concept involves full-backs inverting into the midfield line when the team is under high pressure in the defensive third. By moving centrally, the full-backs join the pivot or defensive midfielder to form a compact 2-3 or 3-2 shape in the first phase. This creates a local numerical advantage, allowing the team to bypass the opponent's initial press through safer, shorter passing options rather than forcing risky long balls. The inversion also frees up the wingers to hold wider positions, stretching the opponent horizontally and pinning their full-backs deep. Consequently, the half-spaces become available for onrushing midfielders or inverted wingers to exploit. This approach relies on full-backs with high technical ability and comfort on the ball. It transforms the build-up from a reactive, stall-prone state into a fluid, progressive structure, enabling the midfield to operate higher up the pitch and create genuine attacking threats in the final third.",
+  "conditions": [
+    "opponent_high_press",
+    "full_backs_high_technical_ability",
+    "midfield_numerical_disadvantage"
+  ],
+  "objective": [
+    "bypass_initial_press",
+    "create_local_numerical_advantage",
+    "free_up_winger_width"
+  ],
+  "possible_actions": [
+    "full_back_inverts_central",
+    "pivot_drops_deep",
+    "winger_holds_width",
+    "midfielder_moves_into_half_space"
+  ],
+  "contraindications": [
+    "full_backs_lack_progressive_passing",
+    "opponent_low_block"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_pass_to_inverted_full_back",
+    "hold_wide_position",
+    "make_late_run_into_box"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "half_space"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6676s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

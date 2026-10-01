@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_catenaccio_sweeper_system",
+  "category": "defending",
+  "subcategory": "low_block",
+  "phase": "out_of_possession",
+  "title": "Catenaccio Sweeper System",
+  "definition": "A defensive system utilizing a deep-lying sweeper (libero) behind a back line to cover gaps and initiate counter-attacks.",
+  "content": "Catenaccio is a defensive tactical structure designed to frustrate attacking teams by maintaining a compact, deep defensive shape. The core innovation is the inclusion of a 'libero' or sweeper, a player positioned behind the main defensive line who acts as a spare defender. This player covers gaps left by other defenders shifting to deal with the ball, ensuring the defensive unit remains cohesive. By sitting deep, the team invites the opposition to advance, thereby creating significant space behind their defensive line. The sweeper is crucial for both defensive security and transition, as they can intercept passes, clear danger, and initiate counter-attacks with precise long balls into the vacated space. This system provides numerical superiority in defense against traditional four-back lines and exploits the opponent's over-commitment to attack. It is particularly effective against teams that rely on sustained possession or high pressing, as it neutralizes their forward momentum and forces them to play in crowded areas. The success of this approach relies on the sweeper's ability to read the game, position themselves correctly, and make decisive passes when the opportunity arises.",
+  "conditions": [
+    "opponent_high_press",
+    "defensive_line_height_low",
+    "space_behind_defensive_line"
+  ],
+  "objective": [
+    "neutralize_attacking_threat",
+    "exploit_space_behind_opponent",
+    "maintain_defensive_cohesion"
+  ],
+  "possible_actions": [
+    "drop_deep_to_cover",
+    "initiate_counter_attack",
+    "shift_defensive_line"
+  ],
+  "contraindications": [
+    "opponent_long_ball_threat",
+    "lack_of_sweeper_skill"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "space_behind_defensive_line",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "deep_defensive_line"
+  ],
+  "player_behaviours": [
+    "cover_passing_lane",
+    "drop_deep_to_cover",
+    "long_ball_distribution"
+  ],
+  "related_concepts": [
+    "libero_role",
+    "low_block",
+    "counter_attack"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=488s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_asymmetric_pivot_roles_in_4_2_3_1",
+  "category": "formations",
+  "subcategory": "pivot_roles",
+  "phase": "general",
+  "title": "Asymmetric Pivot Roles in 4-2-3-1",
+  "definition": "A tactical setup where one central midfielder acts as a deep-lying playmaker while the other functions as a box-to-box midfielder to balance build-up and defensive coverage.",
+  "content": "In this asymmetric 4-2-3-1 structure, the two central midfielders (pivots) do not operate horizontally side-by-side. Instead, one player remains deeper, close to the center-backs, functioning as a deep-lying playmaker (DLP). This player is crucial for initiating direct vertical passes and controlling the tempo from the back. The second pivot operates as a box-to-box midfielder, moving forward to support attacks and dropping deep to assist in defense. This division of labor addresses the vulnerability of high defensive lines; while the DLP facilitates build-up, the box-to-box player helps cover spaces left by advancing fullbacks, particularly on the flank where the winger operates as a false winger. This setup allows the team to maintain width through fullback movement while ensuring central stability. The DLP's ability to hit accurate long balls is essential for bypassing high presses, whereas the box-to-box player provides the physical presence and mobility needed to transition quickly between phases. This configuration is particularly effective when the team relies on verticality and direct passing from the defense, as it creates a reliable outlet for the ball while maintaining defensive shape.",
+  "conditions": [
+    "high_defensive_line",
+    "direct_build_up_style",
+    "asymmetric_midfield_structure"
+  ],
+  "objective": [
+    "secure_build_up_passing",
+    "cover_flank_vulnerabilities",
+    "balance_attack_and_defense"
+  ],
+  "possible_actions": [
+    "deep_lying_playmaker_pass",
+    "box_to_box_transition",
+    "drop_deep_on_defense"
+  ],
+  "contraindications": [
+    "low_block_defense",
+    "possession_based_short_passing"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "opponent_high_press",
+    "progressive_pass_available"
+  ],
+  "spatial_requirements": [
+    "deep_position_near_centerbacks",
+    "vertical_spacing_between_pivots"
+  ],
+  "player_behaviours": [
+    "hold_deep_position",
+    "make_progressive_pass",
+    "drop_to_cover_flank"
+  ],
+  "related_concepts": [
+    "deep_lying_playmaker",
+    "box_to_box_midfielder",
+    "false_winger"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=865s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

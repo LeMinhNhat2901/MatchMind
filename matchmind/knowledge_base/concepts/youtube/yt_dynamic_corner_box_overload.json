@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_dynamic_corner_box_overload",
+  "category": "attacking",
+  "subcategory": "set_pieces",
+  "phase": "possession",
+  "title": "Dynamic Corner Box Overload",
+  "definition": "A corner kick strategy using decoy runs and horizontal momentum to overload the six-yard box and disrupt defensive marking lines.",
+  "content": "This tactical approach transforms the corner kick from a static delivery into a dynamic attacking sequence by manipulating defensive attention. Instead of remaining static outside the six-yard box, attackers initially position themselves near the edge or slightly outside to draw the attention of the upper defensive line (man-markers). This forces defenders to track them, potentially pulling them away from their primary zone. Simultaneously, additional players make direct, high-speed runs into the box from the opposite side or deeper positions. This creates a numerical overload in the critical goal-scoring area. The key mechanical advantage is the use of horizontal run-up speed rather than vertical static jumps. By running into the box, attackers generate greater momentum and height, similar to an airplane taking off versus a helicopter hovering. This allows them to out-jump static defenders who are trying to cover multiple angles. The combination of decoy positioning to split the defensive focus and the physical advantage of moving runners creates high-probability scoring chances, often resulting in crowded, chaotic scenes in the six-yard box that overwhelm traditional zonal or man-marking systems.",
+  "conditions": [
+    "corner_kick_situation",
+    "defensive_man_marking_present",
+    "attacking_players_available_for_runs"
+  ],
+  "objective": [
+    "create_numerical_overload_in_box",
+    "disrupt_defensive_focus",
+    "generate_higher_jump_momentum"
+  ],
+  "possible_actions": [
+    "decoy_run_from_edge",
+    "horizontal_run_into_box",
+    "split_defensive_attention",
+    "time_run_with_delivery"
+  ],
+  "contraindications": [
+    "defensive_zonal_discipline_strong",
+    "lack_of_runner_speed",
+    "poor_delivery_accuracy"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "crowded_six_yard_box",
+    "space_for_horizontal_runup"
+  ],
+  "player_behaviours": [
+    "hold_defender_attention",
+    "accelerate_into_box",
+    "jump_with_momentum"
+  ],
+  "related_concepts": [
+    "set_piece_overload",
+    "decoy_movement",
+    "box_crowding"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=SKfV99LZBgw&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

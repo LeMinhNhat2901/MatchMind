@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_rest_defense_structural_integrity",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "possession",
+  "title": "Rest Defense Structural Integrity",
+  "definition": "The positioning of players behind the ball during possession to maintain a secure defensive structure and prevent immediate counter-attacks upon loss of possession.",
+  "content": "Rest defense refers to the specific formation shape a team adopts behind the ball carrier while in possession, designed to protect against turnovers. In a 3-2-5 or 2-3-5 structure, holding midfielders form a secure base, allowing front players to attack with the knowledge that a defensive skeleton remains intact. This concept is critical for enabling high-intensity pressing, as it ensures that if possession is lost, the team is already organized to counter-press or retreat. When this structure is compromised, such as by reducing the midfield base to a single pivot in a 3-4-3 diamond, the team becomes vulnerable. A lone pivot is easily isolated, leaving vertical channels open for opponents to bypass the midfield and attack the backline directly. Furthermore, if full-backs or center-backs push too high without adequate cover, gaps form in the defensive line. The key to effective rest defense is not just having players behind the ball, but ensuring they are positioned to cover passing lanes and provide immediate support. Players in these roles must prioritize positional discipline over individual dribbling or progressive carrying, as their primary job is to maintain the structural integrity of the team's defensive shape until possession is regained or the attack is resolved.",
+  "conditions": [
+    "team_in_possession",
+    "opponent_defending_deep",
+    "single_pivot_structure"
+  ],
+  "objective": [
+    "prevent_counter_attack",
+    "maintain_defensive_shape",
+    "cover_vertical_channels"
+  ],
+  "possible_actions": [
+    "hold_positional_reference",
+    "cover_passing_lanes",
+    "delay_opponent_progression"
+  ],
+  "contraindications": [
+    "isolated_pivot",
+    "excessive_width_in_defense",
+    "dribbling_out_of_position"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_attacking",
+    "opponent_high_press",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "stay_in_position",
+    "scan_for_turnover",
+    "provide_passing_option"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=9101s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_locking_opponent_to_one_flank",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Locking Opponent to One Flank",
+  "definition": "A defensive strategy to restrict the opponent's lateral movement by compressing the pitch on one side, forcing them to play into a pre-set trap.",
+  "content": "This tactical approach involves the team shifting its defensive block to one side of the pitch to 'lock' the opponent in that area, preventing them from shifting the play to the other flank. The objective is to create a numerical advantage on the ball side while leaving the opposite side empty, forcing the opponent to either play into the trap or risk a long diagonal pass. To execute this, defenders must maintain high compactness on the ball side, using body orientation to guide the ball away from the center and towards the touchline or into a specific pressing zone. A key element is reading the opponent's 'quarterback' or deep-lying playmaker; if they open their body shape to signal a long pass, defenders should start their recovery run early to intercept or cover the space. This method is particularly effective against teams that rely on quick, short passing patterns (like the 'horseshoe' in the Premier League) but requires discipline to avoid being stretched by sudden switches of play. The risk is conceding a direct long ball if the recovery is too slow, so timing the press based on the opponent's body language is critical.",
+  "conditions": [
+    "opponent_relies_on_short_passing",
+    "team_compactness_high",
+    "defensive_line_height_moderate"
+  ],
+  "objective": [
+    "restrict_lateral_movement",
+    "create_numerical_advantage_one_side",
+    "force_pass_into_trap"
+  ],
+  "possible_actions": [
+    "shift_defensive_block_to_ball_side",
+    "guide_ball_to_touchline",
+    "start_recovery_run_early_on_body_language",
+    "cover_diagonal_passing_lane"
+  ],
+  "contraindications": [
+    "opponent_has_strong_long_passing_ability",
+    "team_lacks_recovery_speed",
+    "opponent_uses_wide_wingers_to_switch_play"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "team_compactness_high",
+    "opponent_high_press",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines",
+    "empty_opposite_flank"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "read_body_language",
+    "early_recovery_run"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "defensive_compactness",
+    "body_orientation"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=182s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_ramos_center_back_tactical_shift",
+  "category": "formations",
+  "subcategory": "defensive_line_adjustment",
+  "phase": "general",
+  "title": "Ramos Center Back Tactical Shift",
+  "definition": "A tactical adjustment moving a full-back to center-back to enhance build-up play while using a deep-lying playmaker as the primary outlet.",
+  "content": "This concept describes a specific structural tweak where a full-back, such as Sergio Ramos, is shifted into the center-back position to improve the team's ability to play out from the back. By placing a player with superior ball-playing skills in the defensive line, the team gains a more reliable outlet for the goalkeeper and defenders during the initial build-up phase. This shift is often paired with a deep-lying playmaker (like Xabi Alonso) who acts as the primary distributor, allowing the midfield to maintain balance. In this setup, one midfielder can focus on vertical progression and pressing duties, while another provides creative spark and width. This configuration allows the team to dominate possession and create chances in their own right, rather than relying solely on counter-attacks. It is particularly useful when facing high-caliber opposition where stability in possession is required, though it may be adjusted against lower-level teams. The key benefit is the enhanced ability to retain the ball under pressure and initiate attacks from the defensive third with greater control and precision.",
+  "conditions": [
+    "full_back_has_ball_playing_skills",
+    "need_for_build_up_stability",
+    "deep_lying_playmaker_available"
+  ],
+  "objective": [
+    "improve_build_up_quality",
+    "increase_possession_dominance",
+    "create_reliable_defensive_outlet"
+  ],
+  "possible_actions": [
+    "shift_full_back_to_center_back",
+    "position_deep_lying_playmaker_as_outlet",
+    "balance_midfield_with_progressor_and_creator"
+  ],
+  "contraindications": [
+    "lack_of_deep_lying_playmaker",
+    "full_back_lacks_defensive_stability"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "progressive_pass_not_available"
+  ],
+  "spatial_requirements": [
+    "compact_defensive_shape",
+    "clear_outlet_in_midfield"
+  ],
+  "player_behaviours": [
+    "receive_ball_in_defensive_line",
+    "distribute_to_deep_lying_playmaker",
+    "maintain_width_in_midfield"
+  ],
+  "related_concepts": [
+    "build_up",
+    "positional_play",
+    "deep_lying_playmaker"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=1465s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

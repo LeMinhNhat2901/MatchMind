@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_striker_as_free_eight",
+  "category": "formations",
+  "subcategory": "role_hybridization",
+  "phase": "possession",
+  "title": "Striker as Free Eight",
+  "definition": "A tactical deployment where a natural striker operates as a free central midfielder to provide creative penetration and goal threat from deeper positions.",
+  "content": "This concept involves deploying a forward, typically a striker, in a deeper 'free eight' role to bridge the gap between midfield and attack. This is often utilized when a team lacks a primary creative midfielder or needs to increase penetration in tight spaces. The player must possess high work rate for pressing, technical quality for tight-space combination, and the instinct to arrive late in the box. By drifting into midfield, this player occupies defenders, creates numerical overloads in central areas, and provides a direct goal threat that traditional midfielders might lack. This role can transform a standard formation, such as a 4-2-3-1, into a more dynamic shape where the striker influences the build-up. However, it requires the player to have superior decision-making and passing range to unlock compact defenses; otherwise, the attack may feel disjointed. It is a high-risk, high-reward adjustment that relies on the individual's ability to combine creativity with finishing, effectively acting as a dual threat rather than a specialized creator or scorer.",
+  "conditions": [
+    "lack_of_primary_creator",
+    "need_for_central_penetration",
+    "striker_with_midfield_qualities"
+  ],
+  "objective": [
+    "increase_goal_threat_from_depth",
+    "occupy_defensive_midfielders",
+    "create_numerical_overload_centre"
+  ],
+  "possible_actions": [
+    "drift_into_midfield",
+    "combine_in_tight_spaces",
+    "arrive_late_in_box",
+    "press_relatively_high"
+  ],
+  "contraindications": [
+    "player_lacks_passing_range",
+    "defensive_vulnerability_on_counter",
+    "disjointed_attacking_patterns"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_occupied_or_available",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "central_area_density",
+    "space_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_deep_to_receive",
+    "carry_ball_forward",
+    "final_third_arrival"
+  ],
+  "related_concepts": [
+    "false_nine",
+    "free_role",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8604s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

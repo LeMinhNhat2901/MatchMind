@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_inverted_fullback_midfield_density",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "out_of_possession",
+  "title": "Inverted Fullback Midfield Density",
+  "definition": "The tactical use of fullbacks moving into central midfield zones to increase numerical density for ball recovery and build-up stability.",
+  "content": "This concept highlights the critical role of inverted fullbacks in maintaining midfield compactness and numerical superiority. When fullbacks invert into the middle third, they provide essential cover for transitions, help win second balls, and offer safe passing outlets for center-backs during build-up. The text illustrates that when this role is absent or filled by players lacking the specific technical or positional profile (such as traditional wide fullbacks), the team suffers from a lack of central bodies. This creates vulnerabilities in the midfield, making it harder to control possession and defend against counter-attacks. Furthermore, the presence of a high-pressing or deep-lying central midfielder who can drop to support the inverted fullback is crucial for creating a stable 3-2 or 4-2 midfield block. Without this structural support, the team may rely too heavily on individual quality rather than collective shape, leading to inconsistent performance in both possession and defensive transitions. Coaches must ensure that at least one fullback per side is capable of performing this inverted role to maintain the necessary midfield density.",
+  "conditions": [
+    "possession_build_up",
+    "defensive_transition",
+    "midfield_density_needed"
+  ],
+  "objective": [
+    "increase_midfield_numerical_advantage",
+    "provide_passing_outlets",
+    "cover_transitions"
+  ],
+  "possible_actions": [
+    "invert_into_midfield",
+    "drop_deep_to_support",
+    "occupy_half_space"
+  ],
+  "contraindications": [
+    "lack_of_inverting_fullback",
+    "overload_in_wide_areas"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "phase_of_play_attacking_transition",
+    "team_compactness_low"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "central_zone_occupation"
+  ],
+  "player_behaviours": [
+    "move_into_central_zone",
+    "receive_ball_in_midfield",
+    "cover_passing_lanes"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "midfield_density",
+    "build_up_structure"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7647s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

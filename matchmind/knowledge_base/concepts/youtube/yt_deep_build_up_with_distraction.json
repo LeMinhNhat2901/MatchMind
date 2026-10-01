@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_deep_build_up_with_distraction",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Deep Build-Up with Distraction",
+  "definition": "A build-up strategy using a deep-lying midfielder or fullback as a decoy to create space and time for center backs against moderate pressing.",
+  "content": "This tactical approach is designed to bypass moderate pressing systems by introducing a 'middle man' who moves away from the ball to distract markers. Typically, a fullback or midfielder drops next to the goalkeeper, receives a pass, and then lays it off to a center back while moving back into position. This movement drags the opposing forward presser into an unfamiliar area, creating crucial space and time for the center back to receive and progress the ball. The technique relies on the ball often traveling through the air, allowing physical defenders to beat pressers. It is most effective against moderate pressing; against extreme pressing, more distractions are needed. While this deep build-up offers lower risk and safe support options for back passes, it may yield lower rewards if the opposition maintains a low block. To balance risk and reward, teams can use the goalkeeper as a third center back and drop pivots deep, creating numerical advantages higher up the pitch for fullbacks to join the attack.",
+  "conditions": [
+    "opponent_moderate_pressing",
+    "deep_buildup_phase",
+    "center_backs_physical"
+  ],
+  "objective": [
+    "create_space_for_center_back",
+    "distract_opponent_markers",
+    "progress_ball_safely"
+  ],
+  "possible_actions": [
+    "fullback_drop_to_keeper",
+    "lay_off_to_center_back",
+    "move_back_into_position",
+    "keeper_step_up_as_third_cb"
+  ],
+  "contraindications": [
+    "opponent_extreme_pressing",
+    "opponent_low_block_static",
+    "lack_of_physical_defenders"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "defensive_line_height_low",
+    "space_ahead_moderate"
+  ],
+  "spatial_requirements": [
+    "deep_positioning_of_fullback",
+    "compact_defensive_line_initially"
+  ],
+  "player_behaviours": [
+    "decoy_run",
+    "short_pass_to_center_back",
+    "reposition_after_pass"
+  ],
+  "related_concepts": [
+    "decoy_movement",
+    "positional_play",
+    "build_up_phases"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=98BkEsAUr9k&t=163s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_physical_dominance_in_man_marking",
+  "category": "individual",
+  "subcategory": "physicality",
+  "phase": "possession",
+  "title": "Physical Dominance in Man-Marking",
+  "definition": "Using superior strength, size, or acceleration to break man-to-man defensive assignments when technical options are limited.",
+  "content": "In man-oriented defensive systems, a single player breaking their marker can trigger a domino effect, leaving other defenders exposed. While technical passing and dribbling are primary tools, physical dominance serves as a critical alternative when these options are blocked. Players with superior strength, size, or explosive acceleration can physically overpower their markers, holding them off to create time for a pass, completing a turn, or driving forward into space. This approach is particularly effective against high-intensity man-pressing, as it exhausts defenders who must constantly track larger or faster opponents. Recruitment strategies increasingly prioritize this physical resilience alongside technical skill, ensuring players can win individual duels in tight spaces. By combining flexibility, technicality, and raw physicality, teams can ensure that even when quick combinations fail, they can still progress the ball through sheer force. This layer of physicality makes man-marking systems unsustainable for opponents, as defenders become worn down trying to maintain their assignments against physically superior athletes.",
+  "conditions": [
+    "opponent_man_marking",
+    "technical_options_blocked",
+    "physical_advantage_present"
+  ],
+  "objective": [
+    "break_defensive_assignment",
+    "create_space_for_teammates",
+    "progress_ball_into_danger_zone"
+  ],
+  "possible_actions": [
+    "shield_ball_with_body",
+    "explosive_acceleration_burst",
+    "hold_off_defender_to_pass",
+    "drive_forward_with_ball"
+  ],
+  "contraindications": [
+    "zonal_defense_structure",
+    "numerical_disadvantage_in_area",
+    "fatigue_reducing_physical_output"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "passing_lane_open",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "tight_space_environment",
+    "man_to_man_engagement"
+  ],
+  "player_behaviours": [
+    "body_shield",
+    "power_drive",
+    "physical_duel_win"
+  ],
+  "related_concepts": [
+    "man_marking",
+    "dribbling",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=646s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

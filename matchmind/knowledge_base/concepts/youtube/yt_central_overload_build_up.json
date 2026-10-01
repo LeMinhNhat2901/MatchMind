@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_central_overload_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Central Overload Build-Up",
+  "definition": "A build-up strategy that creates numerical superiority in the central zone to force opponents to drop deeper, thereby opening space on the flanks or for the striker.",
+  "content": "This tactical concept involves establishing a 4v2 or 4v3 numerical advantage in the central midfield area during the build-up phase. By concentrating players in the middle, the team forces the opposition to react by dropping their forwards (e.g., the 9 and 10) to maintain a 4v4 or 5v5 balance. This reaction creates two key opportunities: first, it leaves the wide areas or the space behind the defensive line open for wingers or attacking midfielders to exploit; second, it allows the team to control possession and switch play to the opposite side where players are now free of pressure. If the opponent fails to drop and maintains a high line, the central overloads can directly penetrate or switch play. A critical component is the goalkeeper's role; if the opponent presses aggressively, the goalkeeper drops to become an extra passing option, allowing the team to reset the build-up and maintain the numerical advantage. This approach is particularly effective against teams playing with a single pivot or a 4-2-3-1 structure, where the central midfield is vulnerable to overloading.",
+  "conditions": [
+    "central_numerical_advantage",
+    "opponent_high_line",
+    "possession_phase"
+  ],
+  "objective": [
+    "force_opponent_drop",
+    "create_wide_space",
+    "maintain_possession"
+  ],
+  "possible_actions": [
+    "central_overload",
+    "switch_play",
+    "keeper_drop",
+    "penetrate_centre"
+  ],
+  "contraindications": [
+    "opponent_low_block",
+    "lack_of_wide_support"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "is_in_defensive_third",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_density"
+  ],
+  "player_behaviours": [
+    "central_hold",
+    "keeper_as_outlet",
+    "wide_stretch"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "overload"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=248s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_double_pivot_structural_balance",
+  "category": "formations",
+  "subcategory": "4231",
+  "phase": "general",
+  "title": "Double Pivot Structural Balance",
+  "definition": "A tactical adjustment using two central midfielders to provide defensive stability and progression when a single pivot is insufficient.",
+  "content": "This concept addresses the structural vulnerability of a 4-3-3 formation when the central midfield lacks a dedicated, mobile defensive anchor. By shifting to a 4-2-3-1 with a double pivot, the team gains immediate balance and defensive cover, allowing the front three to press higher without leaving the backline exposed. In this setup, one midfielder often acts as the primary progressive hub, utilizing their range of passing to break lines, switch play, or thread through balls into the final third. However, this structure creates a specific tactical risk: if the opposing team identifies the primary passer, they can systematically block passing lanes into that player, forcing the team to progress through the less mobile partner. This can stall attacks and reduce the effectiveness of the possession game. The double pivot is therefore a pragmatic solution to squad limitations, prioritizing defensive solidity and controlled progression over the fluidity of a single pivot system. It is particularly useful when the squad lacks a high-quality, mobile defensive midfielder capable of holding the center alone against elite opposition.",
+  "conditions": [
+    "lack_of_mobile_pivot",
+    "defensive_vulnerability_in_midfield",
+    "need_for_structural_balance"
+  ],
+  "objective": [
+    "secure_defensive_midfield",
+    "facilitate_progressive_passing",
+    "maintain_possession_control"
+  ],
+  "possible_actions": [
+    "deploy_double_pivot",
+    "assign_progressive_role_to_one_pivot",
+    "block_passing_lanes_to_hub"
+  ],
+  "contraindications": [
+    "over_reliance_on_single_passer",
+    "reduced_mobility_in_progression"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_negative",
+    "space_between_lines",
+    "progressive_pass_available"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "hold_position_in_pivot",
+    "scan_for_progressive_pass",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=1339s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

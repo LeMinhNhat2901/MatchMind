@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_false_nine_drift_for_overload",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "False Nine Drift for Overload",
+  "definition": "A tactical maneuver where a false nine drifts wide to create numerical overloads on the flanks, forcing the opponent's defensive line to drop and opening central spaces for midfielders.",
+  "content": "This concept involves deploying a striker in a false nine role who does not hold a fixed position but instead roams to exploit specific weaknesses, often drifting wide to create a 2v2 or 3v2 situation against the opponent's fullback and center-back. By occupying the wide area, the false nine forces the opposition's center-backs to hesitate or drop deeper, as they cannot commit to tracking the runner without leaving space behind. This hesitation, combined with high-pressing fullbacks from the attacking team, creates a numerical overload in the half-space or on the flank. The attacking team can then choose to maintain the wide overload or push centrally, creating a 5v3 or 6v3 advantage in the midfield. This central congestion allows key playmakers to dictate the tempo and execute quick link-up play, while the persistent threat of the false nine prevents the opposition defenders from dropping too deep, thereby stretching the defensive block vertically and horizontally.",
+  "conditions": [
+    "false_nine_available",
+    "opponent_fullback_deep",
+    "midfield_central_density"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "force_defensive_line_drop",
+    "open_central_half_space"
+  ],
+  "possible_actions": [
+    "drift_wide_from_nine",
+    "hold_width_for_overload",
+    "push_in_central_to_link",
+    "dictate_play_from_midfield"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "lack_of_wide_support",
+    "striker_lacks_off_ball_movement"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "local_numerical_advantage_positive",
+    "space_behind_defensive_line",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "high_fullback_position",
+    "central_midfield_density",
+    "wide_overload_zone"
+  ],
+  "player_behaviours": [
+    "roam_to_weak_side",
+    "delay_defensive_commitment",
+    "link_up_quickly"
+  ],
+  "related_concepts": [
+    "false_nine",
+    "numerical_overload",
+    "half_space_exploitation",
+    "positional_rotation"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=455s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

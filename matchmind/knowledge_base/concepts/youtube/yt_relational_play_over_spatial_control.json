@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_relational_play_over_spatial_control",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Relational Play Over Spatial Control",
+  "definition": "A tactical approach prioritizing the formation of dynamic player relationships and numerical overloads over strict spatial manipulation or fixed positional structures.",
+  "content": "This concept describes a possession-based style that rejects rigid positional play structures in favor of fluid, relationship-driven movement. While the objective remains ball dominance and playing out from the back, the means differ significantly: there is no predefined shape or confined zonal role. Instead, players operate with near-total freedom of movement to create dynamic relationships with nearby teammates. The core principle is that forming these close-proximity relationships is more valuable than creating and exploiting open space. This often results in players clustering in congested areas to generate numerical overloads, effectively turning an 11-a-side game into a 7-a-side scenario locally. Even when space opens up, the team may choose to recycle the ball back into the congested zone to maintain these relational advantages rather than switching play or stretching the field. This approach relies on coached principles of organization rather than pure instinct, emphasizing combination play and short passing networks over long-range transitions or wide isolation. It is distinct from traditional positional play, which prioritizes manipulating space to control the game, whereas this style prioritizes the quality of interactions between players to break down defenses.",
+  "conditions": [
+    "possession_dominance_objective",
+    "fluid_role_definition",
+    "close_proximity_passing_network"
+  ],
+  "objective": [
+    "create_numerical_overloads",
+    "maintain_ball_possession",
+    "form_dynamic_player_relationships"
+  ],
+  "possible_actions": [
+    "move_into_congested_zone",
+    "recycle_ball_short",
+    "create_local_overload",
+    "combine_in_tight_space"
+  ],
+  "contraindications": [
+    "opponent_high_press_with_wide_spread",
+    "need_for_rapid_counter_attack",
+    "lack_of_short_passing_accuracy"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "players_near_ball",
+    "passing_lane_open",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "high_player_density",
+    "short_passing_distances",
+    "congested_central_areas"
+  ],
+  "player_behaviours": [
+    "move_to_support",
+    "offer_short_pass_option",
+    "maintain_close_proximity",
+    "recycle_possession"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "numerical_overload",
+    "combination_play",
+    "fluid_positions"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=173s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

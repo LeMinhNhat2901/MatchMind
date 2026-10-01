@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_sterile_possession_and_direct_bypass",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Sterile Possession and Direct Bypass",
+  "definition": "A tactical failure where excessive touches in the midfield prevent progression, forcing a team to rely on long balls to skip lines, resulting in low-quality chances or rapid turnovers.",
+  "content": "This concept describes a common breakdown in possession play where a team circulates the ball harmlessly between defenders and midfielders without threatening the final third. Often caused by a lack of vertical passing options or players who refuse to drop deep to support the build-up, the attack becomes sterile. The team fails to generate momentum or create numerical overloads in advanced areas. Consequently, coaches or players may resort to direct play, bypassing the midfield entirely with long balls. While this can occasionally lead to quick transitions into shot-creating situations, it frequently results in rapid turnovers if the target players are isolated or if the defensive line is compact. This pattern indicates a mismatch between the team's possession philosophy and its personnel or shape, leading to inconsistent attacking output and vulnerability in transition when the ball is lost high up the pitch.",
+  "conditions": [
+    "midfield_circulation_high",
+    "lack_of_vertical_progression",
+    "final_third_entry_low"
+  ],
+  "objective": [
+    "increase_progressive_passes",
+    "improve_final_third_entry",
+    "reduce_sterile_possession"
+  ],
+  "possible_actions": [
+    "drop_deep_to_support",
+    "switch_play_wider",
+    "use_direct_long_ball",
+    "create_overload_in_half_space"
+  ],
+  "contraindications": [
+    "rapid_turnover_risk",
+    "loss_of_possession_high_up",
+    "exposure_to_counter_attack"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "progressive_pass_not_available",
+    "team_compactness_low"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_deep_to_receive",
+    "make_progressive_run",
+    "hold_up_play"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "direct_play",
+    "midfield_overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=161s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

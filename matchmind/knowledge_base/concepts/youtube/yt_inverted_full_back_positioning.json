@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_inverted_full_back_positioning",
+  "category": "formations",
+  "subcategory": "inverted_full_back",
+  "phase": "possession",
+  "title": "Inverted Full-Back Positioning",
+  "definition": "A tactical adjustment where a full-back moves into a central midfield zone to create numerical overloads and support the build-up, forcing the opposing winger to stay wide.",
+  "content": "The inverted full-back is a positional concept where a wide defender tucks into the half-space or central midfield area during possession. This movement serves two primary tactical purposes: first, it creates a local numerical superiority in the center, allowing the team to overload central zones and facilitate progressive passing options. Second, it forces the opponent's winger to remain wide to cover the space, effectively isolating them or preventing them from cutting inside. This strategy relies on strict positional discipline; if the full-back inverts, the team's winger must stay wide to maintain width, and vice versa. This prevents two players from occupying the same flank, ensuring the team maintains a balanced structure. The inverted full-back often possesses high technical ability and decision-making skills to operate in congested central areas. This approach transforms the defensive line into a more fluid, midfield-heavy shape, enhancing control in the final third and creating penetration opportunities through central overloads rather than relying solely on wide play.",
+  "conditions": [
+    "possession_phase",
+    "full_back_high_technical_quality",
+    "winger_capable_of_staying_wide"
+  ],
+  "objective": [
+    "create_central_overload",
+    "isolate_opponent_winger",
+    "improve_build_up_options"
+  ],
+  "possible_actions": [
+    "move_full_back_infield",
+    "maintain_wide_winger_position",
+    "pass_to_inverted_full_back"
+  ],
+  "contraindications": [
+    "loss_of_width_if_winger_moves_in",
+    "exposure_to_counter_attack_on_flank"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "central_overload_zone",
+    "wide_winger_coverage"
+  ],
+  "player_behaviours": [
+    "tuck_in_early",
+    "support_central_passing_lane",
+    "force_opponent_wide"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "half_space"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2901s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

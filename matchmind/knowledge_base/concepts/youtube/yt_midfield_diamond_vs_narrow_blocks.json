@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_midfield_diamond_vs_narrow_blocks",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Midfield Diamond vs Narrow Blocks",
+  "definition": "A tactical adaptation using a midfield diamond to create numerical superiority in the central creative zone against narrow, deep defensive blocks.",
+  "content": "This concept addresses the challenge of breaking down opponents who defend with ultra-narrow, compact shapes, often utilizing forwards to press the pivot and cover half-spaces. The solution involves shifting from a traditional flat midfield to a diamond structure (4-1-2-1-2 or similar). By positioning one midfielder high and centrally, the team creates a 3v2 advantage in the 'creative zone' (the area between the opponent's defensive and midfield lines). This numerical superiority forces the opponent into difficult decisions regarding when to press and when to drop, disrupting their compactness. Furthermore, this shape allows elite 1v1 dribblers to occupy these vital central areas, threatening to bypass the defensive line directly, rather than relying on functional defenders in wide areas. The back line typically spreads wider to stretch the narrow block horizontally, creating space for the central overloads. This tactic is particularly effective when the opponent commits players to the half-spaces, leaving the central channel vulnerable to penetration by the high-lying pivot and the two central midfielders.",
+  "conditions": [
+    "opponent_defensive_line_low",
+    "opponent_defensive_line_compact",
+    "opponent_half_space_occupied",
+    "local_numerical_advantage_central"
+  ],
+  "objective": [
+    "create_central_overload",
+    "disrupt_opponent_compactness",
+    "penetrate_creative_zone"
+  ],
+  "possible_actions": [
+    "shift_midfield_to_diamond",
+    "position_high_pivot",
+    "spread_back_line_wide",
+    "dribble_into_central_space"
+  ],
+  "contraindications": [
+    "opponent_high_press_aggressive",
+    "lack_of_dribbling_quality",
+    "wide_space_available"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "half_space_occupied",
+    "local_numerical_advantage_positive",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "compact_opponent_shape",
+    "central_channel_open",
+    "wide_back_line_spread"
+  ],
+  "player_behaviours": [
+    "hold_high_position",
+    "receive_in_pocket_space",
+    "dribble_forward",
+    "stretch_width"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "numerical_superiority",
+    "half_space_utilization",
+    "compactness_breakdown"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=wZH52nypI0I&t=2s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

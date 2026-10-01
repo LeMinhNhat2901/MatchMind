@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_flow_disruption_via_aggressive_tackling",
+  "category": "defending",
+  "subcategory": "pressing_triggers",
+  "phase": "out_of_possession",
+  "title": "Flow Disruption via Aggressive Tackling",
+  "definition": "A defensive strategy that uses frequent tactical fouls and aggressive challenges to interrupt the opponent's passing rhythm and reset the defensive structure.",
+  "content": "This concept focuses on disrupting the opponent's 'flow state' during possession. When a team defends deep or blocks primary passing lanes, the opposition may still maintain possession through continuous circulation. The longer they hold the ball, the higher the probability they will identify a creative solution to break the defense. To counter this, the defending team intentionally applies high-intensity pressing, including tactical fouls and aggressive tackles, to break the passing sequence. This forces the opponent to restart their build-up process, resetting their focus and momentum. Crucially, this interruption provides the defending team with valuable time to reorganize their shape, close down spaces, and prepare for the next phase of play. By taking away both time and space, the defense becomes more compact and difficult to penetrate. While effective for breaking rhythm, this approach carries significant risks, including high card accumulation and potential player injuries, requiring strict discipline to avoid unnecessary penalties or suspensions.",
+  "conditions": [
+    "opponent_high_possession",
+    "defensive_line_height_low",
+    "opponent_passing_flow_active"
+  ],
+  "objective": [
+    "break_opponent_rhythm",
+    "reset_defensive_structure",
+    "reduce_opponent_time_on_ball"
+  ],
+  "possible_actions": [
+    "tactical_foul",
+    "aggressive_tackle",
+    "immediate_reorganization"
+  ],
+  "contraindications": [
+    "high_card_risk",
+    "injury_risk",
+    "potential_penalty_kick"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "phase_of_play_defensive",
+    "space_ahead_large_for_opponent"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "reset_position"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_compactness",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=WgXKzg6vuHg&t=345s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

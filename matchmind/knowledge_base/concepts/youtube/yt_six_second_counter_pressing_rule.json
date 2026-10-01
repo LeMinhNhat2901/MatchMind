@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_six_second_counter_pressing_rule",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Six-Second Counter-Pressing Rule",
+  "definition": "A tactical protocol requiring the team to immediately swarm the ball carrier for six seconds after losing possession to regain it before the opponent can organize.",
+  "content": "This concept addresses the vulnerability created by high-possession teams that maintain short distances between players to retain the ball. When possession is lost, these compact structures leave defenders close to the ball, creating an immediate opportunity for recovery. The 'six-second rule' dictates that the team must exert intense, unrelenting pressure on the ball carrier for exactly six seconds. This high-intensity counter-press aims to disrupt the opponent's initial build-up and force a turnover before they can establish a stable shape. If the ball is not recovered within this window, the team must immediately transition into a pre-defined compact defensive shape, such as a 4-1-4-1, to protect the goal and prepare for the next phase. This approach prevents the opponent from exploiting the space behind the high defensive line and neutralizes the threat of quick counter-attacks by opponents who sit deep. It transforms the defensive transition from a reactive scramble into a structured, time-bound tactical action that maximizes the numerical advantage present near the point of loss.",
+  "conditions": [
+    "possession_lost",
+    "high_team_compactness",
+    "players_near_ball"
+  ],
+  "objective": [
+    "immediate_ball_recovery",
+    "disrupt_opponent_build_up",
+    "prevent_counter_attack"
+  ],
+  "possible_actions": [
+    "swarm_ball_carrier",
+    "apply_high_pressure",
+    "drop_into_compact_shape"
+  ],
+  "contraindications": [
+    "fatigue_management_risk",
+    "injury_risk_high"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "players_near_ball",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "sprint_to_ball"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=647s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

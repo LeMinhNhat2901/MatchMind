@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_striking_depth_to_break_compactness",
+  "category": "attacking",
+  "subcategory": "depth",
+  "phase": "possession",
+  "title": "Striking Depth to Break Compactness",
+  "definition": "A striker positions on the defensive line to force defenders deep, disrupting the opponent's compact shape and creating space between the lines for teammates.",
+  "content": "This tactical principle involves a forward positioning themselves directly on the last defensive line, often engaging in a one-on-one situation with the deepest defender. The primary objective is not necessarily to score immediately but to manipulate the opponent's defensive structure. By forcing the last defender to drop deeper to maintain coverage, the striker pulls the entire defensive line back, breaking the team's compactness. This action creates significant gaps between the defensive line and the midfield line. These newly opened spaces between the lines become accessible for other attacking players, such as wingers or midfielders, to make penetrating runs. The effectiveness of this movement relies on the striker's willingness to hold the line and engage the defender, even if they do not receive the ball. It is a crucial element in breaking down low blocks or compact defensive shapes, as it forces the opposition to choose between leaving the striker unmarked or sacrificing their structural integrity. Coaches should encourage forwards to understand that their positioning is a tool for creating space for the collective, not just for personal goal-scoring opportunities.",
+  "conditions": [
+    "opponent_defensive_line_compact",
+    "striker_available",
+    "possession_in_midfield"
+  ],
+  "objective": [
+    "break_defensive_compactness",
+    "create_space_between_lines",
+    "force_defenders_deep"
+  ],
+  "possible_actions": [
+    "position_on_last_line",
+    "engage_deepest_defender",
+    "hold_defensive_line"
+  ],
+  "contraindications": [
+    "risk_of_counter_attack_if_lost",
+    "isolation_from_support"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "space_behind_defensive_line",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "compact_opponent_shape",
+    "space_between_lines_available"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "depth",
+    "positional_play",
+    "breaking_lines"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=3S9T2Z1E8Fg&t=158s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

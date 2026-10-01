@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_man_to_man_pressing_trap",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Man-to-Man Pressing Trap",
+  "definition": "A defensive strategy assigning a specific defender to each opponent player to eliminate time and space, rather than using zonal coverage.",
+  "content": "This tactical approach involves assigning a dedicated 'shadow' to every opposing player, forcing the team to move as a unit based on individual opponent movements rather than ball position or zones. The primary objective is to completely deny the opponent time and space to process the ball, effectively suffocating their passing options. This method is particularly relevant against teams with high possession and intricate passing networks, such as Barcelona, where zonal pressing might allow players to find gaps between defenders. However, this strategy carries significant risk because it relies entirely on individual duel success. If a defender loses a one-on-one battle, it immediately creates a numerical advantage for the opponent, as there is no zonal safety net or covering defender to compensate. The system requires extreme physical fitness and discipline, as the entire defensive shape shifts dynamically with every opponent movement. It is a high-risk, high-reward tactic that can lead to chaos if individual errors occur, as the lack of structural insurance means a single mistake can be exploited ruthlessly by the opposition.",
+  "conditions": [
+    "opponent_high_press",
+    "team_compactness_high",
+    "press_intensity_high"
+  ],
+  "objective": [
+    "eliminate_time_and_space",
+    "deny_passing_options",
+    "force_individual_duels"
+  ],
+  "possible_actions": [
+    "assign_individual_shadows",
+    "mirror_opponent_movement",
+    "maintain_high_press_intensity"
+  ],
+  "contraindications": [
+    "lack_of_covering_defenders",
+    "individual_duel_failure",
+    "numerical_disadvantage_creation"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "press_intensity_capable",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "dynamic_team_shape",
+    "no_fixed_zonal_boundaries"
+  ],
+  "player_behaviours": [
+    "shadow_opponent_player",
+    "react_to_individual_movement",
+    "win_one_on_one_duel"
+  ],
+  "related_concepts": [
+    "zonal_defending",
+    "high_press",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3680s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

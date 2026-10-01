@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_set_piece_zone_overload",
+  "category": "attacking",
+  "subcategory": "set_pieces",
+  "phase": "possession",
+  "title": "Set Piece Zone Overload",
+  "definition": "A tactical set-piece strategy using disguised runs and physical shielding to create numerical overloads in specific defensive zones.",
+  "content": "This concept involves exploiting zonal or hybrid marking systems during corner kicks by using deceptive movement and physical engagement. Attackers initially position themselves outside the primary target zone to avoid early detection. The actual run into the scoring area is triggered only after the taker signals, often when defenders are focused on the ball delivery, allowing attackers to invade space with defenders' backs turned. A critical component is the use of 'shielding' or 'pinning' players who physically block defenders or the goalkeeper from entering the target zone, limiting their ability to jump or claim the ball. By positioning blockers goal-side, the team creates a visual illusion of a defensive shape, opening up space near the goal line. This setup prevents the goalkeeper from effectively clearing the ball. Furthermore, the strategy employs psychological deception; by repeatedly delivering balls to one zone (e.g., the front), the team lures defenders into that area. Once the opposition is concentrated, the team switches focus to an overloaded back zone, using the pinned defenders to create high-percentage scoring opportunities. This method relies on precise timing, physicality, and coordinated team movement to disrupt defensive organization.",
+  "conditions": [
+    "set_piece_corner",
+    "opponent_zonal_marking",
+    "physical_advantage_available"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "disrupt_defensive_organisation",
+    "score_from_set_piece"
+  ],
+  "possible_actions": [
+    "delayed_run_trigger",
+    "physical_shielding",
+    "goal_side_positioning",
+    "decoy_delivery"
+  ],
+  "contraindications": [
+    "opponent_strict_man_marking",
+    "lack_of_physicality",
+    "poor_timing_execution"
+  ],
+  "trigger_conditions": [
+    "set_piece_corner",
+    "opponent_defensive_focus_high"
+  ],
+  "spatial_requirements": [
+    "target_zone_clear",
+    "goal_side_barrier_formed"
+  ],
+  "player_behaviours": [
+    "pin_defender",
+    "block_goalkeeper",
+    "signal_run_start"
+  ],
+  "related_concepts": [
+    "set_piece_design",
+    "numerical_overload",
+    "decoy_movement"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=yUvmssN2bt8&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_deep_narrow_pressing_trap",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Deep Narrow Pressing Trap",
+  "definition": "A defensive strategy where the team starts deep and narrow to block central passing lanes, forcing the opponent wide before switching to aggressive man-to-man pressing.",
+  "content": "This tactical approach begins with the defending team maintaining a deep, compact, and narrow shape rather than immediately pressing high. The primary objective is to clog the central passing lanes, making it difficult for the opposition to progress the ball through the middle. By denying central options, the defense forces the opponent to play wide, often into the flanks. Once the ball is moved to the wide areas, the team rapidly transitions from a zonal, deep structure to an intense, man-to-man press on that specific side. This shift is so aggressive that defenders may press significantly higher than their usual positional depth to isolate the ball carrier. This method is particularly effective against teams that rely on high possession and central buildup, as it locks them into predictable wide patterns or forces them into low-percentage long balls. The initial deep phase allows the team to maintain structural integrity and rest, while the subsequent man-to-man surge creates immediate pressure, aiming to win the ball back within seconds of the opponent's buildup initiation.",
+  "conditions": [
+    "opponent_buildup_central",
+    "team_deep_compact",
+    "central_lanes_blocked"
+  ],
+  "objective": [
+    "force_opponent_wide",
+    "isolate_ball_carrier",
+    "win_ball_quickly"
+  ],
+  "possible_actions": [
+    "maintain_deep_narrow_shape",
+    "block_central_passing_lanes",
+    "switch_to_man_to_man_press",
+    "press_high_on_flank"
+  ],
+  "contraindications": [
+    "opponent_direct_long_balls",
+    "team_lacks_stamina_for_surge"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "ball_near_flank",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "block_central_lane",
+    "track_back_to_defend",
+    "aggressive_man_press"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "low_block",
+    "counter_press"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=347s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

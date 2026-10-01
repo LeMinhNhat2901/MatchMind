@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_creating_doubt_in_pressing",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "possession",
+  "title": "Creating Doubt in Pressing",
+  "definition": "A tactical approach that uses specific player movements to induce hesitation and timing errors in the opponent's pressing structure.",
+  "content": "This concept focuses on disrupting the opponent's pressing rhythm by introducing uncertainty into their decision-making process. Instead of relying solely on static shape, the team uses dynamic movements to force defenders to choose between marking a player or covering space, often leading to a drop in their defensive line. For instance, a forward can make high runs to draw a man-marking defender out of position, creating space behind the defensive line for other players to exploit. Simultaneously, overloading specific zones with multiple players against fewer opponents can force the pressing team to commit, leaving gaps elsewhere. The goal is to make the opponent doubt their timing and relationships, causing them to lose time or make poor decisions. This is particularly effective against teams that rely on structured pressing rather than individual chasing. By creating these moments of doubt, the team can break through the press and transition into attacking positions more effectively. It requires high communication and understanding among players to execute the movements at the right time.",
+  "conditions": [
+    "opponent_structured_press",
+    "man_marking_defense",
+    "high_press_intensity"
+  ],
+  "objective": [
+    "induce_timing_error",
+    "create_space_behind_line",
+    "break_pressing_structure"
+  ],
+  "possible_actions": [
+    "high_run_to_draw_marker",
+    "overload_specific_zone",
+    "delay_pass_to_create_doubt"
+  ],
+  "contraindications": [
+    "opponent_low_block",
+    "lack_of_player_mobility",
+    "poor_communication"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "space_behind_defensive_line",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "make_high_run"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "overload",
+    "counter_press"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=1046s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

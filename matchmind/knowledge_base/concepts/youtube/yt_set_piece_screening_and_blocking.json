@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_set_piece_screening_and_blocking",
+  "category": "attacking",
+  "subcategory": "set_pieces",
+  "phase": "possession",
+  "title": "Set Piece Screening and Blocking",
+  "definition": "A tactical method where players execute dummy runs to pull defenders away and then physically block their return paths, creating space for a designated receiver to head or control the ball.",
+  "content": "This concept applies primarily to corner kicks and free kicks, drawing inspiration from screening techniques in basketball and the NFL. The core mechanic involves two phases: first, players make aggressive dummy runs to drag their markers out of position; second, they immediately stop and use their bodies to block the defenders' ability to retreat to the actual ball landing zone. This creates a 'no man's land' where the team's best header or controller can operate freely. Against goalkeepers, this blocking is even more critical to prevent them from claiming the ball. In free kicks, a similar principle is used with offside traps: players positioned near the offside line rush back to push defenders deep, restricting their forward movement and delaying their reaction. If the defense attempts an offside trap, the forward player can make an opposite run to receive the ball. This tactic is effective because it manipulates the spatial awareness and physical positioning of defenders, ensuring that the ball arrives in a congested but favorable area for the attacking team's key players.",
+  "conditions": [
+    "set_piece_situation",
+    "corner_kick_or_free_kick",
+    "designated_receiver_available"
+  ],
+  "objective": [
+    "create_space_for_header",
+    "restrict_defender_recovery",
+    "isolate_key_receiver"
+  ],
+  "possible_actions": [
+    "execute_dummy_run",
+    "block_defender_path",
+    "push_defenders_deep",
+    "make_late_run_to_ball"
+  ],
+  "contraindications": [
+    "risk_of_foul",
+    "defender_escapes_block"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "crowded_penalty_area",
+    "clear_landing_zone"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "make_dummy_run"
+  ],
+  "related_concepts": [
+    "set_piece_routines",
+    "offside_trap_manipulation"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=SKfV99LZBgw&t=177s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

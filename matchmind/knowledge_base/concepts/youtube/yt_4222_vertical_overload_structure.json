@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_4222_vertical_overload_structure",
+  "category": "formations",
+  "subcategory": "4222",
+  "phase": "possession",
+  "title": "4222 Vertical Overload Structure",
+  "definition": "A 4-2-2-2 formation utilizing dual number 10s to create vertical passing lines and midfield overloads against single-pivot defenses.",
+  "content": "This tactical setup replaces the traditional 4-3-3 or 4-2-3-1 with a 4-2-2-2 structure, featuring two strikers and two narrow attacking midfielders (dual 10s) behind them. The primary objective is to enhance vertical penetration by providing center-backs with an additional line of progression compared to standard formations, making it harder for opponents to defend. The double pivot allows the defensive and ball-progression burden to be shared, which is beneficial for teams lacking a single world-class defensive midfielder. Crucially, this formation can flex into a midfield box, creating a 4-versus-3 numerical advantage against teams using a single pivot. This overload not only isolates the opponent's defensive midfielder but also provides the team with more time to execute progressive passes due to the local superiority. The structure offers flexibility: it can create a central overload with fullbacks pushing high, or a wide overload if a striker pulls out. This approach is ideal for high-intensity, vertical football styles that prioritize quick transitions and exploiting spaces between lines.",
+  "conditions": [
+    "opponent_single_pivot",
+    "team_lacks_world_class_pivot",
+    "vertical_playing_style"
+  ],
+  "objective": [
+    "create_midfield_overload",
+    "enhance_vertical_penetration",
+    "share_defensive_burden"
+  ],
+  "possible_actions": [
+    "flex_into_midfield_box",
+    "share_pivot_duties",
+    "use_dual_tens_as_progression_lines"
+  ],
+  "contraindications": [
+    "opponent_double_pivot",
+    "lack_of_wide_width"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "is_in_attacking_third",
+    "space_between_lines"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "narrow_attacking_midfielders"
+  ],
+  "player_behaviours": [
+    "share_progression_duties",
+    "occupy_half_spaces",
+    "support_defensive_pivot"
+  ],
+  "related_concepts": [
+    "midfield_overload",
+    "vertical_progression",
+    "double_pivot"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2712s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

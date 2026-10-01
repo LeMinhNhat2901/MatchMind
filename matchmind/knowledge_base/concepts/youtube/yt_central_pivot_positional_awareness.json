@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_central_pivot_positional_awareness",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Central Pivot Positional Awareness",
+  "definition": "The role of the central midfielder as the primary hub for ball circulation, requiring constant spatial scanning and triangle formation to maintain possession.",
+  "content": "In possession-based systems, the central pivot acts as the metronome and hub of the team's network. This player is responsible for connecting all nodes in the formation, ensuring the ball circulates with speed and precision. The core requirement is not just technical proficiency in one or two-touch passing, but exceptional positional awareness. The pivot must constantly scan the pitch every few seconds to identify open spaces and passing lanes, processing this information rapidly under pressure. By maintaining correct positioning, the pivot facilitates the creation of triangles with teammates, which is fundamental for generating passing options and finding the third man. This role demands the ability to make difficult decisions look easy, disposing of the ball quickly to avoid pressure. Furthermore, the pivot must be aware of the opponent's structure, identifying gaps in their defensive lines to execute progressive passes. While technical skill is necessary, the defining characteristic is the cognitive load of tracking space and time, allowing the team to dominate the ball and control the tempo of the game through structured, hypnotic passing sequences.",
+  "conditions": [
+    "possession_dominance",
+    "central_position",
+    "high_technical_quality"
+  ],
+  "objective": [
+    "maintain_possession",
+    "create_passing_triangles",
+    "identify_open_space"
+  ],
+  "possible_actions": [
+    "one_two_touch_passing",
+    "constant_scanning",
+    "positioning_for_third_man",
+    "progressive_pass_through_lines"
+  ],
+  "contraindications": [
+    "holding_ball_too_long",
+    "poor_scanning_frequency",
+    "static_positioning"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "passing_lane_open",
+    "third_man_opportunity",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "triangle_formation",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "orient_body_to_passing_lane",
+    "move_into_space"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "third_man_run",
+    "ball_circulation"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=lEmz3dGqe24&t=198s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

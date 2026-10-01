@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_wide_build_up_isolation",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Wide Build-Up Isolation",
+  "definition": "A build-up strategy where center-backs or the goalkeeper push wide to create numerical overloads against full-backs, isolating central defenders to free up midfielders.",
+  "content": "This tactical approach addresses the problem of opponents compacting the central zones, making it difficult for midfielders to receive the ball. By having center-backs or the goalkeeper (acting as a sweeper-keeper) move extremely wide, the team creates 2v1 situations against the opposing full-backs. This forces the opponent to either commit an extra defender to the wide area, thereby creating space in the center for the midfield pivot, or maintain their shape, allowing the wide player to isolate the full-back. The primary risk is the massive gap left between the central defenders if possession is lost, as the wide players may lack the recovery pace to cover the central space. This method requires a goalkeeper comfortable in possession and wide defenders capable of 1v1 situations. It is particularly effective when the central midfield is heavily congested, but it demands high defensive discipline to mitigate the risk of counter-attacks through the middle.",
+  "conditions": [
+    "opponent_compact_center",
+    "midfield_congestion_high",
+    "keeper_in_possession_capable"
+  ],
+  "objective": [
+    "create_central_space",
+    "isolate_full_back",
+    "progress_ball_via_wide"
+  ],
+  "possible_actions": [
+    "center_back_pushes_wide",
+    "goalkeeper_pushes_high",
+    "wide_player_isolates_1v1"
+  ],
+  "contraindications": [
+    "lack_of_recovery_pace",
+    "central_defensive_gap_exposed",
+    "opponent_fast_counter_attack"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "space_ahead_small",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "wide_defensive_positioning",
+    "central_defensive_gap"
+  ],
+  "player_behaviours": [
+    "keeper_pushes_high",
+    "center_back_wide_move",
+    "wide_player_1v1"
+  ],
+  "related_concepts": [
+    "sweeper_keeper",
+    "positional_play",
+    "overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8445s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

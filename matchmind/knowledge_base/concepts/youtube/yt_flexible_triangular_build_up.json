@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_flexible_triangular_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Flexible Triangular Build-Up",
+  "definition": "A dynamic attacking structure using flexible triangles and internal player rotations to create numerical superiority and penetrate defensive lines.",
+  "content": "This tactical approach relies on creating fluid triangular structures rather than rigid positional roles. By having players like the central midfielder drop deep or move into the half-space, the team generates a local numerical advantage (e.g., 3v2 or 4v3) in key zones. The system emphasizes constant movement and flexibility, where wide players can invert to support the build-up, and central players can drift wide to stretch the opposition. This flexibility forces the opponent to constantly adjust their marking, creating gaps between their lines. A key benefit is the ability to maintain defensive shape even when in possession; if the ball is lost, players are positioned to immediately press or cover passing lanes. Additionally, this structure facilitates late runs into the box by players who started deep or wide, creating unexpected scoring threats. The objective is to break the opponent's defensive lines through superior passing options and spatial occupation, ensuring that the team can progress the ball effectively while maintaining a high threat level in the final third.",
+  "conditions": [
+    "possession_phase",
+    "opponent_compact_defense",
+    "need_to_progress_ball"
+  ],
+  "objective": [
+    "create_numerical_superiority",
+    "penetrate_defensive_lines",
+    "maintain_defensive_shape"
+  ],
+  "possible_actions": [
+    "drop_deep_to_support",
+    "invert_wide_player",
+    "make_late_run_into_box",
+    "rotate_positions"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "lack_of_passing_quality"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "space_between_lines",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "create_triangle",
+    "make_surprise_run"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "third_man",
+    "rest_defence"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=1246s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

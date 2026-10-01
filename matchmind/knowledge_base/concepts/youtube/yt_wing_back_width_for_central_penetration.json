@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_wing_back_width_for_central_penetration",
+  "category": "attacking",
+  "subcategory": "width",
+  "phase": "possession",
+  "title": "Wing-Back Width for Central Penetration",
+  "definition": "A tactical setup where wide attackers operate as wing-backs to maximize horizontal width, thereby stretching the opponent and creating central space for penetration.",
+  "content": "This concept involves deploying natural attackers in wide, deep positions (wing-backs) rather than traditional defenders. The primary objective is to maximize the team's horizontal width during possession. By occupying the extreme flanks, these players force the opposing defensive line to spread out, preventing them from compacting centrally. This stretching action creates valuable space in the half-spaces and the center of the pitch, allowing central playmakers or strikers to penetrate the defense more easily. The strategy relies on the team's high possession dominance; since the team rarely concedes possession, the defensive responsibilities of the wide players are minimized, allowing them to focus on attacking contributions. It is particularly effective when the team has a central creative hub who can exploit the space created by the wide stretch. The risk is high if the team loses possession, as the wide players may be caught out of position, but the reward is significant central penetration and goal-scoring opportunities.",
+  "conditions": [
+    "high_possession_dominance",
+    "opponent_compact_defense",
+    "wide_players_attack_minded"
+  ],
+  "objective": [
+    "maximize_horizontal_width",
+    "create_central_space",
+    "stretch_opponent_defense"
+  ],
+  "possible_actions": [
+    "push_wingers_to_wingback",
+    "occupy_extreme_flanks",
+    "central_penetration_via_width"
+  ],
+  "contraindications": [
+    "low_possession_team",
+    "weak_wide_defenders",
+    "opponent_counter_attack_threat"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "opponent_defensiveline_high",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "wide_team_shape",
+    "central_space_available"
+  ],
+  "player_behaviours": [
+    "hold_wide_position",
+    "provide_passing_angle",
+    "central_runner_exploit_space"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "false_nine",
+    "overload_flank"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2096s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

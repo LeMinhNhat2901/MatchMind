@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_flexible_midfield_pivot_structure",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "general",
+  "title": "Flexible Midfield Pivot Structure",
+  "definition": "A tactical adjustment where the team switches between a single-pivot diamond and a double-pivot midfield based on the opponent's counter-attacking threat.",
+  "content": "This concept addresses the vulnerability of a single-pivot diamond formation (3-1 rest defense) when facing aggressive counter-attacking teams. By reverting to a double pivot or a midfield four, the team increases defensive security and numerical stability in the central zones. This shift prioritizes ball retention and risk aversion over immediate attacking numbers, forcing creativity to come from the wide areas rather than central penetration. The primary objective is to close down the space between lines that opponents exploit for quick transitions. When the defensive structure is compromised by a lone pivot, adding a second deep midfielder anchors the midfield, preventing the opposition from easily bypassing the defensive line. This flexibility allows the team to maintain possession while protecting leads, ensuring that the defensive shape remains compact even when the ball is in the opponent's half. It is a pragmatic approach to balance offensive ambition with defensive solidity, particularly when key defensive midfielders are unavailable or when the opponent poses a significant transition threat.",
+  "conditions": [
+    "opponent_high_press",
+    "single_pivot_vulnerability",
+    "defensive_security_priority"
+  ],
+  "objective": [
+    "increase_midfield_density",
+    "reduce_counter_attacking_threat",
+    "maintain_possession_stability"
+  ],
+  "possible_actions": [
+    "shift_to_double_pivot",
+    "drop_second_midfielder_deep",
+    "widen_attacking_structure"
+  ],
+  "contraindications": [
+    "reduced_central_creativity",
+    "predictable_wide_dependence"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "space_between_lines",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "anchor_midfield_position",
+    "cover_central_passing_lanes"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "double_pivot",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=9413s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

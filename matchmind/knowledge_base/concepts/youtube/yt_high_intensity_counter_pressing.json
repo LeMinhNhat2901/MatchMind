@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_high_intensity_counter_pressing",
+  "category": "transitions",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "High Intensity Counter Pressing",
+  "definition": "A tactical approach where the team aggressively recovers possession as high up the pitch as possible with maximum intensity to immediately launch a counter-attack.",
+  "content": "This concept emphasizes that winning the ball back in the opponent's defensive third creates the highest probability of scoring due to the reduced distance to goal and the opponent's disorganized defensive shape. The effectiveness of this transition is heavily dependent on the intensity and speed of the recovery; a high-tempo win allows the team to carry that momentum directly into the counter-attack. Data suggests that a significant majority of goals are scored within seconds of regaining possession, making immediate action critical. To execute this safely, especially when employing a high press, the team must maintain strict 'rest defense' principles. This means that while the front line presses, the central defenders must closely mark the opponent's remaining forwards, preventing them from receiving the ball in space. This defensive discipline ensures that if the press fails, the team is not exposed to a direct counter-attack. Coaches must explicitly train this behavior, as it requires mental focus and positional awareness rather than just physical speed, ensuring that the risk of high pressing is mitigated by solid defensive organization.",
+  "conditions": [
+    "possession_lost",
+    "opponent_in_defensive_third",
+    "high_press_active"
+  ],
+  "objective": [
+    "recover_ball_high_up_pitch",
+    "immediate_counter_attack",
+    "prevent_opponent_transition"
+  ],
+  "possible_actions": [
+    "aggressive_ball_recovery",
+    "close_marking_of_forwards",
+    "rapid_transition_to_attack"
+  ],
+  "contraindications": [
+    "defensive_line_low",
+    "opponent_has_fast_wingers",
+    "fatigue_high"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "is_in_defensive_third",
+    "opponent_defensiveline_high",
+    "press_intensity_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "mark_forward_tightly"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "counter_attack",
+    "high_press"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=mZskzUKsNwU&t=222s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

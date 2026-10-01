@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_deep_overload_against_high_press",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Deep Overload Against High Press",
+  "definition": "A tactical approach where a team creates a numerical advantage in deep positions to bypass a high press and exploit space between lines.",
+  "content": "When facing an opponent employing an aggressive man-to-man high press, standard rotational build-up poses a high risk of turnovers in critical areas. To mitigate this, the team intentionally skips the usual progression phases by instructing midfielders and wingbacks to remain deep, creating a significant numerical overload near the goalkeeper. This deep congestion forces the pressing team to commit even higher up the pitch, stretching their defensive structure. The team then patiently circulates the ball in this safe zone until a clear gap emerges between the opponent's second and last lines. At this moment, a direct long ball is played into that space to bypass the press. Once in the attacking half, the team encourages the opponent to maintain a high defensive line by having midfielders drop deep, further stretching the opposition. If the opponent blocks central zones, the team shifts to the flanks, using wide centerbacks to support wingbacks with overlapping runs. If the opponent overloads one flank, the team creates a numerical imbalance on that side to draw defenders, then executes a quick reverse pass to the opposite side, where the unmarked wide centerback receives the ball in space.",
+  "conditions": [
+    "opponent_high_press",
+    "man_to_man_pressing",
+    "deep_positional_overload"
+  ],
+  "objective": [
+    "bypass_high_press",
+    "exploit_space_between_lines",
+    "create_numerical_advantage_flank"
+  ],
+  "possible_actions": [
+    "stay_deep_to_overload",
+    "circulate_ball_backline",
+    "play_direct_long_ball",
+    "wide_centerback_overlap",
+    "reverse_pass_to_opposite_side"
+  ],
+  "contraindications": [
+    "risk_of_turnover_in_critical_areas",
+    "opponent_low_block"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage_positive",
+    "space_between_lines"
+  ],
+  "spatial_requirements": [
+    "deep_team_compactness",
+    "numerical_overload_in_defensive_third"
+  ],
+  "player_behaviours": [
+    "midfielder_drop_deep",
+    "wingback_hold_position",
+    "centerback_make_overlapping_run",
+    "keeper_distribute_long"
+  ],
+  "related_concepts": [
+    "deep_overload",
+    "direct_transition",
+    "wide_centerback_role"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=329s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

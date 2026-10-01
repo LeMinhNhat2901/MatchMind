@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_hybrid_resting_defense_structure",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "out_of_possession",
+  "title": "Hybrid Resting Defense Structure",
+  "definition": "A defensive system where a subset of players maintains a static, energy-preserving shape while others roam freely to disrupt opposition stability.",
+  "content": "This tactical concept involves splitting the team into two distinct functional groups during out-of-possession phases. One group acts as 'free roamers,' constantly moving without holding a fixed shape to destabilize the opposition's passing lines and create unpredictable spatial gaps. The other group occupies a 'resting position,' typically forming a compact 2+3 or 4+1 structure, with pivots tilting to one side and full-backs stepping higher. This static group preserves energy and maintains structural integrity. When the ball is lost high up the pitch, these resting players can immediately transition into an aggressive counter-press, using their preserved stamina to block passing lanes and recover possession. This hybrid approach allows the team to combine the chaos of fluid pressing with the discipline of a compact block, making it difficult for opponents to predict defensive movements. It is particularly effective for teams that employ a high press but need to manage fatigue over the full 90 minutes, ensuring that a core group is always ready to execute immediate counter-pressing actions without being exhausted from constant roaming.",
+  "conditions": [
+    "high_press_system",
+    "mixed_player_roles",
+    "energy_management_priority"
+  ],
+  "objective": [
+    "destabilize_opposition_lines",
+    "preserve_energy_for_counter_press",
+    "maintain_structural_integrity"
+  ],
+  "possible_actions": [
+    "roam_freely_to_disrupt",
+    "hold_static_resting_shape",
+    "trigger_immediate_counter_press"
+  ],
+  "contraindications": [
+    "risk_of_gaps_between_groups",
+    "requires_high_tactical_discipline"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "opponent_high_press",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_resting_block",
+    "tilted_pivot_position"
+  ],
+  "player_behaviours": [
+    "shadow_mark_central_players",
+    "step_up_fullback",
+    "aggressive_counter_press"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "pressing_trap",
+    "defensive_compactness"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=98BkEsAUr9k&t=327s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

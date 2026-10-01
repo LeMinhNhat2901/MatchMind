@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_deep_lying_playmaker_role",
+  "category": "individual",
+  "subcategory": "deep_lying_playmaker",
+  "phase": "possession",
+  "title": "Deep Lying Playmaker Role",
+  "definition": "A tactical role where a midfielder operates deep to scan the field and provide progressive or final passes to advanced attackers.",
+  "content": "The deep-lying playmaker (often referred to as the '10' in a deep position or 'regista') operates between the defensive line and the midfield, typically in a 4-2-3-1 or 4-3-3 structure. Unlike a traditional defensive midfielder who focuses on ball recovery and short distribution, this player is tasked with organizing the attack from a deeper zone. The key requirement is superior spatial awareness and scanning; the player must look up before receiving the ball to identify passing lanes to wingers, strikers, or overlapping full-backs. This role allows a player with high technical ability but perhaps lower physical attributes (speed/strength) to dictate the tempo and create decisive chances. The player acts as the primary outlet for the defense, receiving the ball with their back to goal or in open space, and then executing progressive passes into the final third. It requires the team to maintain a compact shape to protect the space behind the player, while the attackers must make runs to create passing options. This role is distinct from a box-to-box midfielder, as it prioritizes vision and passing accuracy over vertical penetration or defensive work rate.",
+  "conditions": [
+    "possession_phase",
+    "deep_position",
+    "high_vision_required"
+  ],
+  "objective": [
+    "progressive_passing",
+    "create_final_third_opportunities",
+    "dictate_tempo"
+  ],
+  "possible_actions": [
+    "scan_before_receiving",
+    "receive_with_back_to_goal",
+    "play_progressive_pass",
+    "switch_play"
+  ],
+  "contraindications": [
+    "low_scanning_frequency",
+    "poor_passing_accuracy",
+    "lack_of_supporting_runners"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "passing_lane_open",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_body_to_open_space",
+    "cover_passing_lane",
+    "progressive_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "scanning"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=QzE2tQDlcsA&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

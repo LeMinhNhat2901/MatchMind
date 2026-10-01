@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_asymmetric_overload_and_free_man",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Asymmetric Overload and Free Man",
+  "definition": "A tactical structure where a team creates a numerical superiority on one flank to drag opponents across, leaving a designated wide player isolated as a 'free man' for one-on-one situations.",
+  "content": "This concept involves shifting the team shape to create a local numerical advantage, often on one side, to manipulate the opponent's defensive structure. By overloading a specific zone, the attacking team forces the opposition to commit multiple defenders to that area, thereby dragging their midfielders or full-backs out of position. This displacement creates space in the central or opposite wide areas. A key element is the identification of a 'free man,' typically a winger or wide midfielder, who is left unmarked because the opponent's attention is focused on the overloaded side. This player can then receive the ball in a one-on-one situation against a defender who has been dragged out of their natural position or is late to track back. The strategy relies on flexibility in player roles, such as a full-back providing width while a midfielder drifts infield, ensuring that the overload is maintained without sacrificing central control. This approach is particularly effective in controlled possession phases where the team can dictate the tempo and force the opponent into reactive positions, creating high-quality chances through isolation and penetration.",
+  "conditions": [
+    "controlled_possession",
+    "opponent_compact_defense",
+    "flexible_player_roles"
+  ],
+  "objective": [
+    "create_local_numerical_advantage",
+    "isolate_wide_player",
+    "displace_opponent_defenders"
+  ],
+  "possible_actions": [
+    "shift_team_shape_right",
+    "drift_midfielder_infield",
+    "switch_play_to_free_man",
+    "execute_one_on_one_dribble"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "lack_of_wide_player_quality",
+    "poor_central_connection"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "ball_near_flank",
+    "half_space_free",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "width_on_one_flank",
+    "space_behind_defensive_line"
+  ],
+  "player_behaviours": [
+    "occupy_opponent_fullback",
+    "drift_infield_to_support",
+    "make_progressive_run",
+    "receive_in_isolation"
+  ],
+  "related_concepts": [
+    "overload_flank",
+    "third_man_run",
+    "positional_play",
+    "width"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=169s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

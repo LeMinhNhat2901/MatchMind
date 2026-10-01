@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_defensive_4_4_1_1_adaptation",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "general",
+  "title": "Defensive 4-4-1-1 Adaptation",
+  "definition": "A tactical adjustment where a 4-4-2 structure shifts to a 4-4-1-1 by dropping one forward into a defensive number 10 role to secure stability, particularly in away matches.",
+  "content": "This concept involves modifying a standard 4-4-2 formation into a 4-4-1-1 structure by positioning one of the forwards as a defensive number 10. This role acts as a defensive start point, prioritizing ball recovery and structural integrity over immediate goal threat. The primary objective is to 'lock the game off' by creating a more compact midfield block, which is especially useful when playing away from home or against stronger opponents. While the team may still be perceived as a 4-4-2, the internal dynamics change: the defensive number 10 provides an extra layer of protection in the middle third, allowing the wide midfielders to tuck in or support the build-up more safely. This adaptation helps maintain fluidity and prevents disjointed play by ensuring every player, including the dropped forward, is committed to winning the ball back. It balances defensive solidity with the potential for creative runs from the number 10, who can still arrive in the box but primarily functions to disrupt the opponent's rhythm and control the tempo from a deeper position.",
+  "conditions": [
+    "away_match_context",
+    "defensive_stability_needed",
+    "opponent_high_press"
+  ],
+  "objective": [
+    "secure_midfield_control",
+    "disrupt_opponent_rhythm",
+    "maintain_structural_compactness"
+  ],
+  "possible_actions": [
+    "drop_forward_to_number_10",
+    "tuck_wide_midfielders_in",
+    "win_second_balls_in_midfield"
+  ],
+  "contraindications": [
+    "reduced_goal_threat",
+    "risk_of_isolating_striker"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "defensive_screening",
+    "ball_recovery_in_midfield",
+    "creative_run_from_depth"
+  ],
+  "related_concepts": [
+    "low_block",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=839s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

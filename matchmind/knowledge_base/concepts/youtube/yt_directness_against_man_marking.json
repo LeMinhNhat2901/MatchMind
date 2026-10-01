@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_directness_against_man_marking",
+  "category": "attacking",
+  "subcategory": "direct_attack",
+  "phase": "possession",
+  "title": "Directness Against Man-Marking",
+  "definition": "A tactical shift towards long, direct passes to physical forwards to bypass high-intensity man-marking and intricate buildup constraints.",
+  "content": "When opponents employ aggressive man-marking that disrupts short-passing patterns and rotations, teams must pivot to directness as a primary attacking solution. This approach bypasses the midfield press entirely by launching long balls to physical forwards capable of holding up play, winning aerial duels, or making runs in behind. Unlike traditional positional play that relies on intricate short passes to create high-xG tap-ins, this method accepts lower-percentage passes in exchange for exploiting the physical attributes of the target man. It is particularly effective when open-play rotations fail to create space due to immediate pressure on every receiver. This tactic magnifies the value of physical players who can use their frame to hold off defenders. Consequently, elite teams are diversifying their attacking repertoire, combining directness with set-piece reliance to break down compact defenses that are no longer vulnerable to single-method attacks. The strategy shifts the focus from technical buildup to physical dominance and spatial exploitation through long-range delivery.",
+  "conditions": [
+    "opponent_man_marking",
+    "short_passing_blocked",
+    "physical_forward_available"
+  ],
+  "objective": [
+    "bypass_midfield_press",
+    "exploit_physical_advantage",
+    "create_direct_scoring_chance"
+  ],
+  "possible_actions": [
+    "long_diagonal_pass",
+    "hold_up_play",
+    "run_in_behind",
+    "win_aerial_duel"
+  ],
+  "contraindications": [
+    "opponent_defensive_line_low",
+    "lack_of_physical_target"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "progressive_pass_not_available",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "space_behind_defensive_line",
+    "vertical_space_available"
+  ],
+  "player_behaviours": [
+    "target_man_hold_up",
+    "long_ball_delivery",
+    "aerial_duel_win"
+  ],
+  "related_concepts": [
+    "set_piece_reliance",
+    "positional_play",
+    "counter_attack"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=807s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_pressing_traps_against_weak_build_up",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Pressing Traps Against Weak Build-Up",
+  "definition": "A defensive strategy that exploits specific weaknesses in an opponent's build-up players to force turnovers in dangerous areas.",
+  "content": "This tactical concept involves identifying and targeting specific vulnerabilities in the opposition's defensive line or fullbacks during the build-up phase. In the referenced scenario, Arsenal exploited Chelsea's 4-1-4-1 structure by recognizing that their fullbacks, particularly Ivanovic and Azpilicueta, lacked the technical composure to progress the ball under pressure. Instead of applying high-intensity chaos, Arsenal used a structured approach: the front three remained alert, with the wingers specifically tasked with pressing the fullbacks as soon as the ball was committed to that side. This forced the fullbacks to retreat or make risky passes, disrupting the opponent's rhythm. The key is not just pressing hard, but pressing intelligently against players who are physically strong but technically limited in tight spaces. By isolating these specific players and cutting off their passing lanes to the center, the pressing team can create immediate turnovers in the opponent's defensive third, leading to high-quality counter-attacking opportunities. This approach requires detailed scouting of the opponent's personnel and their specific on-ball tendencies.",
+  "conditions": [
+    "opponent_has_technically_weak_fullbacks",
+    "opponent_builds_from_back_four",
+    "scouting_data_available"
+  ],
+  "objective": [
+    "force_turnover_in_defensive_third",
+    "disrupt_opponent_build_up_rhythm",
+    "create_counter_attack_opportunity"
+  ],
+  "possible_actions": [
+    "press_fullback_on_ball_receipt",
+    "cut_off_passing_lane_to_center",
+    "force_backward_pass",
+    "isolate_weak_link_player"
+  ],
+  "contraindications": [
+    "opponent_has_high_technical_quality_fullbacks",
+    "own_team_lacks_pressing_intensity"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_defensiveline_high",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "trigger_press_on_commitment"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "counter_press",
+    "build_up"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_breaking_deep_blocks_with_aerial_targets",
+  "category": "attacking",
+  "subcategory": "final_third",
+  "phase": "possession",
+  "title": "Breaking Deep Blocks with Aerial Targets",
+  "definition": "Utilizing a physically dominant striker as an aerial outlet to bypass low defensive blocks when short passing is ineffective.",
+  "content": "When opponents adopt a deep low block to neutralize short passing dominance, teams often struggle to create clear chances. This tactical adjustment involves deploying a center-forward with elite aerial ability and technical range to serve as an 'emergency exit' for the ball. Instead of forcing risky short passes into crowded zones, the team can use long balls or crosses to exploit the striker's physical advantage. This approach converts 50-50 aerial duels into favorable 70-30 situations, providing a Plan B against compact defenses. The ideal player for this role must not only win headers but also possess the technical skill to drop deep and link play, maintaining the team's possession structure. This refinement allows a team to break down stubborn defensive lines that are immune to traditional positional play, ensuring that the attacking threat remains diverse and unpredictable.",
+  "conditions": [
+    "opponent_low_block",
+    "short_passing_stagnant",
+    "strikers_aerial_dominance"
+  ],
+  "objective": [
+    "create_aerial_threat",
+    "bypass_defensive_compactness",
+    "generate_set_piece_opportunities"
+  ],
+  "possible_actions": [
+    "deliver_long_ball_to_target",
+    "swing_cross_from_wide",
+    "drop_deep_to_link_play"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_aerial_target"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "space_ahead_small",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "deep_defensive_block",
+    "wide_positioning_for_crossers"
+  ],
+  "player_behaviours": [
+    "win_aerial_duel",
+    "hold_up_ball",
+    "drop_into_half_space"
+  ],
+  "related_concepts": [
+    "low_block_breaking",
+    "target_man",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=801s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_centerback_counter_pressing_and_mid_block",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Centerback Counter-Pressing and Mid-Block",
+  "definition": "A tactical system where centerbacks initiate immediate high-intensity pressing to win the ball back in the attacking third, while the team maintains a compact mid-block to restrict central passing lanes.",
+  "content": "This concept combines aggressive transition defense with a structured mid-block setup. Upon losing possession in the final third, centerbacks act as the first line of defense, immediately pressing the ball carrier to exploit their superior ball-winning ability and prevent the opponent from bypassing the defensive line. This halts counterattacks before they reach the attacking half. When the opponent retains possession and begins building from the back, the team retreats into a compact mid-block rather than a high line. Forwards drop deep to cover the opposition's pivot, effectively blocking central passing lanes. To manage the width created by this narrow shape, the ball-sided center midfielder drifts wide to cover the opponent's fullback, while a centerback or pivot steps up to fill the central gap. This ensures that natural fullbacks or wingers are not forced to track faster opponents, maintaining defensive balance. If the central gap remains vulnerable, the wide centerback may step up to press the fullback directly, shifting the backline to cover the space. This forces the opponent to play through the flanks, where the team can manage the threat more effectively.",
+  "conditions": [
+    "possession_lost_in_final_third",
+    "opponent_building_from_backline",
+    "team_in_mid_block"
+  ],
+  "objective": [
+    "win_possession_high_up",
+    "block_central_passing_lanes",
+    "maintain_defensive_balance"
+  ],
+  "possible_actions": [
+    "centerback_press_ball_carrier",
+    "forwards_cover_pivot",
+    "center_mid_drift_wide",
+    "backline_shift_to_cover"
+  ],
+  "contraindications": [
+    "slow_centerbacks_vs_fast_wingers",
+    "central_gap_exploitation"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "is_in_attacking_third",
+    "opponent_high_press",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_mid_block",
+    "narrow_central_shape",
+    "wide_coverage_by_center_mid"
+  ],
+  "player_behaviours": [
+    "immediate_press",
+    "drop_deep_to_cover",
+    "drift_wide_to_cover_fullback",
+    "step_up_to_press_flank"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "mid_block",
+    "positional_rotation",
+    "defensive_line_height"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=490s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

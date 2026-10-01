@@ -1,0 +1,50 @@
+{
+  "concept_id": "yt_in_possession_phase_analysis",
+  "category": "fundamentals",
+  "subcategory": "principles_of_play",
+  "phase": "possession",
+  "title": "In-Possession Phase Analysis",
+  "definition": "A framework for analyzing team tactics during possession by dividing the pitch into buildup, progression, and finishing zones.",
+  "content": "Tactical analysis of possession is structured around three distinct zones: buildup, progression, and finishing. In the buildup phase, occurring in the defensive third, the focus is on positional structure and maintaining control. A key principle here is creating a numerical advantage, often a 'plus one' overload, to neutralize high presses and facilitate short passing. The progression phase involves moving the ball from the middle to the attacking third by breaking defensive lines. This requires observing structural rotations, precise passing sequences, and off-ball movements that create gaps between or beyond the opposition's lines. Vertical or diagonal passes are fundamental here, often aimed at players positioned between the lines on the half-turn to face forward. Finally, the finishing phase in the attacking third focuses on generating scoring chances through coordinated movements and quick decision-making. Coaches must identify the team's specific attacking style, whether it relies on intricate combination play or direct crosses, as well as individual player traits like fullback overlaps or winger cuts. Understanding these specific patterns and principles allows for a deeper comprehension of a team's tactical intent and objectives during possession.",
+  "conditions": [
+    "team_in_possession",
+    "analytical_context"
+  ],
+  "objective": [
+    "understand_tactical_intent",
+    "identify_positional_structure",
+    "recognize_passing_patterns"
+  ],
+  "possible_actions": [
+    "observe_buildup_shape",
+    "track_structural_rotations",
+    "analyze_finishing_movements"
+  ],
+  "contraindications": [
+    "ignoring_individual_traits",
+    "focusing_only_on_static_shape"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_possession"
+  ],
+  "spatial_requirements": [
+    "three_zone_pitch_division"
+  ],
+  "player_behaviours": [
+    "maintain_numerical_overload",
+    "rotate_positions",
+    "receive_between_lines"
+  ],
+  "related_concepts": [
+    "build_up",
+    "progression",
+    "final_third",
+    "positional_play"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=aW2NLCrPpQk&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

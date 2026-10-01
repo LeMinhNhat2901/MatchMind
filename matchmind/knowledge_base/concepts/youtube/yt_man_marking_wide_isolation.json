@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_man_marking_wide_isolation",
+  "category": "defending",
+  "subcategory": "man_marking",
+  "phase": "out_of_possession",
+  "title": "Man-Marking Wide Isolation",
+  "definition": "A defensive strategy using dedicated man-markers to isolate wide attackers and neutralize central passing options.",
+  "content": "This tactical approach involves assigning specific defenders to mark opposing wide players (such as full-backs or wingers) preemptively, often before the ball is even played to them. By doing so, the defending team forces the opponent to rely on isolated central players or direct long balls, which are easier to defend. In the described scenario, Argentina used a man-marking scheme where central midfielders like De Paul and Tagliafico specifically targeted France's wide players (Hernandez and Dembele). This pressure caused frequent turnovers and prevented France from building coherent play through the middle, as their central midfielders were numerically outnumbered and spatially isolated. The result was that France's key attackers (Mbappe, Griezmann) were frozen out of the game because there were no safe passing routes to them. This method is effective when the opponent has a rigid structure and relies heavily on wide areas for progression. It requires high discipline from the man-markers to maintain their assignments and high pressing intensity to force errors. However, it can leave gaps if the marked player makes a sudden run or if the marking scheme is not supported by a compact team shape.",
+  "conditions": [
+    "opponent_relies_on_wide_areas",
+    "opponent_central_midfield_isolated",
+    "defensive_discipline_high"
+  ],
+  "objective": [
+    "isolate_wide_attackers",
+    "force_turnovers_in_wide_areas",
+    "neutralize_central_passing_options"
+  ],
+  "possible_actions": [
+    "preemptive_press_on_wide_player",
+    "man_mark_fullback",
+    "force_direct_ball",
+    "cut_off_passing_lanes_to_wingers"
+  ],
+  "contraindications": [
+    "opponent_has_mobile_central_midfield",
+    "defenders_lack_stamina",
+    "opponent_uses_quick_switches"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_high_press",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "maintain_man_mark"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "isolation",
+    "man_marking"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=sH5beYkoVXA&t=173s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

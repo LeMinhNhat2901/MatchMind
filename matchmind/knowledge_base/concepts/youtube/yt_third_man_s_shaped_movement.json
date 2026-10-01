@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_third_man_s_shaped_movement",
+  "category": "attacking",
+  "subcategory": "third_man",
+  "phase": "possession",
+  "title": "Third Man S-Shaped Movement",
+  "definition": "A passing sequence involving a third player to bypass high pressing by creating a forward-facing receiver who has already turned and is moving into space.",
+  "content": "This tactical concept, often referred to as the 'Derbian S' due to its curved passing trajectory, is designed to neutralize aggressive high pressing. The sequence begins when a presser commits to the ball carrier. Instead of passing directly to the intended final receiver, the team plays to a third man who moves toward the ball. This third man acts as a decoy or 'bait,' drawing nearby defenders away from the final target. Simultaneously, the final receiver moves into space, often turning their body to face forward before receiving the ball. By the time the ball reaches them, they are already oriented for progression, eliminating the time-consuming turn required in direct passes. This movement exhausts the pressers, who waste energy chasing the decoy, leaving the final receiver with space and time to scan for the next option. The system relies on precise timing and spatial awareness, allowing teams to break through compact defensive blocks by using the opposition's own pressing triggers against them. It transforms static possession into dynamic, forward-moving play, creating sudden tempo changes that disrupt defensive organization.",
+  "conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage",
+    "passing_lane_open"
+  ],
+  "objective": [
+    "bypass_pressing_trigger",
+    "create_forward_facing_receiver",
+    "exhaust_opponent_pressers"
+  ],
+  "possible_actions": [
+    "move_third_man_to_ball",
+    "final_receiver_turns_forward",
+    "pass_to_decoy_player",
+    "progressive_pass_into_space"
+  ],
+  "contraindications": [
+    "lack_of_tempo_control",
+    "poor_spatial_awareness",
+    "defensive_line_low_and_compact"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "turn_body_forward",
+    "move_into_space"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "positional_play",
+    "counter_press"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G9Ls5jjZw3s&t=361s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

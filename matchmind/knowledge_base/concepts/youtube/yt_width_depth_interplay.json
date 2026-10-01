@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_width_depth_interplay",
+  "category": "attacking",
+  "subcategory": "movement",
+  "phase": "possession",
+  "title": "Width-Depth Interplay",
+  "definition": "A tactical strategy where wide players force horizontal defensive stretching to create central space for inside players to exploit.",
+  "content": "This concept describes the symbiotic relationship between wide directness and central creativity. When a wide player utilizes explosive pace and direct dribbling, they force the opposition's defensive block to stretch horizontally. Fullbacks are dragged wide, and central defenders may need to shift to cover the threat, creating gaps in the central areas. This horizontal distortion is the key trigger for the inside player (e.g., an inverted winger or attacking midfielder) to drift into the half-space or between the lines. By receiving the ball in this newly created central space, the inside player can turn and face forward, threatening to drive into the box or thread progressive passes. The effectiveness of this pattern relies on the wide player maintaining a genuine threat that prevents defenders from collapsing inward, while the inside player times their movement to coincide with the defensive stretch. It transforms a static defensive block into a dynamic, stretched structure that is vulnerable to penetration from the center. This interplay ensures that the team has both the width to pin opponents back and the depth to break them down.",
+  "conditions": [
+    "wide_player_has_pace",
+    "defensive_block_compact",
+    "inside_player_available"
+  ],
+  "objective": [
+    "stretch_defense_horizontally",
+    "create_central_space",
+    "penetrate_between_lines"
+  ],
+  "possible_actions": [
+    "direct_dribble_wide",
+    "drift_inside_central",
+    "receive_between_lines",
+    "thread_progressive_pass"
+  ],
+  "contraindications": [
+    "defenders_do_not_stretch",
+    "wide_player_lacks_threat",
+    "inside_player_is_marked_tight"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_defensiveline_high",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "wide_player_high_position",
+    "central_space_available"
+  ],
+  "player_behaviours": [
+    "attack_defender_directly",
+    "time_run_into_gap",
+    "scan_for_central_option"
+  ],
+  "related_concepts": [
+    "overload_flank",
+    "half_space_utilization",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8771s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

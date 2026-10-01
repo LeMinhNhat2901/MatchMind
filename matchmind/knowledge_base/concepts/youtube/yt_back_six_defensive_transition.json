@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_back_six_defensive_transition",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "defensive_transition",
+  "title": "Back Six Defensive Transition",
+  "definition": "A tactical shift where a back five reorganizes into a back six by dropping the pivot to cover the central gap, enabling a rapid counter-attack with wide early crosses.",
+  "content": "When the team advances through the flanks, the defensive shape transforms from a back five to a back six to maintain central overload against crosses. Instead of tilting the entire backline, the pivot drops deep to act as an extra center-back, covering the gap between the wing-back and the ball-sided defender, while a forward covers the pivot's vacated position. This structure allows the team to win the ball back in a high position. Upon regaining possession, four or five players immediately push forward to counter-attack, regardless of their nominal roles. The key tactical element is driving the ball wide and delivering early crosses into the box before reaching the final third. This exploits the opposition's disorganized retreat, forcing defenders to choose between tracking the wide forwards or marking the crosser. The forwards spread wide to target the blind spots behind the defense, while the center-backs, acting as liberos, push into the final third to exploit spaces created by the upper players. This approach maximizes the chaos in the opponent's defensive transition, creating high-value scoring opportunities through early width and crossing.",
+  "conditions": [
+    "ball_near_flank",
+    "phase_of_play_defensive_transition",
+    "opponent_defensiveline_high"
+  ],
+  "objective": [
+    "rapid_counter_attack",
+    "early_cross_delivery",
+    "exploit_defensive_disorganization"
+  ],
+  "possible_actions": [
+    "pivot_drops_deep",
+    "forward_covers_pivot",
+    "drive_ball_wide",
+    "deliver_early_cross",
+    "center_back_pushes_forward"
+  ],
+  "contraindications": [
+    "opponent_well_organized",
+    "lack_of_wide_support"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "phase_of_play_defensive_transition",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "central_overload_against_crosses",
+    "wide_forward_spread"
+  ],
+  "player_behaviours": [
+    "pivot_drops_deep",
+    "forward_covers_pivot",
+    "center_back_pushes_forward",
+    "wing_back_drifts_inside"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "defensive_line",
+    "width"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=661s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

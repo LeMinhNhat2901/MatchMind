@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_double_pivot_for_transition_defense",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "defensive_transition",
+  "title": "Double Pivot for Transition Defense",
+  "definition": "Utilizing a two-player midfield shield to protect the defensive line and mitigate counter-attacking threats during possession loss.",
+  "content": "This tactical adjustment addresses the vulnerability to counter-attacks by establishing a permanent double pivot in the midfield rather than relying on a single pivot or hybrid roles. The primary objective is to create a numerical and spatial barrier that prevents opponents from quickly penetrating the space between the midfield and defensive lines. By maintaining two dedicated defensive midfielders, the team ensures that at least one player is always positioned to intercept through balls or cover the back line if the full-backs are caught high. This structure is particularly effective when the team is committing players forward in possession, as it provides a safety net to absorb the initial impact of a turnover. The double pivot allows for better coverage of central channels, forcing opponents to play wide where they can be contained by the full-backs or wingers. It reduces the risk of being caught out of position, ensuring that the defensive line can drop or hold its ground without being exposed to direct runs in behind. This approach prioritizes structural integrity and transition security over aggressive pressing or high-line maintenance, making it a robust solution for teams that struggle with defensive stability after losing the ball.",
+  "conditions": [
+    "vulnerability_to_counter_attack",
+    "possession_based_style",
+    "lack_of_single_pivot_depth"
+  ],
+  "objective": [
+    "protect_defensive_line",
+    "intercept_central_passes",
+    "stabilize_defensive_transition"
+  ],
+  "possible_actions": [
+    "maintain_double_pivot_structure",
+    "drop_into_defensive_third",
+    "cover_central_channels"
+  ],
+  "contraindications": [
+    "reduced_attacking_width",
+    "limited_progressive_passing_options"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "space_behind_defensive_line",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "hold_position_in_pivot",
+    "scan_for_through_balls",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "defensive_transition",
+    "mid_block",
+    "compactness"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3361s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

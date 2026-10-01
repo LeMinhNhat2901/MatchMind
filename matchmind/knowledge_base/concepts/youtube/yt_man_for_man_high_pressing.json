@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_man_for_man_high_pressing",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Man-for-Man High Pressing",
+  "definition": "A defensive strategy where players individually mark opponents in a high position to force turnovers near the opponent's goal.",
+  "content": "This tactical approach involves assigning specific defenders to track individual opponents rather than zones, maintaining a high defensive line to compress space. The primary objective is to win possession in advanced areas, allowing for immediate counter-attacks. Key elements include proactive body orientation, early recognition of passing lanes, and coordinated timing to close down ball carriers. While effective, this system carries significant risk; if the press is bypassed by long balls, the team can be exposed to numerical disadvantages at the back. To mitigate this, defenders must maintain high awareness, reacting instantly to the goalkeeper's body shape to sprint back and restore numerical balance. Success relies on individual qualities such as the ability to protect possession under pressure and the willingness to commit fully to the press. This structure differs from rigid zonal setups by eliminating large gaps between lines, making it harder for opponents to progress through the midfield. It requires high physical intensity and precise communication to ensure that individual marks do not leave gaps for opponents to exploit.",
+  "conditions": [
+    "opponent_high_press",
+    "press_intensity_capable",
+    "defensive_line_height_high"
+  ],
+  "objective": [
+    "win_ball_high",
+    "force_turnover",
+    "initiate_counter_attack"
+  ],
+  "possible_actions": [
+    "individual_marking",
+    "close_down_ball_carrier",
+    "sprint_back_on_long_ball",
+    "protect_possession_under_pressure"
+  ],
+  "contraindications": [
+    "exposure_to_long_balls",
+    "numerical_disadvantage_at_back",
+    "fatigue_related_breakdown"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_high",
+    "press_intensity_high",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "track_individual_opponent",
+    "read_keeper_body_shape",
+    "angle_press",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=3S9T2Z1E8Fg&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

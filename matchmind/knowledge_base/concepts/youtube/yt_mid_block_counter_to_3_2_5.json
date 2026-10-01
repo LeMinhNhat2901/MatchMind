@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_mid_block_counter_to_3_2_5",
+  "category": "defending",
+  "subcategory": "mid_block",
+  "phase": "out_of_possession",
+  "title": "Mid-Block Counter to 3-2-5",
+  "definition": "A defensive strategy using a compact mid-block to neutralize the width and numerical overloads created by a 3-2-5 attacking structure.",
+  "content": "The rise of 3-2-5 and 3-2-4-1 formations has led to a decline in high pressing, as these structures create inherent numerical overloads that break high-pressing teams. A 3-2-5 can outnumber a 4-4-3 press in the backline (5v4), the midfield (using a box shape against a midfield three), or the wide areas (using wingbacks in free space). To counter this, teams are reverting to mid-block structures, typically 4-4-2 or 4-2-4. This approach prioritizes compactness over pressing intensity. By banking three units in the central zone, the mid-block restricts space and nullifies central progression. Wingers compress the wide center-backs, moving inside to protect passes to wingbacks, while two players shadow the double pivot. Although the attacking team can still outnumber the defensive line, the compact mid-block makes it significantly harder to progress the ball to the front five. This forces the opponent into intricate passing and fluid movement rather than allowing them to exploit simple numerical advantages or direct balls into space.",
+  "conditions": [
+    "opponent_uses_325_structure",
+    "opponent_creates_width_and_depth",
+    "high_press_vulnerable_to_overload"
+  ],
+  "objective": [
+    "restrict_central_space",
+    "neutralize_wingback_free_space",
+    "force_intricate_passing"
+  ],
+  "possible_actions": [
+    "compact_mid_block_formation",
+    "wingers_compress_wide_defenders",
+    "shadow_double_pivot",
+    "protect_passing_lanes_to_wingbacks"
+  ],
+  "contraindications": [
+    "opponent_lacks_progressive_passing",
+    "team_lacks_midfield_density"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "local_numerical_advantage_negative",
+    "space_ahead_moderate",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines",
+    "central_density_high"
+  ],
+  "player_behaviours": [
+    "winger_moves_inside",
+    "midfielder_shadows_pivot",
+    "defender_stays_compact"
+  ],
+  "related_concepts": [
+    "mid_block",
+    "numerical_overload",
+    "compactness",
+    "325_formation"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=oyMQbGeNqog&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

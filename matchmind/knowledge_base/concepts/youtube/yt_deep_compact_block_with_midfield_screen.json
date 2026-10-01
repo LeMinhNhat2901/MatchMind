@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_deep_compact_block_with_midfield_screen",
+  "category": "defending",
+  "subcategory": "low_block",
+  "phase": "out_of_possession",
+  "title": "Deep Compact Block with Midfield Screen",
+  "definition": "A defensive structure where the team maintains a deep, compact shape with a dedicated midfielder patrolling between the lines to deny space to opposing creators.",
+  "content": "This tactical setup involves organizing the team in a deep and compact block, often shifting from a mid-block to a lower defensive line to reduce the space available for the opponent's final pass. A key element is the deployment of a dedicated defensive midfielder or a flexible center-back (like Pepe in the source) who patrols the space between the defensive line and the midfield line. This player's primary role is to deny the opponent's playmakers, such as a dropping striker or central midfielder, the time and space to receive the ball and execute intricate passes. By maintaining a flat midfield line, the team forces the opponent to play around the block or into less dangerous areas. The compactness ensures that if the ball is played into the half-spaces, there is immediate support to press or cover. This approach is particularly effective against teams that rely on possession and intricate passing in the final third, as it disrupts their rhythm and forces them into low-percentage shots or long balls. The objective is to frustrate the opponent, maintain structural integrity, and create opportunities for counter-attacks by exploiting the space left behind the opponent's high defensive line.",
+  "conditions": [
+    "opponent_high_press",
+    "opponent_possession_based",
+    "defensive_line_height_low"
+  ],
+  "objective": [
+    "deny_space_between_lines",
+    "maintain_compactness",
+    "force_opponent_wide"
+  ],
+  "possible_actions": [
+    "patrol_between_lines",
+    "drop_into_defensive_line",
+    "shift_laterally_as_unit"
+  ],
+  "contraindications": [
+    "vulnerable_to_long_balls",
+    "requires_high_discipline"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "screen_passing_lanes",
+    "delay_opponent_progression"
+  ],
+  "related_concepts": [
+    "low_block",
+    "defensive_transition",
+    "counter_attack"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=797s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

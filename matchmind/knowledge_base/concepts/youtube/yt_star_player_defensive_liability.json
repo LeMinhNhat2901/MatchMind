@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_star_player_defensive_liability",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "out_of_possession",
+  "title": "Star Player Defensive Liability",
+  "definition": "The tactical vulnerability created when high-profile attacking players lack defensive work rate, forcing the team to rely on fewer players for defensive duties and creating structural gaps.",
+  "content": "This concept addresses the structural imbalance caused by assembling a front line of elite, low-work-rate attackers. When star players do not consistently track back or press aggressively, the defensive burden shifts entirely to the remaining seven players. If the midfield is populated with creative players rather than defensive specialists, the effective defensive unit shrinks to five, leaving the team exposed to counter-attacks. To compensate, managers often sacrifice creativity for defensive stability, forcing the stars to carry the entire attacking load. Furthermore, if these central-drifting attackers do not provide width, fullbacks are forced to push high to maintain shape, leaving the defensive flanks wide open for opposition counters. This dynamic creates a disconnect between individual brilliance and collective defensive integrity, often leading to increased goals conceded and tactical rigidity. It highlights the importance of balancing individual talent with collective defensive responsibilities and ensuring that the team structure remains compact even when key players are not contributing to the defensive phase.",
+  "conditions": [
+    "low_defensive_work_rate_front_line",
+    "creative_midfield_focus",
+    "central_drifting_attackers"
+  ],
+  "objective": [
+    "maintain_defensive_compactness",
+    "balance_attack_defense",
+    "protect_defensive_flanks"
+  ],
+  "possible_actions": [
+    "integrate_defensive_midfielders",
+    "limit_fullback_high_press",
+    "enforce_defensive_discipline"
+  ],
+  "contraindications": [
+    "over_reliance_on_individual_talent",
+    "neglecting_team_structure"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "space_behind_defensive_line",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "track_back_consistently",
+    "cover_passing_lane",
+    "hold_defensive_position"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "defensive_transition",
+    "team_compactness"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=g1nYknl92wI&t=194s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_3_2_5_possession_structure",
+  "category": "formations",
+  "subcategory": "325",
+  "phase": "possession",
+  "title": "3-2-5 Possession Structure",
+  "definition": "A 3-2-5 formation structure designed to maximize vertical lane occupation and create numerical overloads against compact defensive blocks.",
+  "content": "The 3-2-5 (or 3-2-2-3) structure has become a dominant meta in modern football due to its superior space creation and transition security. By deploying five players in the final third, the team occupies every vertical lane, effectively stretching the opposition's defensive block. This shape is particularly effective against the common 4-4-2 low block, as the wide center-backs create a 3v2 numerical advantage at the back, allowing the team to bypass the first line of pressure. The front five can generate overloads against the back four, facilitating half-space runs and penetration into the final third. Additionally, the two attacking midfielders can drop between the lines to form a box midfield, overloading central spaces against 4-2-4 high blocks. Beyond attacking, the 3-2-5 offers robust rest defense; the double pivot and three central defenders protect the central channels during possession, forcing opponents to attack wide areas which are less dangerous. This structure also facilitates effective counter-pressing due to the high density of players in central zones, allowing for quick recovery upon loss of possession.",
+  "conditions": [
+    "possession_phase",
+    "opponent_low_block",
+    "opponent_high_block"
+  ],
+  "objective": [
+    "create_vertical_overload",
+    "protect_central_channels",
+    "bypass_defensive_block"
+  ],
+  "possible_actions": [
+    "wide_center_back_progression",
+    "half_space_run",
+    "box_midfield_formation",
+    "counter_press_central"
+  ],
+  "contraindications": [
+    "exposed_wide_areas_if_press_broken",
+    "vulnerability_to_direct_wide_counter"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "space_behind_defensive_line",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "five_players_final_third",
+    "double_pivot_central",
+    "wide_center_back_positioning"
+  ],
+  "player_behaviours": [
+    "drop_between_lines",
+    "occupy_vertical_lanes",
+    "cover_central_passing_lanes"
+  ],
+  "related_concepts": [
+    "rest_defense",
+    "overload",
+    "half_space",
+    "counter_press"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=AsZ4ea-pR_w&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

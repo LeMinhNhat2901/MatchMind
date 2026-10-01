@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_bypassing_compact_defenses_via_aerial_target",
+  "category": "attacking",
+  "subcategory": "final_third",
+  "phase": "possession",
+  "title": "Bypassing Compact Defenses via Aerial Target",
+  "definition": "A tactical adjustment where a team uses a tall, physical player in a central advanced role to bypass low-block defenses via direct aerial passes.",
+  "content": "When opponents sit deep in a compact low block, standard progressive passing through the midfield is often neutralized, especially if the primary creator is forced to drop deep or if the team lacks central width. In such scenarios, a pragmatic 'Plan B' involves deploying a physically dominant player, often a box-to-box midfielder or a target man, into the number 10 position or as a focal point in the final third. This player’s primary function is not intricate dribbling or short passing, but rather winning aerial duels, bringing down long balls, and winning flick-ons. This approach allows the team to skip the congested midfield zones and immediately transition into the attacking third. It is particularly effective when the team possesses a secondary aerial threat or a striker who can hold up play. By utilizing direct vertical passes to this target, the team creates immediate goal-scoring opportunities and disrupts the opponent's defensive shape, forcing defenders to commit to aerial challenges and potentially leaving space for supporting runners. This tactic is a high-risk, high-reward strategy that prioritizes physicality and directness over possession-based buildup when time is running out or the opponent is deeply entrenched.",
+  "conditions": [
+    "opponent_low_block",
+    "possession_stagnant",
+    "time_running_out",
+    "aerial_dominance_available"
+  ],
+  "objective": [
+    "bypass_midfield_progression",
+    "create_aerial_duels",
+    "generate_immediate_goal_threat"
+  ],
+  "possible_actions": [
+    "long_diagonal_pass",
+    "vertical_through_ball",
+    "win_aerial_duel",
+    "flick_on_ball"
+  ],
+  "contraindications": [
+    "opponent_aerial_dominance",
+    "lack_of_second_touch_support",
+    "high_press_opponent"
+  ],
+  "trigger_conditions": [
+    "space_ahead_small",
+    "opponent_defensiveline_low",
+    "phase_of_play_attacking"
+  ],
+  "spatial_requirements": [
+    "central_target_position",
+    "supporting_runners_in_final_third"
+  ],
+  "player_behaviours": [
+    "position_as_aerial_target",
+    "win_header",
+    "control_and_flick"
+  ],
+  "related_concepts": [
+    "target_man",
+    "direct_attack",
+    "low_block_breakdown"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=1511s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

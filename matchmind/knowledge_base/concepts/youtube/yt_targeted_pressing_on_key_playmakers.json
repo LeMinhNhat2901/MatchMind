@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_targeted_pressing_on_key_playmakers",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Targeted Pressing on Key Playmakers",
+  "definition": "A defensive strategy focused on denying time and space to the opponent's primary creative hub to disrupt their tempo and force errors.",
+  "content": "This tactical approach prioritizes neutralizing the opponent's key playmaker, often the deep-lying midfielder or pivot, who dictates the game's rhythm. The objective is to prevent this player from turning, settling, or distributing the ball comfortably, thereby stopping the opponent from 'attacking the game' (controlling tempo) rather than just attacking the goal. This requires a dedicated defender or a coordinated unit to apply immediate pressure whenever the ball reaches this specific player. The strategy relies on high compactness and front-foot defending, where teammates cover passing lanes and support the presser. By forcing the playmaker to play under pressure, the team can create turnovers in dangerous areas or force the opponent into low-quality passes. This method is particularly effective against teams that rely heavily on a single creative hub to build attacks from the back. It requires constant communication and positional awareness to ensure that when the key player is pressed, the surrounding spaces are covered to prevent easy bypasses.",
+  "conditions": [
+    "opponent_has_key_playmaker",
+    "opponent_builds_from_back",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "deny_time_and_space",
+    "disrupt_tempo",
+    "force_error"
+  ],
+  "possible_actions": [
+    "immediate_pressure_on_receiver",
+    "cover_passing_lanes",
+    "force_backward_pass",
+    "steal_ball_in_midfield"
+  ],
+  "contraindications": [
+    "opponent_has_multiple_creative_options",
+    "team_lacks_compactness",
+    "key_playmaker_is_well_shielded"
+  ],
+  "trigger_conditions": [
+    "ball_near_key_playmaker",
+    "players_near_ball",
+    "press_intensity_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "front_foot_defending"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "defensive_compactness",
+    "tempo_control"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=438s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

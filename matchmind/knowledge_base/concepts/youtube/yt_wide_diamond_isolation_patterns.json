@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_wide_diamond_isolation_patterns",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Wide Diamond Isolation Patterns",
+  "definition": "A tactical structure using wide center backs and attacking midfielders to create 1v1 situations for central strikers via split runs and third-man combinations.",
+  "content": "This concept describes a specific attacking pattern often seen in 3-2-5 or 3-1-6 structures where the team utilizes a 'wide diamond' shape in the final third. The center backs push wide to create width, while the attacking midfielders position themselves between the wing-backs and the outer center backs. This specific spacing forces the opponent's outer center back to commit to the wide attacker, thereby isolating the central striker (often a channel runner) in a 1v1 situation against the remaining central defender. The system relies heavily on vertical, line-breaking passes and quick third-man combinations to bypass defensive lines. Additionally, split runs are a key feature: one player (e.g., the striker) pins the central defender, while the attacking midfielder drops to receive, allowing the full-back or wing-back to make a high run into the vacated space, or vice versa. This requires high technical proficiency in first-time passing and precise timing of runs to exploit the gaps created by the opponent's defensive commitment to the wide areas.",
+  "conditions": [
+    "possession_in_final_third",
+    "opponent_defensive_line_high",
+    "wide_center_backs_available"
+  ],
+  "objective": [
+    "isolate_central_striker",
+    "create_line_breaking_pass",
+    "exploit_split_runs"
+  ],
+  "possible_actions": [
+    "push_wide_with_center_back",
+    "position_amf_between_lines",
+    "execute_third_man_pass",
+    "make_channel_run"
+  ],
+  "contraindications": [
+    "opponent_low_block_compact",
+    "lack_of_wide_width"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_occupied_or_available",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "wide_diamond_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "pin_central_defender",
+    "drop_to_receive",
+    "run_into_vacated_space"
+  ],
+  "related_concepts": [
+    "third_man_combination",
+    "channel_run",
+    "split_run"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=MKUnE1eCdCI&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

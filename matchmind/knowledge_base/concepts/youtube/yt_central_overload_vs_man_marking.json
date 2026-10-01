@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_central_overload_vs_man_marking",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Central Overload vs Man-Marking",
+  "definition": "A tactical approach that concentrates players in central zones to create numerical overloads, exploiting the gaps created by man-to-man defensive structures.",
+  "content": "This concept addresses the limitations of traditional positional play against committed man-to-man pressing systems. Instead of relying on extreme width to isolate wingers, teams adopt a narrow attacking structure that packs multiple players into the central midfield and half-spaces. The primary objective is to force the opposition's man-marking system to stretch, creating larger gaps than those typically found in zonal systems. By concentrating technical players in a small area, the team aims to trigger an overload if even one defender is momentarily out of position or asleep. This approach requires players to be highly versatile and comfortable operating in multiple roles, often dropping from wide positions into central areas to facilitate tight combinations. It shifts the focus from wide isolation to central penetration, demanding extreme technical quality to navigate tight spaces and beat individual markers. This strategy is particularly effective when the opponent commits to individual marking, as it exploits the inherent difficulty of maintaining defensive shape without zonal coverage.",
+  "conditions": [
+    "opponent_man_to_man_press",
+    "high_technical_quality_central_players",
+    "narrow_attacking_structure"
+  ],
+  "objective": [
+    "create_central_overload",
+    "exploit_man_marking_gaps",
+    "penetrate_between_lines"
+  ],
+  "possible_actions": [
+    "drop_wingers_into_centre",
+    "congregate_midfield_players",
+    "execute_tight_combinations",
+    "beat_individual_marker"
+  ],
+  "contraindications": [
+    "opponent_zonal_defence",
+    "lack_of_central_technical_depth",
+    "wide_space_available"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "compact_central_cluster",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drift_in_from_wide",
+    "maintain_close_proximity",
+    "scan_for_overload_opportunity"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "man_to_man_defence",
+    "half_space_utilization"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=485s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

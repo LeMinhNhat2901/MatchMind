@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_breaking_compact_blocks",
+  "category": "attacking",
+  "subcategory": "penetration",
+  "phase": "possession",
+  "title": "Breaking Compact Blocks",
+  "definition": "A tactical approach to bypass low-block defenses by utilizing wide width, progressive passing, and specific player roles to create numerical overloads or stretch the defensive shape.",
+  "content": "When opponents defend in compact low blocks (e.g., 4-4-2 or 4-2-4), they often refuse to press the build-up, forcing the attacking team to play around them rather than through. A common but flawed reaction is to pull wingers inside to create central congestion; this often fails because it removes horizontal width, allowing the defense to compact further and suffocate central attacks. Effective penetration requires maintaining wide outlets to stretch the defense horizontally, preventing them from narrowing their block. Key to this is the presence of a progressive passer (like a deep-lying playmaker) capable of switching play to free zones or launching precise long balls to exploit space behind the defensive line. Additionally, overlapping runs from full-backs or wing-backs can create temporary numerical advantages on the flank, offering crossing options or cut-backs. Without these elements—width, progressive passing range, and dynamic movement—attacks become predictable and labored, leading to fewer shots and easier defensive organization for the opponent. The objective is to force the compact block to expand, creating gaps for penetration.",
+  "conditions": [
+    "opponent_low_block",
+    "opponent_compact_shape",
+    "possession_in_mid_third"
+  ],
+  "objective": [
+    "stretch_defense_horizontally",
+    "create_numerical_overload_flank",
+    "break_defensive_lines"
+  ],
+  "possible_actions": [
+    "switch_play_to_free_zone",
+    "overlap_run_fullback",
+    "progressive_pass_break_line",
+    "maintain_wide_width"
+  ],
+  "contraindications": [
+    "pulling_wingers_inside_too_early",
+    "relying_solely_on_central_passing",
+    "lack_of_progressive_passing_range"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "team_compactness_high",
+    "space_ahead_small",
+    "switch_play_viable"
+  ],
+  "spatial_requirements": [
+    "wide_attacking_width",
+    "space_behind_defensive_line"
+  ],
+  "player_behaviours": [
+    "hold_wide_position",
+    "make_overlapping_run",
+    "play_progressive_pass"
+  ],
+  "related_concepts": [
+    "low_block",
+    "width",
+    "progressive_passing",
+    "overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=9262s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

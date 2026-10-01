@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_winger_role_evolution",
+  "category": "individual",
+  "subcategory": "winger_role",
+  "phase": "general",
+  "title": "Winger Role Evolution",
+  "definition": "The modern winger's role has shifted from pure isolation and crossing to a hybrid profile requiring defensive work rate and spatial awareness due to overlapping fullbacks.",
+  "content": "Historically, wingers were tasked with isolating defenders, reaching the byline, and crossing for strikers, relying on individual flair and dribbling ability. However, the tactical landscape has changed significantly. The rise of the aggressive, overlapping fullback has reduced the space available for wingers to operate on the touchline. Consequently, the modern winger must adapt by becoming more defensively astute, tracking back to support the fullback when they push forward. This shift means that pure dribblers who refuse to defend are less effective. Additionally, defenders have become more athletic and tactically aware, making simple 1v1 isolation harder. Wingers now need to combine offensive creativity with defensive discipline, often drifting inside or supporting the build-up rather than just hugging the flank. This evolution reflects a broader trend where individual roles are defined by their contribution to the team's structural balance, particularly in the final third and defensive transitions.",
+  "conditions": [
+    "opponent_fullback_overlapping",
+    "defensive_transition_required"
+  ],
+  "objective": [
+    "maintain_defensive_shape",
+    "create_width_in_attack",
+    "support_fullback"
+  ],
+  "possible_actions": [
+    "track_back_defensively",
+    "drift_inside",
+    "combine_with_fullback"
+  ],
+  "contraindications": [
+    "ignoring_defensive_duties",
+    "relying_solely_on_dribbling"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_fullback_high",
+    "phase_of_play_defensive_transition"
+  ],
+  "spatial_requirements": [
+    "width_available",
+    "space_between_lines"
+  ],
+  "player_behaviours": [
+    "defensive_tracking",
+    "positional_drift",
+    "1v1_defense"
+  ],
+  "related_concepts": [
+    "overlap",
+    "fullback_role",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-izMUUfGnso&t=160s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

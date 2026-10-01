@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_direct_central_transition_attack",
+  "category": "transitions",
+  "subcategory": "counter_attack",
+  "phase": "attacking_transition",
+  "title": "Direct Central Transition Attack",
+  "definition": "A tactical approach involving rapid, direct central passes and intense forward runs immediately after regaining possession to exploit an unbalanced opponent.",
+  "content": "This concept describes a high-intensity attacking transition strategy where the team prioritizes speed and directness over possession retention. Upon winning the ball, the objective is to play forward as quickly as possible, typically through central channels, to capitalize on the opponent's defensive disorganization. The tactic relies on a sudden surge of players, often four or five, making intense forward runs to stretch the opposition structure. This approach contrasts with slower, possession-based build-ups, aiming instead to strike before the defense can reorganize or compact. It is particularly effective when the opponent has committed players forward or is caught in a transitional state. The key elements are immediate verticality, central penetration, and collective forward movement to create numerical advantages in the final third. Coaches should emphasize the timing of the first pass and the commitment of off-ball runners to ensure the transition is lethal. This style requires players to have high physical output and decision-making speed to execute the direct play effectively.",
+  "conditions": [
+    "possession_regained",
+    "opponent_unbalanced",
+    "central_space_available"
+  ],
+  "objective": [
+    "rapid_vertical_progression",
+    "exploit_defensive_disorganization",
+    "create_numerical_advantage_final_third"
+  ],
+  "possible_actions": [
+    "immediate_forward_pass",
+    "intense_forward_run",
+    "central_penetration",
+    "collective_surge"
+  ],
+  "contraindications": [
+    "opponent_compact_low_block",
+    "lack_of_forward_runners",
+    "poor_passing_accuracy"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_attacking_transition",
+    "space_ahead_large",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "central_channel_open",
+    "space_behind_defensive_line"
+  ],
+  "player_behaviours": [
+    "quick_first_pass",
+    "vertical_run",
+    "support_forward_movement"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "direct_play",
+    "transition_speed"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=4QjPuVe77q0&t=157s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

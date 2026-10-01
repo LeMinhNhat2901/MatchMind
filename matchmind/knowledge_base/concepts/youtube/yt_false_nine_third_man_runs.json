@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_false_nine_third_man_runs",
+  "category": "attacking",
+  "subcategory": "third_man",
+  "phase": "possession",
+  "title": "False Nine Third Man Runs",
+  "definition": "A tactical movement pattern where a wide player executes a timed run into the penalty area to exploit space created by a false nine dropping deep.",
+  "content": "This concept describes the specific off-ball movement required to support a false nine system. When a central striker (false nine) drops deep to receive the ball, they attract the opposition center-backs, creating a vacuum in the penalty area. The wide player on the flank must not simply stay wide but must time a 'third man' run to arrive in that space precisely when the defender is drawn away. This movement is critical because it provides a direct scoring threat that bypasses the midfield press. The wide player must hug the touchline when the false nine is high to maintain width, but switch to a diagonal or vertical run when the false nine drops. This creates a one-on-one situation with the goalkeeper or a clear shooting opportunity. It relies on the wide player having high tactical discipline and timing, rather than just individual dribbling ability. If the timing is off, the run is ineffective and leaves the flank exposed. This principle is fundamental to positional play systems that utilize a false nine to disrupt defensive lines.",
+  "conditions": [
+    "false_nine_drops_deep",
+    "center_backs_drawn_forward",
+    "wide_player_in_position"
+  ],
+  "objective": [
+    "create_scoring_opportunity",
+    "exploit_penalty_space",
+    "bypass_midfield_press"
+  ],
+  "possible_actions": [
+    "time_third_man_run",
+    "arrive_in_penalty_area",
+    "finish_one_on_one"
+  ],
+  "contraindications": [
+    "poor_timing_of_run",
+    "lack_of_width_support",
+    "defensive_line_remains_low"
+  ],
+  "trigger_conditions": [
+    "half_space_occupied",
+    "space_behind_defensive_line",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "hug_touchline",
+    "execute_timed_run",
+    "scan_for_pass"
+  ],
+  "related_concepts": [
+    "false_nine",
+    "positional_play",
+    "overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1124s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

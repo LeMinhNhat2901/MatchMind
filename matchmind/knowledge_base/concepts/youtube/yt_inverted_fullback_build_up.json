@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_inverted_fullback_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Inverted Fullback Build-Up",
+  "definition": "A build-up structure where fullbacks invert into half-spaces to create central numerical superiority, requiring pivots or wingers to cover the vacated wide areas.",
+  "content": "This tactical approach involves fullbacks moving inside to occupy the half-spaces, creating a central overload for progression. While this narrows the team shape and allows center-backs to act as ball carriers, it leaves the flanks vulnerable to opposition attacks. To mitigate this risk, the team must implement specific defensive adjustments: pivots or fullbacks must drop deep to cover the central channels, while wingers may drop deep to act as secondary fullbacks, covering the wide spaces. This dynamic requires high positional awareness, as the inverted fullback often drifts deep to take the position of a center-back who has moved forward. The system relies on midfield rotations to exploit space between the lines, with one pivot acting as a deep-lying playmaker and the other roaming wide or underlapping. This structure is particularly effective when the team has players capable of performing dual roles, such as a pivot with center-back qualities or a winger comfortable in defensive duties. It transforms the build-up from a wide spread to a central-focused progression, forcing opponents to defend in tighter spaces.",
+  "conditions": [
+    "fullbacks_inverted",
+    "central_numerical_superiority",
+    "wide_areas_vulnerable"
+  ],
+  "objective": [
+    "create_central_overload",
+    "progress_ball_through_half_spaces",
+    "maintain_defensive_balance"
+  ],
+  "possible_actions": [
+    "invert_fullback_into_half_space",
+    "pivot_drops_deep_to_cover_center",
+    "winger_drops_to_cover_flank",
+    "centerback_dribbles_forward"
+  ],
+  "contraindications": [
+    "lack_of_wide_cover",
+    "opponent_targets_flanks",
+    "inadequate_pivot_defensive_quality"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "half_space_occupied",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "narrow_team_shape",
+    "central_density_high",
+    "wide_coverage_by_wingers_or_pivots"
+  ],
+  "player_behaviours": [
+    "fullback_inverts",
+    "pivot_covers_central_channel",
+    "winger_acts_as_secondary_fullback",
+    "centerback_carries_ball"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "midfield_rotations",
+    "false_9",
+    "deep_lying_playmaker"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=520s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

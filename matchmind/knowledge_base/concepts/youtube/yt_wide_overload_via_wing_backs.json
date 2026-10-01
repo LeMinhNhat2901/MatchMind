@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_wide_overload_via_wing_backs",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Wide Overload via Wing Backs",
+  "definition": "A tactical setup where wing backs push high to create numerical superiority on the flank, allowing wingers to tuck in and link with central attackers.",
+  "content": "This concept describes how deploying dynamic wing backs who advance high up the pitch creates a structural advantage. By pushing the wing back forward, the team generates a wide overload, often resulting in a two-versus-one situation against the opponent's full-back. This forces the opponent to commit a defender to the flank, which frees up the team's winger to tuck into the half-space. Consequently, the winger is no longer isolated on the touchline but can operate as part of a central unit, linking play with the striker and midfielders. This movement also relieves the winger from defensive duties in deeper areas, allowing them to focus on creative contributions. Additionally, the advanced position of the wing back provides direct support to the midfield and defensive line, improving compactness and shielding the back three. The key to this system's success is ensuring the wing back has the physical attributes to cover the space, while the winger must be willing to drift inside rather than staying wide. This approach maximizes the team's attacking potential by turning individual battles into coordinated group play, creating more passing options and penetration threats in the final third.",
+  "conditions": [
+    "dynamic_wing_back_available",
+    "winger_willing_to_tuck_in",
+    "opponent_full_back_isolated"
+  ],
+  "objective": [
+    "create_wide_overload",
+    "free_half_space_for_winger",
+    "link_attacking_unit"
+  ],
+  "possible_actions": [
+    "wing_back_push_high",
+    "winger_move_to_half_space",
+    "create_2v1_on_flank",
+    "central_link_up"
+  ],
+  "contraindications": [
+    "wing_back_lacks_endurance",
+    "winger_prefers_wide_position",
+    "opponent_has_wide_defensive_coverage"
+  ],
+  "trigger_conditions": [
+    "overload_flank",
+    "half_space_free",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "wide_width_high",
+    "compact_midfield_support"
+  ],
+  "player_behaviours": [
+    "advance_wing_back",
+    "tuck_in_winger",
+    "shield_back_three"
+  ],
+  "related_concepts": [
+    "half_space_utilization",
+    "positional_rotation",
+    "defensive_compactness"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=751s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

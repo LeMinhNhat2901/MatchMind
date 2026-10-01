@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_man_to_man_pressing_counter",
+  "category": "defending",
+  "subcategory": "man_marking",
+  "phase": "out_of_possession",
+  "title": "Man-to-Man Pressing Counter",
+  "definition": "A defensive strategy where each player is assigned a specific opponent to mark closely, eliminating zonal ambiguity to disrupt possession-based attacks.",
+  "content": "Man-to-man pressing is a defensive tactic designed to neutralize positional play by removing the 'zones of ambiguity' that attackers exploit. In this system, every defender is strictly responsible for a specific opponent, ensuring that if an attacker drops deep or moves into half-spaces, their assigned marker follows relentlessly without hesitation. This approach eliminates the need for defenders to communicate and swap marks, which often leads to confusion in zonal systems. By applying immediate pressure on the ball carrier, the defense denies the attacker time to scan, turn, or select progressive passes, forcing them into low-risk backward passes or desperate long balls. This method is particularly effective against teams that rely on intricate passing patterns and creating overloads in half-spaces, as it prevents attackers from finding space between the lines. While highly effective at disrupting possession, this system requires high individual intensity and fitness from all defenders, as they must track their marks across the pitch. It represents a tactical counter to the dominance of positional play, restoring clarity to defensive responsibilities and increasing the frequency of turnovers in advanced areas.",
+  "conditions": [
+    "opponent_positional_play",
+    "high_fitness_level",
+    "clear_marking_assignments"
+  ],
+  "objective": [
+    "eliminate_marking_ambiguity",
+    "deny_time_and_space",
+    "force_backward_passes"
+  ],
+  "possible_actions": [
+    "track_assigned_opponent",
+    "apply_immediate_pressure",
+    "follow_deep_runs"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "opponent_direct_long_balls",
+    "lack_of_individual_tracking_ability"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_attacking_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "individual_spacing_maintenance",
+    "no_zonal_gaps"
+  ],
+  "player_behaviours": [
+    "shadow_marking",
+    "aggressive_close_down",
+    "consistent_tracking"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "zonal_defending",
+    "counter_press"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=167s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

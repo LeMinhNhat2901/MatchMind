@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_counter_pressing_with_high_defensive_line",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Counter-Pressing with High Defensive Line",
+  "definition": "A defensive strategy combining immediate high-intensity pressing with an advanced defensive line to disrupt opponent counter-attacks before they develop.",
+  "content": "This tactical approach emphasizes that counter-pressing is ineffective without a high defensive line. The objective is to control the opponent's counter-attacks by forcing them to start their build-up from deep positions, such as the goalkeeper or defensive midfielders. By pushing the defensive line high, the team compresses the space available to the opposition, making it difficult for them to progress the ball into dangerous areas. When the ball is lost, players must immediately engage in a coordinated press, with specific roles for midfielders and fullbacks to cover passing lanes and force errors. This method relies on the physical ability and tactical discipline of the squad to maintain high intensity throughout the match. It is particularly effective against teams that rely on quick transitions and individual skill to break down defenses. The strategy requires constant communication and spatial awareness to ensure that the team remains compact and protected, minimizing the risk of being caught out on the break. Ultimately, this approach aims to dominate the game by controlling both possession and the defensive transition, creating a psychological and physical barrier that opponents struggle to overcome.",
+  "conditions": [
+    "high_defensive_line",
+    "immediate_ball_recovery",
+    "coordinated_team_press"
+  ],
+  "objective": [
+    "disrupt_counter_attack",
+    "force_deep_build_up",
+    "maintain_spatial_compactness"
+  ],
+  "possible_actions": [
+    "press_high",
+    "close_down_passing_lanes",
+    "force_backward_pass"
+  ],
+  "contraindications": [
+    "opponent_long_ball_threat",
+    "fatigue_in_late_game",
+    "lack_of_midfield_screen"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "defensive_line_height_high",
+    "press_intensity_high",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "sprint_to_ball"
+  ],
+  "related_concepts": [
+    "high_press",
+    "defensive_line",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=1437s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

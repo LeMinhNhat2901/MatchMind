@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_inverted_winger_width_strategy",
+  "category": "attacking",
+  "subcategory": "width",
+  "phase": "possession",
+  "title": "Inverted Winger Width Strategy",
+  "definition": "A tactical adjustment where wingers cut inside to create central threats, relying on full-backs to provide the necessary width.",
+  "content": "This concept addresses a common tactical imbalance when central creative players (like 'eights') are unavailable or ineffective, reducing the team's ability to penetrate the final third from the middle. To compensate, the team shifts to an inverted winger system where wide attackers (e.g., Sterling, Mahrez) cut inside to become inside forwards. This increases the density of players in the central areas, creating more shooting and passing options near the penalty box and the center forward. However, this inward movement creates a void in the wide channels. To maintain structural balance and prevent the team from becoming too narrow, the full-backs must push high and wide to provide the necessary width. This creates a dynamic where the winger attacks the space between the lines or the box, while the full-back stretches the defense laterally. The success of this system depends on the full-back's ability to hold the width and potentially overlap, ensuring that the opposition cannot simply tuck in to defend the central overloads without leaving the flanks exposed. It is a strategic use of width to maximize central penetration while maintaining lateral threat.",
+  "conditions": [
+    "central_creativity_low",
+    "wingers_cutting_inside",
+    "fullbacks_pushing_high"
+  ],
+  "objective": [
+    "increase_central_density",
+    "maintain_lateral_width",
+    "create_final_third_threats"
+  ],
+  "possible_actions": [
+    "winger_cut_inside",
+    "fullback_hold_width",
+    "fullback_overlap",
+    "central_player_link_up"
+  ],
+  "contraindications": [
+    "fullbacks_lack_pace",
+    "opponent_high_press_on_wingers",
+    "lack_of_central_support"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "wide_fullback_position",
+    "central_winger_position"
+  ],
+  "player_behaviours": [
+    "cut_inside",
+    "hold_width",
+    "overlap_run"
+  ],
+  "related_concepts": [
+    "inverted_winger",
+    "fullback_width",
+    "central_overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5860s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

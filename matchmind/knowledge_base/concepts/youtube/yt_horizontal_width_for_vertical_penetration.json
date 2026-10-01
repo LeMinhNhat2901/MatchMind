@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_horizontal_width_for_vertical_penetration",
+  "category": "attacking",
+  "subcategory": "width",
+  "phase": "possession",
+  "title": "Horizontal Width for Vertical Penetration",
+  "definition": "A tactical approach where wide players maintain extreme horizontal width to force defenders outward, creating central space for midfielders to operate in the half-spaces and a striker to exploit vertical depth.",
+  "content": "When a team lacks wingers with elite vertical acceleration to stretch defenses in behind, it can compensate by maximizing horizontal width. By positioning wide attackers genuinely wide, the team forces opposition fullbacks to track them, preventing the fullbacks from tucking in to cover the half-spaces. This structural commitment opens up the central channels for midfielders to receive the ball between the lines, facilitating patient positional play and combination football. The presence of a central striker is critical in this system; their runs force the defensive line deeper, creating the necessary space in front of the defense for the midfielders to operate. This method shifts the primary threat from direct, explosive penetration by wingers to controlled progression and central overloads. It also elevates the value of crosses, as the wide positioning and central striker create genuine aerial threats. This approach is particularly effective against compact defenses that prioritize central density, as it forces them to spread out horizontally, thereby creating the gaps needed for final-third combinations and late runs into the box.",
+  "conditions": [
+    "lack_of_vertical_winger_pace",
+    "opponent_compact_defense",
+    "central_striker_available"
+  ],
+  "objective": [
+    "force_opponent_width",
+    "create_half_space_space",
+    "progress_ball_central"
+  ],
+  "possible_actions": [
+    "hold_wide_position",
+    "receive_between_lines",
+    "cross_into_box",
+    "run_in_behind_defense"
+  ],
+  "contraindications": [
+    "opponent_wide_overload",
+    "lack_of_central_striker"
+  ],
+  "trigger_conditions": [
+    "attacking_width_high",
+    "is_in_attacking_third",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "wide_player_positioning",
+    "central_midfield_density"
+  ],
+  "player_behaviours": [
+    "track_wide_player",
+    "receive_in_half_space",
+    "force_defensive_line_deep"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "half_space",
+    "overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7963s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

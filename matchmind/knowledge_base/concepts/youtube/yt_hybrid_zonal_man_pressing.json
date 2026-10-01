@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_hybrid_zonal_man_pressing",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Hybrid Zonal Man Pressing",
+  "definition": "A defensive strategy that blends zonal positioning with targeted man-marking to bait opponents into specific passing lanes before triggering an aggressive counter-press.",
+  "content": "This tactical approach involves maintaining a zonal shape while intentionally leaving one opposition player, typically a central pivot, unmarked. This 'bait' encourages the opponent to play a short pass to the free player. Once the ball is played, a designated defender steps forward to man-mark that player from all angles, cutting off escape routes. If the opponent attempts to play back or switch, the team uses its striker or wide players to block passing lanes, forcing the ball toward the weaker flank or the touchline. The touchline acts as an extra defender, trapping the ball carrier. This method requires players to have pre-conditioned knowledge of when to switch from zonal to man-marking. It differs from purely zonal pressing (like Klopp's) by prioritizing immediate ball recovery through aggressive overloading over maintaining structural integrity. It is particularly effective against teams that rely on short passing in the midfield, as it disrupts their rhythm and forces errors under high pressure. The system demands high intensity and clear communication to execute the switch from zone to man effectively.",
+  "conditions": [
+    "opponent_short_passing_style",
+    "clear_bait_player_identified",
+    "high_press_intensity_capable"
+  ],
+  "objective": [
+    "force_opponent_into_trap",
+    "recover_ball_quickly",
+    "disrupt_midfield_rhythm"
+  ],
+  "possible_actions": [
+    "leave_pivot_unmarked",
+    "step_up_to_man_mark",
+    "block_passing_lanes",
+    "force_towards_touchline"
+  ],
+  "contraindications": [
+    "opponent_long_ball_strategy",
+    "fatigue_reduced_press_intensity",
+    "lack_of_communication"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "is_in_defensive_third",
+    "local_numerical_advantage_negative",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "switch_to_man_marking"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "counter_press",
+    "zonal_defending"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=468s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_dynamic_positional_fluidity",
+  "category": "attacking",
+  "subcategory": "mobility",
+  "phase": "possession",
+  "title": "Dynamic Positional Fluidity",
+  "definition": "A tactical approach where outfield players freely interchange positions to create unpredictability, while maintaining a fixed structural backbone for defensive stability.",
+  "content": "This concept involves granting outfield players significant freedom to move into non-traditional zones, such as wingers operating centrally or strikers drifting wide, to confuse opponents and create numerical overloads. The key to its success is the balance between individual creative freedom and strict collective discipline. While most players roam to exploit space, the team maintains a rigid structural foundation, typically a back three acting as a rest defense, to ensure defensive shape is never compromised. This fluidity makes the team highly unpredictable, as opponents cannot rely on fixed positional markers. However, this strategy carries significant risk: if too many players push forward simultaneously, the team may lack sufficient numbers to recover quickly, leaving the backline exposed to counterattacks. Therefore, this approach requires high tactical intelligence from all players to know when to advance and when to hold position, ensuring that the creative chaos does not result in defensive vulnerability. It is particularly effective against teams that rely on static marking rather than zonal coverage.",
+  "conditions": [
+    "high_tactical_intelligence",
+    "fixed_defensive_backbone",
+    "opponent_static_marking"
+  ],
+  "objective": [
+    "create_unpredictability",
+    "exploit_spatial_gaps",
+    "maintain_defensive_shape"
+  ],
+  "possible_actions": [
+    "interchange_positions",
+    "drift_into_half_space",
+    "hold_defensive_line"
+  ],
+  "contraindications": [
+    "insufficient_recovery_speed",
+    "opponent_high_press",
+    "lack_of_structural_discipline"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "local_numerical_advantage"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "scan_before_moving",
+    "cover_passing_lane",
+    "delay_opponent_advance"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "rest_defence",
+    "counter_press"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=g1nYknl92wI&t=699s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

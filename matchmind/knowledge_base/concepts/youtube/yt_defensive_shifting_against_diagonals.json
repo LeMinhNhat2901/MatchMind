@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_defensive_shifting_against_diagonals",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "out_of_possession",
+  "title": "Defensive Shifting Against Diagonals",
+  "definition": "A coordinated team movement strategy to block diagonal passes and compact the defensive block when facing high-quality possession teams.",
+  "content": "This tactical concept focuses on the 'hard yards' of defending against top-tier teams that retain possession effectively. The primary objective is to prevent the opponent from shifting play via diagonal passes, which are often the key to breaking down a low or mid-block. When the ball is on one flank, the defensive unit must quickly 'shuffle' or slide across to cut off the diagonal passing lane, effectively locking the play to that side. If the team fails to intercept the first diagonal, the second shift must be even faster to regain control. As the opponent penetrates deeper, bringing fullbacks and midfielders into the box, the defensive shape must compact significantly. Wide players drop deep to tag opponents, and midfielders sink to the front edge of the penalty area to create a dense 'V' shape inside the box. Crucially, one forward remains high up the pitch to provide an outlet for a counter-attack, ensuring the team is not completely flat. This requires high communication and physical effort to maintain compactness and deny space between the lines.",
+  "conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "block_diagonal_pass",
+    "maintain_compactness",
+    "limit_opponent_shift"
+  ],
+  "possible_actions": [
+    "shift_defensive_block",
+    "drop_wide_player",
+    "sink_midfielder",
+    "tag_opponent"
+  ],
+  "contraindications": [
+    "leaving_space_between_lines",
+    "slow_reaction_to_shift"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_high_press",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "slide_across",
+    "cover_passing_lane",
+    "drop_deep"
+  ],
+  "related_concepts": [
+    "low_block",
+    "defensive_line",
+    "counter_press"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=349s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

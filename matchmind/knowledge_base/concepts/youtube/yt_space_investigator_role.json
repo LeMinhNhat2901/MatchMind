@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_space_investigator_role",
+  "category": "individual",
+  "subcategory": "movement",
+  "phase": "possession",
+  "title": "Space Investigator Role",
+  "definition": "A tactical role where a player uses high spatial awareness to position themselves in unmarked zones rather than chasing the ball, facilitating easy reception and scoring opportunities.",
+  "content": "The 'Space Investigator' (or Raumdeuter) is a specialized attacking role that prioritizes intelligent positioning over physical attributes like speed or dribbling. Unlike a traditional False Nine or Trequartista who may roam to find the ball, this player actively isolates themselves from congested areas to occupy spaces where the ball can be easily delivered. The core principle is 'being in the right place at the right time.' By constantly scanning and interpreting the pitch, the player identifies gaps in the defensive structure and moves into them before the ball arrives. This approach conserves energy and creates high-percentage scoring chances, as the defender is often forced to chase the player rather than the ball. It is particularly effective against organized low blocks or compact defenses that struggle to track a player who does not follow the ball's movement. While this role minimizes defensive contributions, its offensive output relies on superior cognitive processing and spatial intelligence rather than raw athleticism, making it a distinct alternative to more mobile playmaking roles.",
+  "conditions": [
+    "high_spatial_awareness",
+    "opponent_defensive_structure_compact",
+    "lack_of_physical_dominance"
+  ],
+  "objective": [
+    "occupy_unmarked_space",
+    "receive_ball_in_advantageous_position",
+    "create_scoring_opportunity"
+  ],
+  "possible_actions": [
+    "move_into_gap",
+    "isolate_from_ball",
+    "scan_pitch",
+    "time_run_into_box"
+  ],
+  "contraindications": [
+    "low_team_ball_possession",
+    "opponent_high_press_with_low_lines"
+  ],
+  "trigger_conditions": [
+    "space_between_lines",
+    "space_ahead_large",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "gaps_in_defensive_lines",
+    "unmarked_zones_in_final_third"
+  ],
+  "player_behaviours": [
+    "delayed_run",
+    "positional_scanning",
+    "ball-free_movement"
+  ],
+  "related_concepts": [
+    "false_nine",
+    "trequartista",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=500s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

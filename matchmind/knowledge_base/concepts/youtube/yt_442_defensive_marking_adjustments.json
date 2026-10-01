@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_442_defensive_marking_adjustments",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "out_of_possession",
+  "title": "442 Defensive Marking Adjustments",
+  "definition": "A defensive strategy in a 4-4-2 where one striker drops to mark the opposition's advanced midfielder, requiring the other striker to maintain width and cover.",
+  "content": "When defending against a 4-3-3 or similar formation with a 4-4-2, the team must adapt its marking scheme to neutralize the opposition's central midfield threat. The core principle involves one center forward dropping deep to 'lock on' to the opponent's number 10 or advanced midfielder, effectively turning the 4-4-2 into a 4-4-1-1 or 4-5-1 shape in defensive phases. This drop is crucial when the ball is in the middle third or when the opponent plays through the center. The remaining center forward must stay high and wide, often on the 'north side' (wide channel), to prevent the opponent from pivoting across the pitch or playing fast diagonal passes. If the ball moves to the opposite flank, the high striker may need to break off and drop back to cover the space left by the dropped striker. This system relies on clear communication and standard understanding between the two strikers to ensure the central passing lanes are blocked without leaving the wide areas exposed. It is a logical, low-information approach that simplifies defensive responsibilities for the forwards.",
+  "conditions": [
+    "formation_442",
+    "opponent_formation_433",
+    "ball_in_central_third"
+  ],
+  "objective": [
+    "neutralize_opponent_no10",
+    "maintain_wide_coverage",
+    "block_central_passing_lanes"
+  ],
+  "possible_actions": [
+    "drop_deep_to_mark",
+    "stay_high_and_wide",
+    "cover_diagonal_pass",
+    "communicate_switch"
+  ],
+  "contraindications": [
+    "opponent_overloads_wide_areas",
+    "lack_of_striker_communication"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "opponent_high_press",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "wide_striker_positioning"
+  ],
+  "player_behaviours": [
+    "drop_to_mark_midfielder",
+    "hold_wide_position",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "defensive_line",
+    "man_marking",
+    "zonal_defending"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_one_pressing_defensive_structure",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "One-Pressing Defensive Structure",
+  "definition": "A defensive tactic where the team leaves one opponent free to maintain numerical superiority at the back against direct long balls.",
+  "content": "The one-pressing approach is a specific defensive structure used by positional play teams to balance risk and reward. In this system, the pressing unit intentionally leaves one opposition player, typically a central midfielder or deep-lying playmaker, unmarked in the higher zones. The primary objective is to retain an extra defender at the back, creating a numerical advantage that protects against direct long balls and provides cover for the defensive line. This allows the team to press aggressively in the middle and final thirds while maintaining structural integrity. However, this tactic carries significant risk. If the unmarked player is mobile and can separate from their markers, they become a 'free man' who can receive direct passes, effectively breaking the team's compact shape and exposing the space behind the defensive line. This concept is highly dependent on the physical and tactical quality of the squad; if players lack the intensity or understanding to execute the press, the system fails, allowing opponents to play through the gaps. It is a high-risk, high-reward strategy that requires precise timing and communication to ensure the free player does not become a focal point for the opposition's attack.",
+  "conditions": [
+    "defensive_line_height_high",
+    "team_compactness_high",
+    "opponent_direct_play_threat"
+  ],
+  "objective": [
+    "protect_against_long_balls",
+    "maintain_defensive_numerical_advantage",
+    "force_opponent_into_wide_areas"
+  ],
+  "possible_actions": [
+    "leave_one_player_free",
+    "keep_extra_defender_at_back",
+    "press_aggressively_in_mid_third"
+  ],
+  "contraindications": [
+    "opponent_has_mobile_free_man",
+    "low_pressing_intensity",
+    "lack_of_squad_understanding"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_high",
+    "team_compactness_high",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "cover_passing_lane",
+    "maintain_defensive_width"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "defensive_transition",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=162s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_relational_positional_play",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Relational Positional Play",
+  "definition": "A tactical approach where players dynamically rotate and occupy non-traditional positions to create spatial overloads and passing options, rather than adhering to rigid fixed roles.",
+  "content": "Relational positional play is a modern evolution of tactical structure that prioritizes dynamic spatial manipulation over static role adherence. In this system, players are encouraged to leave their comfort zones and occupy 'random' or fluid positions to generate space and numerical advantages. This approach relies heavily on high trust and communication, as every player assumes playmaking responsibilities, reducing dependence on a single creative hub. The strategy often involves irregular player movements to bait opponents into pressing traps or mispositioning, creating gaps for quick, high-tempo transitions into the final third. Defensively, teams may employ a mid-block to invite pressure, targeting the space behind the advancing defensive line with through balls or early crosses to prevent the opposition from settling. This method requires players with high technical proficiency and decision-making speed to execute risky passes and rotations effectively. It represents a shift from possession dominance for its own sake to possession as a tool for creating constant scoring opportunities through spatial exploitation and collective creativity.",
+  "conditions": [
+    "high_player_trust",
+    "technical_proficiency",
+    "dynamic_formation_structure"
+  ],
+  "objective": [
+    "create_spatial_overloads",
+    "disrupt_opponent_shape",
+    "maximize_passing_options"
+  ],
+  "possible_actions": [
+    "dynamic_rotation",
+    "irregular_movement",
+    "early_cross",
+    "through_ball"
+  ],
+  "contraindications": [
+    "low_communication",
+    "lack_of_technical_skill",
+    "rigid_role_adherence"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "passing_lane_open",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "fluid_team_shape",
+    "space_between_lines"
+  ],
+  "player_behaviours": [
+    "occupy_non_traditional_position",
+    "bait_press",
+    "make_risky_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "third_man"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=824s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

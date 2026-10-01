@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_striker_role_impact_on_pressing",
+  "category": "defending",
+  "subcategory": "pressing_structure",
+  "phase": "out_of_possession",
+  "title": "Striker Role Impact on Pressing",
+  "definition": "The tactical adjustment required when a pure penalty-box striker, who does not drop deep or press, disrupts the team's coordinated defensive unit.",
+  "content": "This concept addresses the systemic disruption caused by introducing a pure number nine who conserves energy for final-third runs rather than contributing to midfield pressing or deep drops. In systems built on collective defensive contribution and coordinated units, a striker who stays high and avoids pressing creates a gap in the front line. This forces the midfield to compensate, often leading to an over-reliance on numerical overloads in central areas to maintain defensive shape. The tactical challenge is to restructure the pressing triggers and defensive lines so that the team remains compact without the striker's active participation in the first wave of pressure. Coaches must adjust the defensive transition plan, ensuring that midfielders and full-backs cover the spaces left by the non-pressing striker, while the striker focuses solely on exploiting space behind the defensive line. This shift requires a re-evaluation of how the team initiates pressure, moving from a coordinated front-line press to a more structured mid-block or high-block that accounts for the striker's static positioning during defensive phases.",
+  "conditions": [
+    "striker_role_pure_nine",
+    "team_system_reliant_on_collective_press",
+    "striker_does_not_drop_deep"
+  ],
+  "objective": [
+    "maintain_defensive_compactness",
+    "compensate_for_lack_of_striker_press",
+    "preserve_energy_for_final_third"
+  ],
+  "possible_actions": [
+    "adjust_midfield_formation",
+    "redefine_pressing_triggers",
+    "increase_midfield_overload",
+    "shift_defensive_line_height"
+  ],
+  "contraindications": [
+    "forcing_striker_to_press",
+    "leaving_midfield_exposed",
+    "losing_defensive_shape"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "striker_role",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "midfield_cover",
+    "delay_opponent_progression",
+    "maintain_positional_discipline"
+  ],
+  "related_concepts": [
+    "pressing_traps",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7489s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

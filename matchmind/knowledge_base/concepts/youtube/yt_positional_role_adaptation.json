@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_positional_role_adaptation",
+  "category": "individual",
+  "subcategory": "role_transition",
+  "phase": "general",
+  "title": "Positional Role Adaptation",
+  "definition": "The strategic adjustment of a player's technical and tactical responsibilities when shifting from a deep defensive role to a more advanced creative position.",
+  "content": "This concept addresses the significant shift in decision-making and spatial awareness required when a player moves from a deep-lying midfield role (e.g., number 6) to an advanced interior or second striker position. In the deep role, the primary focus is on defensive stability, providing cover for full-backs, and executing safe, low-risk passes to maintain possession. Conversely, in the advanced role, the player is closer to the goal and the final third, requiring higher decisiveness and risk tolerance. The player must prioritize progressive actions such as through balls, shots, or 1v1 penetrations rather than retreats. This transition demands a change in scanning habits and body orientation, focusing on attacking outlets rather than defensive coverage. While the deep role offers security and allows for a more conservative game, the advanced role increases individual impact on the scoreline and overall team threat. Coaches must ensure players understand that their value shifts from defensive reliability to offensive creation, requiring them to accept higher pressure and make quicker, more dangerous decisions in the final third.",
+  "conditions": [
+    "player_role_change",
+    "advanced_position_available",
+    "tactical_system_support"
+  ],
+  "objective": [
+    "increase_offensive_impact",
+    "improve_final_third_decisions",
+    "adapt_to_higher_pressure"
+  ],
+  "possible_actions": [
+    "progressive_pass",
+    "shot_attempt",
+    "1v1_penetration",
+    "support_forward_movement"
+  ],
+  "contraindications": [
+    "lack_of_defensive_cover",
+    "player_resistance_to_risk",
+    "insufficient_team_width"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "progressive_pass_available"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "supporting_players_in_final_third"
+  ],
+  "player_behaviours": [
+    "scan_for_progressive_options",
+    "orient_body_towards_goal",
+    "take_risk_in_final_third"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "final_third",
+    "decision_making"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=QzE2tQDlcsA&t=231s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

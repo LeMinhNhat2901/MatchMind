@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_fluid_front_three_interchange",
+  "category": "attacking",
+  "subcategory": "mobility",
+  "phase": "possession",
+  "title": "Fluid Front Three Interchange",
+  "definition": "A tactical structure where front-line players interchange positions to create numerical overloads and free key creative players from defensive marking.",
+  "content": "This concept involves using positional flexibility in the final third to disrupt defensive organization. By introducing players who can operate in multiple roles, a team can shift from a standard shape to a fluid 4-2-4 or similar configuration. The primary objective is to free a high-value creator or striker from being pinned to a specific zone, such as the center, allowing them to drift into half-spaces or deeper areas to receive the ball. When the wide players provide consistent width and occupy the full-backs, the central forwards can drop deeper or interchange, creating man-to-man situations against center-backs. This mobility ensures that if one channel is blocked, another is open, and it increases the number of attackers in the box during crosses or cutbacks. It relies on players being comfortable in secondary positions and having the spatial awareness to know when to hold width and when to converge. This approach is particularly effective against low blocks or teams that rely on zonal marking, as it forces defenders to track multiple threats simultaneously, creating gaps for penetration.",
+  "conditions": [
+    "possession_high",
+    "opponent_low_block",
+    "players_comfortable_in_secondary_roles"
+  ],
+  "objective": [
+    "free_key_creator",
+    "create_numerical_overload",
+    "disrupt_defensive_shape"
+  ],
+  "possible_actions": [
+    "interchange_positions",
+    "drift_into_half_space",
+    "hold_width",
+    "drop_deeper_to_receive"
+  ],
+  "contraindications": [
+    "lack_of_width",
+    "opponent_high_press_intense",
+    "players_lack_of_off_ball_movement"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "wide_player_holding_width",
+    "compact_attacking_shape"
+  ],
+  "player_behaviours": [
+    "drift_into_space",
+    "occupy_defender",
+    "switch_roles"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "half_space"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=693s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_man_to_man_pressing_system",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Man-to-Man Pressing System",
+  "definition": "A defensive strategy where each player is assigned a specific opponent to mark and press, prioritizing individual accountability over zonal coverage to disrupt positional play.",
+  "content": "This tactical approach involves assigning specific defenders to individual opponents rather than zones, allowing for continuous, high-intensity pressure regardless of the opponent's positional structure. In the described scenario, Bayern Munich utilized a man-to-man system against PSG's build-up, with specific players like Kane fixed on Marquinhos and Sessegnon targeting Mendes. The system required dynamic adjustments, such as Gnabry holding a deeper midfield position to maintain numerical balance in the center before springing forward to press the back line. A key component was the aggressive role of a designated center back (Upamecano) who tracked deep-lying midfielders to prevent the opposition from establishing central dominance. This method is particularly effective against teams that rely on positional play, as it denies the space between zones that zonal marking might leave open. However, it demands immense trust and coordination among all eleven players, as leaving a man unmarked can create significant defensive vulnerabilities, such as a 3v2 disadvantage in midfield if the press is not synchronized.",
+  "conditions": [
+    "opponent_positional_play",
+    "high_press_capability",
+    "man_to_man_assignment"
+  ],
+  "objective": [
+    "disrupt_build_up",
+    "force_risky_passes",
+    "prevent_central_dominance"
+  ],
+  "possible_actions": [
+    "track_assigned_opponent",
+    "spring_forward_to_press",
+    "maintain_cover_shadow",
+    "aggressive_deep_tracking"
+  ],
+  "contraindications": [
+    "lack_of_team_trust",
+    "numerical_disadvantage_in_midfield",
+    "opponent_quick_transitions"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "track_deep_midfielder"
+  ],
+  "related_concepts": [
+    "pressing_traps",
+    "zonal_defending",
+    "counter_press"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=1FfYzl4dygc&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

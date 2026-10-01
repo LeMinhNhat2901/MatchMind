@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_five_situational_tactical_framework",
+  "category": "fundamentals",
+  "subcategory": "principles_of_play",
+  "phase": "general",
+  "title": "Five Situational Tactical Framework",
+  "definition": "A holistic coaching model that divides football into five distinct tactical situations requiring specific strategies: possession, out-of-possession, defensive transition, attacking transition, and set pieces.",
+  "content": "This concept outlines a comprehensive tactical philosophy where a team's success depends on having clear, defined plans for five specific game states. First, when in possession, the team must avoid passive play (like slow back-passes) and instead control the game through aggressive, high-tempo movement. Second, when out of possession, the team executes a structured defensive plan, often involving high-intensity pressing to regain the ball quickly. Third and fourth are the critical transition phases: the immediate moment of losing the ball (defensive transition) requires organized recovery to prevent counter-attacks, while the moment of winning the ball (attacking transition) demands immediate, intense pressure to exploit the opponent's disorganization. Finally, set pieces are emphasized as a major source of goals (cited as over 30%), requiring dedicated training time for corners, free kicks, and throw-ins. The core principle is that elite teams do not just excel in one area but maintain a high standard of tactical execution across all five situations. This framework ensures that players have clear instructions for every phase of play, reducing ambiguity and maximizing the team's ability to dominate or defend effectively regardless of the ball's location or possession status.",
+  "conditions": [
+    "coaching_context",
+    "full_match_coverage"
+  ],
+  "objective": [
+    "tactical_clarity",
+    "consistent_performance",
+    "transition_dominance"
+  ],
+  "possible_actions": [
+    "define_possession_plan",
+    "structure_defensive_shape",
+    "train_immediate_recovery",
+    "execute_high_press",
+    "prioritize_set_piece_training"
+  ],
+  "contraindications": [
+    "ambiguous_instructions",
+    "neglecting_set_pieces",
+    "passive_possession_style"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_transition",
+    "phase_of_play_defensive",
+    "phase_of_play_attacking_transition"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "immediate_press",
+    "organized_recovery",
+    "aggressive_progression"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "counter_attack",
+    "set_piece_strategy",
+    "possession_play"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=mZskzUKsNwU&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

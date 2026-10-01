@@ -1,0 +1,51 @@
+{
+  "concept_id": "yt_positional_play_structure",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Positional Play Structure",
+  "definition": "A tactical approach where players maintain a predefined team shape through coordinated rotations to reduce decision-making burden and ensure consistent performance.",
+  "content": "Positional play is a dominant tactical philosophy in modern European football, characterized by a strict adherence to pre-defined structural shapes. Unlike free-form or chaotic passing systems, this approach requires players to position themselves within a specific framework, ensuring that individual movements serve the collective team structure. The core objective is to reduce the cognitive load on players by providing repeatable passing patterns and automated sequences, such as specific buildup routines. By limiting the number of variables players must consider, coaches allow athletes to focus on technical execution rather than complex decision-making. This results in high consistency regardless of the opponent's quality. The system relies on rotations that maintain the team's geometric integrity, creating predictable passing lanes and spatial advantages. It contrasts sharply with styles that rely on unpredictable clustering or individual improvisation, prioritizing structural stability and collective understanding over spontaneous creativity. This method is often compared to chess, where every piece has a defined role and movement path to achieve a strategic goal.",
+  "conditions": [
+    "high_coaching_intervention",
+    "structured_team_shape",
+    "consistent_player_roles"
+  ],
+  "objective": [
+    "reduce_decision_making_burden",
+    "maintain_team_structure",
+    "ensure_passing_consistency"
+  ],
+  "possible_actions": [
+    "execute_predefined_rotations",
+    "maintain_positional_shape",
+    "follow_automated_passing_sequences"
+  ],
+  "contraindications": [
+    "low_tactical_discipline",
+    "high_improvisation_preference"
+  ],
+  "trigger_conditions": [
+    "possession_phase",
+    "buildup_phase"
+  ],
+  "spatial_requirements": [
+    "defined_team_shape",
+    "balanced_spacing"
+  ],
+  "player_behaviours": [
+    "rotate_to_maintain_shape",
+    "occupy_predefined_zone"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "team_shape"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

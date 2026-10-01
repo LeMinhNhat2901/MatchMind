@@ -1,0 +1,52 @@
+{
+  "concept_id": "yt_formation_adaptation_based_on_personnel",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "general",
+  "title": "Formation Adaptation Based on Personnel",
+  "definition": "The tactical principle of selecting or switching team shapes to maximize the specific strengths of available players rather than adhering rigidly to a preferred system.",
+  "content": "This concept emphasizes that formation is a tool to fit the personnel, not the other way around. A manager should prioritize a winning structure over ideological purity. For instance, if a team lacks experienced center-backs or suitable wing-backs for a back four, but possesses three elite central defenders, shifting to a back three (3-5-2) can be the superior choice. This adaptation allows natural center-backs to flourish in their preferred positions, eliminates the need to force an out-of-position player into a wide role, and creates a balanced midfield. Furthermore, in-game adjustments can be driven by immediate tactical needs; if an opponent's high press is overwhelming a back four, switching to a back three can create numerical superiority in the build-up phase, making coordinated pressing by the opponent significantly harder. The key is recognizing when the current shape is suppressing player strengths or failing to counter the opponent's specific threat, and having the flexibility to change the structure to restore balance and exploit individual attributes.",
+  "conditions": [
+    "personnel_mismatch_with_current_shape",
+    "opponent_pressing_overwhelms_build_up",
+    "lack_of_suitable_wide_defenders"
+  ],
+  "objective": [
+    "maximize_player_strengths",
+    "create_numerical_superiority_in_build_up",
+    "neutralize_opponent_high_press"
+  ],
+  "possible_actions": [
+    "switch_to_back_three",
+    "reposition_center_backs_wide",
+    "adjust_midfield_structure_for_balance"
+  ],
+  "contraindications": [
+    "rigid_ideological_commitment_to_formation",
+    "ignoring_player_positional_naturalness"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage_negative",
+    "phase_of_play_defensive"
+  ],
+  "spatial_requirements": [
+    "balanced_midfield_width",
+    "compact_defensive_block"
+  ],
+  "player_behaviours": [
+    "center_back_pushing_up_with_ball",
+    "midfielder_sweeping_up"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "build_up",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=600s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

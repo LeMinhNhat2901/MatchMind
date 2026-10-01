@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_defensive_parking_strategy",
+  "category": "defending",
+  "subcategory": "low_block",
+  "phase": "out_of_possession",
+  "title": "Defensive Parking Strategy",
+  "definition": "A defensive tactic where the team maintains an ultra-compact low block to deny space, often prioritizing structural integrity over immediate ball recovery.",
+  "content": "This tactical approach, often colloquially referred to as 'parking the bus,' involves positioning all eleven players in defensive roles to minimize the available space for the opposition. The primary objective is to create a dense, zonal structure that significantly reduces the opponent's scoring probability by eliminating penetration lanes. A critical component of this strategy is the deliberate decision to allow the opponent to retain possession rather than aggressively winning the ball back. This restraint prevents the team from being caught in a counter-press, which could disrupt the compact shape and expose vulnerable spaces behind the defensive line. The tactic is typically employed when protecting a narrow lead or playing in a high-pressure away environment where survival is prioritized over attacking ambition. By maintaining strict positional discipline and refusing to be drawn out of shape, the team forces the opposition into low-percentage shots or risky passes, thereby controlling the game's outcome through defensive resilience rather than offensive dominance.",
+  "conditions": [
+    "protecting_narrow_lead",
+    "away_match_pressure",
+    "opponent_high_possession"
+  ],
+  "objective": [
+    "minimize_opponent_scoring_probability",
+    "maintain_defensive_compactness",
+    "avoid_counter_press_vulnerability"
+  ],
+  "possible_actions": [
+    "drop_into_low_block",
+    "maintain_zonal_positioning",
+    "delay_ball_recovery",
+    "force_opponent_to_wide"
+  ],
+  "contraindications": [
+    "risk_of_conceding_set_pieces",
+    "vulnerability_to_long_balls_if_shape_breaks",
+    "low_attacking_output"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "opponent_high_press",
+    "phase_of_play_defensive"
+  ],
+  "spatial_requirements": [
+    "ultra_compact_low_block",
+    "short_distance_between_lines",
+    "narrow_defensive_width"
+  ],
+  "player_behaviours": [
+    "hold_defensive_position",
+    "cover_passing_lanes",
+    "avoid_high_risk_tackles"
+  ],
+  "related_concepts": [
+    "low_block",
+    "defensive_transition",
+    "positional_discipline"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=991s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

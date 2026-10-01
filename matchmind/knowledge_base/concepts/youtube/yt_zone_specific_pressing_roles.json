@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_zone_specific_pressing_roles",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Zone-Specific Pressing Roles",
+  "definition": "A defensive structure that assigns distinct pressing duties to players based on specific spatial zones to disrupt opponent build-up.",
+  "content": "This tactical concept involves dividing the pitch into an 'offensive pressing zone' and a 'defensive pressing zone,' each with unique principles and player responsibilities. In the offensive zone, the focus is on immediate ball recovery and preventing the opponent from turning to face the team. For example, a central midfielder may drop into the line to control a specific opponent (like a false nine or deep-lying playmaker), while full-backs or wingers cut off outside passing lanes to force the ball inward. This creates a trap where the opponent is pressured from multiple angles simultaneously. The objective is to win the ball high up the pitch, often leading to immediate counter-pressing opportunities or direct attacking transitions. Key to this system is the coordination between players; for instance, when one player presses the ball carrier, another must cover the passing lane to a full-back, and a third may occupy the space behind to prevent a switch. This approach relies on high energy and specific triggers, such as the opponent playing a long ball or dropping deep, which signals the team to intensify pressure in the designated zone. By controlling these specific spaces, the team can neutralize the opponent's key creators and force errors in dangerous areas.",
+  "conditions": [
+    "opponent_build_up_from_back",
+    "high_energy_midfield",
+    "clear_zone_assignment"
+  ],
+  "objective": [
+    "disrupt_build_up",
+    "win_ball_high",
+    "force_error"
+  ],
+  "possible_actions": [
+    "cut_passing_lane",
+    "drop_into_line",
+    "counter_press",
+    "cover_space"
+  ],
+  "contraindications": [
+    "low_team_energy",
+    "poor_communication",
+    "opponent_long_ball_specialist"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "is_in_defensive_third",
+    "press_intensity_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "occupy_central_space"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "counter_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=647s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

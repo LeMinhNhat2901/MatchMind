@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_versatile_creator_dropping_deep",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Versatile Creator Dropping Deep",
+  "definition": "A tactical system where a primary creator drops into deeper zones to provide progressive passing options when the midfield pivot struggles, allowing for flexible role rotation.",
+  "content": "This concept addresses the limitation of teams relying solely on counter-attacks due to a lack of central creativity. By introducing a versatile creator who can drop deep, the team gains the ability to break down compact defenses through controlled possession rather than just high pressing. When the defensive line or double pivot struggles with progression, the creator provides a reliable outlet for progressive passes. This flexibility allows the team to maintain possession and build up patiently, reducing the risk of being exposed on the counter-attack, especially if the goalkeeper or center-backs lack sweeping or speed capabilities. Furthermore, this role enables rotation with other progressive passers; for instance, if a box-to-box midfielder returns, the creator can maintain a higher position between the lines to focus purely on final-third creation, while the midfielder handles progression from deep. This dual-threat setup elevates the attacking play by offering multiple pathways to break down low blocks, supporting the development of wide runners who can exploit the space created by this central flexibility.",
+  "conditions": [
+    "opponent_low_block",
+    "midfield_progression_struggle",
+    "creator_versatility_available"
+  ],
+  "objective": [
+    "break_down_compact_defense",
+    "provide_progressive_pass_option",
+    "maintain_possession_control"
+  ],
+  "possible_actions": [
+    "drop_into_defensive_line",
+    "rotate_with_midfield_pivot",
+    "receive_between_lines",
+    "progressive_pass_forward"
+  ],
+  "contraindications": [
+    "exposed_to_counter_attack",
+    "lack_of_sweeper_keeper",
+    "slow_central_defenders"
+  ],
+  "trigger_conditions": [
+    "progressive_pass_not_available",
+    "space_between_lines",
+    "opponent_defensiveline_low"
+  ],
+  "spatial_requirements": [
+    "central_channel_open",
+    "supporting_midfield_positions"
+  ],
+  "player_behaviours": [
+    "drop_deep_for_pass",
+    "scan_for_progressive_option",
+    "rotate_positions_with_pivot"
+  ],
+  "related_concepts": [
+    "positional_rotation",
+    "progressive_passing",
+    "low_block_breakdown"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2376s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

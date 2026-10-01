@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_short_goal_kick_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Short Goal Kick Build-Up",
+  "definition": "A tactical approach where the goalkeeper distributes short to defenders to maintain possession and create numerical advantages in the midfield, rather than clearing the ball long.",
+  "content": "This concept challenges the traditional view of goal kicks as a method to clear danger. Instead, it treats the restart as an opportunity to initiate possession with 100% control. By having center-backs drop deep to receive short passes from the goalkeeper, the team avoids the 50-50 risk of aerial duels. This strategy forces opponents to make a critical decision: press aggressively or retreat. If opponents press, the team can exploit the resulting numerical superiority in the midfield, particularly against common formations like the 4-4-2 or 4-2-3-1. For instance, against a 4-4-2, the goalkeeper's involvement creates a 3v2 advantage in the midfield zone. If the opponent pushes up to compensate, they leave gaps that can be exploited by overloads. This method ensures that defenders, specifically center-backs, become active participants in the build-up, increasing their touch time and decision-making under pressure. It requires high technical proficiency and confidence from defenders to handle pressure near their own goal. The ultimate goal is to control the tempo of the game from the very first touch, dictating the flow of play and forcing the opposition to react rather than dictate.",
+  "conditions": [
+    "possession_goal_kick",
+    "defenders_technical_proficiency_high",
+    "opponent_formation_442_or_4231"
+  ],
+  "objective": [
+    "maintain_possession",
+    "create_midfield_overload",
+    "dictate_game_tempo"
+  ],
+  "possible_actions": [
+    "center_back_drop_deep",
+    "goalkeeper_short_pass",
+    "midfielder_sink_between_defenders",
+    "switch_play_to_wide_areas"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "defenders_lack_confidence",
+    "match_situation_critical_goal_needed"
+  ],
+  "trigger_conditions": [
+    "possession_goal_kick",
+    "local_numerical_advantage_positive",
+    "space_ahead_moderate"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "receive_short_pass",
+    "offer_support_angle",
+    "scan_before_receiving"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "numerical_superiority"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=336s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

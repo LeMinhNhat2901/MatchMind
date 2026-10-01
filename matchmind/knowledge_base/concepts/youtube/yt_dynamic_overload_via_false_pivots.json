@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_dynamic_overload_via_false_pivots",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Dynamic Overload via False Pivots",
+  "definition": "A tactical system using advanced pivots as false 10s and a dropping center-back to create numerical superiority and connect defensive and attacking lines.",
+  "content": "This concept describes a flexible attacking structure, often seen in 3-2-5 or 3-1-6 formations, designed to exploit opponent pressing or low blocks. The core mechanism involves advanced pivots acting as 'false 10s,' staying high to create a front-line overload, while a central defender drops deep to receive the ball. This movement attracts the opposition's press, freeing wide fullbacks to invert into central spaces for third-man passes. If the opponent defends deep, the team overloads the midfield vertically by having one pivot drop to a false 6 role, forcing the opponent to stretch vertically. This creates gaps behind their defensive line or allows the team to outnumber their box midfield. The system relies on dynamic positional interchanges: the middle center-back acts as a false pivot to connect lines, while the front five maintain horizontal width to pin backmarkers. This approach ensures numerical superiority in both the build-up and final third, allowing the team to switch play or penetrate central spaces based on the opponent's defensive reaction.",
+  "conditions": [
+    "opponent_high_press",
+    "opponent_low_block",
+    "local_numerical_advantage_positive"
+  ],
+  "objective": [
+    "create_numerical_superiority",
+    "connect_defensive_and_attacking_lines",
+    "exploit_central_space"
+  ],
+  "possible_actions": [
+    "drop_deep_to_receive",
+    "invert_into_central_space",
+    "maintain_high_position",
+    "switch_play"
+  ],
+  "contraindications": [
+    "opponent_compact_mid_block",
+    "lack_of_wide_width"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "drop_deep_to_receive",
+    "invert_into_central_space"
+  ],
+  "related_concepts": [
+    "false_9",
+    "third_man_run",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=168s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

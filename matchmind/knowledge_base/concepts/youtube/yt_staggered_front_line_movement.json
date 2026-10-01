@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_staggered_front_line_movement",
+  "category": "attacking",
+  "subcategory": "final_third",
+  "phase": "possession",
+  "title": "Staggered Front Line Movement",
+  "definition": "A tactical structure where front-line players maintain vertical depth rather than a horizontal line to facilitate offside-beating runs and create spatial confusion for defenders.",
+  "content": "This concept involves breaking the traditional horizontal front line in the final third by staggering players vertically. Instead of aligning side-by-side, wide players and half-space runners start at different depths. This allows the deeper player to make a straight vertical run to beat the offside trap, while the higher player can make a wide run or stay anonymous to drag markers out of position. The primary benefit is that it prevents the defensive line from tracking a single horizontal plane, forcing them to guess which player will make the decisive run. Additionally, this structure supports specific passing techniques, such as playing a back pass to reset the defensive line's orientation before delivering a through ball. By forcing defenders to turn and lose momentum, the attacking team creates a window for the staggered runner to exploit the space behind the defense. This approach is particularly effective against high defensive lines that rely on coordinated offside traps, as it introduces unpredictability into the timing and direction of attacking runs.",
+  "conditions": [
+    "opponent_defensive_line_high",
+    "is_in_attacking_third",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "beat_offside_trap",
+    "create_vertical_space",
+    "disorient_defensive_line"
+  ],
+  "possible_actions": [
+    "staggered_vertical_run",
+    "delayed_high_run",
+    "back_pass_reset",
+    "drag_marker_deep"
+  ],
+  "contraindications": [
+    "defensive_line_low",
+    "lack_of_supporting_width"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "is_in_attacking_third",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "vertical_staggering_front_line",
+    "depth_between_wide_and_half_space"
+  ],
+  "player_behaviours": [
+    "make_vertical_run",
+    "slow_run_to_drag_marker",
+    "play_back_pass_to_reset"
+  ],
+  "related_concepts": [
+    "offside_trap_exploitation",
+    "final_third_penetration",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=179s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_fluid_4_2_3_1_to_4_4_2_transition",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "possession",
+  "title": "Fluid 4-2-3-1 to 4-4-2 Transition",
+  "definition": "A dynamic tactical structure where a nominal 4-2-3-1 morphs into a 4-4-2 in possession through specific role-based movements and positional fluidity.",
+  "content": "This tactical approach utilizes a base 4-2-3-1 formation that dynamically shifts into a 4-4-2 structure when in possession. The transition is driven by specific player roles: one full-back advances to join the front four, while the opposite full-back drops to form an artificial back three, creating width and numerical balance. In midfield, the double pivot is asymmetric; one player operates as a box-to-box midfielder supporting the attack or penetrating the box, while the other remains a dedicated ball-winner. The attacking midfielder acts as a free-roaming creator, moving between lines to offer passing options. On the flanks, the strategy involves asymmetric width: one winger stays wide to isolate opponents in one-on-one situations, while the other inverts into central areas to create proximity and overloads. This system relies on continuous movement after passing, inspired by Total Football, ensuring players are always available for the next pass. It is designed to manipulate the opposition's press, creating space through patient ball circulation and positional interplay rather than static positioning. This fluidity allows the team to adapt to different game states, maintaining structural integrity while maximizing creative freedom.",
+  "conditions": [
+    "possession_phase",
+    "asymmetric_winger_roles",
+    "asymmetric_pivot_roles"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "manipulate_opponent_press",
+    "maintain_structural_balance"
+  ],
+  "possible_actions": [
+    "fullback_advance_to_wing",
+    "opposite_fullback_drop_to_back_three",
+    "winger_invert_to_center",
+    "winger_stay_wide_for_isolation",
+    "pivot_split_roles"
+  ],
+  "contraindications": [
+    "loss_of_structural_balance",
+    "excessive_space_behind_defense"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "progressive_pass_available"
+  ],
+  "spatial_requirements": [
+    "asymmetric_width_distribution",
+    "central_overload_zone"
+  ],
+  "player_behaviours": [
+    "continuous_movement_after_pass",
+    "positional_interchange",
+    "scanning_for_next_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "fluidity",
+    "asymmetric_formation"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=UlAs0moqVbU&t=497s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

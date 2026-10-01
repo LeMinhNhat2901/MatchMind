@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_positional_freedom_for_creative_players",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Positional Freedom for Creative Players",
+  "definition": "Granting specific creative players unrestricted positional freedom to exploit space and improve teammates, rather than confining them to rigid structural roles.",
+  "content": "This tactical concept highlights the necessity of adapting team structures to accommodate players with exceptional spatial awareness and decision-making skills, often referred to as 'old school number 10s'. In systems that prioritize rigid positional play, such as a 3-2-5, these players may struggle because they lack the liberty to roam and create unpredictability. Instead, a successful approach involves giving such players 100% positional freedom, allowing them to move anywhere to create overloads, retain possession, or transition from defense to attack. This freedom allows them to interpret drastically different situations instinctively, improving the performance of those around them. However, this approach requires a team identity that values individual expression over strict adherence to coaching patterns. It is particularly relevant for teams with players who thrive in less structured environments, where their ability to make rapid, high-quality decisions without the ball is the primary driver of offensive success. Coaches must recognize that forcing such players into fixed roles can stifle their creativity and reduce their effectiveness, as seen in cases where talented players fail to flourish in highly structured European systems.",
+  "conditions": [
+    "player_high_creativity",
+    "team_identity_flexible",
+    "lack_rigid_structure"
+  ],
+  "objective": [
+    "maximize_player_impact",
+    "create_unpredictability",
+    "improve_teammates"
+  ],
+  "possible_actions": [
+    "allow_free_roaming",
+    "assign_no_fixed_zone",
+    "prioritize_instinctive_play"
+  ],
+  "contraindications": [
+    "rigid_positional_system",
+    "low_team_discipline",
+    "player_lacks_decision_speed"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_ahead_large",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "flexible_team_shape",
+    "dynamic_spacing"
+  ],
+  "player_behaviours": [
+    "roam_between_lines",
+    "make_rapid_decisions",
+    "create_overloads"
+  ],
+  "related_concepts": [
+    "positional_freedom",
+    "creative_player_role",
+    "tactical_flexibility"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=518s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

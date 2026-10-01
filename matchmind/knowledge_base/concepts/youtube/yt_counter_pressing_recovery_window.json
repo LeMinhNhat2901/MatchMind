@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_counter_pressing_recovery_window",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Counter-Pressing Recovery Window",
+  "definition": "A high-intensity coordinated effort to regain possession within a strict time limit immediately after losing the ball.",
+  "content": "This tactical concept focuses on the immediate defensive transition phase, specifically the 'six-second rule' where a team must aggressively attempt to win the ball back right after losing it. The objective is to prevent the opponent from establishing a secure structure or launching a counter-attack. It involves coordinated pressure from multiple players: strikers angle runs to cut off forward passes, midfielders block central lanes, and wingers tuck in to deny diagonal options. This approach effectively pauses the opponent's attack, allowing the pressing team to resume their offensive sequence from a higher position. However, this strategy requires significant spatial coverage behind the defensive line. A single pivot player often struggles to cover the space in front of the defense if the press is bypassed. To mitigate this risk, teams may use inverted fullbacks or secondary pivots to provide support in the central zone. While highly effective for maintaining possession and dominance, this method leaves the team vulnerable to long balls or quick transitions if the initial press fails and the supporting structure is not in place.",
+  "conditions": [
+    "possession_lost",
+    "high_defensive_line",
+    "coordinated_team_structure"
+  ],
+  "objective": [
+    "regain_possession_rapidly",
+    "prevent_opponent_counter",
+    "maintain_high_position"
+  ],
+  "possible_actions": [
+    "angle_run_to_cut_pass",
+    "block_central_lanes",
+    "tuck_in_winger",
+    "sweep_behind_defense"
+  ],
+  "contraindications": [
+    "vulnerability_to_long_balls",
+    "exposure_if_press_bypassed",
+    "requires_high_stamina"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "defensive_line_height_high",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "supporting_pivot_position"
+  ],
+  "player_behaviours": [
+    "immediate_pressure",
+    "cover_passing_lane",
+    "invert_fullback"
+  ],
+  "related_concepts": [
+    "high_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3054s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

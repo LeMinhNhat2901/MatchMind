@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_false_nine_interchangeability",
+  "category": "attacking",
+  "subcategory": "false_nine",
+  "phase": "possession",
+  "title": "False Nine Interchangeability",
+  "definition": "A tactical system where a central forward drops deep to disrupt defensive lines while wide forwards make diagonal runs, creating fluid positional interchange.",
+  "content": "This concept describes a high-level attacking structure centered on a 'false nine' who operates in the half-spaces rather than holding a traditional striker position. By dropping deep, the central forward drags center-backs out of position, creating vertical space behind the defensive line. This is exploited by wide forwards who do not stay static on the touchline but instead make diagonal, penetrating runs into the channels. The system relies heavily on positional interchangeability; players like Messi, Villa, and Pedro in the source text could swap roles fluidly, making it impossible for defenders to assign fixed marking duties. The effectiveness of this tactic is amplified by elite passing quality from midfield, allowing for through balls that exploit the momentary gaps created by the forward line's movement. Even against deep defensive blocks, the combination of elite movement timing and precise passing allows the team to penetrate. The key is that the forwards act as 'runners' who stretch the defense vertically, while the false nine orchestrates from deeper areas, creating a dynamic where every defensive adjustment creates a new vulnerability.",
+  "conditions": [
+    "elite_passing_quality",
+    "forwards_with_diagonal_run_capability",
+    "central_forward_comfortable_dropping_deep"
+  ],
+  "objective": [
+    "disrupt_defensive_line_structure",
+    "create_space_behind_defense",
+    "force_opponent_marking_confusion"
+  ],
+  "possible_actions": [
+    "drop_into_half_space",
+    "make_diagonal_penetrating_run",
+    "thread_through_ball",
+    "swap_positions_with_wide_forward"
+  ],
+  "contraindications": [
+    "lack_of_passing_accuracy",
+    "forwards_unwilling_to_make_off_ball_runs",
+    "opponent_uses_zonal_defending_with_high_discipline"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_behind_defensive_line",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_triangle",
+    "wide_forwards_in_diagonal_positions"
+  ],
+  "player_behaviours": [
+    "drop_deep_to_receive",
+    "accelerate_into_space",
+    "orchestrate_play_from_midfield"
+  ],
+  "related_concepts": [
+    "positional_interchange",
+    "half_space_exploitation",
+    "through_ball_timing"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1449s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_attacking_overload_against_back_five",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Attacking Overload Against Back Five",
+  "definition": "A tactical adjustment where a team commits additional players to the final third to create numerical superiority against a low defensive block of five.",
+  "content": "When opponents defend in a back five to neutralize a team's central width, the attacking side must increase risk to break the deadlock. This involves the left-sided midfielder (often a pivot or box-to-box player) surging forward into the half-space rather than inverting to maintain a double pivot. Simultaneously, the full-back on that side pushes extremely high, effectively becoming a wide midfielder. This shifts the team shape from a standard 4-3-3 or 4-2-3-1 into a 3-1-6 or similar structure in the final third. The objective is to create a local numerical overload (e.g., 6v5) to exploit the gaps between the opponent's back five and their midfield line. While this approach generates high-quality chances through fluid movement and structure, it leaves the team vulnerable to counter-attacks if the press is bypassed, as only one central midfielder remains to protect the defensive line. This tactic requires high technical quality and pressing intensity to recover possession quickly.",
+  "conditions": [
+    "opponent_defensiveline_low",
+    "opponent_back_five",
+    "possession_in_final_third"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "penetrate_low_block",
+    "exploit_half_space"
+  ],
+  "possible_actions": [
+    "full_back_push_high",
+    "midfielder_surging_forward",
+    "maintain_width_and_depth"
+  ],
+  "contraindications": [
+    "vulnerability_to_counter_attack",
+    "lack_of_pressing_intensity"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "progressive_run"
+  ],
+  "related_concepts": [
+    "overload_flank",
+    "positional_play",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7333s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

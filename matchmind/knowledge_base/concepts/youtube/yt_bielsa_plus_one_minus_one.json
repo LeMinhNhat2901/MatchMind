@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_bielsa_plus_one_minus_one",
+  "category": "defending",
+  "subcategory": "man_marking",
+  "phase": "out_of_possession",
+  "title": "Bielsa Plus One Minus One",
+  "definition": "A man-to-man defensive system that maintains a numerical surplus in defense and a deficit in attack to ensure coverage against individual duels.",
+  "content": "This tactical structure addresses the vulnerability of standard man-to-man marking, where a weaker defender can be isolated and beaten in a one-on-one duel. The system operates on a strict 'plus one, minus one' principle: the team keeps one extra defender in the back line (plus one) while leaving one player unmarked higher up the pitch (minus one). This spare defender acts as a safety net, ready to step in and cover for a teammate if a duel is lost. To compensate for the missing marker up front, the striker is conditioned to perform curved pressing runs. These runs allow the striker to pressure the ball carrier while simultaneously shadow-marking the opponent's teammate, effectively forcing the play wide. Once the ball moves to the flank, the team initiates an aggressive, coordinated man-to-man press. This approach ensures that even if one marker is bypassed, the structural surplus prevents the opponent from creating clear chances, balancing individual intensity with collective security.",
+  "conditions": [
+    "man_to_man_marking",
+    "opponent_has_strong_individuals",
+    "defensive_line_compact"
+  ],
+  "objective": [
+    "cover_individual_duels",
+    "force_play_wide",
+    "maintain_numerical_surplus_defense"
+  ],
+  "possible_actions": [
+    "curved_pressing_run",
+    "step_in_cover",
+    "aggressive_man_press",
+    "shadow_marking"
+  ],
+  "contraindications": [
+    "weak_striker_pressing",
+    "lack_of_team_compactness",
+    "opponent_overloads_center"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "phase_of_play_defensive",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "defensive_line_plus_one",
+    "attacking_line_minus_one",
+    "wide_forcing_structure"
+  ],
+  "player_behaviours": [
+    "curved_pressing_run",
+    "cover_passing_lane",
+    "shadow_marking",
+    "aggressive_duel"
+  ],
+  "related_concepts": [
+    "man_marking",
+    "counter_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=512s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

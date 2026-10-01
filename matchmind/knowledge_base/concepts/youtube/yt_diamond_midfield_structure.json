@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_diamond_midfield_structure",
+  "category": "formations",
+  "subcategory": "442_diamond",
+  "phase": "possession",
+  "title": "Diamond Midfield Structure",
+  "definition": "A 4-4-2 formation variant featuring a diamond-shaped midfield block to enhance central control and short passing combinations.",
+  "content": "The 4-4-2 diamond formation is a tactical adaptation used to strengthen central areas by placing four midfielders in close proximity. This structure transforms central weakness into strength, allowing for intricate short passing combinations and high possession retention. It is particularly effective when a team lacks the physical depth or consistent width from fullbacks to stretch the opposition. By concentrating players in the center, the team can dominate the middle third and control the tempo of the game. However, this approach requires specific player roles to avoid rigidity. For instance, one midfielder may be given the license to drive forward and inject chaos, breaking the structured pattern to unlock stubborn defenses. This blend of structure and spontaneity is crucial for penetration. If the system becomes too mechanical, prioritizing possession over penetration, it can suffocate creative players and fail to break down organized defenses. The formation relies on the ability to maintain possession while creating overloads in the center, but it must be balanced with vertical threats to prevent the game from becoming stagnant and predictable.",
+  "conditions": [
+    "central_weakness",
+    "possession_priority",
+    "lack_of_wide_depth"
+  ],
+  "objective": [
+    "dominate_central_third",
+    "enhance_short_passing",
+    "control_tempo"
+  ],
+  "possible_actions": [
+    "short_passing_combinations",
+    "central_overload",
+    "creative_license_for_one_player"
+  ],
+  "contraindications": [
+    "rigid_mechanical_play",
+    "lack_of_vertical_threat",
+    "suffocation_of_creative_players"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "team_compactness_high",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "central_density"
+  ],
+  "player_behaviours": [
+    "maintain_possession",
+    "drive_forward_with_ball",
+    "support_passing_lanes"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "possession_based_game",
+    "central_overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=816s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

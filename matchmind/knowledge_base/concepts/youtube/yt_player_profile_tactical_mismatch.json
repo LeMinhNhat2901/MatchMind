@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_player_profile_tactical_mismatch",
+  "category": "fundamentals",
+  "subcategory": "player_role_fit",
+  "phase": "general",
+  "title": "Player Profile Tactical Mismatch",
+  "definition": "The tactical inefficiency resulting from deploying players in roles that do not align with their specific technical strengths and natural positional instincts.",
+  "content": "This concept highlights the critical importance of aligning player profiles with tactical demands to maximize team performance. When a formation requires specific attributes—such as vertical progression from deep or orchestration from narrow spaces—deploying players who lack these specific skills leads to systemic stagnation. For instance, forcing a direct, pace-based inside forward into a narrow '10' role mutes their primary threat, while relying on a technically limited center-back for vertical build-up invites pressure and forces lateral circulation. Similarly, if a midfielder offers defensive solidity but lacks progressive passing range, the team's ability to penetrate vertically is compromised. Coaches must recognize that individual brilliance in one context does not guarantee success in another; a player's 'natural' position often yields higher output than a forced tactical fit. Identifying these mismatches early allows for either adjusting the formation to suit the squad's strengths or making personnel changes to fill specific tactical gaps, preventing the team from becoming predictable and ineffective in key phases of play.",
+  "conditions": [
+    "formation_demands_specific_skill",
+    "player_lacks_required_attribute",
+    "tactical_role_mismatch"
+  ],
+  "objective": [
+    "maximize_player_output",
+    "ensure_tactical_coherence",
+    "avoid_predictable_patterns"
+  ],
+  "possible_actions": [
+    "adjust_formation_to_fit_squad",
+    "swap_player_for_better_profile",
+    "modify_role_requirements",
+    "train_player_for_new_role"
+  ],
+  "contraindications": [
+    "forcing_natural_winger_into_narrow_role",
+    "relying_on_technically_limited_player_for_progression",
+    "ignoring_defensive_weaknesses_of_offensive_player"
+  ],
+  "trigger_conditions": [
+    "progressive_pass_not_available",
+    "space_ahead_small",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "narrow_spaces_between_lines",
+    "deep_build_up_position"
+  ],
+  "player_behaviours": [
+    "lateral_passing_circulation",
+    "drifting_wide_from_central_role",
+    "erratic_defensive_positioning"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "role_definition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2891s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

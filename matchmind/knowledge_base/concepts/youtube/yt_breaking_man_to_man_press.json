@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_breaking_man_to_man_press",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Breaking Man-to-Man Press",
+  "definition": "A tactical approach using extreme rotation and positional fluidity to create numerical overloads and exploit the tracking limitations of a man-to-man defensive system.",
+  "content": "When facing a high-intensity man-to-man press, teams can exploit the inherent weakness of defenders being tied to specific opponents rather than zones. By employing extreme rotation and positional fluidity, attackers can force defenders to make difficult decisions about whether to track their man or cover space. For instance, if forwards drop deep to create space, midfielders or full-backs can aggressively attack the vacated areas. This movement creates local numerical overloads in the midfield. If the opposing center-backs try to account for these deep runs, the midfield overload becomes effective. Conversely, if a midfielder makes a central run, the defending midfielder or winger may not consistently track back, leaving gaps. This strategy forces the pressing team to split their attention, often resulting in the attacking team being one pass away from dangerous positions. The key is to use coordinated movement to stretch the man-to-man structure, creating pockets of space that can be exploited for progressive passes or shots.",
+  "conditions": [
+    "opponent_man_to_man_press",
+    "high_press_intensity",
+    "positional_fluidity_capable"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "exploit_tracking_gaps",
+    "force_defensive_decisions"
+  ],
+  "possible_actions": [
+    "rotate_positions",
+    "drop_deep_to_create_space",
+    "attack_vacated_space",
+    "make_central_runs"
+  ],
+  "contraindications": [
+    "lack_of_coordinated_movement",
+    "opponent_zonal_defense"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_attacking_third",
+    "local_numerical_advantage"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "make_immediate_run"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=1FfYzl4dygc&t=349s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

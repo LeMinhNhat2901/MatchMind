@@ -1,0 +1,51 @@
+{
+  "concept_id": "yt_formation_shift_for_defensive_solidity",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "general",
+  "title": "Formation Shift for Defensive Solidity",
+  "definition": "A tactical adjustment involving a structural shift from an attacking formation to a more defensive one to prioritize solidity after a significant defeat.",
+  "content": "This concept describes a reactive tactical adaptation where a manager alters the team's structural shape to address defensive vulnerabilities exposed by a heavy loss. In the specific context of the source, following a 5-0 defeat, the manager abandoned a 4-2-3-1 formation that lacked a dedicated defensive midfielder. Instead, he introduced a center-back into the midfield role, effectively creating a more robust defensive core. This shift prioritized defensive stability and compactness over attacking fluidity, sacrificing a creative player (the attacking midfielder) to gain a defensive specialist. The objective is to reduce the space available to opponents and improve the team's ability to recover possession and maintain shape under pressure. This type of adjustment is often seen in high-stakes scenarios where immediate results are required to stop a bleeding defense. It highlights the trade-off between offensive potential and defensive resilience, allowing the team to reset its tactical identity and present a harder-to-beat profile in subsequent matches.",
+  "conditions": [
+    "recent_heavy_defeat",
+    "defensive_vulnerability_exposed",
+    "lack_of_defensive_midfielder"
+  ],
+  "objective": [
+    "increase_defensive_solidity",
+    "improve_midfield_compactness",
+    "reduce_space_for_opponents"
+  ],
+  "possible_actions": [
+    "substitute_attacking_midfielder_for_defensive_midfielder",
+    "shift_formation_to_more_defensive_shape",
+    "instruct_center_backs_to_hold_position_higher"
+  ],
+  "contraindications": [
+    "reduced_attacking_creativity",
+    "potential_loss_of_possession_dominance"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_into_defensive_midfield_role",
+    "maintain_defensive_shape"
+  ],
+  "related_concepts": [
+    "defensive_transition",
+    "low_block",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=607s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

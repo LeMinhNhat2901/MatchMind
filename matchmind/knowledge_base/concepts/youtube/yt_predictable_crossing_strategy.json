@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_predictable_crossing_strategy",
+  "category": "attacking",
+  "subcategory": "final_third",
+  "phase": "possession",
+  "title": "Predictable Crossing Strategy",
+  "definition": "A flawed attacking approach relying on high-volume, mechanically predictable crosses from the flanks without supporting movement or varied delivery.",
+  "content": "This concept describes a tactical failure mode where a team prioritizes width and crossing over central penetration or varied final-third options. The strategy involves wingers staying wide and fullbacks overlapping to create 2v1 situations, aiming to flood the box with crosses. While crossing can be effective if executed with precision and unpredictability (as seen in later Liverpool tactics), this specific approach fails due to a lack of movement in the box, varied delivery, and unpredictable crossing positions. Opponents can easily defend against this by packing the penalty area and waiting for the inevitable cross, exploiting the numerical superiority in the box. The absence of late runs from midfield, often due to a static double pivot, means there are no players arriving at the back post or edge of the area to capitalize on knockdowns. This results in a game plan that is basic, straightforward, and easy to defend against, leading to low conversion rates despite high volume. It highlights the importance of combining crossing with dynamic movement and varied attacking patterns to avoid predictability.",
+  "conditions": [
+    "ball_near_flank",
+    "is_in_attacking_third",
+    "static_midfield_shape"
+  ],
+  "objective": [
+    "create_crossing_opportunity",
+    "target_box_targets"
+  ],
+  "possible_actions": [
+    "fullback_overlap",
+    "winger_hold_width",
+    "deliver_cross"
+  ],
+  "contraindications": [
+    "opponent_packs_penalty_area",
+    "lack_of_box_movement",
+    "predictable_crossing_pattern"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "is_in_attacking_third",
+    "overload_flank"
+  ],
+  "spatial_requirements": [
+    "wide_team_shape",
+    "static_midfield_pivot"
+  ],
+  "player_behaviours": [
+    "overlap_outside_winger",
+    "hold_wide_position",
+    "cross_into_box"
+  ],
+  "related_concepts": [
+    "width",
+    "overlap",
+    "final_third",
+    "positional_predictability"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=318s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

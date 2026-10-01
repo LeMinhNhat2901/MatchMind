@@ -1,0 +1,53 @@
+{
+  "concept_id": "yt_midfield_overload_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Midfield Overload Build-Up",
+  "definition": "A build-up strategy that exploits opponent hesitation to create numerical superiority in the midfield, facilitating easy progression.",
+  "content": "This tactical approach relies on maintaining a structured build-up rather than resorting to long, speculative passes when opponents hesitate to press. If the opposing team fails to commit to pressing the midfielders, typically due to fear of the attacking team's subsequent actions, the attacking side can maintain possession with their two central midfielders. By keeping the ball in these positions, the team creates a significant numerical advantage, often resulting in a 5v2 or 6v4 scenario against the opponent's defensive line. This superiority allows for easy circulation of the ball and progressive passing into more advanced areas. The effectiveness of this strategy depends on the specific zone of the pitch, but it fundamentally works by punishing defensive indecision. Coaches should encourage players to keep the ball moving laterally and vertically in the midfield when the opponent does not close down, ensuring that the build-up remains controlled and avoids unnecessary risk. This method transforms defensive caution into an attacking opportunity, allowing the team to dictate the tempo and find gaps in the opposition's structure.",
+  "conditions": [
+    "opponent_hesitation",
+    "midfield_possession",
+    "structured_build_up"
+  ],
+  "objective": [
+    "create_numerical_advantage",
+    "progress_ball_forward",
+    "maintain_possession"
+  ],
+  "possible_actions": [
+    "keep_ball_in_midfield",
+    "circulate_laterally",
+    "wait_for_opponent_commitment"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_support"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "passing_lane_open",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "midfield_density_high",
+    "supporting_players_available"
+  ],
+  "player_behaviours": [
+    "hold_position",
+    "scan_for_pass",
+    "receive_and_turn"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "build_up"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qLmV-m0SxhI&t=393s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

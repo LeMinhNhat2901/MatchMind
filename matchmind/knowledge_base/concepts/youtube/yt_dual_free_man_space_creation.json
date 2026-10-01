@@ -1,0 +1,56 @@
+{
+  "concept_id": "yt_dual_free_man_space_creation",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Dual Free Man Space Creation",
+  "definition": "A tactical system using two unmarked 'free men' to force opponent defensive lines to commit, thereby creating space behind the defense for fullbacks to exploit.",
+  "content": "This concept describes a chaotic yet effective attacking structure, often associated with Vincent Kompany’s style, that prioritizes creating space and numerical advantages over rigid positional discipline. Instead of overloading the central attacking zone, the team deliberately leaves it empty to pull opponents wide or deep. The core mechanism involves two specific players in a 4-2-3-1 shape acting as 'free men,' dropping deep into midfield or even defensive zones. Unlike systems with a single free man (which might only drag one center-back forward), two free men force both opposing center-backs to step up to track them. This commitment leaves significant space behind the defensive line. Crucially, instead of wingers inverting to attack this space, the fullbacks are instructed to make high runs into the striker position. This creates a dynamic where the 'chaos' of unstructured movement serves a precise purpose: isolating the fullback in a 1v1 or 2v1 situation against the remaining defenders, exploiting the vacated space behind the committed central defenders. It is a high-risk, high-reward strategy that relies on individual quality and the opponent's tendency to track rather than zone.",
+  "conditions": [
+    "opponent_defensive_line_high",
+    "fullback_available_for_run",
+    "two_free_men_active"
+  ],
+  "objective": [
+    "create_space_behind_defense",
+    "isolate_fullback_in_1v1",
+    "force_opponent_commitment"
+  ],
+  "possible_actions": [
+    "drop_deep_as_free_man",
+    "run_into_striker_position",
+    "leave_central_zone_empty",
+    "pull_defenders_forward"
+  ],
+  "contraindications": [
+    "opponent_zonal_defending",
+    "lack_of_fullback_pace",
+    "poor_transition_defense"
+  ],
+  "trigger_conditions": [
+    "space_behind_defensive_line",
+    "opponent_defensiveline_high",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "empty_central_attacking_zone",
+    "wide_player_positions"
+  ],
+  "player_behaviours": [
+    "drop_deep_to_receive",
+    "make_high_run_to_striker_position",
+    "maintain_width_to_pull_defenders"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "fullback_run",
+    "free_man"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "concept_id": "yt_vertical_transition_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Vertical Transition Build-Up",
+  "definition": "A high-risk attacking approach that prioritizes rapid vertical progression and wide spatial distribution over lateral possession retention.",
+  "content": "This tactical concept shifts the team's focus from traditional possession-based retention to immediate vertical threat creation. Instead of overloading central areas with close proximity to maintain control, the team spreads players across the full width of the pitch to maximize the defensive span required by the opposition. This spatial dispersion creates gaps between defenders that can be exploited through direct, purposeful passing. The primary objective is to reach the final third as quickly as possible, bypassing the need for repetitive lateral rotations that often lead to predictability and reduced chance creation. Players are encouraged to take calculated risks with long diagonal or vertical passes rather than playing safe sideways options. This approach relies on high team chemistry and individual confidence to execute risky transitions, aiming to surprise opponents who may be expecting slower, more structured possession play. It is particularly effective against teams that sit in compact blocks, as the wide distribution forces them to stretch, opening up central channels for penetration.",
+  "conditions": [
+    "high_team_chemistry",
+    "opponent_compact_block",
+    "risk_tolerance_high"
+  ],
+  "objective": [
+    "rapid_final_third_entry",
+    "maximize_defensive_span",
+    "create_central_gaps"
+  ],
+  "possible_actions": [
+    "long_diagonal_pass",
+    "vertical_progressive_pass",
+    "wide_distribution",
+    "skip_midfield_line"
+  ],
+  "contraindications": [
+    "low_passing_accuracy",
+    "opponent_high_press_aggressive",
+    "lack_of_wide_support"
+  ],
+  "trigger_conditions": [
+    "space_ahead_large",
+    "opponent_defensiveline_high",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "wide_team_spread",
+    "maximized_pitch_width"
+  ],
+  "player_behaviours": [
+    "seek_vertical_option",
+    "hold_wide_position",
+    "take_risky_pass"
+  ],
+  "related_concepts": [
+    "gegenpressing",
+    "positional_play",
+    "vertical_passing"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}
