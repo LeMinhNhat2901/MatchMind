@@ -78,6 +78,7 @@ class TacticalVectorStore:
 
         # Use ChromaDB's EF for query — handles Windows threading safely
         self._ef = _get_chroma_ef() if use_chroma_ef else None
+        self._vectors: tuple[list[str], np.ndarray] | None = None   # dense_rank cache
 
         # Collection with cosine similarity
         self._collection = self._client.get_or_create_collection(
@@ -147,6 +148,7 @@ class TacticalVectorStore:
                 metadatas=metas,
             )
 
+        self._vectors = None
         logger.info(f"Upserted {len(concepts)} concepts into ChromaDB")
 
     def delete_all(self) -> None:
@@ -157,6 +159,7 @@ class TacticalVectorStore:
             metadata={"hnsw:space": "cosine"},
             embedding_function=self._ef,
         )
+        self._vectors = None
         logger.warning(f"Deleted and recreated collection '{self._collection_name}'")
 
     # ──────────────────────────────────────────────────────────
@@ -257,19 +260,42 @@ class TacticalVectorStore:
             raise ValueError("Need either ChromaDB EF or an embedder to query by text")
 
     def dense_rank(self, query_texts: list[str], n: int) -> list[list[tuple[str, float]]]:
-        """One ranked (concept_id, similarity) list per query text, in one Chroma call."""
-        count = self._collection.count()
-        if not query_texts or count == 0:
+        """One ranked (concept_id, similarity) list per query text — EXACT cosine
+        against every stored vector, ties broken by id.
+
+        Not Chroma's HNSW query: that search is approximate, and on the ~330-concept
+        KB it sometimes dropped a top-10 concept, differently in each process (the
+        golden bench flipped between two scores on identical data). Scoring a KB this
+        size exactly takes milliseconds. Similarity keeps the project-wide unit
+        (1 - cosine_distance / 2, see _distance_to_similarity).
+        """
+        if not query_texts:
+            return []
+        ids, matrix = self._all_vectors()
+        if not ids:
             return [[] for _ in query_texts]
         if self._ef is None:
             raise RuntimeError("dense_rank needs the Chroma embedding function (use_chroma_ef=True)")
-        res = self._collection.query(
-            query_texts=query_texts, n_results=min(n, count), include=["distances"]
-        )
-        return [
-            [(cid, _distance_to_similarity(d)) for cid, d in zip(ids, dists)]
-            for ids, dists in zip(res["ids"], res["distances"])
-        ]
+        queries = np.asarray(self._ef(list(query_texts)), dtype=float)
+        queries /= np.maximum(np.linalg.norm(queries, axis=1, keepdims=True), 1e-12)
+        out = []
+        for cos in queries @ matrix.T:
+            sims = [(cid, _distance_to_similarity(1.0 - float(c))) for cid, c in zip(ids, cos)]
+            sims.sort(key=lambda p: (-p[1], p[0]))
+            out.append(sims[:n])
+        return out
+
+    def _all_vectors(self) -> tuple[list[str], np.ndarray]:
+        """Every stored (id, unit vector), cached until the collection changes."""
+        if self._vectors is None:
+            res = self._collection.get(include=["embeddings"])
+            ids = list(res["ids"])
+            if not ids:
+                return [], np.zeros((0, 0))
+            m = np.asarray(res["embeddings"], dtype=float)
+            m /= np.maximum(np.linalg.norm(m, axis=1, keepdims=True), 1e-12)
+            self._vectors = (ids, m)
+        return self._vectors
 
     def get_embeddings(self, ids: list[str]) -> dict[str, np.ndarray]:
         if not ids:

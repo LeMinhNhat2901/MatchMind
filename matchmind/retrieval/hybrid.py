@@ -166,8 +166,8 @@ class HybridRetriever:
             logger.warning(f"[hybrid] reranker failed, keeping fusion order: {exc}")
             return items
         # Blend instead of replacing: RRF already encodes agreement between dense,
-        # BM25 and condition matching. Golden bench (Task 16): rerank-only nDCG@5
-        # 0.667, blended alpha 0.3/0.5/0.7 -> 0.692/0.688/0.681.
+        # BM25 and condition matching. Alpha = settings.rerank_blend_alpha (see
+        # config.py for the bench history; 0.3 on the ~100-concept KB, 0.5 since 331).
         top_fused = max(i.score for i in items) or 1.0
         rescored = [
             i.model_copy(update={

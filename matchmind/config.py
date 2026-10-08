@@ -86,7 +86,10 @@ class Settings(BaseSettings):
         default="cross-encoder/ms-marco-MiniLM-L-6-v2", alias="RERANKER_MODEL"
     )
     # Final score = alpha * rerank + (1 - alpha) * normalised RRF score. 1.0 = rerank only.
-    rerank_blend_alpha: float = Field(default=0.3, alias="RERANK_BLEND_ALPHA")
+    # 0.5 since the KB tripled (331 concepts): at 0.3 the cross-encoder was outvoted by
+    # BM25 hits on long, generic concepts. Golden bench 2026-10-08 (exact dense):
+    # 0.3/0.5/0.7/0.85 -> nDCG@5 0.660/0.696/0.694/0.686, hit@3 0.778/0.926/0.926/0.889.
+    rerank_blend_alpha: float = Field(default=0.5, alias="RERANK_BLEND_ALPHA")
     # 1.0 = off. Golden bench (Task 10): 0.88/0.92 cost nDCG@5 0.6599 -> 0.6572, because
     # near-duplicate concepts (e.g. several high-press concepts) are often all relevant.
     retrieval_diversity_max_sim: float = Field(default=1.0, alias="RETRIEVAL_DIVERSITY_MAX_SIM")
