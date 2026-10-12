@@ -5,20 +5,20 @@
 Pick a moment from a real match, pick a player, and ask what they should do. MatchMind reads the
 situation from player positions, retrieves the relevant tactical concepts, checks the options
 with a pitch-control model, and answers in plain language, in any language. Every answer cites
-the concepts it used, and a validator rejects advice that is not grounded in the evidence.
+the concepts it used, and a validator rejects answers that cite anything it did not retrieve.
 
 | | |
 |---|---|
 | **Status** | **V1 (RAG over StatsBomb 360 snapshots): feature-complete, final evaluation pending.** V2 (live) and V3 (computer vision) are planned, not started. See [Roadmap](#roadmap). |
 | **Data** | [StatsBomb Open Data](https://github.com/statsbomb/open-data) 360 freeze frames (non-commercial, with attribution) |
 | **Knowledge base** | 331 tactical concepts from hand-written notes, FIFA Training Centre, Wikipedia and YouTube tactics channels |
-| **LLMs** | Free-tier providers with automatic failover: Groq → Cerebras → Gemini → Mistral |
+| **LLMs** | Free-tier friendly: a configurable failover chain across Groq, Cerebras, Gemini, Mistral and OpenRouter (single-provider Gemini by default) |
 
 ---
 
 ## What it does
 
-- **Situation analysis from positions.** 28 spatial and structural features per snapshot:
+- **Situation analysis from positions.** About 25 spatial and structural features per snapshot:
   pressure on the ball, open passing lanes, defensive-line height, local overloads, half-space
   occupancy and more. Partial camera views are the norm in 360 data, so the description says
   what the camera cannot see instead of guessing.
@@ -38,27 +38,28 @@ the concepts it used, and a validator rejects advice that is not grounded in the
   - A chat per player, with recommendation arrows drawn on the pitch.
   - Real team names, and attacking direction inferred per team.
   - Shirt numbers inferred for players who touched the ball moments earlier.
-  - A "what happens next?" projection: the ball and the receiver move, and the other 20 players
-    react with physically capped rules. This costs zero extra LLM tokens.
+  - A "what happens next?" projection: the ball and the receiver move, and the other visible
+    players react with physically capped rules. This costs zero extra LLM tokens.
 
 ## How it works
 
 ```
-StatsBomb 360 snapshot ──► MatchState (Pydantic, one schema for every data source)
-                                │
-                                ▼
-  encode_situation ─► render_pitch ─► retrieve_tactics ──(weak evidence)──► expand_query ─┐
-                                            ▲                                             │
-                                            └─────────────────────────────────────────────┘
-                                │
-                                ▼
-  counterfactual_analysis (pitch control) ─► retrieve_examples (Example Library)
-                                │
-                                ▼
-  assemble_evidence ─► generate_reasoning ─► validate_output ──(fails)──► retry
-                                │
-                                ▼
-                         narrate_advice ─► TacticalAdvice (answer · rationale · citations · arrows)
+StatsBomb 360 snapshot
+  └─► MatchState                 one Pydantic schema for every data source
+       └─► encode_situation      features + a text description of the scene
+            └─► render_pitch
+                 └─► retrieve_tactics
+                      │  weak evidence? ─► expand_query ─► back to retrieve_tactics
+                      ▼
+                     counterfactual_analysis     pitch control per candidate action
+                      └─► retrieve_examples      similar real StatsBomb situations
+                           └─► assemble_evidence
+                                └─► generate_reasoning
+                                     └─► validate_output
+                                          │  fails? ─► retry ─► back to generate_reasoning (bounded)
+                                          ▼
+                                         narrate_advice  ─►  TacticalAdvice
+                                                             (answer · rationale · citations · arrows)
 ```
 
 Retrieval inside `retrieve_tactics`:
@@ -73,8 +74,8 @@ question + number-free tactical phrases from the situation
 
 ## Evaluation
 
-**Retrieval**: a golden set of 28 hand-labelled questions (`matchmind/evaluation/golden/retrieval_golden.yaml`),
-relevant = 2, acceptable = 1:
+**Retrieval**: a golden set of 28 hand-labelled questions (`matchmind/evaluation/golden/retrieval_golden.yaml`;
+27 are scored, one only checks for set-piece leaks), relevant = 2, acceptable = 1:
 
 | Strategy | KB size | hit@3 | nDCG@5 | MRR | set-piece leak |
 |---|---|---|---|---|---|
@@ -111,6 +112,8 @@ next to this repo (`../open-data`, override with `STATSBOMB_OPEN_DATA_DIR`).
 # 1. Install
 pip install poetry && poetry install          # or: conda create -n matchmind python=3.11, then pip install -e .
 
+#    then activate it (poetry shell / conda activate matchmind) before the commands below
+
 # 2. Configure: add at least one LLM key (GROQ_API_KEY, CEREBRAS_API_KEY, GEMINI_API_KEY or MISTRAL_API_KEY)
 cp .env.example .env
 #    optional failover order, e.g. LLM_FALLBACK_CHAIN=groq:qwen/qwen3.8-27b,cerebras:qwen-3.8-27b,gemini:gemini-3.6-flash
@@ -123,7 +126,7 @@ python -m matchmind.scripts.download_data --local
 python -m matchmind.scripts.build_example_library
 
 # 5. Run
-streamlit run matchmind/dashboard/app.py                        # dashboard
+streamlit run matchmind/dashboard/app.py                        # dashboard (loads matches via statsbombpy: needs internet)
 python -m matchmind.scripts.demo --match-id 3788741 --event-idx 150   # one analysis in the terminal
 python -m matchmind.scripts.demo --dual                         # attacking and defending side together
 ```
