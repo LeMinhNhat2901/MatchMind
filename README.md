@@ -16,6 +16,23 @@ the concepts it used, and a validator rejects answers that cite anything it did 
 
 ---
 
+## Goals
+
+1. **Advice a coach can trust.** Every recommendation is tied to the actual player positions,
+   cites the tactical concepts it relies on, and is checked against a quantitative model, not
+   just an LLM's opinion.
+2. **Retrieval quality you can measure.** A hand-labelled golden set guards retrieval in CI, and
+   an end-to-end evaluation script scores full answers. A change to the knowledge base or the
+   retriever shows up as a number, not a feeling.
+3. **One schema for every data source.** Event data with freeze frames today, a live event
+   stream in V2, positions from video in V3. Everything is converted into the same `MatchState`,
+   so the reasoning stack never changes when the source does.
+4. **Cheap to run.** The system works on free-tier LLMs. Retrieval, pitch control, the Example
+   Library and the "what happens next?" projection use no LLM tokens. Providers fail over
+   automatically when a quota runs out.
+5. **Speaks the user's language.** Answers read like a coach talking, in whatever language the
+   question was asked, with the numbers kept in a separate "why" section.
+
 ## What it does
 
 - **Situation analysis from positions.** About 25 spatial and structural features per snapshot:
@@ -71,6 +88,32 @@ question + number-free tactical phrases from the situation
   → Reciprocal Rank Fusion → cross-encoder rerank (blended 50/50 with the fusion score)
   → top-k concepts
 ```
+
+## Tech stack
+
+**In use (V1)**
+
+| Layer | Technology |
+|---|---|
+| Language and schema | Python 3.11+, Pydantic v2, pydantic-settings |
+| Agent orchestration | LangGraph (conditional re-retrieve and regenerate loops) |
+| LLMs | Gemini (`google-genai`), Groq (`groq`), Cerebras, Mistral and OpenRouter through the OpenAI-compatible API (`openai`); optional Anthropic |
+| Vector store | ChromaDB (persistence) + exact cosine ranking in NumPy |
+| Embeddings and reranking | sentence-transformers: `all-MiniLM-L6-v2` (dense), `cross-encoder/ms-marco-MiniLM-L-6-v2` (rerank) |
+| Lexical search | rank-bm25 |
+| Football data | statsbombpy + a local clone of StatsBomb Open Data (360 freeze frames, events, lineups) |
+| Analytics | NumPy, SciPy (Hungarian assignment for shirt numbers), pandas; Spearman pitch-control model |
+| Knowledge-base ingestion | youtube-transcript-api, yt-dlp (channel listings, no API key), httpx |
+| Dashboard and visuals | Streamlit, matplotlib |
+| CLI, tests, CI | Typer, Rich, pytest, GitHub Actions |
+
+**Planned (V2/V3, declared in `pyproject.toml` but not used yet)**
+
+| Layer | Technology |
+|---|---|
+| Live state and history | Redis, PostgreSQL (SQLAlchemy, asyncpg, Alembic) |
+| Real-time API | FastAPI, WebSocket |
+| Computer vision (V3) | YOLO detection, ByteTrack tracking, pitch homography |
 
 ## Evaluation
 
