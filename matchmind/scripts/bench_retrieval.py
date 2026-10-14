@@ -5,7 +5,12 @@ Usage:
     python -m matchmind.scripts.bench_retrieval                       # all strategies
     python -m matchmind.scripts.bench_retrieval --strategy dense
     python -m matchmind.scripts.bench_retrieval --fail-under hit3=0.8,ndcg5=0.7
-Writes output/evaluation/retrieval_bench.json.
+    python -m matchmind.scripts.bench_retrieval --golden matchmind/evaluation/golden/retrieval_heldout.yaml
+Writes output/evaluation/retrieval_bench.json (retrieval_bench_<golden stem>.json for --golden).
+
+Three layers are reported: KB coverage (does the KB hold an answer?), filter
+correctness (does scope gating keep the labelled concepts?) and retrieval quality
+(hit@3 / nDCG@5 / MRR / Recall@5 on the cases that have a relevant label).
 """
 from __future__ import annotations
 
@@ -21,7 +26,7 @@ from rich.console import Console
 from rich.table import Table
 
 from matchmind.config import settings
-from matchmind.evaluation.retrieval_bench import GoldenCase, load_golden, run_bench
+from matchmind.evaluation.retrieval_bench import GoldenCase, layer_report, load_golden, run_bench
 
 app = typer.Typer()
 console = Console()
@@ -71,30 +76,49 @@ def _parse_fail_under(spec: str) -> dict[str, float]:
     return out
 
 
+def _print_layers(cases: list[GoldenCase]) -> None:
+    """KB coverage + filter correctness (no ranking involved, no models loaded)."""
+    from matchmind.knowledge_base.embedder import load_all_concepts
+    from matchmind.retrieval.scope import allowed_ids
+    from matchmind.retrieval.types import RetrievalQuery
+
+    concepts = load_all_concepts()
+
+    def allowed_for(case: GoldenCase) -> set[str]:
+        q = RetrievalQuery(question=case.question, in_possession=case.in_possession, phase_of_play=case.phase_of_play)
+        return allowed_ids(concepts, q, 5)
+
+    rep = layer_report(cases, {c.concept_id for c in concepts}, allowed_for)
+    console.print(f"KB coverage: {rep.coverage_rate}  (uncovered: {', '.join(rep.uncovered) or '-'})")
+    console.print(f"Filter recall: {rep.filter_recall}  (wrongly blocked: {', '.join(rep.filtered_out) or '-'})")
+
+
 @app.command()
 def main(
     strategy: str = typer.Option("", help="One strategy name; empty = all"),
     k: int = typer.Option(5),
     fail_under: str = typer.Option("", help="e.g. hit3=0.8,ndcg5=0.7 (applies to every strategy run)"),
+    golden: str = typer.Option("", help="Golden YAML to use instead of retrieval_golden.yaml"),
 ) -> None:
-    cases = load_golden()
+    cases = load_golden(Path(golden) if golden else None)
+    _print_layers(cases)
     names = [strategy] if strategy else list(STRATEGIES)
     table = Table(title=f"Retrieval bench — {len(cases)} golden cases")
-    for col in ("strategy", "hit@3", "nDCG@5", "MRR", "must_not", "set-piece leak"):
+    for col in ("strategy", "hit@3", "nDCG@5", "MRR", "Recall@5", "must_not", "set-piece leak"):
         table.add_column(col)
     results, failed = {}, []
     thresholds = _parse_fail_under(fail_under)
     for name in names:
         report = run_bench(STRATEGIES[name](), cases, k=k)
         results[name] = report.model_dump()
-        table.add_row(name, str(report.hit_at_3), str(report.ndcg_at_5), str(report.mrr),
+        table.add_row(name, str(report.hit_at_3), str(report.ndcg_at_5), str(report.mrr), str(report.recall_at_5),
                       str(report.must_not_violation_rate), str(report.set_piece_leak_rate))
         if "hit3" in thresholds and (report.hit_at_3 or 0) < thresholds["hit3"]:
             failed.append(f"{name}: hit@3 {report.hit_at_3} < {thresholds['hit3']}")
         if "ndcg5" in thresholds and (report.ndcg_at_5 or 0) < thresholds["ndcg5"]:
             failed.append(f"{name}: nDCG@5 {report.ndcg_at_5} < {thresholds['ndcg5']}")
     console.print(table)
-    out = settings.evaluation_output_dir / "retrieval_bench.json"
+    out = settings.evaluation_output_dir / (f"retrieval_bench_{Path(golden).stem}.json" if golden else "retrieval_bench.json")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text(json.dumps(results, indent=2), encoding="utf-8")
     console.print(f"saved -> {out}")

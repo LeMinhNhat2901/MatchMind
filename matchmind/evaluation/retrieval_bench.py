@@ -42,6 +42,16 @@ class BenchReport(BaseModel):
     must_not_violation_rate: float
     set_piece_leak_rate: float
     per_case: list[dict]
+    recall_at_5: float | None = None
+
+
+class LayerReport(BaseModel):
+    """The two layers below retrieval quality: is there an answer in the KB at
+    all (coverage), and does the scope filter let the labelled answers through?"""
+    coverage_rate: float
+    uncovered: list[str]            # case ids with no relevant concept in the KB
+    filter_recall: float | None     # labelled concepts (in the KB) the scope filter keeps
+    filtered_out: list[str]         # "case:concept" pairs the filter wrongly blocks
 
 
 def load_golden(path: Path | None = None) -> list[GoldenCase]:
@@ -58,6 +68,40 @@ def ndcg_at_k(ranked: list[str], gains: dict[str, float], k: int) -> float:
     ideal = sorted(gains.values(), reverse=True)[:k]
     idcg = sum(g / math.log2(i + 2) for i, g in enumerate(ideal))
     return dcg / idcg if idcg > 0 else 0.0
+
+
+def recall_at_k(ranked: list[str], relevant: set[str], k: int) -> float:
+    return len(set(ranked[:k]) & relevant) / len(relevant) if relevant else 0.0
+
+
+def layer_report(
+    cases: list[GoldenCase],
+    kb_ids: set[str],
+    allowed_for: Callable[[GoldenCase], set[str]],
+) -> LayerReport:
+    """KB coverage and filter correctness, independent of how anything is ranked.
+    A case is covered when at least one of its `relevant` concepts exists in the KB."""
+    uncovered, blocked, kept, total = [], [], 0, 0
+    for case in cases:
+        if not set(case.relevant) & kb_ids:
+            uncovered.append(case.id)
+        labelled = [cid for cid in dict.fromkeys(case.relevant + case.acceptable) if cid in kb_ids]
+        if not labelled:
+            continue
+        allowed = allowed_for(case)
+        for cid in labelled:
+            total += 1
+            if cid in allowed:
+                kept += 1
+            else:
+                blocked.append(f"{case.id}:{cid}")
+    n = len(cases)
+    return LayerReport(
+        coverage_rate=round((n - len(uncovered)) / n, 4) if n else 0.0,
+        uncovered=uncovered,
+        filter_recall=round(kept / total, 4) if total else None,
+        filtered_out=blocked,
+    )
 
 
 def mrr(ranked: list[str], targets: set[str]) -> float:
@@ -80,7 +124,7 @@ def run_bench(
     cases: list[GoldenCase],
     k: int = 5,
 ) -> BenchReport:
-    per_case, hits, ndcgs, mrrs = [], [], [], []
+    per_case, hits, ndcgs, mrrs, recalls = [], [], [], [], []
     violations = leaks = 0
     for case in cases:
         ranked = list(rank_fn(case, k))[:k]
@@ -90,6 +134,8 @@ def run_bench(
             row["hit_at_3"] = hit_at_k(ranked, set(case.relevant), 3)
             row["ndcg_at_5"] = round(ndcg_at_k(ranked, gains, 5), 4)
             row["mrr"] = round(mrr(ranked, set(case.relevant) | set(case.acceptable)), 4)
+            row["recall_at_5"] = round(recall_at_k(ranked, set(case.relevant), 5), 4)
+            recalls.append(row["recall_at_5"])
             hits.append(row["hit_at_3"])
             ndcgs.append(row["ndcg_at_5"])
             mrrs.append(row["mrr"])
@@ -110,4 +156,5 @@ def run_bench(
         must_not_violation_rate=round(violations / n, 4) if n else 0.0,
         set_piece_leak_rate=round(leaks / n, 4) if n else 0.0,
         per_case=per_case,
+        recall_at_5=_mean(recalls),
     )

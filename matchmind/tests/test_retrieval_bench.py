@@ -45,3 +45,28 @@ def test_golden_ids_exist_in_kb():
 
 def test_golden_has_enough_cases():
     assert len(load_golden()) >= 25
+
+
+# ── benchmark layers: KB coverage · filter correctness · retrieval quality ────
+
+def test_recall_at_5_counts_relevant_found():
+    cases = [GoldenCase(id="q", question="x", relevant=["a", "b"], acceptable=["c"])]
+    report = run_bench(lambda case, k: ["a", "c", "z"], cases, k=5)
+    assert report.recall_at_5 == 0.5
+    assert report.per_case[0]["recall_at_5"] == 0.5
+
+
+def test_layers_report_coverage_and_filter_blocks():
+    from matchmind.evaluation.retrieval_bench import layer_report
+
+    cases = [
+        GoldenCase(id="covered", question="x", relevant=["a"], acceptable=["b"]),
+        GoldenCase(id="gap", question="y", relevant=[], acceptable=["b"]),          # KB has no answer
+        GoldenCase(id="ghost", question="z", relevant=["not_in_kb"]),                # label points nowhere
+    ]
+    allowed = {"covered": {"a"}, "gap": {"b"}, "ghost": set()}                       # "b" blocked for "covered"
+    rep = layer_report(cases, kb_ids={"a", "b"}, allowed_for=lambda c: allowed[c.id])
+    assert rep.coverage_rate == round(1 / 3, 4)
+    assert sorted(rep.uncovered) == ["gap", "ghost"]
+    assert rep.filter_recall == round(2 / 3, 4)                                      # a@covered, b@gap pass; b@covered blocked
+    assert rep.filtered_out == ["covered:b"]
