@@ -36,6 +36,8 @@ def main(
     dry_run: bool = typer.Option(False, "--dry-run", help="List what would be processed; no LLM calls"),
     rebuild: bool = typer.Option(True, "--rebuild/--no-rebuild", help="Rebuild the vector index if concepts were added"),
     sleep_s: float = typer.Option(2.0, help="Delay between LLM calls (raise it if you hit 429s)"),
+    questions: bool = typer.Option(True, "--questions/--no-questions",
+                                   help="Write example questions (doc2query) for the new concepts"),
 ) -> None:
     from matchmind.knowledge_base.concept_synthesis import existing_concept_ids
     from matchmind.knowledge_base.source_ingest import YouTubeIngestor, parse_sources_text
@@ -90,6 +92,9 @@ def main(
         return
     console.print("\n[bold]Checking the knowledge base (kb_lint)...[/bold]")
     subprocess.run([sys.executable, "-m", "matchmind.scripts.kb_lint"], check=False)
+    if questions:
+        console.print("\n[bold]Writing example questions for the new concepts...[/bold]")
+        subprocess.run([sys.executable, "-m", "matchmind.scripts.build_example_questions", "--no-rebuild"], check=False)
     if rebuild:
         console.print("\n[bold]Rebuilding the vector index...[/bold]")
         result = subprocess.run([sys.executable, "-m", "matchmind.scripts.build_kb", "--rebuild"], check=False)
