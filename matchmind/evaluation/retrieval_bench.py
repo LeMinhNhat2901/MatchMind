@@ -32,6 +32,9 @@ class GoldenCase(BaseModel):
     relevant: list[str] = Field(default_factory=list)
     acceptable: list[str] = Field(default_factory=list)
     must_not: list[str] = Field(default_factory=list)
+    # True when the relevant concept was written after seeing this question (a KB
+    # coverage gap being filled): counts for coverage, never for retrieval scores.
+    coverage_only: bool = False
 
 
 class BenchReport(BaseModel):
@@ -129,7 +132,7 @@ def run_bench(
     for case in cases:
         ranked = list(rank_fn(case, k))[:k]
         row: dict = {"id": case.id, "ranked": ranked}
-        if case.relevant:
+        if case.relevant and not case.coverage_only:
             gains = {cid: 1.0 for cid in case.acceptable} | {cid: 2.0 for cid in case.relevant}
             row["hit_at_3"] = hit_at_k(ranked, set(case.relevant), 3)
             row["ndcg_at_5"] = round(ndcg_at_k(ranked, gains, 5), 4)

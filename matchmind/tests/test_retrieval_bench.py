@@ -70,3 +70,16 @@ def test_layers_report_coverage_and_filter_blocks():
     assert sorted(rep.uncovered) == ["gap", "ghost"]
     assert rep.filter_recall == round(2 / 3, 4)                                      # a@covered, b@gap pass; b@covered blocked
     assert rep.filtered_out == ["covered:b"]
+
+
+def test_coverage_only_cases_are_not_scored():
+    """Concepts written after seeing a question can't fairly score that question:
+    it counts for KB coverage only."""
+    from matchmind.evaluation.retrieval_bench import layer_report
+
+    cases = [GoldenCase(id="scored", question="x", relevant=["a"]),
+             GoldenCase(id="gap_filled", question="y", relevant=["b"], coverage_only=True)]
+    report = run_bench(lambda case, k: ["a"], cases, k=5)
+    assert report.ndcg_at_5 == 1.0 and report.hit_at_3 == 1.0          # "gap_filled" (a miss) not averaged in
+    assert "ndcg_at_5" not in report.per_case[1]
+    assert layer_report(cases, {"a", "b"}, lambda c: {"a", "b"}).coverage_rate == 1.0

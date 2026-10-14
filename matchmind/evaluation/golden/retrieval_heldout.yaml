@@ -1,0 +1,133 @@
+# Held-out retrieval set: questions written by the project owner without looking at concept names
+# (2026-10). Labels: candidates pooled from dense, BM25, hybrid and hybrid+rerank (top 6 each) plus a
+# manual KB search; suggested by Claude, approved by the owner without changes. Never tune on this set.
+# coverage_only: the relevant concept was written after seeing the question (KB gap h11, h20); it counts
+# for KB coverage, never for retrieval scores.
+- id: h00
+  question: "Our right-back keeps getting caught upfield and they counter into the space behind him, what do we change?"
+  in_possession: false
+  phase_of_play: defensive_transition
+  relevant: [recovery_run_positioning, yt_back_three_rest_defense, yt_rest_defense_vulnerability, yt_geometric_compactness_and_rest_defence]
+  acceptable: [yt_centerback_counter_pressing_and_mid_block, yt_dynamic_back_three_transition, yt_counter_pressing_recovery_window, yt_inverted_fullback_counter_press_security, yt_fullback_inside_transition_defense, gegenpressing]
+- id: h01
+  question: "Our opponent is pressing man-to-man, and our centre-backs struggle to find a free passing option. How can we progress the ball without relying on long balls?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [yt_breaking_man_to_man_press, yt_dynamic_build_up_against_man_mark, yt_breaking_man_to_man_marking, yt_positional_fluidity_against_man_marking]
+  acceptable: [yt_dynamic_build_up_against_high_press, yt_deep_build_up_with_distraction, yt_deep_overload_against_high_press, yt_back_three_buildup_structure, yt_exploiting_high_press_gap, yt_circular_rotations_build_up, yt_asymmetric_build_up_against_high_press, third_man_run]
+- id: h02
+  question: "The opponent keeps shifting its defensive block toward our ball side, leaving our far-side winger with space. How should we exploit this imbalance to progress the attack?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [yt_overload_and_switch_strategy, yt_exploiting_asymmetric_overloads, fifa_switching_play_to_create_overloads, yt_asymmetric_overload_and_switch, wiki_long_cross_field_switch]
+  acceptable: [yt_exploiting_wide_space_against_narrow_block, yt_horizontal_counter_attack_via_flank_isolation, yt_asymmetric_overload_and_free_man]
+- id: h03
+  question: "Our central midfielder receives the ball under pressure, while the striker is tightly marked. Which combination or off-ball movement could help us break the opponent's midfield line?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [fifa_adaptive_third_player_combinations, third_man_run, fifa_third_player_combination, yt_third_man_principle]
+  acceptable: [false_9_drop, yt_striker_dropping_to_overload, direct_play_vertical, wiki_push_and_run_combination, space_creation_movement, combination_play_triangle, fifa_breaking_counter_press_via_triangular_play]
+- id: h04
+  question: "Our left winger is consistently doubled up on near the touchline. Should the overlapping full-back, an underlapping midfielder, or a third-man run provide the best solution, and why?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [overlapping_run, underlapping_run]
+  acceptable: [yt_wide_overload_via_wing_backs, yt_mezzala_and_carrilero_roles, third_man_run]
+- id: h05
+  question: "The opponent is defending deep with a compact central block, forcing us to circulate the ball from side to side. How can we create a higher-quality chance without resorting to hopeful crosses?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [yt_breaking_compact_blocks]
+  acceptable: [yt_overload_and_switch_strategy, yt_predictable_crossing_strategy, fifa_penetrating_passes_behind_defense, yt_wide_player_inversion, yt_asymmetric_overload_and_free_man, yt_breaking_low_block_via_keeper, yt_zone_14_overload_strategy]
+- id: h06
+  question: "Our midfielders and forwards keep occupying the same central spaces, making it easy for the opponent to intercept forward passes. How should we adjust our width, depth, and positioning to create better passing lanes?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [width_depth_balance, yt_staggered_pivots_for_vertical_progression, wiki_width_and_depth_principles, yt_principles_of_positional_play]
+  acceptable: [yt_wing_back_width_for_central_penetration, stretching_defense_width, wiki_vertical_and_horizontal_channels]
+- id: h07
+  question: "Our striker is frequently isolated against two centre-backs, while our midfield arrives too late to support the attack. How should we reorganize our forward runs and supporting positions to create more effective combinations?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [hold_up_play]
+  acceptable: [false_9_drop, wiki_deep_lying_centre_forward_role, yt_inward_drift_for_midfield_overload, combination_play_triangle, third_man_run, yt_striker_dropping_to_overload, fifa_dynamic_ball_proximity_principle]
+- id: h08
+  question: "We can reach the final third, but our attacks rarely produce clear chances because most players attack the box along the same line. How should we coordinate near-post runs, far-post runs, cutback options, and edge-of-the-box support?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [yt_staggered_front_line_movement]
+  acceptable: [yt_predictable_crossing_strategy, blind_side_run, yt_attacking_overload_against_back_five, yt_zone_14_overload_strategy, fifa_five_receiving_movement_patterns]
+- id: h09
+  question: "We have 70% possession against a low block but create very few shots on target. What do we change?"
+  in_possession: true
+  phase_of_play: open_play
+  relevant: [yt_possession_without_verticality, yt_sterile_possession_and_direct_bypass, yt_breaking_compact_blocks]
+  acceptable: [yt_high_tempo_vertical_attack, yt_third_man_principle, yt_breaking_low_block_via_keeper, fifa_penetrating_passes_behind_defense]
+- id: h10
+  question: "The opponent builds from the back using a double pivot, creating a numerical advantage in midfield. How should we organize our press to block central progression while avoiding gaps between our lines?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [yt_central_star_pressing_structure]
+  acceptable: [yt_mid_block_counter_to_3_2_5, yt_narrow_block_counter_strategy, yt_4_3_3_pressing_structure, wiki_high_pressing_system, yt_442_defensive_marking_adjustments, fifa_compact_out_of_possession_organization, fifa_conditional_mid_block_pressing]
+- id: h11
+  question: "Their right winger repeatedly receives the ball in a one-versus-one against our left-back, while their right-back provides an overlapping run. How should our winger and central midfielder coordinate their defensive responsibilities?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [fifa_defending_wide_overload]
+  acceptable: [yt_winger_role_evolution, yt_central_star_pressing_structure, yt_locking_opponent_to_one_flank, yt_star_player_defensive_liability]
+  coverage_only: true
+- id: h12
+  question: "Their attacking midfielder keeps receiving the ball between our midfield and defensive lines, turning toward goal before anyone can apply pressure. Who should step out to engage him, and how can we cover the space that player leaves behind?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [fifa_compact_out_of_possession_organization, yt_targeted_pressing_on_key_playmakers, yt_deep_compact_block_with_midfield_screen]
+  acceptable: [yt_side_on_defensive_body_orientation, yt_defensive_shape_transition_523_to_541, yt_isolated_pivot_vulnerability, man_marking_key, yt_dual_block_defensive_structure]
+- id: h13
+  question: "Their striker frequently drops deep to receive the ball, pulling our centre-back out of position and opening space for runners behind. Should our centre-back follow him, pass him on to a midfielder, or maintain the defensive line?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [yt_false_nine_pressing_trap, yt_hybrid_marking_systems, yt_dual_block_defensive_structure]
+  acceptable: [yt_deep_compact_block_with_midfield_screen, yt_442_defensive_marking_adjustments, yt_catenaccio_sweeper_system, zonal_marking_block, man_marking_key]
+- id: h14
+  question: "They build with a back three plus the GK against our 4-3-3 press, so we are outnumbered in the first phase. How do we adjust the press?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [fifa_coordinated_high_pressing_system, fifa_effective_high_press_principles, yt_4_3_3_pressing_structure, yt_adaptive_high_pressing_structure]
+  acceptable: [yt_mid_block_counter_to_3_2_5, yt_deep_build_up_vulnerabilities, yt_central_star_pressing_structure, wiki_high_pressing_system, yt_bielsa_plus_one_minus_one, yt_front_footed_pressing_blocks, high_press_trigger, pressing_trap, fifa_conditional_mid_block_pressing]
+- id: h15
+  question: "The opponent's forwards repeatedly make diagonal runs behind our high defensive line, forcing our centre-backs to turn and defend toward their own goal. Should we adjust the line height, pressure on the ball carrier, or defensive cover?"
+  in_possession: false
+  phase_of_play: open_play
+  relevant: [yt_mid_block_defensive_organization, yt_high_press_structural_integrity, offside_trap]
+  acceptable: [low_block, yt_exploiting_high_line_vulnerabilities, yt_side_on_defensive_body_orientation, yt_defensive_shifting_against_diagonals, yt_high_pressing_and_compactness, yt_counter_pressing_and_sweeper_keeper]
+- id: h16
+  question: "We win the ball in central midfield, and the opponent's full-backs are still advanced, leaving space in the wide channels. Should we launch a quick counter-attack or secure possession first, and which passing or running option offers the best opportunity?"
+  in_possession: true
+  phase_of_play: attacking_transition
+  relevant: [counter_attack_transition, yt_horizontal_counter_attack_via_flank_isolation, fifa_rapid_counter_attack_execution, yt_exploiting_transition_spaces, yt_adaptive_counter_attack_strategy]
+  acceptable: [wiki_long_cross_field_switch, wiki_long_ball_direct_attack, fifa_wide_area_exploitation, fifa_high_positioned_counter_attack_forward, fifa_synchronized_offensive_transition_execution, yt_direct_central_transition_attack]
+- id: h17
+  question: "Our right-back keeps getting caught upfield, and opponents counter into the space behind him. What should we change in our rest defence, the positioning of our right winger and holding midfielder, or our attacking structure to prevent this?"
+  in_possession: false
+  phase_of_play: defensive_transition
+  relevant: [yt_back_three_rest_defense, yt_rest_defense_vulnerability, yt_geometric_compactness_and_rest_defence, yt_rest_defense_structural_integrity]
+  acceptable: [yt_flexible_midfield_pivot_structure, yt_star_player_defensive_liability, yt_defensive_counter_pressing_structure, yt_centerback_counter_pressing_and_mid_block, recovery_run_positioning, yt_counter_pressing_recovery_window, yt_inverted_fullback_counter_press_security, yt_fullback_inside_transition_defense]
+- id: h18
+  question: "We have tall centre-backs but score rarely from corners against a zonal marking system. What do we change in delivery and routines?"
+  in_possession: true
+  phase_of_play: set_piece
+  relevant: [yt_set_piece_zone_overload, yt_exploiting_zonal_gaps, yt_dynamic_corner_box_overload, fifa_front_post_overload_vs_zonal_defense]
+  acceptable: [wiki_set_piece_tactical_framework, fifa_corner_train_and_blocker_strategy, yt_crowded_box_corner_strategy]
+- id: h19
+  question: "Against an opponent using zonal marking at corners, our near-post runs rarely create space and our deliveries are easily cleared. How should we redesign the movement patterns, blocking actions, and second-ball positioning to create a better scoring opportunity?"
+  in_possession: true
+  phase_of_play: set_piece
+  relevant: [yt_set_piece_zone_overload, fifa_front_post_overload_vs_zonal_defense, fifa_corner_train_and_blocker_strategy, yt_exploiting_zonal_gaps, yt_dynamic_corner_box_overload, yt_set_piece_screening_and_blocking]
+  acceptable: [fifa_front_post_corner_strategy, yt_crowded_box_corner_strategy, fifa_blocking_last_defender_wide_free_kick, fifa_short_corner_edge_isolation]
+- id: h20
+  question: "The opponent has a dangerous free kick just outside the penalty area, with several potential shooters and runners attacking the space behind our wall. How should we balance wall positioning, goalkeeper sightlines, player marking, and protection against rebounds?"
+  in_possession: false
+  phase_of_play: set_piece
+  relevant: [fifa_defending_direct_free_kick]
+  acceptable: [fifa_corner_kick_defensive_systems, wiki_set_piece_tactical_framework]
+  coverage_only: true
