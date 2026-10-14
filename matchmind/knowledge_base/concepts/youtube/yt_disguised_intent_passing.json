@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=-Vp2gnavMzs&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can a midfielder make a defender think he is passing left when he actually wants to go right?",
+    "I keep getting closed down when I try to play a vertical pass, is there a body position trick to fool the marker?",
+    "What should our playmaker do with his body orientation to create space for a through ball?",
+    "Our passes are always intercepted because the defenders know exactly where we are going, how can we hide our true direction?"
+  ]
 }

@@ -33,5 +33,11 @@
     "url": "https://en.wikipedia.org/wiki/Revie_Plan",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the tactical term for when the main striker drops back into midfield to help build play?",
+    "Our striker is staying too high up the pitch, which leaves us short in the middle; how can we use his movement to create space for our wingers?",
+    "If I am the only forward, should I drop deep to receive the ball from the midfielders to draw the opposing center-backs out of position?",
+    "We struggle to break down low blocks because our attackers are isolated; how can we use our striker to disrupt their defensive line?"
+  ]
 }

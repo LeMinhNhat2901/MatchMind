@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=801s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Short passing isn't working against their deep defense, what is the alternative?",
+    "The opponent is clogging the midfield so we can't pass through, how do we bypass them?",
+    "What should our target man do when the team is stuck in the opponent's half?",
+    "We keep losing the ball in tight spaces against a low block, is there a different approach to try?"
+  ]
 }

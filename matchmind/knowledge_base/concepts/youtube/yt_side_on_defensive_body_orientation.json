@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=521s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to stand when marking a winger who is about to receive the ball?",
+    "I keep getting beaten by inside cuts because I am facing the ball directly, how should I adjust my stance?",
+    "As a full-back, how should I position my feet and torso when the opponent is driving down the flank?",
+    "Why do we struggle to track runners coming off the bench when they make sudden diagonal runs into the box?"
+  ]
 }

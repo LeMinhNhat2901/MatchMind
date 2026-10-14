@@ -35,5 +35,11 @@
     "url": "https://en.wikipedia.org/wiki/Work_rate",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "Why do some players seem to do nothing when they don't have the ball, and how does that affect the team's shape?",
+    "Our substitute striker comes on and just stands around, what should he be doing to help the team defend and support the attack?",
+    "As a midfielder, what specific actions should I take when the opponent has the ball to ensure we stay compact and recover possession quickly?",
+    "We keep getting tired in the second half because we don't track back enough; what is the key metric we need to improve to fix our defensive structure?"
+  ]
 }

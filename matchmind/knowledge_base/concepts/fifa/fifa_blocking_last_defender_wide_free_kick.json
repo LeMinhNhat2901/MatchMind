@@ -52,5 +52,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/wide-free-kicks-blocking-the-last-defender-in-the-line.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "What is the best way to stop a defender from seeing the ball on a wide set piece?",
+    "We are struggling to score from wide corners because the last man always has a clear view, can you suggest a tactic to fix this?",
+    "As a striker, how should I position myself to help my teammate take a free kick from the right side of the box?",
+    "Our opponents always manage to clear the ball from wide set pieces, is there a specific formation or movement we can use to block their view?"
+  ]
 }

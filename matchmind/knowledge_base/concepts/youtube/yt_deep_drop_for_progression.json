@@ -50,5 +50,12 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6347s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What should I do when my anchor man is constantly surrounded by three opponents?",
+    "My young midfielder gets bullied out of the ball every time he tries to play out from the back, how do I fix this?",
+    "As the number six, when is the right moment to drop between the center-backs to help my teammate escape pressure?",
+    "We keep losing possession in our own third because our playmaker is isolated, what tactical adjustment can solve this?",
+    "How can I support my deep-lying midfielder when he is overloaded by the opposition press?"
+  ]
 }

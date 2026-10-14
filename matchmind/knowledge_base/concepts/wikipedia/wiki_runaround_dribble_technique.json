@@ -36,5 +36,11 @@
     "url": "https://en.wikipedia.org/wiki/Runaround_move",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the name of the move where you let the ball roll past the keeper and then sprint around to get it?",
+    "The goalkeeper has rushed off his line and is standing wide, what is the best way to beat him without trying to shoot over him?",
+    "My striker is very fast but struggles when the keeper comes out early, what specific 1v1 move should he learn to exploit this?",
+    "We often find ourselves in tight spaces near the goal where we can't pass, what dribbling technique allows us to bypass the last defender by going around the ball?"
+  ]
 }

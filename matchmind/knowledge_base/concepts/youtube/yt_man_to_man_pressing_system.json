@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=1FfYzl4dygc&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop the opposition from passing freely between the lines?",
+    "Our midfielders keep losing their markers when the ball moves quickly to the wing, what should we do?",
+    "What is the best way to assign specific opponents to each of my defenders to shut down their playmaker?",
+    "We struggle to press high because our players don't know who to chase, how do we fix this lack of accountability?"
+  ]
 }

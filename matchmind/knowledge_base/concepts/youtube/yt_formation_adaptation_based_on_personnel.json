@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=600s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Should I change my system because I have a new signing?",
+    "I have a very fast winger but no natural full-back, how should I set up my team?",
+    "What is the best shape for a team that has two excellent playmakers but weak defenders?",
+    "We keep losing because our preferred system doesn't fit our current squad, what should I do?"
+  ]
 }

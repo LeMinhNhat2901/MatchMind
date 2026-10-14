@@ -37,5 +37,11 @@
     "url": "https://en.wikipedia.org/wiki/Long_ball",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the tactic called where the keeper or defender hits the ball straight over the top to the striker?",
+    "We are stuck in our own half with no passing options, when is it best to just hit the ball long to our target man?",
+    "As a tall striker, what should I do when I see the defender preparing to loft the ball over the midfield?",
+    "Our midfield is being overrun, how can we bypass their pressure and get the ball to our forwards quickly?"
+  ]
 }

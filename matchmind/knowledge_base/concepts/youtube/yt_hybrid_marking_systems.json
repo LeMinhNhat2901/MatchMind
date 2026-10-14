@@ -33,5 +33,11 @@
     "url": "https://www.youtube.com/watch?v=c3zzDOYvtJc&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "Should we stick to marking specific players or just cover our zones when they switch the ball?",
+    "When the opponent starts moving in coordinated waves, our man-marking defenders get dragged out of position; what is the best way to handle this?",
+    "As a center-back, do I follow the striker everywhere or stay in my area to protect the goal?",
+    "We lose our shape when we try to press high; how can we mix individual tracking with area responsibility to stay solid?"
+  ]
 }

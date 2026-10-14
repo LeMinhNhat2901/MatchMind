@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=UlAs0moqVbU&t=497s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get two strikers up top when we have the ball?",
+    "My wingers are staying wide and we have no one to hold the ball up in the box, what should they do?",
+    "What is the best way for my number ten to move so we can attack with two forwards?",
+    "We keep getting caught with only one striker on the pitch whenever we build from the back, how do we fix that?"
+  ]
 }

@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=lEmz3dGqe24&t=198s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can our main playmaker keep the ball moving without losing it?",
+    "Our center midfielder is always late to the ball, what should he be doing to stay in the right places?",
+    "What should our number 6 do to ensure there is always a safe passing option available?",
+    "We lose possession constantly in the middle third, how can we improve our hub player's decision making?"
+  ]
 }

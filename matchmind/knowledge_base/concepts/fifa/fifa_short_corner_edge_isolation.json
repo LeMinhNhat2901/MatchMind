@@ -51,5 +51,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/attacking-corners.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "What is a good trick to get a shot on goal from the corner without crossing it in?",
+    "The defense is packed into the box, how can we get a player open for a long shot instead?",
+    "As the player receiving the short corner, how do I get myself into a position to shoot from the edge of the area?",
+    "We always cross the ball into a crowd and it gets cleared, how can we use short corners to create a better scoring chance?"
+  ]
 }

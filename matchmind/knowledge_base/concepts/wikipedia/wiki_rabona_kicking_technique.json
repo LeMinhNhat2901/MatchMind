@@ -33,5 +33,11 @@
     "url": "https://en.wikipedia.org/wiki/Rabona",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How can I shoot with power and accuracy when I am on the wrong side of the ball and can't turn around?",
+    "I am a right-footed player on the left wing and I have a split second to cross the ball; what technique allows me to do this without stopping my run?",
+    "What is the name of the fancy kick where you put your leg behind the other one to strike the ball?",
+    "I keep losing time trying to turn my body to shoot, is there a way to strike the ball directly when my stance is awkward?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8445s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent's center backs from getting trapped in the middle during their restarts?",
+    "Our goalkeeper keeps getting pinned to his own goal line because their full backs are sitting so deep; what can we do to pull them out of position?",
+    "When our defensive midfielder is being double-teamed, should our left back drop all the way to the touchline to create space?",
+    "We keep losing possession in our own box because their strikers are marking our center backs; how can we force them to chase our wide defenders instead?"
+  ]
 }

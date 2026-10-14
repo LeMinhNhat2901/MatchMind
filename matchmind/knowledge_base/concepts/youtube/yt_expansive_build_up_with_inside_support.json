@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=692s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we create space in the middle when the opponent is sitting deep and compact?",
+    "My wingers are too wide to receive the ball, so how do I get them to tuck in to help the midfielders?",
+    "What should the full-backs do to support the build-up when the wingers are moving inside?",
+    "We keep getting pressed out of possession in the final third, so how can we overload the center to break the press?"
+  ]
 }

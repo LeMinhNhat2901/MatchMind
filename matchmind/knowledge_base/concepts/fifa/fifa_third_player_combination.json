@@ -51,5 +51,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/in-possession/third-player-combinations.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "What is the name of the pass-back-and-forward move with three players?",
+    "Two defenders are marking my winger, so how can I use a quick one-two-three to get him free?",
+    "As the central midfielder, how do I execute the quick return pass to open up space for my teammate?",
+    "We keep getting blocked by the defensive line, what is the best passing pattern to bypass them without dribbling?"
+  ]
 }

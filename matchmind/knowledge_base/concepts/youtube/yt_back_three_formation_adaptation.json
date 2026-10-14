@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=902s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do some managers drop a wing-back into the defense even when the league standard is four at the back?",
+    "We have two very strong central defenders but weak full-backs, so how do we structure our shape to hide that weakness?",
+    "If my squad lacks aggressive wingers but has excellent central midfielders, what defensive setup should I consider?",
+    "I keep struggling to keep a clean sheet with a standard four-man line, is there a different structural approach that might suit my personnel better?"
+  ]
 }

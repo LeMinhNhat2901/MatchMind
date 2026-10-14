@@ -44,5 +44,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=235s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop a fast winger from turning inside?",
+    "Our defender is always facing the wrong way when the opponent has the ball, what is the fix?",
+    "What should our left-back do when the opposing right winger is about to receive the ball?",
+    "We keep getting beaten one-on-one because our defenders are too far out, how do we close them down better?"
+  ]
 }

@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-izMUUfGnso&t=313s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our winger keep cutting inside to the middle instead of staying on the touchline?",
+    "We are getting overloaded in the center because our wingers are tucking in, but we are not creating chances from the wide areas; what is going wrong?",
+    "If I am playing on the right wing, should I stay wide to stretch the defense or cut inside to join the midfielders in the half-space?",
+    "Our wide players are too passive when they cut inside and just stand there; how do we get them to actually threaten the goal from that central position?"
+  ]
 }

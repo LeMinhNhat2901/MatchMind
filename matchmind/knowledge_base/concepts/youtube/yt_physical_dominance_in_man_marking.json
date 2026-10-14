@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=646s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What do I do when a defender is marking me tightly and I have no technical space to turn?",
+    "I'm facing a much larger defender who is blocking my path, how can I get past him?",
+    "As a striker, how should I position my body to shake off a tight marker in the box?",
+    "We keep losing the ball in one-on-one situations because our players are too light for the opposition, what is the solution?"
+  ]
 }

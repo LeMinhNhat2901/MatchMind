@@ -47,5 +47,11 @@
     "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=344s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get more bodies in the middle without dropping my striker?",
+    "My team keeps losing the ball in the center because we are outnumbered, what can I do?",
+    "What should my attacking midfielder do to help us dominate the center of the park?",
+    "We struggle to keep possession when the opposition sits back, how can we fix this?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=kTWyahkAOYc&t=350s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we set up the team to make our star striker more effective?",
+    "Our best player is getting isolated, how should we adjust our shape to help him?",
+    "What should our wingers do to support our creative midfielder who struggles defensively?",
+    "We have a player who is great in one-on-ones but poor in tight spaces, how do we structure the team to use his strengths?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=4546s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop a team from playing out from the back?",
+    "The opposition center-backs always have an easy pass to their fullbacks, how do we force a mistake?",
+    "What should our striker do to isolate the goalkeeper and force a turnover?",
+    "Why do we keep letting them build up comfortably from their own goal, and what can we do about it?"
+  ]
 }

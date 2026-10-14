@@ -34,5 +34,11 @@
     "url": "https://en.wikipedia.org/wiki/toe_punt",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the fastest way to shoot when the ball is at my feet in a tight area?",
+    "I often miss shots when I have to react quickly to a loose ball in the box, is there a better technique?",
+    "How should I finish a one-on-one situation if the goalkeeper is rushing out and I have little space to swing my leg?",
+    "Why do players who come from futsal backgrounds seem to score more headers and quick taps in the penalty area?"
+  ]
 }

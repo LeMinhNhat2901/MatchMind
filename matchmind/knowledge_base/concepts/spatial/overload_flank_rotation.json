@@ -27,5 +27,11 @@
     "overload_left_or_right",
     "local_numerical_advantage_positive",
     "switch_play_not_viable"
+  ],
+  "example_questions": [
+    "How do I get three players on the right side without leaving the left flank empty?",
+    "Our winger and fullback are always isolated 1v1, so how can we bring a midfielder over to help them out?",
+    "What should our box-to-box midfielder do when the ball is on the right wing to create a numbers advantage?",
+    "We keep getting pinned to one side and can't break through, what is the best way to rotate players to fix this?"
   ]
 }

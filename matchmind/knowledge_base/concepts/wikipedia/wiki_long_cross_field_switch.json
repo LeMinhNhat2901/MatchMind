@@ -38,5 +38,11 @@
     "url": "https://en.wikipedia.org/wiki/Flo_pass",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the best way to quickly move the ball to the other side when the middle is too crowded?",
+    "Our left-back has the ball but the right winger is standing alone against a slow defender; what should we do with the ball?",
+    "I am a tall winger on the right, how can I get the ball in a position where I can easily win headers against the left-back?",
+    "We keep getting stuck in the center and losing possession, is there a specific passing pattern to break that deadlock?"
+  ]
 }

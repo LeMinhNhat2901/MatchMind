@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=MKUnE1eCdCI&t=157s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we adjust our shape when we lose the ball to stop them from playing through the middle?",
+    "When our wide players track back, how do we fill the gaps in midfield to stop the opponent's number 10?",
+    "Should we shift from having two midfielders to four when we are defending to close down the center of the park?",
+    "We keep getting scored on from central areas, so how can we tighten our defensive structure to force them wide?"
+  ]
 }

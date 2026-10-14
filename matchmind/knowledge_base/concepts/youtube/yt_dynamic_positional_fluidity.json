@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=g1nYknl92wI&t=699s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get my players to swap spots without losing our shape?",
+    "My wingers keep staying wide and the midfield gets crowded, so how do I make them drift inside to open up lanes?",
+    "What should our number ten do when the full-backs push high to create a passing triangle?",
+    "We always look predictable in possession, so how can we make the opposition guess where the ball is going next?"
+  ]
 }

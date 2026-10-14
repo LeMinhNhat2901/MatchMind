@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=D8AgTaSShmM&t=550s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is it called when a coach demands players stick to exact spots rather than improvising?",
+    "Our team looks like a machine where everyone moves in perfect sync without any individual flair, is that a specific style?",
+    "How should a midfielder decide where to run if the game plan strictly dictates his movement based on the ball's location?",
+    "We rely too much on one creative player, how can we structure the team so that every player has a fixed role and decision path?"
+  ]
 }

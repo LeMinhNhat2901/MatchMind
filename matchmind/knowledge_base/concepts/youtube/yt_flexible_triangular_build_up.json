@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=1246s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to move the ball out of our own half without losing possession?",
+    "The opponent is sitting deep and blocking the direct route, how do we create space for our strikers?",
+    "When I receive the ball in midfield, who should I look for to maintain a passing option?",
+    "We always get stuck in the middle third against teams that defend in a low block, what pattern should we use?"
+  ]
 }

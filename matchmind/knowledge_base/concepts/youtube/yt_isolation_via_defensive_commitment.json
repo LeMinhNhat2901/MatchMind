@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=303s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why is the opposing striker always left alone against our two center-backs?",
+    "When the opponent's wingers drop deep to defend, how can we exploit the space around their target man?",
+    "What should our center-backs do when the opposing forward is isolated because their wide men are tracking our full-backs?",
+    "We keep getting beaten by long balls to the striker because our wide players are too high up the pitch, how do we fix this defensive gap?"
+  ]
 }

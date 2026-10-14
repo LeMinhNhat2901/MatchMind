@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=694s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent from easily switching play to their wide men?",
+    "My full-backs are getting dragged out of position when we press, what shape should we use to stay compact?",
+    "Should our defensive line stay narrow or spread wide when the ball is in the opponent's midfield?",
+    "We keep losing the ball in the final third because our press is too static, how can we make it more dynamic?"
+  ]
 }

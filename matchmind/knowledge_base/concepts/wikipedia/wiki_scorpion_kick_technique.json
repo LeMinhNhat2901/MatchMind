@@ -35,5 +35,11 @@
     "url": "https://en.wikipedia.org/wiki/Scorpion_kick_(association_football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the name of that extreme acrobatic kick where a player dives and swings their heels to hit a high ball?",
+    "A ball is coming in high above my head and I can't get a header on it, what is the last-resort move I can try to clear or score?",
+    "I want to impress the fans with a spectacular save or goal from a difficult aerial position, what advanced technique should I practice?",
+    "We keep conceding from high crosses that our defenders can't head away, is there a desperate acrobatic move they can use to clear the danger?"
+  ]
 }

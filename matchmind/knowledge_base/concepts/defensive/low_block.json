@@ -27,5 +27,11 @@
     "defensive_line_height_low",
     "team_compactness_high",
     "phase_of_play_defensive"
+  ],
+  "example_questions": [
+    "How do I stop them from breaking down our defense when they have the ball for most of the game?",
+    "We keep getting scored on from long balls over the top, so should we drop everyone behind the ball line?",
+    "My center-backs are getting isolated by their wingers, what is the best way to protect the space behind them?",
+    "We struggle to keep a clean sheet against top teams, is there a way to make them play in front of us instead of behind us?"
   ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=yUvmssN2bt8&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get more bodies into the six-yard box for a free kick without looking obvious?",
+    "We are always outnumbered in the penalty area, so what is a better way to attack a set piece?",
+    "What should the winger do during a corner to help create a numbers advantage near the goal line?",
+    "Why do we struggle to win headers in the box even when we have good delivery?"
+  ]
 }

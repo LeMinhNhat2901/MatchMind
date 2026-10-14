@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=D8AgTaSShmM&t=368s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we force the opponent to lose the ball right in front of their goal?",
+    "We keep getting caught deep when we press, how do we turn those mistakes into quick goals?",
+    "What should our strikers do to trap the center-backs in a 1v1 near the penalty box?",
+    "Why do we struggle to score immediately after winning the ball in the opponent's half?"
+  ]
 }

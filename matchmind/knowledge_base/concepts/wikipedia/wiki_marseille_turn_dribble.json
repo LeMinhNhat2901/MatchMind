@@ -33,5 +33,11 @@
     "url": "https://en.wikipedia.org/wiki/Marseille_turn",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the name of the move where you drag the ball back and spin around to keep the defender behind you?",
+    "A defender is pressing me from the side and I want to shield the ball while changing direction without turning my back completely; what technique should I use?",
+    "I am a left-footed player being chased by a faster defender, how can I use my body to protect the ball and escape to the open space?",
+    "Every time I try to turn with the ball, the defender tackles it; what is a reliable skill to create space and protect possession in tight areas?"
+  ]
 }

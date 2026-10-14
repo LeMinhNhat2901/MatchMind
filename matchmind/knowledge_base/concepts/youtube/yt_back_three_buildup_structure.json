@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3569s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get the ball out from the back when the opponent is pressing us hard with their front three?",
+    "We keep losing the ball in our own box because the full-backs are isolated, what is a better way to structure our first pass?",
+    "As the defensive midfielder, should I drop between the center-backs to help with the build-up or stay high to support the wingers?",
+    "Our team struggles to bypass high pressing, how can we create a numerical advantage in the back line to keep possession?"
+  ]
 }

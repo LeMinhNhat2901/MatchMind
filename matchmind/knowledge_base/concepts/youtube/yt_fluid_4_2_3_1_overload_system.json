@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we beat a team that presses us high and tight in our own half?",
+    "The opponent is marking our wingers one-on-one, how do we create an extra man in wide areas?",
+    "When the ball is on the left flank, what should the right-sided attacker do to help out?",
+    "We struggle to get the ball into the final third against compact defenses, what formation tweak helps?"
+  ]
 }

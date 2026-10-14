@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=344s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to win the ball back and immediately launch a fast break?",
+    "We often lose the ball in the middle and get caught out of position, how can we use individual marking to create space for a quick counter?",
+    "Should my winger stay tight on the opponent's fullback or drop back to help in midfield when we lose possession?",
+    "Our team keeps getting caught in transition after losing the ball, how can we maintain individual pressure to recover it faster?"
+  ]
 }

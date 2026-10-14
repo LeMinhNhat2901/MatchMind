@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=WgXKzg6vuHg&t=345s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop a team that passes really well and keeps the ball for long periods?",
+    "The opponent is building up play patiently and we are getting tired chasing them, what should we do?",
+    "When the opposing playmaker starts receiving the ball in dangerous areas, what is the immediate reaction?",
+    "We are conceding too many goals from sustained attacks, how can we break up their rhythm earlier?"
+  ]
 }

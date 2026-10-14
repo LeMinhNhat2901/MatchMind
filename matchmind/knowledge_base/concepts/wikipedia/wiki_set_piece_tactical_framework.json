@@ -33,5 +33,11 @@
     "url": "https://en.wikipedia.org/wiki/Set_piece_(football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the general term for all the planned plays we run during corners and free kicks?",
+    "Our team looks disorganized every time we get a corner in the box, what kind of preparation do we need to fix this?",
+    "I want to be the target man for corners, what specific roles and movements should I expect from my teammates in these static situations?",
+    "We concede too many goals from set plays because we don't have a clear plan, what is the strategic approach to organizing both attack and defense for these restarts?"
+  ]
 }

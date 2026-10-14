@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=8OcXUJ2M7gA&t=220s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Should we press the opponent's striker when he drops deep or leave him be?",
+    "When the opposing team plays a striker who acts like a midfielder, what is the best defensive shape to stop them from passing easily?",
+    "Our defenders keep getting dragged out of position when we try to press the opponent's dropping forward, what should we do instead?",
+    "How do we defend against a team that uses a deep-lying striker to create space for their midfielders?"
+  ]
 }

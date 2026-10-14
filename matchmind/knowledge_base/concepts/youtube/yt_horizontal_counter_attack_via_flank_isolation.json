@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=jLdhDE73HUU&t=223s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get a player in one-on-one with a defender on the opposite side of the pitch?",
+    "We keep getting pinned to one side, how do we quickly switch play to catch them off guard on the other flank?",
+    "What should our wide player do when the entire opposing defense is shifting to the left?",
+    "Why do we fail to exploit the space on the far wing when we have the ball in the middle?"
+  ]
 }

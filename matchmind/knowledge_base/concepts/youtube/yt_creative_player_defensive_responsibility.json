@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=-izMUUfGnso&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our best attacker not track back when we lose the ball?",
+    "Our number ten is great in attack but leaves us short a man when the opponent counters; how do we fix that?",
+    "What should our creative midfielder do when the ball is lost in the final third?",
+    "The opponent always targets our playmaker when we lose possession because he never helps out in defense."
+  ]
 }

@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=991s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "When we are down a goal, should we just sit deep and make it hard for them to score?",
+    "Our team is getting stretched out and tired, so how do we stay compact and deny them space in the box?",
+    "If we have nothing to play for, what is the best way to set up our defense to absorb pressure?",
+    "Why do we keep getting beaten by through balls when we try to defend from a deep position?"
+  ]
 }

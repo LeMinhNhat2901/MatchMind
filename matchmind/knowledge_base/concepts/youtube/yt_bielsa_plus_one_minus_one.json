@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=512s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the logic behind having more defenders than attackers in a man-marking system?",
+    "When we press high, one of our defenders stays back to cover, why is that extra body necessary in the back line?",
+    "As a full-back, should I track my man all the way up or stay back to provide numerical cover for the center-backs?",
+    "We keep getting caught one-on-one in defense, how can we adjust our pressing structure to ensure we always have a spare defender?"
+  ]
 }

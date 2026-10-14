@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=485s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to break down a team that marks every single player?",
+    "The opposition is playing a strict one-on-one defense, how do we create gaps for our runners?",
+    "As a central midfielder, how should I position myself to exploit the space left by a man-marking defender?",
+    "We struggle to find passing options when the other team assigns a dedicated marker to each of our players, what is the solution?"
+  ]
 }

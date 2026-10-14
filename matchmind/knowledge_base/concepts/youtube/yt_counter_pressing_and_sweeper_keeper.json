@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=523s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What do I do if the team presses high but the goalkeeper is left exposed behind the back line?",
+    "My full-backs push up high, but we keep getting caught out on the break because the keeper stays on his line.",
+    "Should our number one rush out to clear the ball when the striker is one-on-one with the back four?",
+    "We lose the ball in midfield and immediately get scored on from behind; how do we stop that happening every game?"
+  ]
 }

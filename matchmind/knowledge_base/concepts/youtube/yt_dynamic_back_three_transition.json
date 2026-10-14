@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=jLdhDE73HUU&t=396s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we cover the wide areas when we lose the ball in the center?",
+    "Our fullbacks get caught high up the pitch and we get exposed on the flanks.",
+    "What should the center-backs do when the ball is played wide to the opponent's winger?",
+    "We keep getting beaten by quick switches of play to the other side of the field."
+  ]
 }

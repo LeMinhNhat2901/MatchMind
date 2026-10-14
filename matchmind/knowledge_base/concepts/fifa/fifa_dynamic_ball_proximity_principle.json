@@ -48,5 +48,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/world-class-tactics/argentina--ball-proximity-in-possession.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "Why do our players stay in their boxes instead of moving to support the ball carrier?",
+    "When we have the ball in midfield, should our wingers tuck in to create passing options?",
+    "What should our center-backs do when the ball is played to the opposite side of the field?",
+    "Our team looks rigid and predictable, how can we make our shape more fluid around the ball?"
+  ]
 }

@@ -34,5 +34,11 @@
     "url": "https://en.wikipedia.org/wiki/Cruyff_turn",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the name of the turn where you fake a pass and then spin behind your leg?",
+    "I am one-on-one with a defender who is sticking close to me; how can I use a feint to make him step forward so I can go around him?",
+    "When I am dribbling toward the penalty area and a defender closes in, what specific move should I use to change direction instantly?",
+    "Why do our attackers keep getting caught out of position when they try to beat tight markers in the final third?"
+  ]
 }

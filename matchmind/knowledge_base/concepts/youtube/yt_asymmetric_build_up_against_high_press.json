@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=191s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get the ball out of our own half when they are pressing us so hard?",
+    "Our full-backs are getting isolated and losing the ball, what shape should we form to help them?",
+    "If the opponent presses our left side, how should we position our right-sided players to create space?",
+    "We keep turning the ball over in the first ten minutes of games, what tactical change can help us break the press?"
+  ]
 }

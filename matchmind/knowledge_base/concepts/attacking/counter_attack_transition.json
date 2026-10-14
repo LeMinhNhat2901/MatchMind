@@ -28,5 +28,11 @@
     "phase_of_play_attacking_transition",
     "space_ahead_large",
     "progressive_pass_available"
+  ],
+  "example_questions": [
+    "What should the first touch be when we win the ball back in midfield?",
+    "We win the ball back but by the time we pass forward, their back line is already set, how do we fix this?",
+    "Should our defensive midfielder carry the ball forward or pass immediately when we regain possession?",
+    "Why do our attacks die out every time we steal the ball in the opponent's half?"
   ]
 }

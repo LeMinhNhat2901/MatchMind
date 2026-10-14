@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=168s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we connect our defense to our attack without losing the ball?",
+    "Our center-backs are too far back and our midfield is too high, how do we bridge that gap?",
+    "What is the role of the dropping defender when we are trying to build from the back?",
+    "We struggle to find an extra man in midfield to play through, what tactical adjustment helps?"
+  ]
 }

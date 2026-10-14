@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=347s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create more space in the middle without adding another striker?",
+    "Our central midfielder is always marked, what can the attacking midfielder do to help?",
+    "When should the number ten drift out wide to create a numerical advantage?",
+    "We struggle to break through the center, how can we use movement to overload one side?"
+  ]
 }

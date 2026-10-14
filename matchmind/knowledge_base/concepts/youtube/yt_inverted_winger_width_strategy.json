@@ -51,5 +51,12 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5860s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do my wide players keep drifting into the middle and leaving the flanks empty?",
+    "Our right-back is constantly overlapping while the winger cuts inside, but we are getting caught out on the counter-attack.",
+    "What should I tell my left winger when the opposing full-back stays high and wide?",
+    "We keep losing possession in the final third because nobody is stretching the play horizontally, how do I fix this?",
+    "How can I stop my team from collapsing into a narrow 4-4-2 shape when we have the ball?"
+  ]
 }

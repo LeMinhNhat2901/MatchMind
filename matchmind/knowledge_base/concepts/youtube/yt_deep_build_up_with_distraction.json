@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=98BkEsAUr9k&t=163s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create space for our center-backs when the other team presses high?",
+    "Our fullbacks are getting pinned down, how do we help them get the ball out safely?",
+    "What role should our defensive midfielder play to help the back four escape pressure?",
+    "We keep losing the ball in our own penalty area when they press, what is a simple way to fix this?"
+  ]
 }

@@ -49,5 +49,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/finding-the-target-player-and-blocking-man-to-man-markers.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How can we stop the opponent from sticking a defender right next to our tallest player?",
+    "Our best header is always being blocked by a tight marker, what can teammates do to help him out?",
+    "As a midfielder, how should I position myself to help my striker get a clear run to the ball in the air?",
+    "We keep losing headers in the box because our targets are always crowded, what is a good way to create space for them?"
+  ]
 }

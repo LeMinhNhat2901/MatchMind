@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2591s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our deep-lying midfielder struggle to find passing lanes even though he has excellent vision?",
+    "Our central anchor keeps getting isolated because he waits for instructions instead of reading the space ahead.",
+    "What should I tell my holding midfielder to improve his ability to switch play without looking at the ball?",
+    "We keep losing possession in the middle third because our deep player lacks the cognitive speed to process defensive pressure."
+  ]
 }

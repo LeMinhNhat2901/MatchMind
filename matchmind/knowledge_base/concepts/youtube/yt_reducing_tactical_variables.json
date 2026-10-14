@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=r97WqheJVd4&t=330s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop our team from getting chaotic and disorganized when the opponent starts pressing hard?",
+    "What is the best way to keep our possession structured and avoid random long balls under pressure?",
+    "Our players seem to make too many individual decisions that lead to turnovers, how can we make our play more consistent?",
+    "How can we simplify our attacking patterns so that every player knows exactly what to do in each zone?"
+  ]
 }

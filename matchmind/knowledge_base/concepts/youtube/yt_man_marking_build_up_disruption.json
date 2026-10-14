@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=sH5beYkoVXA&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop their playmaker from getting the ball in the first minute?",
+    "Their number 10 always finds space between the lines, what should I do about it?",
+    "Who should be marking their creative midfielder when they start the attack?",
+    "We keep losing possession in our own box, how can we disrupt their early passing?"
+  ]
 }

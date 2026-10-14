@@ -35,5 +35,11 @@
     "url": "https://en.wikipedia.org/wiki/High_press",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the defensive strategy called where we chase the ball all the way up to their penalty box?",
+    "We keep getting caught with long balls over the top, how can we pressure the ball carrier higher up the pitch to stop them from having time to play those passes?",
+    "As a center-back, what should I do when the opponent's goalkeeper is trying to play out from the back under pressure?",
+    "Our team gets tired in the second half and leaves gaps, how can we maintain a compact defensive block high up the field without burning out?"
+  ]
 }

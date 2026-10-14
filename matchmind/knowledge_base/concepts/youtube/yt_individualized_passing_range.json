@@ -47,5 +47,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=1002s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is it okay for our midfielders to try long switches of play, or do we have to stick to short triangles?",
+    "Our team looks stagnant because everyone is afraid to play a long ball, even though our captain has great range; how do we fix this?",
+    "As a deep-lying midfielder, should I be looking for those 40-yard diagonal passes to the winger, or is that against our game plan?",
+    "We keep getting stuck in our own half because we only play short passes, but I feel like we have the skill to hit it over the top; what should we do?"
+  ]
 }

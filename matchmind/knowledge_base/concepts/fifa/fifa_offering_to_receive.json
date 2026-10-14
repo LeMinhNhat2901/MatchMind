@@ -51,5 +51,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/performance-analysis/football-language-analysis/offering-to-receive.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do I let my teammate know I am ready for the ball without shouting?",
+    "I am standing still on the wing and my winger never passes to me because he doesn't know if I want the ball.",
+    "What movement should I make to show the midfielder that I have space and am ready to take a pass?",
+    "Why does our midfield seem disconnected because our players are not clearly signaling their availability for the ball?"
+  ]
 }

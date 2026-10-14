@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2096s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I use my wide players to open up the middle of the pitch for my strikers?",
+    "Our team is getting crowded in the center; how can we use the flanks to create more space for our central attackers?",
+    "What should my wide defenders do to help my central midfielders find more room to operate?",
+    "We keep failing to penetrate the central areas because the opposition is too compact; what tactical adjustment can help?"
+  ]
 }

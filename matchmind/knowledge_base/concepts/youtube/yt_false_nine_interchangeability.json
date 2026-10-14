@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1449s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the tactical term for when our forwards constantly swap positions with the midfielders?",
+    "Our striker and our left winger keep switching sides during the match, is this a specific system we are using?",
+    "How should our right winger time his diagonal run if our central striker is dropping deep to receive the ball?",
+    "We have a lot of players moving around in the final third, but it feels chaotic, how do we organize this fluidity between our front three and midfield?"
+  ]
 }

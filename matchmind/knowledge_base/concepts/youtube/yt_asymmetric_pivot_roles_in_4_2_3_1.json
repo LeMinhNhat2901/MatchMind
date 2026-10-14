@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=865s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to split the duties between my two central midfielders when playing a 4-2-3-1?",
+    "My team struggles to get out of the back line because both my midfielders are sitting too deep, how should I adjust their roles?",
+    "If I am the one sitting deeper, should I be looking to carry the ball forward or just recycle it to the full-backs?",
+    "We keep getting caught out of position in midfield because both my pivots are doing the same job, how can I fix this balance issue?"
+  ]
 }

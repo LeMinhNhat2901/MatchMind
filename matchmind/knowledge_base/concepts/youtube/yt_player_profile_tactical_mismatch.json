@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2891s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our fast winger look lost and ineffective when we ask him to drop into a deep defensive position?",
+    "Our creative midfielder is constantly being bypassed because he is forced to play as a box-to-box engine.",
+    "What is the best role for a player who has great passing range but lacks the stamina to cover the entire pitch?",
+    "Our left-back is struggling to track wingers because his natural instinct is to stay high and wide rather than defend centrally."
+  ]
 }

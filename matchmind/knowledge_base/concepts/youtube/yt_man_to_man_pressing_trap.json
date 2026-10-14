@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3680s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent's best player from getting time on the ball?",
+    "The other team is passing around the edges and we can't close them down, what should we do?",
+    "What should my center-backs do when the opponent's striker is isolated on the edge of the box?",
+    "We keep getting bypassed by quick one-touch passes, how can we eliminate the space around their key players?"
+  ]
 }

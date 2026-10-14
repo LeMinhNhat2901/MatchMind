@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=4QjPuVe77q0&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop my midfielders from bunching up in the same horizontal line?",
+    "We keep getting stuck in the middle third because everyone is waiting for the ball at the same depth, what should I change?",
+    "Should my box-to-box midfielder stay higher up the pitch while my deep-lying playmaker drops lower to create a passing lane?",
+    "Why does our team struggle to move the ball forward when the opposition sits in a compact block, and how can I fix my players' positioning?"
+  ]
 }

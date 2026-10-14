@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=1339s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is it better to have one deep-lying midfielder or two?",
+    "We keep getting caught out of position when our lone holding player steps up to press.",
+    "What should our central midfielders do to stop the opponent from playing through the middle?",
+    "Why do we always lose the ball in the middle third after winning it back?"
+  ]
 }

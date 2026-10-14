@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=D8AgTaSShmM&t=196s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we use quick one-twos to break down a low block without losing the ball?",
+    "Our team keeps getting caught out of position when we try to pass out of the back against a mid-block.",
+    "What should the left winger do to help the full-back escape pressure in the final third?",
+    "Why do we always lose possession in the midfield when the opponent starts pressing high?"
+  ]
 }

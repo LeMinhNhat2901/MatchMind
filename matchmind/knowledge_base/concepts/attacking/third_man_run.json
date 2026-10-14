@@ -30,5 +30,11 @@
     "two_players_in_combination",
     "space_behind_def_line",
     "progressive_pass_available"
+  ],
+  "example_questions": [
+    "How do we break through a high defensive line that is sitting deep and compact?",
+    "Our midfielders are getting isolated when they try to pass forward because the defenders are always one step ahead.",
+    "What should the supporting midfielder do when the ball is played to the winger who is about to be pressed?",
+    "We struggle to find space behind the defense because our runners only start moving after the pass is made."
   ]
 }

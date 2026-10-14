@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=4QjPuVe77q0&t=157s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we exploit the gap left by their midfielders when they push high?",
+    "Our team often gets caught out of position right after winning the ball back in midfield, what should we do next?",
+    "What is the best immediate action for our number 6 to take when he intercepts a pass in the center circle?",
+    "We keep losing possession again within seconds of recovering the ball, how do we break through their first line of pressure faster?"
+  ]
 }

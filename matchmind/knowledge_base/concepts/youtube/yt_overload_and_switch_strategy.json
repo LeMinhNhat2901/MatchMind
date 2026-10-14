@@ -34,5 +34,11 @@
     "url": "https://www.youtube.com/watch?v=c3zzDOYvtJc&t=316s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How do we create space on the opposite side when the defense is packed tight on one flank?",
+    "We have three players on the left but the right wing is completely empty, how do we exploit that gap?",
+    "As the left winger, when should I signal for the ball to be moved to the other side of the pitch?",
+    "Our attacks always stall on the same side because the opponent shifts their whole block, what can we do to break that pattern?"
+  ]
 }

@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=163s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Who should hold the ball in the middle of the park to start our attacks?",
+    "We keep losing the ball in the final third, so I want a player to sit deep and distribute to the wingers instead of pushing up.",
+    "Should our number six stay back near our own box to pick up the ball and launch long switches, or should he join the press?",
+    "Every time we build from the back, we get stuck because no one is positioned to receive the ball between the lines and the back four."
+  ]
 }

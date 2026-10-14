@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=438s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent's best passer from getting the ball in the first place?",
+    "The other team's number eight is controlling the game, what should our midfielders do to shut him down?",
+    "What is the best defensive approach to take when the opposing team has one player who dictates all their attacks?",
+    "We keep giving the other team's creator too much time on the ball, how can we specifically target him to force mistakes?"
+  ]
 }

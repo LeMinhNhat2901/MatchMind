@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=824s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What should I do if the winger moves inside to receive the ball?",
+    "Our full-backs are staying on the touchline while the wingers cut inside, leaving us with no width, so how should the positions swap to fix this?",
+    "When the center-back steps up to play, who is supposed to drop in and cover the space behind him?",
+    "We keep getting caught out of position because everyone is waiting for the ball to come to them instead of rotating into the gaps."
+  ]
 }

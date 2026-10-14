@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=98BkEsAUr9k&t=327s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we stop our midfielders from getting exhausted by letting some players hold a static shape?",
+    "When the opponent plays long balls, our back line is too high and tired, what structure should we use to rest our legs while still defending?",
+    "What is the role of the holding midfielder in a system where only two players are actively chasing the ball?",
+    "Our team looks disorganized when we drop deep, how do we create a stable base that allows others to roam without losing shape?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=510s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop a team that presses us high from getting behind our defense?",
+    "Our forwards drop deep to help, but we still get beaten by quick passes between the lines.",
+    "What should the winger do when the opponent's striker drops into midfield to receive the ball?",
+    "We keep getting scored against from counter-attacks even though we press hard in the first ten minutes."
+  ]
 }

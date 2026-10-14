@@ -53,5 +53,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/out-of-possession/high-press.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do we stop them from building up play comfortably from the back?",
+    "Our team keeps getting caught out of position when we try to press high, what are we doing wrong?",
+    "What should our center-backs do when the opposition goalkeeper starts playing out with short passes?",
+    "We lose the ball in midfield every time we push up, how can we make our pressing more coordinated?"
+  ]
 }

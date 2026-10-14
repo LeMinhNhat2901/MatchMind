@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=gRheEuU8u7Y&t=161s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we turn our defensive shape into a quick counter-attack?",
+    "When we sit deep and they pass around the back, how do we catch them out in the wide areas?",
+    "What should our midfielders do immediately after winning the ball back in our own third?",
+    "We keep getting beaten by long balls when we sit low, how can we make them take risks and then punish them?"
+  ]
 }

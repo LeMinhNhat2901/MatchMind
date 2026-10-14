@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=182s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I force them to only use their left side?",
+    "They keep switching play to the right, how do I stop them from going left?",
+    "What should our fullback do to cut off the winger's inside run?",
+    "Why does our team always get stretched wide and how can we fix that?"
+  ]
 }

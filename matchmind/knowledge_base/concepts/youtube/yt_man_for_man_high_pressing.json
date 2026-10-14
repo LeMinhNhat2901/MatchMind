@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=3S9T2Z1E8Fg&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to win the ball back near their penalty box?",
+    "Our keeper is comfortable with his feet, how do we trap him in his own third?",
+    "Should my striker press the center-back or drop back to help the midfield?",
+    "We lose possession too easily in the middle, how can we force turnovers higher up the pitch?"
+  ]
 }

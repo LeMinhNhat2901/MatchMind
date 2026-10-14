@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=179s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why is it better for our strikers to be at different depths rather than standing on the same line?",
+    "We keep getting caught offside when we make simultaneous runs, how should we adjust our positioning to avoid this?",
+    "As a second striker, how should I position myself relative to the main center-forward to create confusion for the defenders?",
+    "Our front three often stand in a straight line, which makes it easy for the defense to track us, what is a better structural approach?"
+  ]
 }

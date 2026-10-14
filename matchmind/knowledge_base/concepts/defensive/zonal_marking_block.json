@@ -27,5 +27,11 @@
     "team_compactness_low",
     "defensive_line_height_low",
     "phase_of_play_defensive"
+  ],
+  "example_questions": [
+    "Why does our defensive shape fall apart whenever the opposition wingers make diagonal runs?",
+    "The striker kept dragging our center-back out of position, leaving a gap for the second attacker, how can we prevent this?",
+    "If I am assigned the left channel, do I follow the winger everywhere or stay in my area until the ball reaches me?",
+    "Our back four gets stretched too wide every time the opponent switches play, what is the best way to maintain compactness without chasing individuals?"
   ]
 }

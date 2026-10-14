@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1124s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the name for when a winger runs into the box while the striker drops deep?",
+    "Our striker drops back to receive the ball, but our winger isn't making a run to the back post, what should he be doing?",
+    "How do we exploit the space left behind the opponent's defense when our central forward moves into midfield?",
+    "We keep losing possession in the final third because our wide players stay too wide, what kind of run should they make to support our dropping striker?"
+  ]
 }

@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop opponents from easily finding space in the midfield when we lose the ball high up?",
+    "My wingers are leaving huge gaps behind them when they push forward, and we keep getting punished on the break.",
+    "What should my right-back do immediately after we lose possession in the opponent's half?",
+    "We always seem to be one man short in the middle of the park right after a turnover; how can I fix this structural weakness?"
+  ]
 }

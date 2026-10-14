@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=500s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Where should I stand if I am not the one receiving the ball but I want to be in a good position to score?",
+    "I am always marked tight when I try to get the ball, how can I find pockets of space to receive it easily?",
+    "As a winger, how do I position myself to be free when my teammate is under pressure in the center?",
+    "We struggle to break down low blocks because everyone is clustered together, how can we use empty spaces to create chances?"
+  ]
 }

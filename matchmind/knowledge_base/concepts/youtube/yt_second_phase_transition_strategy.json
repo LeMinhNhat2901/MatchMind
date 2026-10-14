@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=gRheEuU8u7Y&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best tactic when we keep losing the initial header but still manage to score?",
+    "Our wingers are jumping for every cross but we rarely win the first touch, so how should we adjust our pressing in the box?",
+    "As a striker, should I focus on winning the first ball or positioning myself to collect the deflection?",
+    "We seem to be too focused on the first touch and miss the follow-up chances, what is the name of this specific defensive error?"
+  ]
 }

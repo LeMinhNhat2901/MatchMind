@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=8OcXUJ2M7gA&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How should my two central midfielders adjust their roles if one is a deep-lying playmaker and the other is a box-to-box runner?",
+    "When my partner is holding the ball, should I drop deeper to offer a pass or push higher to stretch the defense?",
+    "What is the best way for a defensive midfielder to support a more attacking partner without leaving a gap in the middle?",
+    "Our midfield duo often ends up in the same spot, so how do we define who holds the line and who makes the runs?"
+  ]
 }

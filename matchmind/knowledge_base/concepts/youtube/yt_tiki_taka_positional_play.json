@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=1178s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we keep the ball moving without just passing sideways all the time?",
+    "What is the tactical system that relies on players constantly shifting positions to open up gaps?",
+    "Our team looks static when we have the ball, how do we create continuous passing options?",
+    "How can we manipulate the opponent's defensive shape to create space for a shot?"
+  ]
 }

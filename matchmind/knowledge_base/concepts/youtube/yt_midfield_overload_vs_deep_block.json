@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1287s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we break down a team that parks the bus?",
+    "The opponent is sitting very deep and there is no space behind them, what should we try?",
+    "What is the best way for our wingers to help when the defense is parked in their own box?",
+    "We keep hitting a brick wall when they defend in numbers at the back, how do we solve this?"
+  ]
 }

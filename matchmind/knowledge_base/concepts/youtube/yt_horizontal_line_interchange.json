@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get our midfielders to swap places with the fullbacks to confuse the opposition?",
+    "When the other team's center-backs are tracking our wingers, how can our entire back line shift sideways to open up gaps?",
+    "What should our left-back do when the right-back moves into midfield to create a numerical advantage on the flank?",
+    "We keep getting caught out of position when our players swap roles; how do we organize these lateral shifts without leaving holes behind?"
+  ]
 }

@@ -33,5 +33,11 @@
     "url": "https://en.wikipedia.org/wiki/Association_football_tactics",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How do I stop the other team from stretching our back line too much?",
+    "Our wingers are staying too high and we have no one lurking behind their defenders, what should we change?",
+    "What should our striker do to keep the opposition center-backs on their toes when we are not in possession?",
+    "We keep getting caught out when the ball is played long because we lack a permanent threat behind the line, how do we fix this recurring issue?"
+  ]
 }

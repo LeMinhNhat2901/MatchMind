@@ -29,5 +29,11 @@
     "phase_of_play_defensive_transition",
     "press_intensity_capable",
     "players_near_ball"
+  ],
+  "example_questions": [
+    "What should the team do immediately after we lose the ball in the opponent's half?",
+    "We just gave the ball away and the opponent is trying to build a counter-attack, so how do we win it back quickly?",
+    "As a forward, what is my specific job in the first few seconds after my teammate loses possession?",
+    "We often lose the ball and then have to chase it back down the pitch, so how can we stop that from happening?"
   ]
 }

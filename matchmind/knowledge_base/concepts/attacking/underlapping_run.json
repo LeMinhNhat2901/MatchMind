@@ -29,5 +29,11 @@
     "winger_wide_with_ball",
     "half_space_free",
     "teammate_near_ball_on_inside"
+  ],
+  "example_questions": [
+    "What is the name of the run where a winger cuts inside past the fullback instead of behind them?",
+    "I am playing as an inverted winger and my fullback is staying wide, so should I move into the half-space to create a passing option?",
+    "How can I use my position to pull the opponent's center-back out of shape so my teammate can exploit the gap?",
+    "My team struggles to create angles in the middle of the pitch, so how can I adjust my positioning to offer a better passing lane?"
   ]
 }

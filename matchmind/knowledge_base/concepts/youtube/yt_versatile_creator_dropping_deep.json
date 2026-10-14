@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2376s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is it okay for my main playmaker to sit further back to help us build out from the back?",
+    "Our holding midfielder gets isolated when we start from the goalkeeper, so should I tell my number 8 to drop in and link play?",
+    "What is the best role for my creative midfielder when we are under heavy pressure in our own box?",
+    "We always get stuck in midfield because our pivot can't find a forward pass; how can we give him an extra option without changing the formation?"
+  ]
 }

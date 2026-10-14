@@ -50,5 +50,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/world-class-tactics/morocco--control-without-possession.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "When is the right time to step up from our mid-block?",
+    "We sit in a mid-block but only press when the ball is in certain zones, is that a specific tactic?",
+    "What should the striker do if the center-back turns with the ball in our mid-block?",
+    "We lose possession in the middle too often, how do we apply pressure only when it is safe?"
+  ]
 }

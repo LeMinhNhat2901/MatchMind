@@ -27,5 +27,11 @@
     "progressive_pass_available",
     "space_ahead_large",
     "is_in_defensive_third"
+  ],
+  "example_questions": [
+    "How can we break through their high press without passing sideways too much?",
+    "Our team keeps passing left and right in midfield but never reaches the box, what is the solution?",
+    "When should a midfielder look to play a long ball over the top instead of keeping possession short?",
+    "We struggle to find space between their midfield and defensive lines, how do we exploit that gap?"
   ]
 }

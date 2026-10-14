@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we turn a quick recovery into an immediate goal without wasting time passing sideways?",
+    "We win the ball high up the pitch but then start playing safe and slow; how do we keep the momentum going?",
+    "What should our striker do when he wins a header to ensure we attack the goal quickly?",
+    "We keep losing possession after winning it back because we try to play out too slowly; how do we speed up our transition to catch them off guard?"
+  ]
 }

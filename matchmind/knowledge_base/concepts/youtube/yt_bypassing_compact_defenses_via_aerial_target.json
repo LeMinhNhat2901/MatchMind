@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=1511s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get the ball past a team that stays in a deep block all game?",
+    "We keep getting stuck at the edge of their box against a low line, what can we do to break them down?",
+    "My striker is 6'4\" and strong, how should I use him to help us score against defensive teams?",
+    "We struggle to create chances when the opposition parks the bus, is there a specific way to exploit that?"
+  ]
 }

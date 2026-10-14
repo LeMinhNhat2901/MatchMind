@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3728s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the tactical benefit of having a full-back drop deep to join the center-backs?",
+    "When we have the ball, our wingers are isolated, how can we create more options in the final third by changing our back line?",
+    "As a wide midfielder, should I push higher up the pitch if one of the full-backs is sitting in the defense?",
+    "We struggle to break down low blocks because we don't have enough bodies in the box, how does dropping a full-back help with that?"
+  ]
 }

@@ -29,5 +29,11 @@
     "progressive_pass_available",
     "space_ahead_large",
     "defensive_line_height_high"
+  ],
+  "example_questions": [
+    "When is the right moment to shoot the ball into the space behind their back line?",
+    "My striker is making a run but the defender is staying onside, so should I hold the ball or risk the pass?",
+    "As a midfielder, how do I know if my winger is ready to receive a diagonal pass into the box?",
+    "We keep passing sideways and never break the line, so what specific cue should I look for to send the ball forward?"
   ]
 }

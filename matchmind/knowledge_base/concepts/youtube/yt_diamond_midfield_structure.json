@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=816s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What shape gives us the most control in the center of the park?",
+    "We struggle to keep the ball in tight spaces, what formation helps with short passing?",
+    "How should our midfielders position themselves to support the striker in central areas?",
+    "We lack creativity in the middle third, what setup helps us dominate the center?"
+  ]
 }

@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=647s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Who should press the goalkeeper when they are trying to play out from the back?",
+    "Our pressing feels chaotic because everyone chases the ball, how do we assign specific areas to cover?",
+    "What is the correct duty for our center-midfielder when the opponent has the ball in their own half?",
+    "We lose possession easily in the build-up phase, how do we organize our team to trap them in specific areas?"
+  ]
 }

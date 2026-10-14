@@ -34,5 +34,11 @@
     "url": "https://en.wikipedia.org/wiki/Total_Football",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the tactical concept called when players constantly swap positions to keep the team shape intact?",
+    "Our midfielders are getting isolated when they push forward, how can we ensure someone always covers their space automatically?",
+    "If I am a center-back, what should I do when my fullback overlaps into the attacking third?",
+    "We lose our defensive structure every time our wingers cut inside, how can we make our positioning more dynamic and self-correcting?"
+  ]
 }

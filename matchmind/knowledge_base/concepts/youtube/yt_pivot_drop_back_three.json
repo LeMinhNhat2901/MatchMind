@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=493s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we safely move the ball out of the back when we are under intense pressure?",
+    "We are getting pressed in our own box and can't find a passing lane, what should our midfield do?",
+    "As the defensive midfielder, when should I drop between the center-backs to help build up play?",
+    "Our goalkeeper often has to punt the ball because our back line is isolated, how can we create a safer outlet?"
+  ]
 }

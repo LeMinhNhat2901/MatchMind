@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=lEmz3dGqe24&t=373s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Who is responsible for calling out the defensive shape when we lose the ball in the opponent's half?",
+    "Our team looks disorganized after turnovers because no one is directing the pressing triggers from the center.",
+    "What specific duties should our defensive anchor have to ensure the back four stays compact during transitions?",
+    "We often concede second-ball goals because our central organizer fails to monitor the wide areas when we are out of possession."
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=349s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop them from switching play to the wide areas?",
+    "Our back four gets stretched out every time they pass sideways, what should we do?",
+    "What should our full-backs do when the opponent's winger receives the ball on the flank?",
+    "We keep getting caught in transition after losing the ball in midfield, how can we fix our spacing?"
+  ]
 }

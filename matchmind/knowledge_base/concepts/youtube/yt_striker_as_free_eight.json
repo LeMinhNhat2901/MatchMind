@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8604s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Can I use my main goal scorer as a deep-lying playmaker to create chances for others?",
+    "My striker is very creative but not strong enough to hold up play, should I move him into a deeper role?",
+    "What should my center forward do when he receives the ball in the middle of the park instead of near the box?",
+    "We struggle to break down low blocks with our usual formation, would moving our best scorer into a free role help us penetrate?"
+  ]
 }

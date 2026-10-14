@@ -31,5 +31,11 @@
     "url": "https://en.wikipedia.org/wiki/Bicycle_kick",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the name of that acrobatic move where you hit the ball while falling backward?",
+    "I saw a striker leap into the air and kick the ball over his head in the box; what is that specific skill called?",
+    "If a defender is about to head the ball into the net but I am behind him, should I try to clear it with an overhead scissor motion?",
+    "Why do we keep failing to clear high balls in the six-yard box when our players are caught off balance?"
+  ]
 }

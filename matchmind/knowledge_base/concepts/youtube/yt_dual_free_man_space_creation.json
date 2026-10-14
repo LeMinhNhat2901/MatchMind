@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create more space behind the opponent's defensive line?",
+    "Our fullbacks are always marked, so they can't get forward to support the attack.",
+    "What should our attacking midfielders do to drag the opposition defenders out of position?",
+    "We struggle to find gaps in tight defensive blocks because everyone stays so compact."
+  ]
 }

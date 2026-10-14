@@ -56,5 +56,11 @@
     "url": "https://www.youtube.com/watch?v=wZH52nypI0I&t=2s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we break down a team that is sitting deep and narrow in the center of the pitch?",
+    "The opponent is packing their midfield and leaving the wings empty, but we cannot find a way to pass through their central defensive wall.",
+    "As the lone striker, what should I do to help create space when the opposing team is defending with a tight, narrow shape in the middle?",
+    "We keep getting stuck in our own half when facing teams that defend deep and central, is there a specific formation shape that helps us dominate the center?"
+  ]
 }

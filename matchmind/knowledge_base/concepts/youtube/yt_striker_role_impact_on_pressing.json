@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7489s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our back line keep getting exposed when the center forward refuses to track back?",
+    "We are leaving a massive gap in midfield because our main man stays high up the pitch, what do we do?",
+    "How should the number nine behave when we lose the ball to keep the defensive unit tight?",
+    "Our team shape falls apart every time the forward stops pressing, is there a fix for this recurring issue?"
+  ]
 }

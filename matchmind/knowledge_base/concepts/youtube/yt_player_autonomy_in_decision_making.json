@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=UlAs0moqVbU&t=338s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I stop my players from freezing when the game doesn't go according to the game plan?",
+    "My wingers hesitate to cut inside because they are waiting for a specific cue from the manager on the touchline.",
+    "What drills can I use to help my full-backs decide when to overlap and when to stay wide without being told?",
+    "We struggle to adapt to different opponents because our players rely too heavily on rigid positional rules rather than reading the game."
+  ]
 }

@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=G9Ls5jjZw3s&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I use my keeper to help us get out from the back when the opponent is pressing high?",
+    "Our center-backs are constantly getting caught out of position when we try to pass out, and we lose possession in our own box.",
+    "What is the best role for my goalkeeper to play when we are building up from the defensive line?",
+    "We keep getting forced into long balls because the opposition is crowding our defenders; what tactical option can bypass this pressure?"
+  ]
 }

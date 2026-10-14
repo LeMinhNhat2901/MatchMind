@@ -55,5 +55,11 @@
     "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=459s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to break down a team that sits in a deep, low block?",
+    "Our wingers are getting isolated on the flanks when we try to pass out from the back, and we keep losing the ball.",
+    "Should my left-back stay wide or move into the center to help us progress the ball against a packed defense?",
+    "We struggle to find passing lanes in the final third because the opposition is so compact; what positional change can help us?"
+  ]
 }

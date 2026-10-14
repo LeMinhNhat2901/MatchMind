@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=797s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opposition's playmakers from getting on the ball?",
+    "We are sitting deep but they still find space in the middle, what should we change?",
+    "What should our central midfielder do to block the passing lanes to the wingers?",
+    "We keep getting scored on from central areas even though we are compact, how do we shut that down?"
+  ]
 }

@@ -54,5 +54,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-insights/building-from-goal-kicks.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do we stop the other team from sitting deep when we restart from our own goal line?",
+    "My keeper is getting pinned to his own box every time we take a restart, what should we change?",
+    "What is the best way to use the goalkeeper to break the first line of pressure immediately after a restart?",
+    "We keep losing the ball in our own third right after restarting play, how can we fix this recurring issue?"
+  ]
 }

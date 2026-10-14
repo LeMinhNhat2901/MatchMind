@@ -55,5 +55,11 @@
     "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=173s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Do we need to follow a strict formation or just play based on who is closest to the ball?",
+    "Our players are standing in fixed boxes and not moving, which makes it easy for the opponent to mark them, so how do we get them to link up dynamically?",
+    "If the opponent presses high, should my striker drop into midfield to create a triangle with the wingers rather than staying high up the pitch?",
+    "We struggle to break down low blocks because we always try to find the same passing lane, so how can we create more unpredictable connections between players?"
+  ]
 }

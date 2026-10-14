@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=SKfV99LZBgw&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we make our corner kicks more threatening than just a long ball?",
+    "Our defenders are getting pushed out of the box by the opposition, how do we keep them inside?",
+    "What should our players do on a corner to create a crowd in the penalty area?",
+    "We are not scoring from set pieces because our runs are too predictable, what can we change?"
+  ]
 }

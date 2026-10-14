@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=344s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our team look rigid and predictable even though we have fast players?",
+    "Our players seem to wait for instructions instead of reacting to what is happening around them, how do we change this?",
+    "What should a midfielder do when the ball moves quickly between three nearby teammates?",
+    "We struggle to adapt when the opponent changes their shape, how can we make our team more fluid and less dependent on fixed positions?"
+  ]
 }

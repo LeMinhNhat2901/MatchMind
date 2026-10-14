@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8771s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get my midfielders into the box when the opposition keeps their shape tight?",
+    "My wingers are staying too central, so the middle is always packed; how can I fix this spacing issue?",
+    "What should my left winger do to help create space for our number ten to receive the ball in the middle?",
+    "We keep getting stuck in midfield because the opposition defends in a narrow block; what is the best way to break that down?"
+  ]
 }

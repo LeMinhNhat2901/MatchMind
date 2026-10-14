@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=354s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "When should we hold our shape instead of chasing the first pass?",
+    "The opponent's center-back is comfortable on the ball, when do we swarm him?",
+    "What is the best moment for our striker to start pressing the goalkeeper?",
+    "We lose the ball high up the pitch and get punished, how do we recover more safely?"
+  ]
 }

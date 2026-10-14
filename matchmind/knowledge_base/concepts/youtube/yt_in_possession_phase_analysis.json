@@ -46,5 +46,11 @@
     "url": "https://www.youtube.com/watch?v=aW2NLCrPpQk&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we break down our possession play into buildup, progression, and finishing stages?",
+    "Our team struggles to move the ball from the back to the final third, how do we analyze and improve our progression phase?",
+    "What should the wingers do during the buildup phase to create space for the midfielders to advance the ball?",
+    "We keep losing possession in the same area of the pitch, how do we use phase analysis to identify and fix this recurring problem?"
+  ]
 }

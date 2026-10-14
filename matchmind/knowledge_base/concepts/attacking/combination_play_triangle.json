@@ -27,5 +27,11 @@
     "local_numerical_advantage",
     "passing_lane_open",
     "third_man_opportunity"
+  ],
+  "example_questions": [
+    "How do I get the ball past a tight press without losing possession?",
+    "My winger keeps trying to dribble through two defenders and gets stripped; what should he do instead?",
+    "We keep getting caught with the ball when we try to move it quickly in the final third, what are we doing wrong?",
+    "What is the best way for a midfielder to create an immediate running lane for a teammate?"
   ]
 }

@@ -35,5 +35,11 @@
     "url": "https://en.wikipedia.org/wiki/Volley_(association_football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How do I score directly from a cross without touching the ball first?",
+    "I keep trapping the ball and then shooting, which gives the defender time to recover, how can I be faster?",
+    "What is the best way to finish a high ball in the air when I am in the six-yard box?",
+    "Why do some players seem to shoot the ball before it even hits the ground, and how can I learn to do that?"
+  ]
 }

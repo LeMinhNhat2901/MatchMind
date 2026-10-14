@@ -32,5 +32,11 @@
     "url": "https://en.wikipedia.org/wiki/Chip_(association_football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What do you call a pass that goes over the top of the defense instead of through the gap?",
+    "The goalkeeper is rushing out to smother the ball, so how do I get it past him into the empty net?",
+    "As a winger, when should I choose to loft the ball over the keeper rather than aiming for the far post?",
+    "We always get tackled when we try to play low passes through the middle; is there a better way to bypass their press?"
+  ]
 }

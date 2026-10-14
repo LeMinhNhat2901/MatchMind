@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=1437s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the other team from running in behind our back four when we press so high?",
+    "Our defenders are up near the halfway line, but we keep getting punished by long balls over the top.",
+    "What is the best way to press aggressively without leaving huge gaps behind our defense?",
+    "We press high but the opponent just plays one long pass and we are in trouble; what are we doing wrong?"
+  ]
 }

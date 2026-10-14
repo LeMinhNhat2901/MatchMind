@@ -27,5 +27,11 @@
     "winger_on_opposite_foot",
     "half_space_occupied_or_available",
     "overload_flank"
+  ],
+  "example_questions": [
+    "Why does our left winger always cross from the sideline instead of shooting from a better angle?",
+    "When our right-footed player is on the left wing, should they stay wide for crosses or move toward the center of the pitch?",
+    "What should our left winger do when the opponent's full-back stays wide and leaves the half-space open?",
+    "We struggle to create shots from the left side because our winger keeps hugging the touchline and getting blocked."
   ]
 }

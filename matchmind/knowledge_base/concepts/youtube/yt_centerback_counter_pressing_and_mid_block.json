@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=490s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop the opposition from playing through the middle when we lose the ball?",
+    "We keep getting caught out of position after losing possession, what is the best immediate reaction?",
+    "What should my defenders do the second the ball is lost in the attacking third?",
+    "How can I make our team more compact and harder to break down in the middle of the park?"
+  ]
 }

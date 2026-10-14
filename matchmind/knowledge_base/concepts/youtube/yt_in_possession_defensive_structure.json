@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5551s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we set up our attack so that we can immediately counter-press if we lose the ball?",
+    "Our team gets caught out of position when we lose possession in the final third, how do we structure our attack to maintain defensive shape?",
+    "What should the full-backs do when they are high up the pitch to ensure they can drop back quickly if the ball is turned over?",
+    "We keep getting hit on the counter after losing the ball in the opponent's box, how do we organize our attacking shape to prevent this?"
+  ]
 }

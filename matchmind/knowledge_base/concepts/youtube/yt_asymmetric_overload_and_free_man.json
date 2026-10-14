@@ -55,5 +55,11 @@
     "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=169s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we create space for our wingers when the opponent defends in a tight block?",
+    "Our left side is crowded but our right winger is always one-on-one, how can we use this to our advantage?",
+    "When we have three players on one flank, what should the player on the opposite side do?",
+    "We struggle to beat teams that sit deep and defend with ten men, what tactic can help us isolate one of their defenders?"
+  ]
 }

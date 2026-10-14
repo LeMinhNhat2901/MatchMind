@@ -50,5 +50,12 @@
     "url": "https://www.youtube.com/watch?v=wZH52nypI0I&t=172s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I break through a low block without wasting time passing sideways?",
+    "My team gets stuck in the midfield when the opponent parks the bus, what kind of pass can unlock that defense?",
+    "As the deep midfielder, how do I use my vision to find the space behind their defensive line?",
+    "We struggle to transition quickly from defense to attack because we keep passing short, how can I change this?",
+    "What is the best way to use long-range passing to bypass a compact defensive shape?"
+  ]
 }

@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=468s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we bait their playmaker into a specific passing lane before we swarm him?",
+    "Our team presses too early and gets bypassed, how do we use zonal positioning to force them into a trap before switching to man-marking?",
+    "What should the left-back do when the opponent’s right winger is being marked by the left midfielder in this hybrid system?",
+    "We keep getting caught in transition because we don't know when to switch from zone to man, how do we set clear triggers for the press?"
+  ]
 }

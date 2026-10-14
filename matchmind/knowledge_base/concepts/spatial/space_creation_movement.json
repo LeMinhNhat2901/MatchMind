@@ -27,5 +27,11 @@
     "nearest_opponent_distance_low",
     "space_ahead_small",
     "local_numerical_advantage_negative"
+  ],
+  "example_questions": [
+    "How can I open up a lane for my teammate without actually receiving the ball?",
+    "The defense is sitting deep and compact, so how can I pull a defender out of position to create a gap?",
+    "What kind of run should a winger make to drag the fullback with him and free up space for the striker?",
+    "We struggle to find passing options in tight spaces, what is the best way to move to create openings for the team?"
   ]
 }

@@ -53,5 +53,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/in-possession/switch-of-play.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do I quickly move the ball to the other side of the field?",
+    "We are getting pinned down on the left, so what is the best move to free up space on the right?",
+    "As the winger, when should I look to send a long diagonal pass to my teammate on the opposite flank?",
+    "Our team struggles to break through when the opponent defends in a compact block, how can we use the width of the pitch to fix this?"
+  ]
 }

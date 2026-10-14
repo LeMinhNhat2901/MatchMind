@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=839s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop being so vulnerable at the back when we play away from home?",
+    "Our two strikers are leaving too much space behind them, so what should we change to stay safe?",
+    "If we drop one of our forwards to sit just in front of the midfield, does that help us hold the ball better?",
+    "We keep getting caught out on the counter-attack in away games, so how can we make our front line more compact?"
+  ]
 }

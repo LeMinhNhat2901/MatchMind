@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2745s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to use a striker who drops deep to help us control the midfield?",
+    "Our winger keeps getting isolated when our number ten drops back, how do we fix that spacing issue?",
+    "If I play a striker who acts like an extra midfielder, what should my full-backs be doing to cover the space behind them?",
+    "We struggle to maintain possession in the middle third because our forwards stay too high, what tactical change could help?"
+  ]
 }

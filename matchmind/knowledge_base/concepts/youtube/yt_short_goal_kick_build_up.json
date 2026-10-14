@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=336s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our keeper keep passing to the center-backs instead of just kicking it up the field?",
+    "We keep getting caught in a 4v4 midfield battle right after the restart, what should we change about our distribution?",
+    "As a left-back, should I stay back to receive a short pass from the keeper or move forward to support the attack?",
+    "We lose the ball too easily in our own box every time we try to play out from the back, how do we fix this recurring issue?"
+  ]
 }

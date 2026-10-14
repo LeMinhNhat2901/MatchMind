@@ -47,5 +47,11 @@
     "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we keep our shape tight when we pass the ball around?",
+    "The team loses its structure every time we lose possession, how do we fix that?",
+    "What is the best way to rotate players so the team shape stays consistent during buildup?",
+    "Why does our midfield look empty even though we have the ball most of the time?"
+  ]
 }

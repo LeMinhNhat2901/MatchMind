@@ -32,5 +32,11 @@
     "teammate_wide_with_ball",
     "opponent_fullback_narrow",
     "space_behind_defensive_line"
+  ],
+  "example_questions": [
+    "How can we create a one-on-one situation on the wing when the winger is already under pressure?",
+    "Our full-backs are staying back too much when the winger has the ball, so we never get a numerical advantage on the flank.",
+    "What is the best timing for a full-back to run past the winger who is carrying the ball near the touchline?",
+    "We keep getting caught with only one player on the wing when the opponent focuses all their defenders there."
   ]
 }

@@ -29,5 +29,11 @@
     "defensive_line_high",
     "space_ahead_large_for_opponent",
     "phase_of_play_defensive"
+  ],
+  "example_questions": [
+    "How do we catch their strikers offside more often?",
+    "Our defenders are getting left behind by their fast forwards, is there a way to stop them running in behind?",
+    "What should the center-backs do when the ball is played forward to stop the striker from being onside?",
+    "We keep getting caught out by long balls, how can we time our defensive line better to catch runners offside?"
   ]
 }

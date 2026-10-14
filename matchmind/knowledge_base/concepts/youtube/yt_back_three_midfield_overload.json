@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1940s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I ensure my team always has more players in the center of the park than the opposition?",
+    "Our team gets stuck in the middle third because the other side has five midfielders, what change in our back line could fix this?",
+    "As a central midfielder, should I expect a defender to join me in the center to help control the game?",
+    "We lose the ball constantly in the middle of the field, is there a way to structurally guarantee we have the numbers to keep it?"
+  ]
 }

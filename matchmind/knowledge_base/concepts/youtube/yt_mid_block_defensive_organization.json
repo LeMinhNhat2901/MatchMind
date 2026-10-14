@@ -33,5 +33,11 @@
     "url": "https://www.youtube.com/watch?v=c3zzDOYvtJc&t=160s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How can we defend without getting tired from pressing high but also avoid sitting too deep in our own box?",
+    "The team is struggling to find a balance between chasing the ball everywhere and staying organized, is there a middle ground for our defensive line?",
+    "As a center-back, where should I position myself if we are not pressing high but also not sitting in a low block, so I can step up when needed?",
+    "We often get caught out of position when the opponent plays through the middle, how can we organize our shape to force them to go sideways instead?"
+  ]
 }

@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=161s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do we keep passing the ball around without ever getting close to the goal?",
+    "We have the ball for ten minutes but only take one shot from distance, what is going wrong with our buildup?",
+    "When the midfield is blocked, should my players try to force a pass through the center or look for a long ball over the top?",
+    "Our team gets tired from endless sideways passing and then loses the ball in dangerous areas, how can I make our possession more effective?"
+  ]
 }

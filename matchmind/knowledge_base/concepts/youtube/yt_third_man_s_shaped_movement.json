@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=G9Ls5jjZw3s&t=361s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get a player facing forward into space when the opposition is pressing high?",
+    "Our attackers are always receiving the ball with their back to goal, what movement can help them turn and run?",
+    "What is the specific sequence of passes that allows a third player to bypass a tight defensive line?",
+    "We struggle to break through the first line of pressure, is there a drill that teaches players to create a forward-facing option?"
+  ]
 }

@@ -53,5 +53,12 @@
     "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=646s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opposition from tracking our players when everyone is constantly swapping roles?",
+    "My wingers keep drifting inside while the fullbacks push up, but we lose our shape; how do I manage this chaos?",
+    "What should our number ten do when he sees the center-backs are confused about who is marking him?",
+    "We struggle to keep our defensive line intact when we are pressing high because our midfielders are everywhere; what is the solution?",
+    "Why does my team look disorganized in the final third even though we have good players, and how do I fix the lack of structure?"
+  ]
 }

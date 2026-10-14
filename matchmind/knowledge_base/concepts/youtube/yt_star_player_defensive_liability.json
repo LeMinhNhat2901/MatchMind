@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=g1nYknl92wI&t=194s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is it a bad idea to keep my best attacker on the pitch if he refuses to track back?",
+    "Our wingers get caught out of position every time the other team counters because they don't help in defense, how do I manage this?",
+    "What should I tell my star forward when the ball is lost in midfield and the opponent is launching a quick attack?",
+    "We keep conceding easy goals on the counter-attack because our front three are too high up and don't press, what is the tactical fix?"
+  ]
 }

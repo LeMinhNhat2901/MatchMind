@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2037s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we get more width without losing our central numbers?",
+    "We want to attack the flanks but stay compact, what shape works for that?",
+    "What should our number ten do to create space for the wingers?",
+    "We feel too narrow when we have the ball, how do we stretch the opponent out?"
+  ]
 }

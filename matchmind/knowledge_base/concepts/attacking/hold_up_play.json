@@ -27,5 +27,11 @@
     "striker_role",
     "nearest_opponent_distance_low",
     "progressive_pass_not_available"
+  ],
+  "example_questions": [
+    "What is the best way to keep the ball when the keeper or a center-back gets it deep in our own box?",
+    "Our striker keeps trying to dribble past two defenders and losing the ball instead of letting the midfielders get on the ball.",
+    "Should our number nine try to shoot immediately or just shield the ball while the wingers move into position?",
+    "We keep getting caught out of position when we lose possession in the final third because no one is protecting the ball initially."
   ]
 }

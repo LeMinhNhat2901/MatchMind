@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=98BkEsAUr9k&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we beat a team that sticks to their players like glue?",
+    "Our center-backs are getting isolated because the opposition marks them tight, how do we create freedom for them?",
+    "What should our midfielders do when they are being shadowed by a dedicated marker?",
+    "We struggle to progress the ball because every player has a specific defender on them, what is the solution?"
+  ]
 }

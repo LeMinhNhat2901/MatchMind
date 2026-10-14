@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=313s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we mix zone and man marking to force their keeper into a mistake?",
+    "Our team keeps getting caught out of position when we switch from zonal to man-to-man, how do we fix that transition?",
+    "What should the center-backs do when the winger receives the ball on the touchline in this mixed pressing scheme?",
+    "We lose intensity in the second half because we stick to one style, how can we vary our approach to keep them guessing?"
+  ]
 }

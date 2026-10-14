@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=qLmV-m0SxhI&t=393s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we make it easier to move the ball forward when the opponent is hesitant to press our midfielders?",
+    "We are getting trapped in our own half because the opponent is waiting for us to make a mistake, how can we use their hesitation to our advantage?",
+    "If the opposing team is not pressing high, what should our midfielders do to create a numerical advantage and progress the ball safely?",
+    "We struggle to build up play when the opponent sits back and waits, is there a way to exploit their lack of pressure to get the ball into dangerous areas?"
+  ]
 }

@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4917s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the name of the tactic where everyone dives in immediately after losing the ball?",
+    "Our team loses the ball and just stands there for ten seconds, how do we get everyone to press together instantly?",
+    "How should the winger react in the first three seconds after the midfielder loses possession to help win it back?",
+    "We struggle to regain the ball quickly after turnovers, what system can we implement to make our reaction faster and more unified?"
+  ]
 }

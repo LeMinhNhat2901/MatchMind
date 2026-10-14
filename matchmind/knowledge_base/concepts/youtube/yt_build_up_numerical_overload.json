@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4467s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we make it easier to pass out of our own box?",
+    "Our center-backs feel overloaded when we start a move, how do we give them more options?",
+    "What should our box-to-box midfielder do to help our defenders get the ball out safely?",
+    "We keep turning the ball over in our defensive third, how do we create more passing lanes there?"
+  ]
 }

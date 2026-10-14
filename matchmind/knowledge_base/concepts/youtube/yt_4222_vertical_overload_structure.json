@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2712s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we create passing lanes through the middle when they only have one defensive midfielder?",
+    "Our creative players are getting marked out of the game, how can we use two advanced midfielders to open up space?",
+    "What should our two central attacking midfielders do to exploit the gap behind their single pivot?",
+    "We keep getting stuck in possession because we can't find a clear vertical passing option, how do we structure our midfield to overload their central defense?"
+  ]
 }

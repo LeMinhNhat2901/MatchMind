@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3054s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How long do we have to win the ball back before the other team is set up for a counter?",
+    "We always seem to be too slow to react after losing possession, giving them time to breathe.",
+    "What should the midfielders do in the first five seconds after the opponent wins the ball?",
+    "Why do we keep losing possession and then failing to get it back quickly enough to stop their attack?"
+  ]
 }

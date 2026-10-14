@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=153s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "When should we let one guy go rogue on the ball carrier instead of moving as a block?",
+    "Our team keeps losing the ball in midfield because everyone waits for the signal, but I think our best player could just take him on alone; is that a bad idea?",
+    "If I am the fastest player on the pitch, should I ignore the group press and chase the ball carrier down the wing by myself?",
+    "We keep getting punished for leaving gaps when the whole team presses, so how do we fix it if we want to rely on just one elite defender to win the ball back?"
+  ]
 }

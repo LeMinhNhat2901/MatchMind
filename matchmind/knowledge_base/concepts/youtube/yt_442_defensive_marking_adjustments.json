@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop the opponent's playmaker from dictating the game while keeping my front two in position?",
+    "We keep getting scored on when their number 10 drifts between our lines, so what should my leading striker do to cover that space?",
+    "My winger is getting isolated because my partner is dropping deep, how can we fix this disconnect in our front two?",
+    "Every time we lose the ball in midfield, the opposition creates too much space behind our back four, what is the best way to close that gap without pulling our whole line back?"
+  ]
 }

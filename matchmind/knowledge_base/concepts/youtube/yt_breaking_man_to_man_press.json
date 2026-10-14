@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=1FfYzl4dygc&t=349s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the other side from tracking our players one-on-one?",
+    "Our wingers are getting isolated because their markers never leave them, what should we do?",
+    "What should our central midfielder do to pull a defender out of position so our winger gets space?",
+    "We keep losing the ball in midfield because every player has a dedicated marker, how do we fix this?"
+  ]
 }

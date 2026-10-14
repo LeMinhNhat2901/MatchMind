@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=333s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get width in a narrow formation without using fullbacks?",
+    "Our fullbacks are pushing high but we have no one covering the wide areas, who should fill that gap?",
+    "What should my central midfielder do when the ball is played into the half-space?",
+    "We struggle to maintain width when our fullbacks are out of position, how do we solve this recurring issue?"
+  ]
 }

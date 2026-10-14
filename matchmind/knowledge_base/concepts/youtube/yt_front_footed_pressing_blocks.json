@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=839s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I make sure my team presses effectively from the start of the game?",
+    "My players are too passive in the first ten minutes, how do I get them to press harder?",
+    "What is the best way to organize my team to press the opponent's goalkeeper?",
+    "We keep losing the ball in our own half because we don't press enough, how do I fix this?"
+  ]
 }

@@ -40,5 +40,11 @@
     "url": "https://en.wikipedia.org/wiki/Anti-football",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How can we stop a much stronger opponent from creating any chances?",
+    "We are getting beaten on the counter-attack every time we lose the ball high up the pitch, what is the safest structure to use?",
+    "What should our striker do if we are sitting deep and trying to protect a narrow lead?",
+    "Our team concedes too many goals when we try to play out from the back, is there a tactic that focuses purely on not losing?"
+  ]
 }

@@ -36,5 +36,11 @@
     "url": "https://en.wikipedia.org/wiki/Tiki-taka",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How do I stop the other team from passing the ball around forever?",
+    "We keep losing the ball in midfield because our players stand too far apart when they don't have it, what should we do?",
+    "What should my central midfielder do to help us keep control of the game against a high press?",
+    "Our team struggles to break down low blocks because we only try to play long balls, how can we change our approach?"
+  ]
 }

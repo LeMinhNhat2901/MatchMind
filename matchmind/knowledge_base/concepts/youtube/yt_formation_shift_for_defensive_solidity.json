@@ -47,5 +47,11 @@
     "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=607s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop conceding so many goals after a bad loss?",
+    "We got smashed 5-0 last week, how do I make the team more compact for the next game?",
+    "What should I tell my players to do to protect the lead when we are tired?",
+    "Our defense is falling apart every time we lose possession, how can I make the team more solid?"
+  ]
 }

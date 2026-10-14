@@ -38,5 +38,11 @@
     "url": "https://www.youtube.com/watch?v=dhmCwI5vAlE&t=184s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the best way to create space in the middle of the pitch when the opponent is sitting in a low block?",
+    "How do we use short passing to pull defenders out of position so we can find a gap to attack?",
+    "When our team is in possession, how should the players position themselves to ensure there is always a passing option available?",
+    "We struggle to break through the second line of defense, what kind of movement helps us isolate our best player one-on-one?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=1046s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we make the opposing pressers hesitate so we can pass the ball more easily?",
+    "The other team's midfielders always seem to guess our passes correctly; how do we mess up their timing?",
+    "What should our playmaker do to make the defender unsure of when to step in and tackle?",
+    "We keep getting pressed out of the game because the other team anticipates our movements too well."
+  ]
 }

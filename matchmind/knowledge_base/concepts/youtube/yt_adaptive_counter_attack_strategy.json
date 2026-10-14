@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3893s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "We can't keep the ball against stronger teams, so what should we focus on when we win it back?",
+    "Our players are too tired to press high for 90 minutes, how do we turn our defensive efforts into scoring chances?",
+    "When we lose the ball in our own half, what is the fastest way to get our forwards into dangerous positions?",
+    "We keep getting pinned back and can't build up play, is there a better way to use our speed on the break instead of trying to possess the ball?"
+  ]
 }

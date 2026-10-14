@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=r97WqheJVd4&t=168s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our team keep the ball moving sideways without trying to advance?",
+    "We just won the ball back high up the pitch, but my full-backs are still out of position; what should I do with the ball right now?",
+    "As the holding midfielder, should I try to play a long ball immediately or keep the ball short to let my teammates get back into shape?",
+    "We keep getting caught out of position in midfield after regaining possession, so how can we slow down the game to let everyone settle?"
+  ]
 }

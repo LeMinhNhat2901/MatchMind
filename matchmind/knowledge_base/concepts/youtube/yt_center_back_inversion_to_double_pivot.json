@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7803s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I create a numerical advantage in midfield without using a dedicated defensive midfielder?",
+    "We are getting overrun in the middle when we have the ball, what is a simple structural fix?",
+    "What should my ball-playing defender do when the opposition presses high?",
+    "We keep losing possession in the center circle, how can I stabilize our buildup phase?"
+  ]
 }

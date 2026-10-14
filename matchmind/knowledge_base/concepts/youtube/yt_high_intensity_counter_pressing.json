@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=mZskzUKsNwU&t=222s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get my team to win the ball back immediately after losing it instead of falling back?",
+    "We lose possession high up the pitch but our players just stand and watch instead of chasing the ball, leading to easy counters for the opponent.",
+    "What should my front three do when the ball is played to the opponent's goalkeeper or fullback?",
+    "We are conceding too many goals from quick transitions because we don't react fast enough to turnovers; how can I improve our immediate response?"
+  ]
 }

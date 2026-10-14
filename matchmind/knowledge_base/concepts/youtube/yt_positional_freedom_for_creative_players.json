@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=518s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Should I let my best playmaker break the lines whenever he wants?",
+    "My number ten keeps getting stuck in a box and we aren't creating chances, what can I do?",
+    "What should I do when the ball is in the midfield and I see space opening up behind the press?",
+    "Why does our team look so rigid and predictable even though we have a very talented central midfielder?"
+  ]
 }

@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=669s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get more bodies in the midfield without pulling a midfielder out of position?",
+    "My back four sits too deep when we have the ball, leaving us short in the middle third, what should I change?",
+    "What specific instructions should I give to my right center back to help us dominate the center circle?",
+    "We keep losing possession in the midfield because we are outnumbered there, how can I fix this structural issue?"
+  ]
 }

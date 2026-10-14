@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=sH5beYkoVXA&t=502s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the other team from having any time to think in their own half?",
+    "The opponent keeps passing sideways to escape our pressure, how do we close down those spaces faster?",
+    "What should our midfielders do to deny the opposing playmaker any room to turn and drive forward?",
+    "Why do we always seem to have too much space between our lines when we try to press aggressively?"
+  ]
 }

@@ -53,5 +53,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-insights/balls-in-behind-the-defence.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do I get my wingers to break free from their markers?",
+    "The back four is sitting very deep, what is the best way to catch them out of position?",
+    "As a striker, when should I make my run to receive a ball into the space behind the center-backs?",
+    "We keep passing around the perimeter but never get into the box, how can we find the gaps in their defensive line?"
+  ]
 }

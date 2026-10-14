@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=WgXKzg6vuHg&t=178s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why are we sitting so deep when we could be higher up the pitch?",
+    "The opponent is passing around our back line, how do we stop them from reaching our midfielders?",
+    "When the ball enters the central area, what should our midfielders do to regain possession quickly?",
+    "We are getting stretched too wide and losing shape, how can we stay compact in the middle of the park?"
+  ]
 }

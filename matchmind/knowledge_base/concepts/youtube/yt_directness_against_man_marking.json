@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=807s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is there a way to stop their defenders from sticking to our players so tightly?",
+    "Their man-to-man marking makes it impossible to play short passes in the final third, how do we bypass this?",
+    "What should our striker do when he is constantly shadowed by a dedicated marker who never lets him turn?",
+    "We struggle to build up play because every player has a dedicated opponent on them, what is the best alternative approach?"
+  ]
 }

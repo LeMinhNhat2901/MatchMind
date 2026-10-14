@@ -3,7 +3,10 @@
   "category": "defending",
   "subcategory": "rest_defence",
   "phase": "possession",
-  "applicable_phases": ["possession", "defensive_transition"],
+  "applicable_phases": [
+    "possession",
+    "defensive_transition"
+  ],
   "title": "Rest Defense Structural Integrity",
   "definition": "The positioning of players behind the ball during possession to maintain a secure defensive structure and prevent immediate counter-attacks upon loss of possession.",
   "content": "Rest defense refers to the specific formation shape a team adopts behind the ball carrier while in possession, designed to protect against turnovers. In a 3-2-5 or 2-3-5 structure, holding midfielders form a secure base, allowing front players to attack with the knowledge that a defensive skeleton remains intact. This concept is critical for enabling high-intensity pressing, as it ensures that if possession is lost, the team is already organized to counter-press or retreat. When this structure is compromised, such as by reducing the midfield base to a single pivot in a 3-4-3 diamond, the team becomes vulnerable. A lone pivot is easily isolated, leaving vertical channels open for opponents to bypass the midfield and attack the backline directly. Furthermore, if full-backs or center-backs push too high without adequate cover, gaps form in the defensive line. The key to effective rest defense is not just having players behind the ball, but ensuring they are positioned to cover passing lanes and provide immediate support. Players in these roles must prioritize positional discipline over individual dribbling or progressive carrying, as their primary job is to maintain the structural integrity of the team's defensive shape until possession is regained or the attack is resolved.",
@@ -51,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=9101s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent from scoring right after we lose the ball?",
+    "We are pushing all eleven players forward when we have the ball, and then we get run through the middle the moment we turn it over.",
+    "If I am the left-back and I am high up the pitch, who is responsible for covering the space behind me if we lose possession?",
+    "Our team gets caught in a flat line when we have the ball, making it too easy for the opposition to counter-attack through the center."
+  ]
 }

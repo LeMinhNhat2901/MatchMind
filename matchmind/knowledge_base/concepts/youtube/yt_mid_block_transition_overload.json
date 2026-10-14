@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=oyMQbGeNqog&t=150s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to get numbers on the ball quickly when we win it back in the middle of the pitch?",
+    "We win the ball in the midfield but lose it again because we are too slow to get into position, how can we set up to counter-attack immediately?",
+    "If our team is defending in a mid-block, how should the midfielders move to ensure we have more players than the opponent the moment we regain possession?",
+    "We struggle to convert our defensive recoveries into attacks because we are always one or two players short, what tactical adjustment can fix this recurring issue?"
+  ]
 }

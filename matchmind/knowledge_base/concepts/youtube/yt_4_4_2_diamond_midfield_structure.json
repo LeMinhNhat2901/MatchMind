@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=832s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we dominate the center of the park without leaving our wide areas empty?",
+    "We struggle to connect our midfield to our attack, is there a shape that helps us move the ball vertically more effectively?",
+    "My central midfielders are getting overrun, what formation change can give us an extra body in the middle without sacrificing width?",
+    "We keep losing possession in the final third because we lack options in the center, how can we structure our midfield to create more passing lanes?"
+  ]
 }

@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=UlAs0moqVbU&t=172s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stay compact in the middle of the pitch while still creating chances in attack?",
+    "We get stretched out when we lose the ball in the middle, how can we maintain our shape?",
+    "What should my midfielders do to create unpredictability in the final third?",
+    "Our team keeps getting caught out of position when we transition from defense to attack, how do we fix this?"
+  ]
 }

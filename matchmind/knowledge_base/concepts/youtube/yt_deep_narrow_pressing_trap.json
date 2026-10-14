@@ -51,5 +51,12 @@
     "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=347s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop the opponent from playing through the middle without chasing them everywhere?",
+    "My team gets caught out of position when we press high, what is a safer way to start our defensive shape?",
+    "As a full-back, should I stay wide or move inside when my team is defending deep?",
+    "We keep getting beaten by through balls in the center, how can I force the opponent to play wide instead?",
+    "What is the best defensive setup to limit the space available to the opposition's central midfielders?"
+  ]
 }

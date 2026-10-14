@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=9413s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we stop opponents from playing through the center without losing our shape?",
+    "The other team has fast wingers who explode into space behind our fullbacks, how do we protect the middle?",
+    "Should my central midfielder drop deeper when the opponent starts pressing high?",
+    "We keep getting caught out on the break because we have too many players high up the pitch, what is the fix?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=318s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our attack stall every time we try to send balls into the box from the wings?",
+    "The opposition always seems to know exactly where our wingers will deliver the ball, what are we doing wrong?",
+    "Our left winger keeps bombing it in from the same spot, how can we stop the defenders from just standing in the way?",
+    "We cross the ball forty times a game but rarely get a shot on target, is there a better way to attack the final third?"
+  ]
 }

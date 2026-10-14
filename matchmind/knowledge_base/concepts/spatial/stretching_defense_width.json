@@ -27,5 +27,11 @@
     "attacking_width_high",
     "overload_left_or_right",
     "switch_play_viable"
+  ],
+  "example_questions": [
+    "How do I make the opponent's defense spread out so we can play through the middle?",
+    "Our wingers are staying too central, so how can we force the fullbacks to track them wide to open up gaps?",
+    "What should our wide players do to stretch the defense horizontally and create central channels?",
+    "The defense is always compact in the center, so how can we use width to break their shape?"
   ]
 }

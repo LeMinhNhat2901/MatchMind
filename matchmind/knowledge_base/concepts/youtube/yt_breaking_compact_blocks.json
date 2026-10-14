@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=9262s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to create space when the opponent parks the bus?",
+    "The other team is sitting in a deep line and we cannot get through the middle, what should we do?",
+    "How should our wingers position themselves to stretch a low defensive line?",
+    "We struggle to find passing lanes when the opposition defends in a tight 4-4-2 shape, what is the solution?"
+  ]
 }

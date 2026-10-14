@@ -35,5 +35,11 @@
     "url": "https://en.wikipedia.org/wiki/Rainbow_kick",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the name of that flashy move where you flick the ball over your head while running?",
+    "I'm trapped by a defender right in front of me with no space to go left or right, what trick can I use to get past him?",
+    "My winger loves to show off in one-on-ones, what specific skill should he practice to beat a tight marker by going over his head?",
+    "We keep losing the ball when our players try to dribble past defenders who are standing very close, is there a technique to bypass them without touching the ground?"
+  ]
 }

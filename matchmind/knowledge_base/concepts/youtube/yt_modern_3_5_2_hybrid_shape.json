@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=1354s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What shape should I use if I want to dominate the center but stay solid at the back?",
+    "Our fullbacks are getting caught out wide when we lose the ball, how can I adjust my formation?",
+    "How should I set up my back line if I want my wide players to push high up the pitch?",
+    "We are struggling to cover the flanks when we are not in possession, what formation change helps?"
+  ]
 }

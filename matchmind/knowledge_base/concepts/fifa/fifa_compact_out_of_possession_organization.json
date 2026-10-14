@@ -55,5 +55,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/out-of-possession/team-organisation--out-of-possession-.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do we stop them from passing through the middle?",
+    "They keep finding space in the pockets between our lines, what should we adjust?",
+    "What should our midfielders do to keep the team narrow when we don't have the ball?",
+    "We always get stretched wide, how can we force them to play out the sides?"
+  ]
 }

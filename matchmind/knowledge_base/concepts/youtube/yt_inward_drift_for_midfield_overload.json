@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=967s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why does our team look crowded in the center but still struggle to pass the ball out?",
+    "Our right winger is tucking inside to join the midfield, but our left full-back is struggling to find space, what is the solution?",
+    "When the opponent presses high, should my wide midfielder stay wide or move into the half-space?",
+    "We are constantly outnumbered in the middle of the park, how can we create a numerical advantage without changing our formation?"
+  ]
 }

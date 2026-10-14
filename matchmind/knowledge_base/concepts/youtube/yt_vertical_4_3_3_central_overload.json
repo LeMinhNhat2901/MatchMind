@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=jLdhDE73HUU&t=62s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we dominate the middle of the park without using too many wide players?",
+    "I want to crowd the center to break their defensive line, but I don't want to leave the flanks empty; what shape should I use?",
+    "What should our central midfielders do to create a numerical advantage in the box against a back five?",
+    "We keep getting pinned wide and can't find space in the middle; how do we force the game into the center to exploit their gaps?"
+  ]
 }

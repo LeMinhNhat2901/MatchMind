@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6841s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we create confusion in their back four without having a traditional target man?",
+    "Our two forwards are getting marked individually, how can they work together to overload the defense?",
+    "What should our second striker do when the center-backs are unsure whether to follow him or stay on the ball carrier?",
+    "We lack a focal point in attack, how can we generate chances by having our front two swap positions constantly?"
+  ]
 }

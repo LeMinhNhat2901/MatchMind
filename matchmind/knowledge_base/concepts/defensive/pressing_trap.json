@@ -28,5 +28,11 @@
     "ball_near_flank",
     "overload_left_or_right",
     "press_intensity_high"
+  ],
+  "example_questions": [
+    "How do we force them to play the ball wide where we can win it back?",
+    "We lose the ball in the middle and they counter-attack, how do we limit their passing options on the flanks?",
+    "What should our wingers do when the ball goes to their full-back to help win it back?",
+    "We keep getting caught out on the counter when we press high, how do we set up a better trap to win the ball safely?"
   ]
 }

@@ -27,5 +27,11 @@
     "local_numerical_advantage_positive",
     "overload_left_or_right",
     "numerical_superiority_zone"
+  ],
+  "example_questions": [
+    "How do we create a situation where we have more players than the other team in a specific area?",
+    "Our team often gets outnumbered in midfield; what can we do to ensure we always have an extra player in the key zones?",
+    "As a fullback, when should I push up to help create an overload on the flank for our winger?",
+    "We keep losing the ball because we are always 1v1 or 2v2; how can we change our shape to get a numerical advantage?"
   ]
 }

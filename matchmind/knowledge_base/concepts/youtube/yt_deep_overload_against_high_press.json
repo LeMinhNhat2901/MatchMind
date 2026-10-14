@@ -52,5 +52,12 @@
     "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=329s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get the ball out of our own half when the opponent is pressing us high up the pitch?",
+    "My team loses the ball immediately after receiving it in deep positions because we are outnumbered, what can I do?",
+    "As a center-back, when should I bring an extra player into the build-up phase to help escape pressure?",
+    "We keep getting trapped in our own box when facing a high press, what tactical change can help us bypass this?",
+    "How can I create a numerical advantage in the defensive third to break down an aggressive press?"
+  ]
 }

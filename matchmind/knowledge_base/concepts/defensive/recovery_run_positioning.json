@@ -26,5 +26,11 @@
   "trigger_conditions": [
     "phase_of_play_defensive_transition",
     "space_ahead_large_for_opponent"
+  ],
+  "example_questions": [
+    "What should I do immediately after losing the ball in the opponent's half?",
+    "We keep getting scored on from turnovers, how do we get back in position faster?",
+    "Should I sprint back to the ball or to the goal when we lose possession?",
+    "How do I position myself to stop them from shooting straight at goal after a turnover?"
   ]
 }

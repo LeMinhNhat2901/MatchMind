@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6184s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do we keep getting caught out of position when the opponent plays through our single midfielder?",
+    "Our lone holding player is getting bypassed easily, leaving our back four exposed, what is the fix?",
+    "As the defensive midfielder, how far behind the ball should I stay to ensure I can cover a through pass?",
+    "Every time we press high, the other team skips our midfield and hits our defenders directly, how do we stop this recurring issue?"
+  ]
 }

@@ -53,5 +53,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-insights/qatars-high-press.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do we make sure everyone presses at the same time?",
+    "We want to win the ball back in their half, what is the best way to organize that?",
+    "What should the full-backs do when the opponent starts building up from the back?",
+    "We keep getting bypassed by long balls when we press high, how do we fix that?"
+  ]
 }

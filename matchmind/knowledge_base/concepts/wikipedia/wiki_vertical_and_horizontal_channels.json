@@ -33,5 +33,11 @@
     "url": "https://en.wikipedia.org/wiki/Channel_(association_football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "Where should our wingers position themselves to be most dangerous?",
+    "We keep getting caught out of position when the ball goes to the edge of the box, how do we defend the spaces between our defenders?",
+    "What should our left-back do when the opponent is trying to play the ball into the space behind him?",
+    "Why do we struggle to pass through the middle of the pitch when the opponent is pressing high?"
+  ]
 }

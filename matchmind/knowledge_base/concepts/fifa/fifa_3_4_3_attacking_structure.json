@@ -50,5 +50,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-insights/chelsea_principles_of_attack_in_3_4_3_system.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How does a three-at-the-back system create enough width in the final third without leaving us exposed?",
+    "We are struggling to get numbers forward because our full-backs are too deep, how can we restructure our attack to solve this?",
+    "As a wing-back in a three-man defense, when should I push high to provide width versus staying back for security?",
+    "Our midfield feels empty in transition because both central players are pushed too high, how can we balance attack and defense in this shape?"
+  ]
 }

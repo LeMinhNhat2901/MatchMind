@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7963s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do we need to stretch the game so wide even when the ball is in the center?",
+    "Our wingers are staying too central, and now we have no space for the striker to run into; how do we fix this?",
+    "As a winger, how much space should I leave between me and the touchline to help my team-mates in the middle?",
+    "We struggle to find pockets of space in the final third because the opponents are packed in; how can we use the flanks to break them down?"
+  ]
 }

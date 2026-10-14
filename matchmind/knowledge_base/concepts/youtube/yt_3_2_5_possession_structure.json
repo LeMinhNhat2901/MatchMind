@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=AsZ4ea-pR_w&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create more space in the middle of the park when they sit deep?",
+    "Our midfielders are getting crowded when we try to build up from the back, what formation helps us occupy more vertical lanes?",
+    "What should our defensive midfielder do to help create a numerical advantage in the center against a packed block?",
+    "We keep failing to break down low blocks because we lack enough players in the central areas, how do we structure our shape to overload them?"
+  ]
 }

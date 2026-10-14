@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=248s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get my team to push the other side back to open up the wings?",
+    "We keep getting stuck in midfield because the opponent sits too deep, what should we change in our first phase?",
+    "What is the best way to use our extra man in the middle to create space for the striker?",
+    "Our attacks always die in the center because we have no width, how can we fix this recurring issue?"
+  ]
 }

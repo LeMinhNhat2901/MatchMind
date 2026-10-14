@@ -47,5 +47,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6013s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop getting exhausted by pressing high and then getting punished for the space behind us?",
+    "Our high press is working early in the game but failing in the second half, what should we change to stay safe?",
+    "I want to protect the central zones without burning out my midfielders, how can I adjust our defensive block as the game progresses?",
+    "We keep getting caught out of position when we try to press too high, is there a way to drop into a more compact shape to reduce the risk of counter-attacks?"
+  ]
 }

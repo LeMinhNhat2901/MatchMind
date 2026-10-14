@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=sH5beYkoVXA&t=173s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop their wingers from crossing into the box?",
+    "Their full-back is too strong one-on-one, how do I neutralize him?",
+    "What is the best way to isolate their best wide attacker from the rest of the team?",
+    "We keep getting beaten on the flanks, how can we shut down their wide options?"
+  ]
 }

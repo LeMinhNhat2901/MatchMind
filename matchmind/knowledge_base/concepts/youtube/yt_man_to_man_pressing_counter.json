@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=167s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop a team that passes a lot from building up play?",
+    "They keep switching the ball quickly, how do I prevent them from finding space?",
+    "What should I do to make sure I don't get left behind when they switch play?",
+    "Our team gets confused about who marks whom, how can I simplify our defensive shape?"
+  ]
 }

@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7002s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent from playing through the middle without tiring ourselves out?",
+    "We get caught in counter-attacks every time we press high, so what is a safer defensive shape?",
+    "What should the defensive midfielder do when the opponent switches play to the wide areas?",
+    "Why do we keep getting scored on from long balls even though we press hard for the first ten minutes?"
+  ]
 }

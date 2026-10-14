@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=1645s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I force the opponent to play out wide?",
+    "The other team is too strong in the middle, how can I limit their options there?",
+    "What should my wingers do when we are defending to stop the opponent from passing centrally?",
+    "We are getting overwhelmed in the center of the pitch, how can I adjust my defensive shape?"
+  ]
 }

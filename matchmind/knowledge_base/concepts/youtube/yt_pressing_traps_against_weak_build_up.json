@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we force the other team to lose the ball in their own half when they start with two slow defenders?",
+    "Their center-backs are terrible with the ball at their feet, what is the best way to make them turn over possession quickly?",
+    "When the goalkeeper passes to the left-back, what should our pressing unit do to catch them out?",
+    "We keep getting caught high up the pitch when we press, how can we target their weak link to win the ball back safely?"
+  ]
 }

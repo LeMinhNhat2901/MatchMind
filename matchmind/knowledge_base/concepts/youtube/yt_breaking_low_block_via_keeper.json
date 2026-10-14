@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=625s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we use our goalkeeper to create chances against a team that defends deep?",
+    "The opponents are all back in their box and we can't get the ball to the final third, what should we do?",
+    "What is the best way to recycle possession to lure defenders out of position?",
+    "We are struggling to break down a team that sits very low, is there a tactic involving the keeper?"
+  ]
 }

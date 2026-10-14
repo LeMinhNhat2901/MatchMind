@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we bypass their aggressive first press without relying on a traditional deep-lying playmaker?",
+    "When the opponent presses high, our midfielders get isolated; how do we use a six-defender shape to keep the ball safe?",
+    "What should the fullbacks do when the center-backs drop deep to create a numerical advantage in the back line?",
+    "We keep losing possession in the build-up phase because our structure is too rigid; how do we add flexibility to our low block?"
+  ]
 }

@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4765s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I get an extra player into the midfield when we are struggling to pass the ball out?",
+    "We are getting pressed hard in our own half and have no one to pass to, should my forward come back to help?",
+    "What is the best role for my striker when the opposition has a high defensive line and leaves space behind them?",
+    "Our midfielders are always outnumbered by the other team, how can I use my forwards to balance the numbers?"
+  ]
 }

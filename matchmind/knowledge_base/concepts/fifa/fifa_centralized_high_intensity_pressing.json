@@ -50,5 +50,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-insights/canada-at-womens-olympic-football-tournament-tokyo-2020.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How can we stop the other team from playing out from the back effectively?",
+    "Our wingers are getting too much space on the flanks, how do we force the opponent to play through the middle?",
+    "As a midfielder, where should I stand to help my team press the goalkeeper and center-backs?",
+    "We are losing too many balls in the wide areas, what defensive shape should we use to keep the opponent in the center of the pitch?"
+  ]
 }

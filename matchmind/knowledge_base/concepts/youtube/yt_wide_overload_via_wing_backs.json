@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=751s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create more space in the center of the park by using our full backs?",
+    "Our wingers are getting isolated 1v1 against their full backs; what should our full backs do to help them out?",
+    "When our left wing back pushes up to the touchline, should our left winger cut inside to link with the central midfielders?",
+    "We keep getting caught out on the counter-attack on the right side because our full back is too high up the pitch; how do we balance this risk with creating width?"
+  ]
 }

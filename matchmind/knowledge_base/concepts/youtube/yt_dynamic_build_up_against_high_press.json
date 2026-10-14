@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=qLmV-m0SxhI&t=207s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop them from swarming our back line immediately?",
+    "Our wingers are sitting too deep when we try to play out, what should they do instead?",
+    "I keep losing the ball in the first five seconds of possession, what is the fix?",
+    "What is the best way to use our full-backs to open up space when the opponent presses high?"
+  ]
 }

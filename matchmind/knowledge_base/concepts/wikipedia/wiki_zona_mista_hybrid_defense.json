@@ -34,5 +34,11 @@
     "url": "https://en.wikipedia.org/wiki/Zona_mista",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the best way to mix zonal and man-marking to stop their creative players?",
+    "Our full-backs are getting dragged out of position when we try to hold a zone, how do we balance covering space with marking specific threats?",
+    "Should our central defenders drop into midfield to mark their number ten or stay in their zone to cover the space?",
+    "We struggle to transition quickly from defense to attack because our players are too focused on holding their zones, what system would help us counter-attack faster?"
+  ]
 }

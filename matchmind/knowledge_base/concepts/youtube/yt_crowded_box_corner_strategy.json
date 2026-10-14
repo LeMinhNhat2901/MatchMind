@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=SKfV99LZBgw&t=353s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to overload the penalty area during a set piece?",
+    "My team keeps winning the first header but loses the second ball because nobody is tracking the follow-up, how do I fix that?",
+    "Should our fullback stay back to block the goalkeeper or run into the box to add a body?",
+    "We struggle to clear the ball on corners because the opposition has too much space, what formation should we use?"
+  ]
 }

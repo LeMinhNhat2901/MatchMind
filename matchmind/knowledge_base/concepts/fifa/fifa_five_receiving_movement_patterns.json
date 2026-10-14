@@ -51,5 +51,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/performance-analysis/football-language-analysis/movement-to-receive.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "Where should my wingers be running to when we have the ball in midfield?",
+    "The opposition is sitting deep in a block, how do we create space for our attackers to receive?",
+    "What are the specific zones a striker should target to break a low defensive line?",
+    "We keep passing into the same tight areas, how can we diversify our off-ball movement to open up the field?"
+  ]
 }

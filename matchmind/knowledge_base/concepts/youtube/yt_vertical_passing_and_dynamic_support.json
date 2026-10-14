@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=173s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we break down a low block that sits deep and compact without just passing sideways?",
+    "My players are too static when they have the ball; how do I get them to move into space to open up passing lanes?",
+    "What should our winger do immediately after receiving the ball to help the team progress vertically?",
+    "We lose the ball too often in the final third because our support is slow; how do we improve our movement to keep the ball moving forward?"
+  ]
 }

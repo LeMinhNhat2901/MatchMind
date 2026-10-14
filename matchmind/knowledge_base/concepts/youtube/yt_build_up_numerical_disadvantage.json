@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2205s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do we always get pinned back when we start from the back?",
+    "Our keeper is getting swarmed by two strikers every time he tries to pass, what is the issue?",
+    "What should our fullbacks do when the opponent presses our center-backs immediately?",
+    "We struggle to get the ball past the first line of pressure because we never have an extra man in the back, why is that happening?"
+  ]
 }

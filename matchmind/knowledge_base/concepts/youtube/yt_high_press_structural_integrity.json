@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3058s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What do we need to fix so we don't get run through the middle when we press high?",
+    "Our goalkeeper is getting caught out of position every time we push up, what is missing from our setup?",
+    "How can our defenders stay safe when the opposing winger beats our fullback in a high line?",
+    "We keep conceding long balls over the top, what structural element are we ignoring in our defensive shape?"
+  ]
 }

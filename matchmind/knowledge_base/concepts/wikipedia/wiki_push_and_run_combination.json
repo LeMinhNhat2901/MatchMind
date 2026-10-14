@@ -34,5 +34,11 @@
     "url": "https://en.wikipedia.org/wiki/Push_and_run",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the simplest two-player passing move to get past a defender without dribbling?",
+    "I am standing next to a teammate who is being marked, how can we use a quick pass and run to get him into space behind the defender?",
+    "You are the player with the ball and your teammate is right next to you; what is the correct sequence of actions to advance the ball quickly?",
+    "We struggle to break through the first line of defense because we hold the ball too long; what basic combination should we practice to create immediate space?"
+  ]
 }

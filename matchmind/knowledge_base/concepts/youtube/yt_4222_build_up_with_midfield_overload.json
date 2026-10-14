@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=qLmV-m0SxhI&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get the ball out of our own half when they press high?",
+    "Our center-backs are getting isolated when we try to play out, how can we use our midfield to bypass their press?",
+    "What should our defensive midfielder do to link up with the full-backs and create a triangle in the middle?",
+    "We struggle to retain possession in the final third because we don't have enough options in the middle, how do we set up our build-up to create numerical superiority?"
+  ]
 }

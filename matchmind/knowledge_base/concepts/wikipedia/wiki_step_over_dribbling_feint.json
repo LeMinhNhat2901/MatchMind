@@ -34,5 +34,11 @@
     "url": "https://en.wikipedia.org/wiki/Step_over",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the basic footwork move where you swing your foot over the ball to fake a direction change?",
+    "A defender is standing still and waiting for me to make a move, how can I trick him into moving the wrong way without actually changing my path?",
+    "My young midfielder is too predictable in one-on-ones, what simple feint should he learn to get defenders off balance before he accelerates?",
+    "We struggle to break through high pressing because our players don't create enough separation, what basic dribbling skill helps force defenders to commit early?"
+  ]
 }

@@ -57,5 +57,11 @@
     "url": "https://www.youtube.com/watch?v=XHRhoYLuPNw&t=394s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we force the opponent to play wide so we can trap them?",
+    "We want to press high but keep our shape tight, how do we make the other team go to the touchline?",
+    "What should our defensive line do to push the ball carrier toward the sideline?",
+    "Our team gets stretched too thin when pressing, how can we force the attack to one side to recover the ball?"
+  ]
 }

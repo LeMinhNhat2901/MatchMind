@@ -27,5 +27,11 @@
     "switch_play_viable",
     "attacking_width_high",
     "team_compactness_low"
+  ],
+  "example_questions": [
+    "How do I position my players to make the opponent cover the maximum amount of space?",
+    "We are getting squeezed in the middle, so how can we use width and depth to open up the pitch?",
+    "What should the striker and deep midfielder do to maintain proper balance in possession?",
+    "Our team shape collapses when we lose the ball, so how can we maintain width and depth to keep options open?"
   ]
 }

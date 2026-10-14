@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=XHRhoYLuPNw&t=47s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we move the ball around to find a gap in their press?",
+    "Our team gets pinned down when the opponent presses hard, what kind of passing pattern should we use to escape?",
+    "What should the full-backs do to help rotate the ball and create a free man in midfield?",
+    "We keep losing the ball in the first ten seconds of possession, how can we use movement to break their pressing triggers?"
+  ]
 }

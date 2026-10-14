@@ -27,5 +27,11 @@
     "half_space_occupied",
     "is_in_attacking_third",
     "space_ahead_large"
+  ],
+  "example_questions": [
+    "What is the most effective run to make when the fullback is pulled out of position?",
+    "Our wingers are getting stuck on the touchline; how can they move into the space between the fullback and center-back to threaten the goal?",
+    "If I am a midfielder dropping deep, how should I move to create a passing lane for the winger to exploit the gap in the defense?",
+    "We struggle to find space in the half-space; is there a specific type of run that forces the defenders to make a difficult choice?"
   ]
 }

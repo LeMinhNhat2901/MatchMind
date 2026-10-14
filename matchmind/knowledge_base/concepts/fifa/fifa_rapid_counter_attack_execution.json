@@ -52,5 +52,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/transition-to-attacking/the-counter-attack.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "What is the fastest way to score after winning the ball back?",
+    "We just won the ball in midfield and the other team is still running back, what should we do immediately?",
+    "As a winger, what is my first move when I intercept a pass in our own half?",
+    "Every time we regain possession, we seem to lose it again before we can attack, how do we turn turnovers into goals more consistently?"
+  ]
 }

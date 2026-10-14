@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=mZskzUKsNwU&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is there a standard way to break down a match into its core phases for training?",
+    "We struggle to switch gears quickly when we win or lose the ball, is there a model that covers all these moments?",
+    "What should my captain focus on during the brief moments between a goal and the restart?",
+    "Our team plays well in one phase but collapses in others, how do we structure our preparation to cover everything?"
+  ]
 }

@@ -26,5 +26,11 @@
   "trigger_conditions": [
     "phase_of_play_transition",
     "local_numerical_advantage"
+  ],
+  "example_questions": [
+    "How do we stop the striker from winning every loose ball after our keeper clears it?",
+    "The ball dropped in the box after a long throw-in and our center-back was a step late, what should he have done differently?",
+    "As a holding midfielder, where should I position myself when the goalkeeper boots the ball upfield?",
+    "We keep losing possession in the final third because players are sprinting past where the ball lands, how do we fix this recurring issue?"
   ]
 }

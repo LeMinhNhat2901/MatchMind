@@ -29,5 +29,11 @@
     "phase_of_play_defensive_transition",
     "press_intensity_high",
     "opponent_defensiveline_high"
+  ],
+  "example_questions": [
+    "What specific moment should we all rush forward to win the ball back high up the pitch?",
+    "The goalkeeper just caught the ball and is looking to pass to a defender, so should I start running toward him?",
+    "As a striker, how do I know if I should press the center-back or stay back when they receive the ball?",
+    "We keep waiting too long to press and let them settle into their shape, so what is the best signal for us to start the press?"
   ]
 }

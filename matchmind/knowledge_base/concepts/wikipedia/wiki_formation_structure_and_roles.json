@@ -29,5 +29,11 @@
     "url": "https://en.wikipedia.org/wiki/Formation_(association_football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What does the number '4' in a 4-3-3 actually tell a player about their job on the pitch?",
+    "We are getting caught out of position every time we lose the ball, how do I explain to my players that their starting spot defines their primary responsibility?",
+    "As a striker in a 3-5-2, what are my main defensive duties when the opponent has the ball in midfield?",
+    "Our team looks disorganized in transition, is there a standard framework that helps players know exactly where to stand and what to do?"
+  ]
 }

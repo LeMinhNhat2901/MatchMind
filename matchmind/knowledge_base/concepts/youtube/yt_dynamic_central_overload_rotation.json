@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=360s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we create extra space in the middle of the park?",
+    "Our three central midfielders are standing in a static triangle, how can we make this more dangerous?",
+    "What is the best way to get our number 6, 8, and 10 to move around to confuse the opposition?",
+    "We always get stuck in the center when we need to break through, what pattern should we use?"
+  ]
 }

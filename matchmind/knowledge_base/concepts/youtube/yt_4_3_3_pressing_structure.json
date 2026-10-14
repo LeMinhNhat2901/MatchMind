@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=985s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to force turnovers in the opponent's half without leaving our back line exposed?",
+    "Our midfielders are getting tired and leaving gaps, how can we organize our front three to help them trap the ball?",
+    "I want to stop the opponent from building up play comfortably, what specific triggers should my full-backs use to close down their wingers?",
+    "We keep getting caught in transition because our press is too passive, how do we make our first line of defense more aggressive and coordinated?"
+  ]
 }

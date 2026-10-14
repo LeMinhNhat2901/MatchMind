@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=3S9T2Z1E8Fg&t=158s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we force the opponent's defense to drop deeper to open up space for our midfielders?",
+    "The other team is sitting in a low block, where should our main attacker position himself to break them down?",
+    "What is the best way for the lead forward to use his positioning to stretch the opponent's defensive line?",
+    "We keep getting stuck against teams that defend in a tight 4-4-2, how can we create separation between their lines?"
+  ]
 }

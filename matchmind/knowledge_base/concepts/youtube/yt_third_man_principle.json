@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=QzE2tQDlcsA&t=640s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best passing pattern to get past a team that presses us hard in the middle?",
+    "Our wingers are always caught offside or isolated, how can we create a better option for them to receive the ball?",
+    "When the first two passes are blocked, who should be there to take the next touch to keep the attack going?",
+    "We keep getting stuck in midfield because the opposition cuts off the direct route, how do we find a way around them?"
+  ]
 }

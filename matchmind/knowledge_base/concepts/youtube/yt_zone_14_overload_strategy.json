@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=178s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create more direct chances from the top of the box?",
+    "Our midfielders are too spread out, how do we get three players into the space just behind their defensive line?",
+    "What should our number 10 do when the opposing center-backs shift to one side?",
+    "We struggle to find passing lanes in the central area between their midfield and defense, how do we break that down?"
+  ]
 }

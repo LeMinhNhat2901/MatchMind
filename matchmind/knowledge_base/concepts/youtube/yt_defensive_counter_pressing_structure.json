@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=519s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What should the team do immediately after we lose the ball to win it back quickly?",
+    "When our winger loses the ball, who exactly needs to close him down and who should cut off the pass to the center?",
+    "How do we organize ourselves to trap the opponent's defender the second he receives the ball in our half?",
+    "We keep getting counter-attacked because we don't pressure fast enough, so what is the right way to swarm the ball carrier?"
+  ]
 }

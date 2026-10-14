@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=321s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we break down a team that assigns a dedicated marker to every one of our players?",
+    "Our attackers are getting caught offside because the opposing defenders are sticking to them like glue in a man-marking system.",
+    "What should our central striker do to create space for the wingers when the opposition uses a strict man-to-man setup?",
+    "We keep finding ourselves with one extra player in the box when we constantly swap positions with our full-backs and wingers."
+  ]
 }

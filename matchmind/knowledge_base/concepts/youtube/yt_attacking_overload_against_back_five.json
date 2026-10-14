@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7333s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create enough space to score when the other team parks five defenders in the box?",
+    "Their back five is so compact that we cannot get through the middle, what is the best way to break them down?",
+    "As a forward, should I stay wide to stretch their back five or drift inside to create a numerical advantage in the box?",
+    "We keep shooting from distance against low blocks, how do we get more players into the final third to create real chances?"
+  ]
 }

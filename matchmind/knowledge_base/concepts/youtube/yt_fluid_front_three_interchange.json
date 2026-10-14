@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=693s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I get my best creator free from the marker?",
+    "My left winger is always stuck marking the right full-back, how do I create space for him to cut inside?",
+    "What should my right winger do to help the left winger get into the channel?",
+    "We struggle to create overloads on the wing because our players stay in their lanes, how do we solve this?"
+  ]
 }

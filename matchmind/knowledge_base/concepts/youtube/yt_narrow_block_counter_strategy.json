@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8290s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop them from playing through the middle?",
+    "The opposition keeps passing through the center and creating chances, what should my midfielders do?",
+    "What should my defenders do when the opponent is passing the ball around in the center?",
+    "We keep getting scored against from central attacks, how can I tighten up my defense?"
+  ]
 }

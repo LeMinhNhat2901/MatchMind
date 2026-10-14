@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=4708s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Is it worth putting our most creative midfielder in the very back line to help us get the ball out?",
+    "We keep losing possession in the first third when our main creator tries to play through the press from deep.",
+    "Should our best passer drop all the way back to the defensive line, or will he be too far from the goal to be effective?",
+    "Why does our team struggle to progress the ball when we rely on a single high-risk player to break lines from the back?"
+  ]
 }

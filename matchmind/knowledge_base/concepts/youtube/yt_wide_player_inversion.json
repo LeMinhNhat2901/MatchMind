@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=695s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to use our full backs to create passing options in the middle of the field?",
+    "Our left back is always marked by their right winger, so he has no one to pass to; should he move inside to help the midfield?",
+    "As a right back, when is the right time to cut inside and join the midfield triangle instead of staying wide?",
+    "We are struggling to progress the ball through the middle because our wide players are always on the edge of the box; how can we fix our central overloads?"
+  ]
 }

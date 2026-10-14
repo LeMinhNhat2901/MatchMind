@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=1025s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we get the ball to the other end of the pitch before the defense can set up?",
+    "We lose the ball too easily after a quick pass, how do we recover it immediately to keep the pressure on?",
+    "What should our wingers do to support the buildup and then sprint forward as soon as the ball is played through?",
+    "Our attacks feel slow and predictable, how can we make our transitions faster and more direct?"
+  ]
 }

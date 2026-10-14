@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=4wAG5ZUJ4eI&t=6s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I stop their right winger from cutting inside without losing my fullback?",
+    "Our left-back keeps getting beaten by their winger on the overlap, what should he do differently?",
+    "We keep getting scored on from crosses because their wide man is always free in the box, how do we fix this?",
+    "What is the best way to mark a dangerous wide player so he cannot drift into the half-spaces?"
+  ]
 }

@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=AsZ4ea-pR_w&t=153s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we shift from a 4-3-3 to a 3-2-5 shape during possession?",
+    "We get stuck when the opponent sits in a low block and we can't break them down.",
+    "What should the left-back do when we are building up play from the back?",
+    "Why do we lose our shape when we try to overload the midfield?"
+  ]
 }

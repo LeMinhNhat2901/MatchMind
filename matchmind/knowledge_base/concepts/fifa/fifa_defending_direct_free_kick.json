@@ -47,5 +47,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/tournaments/olympic-football-tournament/2024/men/goalkeeper-decision-making-when-defending-free-kicks.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-10-14"
-  }
+  },
+  "example_questions": [
+    "How do we stop them from shooting over our defensive wall?",
+    "The opponent has a set piece 25 yards out, should our keeper stand on the line or come out?",
+    "What should our goalkeeper do if the player taking the free kick is known for curling shots into the far corner?",
+    "We keep getting scored on from set pieces because the wall is too short, how do we adjust our positioning?"
+  ]
 }

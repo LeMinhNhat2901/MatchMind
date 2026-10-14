@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5074s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why would a team switch to three defenders when they lose the ball instead of staying with four?",
+    "Our wingers stay wide and don't tuck in, leaving the center exposed, what defensive shape covers that gap?",
+    "As a center-back, do I need to hold a higher line or drop deeper if we are playing with three at the back when out of possession?",
+    "We get beaten through the middle every time we lose the ball, is there a defensive structure that specifically protects the central channels?"
+  ]
 }

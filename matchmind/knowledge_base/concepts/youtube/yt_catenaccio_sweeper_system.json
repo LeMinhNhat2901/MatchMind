@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=488s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the role of the player who stays behind the defensive line?",
+    "I want to add an extra layer of safety behind my back four, how do I set that up?",
+    "Should my last man stay back or push up with the rest of the defense?",
+    "How can I prevent through balls from splitting my back line without leaving the fullbacks exposed?"
+  ]
 }

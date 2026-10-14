@@ -28,5 +28,11 @@
     "striker_role",
     "space_between_lines",
     "midfielders_positioned_to_run"
+  ],
+  "example_questions": [
+    "How can we create space for our midfielders to run into the box?",
+    "Our striker is too isolated up top and the center-backs are always on him, what movement can help?",
+    "What should our main attacker do to pull their defenders out of position?",
+    "We have a lot of possession but our forwards are marked tightly, how do we break that down?"
   ]
 }

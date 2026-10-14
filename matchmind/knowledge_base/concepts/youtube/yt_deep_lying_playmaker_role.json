@@ -51,5 +51,12 @@
     "url": "https://www.youtube.com/watch?v=QzE2tQDlcsA&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Who should be the one sitting deepest to dictate the tempo of the game?",
+    "My winger is getting stuck in midfield because no one is pulling the ball back to start the attack, who should do that?",
+    "As the player starting near the penalty box, how do I know when to step up and when to stay back to receive the ball?",
+    "We lack a central figure to organize our build-up play, what role should I assign to my most experienced midfielder?",
+    "How do I position my central midfielder to ensure he has time to scan the field before receiving the ball?"
+  ]
 }

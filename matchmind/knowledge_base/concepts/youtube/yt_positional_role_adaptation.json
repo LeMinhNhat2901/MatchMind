@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=QzE2tQDlcsA&t=231s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I adjust my game if I move from a deep-lying role to a more advanced spot?",
+    "I used to play as a defensive anchor, but now I'm asked to join the attack, what should I focus on?",
+    "What changes should I make to my passing and movement when I step up into the final third?",
+    "Why is it hard for our deep-lying midfielder to contribute to the attack when he moves forward?"
+  ]
 }

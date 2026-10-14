@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2545s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we allow our wingers to push high without leaving the middle of the pitch exposed?",
+    "Our defense collapses whenever the opponent attacks through the center, what structure can protect that area?",
+    "What is the best role for our two central midfielders to play when the team is defending deep?",
+    "We keep getting scored on from central areas because our midfielders are too far apart, how do we fix this spacing issue?"
+  ]
 }

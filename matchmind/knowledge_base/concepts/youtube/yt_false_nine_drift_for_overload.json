@@ -54,5 +54,11 @@
     "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=455s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we force the opponent's back line to drop by moving our central attacker to the side?",
+    "Our center forward is drifting to the right wing to create a 2v1, but our left midfielder isn't moving into the gap, what should he do?",
+    "I want to create space in the center of the park by pulling our main striker wide, is there a specific name for this movement?",
+    "Every time we try to overload the flanks, the opponent's defenders stay high and block the center, how do we break that defensive shape?"
+  ]
 }

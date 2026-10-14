@@ -51,5 +51,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5396s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can I make the opposition defense spread out so my teammates have more space in the middle?",
+    "My winger keeps drifting into the center, leaving the flank empty; what instruction should I give him?",
+    "What should my right winger do to ensure the left side of the pitch is fully utilized for our attacks?",
+    "We are struggling to create overloads in the center because our wide players are not stretching the play; how can we fix this?"
+  ]
 }

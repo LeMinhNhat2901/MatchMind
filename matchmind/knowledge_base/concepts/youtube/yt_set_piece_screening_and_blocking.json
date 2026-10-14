@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=SKfV99LZBgw&t=177s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we create space for our target man to head the ball without him being marked tightly?",
+    "Our striker is always crowded out in the box, so what can the other players do to help him?",
+    "What should the left back do during a corner kick to ensure our center-back has room to run?",
+    "We keep failing to score from corners because our players are always blocked by defenders, what is the fix?"
+  ]
 }

@@ -37,5 +37,11 @@
     "url": "https://en.wikipedia.org/wiki/Curl_(association_football)",
     "license": "CC BY-SA 4.0",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "How do you hit the ball so it curves around the wall on a free kick?",
+    "I want to send a cross that bends into the box rather than going straight; what part of my foot should I use?",
+    "As a left-footed player, how can I bend the ball into the far corner when I am facing the goal from the right side?",
+    "Our set pieces are always blocked by the defensive wall; what technique can we use to get the ball over their heads?"
+  ]
 }

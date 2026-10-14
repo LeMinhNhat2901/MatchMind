@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=MKUnE1eCdCI&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What shape should we use to ensure our striker always has a clear 1v1 chance against their center back?",
+    "Our left and right center backs are staying too central, which means our attacking mid is always covered; how do we fix this structure?",
+    "As the number 10, should I make a split run with the striker to create a third-man option when the wide defender is pulled out?",
+    "We struggle to get our striker free in the box because their defensive line is so compact; what specific passing pattern can break this down?"
+  ]
 }

@@ -27,5 +27,11 @@
     "space_ahead_large",
     "is_in_attacking_third",
     "third_man_opportunity"
+  ],
+  "example_questions": [
+    "Why do some runners seem to appear out of nowhere when the defender is looking at the ball?",
+    "During a corner kick, how can a striker get behind the defender who is marking them without being seen?",
+    "As a winger, what is the best angle to approach a fullback so they don't have time to react to my movement?",
+    "Our forwards often get caught offside or marked because defenders see them coming; how can we make our runs harder to track?"
   ]
 }

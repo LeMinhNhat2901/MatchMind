@@ -55,5 +55,11 @@
     "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=168s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do I get my defenders into the final third to create extra bodies in the box?",
+    "Our forwards are dropping deep but we still feel outnumbered in the attacking third, what am I missing?",
+    "When should my center-backs push up to join the attack?",
+    "We struggle to create overloads in the final third, how can I use my defensive structure to fix this?"
+  ]
 }

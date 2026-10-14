@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=690s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opponent from building up play from the back?",
+    "Our fullbacks are struggling to get forward, should they move inside to help press?",
+    "What is the best way to force turnovers in the opponent's own half?",
+    "We keep getting caught out of position when we press high, how do we maintain that intensity without gaps?"
+  ]
 }

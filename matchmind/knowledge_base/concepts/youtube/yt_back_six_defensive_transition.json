@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=661s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we stop the opposition from playing through the middle when we lose the ball in our own half?",
+    "We are getting scored on from quick counters because there is a gap between our midfield and defense, what should we do immediately after losing possession?",
+    "If I am the defensive midfielder, should I drop back to join the center-backs when we lose the ball high up the pitch?",
+    "Our team keeps getting caught out of position in the middle of the park during transitions, how can we reorganize faster to stop this?"
+  ]
 }

@@ -52,5 +52,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3995s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How do we force the opponent to spread their defense so our striker can get free?",
+    "Our left winger is getting marked by two players, so he can't get to the byline; what should he do to create space for the rest of the team?",
+    "As a winger, should I stay on the touchline even if it means I'm 1v1 with their full back, or should I tuck in earlier?",
+    "We keep losing the ball in the wide areas because their full backs are always staying wide; how can we exploit this defensive setup?"
+  ]
 }

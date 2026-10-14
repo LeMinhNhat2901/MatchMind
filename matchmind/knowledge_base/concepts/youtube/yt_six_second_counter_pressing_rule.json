@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=647s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How long should we press aggressively after losing the ball before we fall back into our defensive shape?",
+    "We just lost possession in midfield and the opponent has time to set up a counter-attack, what should the nearest player do immediately?",
+    "As a midfielder, what is my specific job in the first few seconds after the team loses the ball in the attacking third?",
+    "We keep getting caught out of position because we don't recover the ball quickly enough, what is the standard protocol for immediate recovery?"
+  ]
 }

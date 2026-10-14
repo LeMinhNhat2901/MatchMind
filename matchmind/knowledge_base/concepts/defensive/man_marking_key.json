@@ -26,5 +26,11 @@
   "trigger_conditions": [
     "opponent_key_player_in_possession",
     "phase_of_play_defensive"
+  ],
+  "example_questions": [
+    "What is the best way to stop their number 10 from creating chances?",
+    "Our midfield is getting overrun because their playmaker is everywhere, how do I shut him down?",
+    "Should I tell my left-back to stick to their right winger no matter where he runs?",
+    "We keep losing possession in the middle of the park, is there a way to target their best passer specifically?"
   ]
 }

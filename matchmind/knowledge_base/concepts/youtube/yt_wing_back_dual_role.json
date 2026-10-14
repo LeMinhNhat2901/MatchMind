@@ -35,5 +35,11 @@
     "url": "https://www.youtube.com/watch?v=UTFSgD9jNS0&t=129s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-11"
-  }
+  },
+  "example_questions": [
+    "What is the main difference between a fullback and the player who plays wide in a three-at-the-back system?",
+    "I am struggling to cover the entire flank on my own when we defend with three center backs; what is the correct approach?",
+    "As a player in a three-back formation, how should I balance my need to attack down the line with the need to track back?",
+    "Why does my team keep getting caught out when the opposition winger makes a run behind our wide defender?"
+  ]
 }

@@ -53,5 +53,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5241s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do our full-backs keep drifting into the middle of the pitch when we have the ball?",
+    "Our wingers are staying wide but our full-backs are cutting inside, which leaves us with no one on the flank; is this a mistake or a plan?",
+    "If I am playing left-back, should I stay on the touchline or move into the central midfield zone when we are building up play?",
+    "We are getting outnumbered in the middle because our wide players are hugging the line and our full-backs are tucking in; how do we balance this?"
+  ]
 }

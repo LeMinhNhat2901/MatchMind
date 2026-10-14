@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4147s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why are our full-backs sitting in the middle of the park instead of tracking the wingers when we lose the ball?",
+    "We keep getting caught out of position in midfield after losing possession because our full-backs are too far inside; how do we stop this?",
+    "As a full-back, should I stay wide to cover the winger or move into the center to help press if we turn the ball over?",
+    "Our team struggles to win the ball back quickly in the middle because there are never enough bodies there; what is the tactical fix for this?"
+  ]
 }

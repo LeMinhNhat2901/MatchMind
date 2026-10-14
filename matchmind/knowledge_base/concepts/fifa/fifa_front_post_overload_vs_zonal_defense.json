@@ -49,5 +49,11 @@
     "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/attacking-corners-cameroon.php",
     "license": "fair-use paraphrase (not redistributed verbatim)",
     "retrieved_at": "2026-09-16"
-  }
+  },
+  "example_questions": [
+    "How do we beat a team that defends corners with a zonal system?",
+    "The defenders are staying in their boxes, how can we get a player open at the near post?",
+    "What is the best set-piece setup to create a numbers advantage at the front of the box?",
+    "Our corner routine fails because the zonal defenders are too organized, how can we overload that specific area?"
+  ]
 }

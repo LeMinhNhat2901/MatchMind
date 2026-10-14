@@ -49,5 +49,11 @@
     "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=162s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the best way to handle a team that keeps hitting long balls over our midfield?",
+    "We keep getting caught with a 4v5 situation at the back when they skip the midfield, what should we adjust?",
+    "As a center-back, should I track the target man or hold my line when the winger stays wide?",
+    "Our full-backs are constantly dragged out of position by high balls, how do we stop this from happening every game?"
+  ]
 }

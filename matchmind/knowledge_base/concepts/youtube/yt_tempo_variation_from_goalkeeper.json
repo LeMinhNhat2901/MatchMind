@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=524s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can our keeper help break up the opponent's defensive shape after we win the ball back?",
+    "The other team is always set up before we can make a move, is there a way to catch them off guard from the back?",
+    "What should our goalkeeper do to speed up the transition when we regain possession in midfield?",
+    "We always seem to play at the same slow pace, how can we suddenly accelerate the game to surprise the defense?"
+  ]
 }

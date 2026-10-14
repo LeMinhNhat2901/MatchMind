@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=0s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "What is the main goal of our press when we are out of possession?",
+    "We are trapping the ball in the corners but not scoring, should we change our approach to win it back faster?",
+    "If the goalkeeper passes to the center-back, what should the nearest defender do immediately?",
+    "Our team often concedes goals after losing the ball in midfield, how can we improve our immediate recovery?"
+  ]
 }

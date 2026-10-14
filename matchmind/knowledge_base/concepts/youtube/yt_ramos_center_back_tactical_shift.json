@@ -48,5 +48,11 @@
     "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=1465s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "How can we get our full-backs more involved in creating chances without leaving the defense exposed?",
+    "What is the tactic where a wide defender moves inside to help build the play from the back?",
+    "Our team lacks a creative outlet from deep, how can we adjust our shape to solve this problem?",
+    "Why are some teams moving their wingers into central defensive roles during possession phases?"
+  ]
 }

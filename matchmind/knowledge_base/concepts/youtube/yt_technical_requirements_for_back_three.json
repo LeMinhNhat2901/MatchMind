@@ -50,5 +50,11 @@
     "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=642s",
     "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
     "retrieved_at": "2026-09-30"
-  }
+  },
+  "example_questions": [
+    "Why do our center-backs keep losing the ball when we try to start attacks from the back?",
+    "We are struggling to get the ball out of our own half because the defenders can't handle tight spaces, what do we need to fix?",
+    "What specific skills does a defender need to effectively distribute the ball when the opposition sits in a low block?",
+    "Our back line looks comfortable in a four, but we constantly turn the ball over in a three, why is this happening?"
+  ]
 }
