@@ -14,6 +14,7 @@ from __future__ import annotations
 
 import re
 
+from matchmind.config import settings
 from matchmind.schema.match_state import TacticalConcept
 
 _STOPWORDS = frozenset(
@@ -47,7 +48,7 @@ def concept_document(c: TacticalConcept) -> str:
         c.definition or "",
         c.content,
         " ".join(c.conditions + c.trigger_conditions + c.possible_actions + c.player_behaviours),
-        " ".join(c.example_questions),
+        " ".join(c.example_questions) if settings.retrieval_bm25_questions else "",
     ]
     return " ".join(fields)
 

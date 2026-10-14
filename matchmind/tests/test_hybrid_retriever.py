@@ -104,10 +104,13 @@ def test_empty_kb_returns_empty_result():
     assert res.items == [] and res.confidence == 0.0
 
 
-def test_example_questions_add_a_ranker_that_finds_paraphrases():
+def test_example_questions_add_a_ranker_that_finds_paraphrases(monkeypatch):
     """Dense and BM25 miss "use a nearby midfielder to find the runner"; the concept's
     example question matches it, so it enters the fused list via the questions ranker."""
+    from matchmind.config import settings
     from matchmind.knowledge_base.example_questions import QuestionIndex
+
+    monkeypatch.setattr(settings, "retrieval_question_weight", 1.0)
 
     def embed(texts):
         return np.array([[1.0, 0.0] if "midfielder" in t else [0.0, 1.0] for t in texts])

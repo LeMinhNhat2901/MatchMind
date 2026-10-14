@@ -18,6 +18,12 @@ class Settings(BaseSettings):
         extra="ignore",
     )
 
+    def __repr_args__(self):
+        """Never print secrets: a failing test once dumped every API key into the log."""
+        for name, value in super().__repr_args__():
+            secret = name is not None and (name.endswith("_api_key") or name in {"database_url", "redis_url"})
+            yield name, ("***" if secret and value else value)
+
     # ── LLM ──────────────────────────────────────────────────
     # MatchMind supports multiple providers. Set LLM_PROVIDER in .env.
     gemini_api_key: str = Field(default="", alias="GEMINI_API_KEY")
@@ -90,6 +96,11 @@ class Settings(BaseSettings):
     # BM25 hits on long, generic concepts. Golden bench 2026-10-08 (exact dense):
     # 0.3/0.5/0.7/0.85 -> nDCG@5 0.660/0.696/0.694/0.686, hit@3 0.778/0.926/0.926/0.889.
     rerank_blend_alpha: float = Field(default=0.5, alias="RERANK_BLEND_ALPHA")
+    # Example questions (doc2query). Both off until the owner picks a config: on
+    # 2026-10-15 BM25-with-questions raised held-out nDCG@5 0.501 -> 0.538 but
+    # lowered golden 0.700 -> 0.687 (agreed rule: adopt only if both sets improve).
+    retrieval_bm25_questions: bool = Field(default=False, alias="RETRIEVAL_BM25_QUESTIONS")
+    retrieval_question_weight: float = Field(default=0.0, alias="RETRIEVAL_QUESTION_WEIGHT")
     # 1.0 = off. Golden bench (Task 10): 0.88/0.92 cost nDCG@5 0.6599 -> 0.6572, because
     # near-duplicate concepts (e.g. several high-press concepts) are often all relevant.
     retrieval_diversity_max_sim: float = Field(default=1.0, alias="RETRIEVAL_DIVERSITY_MAX_SIM")

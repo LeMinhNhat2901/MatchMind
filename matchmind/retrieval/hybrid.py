@@ -31,7 +31,6 @@ logger = logging.getLogger(__name__)
 DENSE_WEIGHT = 1.0
 BM25_WEIGHT = 1.0
 CONDITION_WEIGHT = 0.5
-QUESTION_WEIGHT = 1.0      # example-question ranker (doc2query), see knowledge_base/example_questions.py
 
 
 class HybridRetriever:
@@ -112,11 +111,12 @@ class HybridRetriever:
             lists.append((ids, BM25_WEIGHT))
             names.append(f"bm25_{n}")
 
-        if self.question_index is not None and hasattr(self.store, "embed_queries"):
+        question_weight = settings.retrieval_question_weight   # example-question ranker (doc2query)
+        if question_weight > 0 and self.question_index is not None and hasattr(self.store, "embed_queries"):
             try:
                 ranked_lists = self.question_index.rank(self.store.embed_queries(subqueries), n=self.pool_size * 2)
                 for n, ranked in enumerate(ranked_lists):
-                    lists.append(([cid for cid, _ in ranked if cid in allowed][: self.pool_size], QUESTION_WEIGHT))
+                    lists.append(([cid for cid, _ in ranked if cid in allowed][: self.pool_size], question_weight))
                     names.append("questions" if n == 0 else f"questions{n}")
             except Exception as exc:  # noqa: BLE001 — the other rankers still work
                 logger.warning(f"[hybrid] example-question ranking unavailable: {exc}")

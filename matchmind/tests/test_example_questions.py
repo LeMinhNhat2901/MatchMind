@@ -63,7 +63,9 @@ def test_write_keeps_every_other_field(tmp_path):
     assert data["example_questions"] == ["Q1?", "Q2?"] and data["title"] == c.title
 
 
-def test_bm25_document_includes_example_questions():
+def test_bm25_document_includes_example_questions(monkeypatch):
+    from matchmind.config import settings
+    monkeypatch.setattr(settings, "retrieval_bm25_questions", True)
     c = make_concept("third_man_run").model_copy(update={"example_questions": ["Use a nearby midfielder to find the runner"]})
     assert "midfielder" in tokenize(concept_document(c))
 
@@ -89,3 +91,16 @@ def test_question_index_ranks_by_best_matching_question(tmp_path):
     assert again is not None and again.ids == idx.ids
     changed = [concepts[0].model_copy(update={"example_questions": ["new?"]}), *concepts[1:]]
     assert QuestionIndex.load(path, changed) is None          # stale after the questions change
+
+
+def test_switches_turn_both_uses_off(monkeypatch):
+    """Both uses of example questions are config switches, so retrieval can run
+    with or without them while the evaluation decides."""
+    from matchmind.config import settings
+    from matchmind.retrieval.lexical import concept_document as doc
+
+    c = make_concept("x").model_copy(update={"example_questions": ["Zebra crossing question?"]})
+    monkeypatch.setattr(settings, "retrieval_bm25_questions", False)
+    assert "zebra" not in tokenize(doc(c))
+    monkeypatch.setattr(settings, "retrieval_bm25_questions", True)
+    assert "zebra" in tokenize(doc(c))
