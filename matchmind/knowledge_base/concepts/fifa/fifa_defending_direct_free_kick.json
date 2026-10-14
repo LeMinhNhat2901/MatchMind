@@ -1,0 +1,51 @@
+{
+  "concept_id": "fifa_defending_direct_free_kick",
+  "category": "defending",
+  "subcategory": "set_piece_defense",
+  "phase": "out_of_possession",
+  "title": "Defending Direct Free Kicks: Goalkeeper Decisions and the Wall",
+  "definition": "How the goalkeeper and the wall defend a shootable free kick: first decide whether the threat is a shot or a delivery, then set the wall and the goalkeeper's position so neither the gap over the wall nor the far side of goal is left open.",
+  "content": "The goalkeeper's first question once the ball is placed is whether the taker can shoot with the first strike. If so, defending the goal is the priority; if a delivery into the box is more likely, the priority shifts to defending the space. Before the kick the goalkeeper reads the situation: direct or indirect, distance and angle to goal, the taker's stronger foot, how many players stand over the ball and whether one of them is a specialist. A keeper facing a shootable angle and distance typically holds the line; with two potential takers they can hold until the strike and then react; from long range (over about 35 m) they can stand off the line and defend the space. Attackers beat a direct free kick in three ways, which tells the defence what to protect. Over the wall: a curled, dipping shot aimed at the gap between two wall players, so the wall should leave no gap and be set with the likely trajectory in mind. Around the wall: a flatter, faster shot outside the wall into a zone the goalkeeper sees poorly, which is the area the wall is meant to cover. Goalkeeper's side: a disguised shot that exploits a keeper who has shifted to cover the space behind the wall, opening the far side; the keeper must balance trusting the wall against a central position that sees the ball late. Limits of the evidence: the cited sources do not cover marking runners who attack the space behind the wall, or rebounds and second balls; those parts of defending a free kick still need their own source before they are treated as verified here. The points about wall gaps and goalkeeper discipline are drawn from an analysis written from the attacking side.",
+  "conditions": [
+    "opponent_free_kick_in_shooting_range",
+    "set_piece_defense"
+  ],
+  "objective": [
+    "decide_defend_goal_or_space",
+    "close_gap_over_the_wall",
+    "keep_far_side_covered",
+    "keep_goalkeeper_sightline"
+  ],
+  "possible_actions": [
+    "goalkeeper_holds_line_for_direct_shot",
+    "goalkeeper_defends_space_for_delivery",
+    "set_wall_without_gaps",
+    "wall_covers_near_side_zone"
+  ],
+  "contraindications": [
+    "gap_between_wall_players",
+    "goalkeeper_over_commits_behind_wall",
+    "goalkeeper_view_blocked"
+  ],
+  "trigger_conditions": [],
+  "spatial_requirements": [
+    "wall_positioned_on_shooting_line",
+    "goalkeeper_clear_view_of_ball"
+  ],
+  "player_behaviours": [
+    "goalkeeper_analyses_taker_foot_and_angle",
+    "wall_players_close_gaps",
+    "goalkeeper_communicates_wall_position"
+  ],
+  "related_concepts": [
+    "fifa_mid_range_free_kick_strategy",
+    "fifa_short_range_direct_free_kick_strategy",
+    "wiki_set_piece_tactical_framework"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Goalkeeping: Decision-making when defending free kicks (2024); Direct free kicks: Why mid-range means maximum threat",
+    "url": "https://www.fifatrainingcentre.com/en/game/tournaments/olympic-football-tournament/2024/men/goalkeeper-decision-making-when-defending-free-kicks.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-10-14"
+  }
+}
