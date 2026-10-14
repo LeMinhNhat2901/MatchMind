@@ -75,9 +75,12 @@ def is_allowed(concept: TacticalConcept, query: RetrievalQuery, *, relax: bool =
         return False
     if relax or query.in_possession is None:
         return True
+    # A concept may serve several phases (applicable_phases, e.g. rest defence is
+    # set up in possession but answers "we keep getting countered"): keep it if any fits.
+    phases = concept.applicable_phases or [concept.phase]
     if query.in_possession:
-        return concept.phase not in _OUT_OF_POSSESSION
-    return concept.phase not in _IN_POSSESSION
+        return any(p not in _OUT_OF_POSSESSION for p in phases)
+    return any(p not in _IN_POSSESSION for p in phases)
 
 
 def allowed_ids(

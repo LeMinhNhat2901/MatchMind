@@ -515,6 +515,14 @@ class TacticalConcept(BaseModel):
         description="Specific concept family within the category, e.g. 'high_press', 'half_space', '433'.",
     )
     phase: str
+    applicable_phases: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Every phase this concept helps with, when that differs from `phase` (where it is set up). "
+            "E.g. rest defence lives in possession but answers defensive-transition problems. "
+            "Empty = just `phase`. Scope gating keeps a concept if any of these fits the question."
+        ),
+    )
     title: str
     definition: str | None = Field(
         default=None, description="Concise 1-2 sentence definition, distinct from the fuller `content` explanation."

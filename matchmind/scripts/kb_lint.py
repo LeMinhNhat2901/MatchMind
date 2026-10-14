@@ -30,6 +30,7 @@ console = Console()
 
 _IN_POSSESSION_PHASES = {"possession", "attacking_transition"}
 _OUT_OF_POSSESSION_PHASES = {"out_of_possession", "defensive_transition"}
+_KNOWN_PHASES = _IN_POSSESSION_PHASES | _OUT_OF_POSSESSION_PHASES | {"general"}
 _TRIGGER_PHASE = {
     "phase_of_play_attacking_transition": "attacking_transition",
     "phase_of_play_defensive_transition": "defensive_transition",
@@ -63,6 +64,9 @@ def lint_concepts(concepts: list[TacticalConcept]) -> list[LintIssue]:
         for rid in c.related_concepts:
             if rid not in ids:
                 issues.append(LintIssue("warning", c.concept_id, f"related concept {rid!r} does not exist"))
+        bad_phases = [p for p in c.applicable_phases if p not in _KNOWN_PHASES]
+        if bad_phases:
+            issues.append(LintIssue("error", c.concept_id, f"unknown applicable_phases {bad_phases}"))
         if c.category == "defending" and c.phase in _IN_POSSESSION_PHASES:
             issues.append(LintIssue("warning", c.concept_id,
                                     f"defending concept has in-possession phase {c.phase!r}"))

@@ -73,3 +73,22 @@ def test_subqueries_and_rerank_text():
     assert q.subqueries() == ["How to escape the press?", "third-man combination. tight space", "expanded text"]
     assert q.rerank_text().startswith("How to escape the press?")
     assert RetrievalQuery(situation_text="only this").subqueries() == ["only this"]
+
+
+def test_applicable_phases_let_a_cross_phase_concept_through():
+    """Rest defence is set up while attacking but answers "we keep getting countered":
+    a concept may declare every phase it helps with, not just the one it lives in."""
+    rest = make_concept("rest_defence", phase="possession").model_copy(
+        update={"applicable_phases": ["possession", "defensive_transition"]})
+    lost_ball = RetrievalQuery(question="they counter behind our full-back", in_possession=False,
+                               phase_of_play="defensive_transition")
+    assert is_allowed(rest, lost_ball)
+    plain = make_concept("build_up", phase="possession")              # no applicable_phases: unchanged
+    assert not is_allowed(plain, lost_ball)
+
+
+def test_unknown_applicable_phase_is_a_lint_error():
+    from matchmind.scripts.kb_lint import lint_concepts
+
+    bad = make_concept("x", phase="possession").model_copy(update={"applicable_phases": ["sometimes"]})
+    assert any(i.level == "error" and "applicable_phases" in i.message for i in lint_concepts([bad]))
