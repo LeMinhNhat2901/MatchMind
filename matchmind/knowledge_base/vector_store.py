@@ -285,6 +285,12 @@ class TacticalVectorStore:
             out.append(sims[:n])
         return out
 
+    def embed_queries(self, texts: list[str]) -> np.ndarray:
+        """Query-time embeddings with the collection's model (used by the example-question ranker)."""
+        if self._ef is None:
+            raise RuntimeError("embed_queries needs the Chroma embedding function (use_chroma_ef=True)")
+        return np.asarray(self._ef(list(texts)), dtype=float)
+
     def _all_vectors(self) -> tuple[list[str], np.ndarray]:
         """Every stored (id, unit vector), cached until the collection changes."""
         if self._vectors is None:

@@ -539,6 +539,13 @@ class TacticalConcept(BaseModel):
     player_behaviours: list[str] = Field(
         default_factory=list, description="e.g. 'angle_press', 'cover_passing_lane', 'squeeze_space'"
     )
+    example_questions: list[str] = Field(
+        default_factory=list,
+        description=(
+            "3-5 plain-language questions this concept answers (doc2query, written once by an LLM "
+            "from the concept itself). Indexed by BM25 and by a per-question dense ranker."
+        ),
+    )
     related_concepts: list[str] = Field(
         default_factory=list, description="concept_ids of related concepts, e.g. ['pressing_trap', 'counter_press']"
     )

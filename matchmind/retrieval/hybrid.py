@@ -1,7 +1,8 @@
 """
 HybridRetriever — the V1 retrieval pipeline (see implementation_plan.md Part A §3).
 
-    scope gating -> [dense x subqueries] + [BM25 x subqueries] + [condition match]
+    scope gating -> [dense x subqueries] + [BM25 x subqueries] + [example questions]
+                  + [condition match]
                  -> RRF -> (cross-encoder rerank) -> (diversity) -> top-k
 
 Every stage degrades instead of failing: no Chroma EF -> BM25 + conditions
@@ -30,6 +31,7 @@ logger = logging.getLogger(__name__)
 DENSE_WEIGHT = 1.0
 BM25_WEIGHT = 1.0
 CONDITION_WEIGHT = 0.5
+QUESTION_WEIGHT = 1.0      # example-question ranker (doc2query), see knowledge_base/example_questions.py
 
 
 class HybridRetriever:
@@ -41,6 +43,7 @@ class HybridRetriever:
         pool_size: int | None = None,
         diversity_max_sim: float | None = None,
         use_reranker: bool = True,
+        question_index: Any | None = None,
     ) -> None:
         if concepts is None:
             concepts = load_all_concepts()
@@ -61,6 +64,11 @@ class HybridRetriever:
             reranker = build_reranker(settings.reranker_model)
         self.reranker = reranker if use_reranker else None
         self.rerank_alpha = settings.rerank_blend_alpha
+        if question_index is None:
+            from matchmind.knowledge_base.example_questions import QuestionIndex
+
+            question_index = QuestionIndex.load(question_index_path(), list(self.concepts.values()))
+        self.question_index = question_index
 
     # ── public ────────────────────────────────────────────────
     def retrieve(
@@ -103,6 +111,15 @@ class HybridRetriever:
             ids = [cid for cid, _ in self.bm25.rank(sq, allowed=allowed, n=self.pool_size)]
             lists.append((ids, BM25_WEIGHT))
             names.append(f"bm25_{n}")
+
+        if self.question_index is not None and hasattr(self.store, "embed_queries"):
+            try:
+                ranked_lists = self.question_index.rank(self.store.embed_queries(subqueries), n=self.pool_size * 2)
+                for n, ranked in enumerate(ranked_lists):
+                    lists.append(([cid for cid, _ in ranked if cid in allowed][: self.pool_size], QUESTION_WEIGHT))
+                    names.append("questions" if n == 0 else f"questions{n}")
+            except Exception as exc:  # noqa: BLE001 — the other rankers still work
+                logger.warning(f"[hybrid] example-question ranking unavailable: {exc}")
 
         if features is not None and match_state is not None:
             cond = condition_ranking(
@@ -202,6 +219,13 @@ class HybridRetriever:
     def _sources(cid: str, lists: list[tuple[list[str], float]], names: list[str]) -> list[str]:
         """Which rankers had this concept and at what rank, e.g. ["dense0:3", "bm25_0:1"]."""
         return [f"{name}:{ids.index(cid) + 1}" for (ids, _), name in zip(lists, names) if cid in ids]
+
+
+def question_index_path():
+    """Where build_kb stores the example-question vectors (next to the Chroma index)."""
+    from pathlib import Path
+
+    return Path(settings.chroma_persist_dir) / "example_questions.npz"
 
 
 _retriever: HybridRetriever | None = None

@@ -47,6 +47,7 @@ def concept_document(c: TacticalConcept) -> str:
         c.definition or "",
         c.content,
         " ".join(c.conditions + c.trigger_conditions + c.possible_actions + c.player_behaviours),
+        " ".join(c.example_questions),
     ]
     return " ".join(fields)
 

@@ -102,3 +102,23 @@ def test_empty_kb_returns_empty_result():
     r = HybridRetriever(concepts=[], store=FakeStore([]), use_reranker=False)
     res = r.retrieve(RetrievalQuery(question="anything"), k=3)
     assert res.items == [] and res.confidence == 0.0
+
+
+def test_example_questions_add_a_ranker_that_finds_paraphrases():
+    """Dense and BM25 miss "use a nearby midfielder to find the runner"; the concept's
+    example question matches it, so it enters the fused list via the questions ranker."""
+    from matchmind.knowledge_base.example_questions import QuestionIndex
+
+    def embed(texts):
+        return np.array([[1.0, 0.0] if "midfielder" in t else [0.0, 1.0] for t in texts])
+
+    concepts = [c.model_copy(update={"example_questions": ["pass blocked, use a midfielder to find the runner?"]})
+                if c.concept_id == "third_man_run" else c for c in CONCEPTS]
+    store = FakeStore(["pocket_exploitation", "overlapping_run", "low_block"])
+    store.embed_queries = embed
+    r = HybridRetriever(concepts=concepts, store=store, use_reranker=False,
+                        question_index=QuestionIndex.build(concepts, embed))
+    res = r.retrieve(RetrievalQuery(question="blocked, a nearby midfielder finds the runner",
+                                    phase_of_play="open_play", in_possession=True), k=5)
+    hit = next(i for i in res.items if i.concept_id == "third_man_run")
+    assert any(s.startswith("questions:") for s in hit.sources)

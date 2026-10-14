@@ -85,7 +85,19 @@ def main(
         f"[bold green]KB built:[/bold green] {store.count()} concepts at {settings.chroma_persist_dir}"
     )
 
-    # ── 5. Sanity check ───────────────────────────────────────
+    # ── 5. Example-question vectors (doc2query ranker) ────────
+    from matchmind.knowledge_base.example_questions import QuestionIndex
+    from matchmind.retrieval.hybrid import question_index_path
+
+    n_q = sum(len(c.example_questions) for c in concepts)
+    if n_q:
+        QuestionIndex.build(concepts, store.embed_queries).save(question_index_path())
+        console.print(f"[green]Indexed {n_q} example questions[/green] -> {question_index_path()}")
+    else:
+        question_index_path().unlink(missing_ok=True)
+        console.print("[dim]No example questions yet (run scripts.build_example_questions)[/dim]")
+
+    # ── 6. Sanity check ───────────────────────────────────────
     q = "player in the half-space with an open passing lane and a third-man option"
     results, confidence = store.retrieve_tactics(query_text=q, k=3)
     console.print(f"Sanity query confidence: [bold]{confidence:.3f}[/bold]")
