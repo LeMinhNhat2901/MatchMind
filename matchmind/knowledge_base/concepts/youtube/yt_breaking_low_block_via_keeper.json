@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_breaking_low_block_via_keeper",
+  "category": "attacking",
+  "subcategory": "low_block_breakdown",
+  "phase": "possession",
+  "title": "Breaking Low Block via Keeper",
+  "definition": "A tactical strategy involving recycling possession to the goalkeeper to lure opponents out of a low defensive block, creating space for direct passes into the half-space.",
+  "content": "When facing a deep, compact low block, teams often struggle to penetrate the final third through standard passing sequences. This concept utilizes the goalkeeper as a primary outlet to manipulate the opponent's defensive shape. By moving the ball back to the keeper, the attacking team forces the opposing defenders to step up and press, thereby breaking their compact low block structure. Crucially, the attacking team must maintain an extra marker or defensive stability at the back to prevent immediate counter-attacks while the front line presses. This action creates temporary numerical advantages and spatial gaps. The forwards, having separated from their markers due to the opponent's forward movement, can then make runs into the open space between the lines. The goalkeeper or a deep-lying midfielder can then execute a direct, progressive pass into this newly created half-space. This method effectively bypasses the congested midfield and reduces the number of defenders available to stop the attack, mimicking the spatial dynamics of a counter-attack while retaining possession. It is particularly effective against teams that rely heavily on man-marking or high pressing triggers when the ball is in deep positions.",
+  "conditions": [
+    "opponent_low_block",
+    "possession_retained",
+    "keeper_available_as_outlet"
+  ],
+  "objective": [
+    "lure_opponent_forward",
+    "create_half_space",
+    "bypass_midfield_density"
+  ],
+  "possible_actions": [
+    "pass_to_keeper",
+    "maintain_defensive_shape",
+    "run_into_half_space",
+    "direct_pass_between_lines"
+  ],
+  "contraindications": [
+    "risk_of_counter_attack",
+    "keeper_poor_distribution"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "space_ahead_small",
+    "progressive_pass_not_available"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "separate_from_marker"
+  ],
+  "related_concepts": [
+    "low_block_breakdown",
+    "half_space_exploitation",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=625s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we use our goalkeeper to create chances against a team that defends deep?",
+    "The opponents are all back in their box and we can't get the ball to the final third, what should we do?",
+    "What is the best way to recycle possession to lure defenders out of position?",
+    "We are struggling to break down a team that sits very low, is there a tactic involving the keeper?"
+  ]
+}

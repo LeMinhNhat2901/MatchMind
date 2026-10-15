@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_back_three_formation_adaptation",
+  "category": "formations",
+  "subcategory": "352",
+  "phase": "general",
+  "title": "Back Three Formation Adaptation",
+  "definition": "A tactical structure utilizing three center-backs to create midfield numerical superiority or width, adapted to maximize specific squad strengths rather than following league conventions.",
+  "content": "The back three formation is not merely a structural choice but a tool to maximize squad talent, as demonstrated by Antonio Conte's implementation at Chelsea. Unlike Juventus, where an elite midfield controlled possession, Chelsea's version was functional, aiming to deliver the ball to the front three in dangerous positions early. This subtle tweak highlighted that formations should serve the players' capabilities rather than the other way around. The success of this approach, leading to a record-breaking winning streak, proved its efficacy and challenged the prevailing back-four culture of the Premier League. It emboldened managers to stick to their philosophical preferences and adapt structures to their specific rosters, rather than bending to invisible league norms. This shift increased the usage of back-three systems significantly across the league, showing that tactical flexibility and player-centric design are crucial for modern success. Coaches must evaluate whether their squad's defensive and midfield qualities align with the demands of a three-man defense to unlock maximum potential.",
+  "conditions": [
+    "squad_defensive_depth",
+    "midfield_numerical_need",
+    "managerial_philosophy_alignment"
+  ],
+  "objective": [
+    "maximize_squad_talent",
+    "create_midfield_superiority",
+    "disrupt_opponent_shape"
+  ],
+  "possible_actions": [
+    "deploy_three_center_backs",
+    "adjust_wing_back_roles",
+    "shift_midfield_line"
+  ],
+  "contraindications": [
+    "lack_of_wing_back_endurance",
+    "poor_defensive_organisation",
+    "squad_lacks_midfield_quality"
+  ],
+  "trigger_conditions": [
+    "squad_composition_mismatch",
+    "tactical_stagnation",
+    "need_for_midfield_control"
+  ],
+  "spatial_requirements": [
+    "wide_wing_back_positioning",
+    "compact_midfield_block"
+  ],
+  "player_behaviours": [
+    "wing_back_overlapping",
+    "center_back_distribution",
+    "midfield_screening"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "formation_transitions",
+    "midfield_dominance"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=902s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why do some managers drop a wing-back into the defense even when the league standard is four at the back?",
+    "We have two very strong central defenders but weak full-backs, so how do we structure our shape to hide that weakness?",
+    "If my squad lacks aggressive wingers but has excellent central midfielders, what defensive setup should I consider?",
+    "I keep struggling to keep a clean sheet with a standard four-man line, is there a different structural approach that might suit my personnel better?"
+  ]
+}

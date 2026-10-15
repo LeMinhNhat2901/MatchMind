@@ -1,0 +1,123 @@
+# Held-out retrieval questions: a second test set the system has never been tuned on.
+# Write ~20 questions the way you would really ask them. Labels come later
+# (Claude builds a candidate list per question; you mark relevant / acceptable / no).
+#
+# Fields per question:
+#   question       what you would type in the dashboard chat (English or Vietnamese;
+#                  Vietnamese gets translated to English the same way the chat does)
+#   in_possession  true = your team has the ball, false = the opponent has it
+#   phase_of_play  open_play | attacking_transition (just won the ball) |
+#                  defensive_transition (just lost it) | set_piece
+#
+# Tips for a useful test:
+#   - Don't look at concept names first. Ask in your own words, not textbook terms.
+#   - Mix topics: build-up, chance creation, pressing, defending deep, transitions,
+#     set pieces, goalkeeper, individual decisions (pass / dribble / shoot / hold).
+#   - Mix lengths and styles: short ("how do we beat their press?") and specific
+#     situations ("our 6 is marked and their 9 blocks the pass to our centre-back...").
+#
+# Example (delete it or keep it as h00):
+- id: h00
+  question: "Our right-back keeps getting caught upfield and they counter into the space behind him, what do we change?"
+  in_possession: false
+  phase_of_play: defensive_transition
+
+- id: h01
+  question: "Our opponent is pressing man-to-man, and our centre-backs struggle to find a free passing option. How can we progress the ball without relying on long balls?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h02
+  question: "The opponent keeps shifting its defensive block toward our ball side, leaving our far-side winger with space. How should we exploit this imbalance to progress the attack?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h03
+  question: "Our central midfielder receives the ball under pressure, while the striker is tightly marked. Which combination or off-ball movement could help us break the opponent's midfield line?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h04
+  question: "Our left winger is consistently doubled up on near the touchline. Should the overlapping full-back, an underlapping midfielder, or a third-man run provide the best solution, and why?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h05
+  question: "The opponent is defending deep with a compact central block, forcing us to circulate the ball from side to side. How can we create a higher-quality chance without resorting to hopeful crosses?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h06
+  question: "Our midfielders and forwards keep occupying the same central spaces, making it easy for the opponent to intercept forward passes. How should we adjust our width, depth, and positioning to create better passing lanes?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h07
+  question: "Our striker is frequently isolated against two centre-backs, while our midfield arrives too late to support the attack. How should we reorganize our forward runs and supporting positions to create more effective combinations?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h08
+  question: "We can reach the final third, but our attacks rarely produce clear chances because most players attack the box along the same line. How should we coordinate near-post runs, far-post runs, cutback options, and edge-of-the-box support?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h09
+  question: "We have 70% possession against a low block but create very few shots on target. What do we change?"
+  in_possession: true
+  phase_of_play: open_play
+
+- id: h10
+  question: "The opponent builds from the back using a double pivot, creating a numerical advantage in midfield. How should we organize our press to block central progression while avoiding gaps between our lines?"
+  in_possession: false
+  phase_of_play: open_play
+
+- id: h11
+  question: "Their right winger repeatedly receives the ball in a one-versus-one against our left-back, while their right-back provides an overlapping run. How should our winger and central midfielder coordinate their defensive responsibilities?"
+  in_possession: false
+  phase_of_play: open_play
+
+- id: h12
+  question: "Their attacking midfielder keeps receiving the ball between our midfield and defensive lines, turning toward goal before anyone can apply pressure. Who should step out to engage him, and how can we cover the space that player leaves behind?"
+  in_possession: false
+  phase_of_play: open_play
+
+- id: h13
+  question: "Their striker frequently drops deep to receive the ball, pulling our centre-back out of position and opening space for runners behind. Should our centre-back follow him, pass him on to a midfielder, or maintain the defensive line?"
+  in_possession: false
+  phase_of_play: open_play
+
+- id: h14
+  question: "They build with a back three plus the GK against our 4-3-3 press, so we are outnumbered in the first phase. How do we adjust the press?"
+  in_possession: false
+  phase_of_play: open_play
+
+- id: h15
+  question: "The opponent's forwards repeatedly make diagonal runs behind our high defensive line, forcing our centre-backs to turn and defend toward their own goal. Should we adjust the line height, pressure on the ball carrier, or defensive cover?"
+  in_possession: false
+  phase_of_play: open_play
+
+- id: h16
+  question: "We win the ball in central midfield, and the opponent's full-backs are still advanced, leaving space in the wide channels. Should we launch a quick counter-attack or secure possession first, and which passing or running option offers the best opportunity?"
+  in_possession: true
+  phase_of_play: attacking_transition
+
+- id: h17
+  question: "Our right-back keeps getting caught upfield, and opponents counter into the space behind him. What should we change in our rest defence, the positioning of our right winger and holding midfielder, or our attacking structure to prevent this?"
+  in_possession: false
+  phase_of_play: defensive_transition
+
+- id: h18
+  question: "We have tall centre-backs but score rarely from corners against a zonal marking system. What do we change in delivery and routines?"
+  in_possession: true
+  phase_of_play: set_piece
+
+- id: h19
+  question: "Against an opponent using zonal marking at corners, our near-post runs rarely create space and our deliveries are easily cleared. How should we redesign the movement patterns, blocking actions, and second-ball positioning to create a better scoring opportunity?"
+  in_possession: true
+  phase_of_play: set_piece
+
+- id: h20
+  question: "The opponent has a dangerous free kick just outside the penalty area, with several potential shooters and runners attacking the space behind our wall. How should we balance wall positioning, goalkeeper sightlines, player marking, and protection against rebounds?"
+  in_possession: false
+  phase_of_play: set_piece

@@ -1,0 +1,62 @@
+{
+  "concept_id": "fifa_rapid_counter_attack_execution",
+  "category": "transitions",
+  "subcategory": "counter_attack",
+  "phase": "attacking_transition",
+  "title": "Rapid Counter-Attack Execution",
+  "definition": "A tactical strategy to swiftly convert possession recovery into an offensive threat by exploiting the opponent's disorganized defensive structure before they can reorganize.",
+  "content": "The counter-attack is a high-intensity transition phase where a team immediately shifts from defense to attack upon regaining possession. The core objective is to exploit the spatial and temporal vulnerability of opponents who are committed forward. The process begins with a turnover, ideally high up the pitch, followed by rapid ball progression through direct passing or skilled dribbling. Success relies on coordinated off-the-ball movement, where runners attack space behind the defensive line or provide linking options. Wide players are crucial for stretching the opposition laterally, forcing defenders into reactive, turning positions that slow their recovery. The striker often initiates the move by receiving and quickly releasing the ball before making a run into space. This tactic is most effective immediately after the opponent commits numbers forward for set pieces or sustained pressure, especially when fatigue reduces their defensive speed. The fundamental requirement is a collective mentality where every player ahead of the ball-carrier operates on the front foot, ensuring immediate forward momentum and creating numerical advantages through precise timing and positioning.",
+  "conditions": [
+    "possession_recovered_high",
+    "opponent_defensive_structure_disorganized",
+    "opponent_committed_forward"
+  ],
+  "objective": [
+    "exploit_space_behind_defense",
+    "create_numerical_advantage",
+    "score_before_reorganization"
+  ],
+  "possible_actions": [
+    "rapid_progressive_pass",
+    "run_into_space",
+    "stretch_defense_wide",
+    "immediate_forward_movement"
+  ],
+  "contraindications": [
+    "opponent_defense_compact",
+    "low_stamina_levels",
+    "poor_passing_accuracy"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "space_behind_defensive_line",
+    "opponent_defensiveline_high",
+    "possession_recovered"
+  ],
+  "spatial_requirements": [
+    "space_behind_defensive_line",
+    "wide_stretching_opponent"
+  ],
+  "player_behaviours": [
+    "immediate_forward_run",
+    "quick_release_pass",
+    "lateral_stretching"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Analysing the art of the counter-attack",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/transition-to-attacking/the-counter-attack.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the fastest way to score after winning the ball back?",
+    "We just won the ball in midfield and the other team is still running back, what should we do immediately?",
+    "As a winger, what is my first move when I intercept a pass in our own half?",
+    "Every time we regain possession, we seem to lose it again before we can attack, how do we turn turnovers into goals more consistently?"
+  ]
+}

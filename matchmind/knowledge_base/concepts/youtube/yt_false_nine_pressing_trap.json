@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_false_nine_pressing_trap",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "False Nine Pressing Trap",
+  "definition": "A defensive tactic where the team avoids pressing the false nine directly to prevent creating space for secondary attackers, instead maintaining compactness to limit passing options.",
+  "content": "This concept addresses the specific challenge of defending against a false nine, a player who drops deep to receive the ball rather than holding the front line. The source highlights that aggressively pressing the false nine often backfires, as it pulls defenders out of position and creates large pockets of space behind them for wingers or secondary strikers to exploit. In the described scenario, pressing the false nine allowed opponents to execute 2v1 situations against the remaining defender. The tactical solution is to resist the urge to press the false nine immediately. Instead, the defensive unit should maintain a compact shape, staying closer to the ball carrier without committing fully, thereby denying the space behind the defensive line. This approach forces the opposition to hold the ball longer or play sideways, reducing their immediate danger. It requires high discipline from the defensive line to hold their ground and from midfielders to cover the spaces behind the fullbacks. This method is particularly effective when the opponent relies on quick transitions and individual quality in the final third, as it disrupts their rhythm and forces them into less dangerous areas of the pitch.",
+  "conditions": [
+    "opponent_uses_false_nine",
+    "defensive_line_compact",
+    "midfield_cover_available"
+  ],
+  "objective": [
+    "deny_space_behind_defense",
+    "limit_passing_options",
+    "maintain_defensive_shape"
+  ],
+  "possible_actions": [
+    "hold_defensive_position",
+    "delay_press",
+    "cover_passing_lanes"
+  ],
+  "contraindications": [
+    "risk_of_conceding_counter_attack",
+    "requires_high_discipline"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "space_behind_defensive_line",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "stay_on_opponent",
+    "delay_press",
+    "cover_space"
+  ],
+  "related_concepts": [
+    "false_nine",
+    "defensive_compactness",
+    "pressing_triggers"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=8OcXUJ2M7gA&t=220s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Should we press the opponent's striker when he drops deep or leave him be?",
+    "When the opposing team plays a striker who acts like a midfielder, what is the best defensive shape to stop them from passing easily?",
+    "Our defenders keep getting dragged out of position when we try to press the opponent's dropping forward, what should we do instead?",
+    "How do we defend against a team that uses a deep-lying striker to create space for their midfielders?"
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_local_relational_play",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Local Relational Play",
+  "definition": "A tactical approach prioritizing emergent local player relationships and dynamic interactions over rigid global structural formations.",
+  "content": "This concept describes a style of play where teams, such as Fluminense, operate without a fixed permanent shape, relying instead on constant, spontaneous interactions between players. The core mechanism involves basic duos performing 'give and go' (one-two) passes and trios using 'staircase' patterns to progress the ball through diagonal lines. Unlike traditional positional play which embeds these actions into static triangles, this approach allows relationships to appear and disappear dynamically, creating passing lanes in unexpected areas. This results in a more inventive and unpredictable brand of football, where order emerges from apparent chaos. However, this high density of players can lead to congestion, allowing opponents to become compact and making progression intricate. The style is particularly effective on the flanks, where the touchline can be used to cage opponents during counter-pressing. It requires players with high technical proficiency and improvisational skills, as the lack of rigid structure demands constant decision-making and adaptability to the evolving spatial context.",
+  "conditions": [
+    "high_technical_proficiency",
+    "dynamic_player_interactions",
+    "lack_of_rigid_structure"
+  ],
+  "objective": [
+    "create_unexpected_passing_lanes",
+    "progress_ball_via_local_relationships",
+    "maintain_spontaneous_order"
+  ],
+  "possible_actions": [
+    "execute_one_two_pass",
+    "use_staircase_progression",
+    "combine_on_flanks",
+    "improvise_movement"
+  ],
+  "contraindications": [
+    "opponent_high_compactness",
+    "low_technical_quality",
+    "congested_central_areas"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "local_numerical_advantage_positive",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "high_player_density",
+    "diagonal_staggering"
+  ],
+  "player_behaviours": [
+    "flick_ball_up_staircase",
+    "use_dummy_to_create_space",
+    "reciprocate_pass"
+  ],
+  "related_concepts": [
+    "one_two_pass",
+    "third_man_principle",
+    "counter_press",
+    "positional_play"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=IevycgbLct0&t=344s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why does our team look rigid and predictable even though we have fast players?",
+    "Our players seem to wait for instructions instead of reacting to what is happening around them, how do we change this?",
+    "What should a midfielder do when the ball moves quickly between three nearby teammates?",
+    "We struggle to adapt when the opponent changes their shape, how can we make our team more fluid and less dependent on fixed positions?"
+  ]
+}

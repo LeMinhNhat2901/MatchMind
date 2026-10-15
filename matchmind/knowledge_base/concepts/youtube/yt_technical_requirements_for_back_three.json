@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_technical_requirements_for_back_three",
+  "category": "formations",
+  "subcategory": "back_three",
+  "phase": "possession",
+  "title": "Technical Requirements for Back Three",
+  "definition": "A back three formation requires defenders with high technical proficiency to initiate play from deep against compact blocks.",
+  "content": "Implementing a back three system, particularly in a possession-based context, demands that the central defenders possess elite ball-playing ability, vision, and composure under pressure. When opponents drop into a compact low block, such as a 4-2-4, they often invite the center-backs to advance the ball. If these defenders lack the technical skills to progress play or identify passing lanes, the team becomes stagnant and vulnerable to counter-attacks, regardless of possession statistics. This concept highlights that tactical identity must align with player capabilities; importing a system designed for technically superior personnel without ensuring the squad has those specific attributes leads to inefficiency. Coaches must assess whether their defensive line can handle the increased cognitive and technical load of initiating attacks from deep. If the center-backs are not equipped to break lines or distribute accurately, the formation fails to create meaningful chances, resulting in high possession percentages but low goal output. Therefore, the viability of a back three depends heavily on the individual quality of the defenders in the central channel.",
+  "conditions": [
+    "possession_based_system",
+    "opponent_low_block",
+    "defenders_initiate_play"
+  ],
+  "objective": [
+    "progress_ball_from_deep",
+    "break_defensive_lines",
+    "maintain_possession"
+  ],
+  "possible_actions": [
+    "central_defender_progressive_pass",
+    "central_defender_switch_play",
+    "central_defender_retain_ball"
+  ],
+  "contraindications": [
+    "low_technical_ability_defenders",
+    "lack_of_vision_in_defense",
+    "opponent_counter_press"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "opponent_defensiveline_low",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_channel_open"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "progressive_passing",
+    "body_orientation_open"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "low_block",
+    "build_up"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=642s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why do our center-backs keep losing the ball when we try to start attacks from the back?",
+    "We are struggling to get the ball out of our own half because the defenders can't handle tight spaces, what do we need to fix?",
+    "What specific skills does a defender need to effectively distribute the ball when the opposition sits in a low block?",
+    "Our back line looks comfortable in a four, but we constantly turn the ball over in a three, why is this happening?"
+  ]
+}

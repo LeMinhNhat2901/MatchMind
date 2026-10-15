@@ -126,12 +126,21 @@ def assemble_evidence_node(state: AgentState) -> AgentState:
         f"Nearest opponent: {features.nearest_opponent_distance:.1f}m",
         f"Space ahead: {features.space_ahead:.1f}m",
         f"Local advantage: {features.local_numerical_advantage:+d} players",
-        f"Open passing lanes: {len(features.open_passing_lane_player_ids)} (IDs: {features.open_passing_lane_player_ids})",
-        f"Progressive passes available: {features.progressive_passes_available}",
-        f"Half-space occupied: {features.half_space_occupied}",
-        f"Third-man opportunity: {features.third_man_opportunity}",
-        f"Defensive line at x={features.defensive_line_height:.1f}m",
     ]
+    if features.is_ball_carrier:
+        # Lanes are measured from the focus player's position: they are only
+        # this player's options when they hold the ball (see encoder.py).
+        stats_facts += [
+            f"Open passing lanes: {len(features.open_passing_lane_player_ids)} (IDs: {features.open_passing_lane_player_ids})",
+            f"Progressive passes available: {features.progressive_passes_available}",
+            f"Third-man opportunity: {features.third_man_opportunity}",
+        ]
+    stats_facts.append(f"Half-space occupied: {features.half_space_occupied}")
+    stats_facts.append(
+        f"Opponent defensive line at x={features.defensive_line_height:.1f}m"
+        if features.defensive_line_visible
+        else "Opponent back line: not in the camera view"
+    )
     if cf_analysis:
         best = cf_analysis[0]
         if best.get("pitch_control_delta") is not None:
@@ -142,23 +151,41 @@ def assemble_evidence_node(state: AgentState) -> AgentState:
     stats_evidence = [{"id": "computed_features", "source": "stats", "content": " | ".join(stats_facts)}]
 
     # ── Context Evidence ──────────────────────────────────────
-    score_diff = match_state.score_diff_from_home
-    urgency = "high urgency" if (
-        (score_diff < 0 and match_state.minute > 70) or
-        (score_diff > 0 and match_state.minute > 80)
-    ) else "normal game state"
+    # Everything below is told from the FOCUS player's team — a bare "Home 0–1 Away"
+    # was read as "our team is trailing" for an away player whose team led.
+    team = features.focus_player_team
+    result = match_state.result_for(team)
+    if result == "trailing" and match_state.minute > 70:
+        urgency = "high urgency — chasing the game"
+    elif result == "leading" and match_state.minute > 80:
+        urgency = "high urgency — protect the lead"
+    else:
+        urgency = "normal game state"
+    if match_state.possession is None:
+        possession = "unknown"
+    else:
+        side = "the focus player's team" if match_state.possession == team else "the opponent"
+        possession = f"{match_state.possession} ({side})"
 
     context_facts = [
         f"Match minute: {match_state.minute}'",
-        f"Score: Home {match_state.score_home}–{match_state.score_away} Away",
+        f"Score: {match_state.score_line_for(features.focus_player_id, team)}",
         f"Phase of play: {match_state.phase_of_play or 'open play'}",
-        f"Possession: {match_state.possession or 'unknown'}",
+        f"Possession: {possession}",
         f"Game state: {urgency}",
     ]
     context_evidence = [{"id": "match_context", "source": "context", "content": " | ".join(context_facts)}]
 
+    # ── Example Evidence (real recorded situations) ──────────
+    example_evidence = [
+        {"id": e["example_id"], "source": "example",
+         "content": f"{e['summary']} (similarity {e['similarity']:.2f})"}
+        for e in (state.get("similar_examples") or [])
+    ]
+
     evidence_set = {
         "rag": rag_evidence,
+        "example": example_evidence,
         "stats": stats_evidence,
         "context": context_evidence,
     }

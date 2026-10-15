@@ -1,0 +1,64 @@
+{
+  "concept_id": "yt_horizontal_counter_attack_via_flank_isolation",
+  "category": "attacking",
+  "subcategory": "counter_attack",
+  "phase": "attacking_transition",
+  "title": "Horizontal Counter-Attack via Flank Isolation",
+  "definition": "A tactical strategy that shifts play to one flank to drag the opposition defense, then executes a quick diagonal pass to an isolated wide player on the opposite side for immediate penetration.",
+  "content": "This concept involves a deliberate horizontal shift in possession to manipulate the opponent's defensive shape. Instead of launching immediate vertical counter-attacks, the team concentrates players on one flank to drag the opposing defensive line and midfielders toward that side. Simultaneously, a player on the opposite flank maintains a high, wide position, effectively isolating themselves from immediate marking. Once the ball is won or possession is secured, a quick diagonal pass is played to this isolated wide player. This maneuver creates a free man with ample space to cut inside and generate scoring opportunities without the risk of offside traps. The strategy relies on the unpredictability of the wide player's movement and the team's ability to maintain width. It is particularly effective against teams that commit heavily to one side, leaving the opposite flank vulnerable. By using horizontal movement to create vertical penetration, the team bypasses central congestion and exploits the space behind the shifted defensive line. This approach requires precise timing and communication to ensure the diagonal pass is delivered before the opposition can reorganize their defensive shape.",
+  "conditions": [
+    "opponent_defensive_line_shifted",
+    "wide_player_isolated",
+    "diagonal_passing_lane_open"
+  ],
+  "objective": [
+    "create_isolation_on_opposite_flank",
+    "bypass_central_congestion",
+    "generate_scoring_opportunity"
+  ],
+  "possible_actions": [
+    "shift_possession_to_one_flank",
+    "maintain_high_wide_position",
+    "execute_quick_diagonal_pass",
+    "cut_inside_from_wide_area"
+  ],
+  "contraindications": [
+    "opponent_maintains_balanced_defensive_shape",
+    "wide_player_is_tightly_marked",
+    "diagonal_passing_lane_blocked"
+  ],
+  "trigger_conditions": [
+    "overload_left_or_right",
+    "ball_near_flank",
+    "space_behind_defensive_line",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "wide_player_high_position",
+    "opponent_defense_shifted_to_one_side"
+  ],
+  "player_behaviours": [
+    "drag_opponent_defense",
+    "maintain_width",
+    "receive_diagonal_pass",
+    "cut_inside"
+  ],
+  "related_concepts": [
+    "overload",
+    "width",
+    "counter_attack",
+    "isolation"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=jLdhDE73HUU&t=223s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get a player in one-on-one with a defender on the opposite side of the pitch?",
+    "We keep getting pinned to one side, how do we quickly switch play to catch them off guard on the other flank?",
+    "What should our wide player do when the entire opposing defense is shifting to the left?",
+    "Why do we fail to exploit the space on the far wing when we have the ball in the middle?"
+  ]
+}

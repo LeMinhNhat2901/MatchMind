@@ -1,0 +1,62 @@
+{
+  "concept_id": "fifa_breaking_counter_press_via_triangular_play",
+  "category": "transitions",
+  "subcategory": "counter_press",
+  "phase": "attacking_transition",
+  "title": "Breaking Counter-Press via Triangular Play",
+  "definition": "A coordinated three-player sequence designed to bypass immediate opponent pressure by utilizing spatial awareness, rapid decision-making, and progressive passing.",
+  "content": "This tactical concept addresses the challenge of regaining possession against high-intensity counter-pressing. It relies on a systematic three-role sequence to create numerical and spatial advantages. First, the ball-winner must remain calm under duress, using situational awareness to identify teammates in less pressured zones, often facing their own goal to scan for outlets. If direct backward passing is blocked, an aggressive dribbling run into open space serves as an alternative. Second, the first pass recipient occupies a transitional position with superior time and space, allowing for a broader field of vision and quicker, more calculated decisions than the pressured ball-winner. Third, runners act as escape valves, making penetrating or lateral runs to offer multiple progression pathways; this role may cycle back to the initial ball-winner who has moved into open territory. Execution varies based on game context, involving threaded passes between pressers, direct driving runs, or long balls to unmarked players. Success depends on decisive pace and intensity, as hesitation invites renewed pressure. By involving multiple players rapidly, teams create imbalances that transform defensive situations into attacking opportunities, effectively breaking the opponent's immediate recovery efforts.",
+  "conditions": [
+    "opponent_high_press",
+    "phase_of_play_attacking_transition",
+    "local_numerical_advantage_negative"
+  ],
+  "objective": [
+    "bypass_immediate_pressure",
+    "create_numerical_imbalance",
+    "progress_ball_forward"
+  ],
+  "possible_actions": [
+    "backward_pass_to_outlet",
+    "dribble_into_space",
+    "make_penetrating_run",
+    "switch_play_to_wide_area"
+  ],
+  "contraindications": [
+    "hesitation_in_decision_making",
+    "excessive_touches",
+    "lack_of_spatial_awareness"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "phase_of_play_attacking_transition",
+    "space_ahead_large",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "supporting_players_in_open_space",
+    "clear_sightlines_for_ball_winner"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "make_quick_decisions",
+    "offer_passing_options"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "positional_play",
+    "third_man_run"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: How to bypass an opponent's counter-press",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/transition-to-attacking/passing-the-press.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we get out of our own box when the other team is pressing us hard?",
+    "Our goalkeeper passes to the full-back who then gets tackled, what is a better way to move the ball forward quickly?",
+    "I am the center-back and I feel trapped when the opponent presses, who should I pass to and what should I do next?",
+    "We keep losing possession in the first ten seconds of our attack, is there a specific passing pattern that helps us escape pressure?"
+  ]
+}

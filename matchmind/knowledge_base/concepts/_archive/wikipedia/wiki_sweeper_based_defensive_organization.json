@@ -1,0 +1,40 @@
+{
+  "concept_id": "wiki_sweeper_based_defensive_organization",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Sweeper-Based Defensive Organization",
+  "content": "Catenaccio, or 'the chain,' is a defensive tactical system centered on a highly organized backline and a specialized sweeper role, historically known as the *libero*. The primary objective is to nullify opponent attacks by maintaining a compact defensive block and eliminating goal-scoring opportunities. Unlike standard man-marking systems, this approach utilizes a sweeper positioned behind the main defensive line to cover gaps, intercept through balls, and clear danger. The system often involves a low defensive line to compress space, forcing opponents into wide areas where they can be contained. While originally developed from the 2-3-5 formation, it evolved into structures like 5-3-2 or 4-4-2, where one defender drops deep to act as the last line of defense. This tactic is particularly effective for teams facing physically superior or technically dominant opponents, as it prioritizes structural integrity and counter-attacking potential over possession. The sweeper must possess high tactical intelligence to read the game, stepping in only when necessary to avoid being bypassed by quick transitions.",
+  "conditions": [
+    "opponent_high_press",
+    "defensive_line_height_low",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "nullify_opponent_attacks",
+    "maintain_defensive_compactness",
+    "create_counter_attacking_opportunities"
+  ],
+  "possible_actions": [
+    "drop_sweeper_behind_def_line",
+    "shift_defensive_block_towards_ball",
+    "force_opponent_to_wide_areas",
+    "intercept_through_passes"
+  ],
+  "contraindications": [
+    "opponent_slow_possession_game",
+    "lack_of_sweeper_skill",
+    "high_pressing_opponent"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "space_behind_defensive_line",
+    "phase_of_play_defensive"
+  ],
+  "source": {
+    "name": "Wikipedia: Catenaccio",
+    "url": "https://en.wikipedia.org/wiki/Catenaccio",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

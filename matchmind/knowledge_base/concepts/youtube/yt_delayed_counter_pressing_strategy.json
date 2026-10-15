@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_delayed_counter_pressing_strategy",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Delayed Counter-Pressing Strategy",
+  "definition": "A tactical approach where a team delays immediate pressing to force the opponent into a second pass, then applies high-intensity man-to-man pressure to win possession safely.",
+  "content": "This concept involves a deliberate delay in initiating the counter-press after losing possession. Instead of reacting instantly, which can allow opponents to bypass pressure with quick touches, the team waits for the opponent to make a second pass. The primary objective is to block central passing routes using numerical overloads, forcing the ball carrier to play wide. Once the ball moves to the flank, the team instantly engages in a man-to-man press, utilizing the touchline as a natural barrier to create a 'sandwich' effect. This restricts passing angles and forces risky decisions, leading to possession recovery. Crucially, upon winning the ball back, the team does not immediately launch a counter-attack. Instead, they pass sideways to stabilize the shape and reset their defensive structure. This prevents the team from becoming exposed at the back, a common vulnerability in high-intensity immediate counter-attacks. By prioritizing structural integrity over immediate transition speed, the team maintains control and reduces the risk of conceding on the break, ensuring a more balanced and sustainable defensive transition.",
+  "conditions": [
+    "possession_lost",
+    "opponent_building_from_back",
+    "central_routes_blocked"
+  ],
+  "objective": [
+    "force_second_pass",
+    "win_possession_safely",
+    "maintain_defensive_shape"
+  ],
+  "possible_actions": [
+    "delay_initial_press",
+    "overload_central_zones",
+    "force_wide_pass",
+    "apply_man_to_man_press",
+    "pass_sideways_to_reset"
+  ],
+  "contraindications": [
+    "opponent_has_quick_transition_players",
+    "team_shape_is_unbalanced"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "ball_near_flank",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_overload"
+  ],
+  "player_behaviours": [
+    "wait_for_second_pass",
+    "block_central_lanes",
+    "press_wide_player",
+    "reset_shape_after_recovery"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=354s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "When should we hold our shape instead of chasing the first pass?",
+    "The opponent's center-back is comfortable on the ball, when do we swarm him?",
+    "What is the best moment for our striker to start pressing the goalkeeper?",
+    "We lose the ball high up the pitch and get punished, how do we recover more safely?"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_center_back_inversion_to_double_pivot",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "possession",
+  "title": "Center-Back Inversion to Double Pivot",
+  "definition": "A tactical adjustment where a center-back moves into central midfield to form a double pivot, transforming a back four into a back three during possession.",
+  "content": "This concept addresses the isolation of a single holding midfielder (like Rodri) when opposing teams deploy two wide fullbacks to outnumber the midfield. By instructing a technically proficient center-back to permanently occupy a central midfield role alongside the primary pivot, the team creates a stable double pivot. This structural shift converts a nominal 4-3-3 into a 3-2-4-1 in possession. The primary benefit is ensuring numerical superiority in the first phase of build-up, allowing the team to progress the ball safely against high-pressing opponents. The center-back operates under less pressure because opponents often prioritize marking the primary playmaker, while the remaining two center-backs and inverted fullbacks provide width and defensive cover. This approach requires a center-back with high technical ability and confidence in possession, as they must handle midfield duties and potentially push forward to create overloads if opponents drop deep. It effectively neutralizes midfield overloads and secures the build-up phase, though it may leave the defensive line vulnerable to quick counters if the center-back is caught out of position.",
+  "conditions": [
+    "opponent_midfield_overload",
+    "single_pivot_isolated",
+    "center_back_high_technical_ability"
+  ],
+  "objective": [
+    "secure_build_up_phase",
+    "create_midfield_numerical_superiority",
+    "protect_primary_pivot"
+  ],
+  "possible_actions": [
+    "center_back_moves_to_midfield",
+    "fullbacks_widen_to_flanks",
+    "remaining_center_backs_hold_line"
+  ],
+  "contraindications": [
+    "center_back_lacks_technical_security",
+    "opponent_high_press_with_fast_wingers",
+    "defensive_line_vulnerability_to_counters"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_negative",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "center_back_inverts_to_midfield",
+    "fullback_widens_to_flank",
+    "pivot_shares_ball_carrying"
+  ],
+  "related_concepts": [
+    "double_pivot",
+    "build_up_structure",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7803s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can I create a numerical advantage in midfield without using a dedicated defensive midfielder?",
+    "We are getting overrun in the middle when we have the ball, what is a simple structural fix?",
+    "What should my ball-playing defender do when the opposition presses high?",
+    "We keep losing possession in the center circle, how can I stabilize our buildup phase?"
+  ]
+}

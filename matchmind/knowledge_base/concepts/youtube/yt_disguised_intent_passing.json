@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_disguised_intent_passing",
+  "category": "attacking",
+  "subcategory": "receiving",
+  "phase": "possession",
+  "title": "Disguised Intent Passing",
+  "definition": "A technique where a player orients their body to suggest a pass in one direction to draw defenders, then delivers the ball in a different, often vertical, direction.",
+  "content": "Disguised intent passing is a critical off-ball and on-ball skill used to break down compact defensive blocks. The player receiving the ball aligns their hips and shoulders to indicate a potential pass to a wide area or a safe lateral option. This body orientation forces nearby defenders to commit to covering that specific passing lane. Once the defender is drawn out of position, the player quickly reverses the pass, delivering the ball vertically or into the half-space to a teammate who has moved into the vacated space. This technique is particularly effective for fullbacks or wide center-backs in a 3-4-3 or 3-2-5 formation, allowing them to bypass high pressing lines. It requires precise timing and spatial awareness, as the initial body shape must be convincing enough to manipulate the opponent's positioning without giving away the true intent. When executed correctly, it creates immediate numerical advantages in central areas and facilitates progressive passes into the final third, enhancing the team's ability to penetrate through the middle.",
+  "conditions": [
+    "ball_in_build_up",
+    "opponent_compact_defense",
+    "wide_player_in_position"
+  ],
+  "objective": [
+    "manipulate_defender_position",
+    "create_vertical_passing_option",
+    "penetrate_central_areas"
+  ],
+  "possible_actions": [
+    "align_hips_wide",
+    "reverse_pass_vertical",
+    "scan_before_receiving"
+  ],
+  "contraindications": [
+    "high_press_immediate_contact",
+    "no_supporting_runner"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "passing_lane_open",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "wide_player_available",
+    "central_runner_in_half_space"
+  ],
+  "player_behaviours": [
+    "body_orientation_disguise",
+    "quick_weight_shift",
+    "vertical_delivery"
+  ],
+  "related_concepts": [
+    "body_orientation",
+    "progressive_passing",
+    "half_space_exploitation"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=-Vp2gnavMzs&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can a midfielder make a defender think he is passing left when he actually wants to go right?",
+    "I keep getting closed down when I try to play a vertical pass, is there a body position trick to fool the marker?",
+    "What should our playmaker do with his body orientation to create space for a through ball?",
+    "Our passes are always intercepted because the defenders know exactly where we are going, how can we hide our true direction?"
+  ]
+}

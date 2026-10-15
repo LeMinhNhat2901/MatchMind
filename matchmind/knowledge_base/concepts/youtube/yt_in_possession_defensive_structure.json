@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_in_possession_defensive_structure",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "possession",
+  "title": "In-Possession Defensive Structure",
+  "definition": "A tactical setup where the attacking formation is structured to provide immediate defensive coverage and counter-pressing readiness upon loss of possession.",
+  "content": "This concept describes how a team's attacking shape, specifically a 2-3-5 structure, doubles as a defensive framework to neutralize counter-attacks. By maintaining five players in the 'catchment area' (midfield and advanced defensive line), the team ensures immediate numerical superiority to smother transitions. The first line of defense consists of midfielders and full-backs who are positioned to intercept or press immediately, while center-backs provide a safety net. This structure allows for an immediate, coordinated counter-press where the nearest player cuts passing angles and teammates collapse space to deny outlets. Additionally, specific roles like a sweeping goalkeeper and a pacey full-back mitigate the risks of a high defensive line, ensuring that balls over the top are cleared and bypasses are recovered quickly. This approach minimizes the time and space opponents have to organize attacks, turning possession into a defensive asset rather than just an offensive one.",
+  "conditions": [
+    "high_defensive_line",
+    "possession_dominance",
+    "coordinated_counter_press"
+  ],
+  "objective": [
+    "neutralize_counter_attack",
+    "immediate_ball_recovery",
+    "maintain_defensive_compactness"
+  ],
+  "possible_actions": [
+    "angle_press",
+    "collapse_space",
+    "sweeping_goalkeeper_clearance",
+    "track_back_fullback"
+  ],
+  "contraindications": [
+    "lack_of_sweeping_goalkeeper",
+    "slow_fullbacks",
+    "disorganized_midfield"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "opponent_high_press",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "five_players_in_catchment_area"
+  ],
+  "player_behaviours": [
+    "press_at_angle",
+    "cover_passing_lane",
+    "sweep_high_ball"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "high_line",
+    "rest_defence"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5551s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we set up our attack so that we can immediately counter-press if we lose the ball?",
+    "Our team gets caught out of position when we lose possession in the final third, how do we structure our attack to maintain defensive shape?",
+    "What should the full-backs do when they are high up the pitch to ensure they can drop back quickly if the ball is turned over?",
+    "We keep getting hit on the counter after losing the ball in the opponent's box, how do we organize our attacking shape to prevent this?"
+  ]
+}

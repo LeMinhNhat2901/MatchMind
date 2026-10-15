@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_wide_player_inversion",
+  "category": "attacking",
+  "subcategory": "movement",
+  "phase": "possession",
+  "title": "Wide Player Inversion",
+  "definition": "A tactical movement where wide players or fullbacks cut inside to create central overloads and assist opportunities.",
+  "content": "This concept involves wide attackers or fullbacks moving into central zones to exploit space and create numerical superiority in the final third. By inverting, these players provide passing options for central midfielders and forwards, often leading to high-quality chances and assists. The strategy relies on the technical ability of the wide player to operate in tight central spaces and deliver precise crosses or through balls. It is particularly effective when the opposing defense is compact centrally, as the inverted player can draw defenders out of position or find pockets of space between lines. This movement also allows the team to maintain width on the opposite side or with other players, stretching the defense horizontally while creating vertical penetration centrally. Coaches should encourage this movement when wide players have the technical quality to handle the ball in congested areas and when the team needs to break down a low block or create goal-scoring opportunities from central positions.",
+  "conditions": [
+    "wide_player_technical_quality_high",
+    "central_space_available",
+    "opponent_defense_compact_central"
+  ],
+  "objective": [
+    "create_central_overload",
+    "generate_assist_opportunities",
+    "break_down_low_block"
+  ],
+  "possible_actions": [
+    "cut_inside_from_wide_position",
+    "receive_ball_in_half_space",
+    "deliver_cross_or_through_ball"
+  ],
+  "contraindications": [
+    "wide_player_lacks_technical_quality",
+    "opponent_presses_high_and_aggressively"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "central_space_available",
+    "width_maintained_on_opposite_side"
+  ],
+  "player_behaviours": [
+    "move_into_central_zone",
+    "scan_for_passing_options",
+    "deliver_final_pass"
+  ],
+  "related_concepts": [
+    "inverted_fullback",
+    "central_overload",
+    "half_space_utilization"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=695s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to use our full backs to create passing options in the middle of the field?",
+    "Our left back is always marked by their right winger, so he has no one to pass to; should he move inside to help the midfield?",
+    "As a right back, when is the right time to cut inside and join the midfield triangle instead of staying wide?",
+    "We are struggling to progress the ball through the middle because our wide players are always on the edge of the box; how can we fix our central overloads?"
+  ]
+}

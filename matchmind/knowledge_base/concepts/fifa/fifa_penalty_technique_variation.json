@@ -1,0 +1,57 @@
+{
+  "concept_id": "fifa_penalty_technique_variation",
+  "category": "individual",
+  "subcategory": "shooting_technique",
+  "phase": "general",
+  "title": "Penalty Technique Variation",
+  "definition": "A strategic approach to penalty taking that alternates between power-based and deception-based techniques to prevent goalkeeper adaptation.",
+  "content": "Elite penalty takers enhance conversion rates by varying their execution methods rather than relying on a single, predictable routine. Two primary methodologies exist: the side-foot technique, which uses a shorter, angled run-up to keep the body open and maintain visual contact with the goalkeeper, allowing for last-moment directional adjustments based on the keeper's commitment; and the in-step approach, which prioritizes pure velocity and placement through consistent gaze fixation on the ball. Tactical adaptability is key; a player may shift from high-powered strikes to deceptive, softer touches in high-pressure scenarios like shoot-outs to psychologically disorient the goalkeeper. Strategic sequencing is also critical, particularly in shoot-outs, where placing the most confident taker first can establish psychological momentum. By alternating between power and deception, and never repeating the same execution pattern, the taker prevents the goalkeeper from reading their habits. This approach transforms penalty taking into a psychological contest, where technical mastery and composure under pressure are more valuable than raw physical superiority. The goal is to maintain control over the situation by keeping the goalkeeper guessing, ensuring that the chosen technique aligns with the specific pressure context and the goalkeeper's anticipated reaction.",
+  "conditions": [
+    "penalty_kick_situation",
+    "high_pressure_moment",
+    "goalkeeper_adaptation_risk"
+  ],
+  "objective": [
+    "prevent_goalkeeper_prediction",
+    "maximize_conversion_rate",
+    "maintain_psychological_advantage"
+  ],
+  "possible_actions": [
+    "alternate_shooting_technique",
+    "use_side_foot_for_deception",
+    "use_in_step_for_power",
+    "adjust_run_up_angle",
+    "maintain_visual_contact_with_keeper"
+  ],
+  "contraindications": [
+    "repeating_same_technique_consecutively",
+    "ignoring_goalkeeper_positioning"
+  ],
+  "trigger_conditions": [
+    "penalty_kick_assigned",
+    "shoot_out_phase"
+  ],
+  "spatial_requirements": [],
+  "player_behaviours": [
+    "scan_goalkeeper_position",
+    "execute_last_moment_adjustment",
+    "manage_body_balance"
+  ],
+  "related_concepts": [
+    "penalty_taking",
+    "psychological_pressure_management",
+    "shooting_accuracy"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Messi's penalties at the FIFA World Cup 2022: seven steps to immortality",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/messi-penalties-at-the-fifa-world-cup-2022-seven-steps-to-immortality.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do I stop the keeper from guessing which way I will shoot?",
+    "The goalkeeper has figured out my routine and is diving the right way every time.",
+    "Should I always use my power shot or mix it up with a chipped penalty to keep the keeper honest?",
+    "What is the best way to change my approach to the spot so the goalkeeper cannot predict my movement?"
+  ]
+}

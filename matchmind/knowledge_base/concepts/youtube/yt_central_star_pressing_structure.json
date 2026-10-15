@@ -1,0 +1,67 @@
+{
+  "concept_id": "yt_central_star_pressing_structure",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Central Star Pressing Structure",
+  "definition": "A defensive formation where a compact central block forces opponents wide, triggering a one-sided overload to recover possession.",
+  "content": "This tactical concept involves arranging the front line and midfield pivots in a narrow, star-like shape to dominate the central channels. By creating a numerical superiority in the center, the team blocks direct central progression. When the opposition is forced to play wide, the nearest wing-back immediately presses the ball carrier, while the central players cover passing lanes and the far-side center-back tracks the wide option. This creates a localized overload that forces the opponent to retreat or switch play. If the press is broken, the team transitions into a 5-4-1 low block, using inverted forwards as wide midfielders to shield the center. Crucially, upon winning the ball back, the team may intentionally invite a counter-press to draw opponents forward before launching long balls to isolated forwards. This approach relies on specific player roles, such as versatile full-backs who can invert or overlap, and box-to-box midfielders who drop deep for build-up but advance between lines in attack. The strategy prioritizes spatial control and psychological manipulation over immediate counter-attacks.",
+  "conditions": [
+    "opponent_builds_from_back",
+    "central_channels_open",
+    "wing_backs_available_to_press"
+  ],
+  "objective": [
+    "force_opponent_wide",
+    "create_local_overload",
+    "win_ball_in_high_area"
+  ],
+  "possible_actions": [
+    "narrow_front_three",
+    "pivot_drops_behind_striker",
+    "wing_back_jumps_on_wide_player",
+    "far_cb_tracks_wide_option",
+    "transition_to_541_low_block",
+    "invite_counter_press",
+    "long_ball_to_isolated_forward"
+  ],
+  "contraindications": [
+    "opponent_has_fast_wingers",
+    "lack_of_wing_back_speed",
+    "central_defense_vulnerable_to_switches"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "opponent_defensiveline_high",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_central_block",
+    "narrow_front_line",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "cover_central_passing_lanes",
+    "track_wide_option",
+    "invert_as_pivot",
+    "drop_deep_for_build_up"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "low_block",
+    "counter_press",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=XHRhoYLuPNw&t=394s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we force the opponent to play wide so we can trap them?",
+    "We want to press high but keep our shape tight, how do we make the other team go to the touchline?",
+    "What should our defensive line do to push the ball carrier toward the sideline?",
+    "Our team gets stretched too thin when pressing, how can we force the attack to one side to recover the ball?"
+  ]
+}

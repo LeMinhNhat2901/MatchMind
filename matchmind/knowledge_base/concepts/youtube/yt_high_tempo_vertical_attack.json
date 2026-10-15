@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_high_tempo_vertical_attack",
+  "category": "attacking",
+  "subcategory": "high_press",
+  "phase": "possession",
+  "title": "High-Tempo Vertical Attack",
+  "definition": "A tactical approach prioritizing rapid vertical progression and immediate counter-pressing to mitigate the risks of high-tempo play.",
+  "content": "This tactical model emphasizes high-tempo football characterized by vertical passing and third-man combinations to reach the final third quickly. The primary objective is to create scoring chances rapidly rather than engaging in prolonged, complex build-up phases. To manage the inherent risk of frequent possession loss associated with this aggressive style, the team employs a high defensive line and an intense counter-press. This defensive mechanism aims to recover the ball immediately after a turnover, preventing the opposition from progressing into the defensive half. In the final third, the philosophy discourages over-complicating attacks with excessive lateral passing; instead, players are encouraged to drive directly into the box and take shots from distance when opportunities arise. This approach relies on player intelligence to create space and accepts a higher risk of losing possession in exchange for greater potential rewards on the scoreboard. It represents a modern, energetic style that prioritizes speed and directness over traditional possession retention, requiring high physical intensity and quick decision-making from all players.",
+  "conditions": [
+    "high_tempo_play",
+    "vertical_passing_priority",
+    "high_defensive_line",
+    "intense_counter_press"
+  ],
+  "objective": [
+    "rapid_final_third_entry",
+    "immediate_ball_recovery",
+    "direct_shooting_opportunities"
+  ],
+  "possible_actions": [
+    "vertical_pass",
+    "third_man_run",
+    "counter_press",
+    "drive_into_box",
+    "shot_from_distance"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "poor_decision_making",
+    "lack_of_counter_press_discipline"
+  ],
+  "trigger_conditions": [
+    "progressive_pass_available",
+    "space_ahead_large",
+    "phase_of_play_attacking_transition"
+  ],
+  "spatial_requirements": [
+    "high_defensive_line",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "vertical_pass",
+    "counter_press",
+    "drive_into_box"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "high_press",
+    "verticality"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=1025s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get the ball to the other end of the pitch before the defense can set up?",
+    "We lose the ball too easily after a quick pass, how do we recover it immediately to keep the pressure on?",
+    "What should our wingers do to support the buildup and then sprint forward as soon as the ball is played through?",
+    "Our attacks feel slow and predictable, how can we make our transitions faster and more direct?"
+  ]
+}

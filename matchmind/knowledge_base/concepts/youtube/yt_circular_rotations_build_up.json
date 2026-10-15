@@ -1,0 +1,64 @@
+{
+  "concept_id": "yt_circular_rotations_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Circular Rotations Build-Up",
+  "definition": "A dynamic build-up strategy using asymmetric shape shifts and circular passing patterns to exploit pressing triggers and create numerical overloads.",
+  "content": "This tactical concept involves transitioning from a nominal 3-2-4-1 into an asymmetric 4-2-4 during the initial build-up phase. The right-back operates as a winger, while the back three spreads to form a back four. To bypass high pressing, the team employs 'circular rotations': when center-backs are pressed, the ball moves to the left-back, who drifts inward to the pivot area. Simultaneously, the right pivot shifts to the flank, narrowing the opposition's front markers and freeing wide space for the pivot to break the first line of pressure. If the opponent drops into a low block or uses 1v1 pressing, the team utilizes quick pass-and-return sequences to trigger markers, creating space for a second pivot or a dropping forward to act as a third man. This draws additional defenders, opening gaps between the lines. Furthermore, to counter isolated 1v1 presses, the team intentionally creates 2v1 situations by having a nearby player join the ball carrier, confusing the defender and allowing an unmarked third man to advance. This approach leverages the opposition's pressing intensity as a weapon to generate overloads and initiate counter-attacks without losing possession.",
+  "conditions": [
+    "opponent_high_press",
+    "opponent_low_block",
+    "asymmetric_build_up_shape"
+  ],
+  "objective": [
+    "break_first_line_pressure",
+    "create_numerical_overload",
+    "exploit_pressing_triggers"
+  ],
+  "possible_actions": [
+    "drift_inward_to_pivot",
+    "shift_to_flank",
+    "quick_pass_and_return",
+    "drop_deep_as_third_man",
+    "join_ball_carrier_for_2v1"
+  ],
+  "contraindications": [
+    "rigid_static_shape",
+    "lack_of_tempo_in_passing"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "passing_lane_open",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "drift_inward",
+    "shift_position"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "third_man_run",
+    "pressing_trap",
+    "overload"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=XHRhoYLuPNw&t=47s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we move the ball around to find a gap in their press?",
+    "Our team gets pinned down when the opponent presses hard, what kind of passing pattern should we use to escape?",
+    "What should the full-backs do to help rotate the ball and create a free man in midfield?",
+    "We keep losing the ball in the first ten seconds of possession, how can we use movement to break their pressing triggers?"
+  ]
+}

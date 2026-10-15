@@ -1,0 +1,44 @@
+{
+  "concept_id": "wiki_toe_poke_finishing_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Toe-Poke Finishing Technique",
+  "content": "The toe-poke is a specialized finishing technique where the player strikes the ball using the front of the boot rather than the instep or laces. This method allows for rapid, low-trajectory shots with minimal back-lift, making it highly effective in tight spaces or when the ball is close to the body. It is particularly useful for players who have developed close-control skills through futsal or small-sided games, as it enables quick transitions from dribbling to shooting without resetting the body. The technique is often employed to surprise goalkeepers or defenders who expect a standard instep drive, as the ball travels low and fast, making it difficult to parry. While less powerful than a full instep strike, the toe-poke offers superior accuracy and speed in confined areas, such as inside the penalty box or in one-on-one situations against the goalkeeper. Coaches should encourage players to practice this skill to add variety to their finishing repertoire, especially when facing high defensive lines or when the ball is not in an ideal position for a powerful shot. It is a versatile tool for breaking down compact defenses and creating scoring opportunities from suboptimal angles.",
+  "conditions": [
+    "ball_close_to_body",
+    "tight_space",
+    "one_on_one_situation"
+  ],
+  "objective": [
+    "score_goal",
+    "surprise_goalkeeper",
+    "maintain_low_trajectory"
+  ],
+  "possible_actions": [
+    "strike_with_front_of_boot",
+    "minimize_back_lift",
+    "aim_for_corner_of_net"
+  ],
+  "contraindications": [
+    "long_range_shooting",
+    "ball_high_in_air",
+    "need_for_maximum_power"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "nearest_opponent_distance_low",
+    "space_ahead_small"
+  ],
+  "source": {
+    "name": "Wikipedia: toe punt",
+    "url": "https://en.wikipedia.org/wiki/toe_punt",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the fastest way to shoot when the ball is at my feet in a tight area?",
+    "I often miss shots when I have to react quickly to a loose ball in the box, is there a better technique?",
+    "How should I finish a one-on-one situation if the goalkeeper is rushing out and I have little space to swing my leg?",
+    "Why do players who come from futsal backgrounds seem to score more headers and quick taps in the penalty area?"
+  ]
+}

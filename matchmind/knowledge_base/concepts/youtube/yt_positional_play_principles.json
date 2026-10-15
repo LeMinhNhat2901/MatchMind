@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_positional_play_principles",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "general",
+  "title": "Positional Play Principles",
+  "definition": "A tactical philosophy prioritizing superior technique and precise positioning to create time and space, reducing the need for high-intensity physical exertion.",
+  "content": "Positional play, or 'juego de posición', is a logical, almost mathematical approach to football that emphasizes technique over athleticism. The core objective is to optimize the spatial relationship between players to give the team time and space while limiting those resources for the opponent. By maintaining constant triangles and fluid movement, players can circulate the ball effectively without excessive running. This concept relies on precise angles and distances, allowing players to intercept passes or apply pressure by moving only a few meters at the right moment rather than sprinting long distances. It requires players with high technical quality and spatial intelligence, such as a pivot player who can dictate play from the base of the midfield. The system works by refining individual positions to create structural stability, ensuring that even players with limited physical attributes can contribute significantly through superior decision-making and positioning. This approach fosters a style of play that is attractive and dominant, relying on control and precision rather than raw power or speed.",
+  "conditions": [
+    "high_technical_quality",
+    "spatial_intelligence",
+    "team_structure_stability"
+  ],
+  "objective": [
+    "maximize_time_and_space",
+    "limit_opponent_resources",
+    "reduce_unnecessary_running"
+  ],
+  "possible_actions": [
+    "maintain_triangles",
+    "adjust_position_precisely",
+    "circulate_ball_fluidly",
+    "intercept_via_positioning"
+  ],
+  "contraindications": [
+    "low_technical_ability",
+    "lack_of_spatial_awareness",
+    "over_reliance_on_physicality"
+  ],
+  "trigger_conditions": [
+    "team_compactness_high",
+    "passing_lane_open",
+    "third_man_opportunity"
+  ],
+  "spatial_requirements": [
+    "constant_triangles",
+    "optimal_angles_between_players",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "move_to_support",
+    "fine_tune_position",
+    "dictate_pace"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "possession_game",
+    "spatial_dominance"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=lEmz3dGqe24&t=7s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Is it better to run hard or move smartly to get the ball?",
+    "We are getting tired too fast and losing the ball, how do we keep possession without sprinting everywhere?",
+    "How should I position myself so I can receive the ball without having to chase it down the pitch?",
+    "Why do we struggle to keep the ball when the other team presses us high?"
+  ]
+}

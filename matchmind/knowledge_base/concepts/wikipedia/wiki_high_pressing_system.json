@@ -1,0 +1,45 @@
+{
+  "concept_id": "wiki_high_pressing_system",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "High Pressing System",
+  "content": "High pressing is a defensive tactic where a team maintains a very high defensive line, positioning defenders close to the opponent's penalty area to apply immediate pressure on the ball carrier. This approach aims to win the ball back in advanced positions, limiting the opponent's time and space to organize their attack. It can be executed using man-to-man marking, zonal defense, or a hybrid model, requiring high fitness levels and coordinated team movement to maintain compactness. The primary objective is to force turnovers in dangerous areas, creating immediate scoring opportunities or preventing the opponent from building structured play. This system is most effective when the team has the physical capacity to sustain intense pressure and when the opponent is vulnerable to high-intensity defensive actions. Coaches must ensure that the defensive line remains coordinated to avoid being exposed to counter-attacks if the press is bypassed.",
+  "conditions": [
+    "high_fitness_level",
+    "coordinated_team_movement",
+    "opponent_vulnerable_to_press"
+  ],
+  "objective": [
+    "win_ball_high",
+    "limit_opponent_time",
+    "force_turnovers"
+  ],
+  "possible_actions": [
+    "maintain_high_defensive_line",
+    "apply_immediate_pressure",
+    "coordinate_pressing_triggers"
+  ],
+  "contraindications": [
+    "low_fitness_level",
+    "opponent_strong_counter_attack",
+    "lack_of_team_compactness"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_high",
+    "opponent_high_press",
+    "press_intensity_high",
+    "team_compactness_high"
+  ],
+  "source": {
+    "name": "Wikipedia: High press",
+    "url": "https://en.wikipedia.org/wiki/High_press",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the defensive strategy called where we chase the ball all the way up to their penalty box?",
+    "We keep getting caught with long balls over the top, how can we pressure the ball carrier higher up the pitch to stop them from having time to play those passes?",
+    "As a center-back, what should I do when the opponent's goalkeeper is trying to play out from the back under pressure?",
+    "Our team gets tired in the second half and leaves gaps, how can we maintain a compact defensive block high up the field without burning out?"
+  ]
+}

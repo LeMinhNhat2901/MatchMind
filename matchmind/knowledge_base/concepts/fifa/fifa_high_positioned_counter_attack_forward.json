@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_high_positioned_counter_attack_forward",
+  "category": "transitions",
+  "subcategory": "counter_attack",
+  "phase": "attacking_transition",
+  "title": "High-Positioned Counter-Attack Forward",
+  "definition": "A tactical setup where a designated forward remains high and wide during defensive phases to serve as a pre-organized target for immediate counter-attacks upon regaining possession.",
+  "content": "This tactical concept involves assigning a specific fast forward a role that prioritizes counter-attacking efficiency over defensive tracking. Instead of dropping deep to support the defensive line, this player maintains a high and wide position during the team's out-of-possession phase. This deliberate spatial preparation ensures that when possession is regained, the forward is already positioned to receive the ball facing upfield, often in areas where opponents are disorganized. By holding this advanced position, the forward provides a clear, purposeful target for defenders to clear the ball toward, transforming chaotic defensive actions into the opening phase of a coordinated attack. This arrangement accelerates transition momentum by eliminating hesitation; defenders know exactly where to direct the ball, and the forward understands his required movement patterns. The wide positioning exploits opponents' tendency to concentrate protection centrally, creating space for the forward to burst toward goal and forcing defenders into difficult decisions about whether to press or hold. While this strategy significantly enhances counter-attacking speed and creates penetration opportunities for teammates, it accepts a trade-off of increased defensive vulnerability due to fewer players behind the ball. It represents a collective preparation strategy where the team’s attacking intentions are defined before possession is won, imposing constant pressure on the opposition's decision-making process.",
+  "conditions": [
+    "team_prioritizes_counter_attack",
+    "forward_has_high_pace",
+    "opponent_defensive_line_high"
+  ],
+  "objective": [
+    "accelerate_transition_speed",
+    "create_immediate_upfield_target",
+    "exploit_opponent_disorganization"
+  ],
+  "possible_actions": [
+    "maintain_high_wide_position",
+    "receive_ball_facing_upfield",
+    "accelerate_toward_goal",
+    "force_opponent_defensive_dilemma"
+  ],
+  "contraindications": [
+    "increased_defensive_vulnerability",
+    "risk_of_conceding_long_balls",
+    "reduced_defensive_compactness"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "space_behind_defensive_line",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "forward_positioned_high_and_wide",
+    "space_between_lines_available"
+  ],
+  "player_behaviours": [
+    "hold_position_without_tracking_back",
+    "scan_for_upfield_pass",
+    "make_forward_run_upon_recovery"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "width_utilization"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: France: Rest attack enhances counter-attacking efficiency",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/world-class-tactics/france-rest-attack-enhances-counter-attacking-efficiency.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "Why should I leave one striker up top even when we are defending?",
+    "Our team drops too low when we lose the ball, how can we keep a threat in the box for quick breaks?",
+    "What should our main striker do during the opponent's possession to help us attack faster?",
+    "We always lose possession and then have to build from the back, how do we create an immediate outlet in the final third?"
+  ]
+}

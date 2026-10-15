@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_reducing_tactical_variables",
+  "category": "fundamentals",
+  "subcategory": "principles_of_play",
+  "phase": "general",
+  "title": "Reducing Tactical Variables",
+  "definition": "A coaching philosophy focused on minimizing unpredictability and chaos in match play through structured patterns and controlled possession.",
+  "content": "This concept describes a tactical approach that prioritizes stability and control by reducing the number of variables in a match. Instead of relying on chaotic transitions or high-risk actions like long balls and 50/50 duels, the team focuses on maintaining possession through short, low-risk passes. By keeping the ball, the team avoids unpredictable game states where players must navigate chaos individually. This method relies on repetitive, structured patterns such as switching play to space, underlapping runs, and cut-backs, which create known and manageable situations. The objective is to make the game more 'knowable' and controllable for the coaching staff, ensuring that players operate within strict positional constraints. While this reduces the frequency of transition moments, it allows high-quality players to make decisive differences in stable, orderly contexts. It is a defensive and offensive strategy simultaneously, as it prevents the opponent from gaining possession in dangerous areas and limits the opportunities for counter-attacks. This approach is often associated with teams that dominate possession and seek to control the tempo of the game rather than reacting to it.",
+  "conditions": [
+    "high_player_quality",
+    "possession_dominance",
+    "structured_patterns"
+  ],
+  "objective": [
+    "minimize_unpredictability",
+    "maintain_possession",
+    "create_stable_game_states"
+  ],
+  "possible_actions": [
+    "short_low_risk_passing",
+    "switch_play_to_space",
+    "underlapping_run",
+    "avoid_long_balls"
+  ],
+  "contraindications": [
+    "low_player_quality",
+    "high_press_opponent",
+    "need_for_rapid_transitions"
+  ],
+  "trigger_conditions": [
+    "possession",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "short_passing",
+    "positional_discipline",
+    "ball_retention"
+  ],
+  "related_concepts": [
+    "possession_game",
+    "positional_play",
+    "rest_defence"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=r97WqheJVd4&t=330s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop our team from getting chaotic and disorganized when the opponent starts pressing hard?",
+    "What is the best way to keep our possession structured and avoid random long balls under pressure?",
+    "Our players seem to make too many individual decisions that lead to turnovers, how can we make our play more consistent?",
+    "How can we simplify our attacking patterns so that every player knows exactly what to do in each zone?"
+  ]
+}

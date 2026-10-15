@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_pivot_depth_and_defensive_cover",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "out_of_possession",
+  "title": "Pivot Depth and Defensive Cover",
+  "definition": "The tactical necessity of having adequate depth behind the single pivot to prevent high pressing from being bypassed and leaving the defensive line exposed.",
+  "content": "This concept highlights the critical importance of defensive depth and cover behind the midfield pivot, particularly in systems relying on a single central midfielder. When a high-pressing pivot lacks a partner to cover their back, they become a liability rather than an asset. If the pivot commits to a high press and is bypassed, the opposition gains immediate access to the space behind them, often facing a high defensive line with no intermediate layer of protection. This leads to high-quality chances and defensive instability, as the center-backs are forced into desperate, low-percentage tackles. In contrast, a pivot with cover or a more conservative pressing trigger (jockeying back) can buy time for teammates to recover, maintaining structural integrity. The text illustrates this through the transition from a double-pivot system with cover to a single-pivot system where the new player's aggressive pressing instinct was not supported by the team shape, resulting in a significant increase in expected goals against. Coaches must ensure that if a pivot presses high, there is either a second pivot to cover or the defensive line drops sufficiently to close the gap, preventing the 'bypass' scenario that exposes the back line.",
+  "conditions": [
+    "single_pivot_system",
+    "high_defensive_line",
+    "opponent_counter_attack_threat"
+  ],
+  "objective": [
+    "maintain_defensive_structure",
+    "prevent_bypass_of_pivot",
+    "reduce_high_quality_chances"
+  ],
+  "possible_actions": [
+    "jockey_back_instead_of_press",
+    "drop_defensive_line",
+    "commit_tactical_foul",
+    "recover_position_quickly"
+  ],
+  "contraindications": [
+    "isolated_pivot_pressing_high",
+    "lack_of_cover_behind_pivot"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "space_behind_defensive_line",
+    "phase_of_play_defensive_transition"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "cover_passing_lane",
+    "delay_opponent_progression",
+    "recover_position"
+  ],
+  "related_concepts": [
+    "double_pivot",
+    "defensive_line_height",
+    "counter_press"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6184s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why do we keep getting caught out of position when the opponent plays through our single midfielder?",
+    "Our lone holding player is getting bypassed easily, leaving our back four exposed, what is the fix?",
+    "As the defensive midfielder, how far behind the ball should I stay to ensure I can cover a through pass?",
+    "Every time we press high, the other team skips our midfield and hits our defenders directly, how do we stop this recurring issue?"
+  ]
+}

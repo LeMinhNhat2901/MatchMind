@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_deep_drop_for_progression",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Deep Drop for Progression",
+  "definition": "A creative midfielder drops deep to assist ball progression when the primary deep-lying playmaker is overloaded or inexperienced.",
+  "content": "This tactical adjustment occurs when a team's primary deep-lying playmaker (e.g., a defensive midfielder) lacks the experience or capacity to handle high-volume ball progression alone. In such scenarios, a creative midfielder, typically operating in the half-space, drops deep to act as a secondary progression hub. This creates a temporary double pivot or a 2-3-5 structure in the build-up phase. The primary benefit is stabilizing the rest defense by providing a numerical advantage in the midfield, allowing the team to retain possession safely. However, this often isolates the remaining advanced playmaker, making them easier to mark as they lack a twin threat to split defenders. To mitigate this, the team may rely on the dropped player to create from anywhere, increasing their workload and key passes. This strategy is a compromise used to maintain possession and defensive stability during transitional periods or when key personnel are unavailable, though it may reduce immediate attacking threat in the final third due to the lack of width or high positioning from the creative unit.",
+  "conditions": [
+    "inexperienced_deep_lieing_midfielder",
+    "reduced_ball_progression_capacity",
+    "need_for_rest_defense_stability"
+  ],
+  "objective": [
+    "secure_ball_progression",
+    "stabilize_midfield_shape",
+    "maintain_possession"
+  ],
+  "possible_actions": [
+    "drop_deep_to_receive",
+    "create_double_pivot",
+    "progress_ball_from_deep_position"
+  ],
+  "contraindications": [
+    "isolation_of_advanced_playmaker",
+    "reduced_attacking_width",
+    "increased_workload_for_creative_player"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "space_ahead_small",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_into_defensive_third",
+    "receive_between_lines",
+    "progressive_pass_forward"
+  ],
+  "related_concepts": [
+    "double_pivot",
+    "rest_defence",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6347s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What should I do when my anchor man is constantly surrounded by three opponents?",
+    "My young midfielder gets bullied out of the ball every time he tries to play out from the back, how do I fix this?",
+    "As the number six, when is the right moment to drop between the center-backs to help my teammate escape pressure?",
+    "We keep losing possession in our own third because our playmaker is isolated, what tactical adjustment can solve this?",
+    "How can I support my deep-lying midfielder when he is overloaded by the opposition press?"
+  ]
+}

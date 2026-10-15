@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_extra_passes_for_structural_organization",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "possession",
+  "title": "Extra Passes for Structural Organization",
+  "definition": "A tactical principle where a team uses low-risk short passes to maintain possession while allowing teammates to reposition into their ideal defensive or attacking structure.",
+  "content": "This concept, heavily utilized by Pep Guardiola's teams, prioritizes structural integrity over immediate progression. By executing additional short passes in low-risk areas, the team buys time for all players to settle into their designated positions, ensuring that if possession is lost, the team is already organized for a counter-press. This approach is often linked to the inverted fullback role, which facilitates safe buildup from deep. Crucially, this strategy forces the opponent to retreat into a compact defensive shape, reducing their ability to counterattack effectively. It creates a predictable 'attack versus defense' scenario, allowing the coaching staff to pre-plan specific patterns and exploit known spatial weaknesses. The primary goal is not just to keep the ball, but to control the game's rhythm and ensure that the team's shape is always optimal for both possession and immediate recovery.",
+  "conditions": [
+    "possession_in_defensive_third",
+    "opponent_retreating",
+    "low_risk_passing_options_available"
+  ],
+  "objective": [
+    "maintain_team_structure",
+    "force_opponent_compactness",
+    "prepare_for_counter_press"
+  ],
+  "possible_actions": [
+    "play_short_lateral_pass",
+    "cycle_ball_between_defenders",
+    "use_inverted_fullback_as_hub"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "time_critical_situation",
+    "space_ahead_large_and_open"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "team_compactness_high",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "receive_and_turn",
+    "maintain_positional_discipline",
+    "scan_before_receiving"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "positional_play",
+    "inverted_fullback"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=r97WqheJVd4&t=168s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why does our team keep the ball moving sideways without trying to advance?",
+    "We just won the ball back high up the pitch, but my full-backs are still out of position; what should I do with the ball right now?",
+    "As the holding midfielder, should I try to play a long ball immediately or keep the ball short to let my teammates get back into shape?",
+    "We keep getting caught out of position in midfield after regaining possession, so how can we slow down the game to let everyone settle?"
+  ]
+}

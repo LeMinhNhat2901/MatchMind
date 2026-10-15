@@ -27,12 +27,15 @@ Defines the full agent StateGraph with real conditional branching:
                                │
                     ├── errors → increment_retry → generate_reasoning (loop, max 2)
                     │
-                    └── valid → END
+                    └── valid → narrate_advice  (LLM call, Tier 2 — paraphrases
+                                     ↓            the validated advice into one
+                                    END           natural-language paragraph;
+                                                   never introduces new facts)
 """
 from __future__ import annotations
 
 import logging
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 from langgraph.graph import StateGraph, END
 
@@ -54,7 +57,13 @@ from matchmind.agent.nodes.validator_node import (
     check_validation,
     increment_generation_retry,
 )
+from matchmind.agent.nodes.narrator_node import narrator_node
+from matchmind.agent.nodes.examples_node import retrieve_examples_node
+from matchmind.situation_engine.orientation import orient_for_team, unorient_advice
 from matchmind.schema.match_state import MatchState, TacticalAdvice
+
+if TYPE_CHECKING:
+    from matchmind.situation_engine.projection import Projection
 
 logger = logging.getLogger(__name__)
 
@@ -107,6 +116,8 @@ def build_tactical_graph() -> Any:
     builder.add_node("generate_reasoning", reasoner_node)
     builder.add_node("validate_output", validator_node)
     builder.add_node("increment_retry", increment_generation_retry)
+    builder.add_node("narrate_advice", narrator_node)
+    builder.add_node("retrieve_examples", retrieve_examples_node)
 
     # ── Linear edges ───────────────────────────────────────
     builder.set_entry_point("encode_situation")
@@ -125,7 +136,8 @@ def build_tactical_graph() -> Any:
     builder.add_edge("expand_query", "retrieve_tactics")  # loop back
 
     # ── Linear edges after retrieval ───────────────────────
-    builder.add_edge("counterfactual_analysis", "assemble_evidence")
+    builder.add_edge("counterfactual_analysis", "retrieve_examples")
+    builder.add_edge("retrieve_examples", "assemble_evidence")
     builder.add_edge("assemble_evidence", "generate_reasoning")
     builder.add_edge("generate_reasoning", "validate_output")
 
@@ -135,10 +147,11 @@ def build_tactical_graph() -> Any:
         check_validation,
         {
             "regenerate": "increment_retry",
-            "end": END,
+            "end": "narrate_advice",
         },
     )
     builder.add_edge("increment_retry", "generate_reasoning")  # loop back
+    builder.add_edge("narrate_advice", END)
 
     return builder.compile()
 
@@ -166,15 +179,18 @@ class TacticalAgent:
         # native DLL init and the next model load hard-crashes the process (no
         # traceback). The renderers now import matplotlib lazily, and this
         # pre-warm forces the retrieval model to load first, in the main thread.
-        logger.info("Pre-warming retrieval store (loads sentence-transformers first)...")
+        # Warms the object retrieve_node actually uses: the shared vector store,
+        # the BM25 index and (on the first retrieve) the cross-encoder reranker —
+        # all loaded here in the main thread, not inside the first LangGraph call.
+        logger.info("Pre-warming hybrid retrieval (loads sentence-transformers first)...")
         try:
-            from matchmind.agent.nodes.retrieve_node import _get_vector_store
+            from matchmind.retrieval import RetrievalQuery, get_hybrid_retriever
 
-            store = _get_vector_store()
-            _ = store.retrieve_tactics(query_text="warm up tactical retrieval", k=1)
-            logger.info(f"Retrieval store ready: {store.count()} concepts")
+            retriever = get_hybrid_retriever()
+            _ = retriever.retrieve(RetrievalQuery(question="warm up tactical retrieval"), k=1)
+            logger.info(f"Hybrid retrieval ready: {len(retriever.concepts)} concepts")
         except Exception as exc:
-            logger.warning(f"Store pre-warm failed (will retry at runtime): {exc}")
+            logger.warning(f"Retrieval pre-warm failed (will retry at runtime): {exc}")
 
         # Safe now — building the graph may import matplotlib via render_pitch_node.
         self._graph = build_tactical_graph()
@@ -187,6 +203,7 @@ class TacticalAgent:
         focus_player_id: int,
         focus_team: str | None = None,
         question: str | None = None,
+        language: str | None = None,
     ) -> TacticalAdvice:
         """
         Run the full agent pipeline on a match snapshot.
@@ -200,6 +217,9 @@ class TacticalAgent:
                 that ambiguity for this run; omit it only when you're sure
                 `focus_player_id` can't collide (e.g. StatsBomb's global ids).
             question: Natural language question. Defaults to generic question.
+            language: Language for the user-facing answer (advice.narrative /
+                advice.rationale), e.g. "Vietnamese". Reasoning stays English;
+                only narrator_node writes in this language. Defaults to English.
 
         Returns:
             TacticalAdvice — structured, validated output.
@@ -218,10 +238,20 @@ class TacticalAgent:
                 f"to create tactical advantage for their team?"
             )
 
+        # The whole graph (features, candidate actions, pitch-control simulation)
+        # reasons as if the focus team attacks +x; turn the pitch round when it
+        # doesn't, and turn the advice's target coordinates back afterwards.
+        focus = (match_state.get_player(focus_player_id, focus_team) if focus_team
+                 else match_state.get_player(focus_player_id))
+        flipped = False
+        if focus is not None:
+            match_state, flipped = orient_for_team(match_state, focus.team)
+
         initial_state: AgentState = {
             "match_state": match_state,
             "focus_player_id": focus_player_id,
             "question": question,
+            "response_language": language or "English",
             "situation_features": None,
             "pitch_image_path": None,
             "candidate_actions": None,
@@ -233,6 +263,8 @@ class TacticalAgent:
             "retrieval_confidence": None,
             "retrieval_retry_count": 0,
             "expanded_query": None,
+            "similar_examples": None,
+            "similar_examples_summary": None,
             "evidence_set": None,
             "raw_llm_output": None,
             "tactical_advice": None,
@@ -256,7 +288,7 @@ class TacticalAgent:
                 f"TacticalAgent failed to produce valid advice. Errors: {errors}"
             )
 
-        advice = final_state["tactical_advice"]
+        advice = unorient_advice(final_state["tactical_advice"], flipped)
         logger.info(
             f"Agent completed: action='{advice.recommended_action[:60]}', "
             f"confidence={advice.confidence:.2f}, tokens={final_state.get('total_tokens_used', 0)}"
@@ -291,16 +323,18 @@ class TacticalAgent:
         att_player = match_state.get_player(focus.attacking_player_id, team=focus.attacking_team)
         att_role = f" ({att_player.role})" if att_player and att_player.role else ""
         attacking_question = (
-            f"Player {focus.attacking_player_id}{att_role} ({focus.attacking_team}) has the ball. "
+            f"Player {focus.attacking_player_id}{att_role} ({match_state.team_label(focus.attacking_team)}) has the ball. "
             f"What should they do right now to create a tactical advantage for their team?"
         )
 
         def_player = match_state.get_player(focus.defending_player_id, team=focus.defending_team)
         def_role = f" ({def_player.role})" if def_player and def_player.role else ""
         defending_question = (
-            f"Player {focus.defending_player_id}{def_role} ({focus.defending_team}) does not have "
-            f"the ball — the opponent does. What should they do right now to stop the attack and "
-            f"win the ball back?"
+            # Neutral on purpose: having the ball doesn't make the other side "the
+            # attack" (they may be recycling it under pressure in their own half).
+            f"Player {focus.defending_player_id}{def_role} ({match_state.team_label(focus.defending_team)}) does not have "
+            f"the ball — the opponent does. What should they do right now against the opponent's "
+            f"possession?"
         )
 
         logger.info(
@@ -315,3 +349,58 @@ class TacticalAgent:
             match_state, focus.defending_player_id, focus_team=focus.defending_team, question=defending_question
         )
         return attacking, defending
+
+    def analyze_followup(
+        self,
+        match_state: MatchState,
+        advice: TacticalAdvice,
+        focus_team: str,
+        action_id: str | None = None,
+        language: str | None = None,
+    ) -> "tuple[TacticalAdvice, list[dict], Projection] | None":
+        """
+        Optional "what happens next?" step — projects the match state forward
+        as if `action_id` (defaults to `advice.recommended_action_id`) had just
+        happened, then runs a full second `analyze()` call on the resulting
+        situation. E.g. "player 8 receives the pass just recommended — what
+        should THEY do now?", or for an off-ball run: "this run pulls opponent
+        #4 out of position — what does that open up?".
+
+        This is a second full LLM pass on top of the original recommendation —
+        never called automatically, only when the user explicitly asks for it
+        (see dashboard/app.py's "what happens next?" button).
+
+        Returns (advice, trace, projection): the projection carries the projected
+        scene + estimated moves so the dashboard can draw it and chain the next
+        follow-up from it.
+
+        Returns None when there's nothing meaningful to project (the action
+        doesn't resolve to a shortlist entry with target coordinates, or it's
+        a sequence-ending action like a shot) — never raises, since this is a
+        nice-to-have on top of an already-complete answer.
+        """
+        from matchmind.situation_engine.projection import project_after_action
+
+        if advice.focus_player_id is None:
+            return None
+
+        action = advice.resolve_action(action_id or advice.recommended_action_id)
+        if action is None:
+            return None
+
+        projection = project_after_action(match_state, advice.focus_player_id, focus_team, action)
+        if projection is None:
+            return None
+
+        logger.info(
+            f"analyze_followup: action={action.action!r} -> focus={projection.focus_player_id} "
+            f"({focus_team})"
+        )
+        advice_next, trace = self.analyze(
+            projection.state,
+            projection.focus_player_id,
+            focus_team=focus_team,
+            question=projection.question,
+            language=language,
+        )
+        return advice_next, trace, projection

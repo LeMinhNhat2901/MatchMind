@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_mid_block_transition_overload",
+  "category": "defending",
+  "subcategory": "mid_block",
+  "phase": "defensive_transition",
+  "title": "Mid-Block Transition Overload",
+  "definition": "A defensive strategy using a mid-block to maintain compactness while creating a numerical advantage for immediate counter-attacks upon regaining possession.",
+  "content": "The mid-block defensive structure offers a tactical compromise between the high press and the low block. By positioning the defensive line lower than in a high press but higher than in a low block, teams reduce the vertical space available to opponents, making it harder for them to exploit gaps behind the defense. Crucially, the mid-block allows for more comfortable sliding and covering movements due to shorter distances between units, effectively denying attacking overloads. A key advantage of this setup is its transition potential. Unlike a high press, which carries high risk if bypassed, the mid-block positions the team centrally. When possession is regained, the team can immediately launch a counter-attack. Specifically, a team set up in a 4-2-3-1 or similar shape can often create a 4v3 numerical advantage against central defenders, as the two holding midfielders and two wingers or forwards are already in advanced positions. This allows for goal-scoring opportunities in transition while maintaining a safer defensive baseline and limiting the space opponents have to exploit during the defensive phase.",
+  "conditions": [
+    "defensive_line_height_moderate",
+    "team_compactness_high",
+    "opponent_in_buildup"
+  ],
+  "objective": [
+    "deny_attacking_overloads",
+    "create_transition_numerical_advantage",
+    "limit_opponent_space"
+  ],
+  "possible_actions": [
+    "slide_and_cover",
+    "regain_possession_central",
+    "launch_immediate_counter"
+  ],
+  "contraindications": [
+    "opponent_long_ball_specialist",
+    "lack_of_winger_speed"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_moderate",
+    "team_compactness_high",
+    "space_ahead_moderate"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_midfield_block"
+  ],
+  "player_behaviours": [
+    "slide_cover_passing_lane",
+    "hold_position_until_trigger"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "defensive_compactness",
+    "numerical_superiority"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=oyMQbGeNqog&t=150s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to get numbers on the ball quickly when we win it back in the middle of the pitch?",
+    "We win the ball in the midfield but lose it again because we are too slow to get into position, how can we set up to counter-attack immediately?",
+    "If our team is defending in a mid-block, how should the midfielders move to ensure we have more players than the opponent the moment we regain possession?",
+    "We struggle to convert our defensive recoveries into attacks because we are always one or two players short, what tactical adjustment can fix this recurring issue?"
+  ]
+}

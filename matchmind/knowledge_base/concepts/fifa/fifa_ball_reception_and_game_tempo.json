@@ -1,0 +1,57 @@
+{
+  "concept_id": "fifa_ball_reception_and_game_tempo",
+  "category": "individual",
+  "subcategory": "receiving",
+  "phase": "possession",
+  "title": "Ball Reception and Game Tempo",
+  "definition": "The principle that a team's overall playing speed is determined by the individual quality of ball reception and immediate distribution.",
+  "content": "Game speed is not defined by running velocity but by the efficiency of the ball's movement, which relies on individual technical proficiency. When a player receives a pass, the fraction of a second spent processing the ball dictates the team's momentum. Poor positioning, lack of scanning, or hesitation creates bottlenecks that force the team to slow down, whereas intelligent body orientation and decisive action accelerate play. Technical control is non-negotiable; if a player cannot manage a rapidly played ball, the team cannot sustain quick passing patterns regardless of tactical intent. This concept breaks down into anticipatory thinking, spatial awareness, and technical coordination. Mastery of one-touch football, where players control and redirect the ball in a single motion, is the highest expression of this skill. However, deliberate extra touches can sometimes be beneficial to create better timing for teammates. Ultimately, high-tempo, unpredictable football emerges from players simultaneously processing positioning, anticipating opposition movement, and executing precise actions while the ball is in transit. This multifaceted competency transforms technically proficient teams into ones that maintain sustained scoring opportunities through fluid, rapid ball circulation.",
+  "conditions": [
+    "possession_phase",
+    "high_tempo_intent"
+  ],
+  "objective": [
+    "maintain_rapid_ball_circulation",
+    "minimize_touches",
+    "accelerate_attack"
+  ],
+  "possible_actions": [
+    "one_touch_pass",
+    "pre_scan_before_receiving",
+    "orient_body_to_next_pass",
+    "soften_first_touch"
+  ],
+  "contraindications": [
+    "hesitation_on_reception",
+    "poor_body_orientation",
+    "lack_of_spatial_awareness"
+  ],
+  "trigger_conditions": [
+    "progressive_pass_available",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "supporting_players_in_position"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "control_and_redirect_in_one_motion"
+  ],
+  "related_concepts": [
+    "one_touch_football",
+    "scanning",
+    "body_orientation"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Speed of the Game 1: Introduction",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/speed-of-the-game/speed-of-the-game-1--introduction.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "Why does our team seem to slow down every time we win the ball back?",
+    "Our center-backs are good at clearing but the next pass is always slow, how do we speed up the transition from defense to attack?",
+    "I feel like I lose the ball immediately after receiving it because I'm not ready for the next move, what should I focus on when the ball comes to me?",
+    "We keep turning the ball over in the midfield because our passing rhythm is too predictable, how can we improve the speed of our circulation?"
+  ]
+}

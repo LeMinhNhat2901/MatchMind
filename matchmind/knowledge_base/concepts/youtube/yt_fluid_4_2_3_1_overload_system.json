@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_fluid_4_2_3_1_overload_system",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "possession",
+  "title": "Fluid 4-2-3-1 Overload System",
+  "definition": "A fluid 4-2-3-1 structure that dynamically adjusts player positions to create numerical overloads and bypass high presses.",
+  "content": "This tactical approach utilizes a base 4-2-3-1 formation but relies on high fluidity and positional interchange to adapt to the opponent's defensive shape. Unlike rigid systems, players constantly shift roles based on the opposition's front line configuration. Against a narrow front two, the goalkeeper steps up between the center-backs to form a 3v2 overload, facilitating safe progression to the full-backs. When facing a front three, the double pivot aligns vertically, with one midfielder dropping deep to support the back line. Against high-intensity presses with four or five forwards, the system expands into a 6v5 superiority by dropping an additional central midfielder and tucking a full-back inside. This numerical advantage forces opponents to commit markers to one side, opening wide spaces for the remaining full-backs. If direct passes are blocked, the team employs pressing traps to force errors. This method prioritizes controlled possession and calculated movement over raw speed, creating space through clever positioning rather than individual dribbling. It is ideal for teams seeking to dismantle high presses through structural superiority and intelligent rotation.",
+  "conditions": [
+    "opponent_high_press",
+    "possession_phase",
+    "fluid_player_roles"
+  ],
+  "objective": [
+    "bypass_initial_press",
+    "create_numerical_overload",
+    "open_wide_spaces"
+  ],
+  "possible_actions": [
+    "goalkeeper_steps_up",
+    "pivot_drops_deep",
+    "fullback_tucks_inside",
+    "positional_interchange"
+  ],
+  "contraindications": [
+    "low_press_intensity_opponent",
+    "static_formation_preference"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage_positive",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "rotate_positions"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "pressing_trap"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we beat a team that presses us high and tight in our own half?",
+    "The opponent is marking our wingers one-on-one, how do we create an extra man in wide areas?",
+    "When the ball is on the left flank, what should the right-sided attacker do to help out?",
+    "We struggle to get the ball into the final third against compact defenses, what formation tweak helps?"
+  ]
+}

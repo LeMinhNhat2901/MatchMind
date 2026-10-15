@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_man_marking_build_up_disruption",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Man-Marking Build-Up Disruption",
+  "definition": "A defensive strategy where every player is assigned a specific opponent to mark, aiming to disrupt the opponent's build-up by denying time and space for key creators.",
+  "content": "This tactical approach involves assigning specific man-marking duties to every player in the defensive unit to prevent the opposition from building up comfortably. It is particularly effective against teams with rigid possession structures or specific lopsided shapes, such as a 3-5-2, where certain players have fixed roles. By having dedicated markers for each opponent, the defending team can deny time on the ball to key creators and wingers, forcing them into rushed decisions or low-quality passes. This method requires high discipline and communication, as players must track their assigned man across the pitch, often ignoring zonal responsibilities. It is a bold choice that prioritizes individual accountability over collective zonal coverage, aiming to isolate the opponent's best players and break down their passing networks before they reach dangerous areas. This tactic is suitable when the opponent has identifiable weak links or predictable movement patterns that can be exploited through direct pressure.",
+  "conditions": [
+    "opponent_rigid_shape",
+    "high_discipline_required",
+    "opponent_slow_build_up"
+  ],
+  "objective": [
+    "disrupt_build_up",
+    "isolate_key_players",
+    "force_rushed_passes"
+  ],
+  "possible_actions": [
+    "assign_specific_marks",
+    "track_opponent_movement",
+    "pressure_ball_carrier"
+  ],
+  "contraindications": [
+    "opponent_high_mobility",
+    "lack_of_communication",
+    "fatigue_management"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "players_near_ball",
+    "phase_of_play_defensive"
+  ],
+  "spatial_requirements": [
+    "wide_coverage",
+    "individual_tracking"
+  ],
+  "player_behaviours": [
+    "man_mark_assignment",
+    "shadowing_opponent",
+    "intercept_passing_lane"
+  ],
+  "related_concepts": [
+    "zonal_defending",
+    "pressing_triggers",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=sH5beYkoVXA&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I stop their playmaker from getting the ball in the first minute?",
+    "Their number 10 always finds space between the lines, what should I do about it?",
+    "Who should be marking their creative midfielder when they start the attack?",
+    "We keep losing possession in our own box, how can we disrupt their early passing?"
+  ]
+}

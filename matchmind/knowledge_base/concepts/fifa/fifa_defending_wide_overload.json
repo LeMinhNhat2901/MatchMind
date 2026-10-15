@@ -1,0 +1,60 @@
+{
+  "concept_id": "fifa_defending_wide_overload",
+  "category": "defending",
+  "subcategory": "wide_defending",
+  "phase": "out_of_possession",
+  "title": "Defending Wide Areas and Wide Overloads",
+  "definition": "How the full-back, the nearest midfielder and the rest of the back line work as a unit when the opponent attacks down a flank, so a winger on the ball cannot cut inside and a second wide attacker is not left free.",
+  "content": "When the opponent's winger receives out wide, the full-back's first job is to lock the winger down: get tight enough that there is no space to cut inside, and show them down the line. The rest of the defence does not watch; it shuffles across as a unit so the distances between defenders stay short. If the full-back is beaten, the nearest defender gets across and closes the space, and the line moves together whenever one player steps out to engage. Midfield restructures with the ball: the nearest midfielder goes across towards the ball side and the far-side midfielder tucks in centrally, which protects the inside passing lane and the half-space behind the engaged full-back. The far-side full-back can leave the opposite winger and tuck in, as long as they can still see that winger's movement. When a wide player then runs into the box, defenders track and block the runner instead of watching the ball. Throughout, the guiding principle is to leave the least dangerous player free and deal with the imminent threat, with constant communication. When a second attacker arrives wide (for example an overlapping full-back), these principles decide who goes where: someone must stay with the ball carrier, the space inside must stay protected, and the unit shifts across. Which player tracks the overlapping runner (the winger dropping back, or a midfielder or centre-back covering) is not fixed by the source session; it depends on the team's defensive system and on who is closest.",
+  "conditions": [
+    "opponent_winger_has_ball",
+    "opponent_attacks_down_flank",
+    "second_wide_attacker_arriving"
+  ],
+  "objective": [
+    "stop_winger_cutting_inside",
+    "protect_inside_passing_lane",
+    "avoid_two_vs_one_on_the_full_back",
+    "keep_unit_compact"
+  ],
+  "possible_actions": [
+    "full_back_contains_ball_carrier",
+    "nearest_midfielder_shifts_ball_side",
+    "far_side_midfielder_tucks_in",
+    "nearest_defender_covers_if_full_back_beaten",
+    "track_runner_into_box"
+  ],
+  "contraindications": [
+    "unmarked_overlapping_runner",
+    "space_between_lines_left_open",
+    "defenders_ball_watching"
+  ],
+  "trigger_conditions": [],
+  "spatial_requirements": [
+    "short_distances_between_defenders",
+    "far_side_full_back_can_see_far_winger"
+  ],
+  "player_behaviours": [
+    "full_back_locks_down_winger",
+    "winger_or_midfielder_tracks_second_runner",
+    "central_midfielder_covers_half_space",
+    "communicate_handovers"
+  ],
+  "related_concepts": [
+    "overlapping_run",
+    "compactness_narrow",
+    "yt_locking_opponent_to_one_flank"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Defending principles (Michael Johnson elite session)",
+    "url": "https://www.fifatrainingcentre.com/en/practice/elite-sessions/out-of-possession/johnson-defending-principles.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-10-14"
+  },
+  "example_questions": [
+    "How do we stop their winger from getting too many options on the flank?",
+    "Their left-back is overlapping constantly and our right-midfielder is getting stretched, what is the best way to handle that?",
+    "If their winger cuts inside, should our full-back follow him or stay wide to cover the space?",
+    "We keep getting beaten on the wings because we are one-on-one, how can we create a numerical advantage in defense?"
+  ]
+}

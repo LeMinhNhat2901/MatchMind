@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_zone_14_overload_strategy",
+  "category": "attacking",
+  "subcategory": "final_third",
+  "phase": "possession",
+  "title": "Zone 14 Overload Strategy",
+  "definition": "A tactical approach that overloads the central area behind the penalty box (Zone 14) to create direct shooting angles or through-ball opportunities by exploiting defensive shifts.",
+  "content": "This concept focuses on exploiting Zone 14, the central area immediately behind the penalty box, which offers superior shooting angles and passing options compared to wide areas. The strategy involves limiting width to one player per side (e.g., inverting full-backs while wingers stay wide) to concentrate numerical superiority in the center. By having wingers carry the ball inside, the team draws the opposition’s defensive line inward, creating space in Zone 14 for deeper players to receive cutbacks and shoot. If the opponent counters this overload by pushing their backline forward to protect the zone, the tactic shifts: the ball carrier plays a quick through pass into the gap between the advanced defenders and the goalkeeper. This allows the overloaded central players to receive the ball in a one-on-one situation with the keeper. The method relies on misdirecting the defense’s attention from the wide areas to the center, using the threat of a cross to manipulate defensive positioning before executing a central penetration or shot.",
+  "conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "opponent_defensiveline_high"
+  ],
+  "objective": [
+    "create_shooting_angle",
+    "penetrate_defensive_line",
+    "isolate_keeper"
+  ],
+  "possible_actions": [
+    "invert_full_back",
+    "carry_ball_inside",
+    "cutback_pass",
+    "through_pass",
+    "central_overload"
+  ],
+  "contraindications": [
+    "wide_defensive_structure",
+    "low_block_compactness"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "opponent_defensiveline_high",
+    "half_space_occupied"
+  ],
+  "spatial_requirements": [
+    "central_numerical_superiority",
+    "limited_wide_width"
+  ],
+  "player_behaviours": [
+    "dribble_inside",
+    "receive_cutback",
+    "play_through_ball"
+  ],
+  "related_concepts": [
+    "zone_14",
+    "central_overload",
+    "defensive_manipulation"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=eIQ6Qx8nTQ4&t=178s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we create more direct chances from the top of the box?",
+    "Our midfielders are too spread out, how do we get three players into the space just behind their defensive line?",
+    "What should our number 10 do when the opposing center-backs shift to one side?",
+    "We struggle to find passing lanes in the central area between their midfield and defense, how do we break that down?"
+  ]
+}

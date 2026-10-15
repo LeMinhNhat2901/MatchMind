@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_deep_build_up_vulnerabilities",
+  "category": "defending",
+  "subcategory": "build_up",
+  "phase": "out_of_possession",
+  "title": "Deep Build-Up Vulnerabilities",
+  "definition": "Exploiting the lack of press-resistant outlets in a team's deep defensive line to force turnovers during the build-up phase.",
+  "content": "This tactical concept focuses on identifying and exploiting weaknesses in an opponent's deep build-up structure, particularly when they rely on players who are not elite press-resistant pivots. When a team uses a back three or back four with a central midfielder dropping deep, but lacks a player capable of consistently receiving under high pressure, the opposition can apply intense pressure to force errors. The key is to target the 'deepest unit'—often a center-back or a dropping midfielder—who may have decent passing stats but lacks the composure to break lines under duress. By closing down these players quickly, the pressing team can disrupt the build-up before it reaches the midfield. Additionally, if the wide center-backs do not drive forward to bait defenders out of position, the team remains static, making it easier to sit off and deny penetration. This approach is effective against teams that prioritize possession statistics over progressive passing, as they often resort to safe sideways circulation when their primary outlets are pressed. Coaches should instruct their front line to trigger presses on these specific deep receivers, knowing that the opponent's lack of line-breaking options limits their ability to escape pressure effectively.",
+  "conditions": [
+    "opponent_lacks_press_resistant_pivot",
+    "opponent_deep_build_up",
+    "wide_center_backs_static"
+  ],
+  "objective": [
+    "force_deep_turnover",
+    "disrupt_build_up",
+    "limit_progressive_passing"
+  ],
+  "possible_actions": [
+    "close_down_deep_receiver",
+    "press_central_midfielder",
+    "deny_wide_drive"
+  ],
+  "contraindications": [
+    "opponent_has_elite_line_breaker",
+    "high_risk_of_counter_attack"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "defensive_line_height_low",
+    "opponent_high_press",
+    "nearest_opponent_distance_low"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "force_backward_pass"
+  ],
+  "related_concepts": [
+    "pressing_traps",
+    "counter_press",
+    "build_up"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=4546s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop a team from playing out from the back?",
+    "The opposition center-backs always have an easy pass to their fullbacks, how do we force a mistake?",
+    "What should our striker do to isolate the goalkeeper and force a turnover?",
+    "Why do we keep letting them build up comfortably from their own goal, and what can we do about it?"
+  ]
+}

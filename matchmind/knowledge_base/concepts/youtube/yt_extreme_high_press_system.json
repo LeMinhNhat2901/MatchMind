@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_extreme_high_press_system",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Extreme High-Press System",
+  "definition": "A maximalist defensive approach characterized by maximum intensity pressing, direct vertical progression, and fullback inversion to create midfield overloads.",
+  "content": "This tactical concept describes a system that prioritizes extreme intensity and verticality over traditional lateral stability. In possession, the team employs direct passing to move the ball forward rapidly, focusing progression on both flanks to exploit width. Structurally, upper fullbacks often drift inside to form an artificial diamond midfield, creating local numerical advantages. Out of possession, the system demands maximum pressing intensity from nearly all players, with specific tracking duties assigned to maintain compactness. Only one defender is typically exempt from immediate pressing to provide cover and create a 'plus one' safety net. This approach is significantly more demanding than standard Gegenpressing, requiring immense physical stamina and complex role understanding. While effective for disrupting opponents, it carries high risks of player exhaustion and injury. It is less suitable for teams lacking depth or physical conditioning, as the complexity makes it difficult for new players to integrate quickly compared to more traditional zonal defending or sideways passing systems.",
+  "conditions": [
+    "high_player_stamina",
+    "complex_role_understanding",
+    "direct_passing_preference"
+  ],
+  "objective": [
+    "maximize_pressing_intensity",
+    "rapid_vertical_progression",
+    "create_midfield_overload"
+  ],
+  "possible_actions": [
+    "fullback_inversion",
+    "direct_forward_pass",
+    "maximalist_tracking",
+    "cover_passing_lane"
+  ],
+  "contraindications": [
+    "low_squad_depth",
+    "injury_risk_high",
+    "player_fatigue"
+  ],
+  "trigger_conditions": [
+    "press_intensity_high",
+    "is_in_defensive_third",
+    "opponent_high_press",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drift_inside",
+    "track_runner",
+    "press_maximally"
+  ],
+  "related_concepts": [
+    "gegenpressing",
+    "positional_play",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=690s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop the opponent from building up play from the back?",
+    "Our fullbacks are struggling to get forward, should they move inside to help press?",
+    "What is the best way to force turnovers in the opponent's own half?",
+    "We keep getting caught out of position when we press high, how do we maintain that intensity without gaps?"
+  ]
+}

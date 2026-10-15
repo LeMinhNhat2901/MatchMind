@@ -1,0 +1,65 @@
+{
+  "concept_id": "fifa_kick_off_pressure_enticement",
+  "category": "attacking",
+  "subcategory": "kick_off_routine",
+  "phase": "possession",
+  "title": "Kick-off Pressure Enticement",
+  "definition": "A coordinated kick-off sequence designed to lure defenders forward through feints and short passing, creating space for a penetrative run behind the defensive line.",
+  "content": "This tactical routine exploits the transitional disarray often present immediately after a goal or at the start of a half. The strategy relies on psychological manipulation and precise synchronization among four to five players. The kick-off taker initiates with a feint to trigger immediate pressure, followed by a one-touch pass to a supporting midfielder. This midfielder returns the ball to the taker, who receives with their back to goal, a positioning choice that naturally attracts central midfielders forward. As the defensive line advances to support, a fourth attacker times a forward run into the vacated space behind the line, while a fifth player executes decoy movement to further disrupt defensive shape. The critical element is the delivery of a precisely weighted through-ball from the midfielder facing forward, matching the runner's movement. Poor timing risks interception by the goalkeeper or recovery by defenders. To counter modern defensive discipline, teams must vary player roles and switch attack directions to maintain unpredictability. The core principles remain enticing pressure through specific positioning, distracting defenders with off-ball movement, and surprising them through timed synchronization.",
+  "conditions": [
+    "kick_off_phase",
+    "opponent_transitional_disarray",
+    "coordinated_team_routine"
+  ],
+  "objective": [
+    "draw_defenders_forward",
+    "create_space_behind_defense",
+    "deliver_through_ball"
+  ],
+  "possible_actions": [
+    "feint_to_trigger_pressure",
+    "one_touch_pass_exchange",
+    "receive_back_to_goal",
+    "penetrative_run_behind_line",
+    "decoy_movement",
+    "weighted_through_ball"
+  ],
+  "contraindications": [
+    "defensive_discipline_high",
+    "poor_timing_on_through_ball",
+    "predictable_routine_pattern"
+  ],
+  "trigger_conditions": [
+    "kick_off",
+    "opponent_high_press",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "central_area_control",
+    "space_behind_defensive_line"
+  ],
+  "player_behaviours": [
+    "feint_motion",
+    "controlled_touch",
+    "back_to_goal_reception",
+    "timed_forward_run",
+    "decoy_movement"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "counter_attack",
+    "positional_play"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Kick-offs: entice pressure to attack space in behind",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/kick-offs-entice-pressure-to-attack-space-in-behind.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How can we get the other team to come up and press us on the kick-off?",
+    "The opponent sits deep on the kickoff, what trick can we use to pull them out of their shape?",
+    "What should the player receiving the kick-off do to create space for a teammate to run behind the defense?",
+    "We struggle to make progress from the very first touch of the match, how do we manipulate the opponent's positioning?"
+  ]
+}

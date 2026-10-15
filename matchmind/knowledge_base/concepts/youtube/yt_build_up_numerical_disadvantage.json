@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_build_up_numerical_disadvantage",
+  "category": "fundamentals",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Build-up Numerical Disadvantage",
+  "definition": "The tactical failure to create a numerical advantage in the defensive third during build-up, often caused by a goalkeeper who cannot distribute under pressure or a lack of wide support.",
+  "content": "This concept describes a critical vulnerability in the initial phase of possession where a team fails to generate a local numerical superiority against the opponent's press. A primary cause is a goalkeeper who lacks the technical ability to act as a third center-back, forcing the team to rely on center-backs who may be under pressure. When the goalkeeper cannot participate effectively, the team often defaults to a 2v2 or 3v3 situation in the defensive third, which is easily neutralized by high-intensity pressing. Furthermore, if fullbacks are not committed forward or are out of position, the width is lost, compressing the space for the center-backs. This forces midfielders to drop deep to receive, which reduces the team's presence in the final third and limits creative options. The result is a stagnant build-up where the team struggles to progress the ball, leading to long balls or turnovers in dangerous areas. To fix this, teams must ensure the goalkeeper is involved in the build-up or that fullbacks provide immediate width to create passing lanes and numerical advantages, allowing the team to bypass the initial press effectively.",
+  "conditions": [
+    "goalkeeper_low_technical_ability",
+    "opponent_high_press",
+    "lack_of_wide_support"
+  ],
+  "objective": [
+    "create_numerical_advantage_defensive_third",
+    "bypass_initial_press"
+  ],
+  "possible_actions": [
+    "goalkeeper_third_center_back",
+    "fullback_high_position",
+    "midfielder_drop_deep"
+  ],
+  "contraindications": [
+    "risk_of_turnover_defensive_third",
+    "reduced_attacking_presence"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "width_from_fullbacks"
+  ],
+  "player_behaviours": [
+    "goalkeeper_distribution",
+    "center_back receiving",
+    "fullback overlap"
+  ],
+  "related_concepts": [
+    "build_up",
+    "high_press",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=2205s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why do we always get pinned back when we start from the back?",
+    "Our keeper is getting swarmed by two strikers every time he tries to pass, what is the issue?",
+    "What should our fullbacks do when the opponent presses our center-backs immediately?",
+    "We struggle to get the ball past the first line of pressure because we never have an extra man in the back, why is that happening?"
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "concept_id": "wiki_fluid_positional_interchange",
+  "category": "fundamentals",
+  "phase": "general",
+  "title": "Fluid Positional Interchange",
+  "content": "Total Football is a tactical system where outfield players are not fixed to specific roles but dynamically interchange positions to maintain team structure. When a player moves out of their designated zone, another teammate immediately occupies that space, ensuring the team’s organizational shape remains intact regardless of individual movement. This approach requires high technical versatility and tactical intelligence, as players must be comfortable operating in multiple areas of the pitch, from defense to attack. The primary objective is to create numerical overloads in specific zones by shifting the entire team structure, forcing opponents to constantly reorient their defensive assignments. It relies on collective adaptability rather than rigid individual instructions, allowing the team to exploit spatial weaknesses fluidly. This concept applies during open play when the team seeks to dominate possession and control space through coordinated movement rather than static positioning. It is most effective when players possess the skill set to execute complex transitions and maintain structural balance while roaming.",
+  "conditions": [
+    "high_player_versatility",
+    "tactical_intelligence_required",
+    "possession_based_style"
+  ],
+  "objective": [
+    "maintain_structural_balance",
+    "create_numerical_overloads",
+    "exploit_opponent_weaknesses"
+  ],
+  "possible_actions": [
+    "switch_positions_dynamically",
+    "occupy_vacated_zones",
+    "roam_freely_in_space"
+  ],
+  "contraindications": [
+    "low_tactical_discipline",
+    "lack_of_technical_skill",
+    "static_defensive_formation"
+  ],
+  "trigger_conditions": [
+    "team_compactness_high",
+    "passing_lane_open",
+    "local_numerical_advantage_positive"
+  ],
+  "source": {
+    "name": "Wikipedia: Total Football",
+    "url": "https://en.wikipedia.org/wiki/Total_Football",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the tactical concept called when players constantly swap positions to keep the team shape intact?",
+    "Our midfielders are getting isolated when they push forward, how can we ensure someone always covers their space automatically?",
+    "If I am a center-back, what should I do when my fullback overlaps into the attacking third?",
+    "We lose our defensive structure every time our wingers cut inside, how can we make our positioning more dynamic and self-correcting?"
+  ]
+}

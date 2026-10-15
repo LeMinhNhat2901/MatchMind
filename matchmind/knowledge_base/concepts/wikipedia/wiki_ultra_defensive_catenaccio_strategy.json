@@ -1,0 +1,50 @@
+{
+  "concept_id": "wiki_ultra_defensive_catenaccio_strategy",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Ultra-Defensive Catenaccio Strategy",
+  "content": "This tactical approach, often labeled 'anti-football' or 'haramball,' prioritizes preventing opponent goals over creating offensive chances. The core principle involves deploying all outfield players, excluding the striker, behind the ball to create a deep, compact defensive block. This structure relies heavily on short passing to maintain possession without penetrating the final third, while also utilizing set-pieces as the primary scoring threat. The objective is to stifle the opponent's progression by reducing the time the ball is in active play, often through deliberate time-wasting or kicking the ball forward to clear danger. This strategy is most effective when a team is trailing or protecting a narrow lead, aiming to frustrate the opposition and secure a draw or minimal loss. It contrasts sharply with possession-based or high-pressing systems, focusing instead on structural integrity and denial of space. Coaches may employ this to neutralize superior attacking threats, though it risks criticism for lacking entertainment value and potentially inviting yellow cards for unsporting behavior.",
+  "conditions": [
+    "protecting_lead",
+    "trailing_score",
+    "opponent_superior_attacking",
+    "low_risk_preference"
+  ],
+  "objective": [
+    "prevent_opponent_goals",
+    "maintain_defensive_compactness",
+    "reduce_opponent_possession_time",
+    "secure_draw_or_minimal_loss"
+  ],
+  "possible_actions": [
+    "drop_all_players_behind_ball",
+    "use_short_passing_to_retain_possession",
+    "kick_ball_forward_to_clear",
+    "rely_on_set_pieces_for_goals",
+    "waste_time_to_reduce_action"
+  ],
+  "contraindications": [
+    "need_to_score_multiple_goals",
+    "opponent_weak_defensively",
+    "high_press_opponent",
+    "fan_expectation_for_offense"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "phase_of_play_defensive",
+    "space_ahead_large_for_opponent"
+  ],
+  "source": {
+    "name": "Wikipedia: Anti-football",
+    "url": "https://en.wikipedia.org/wiki/Anti-football",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "How can we stop a much stronger opponent from creating any chances?",
+    "We are getting beaten on the counter-attack every time we lose the ball high up the pitch, what is the safest structure to use?",
+    "What should our striker do if we are sitting deep and trying to protect a narrow lead?",
+    "Our team concedes too many goals when we try to play out from the back, is there a tactic that focuses purely on not losing?"
+  ]
+}

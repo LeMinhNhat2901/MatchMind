@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_individual_pressing_exception",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Individual Pressing Exception",
+  "definition": "A tactical deviation where a single elite player presses independently to force errors, bypassing the standard rule of collective unit movement.",
+  "content": "Standard defensive principles dictate that teams must press as a compact unit to avoid isolation and maintain structural integrity. However, this rule can be strategically broken when a team possesses a player with exceptional individual pressing capabilities, such as high intensity and technical skill. In this scenario, a lone player can aggressively target a specific opponent, often a less technical defender or a player in a vulnerable position, to force a mistake or a long ball. This approach relies on the individual's ability to cover space and recover if the press fails, while the rest of the team maintains a supportive shape. The effectiveness of this tactic is heightened when the opponent's primary outlet options are neutralized or unreliable, forcing them into predictable actions. While risky, as it leaves the pressing player isolated, it can be a decisive 'cheat code' to disrupt the opponent's build-up play and create immediate turnovers in dangerous areas. This method requires careful management to ensure the rest of the team does not become overcommitted or leave gaps in the defensive lines.",
+  "conditions": [
+    "elite_individual_presser_available",
+    "opponent_has_weak_outlet_options",
+    "team_shape_compact"
+  ],
+  "objective": [
+    "force_error",
+    "disrupt_build_up",
+    "win_ball_high"
+  ],
+  "possible_actions": [
+    "solo_press_initiate",
+    "target_less_technical_opponent",
+    "force_long_ball"
+  ],
+  "contraindications": [
+    "lack_of_recovery_support",
+    "opponent_has_strong_counter_press",
+    "presser_is_tired"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "nearest_opponent_distance_low",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "aggressive_close_down",
+    "cover_passing_lane",
+    "force_backward_pass"
+  ],
+  "related_concepts": [
+    "pressing_traps",
+    "counter_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=153s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "When should we let one guy go rogue on the ball carrier instead of moving as a block?",
+    "Our team keeps losing the ball in midfield because everyone waits for the signal, but I think our best player could just take him on alone; is that a bad idea?",
+    "If I am the fastest player on the pitch, should I ignore the group press and chase the ball carrier down the wing by myself?",
+    "We keep getting punished for leaving gaps when the whole team presses, so how do we fix it if we want to rely on just one elite defender to win the ball back?"
+  ]
+}

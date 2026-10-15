@@ -1,0 +1,39 @@
+{
+  "concept_id": "wiki_man_vs_zonal_marking",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Man vs Zonal Marking",
+  "content": "Marking is a fundamental defensive tactic designed to deny opponents control of the ball, primarily through two distinct approaches: man-to-man and zonal marking. Man-to-man marking assigns specific defenders to track individual opponents, a strategy often employed by underdogs facing superior teams or in high-stakes matches to neutralize key threats. While effective at limiting specific players, it can disrupt team shape and reduce offensive contributions. Zonal marking, the standard in modern professional football, requires defenders to cover specific areas of the pitch rather than individuals. This approach offers superior flexibility, allowing teams to maintain structural integrity and transition quickly into attack upon regaining possession. However, zonal marking demands high levels of communication to prevent gaps, particularly during set pieces where teams often revert to man-to-man coverage. Modern tactical systems frequently hybridize these methods, such as in 3-5-2 formations that shift to a 5-3-2 defensive block, blending individual accountability with area coverage to optimize spatial control and defensive resilience.",
+  "conditions": [
+    "defensive_phase_active",
+    "opponent_has_ball",
+    "team_shape_maintained"
+  ],
+  "objective": [
+    "deny_ball_control",
+    "maintain_defensive_structure",
+    "limit_opponent_passing_options"
+  ],
+  "possible_actions": [
+    "assign_individual_marks",
+    "cover_defensive_zones",
+    "communicate_marking_switches",
+    "shift_to_man_marking_on_set_piece"
+  ],
+  "contraindications": [
+    "poor_team_communication",
+    "lack_of_defensive_unity",
+    "high_risk_of_isolation"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "players_near_ball",
+    "team_compactness_high"
+  ],
+  "source": {
+    "name": "Wikipedia: Marking (association football)",
+    "url": "https://en.wikipedia.org/wiki/Marking_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

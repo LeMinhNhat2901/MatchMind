@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_4_3_3_pressing_structure",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "4-3-3 Pressing Structure",
+  "definition": "A defensive approach using a 4-3-3 shape to execute an aggressive, man-oriented press that limits opponent passing options.",
+  "content": "This tactical concept describes the defensive application of a 4-3-3 formation, specifically focusing on an aggressive, man-oriented pressing strategy. Unlike passive defensive setups, this approach aims to disrupt the opponent's build-up by applying immediate pressure, often resulting in fewer than eight passes per defensive action. The 4-3-3 structure supports this by providing a compact midfield trio that can cover central passing lanes while the front three press the defensive line. This method is particularly effective against teams that rely on short passing and possession, as it forces errors and creates turnovers in dangerous areas. However, it requires high physical intensity and coordination among the front line to avoid being bypassed. If the press fails, the team must quickly transition into a compact block to protect the space behind the defensive line. This tactic contrasts with slower, positional styles that may lack creativity in attack, offering a dynamic way to regain possession and initiate counter-attacks.",
+  "conditions": [
+    "formation_433",
+    "opponent_short_passing",
+    "high_physical_intensity"
+  ],
+  "objective": [
+    "limit_opponent_passes",
+    "force_turnover",
+    "disrupt_build_up"
+  ],
+  "possible_actions": [
+    "man_oriented_press",
+    "compact_midfield_block",
+    "front_line_pressure"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "opponent_long_ball_strategy",
+    "poor_offside_trap_coordination"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "trigger_press"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=985s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to force turnovers in the opponent's half without leaving our back line exposed?",
+    "Our midfielders are getting tired and leaving gaps, how can we organize our front three to help them trap the ball?",
+    "I want to stop the opponent from building up play comfortably, what specific triggers should my full-backs use to close down their wingers?",
+    "We keep getting caught in transition because our press is too passive, how do we make our first line of defense more aggressive and coordinated?"
+  ]
+}

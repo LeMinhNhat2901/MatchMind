@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_tempo_variation_from_goalkeeper",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Tempo Variation from Goalkeeper",
+  "definition": "A tactical approach where the goalkeeper uses varied distribution methods (throws, rolls, long kicks) to disrupt opponent reorganization and accelerate play.",
+  "content": "This concept focuses on using the goalkeeper as a primary tool to change the game's tempo immediately after winning possession. Instead of defaulting to a slow, structured build-up that allows opponents to retreat into their defensive shape, the team aims to play quickly from the back. The goalkeeper is instructed to use diverse distribution options: quick throws to fullbacks, rapid rolls to center-backs, or long kicks to the edge of the box. The objective is to catch the opposition before they can reorganize, as breaking down a settled defensive block is significantly harder than attacking a disorganized one. While playing out from the back is not forbidden, it must be executed with speed. If the opponent locks into a deep defensive line, the team should look for direct passes into the pockets between the lines or to the second striker, utilizing players with good passing range to bypass the initial defensive pressure. This approach prioritizes forward movement and tempo changes over possession retention for its own sake.",
+  "conditions": [
+    "possession_won",
+    "opponent_disorganized",
+    "keeper_in_position"
+  ],
+  "objective": [
+    "disrupt_opponent_shape",
+    "accelerate_transition",
+    "bypass_defensive_block"
+  ],
+  "possible_actions": [
+    "keeper_quick_throw",
+    "keeper_long_kick",
+    "keeper_short_roll",
+    "direct_pass_to_striker"
+  ],
+  "contraindications": [
+    "opponent_settled_low_block",
+    "keeper_under_immediate_pressure"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "space_ahead_large",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "open_space_behind_defensive_line",
+    "width_available_for_throws"
+  ],
+  "player_behaviours": [
+    "keeper_scan_before_receiving",
+    "fullback_run_in_depth",
+    "striker_make_forward_run"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "tempo_change",
+    "direct_play"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=524s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can our keeper help break up the opponent's defensive shape after we win the ball back?",
+    "The other team is always set up before we can make a move, is there a way to catch them off guard from the back?",
+    "What should our goalkeeper do to speed up the transition when we regain possession in midfield?",
+    "We always seem to play at the same slow pace, how can we suddenly accelerate the game to surprise the defense?"
+  ]
+}

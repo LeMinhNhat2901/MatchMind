@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_goalkeeper_build_up_integration",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Goalkeeper Build-Up Integration",
+  "definition": "A tactical approach where the goalkeeper acts as an additional outfield player in the defensive line to create numerical superiority and bypass high pressing.",
+  "content": "This concept leverages the rule change allowing goalkeepers to remain inside the penalty area during the initial build-up phase. Traditionally, center-backs were forced outside the box, limiting passing options against high-pressing teams. By keeping the goalkeeper in the defensive line, teams create a 3v2 or 4v3 numerical advantage in the back line. This allows for safer short passing combinations, enabling the team to bypass the first line of pressure without resorting to risky long balls. The goalkeeper acts as a safe outlet, drawing defenders and creating space for center-backs to step into midfield or wide areas. This method is particularly effective against aggressive high-pressing systems that commit many players forward, as it exploits the gap between the pressing line and the defensive line. It transforms the goalkeeper from a last resort into a primary playmaker, facilitating controlled progression into the midfield and reducing the risk of turnovers in dangerous areas. This approach requires high technical proficiency from the goalkeeper and clear communication with defenders to maintain shape and timing.",
+  "conditions": [
+    "opponent_high_press",
+    "goalkeeper_technical_proficiency",
+    "defensive_line_width"
+  ],
+  "objective": [
+    "bypass_first_line_pressure",
+    "create_numerical_superiority",
+    "safe_progression"
+  ],
+  "possible_actions": [
+    "keeper_steps_out",
+    "short_pass_to_keeper",
+    "center_back_shifts_in",
+    "switch_play_via_keeper"
+  ],
+  "contraindications": [
+    "keeper_lacks_comfort_on_ball",
+    "opponent_presses_keeper_aggressively",
+    "poor_communication_between_defenders"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_defensive_line",
+    "keeper_in_defensive_line"
+  ],
+  "player_behaviours": [
+    "keeper_scans_field",
+    "center_back_holds_position",
+    "full back_provides_width"
+  ],
+  "related_concepts": [
+    "high_press",
+    "positional_play",
+    "build_up"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G9Ls5jjZw3s&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can I use my keeper to help us get out from the back when the opponent is pressing high?",
+    "Our center-backs are constantly getting caught out of position when we try to pass out, and we lose possession in our own box.",
+    "What is the best role for my goalkeeper to play when we are building up from the defensive line?",
+    "We keep getting forced into long balls because the opposition is crowding our defenders; what tactical option can bypass this pressure?"
+  ]
+}

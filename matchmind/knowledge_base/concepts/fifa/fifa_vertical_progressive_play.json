@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_vertical_progressive_play",
+  "category": "attacking",
+  "subcategory": "progressive_passing",
+  "phase": "possession",
+  "title": "Vertical Progressive Play",
+  "definition": "A tactical approach prioritizing vertical ball progression through individual technical execution and coordinated off-ball movement to bypass defensive lines.",
+  "content": "Vertical progressive play focuses on advancing the ball toward the opponent's goal rather than relying on safe lateral circulation. This concept integrates individual technical excellence with collective tactical understanding. Players must possess high spatial awareness, gained through consistent scanning, to identify defensive gaps and teammate positioning. Composure under pressure allows for quick, informed decision-making, while technical proficiency with both feet ensures the ability to execute penetrating passes from any angle. For example, a defender might use a first-touch pass to shift play and draw opponents out of position, creating space for a winger to move infield and deliver a decisive pass. Simultaneously, midfielders and strikers must make timed runs into vacated spaces, maintaining offside awareness. Success depends on the synergy between awareness and technique: awareness provides the tactical map, while technical confidence enables the execution of risky but high-reward actions. This approach often relies on brief sequences where off-ball movements structure the opportunity before the ball is touched, requiring players to read the game through visual and auditory cues to trigger coordinated attacks.",
+  "conditions": [
+    "high_technical_quality",
+    "good_spatial_awareness",
+    "opponent_defensive_line_high"
+  ],
+  "objective": [
+    "penetrate_defensive_lines",
+    "create_scoring_opportunities",
+    "bypass_midfield_block"
+  ],
+  "possible_actions": [
+    "first_touch_progressive_pass",
+    "move_infield_from_flank",
+    "make_timed_run_into_space",
+    "scan_before_receiving"
+  ],
+  "contraindications": [
+    "low_technical_confidence",
+    "poor_scanning_habits",
+    "opponent_low_block_compact"
+  ],
+  "trigger_conditions": [
+    "space_between_lines",
+    "passing_lane_open",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "space_between_lines",
+    "supporting_players_in_position"
+  ],
+  "player_behaviours": [
+    "scan_field",
+    "execute_two_footed_pass",
+    "move_into_vacated_space"
+  ],
+  "related_concepts": [
+    "scanning",
+    "third_man_run",
+    "positional_play"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: The individuality behind the collective 3: Vertical progressive play",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/individuality-behind-collective/the-individuality-behind-the-collective-3-vertical-progressive-play.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we stop getting stuck in sideways passing and actually move the ball forward quickly?",
+    "Our team keeps losing possession in the midfield because we only pass laterally; what should we do to break through their lines instead?",
+    "As a central midfielder, when should I look to drive the ball forward rather than passing it back to a teammate?",
+    "We seem to lack the confidence to carry the ball into dangerous areas; is there a specific way to train this kind of forward movement?"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_mezzala_and_carrilero_roles",
+  "category": "formations",
+  "subcategory": "narrow_midfield_systems",
+  "phase": "possession",
+  "title": "Mezzala and Carrilero Roles",
+  "definition": "Specialized wide-midfield roles (Carrilero and Mezzala) that provide width and cover in narrow formations where fullbacks push high.",
+  "content": "In narrow tactical systems like the back three or diamond midfield, fullbacks are often required to push forward to provide width, leaving significant defensive gaps behind them. To address this, two specialized roles emerged. The Carrilero, or 'shuttler,' is a defensive-minded midfielder who drifts wide to cover the space behind the advanced fullback, prioritizing defensive stability over attacking penetration. In contrast, the Mezzala, or 'half-winger,' is an attacking variant that operates in the half-space between the center and the wing. Unlike the Carrilero, the Mezzala has forward angles, allowing them to form rotational triangles with wingers, make underlapping runs, and deliver precise passes into the box. This role bridges the gap between a traditional midfielder and a winger, offering both creative playmaking and width. While the Carrilero limits the team's attacking range to rely on fullbacks, the Mezzala adds an extra dimension of threat by combining positional width with creative output, making it a crucial component in modern narrow systems that seek to balance defensive security with offensive versatility.",
+  "conditions": [
+    "narrow_midfield_shape",
+    "fullbacks_pushing_high",
+    "defensive_gaps_behind_wingers"
+  ],
+  "objective": [
+    "cover_wide_defensive_space",
+    "provide_attacking_width",
+    "create_half_space_overloads"
+  ],
+  "possible_actions": [
+    "drift_wide_to_cover",
+    "make_underlapping_run",
+    "form_rotational_triangle",
+    "deliver_cross_from_half_space"
+  ],
+  "contraindications": [
+    "wide_midfield_shape",
+    "fullbacks_staying_low"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "half_space_free",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "narrow_central_midfield",
+    "wide_fullback_position"
+  ],
+  "player_behaviours": [
+    "track_back_wide",
+    "overlap_winger",
+    "receive_in_half_space"
+  ],
+  "related_concepts": [
+    "half_space",
+    "underlap",
+    "fullback_width"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=333s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get width in a narrow formation without using fullbacks?",
+    "Our fullbacks are pushing high but we have no one covering the wide areas, who should fill that gap?",
+    "What should my central midfielder do when the ball is played into the half-space?",
+    "We struggle to maintain width when our fullbacks are out of position, how do we solve this recurring issue?"
+  ]
+}

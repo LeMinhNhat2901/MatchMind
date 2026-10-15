@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_dynamic_build_up_against_high_press",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Dynamic Build-Up Against High Press",
+  "definition": "A tactical approach to breaking high press by using wide players to create space and rapid one-touch transitions to exploit gaps in the defensive line.",
+  "content": "This concept focuses on efficient ball progression when facing an aggressive high press. The primary objective is not to retain possession for its own sake, but to attack the final third as quickly as possible. The strategy involves positioning wingers very wide to stretch the opponent's defensive line, forcing center-backs to make a decision: either step up to press or stay back. If the center-backs step up, the team can play long balls over the top to the wingers, creating one-on-one situations. If they stay back, the team can exploit the space between the lines by playing to the 'pocket' or using third-man runs. Crucially, players must recognize the moment a teammate is under pressure and execute a rapid sprint of 4-5 meters to create separation, allowing for immediate one-touch forward passes. This requires high trust, quick decision-making, and the ability to adapt to the opponent's pressing intensity by finding solutions based on available space and body orientation.",
+  "conditions": [
+    "opponent_high_press",
+    "ball_in_defensive_third",
+    "wingers_wide_positioning"
+  ],
+  "objective": [
+    "break_press_rapidly",
+    "create_one_on_one_situations",
+    "progress_to_final_third"
+  ],
+  "possible_actions": [
+    "sprint_to_create_separation",
+    "one_touch_forward_pass",
+    "play_long_ball_to_winger",
+    "third_man_run",
+    "switch_play_to_opposite_flank"
+  ],
+  "contraindications": [
+    "slow_circulation_of_ball",
+    "holding_ball_too_long_under_pressure"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "space_behind_defensive_line",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "wide_winger_positioning",
+    "space_between_lines_available"
+  ],
+  "player_behaviours": [
+    "sprint_acceleration",
+    "one_touch_control",
+    "scan_before_receiving"
+  ],
+  "related_concepts": [
+    "high_press",
+    "third_man",
+    "counter_press",
+    "final_third"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qLmV-m0SxhI&t=207s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop them from swarming our back line immediately?",
+    "Our wingers are sitting too deep when we try to play out, what should they do instead?",
+    "I keep losing the ball in the first five seconds of possession, what is the fix?",
+    "What is the best way to use our full-backs to open up space when the opponent presses high?"
+  ]
+}

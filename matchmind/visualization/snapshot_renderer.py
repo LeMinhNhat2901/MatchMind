@@ -19,9 +19,10 @@ from matchmind.visualization.pitch_renderer import _lazy_pyplot, plot_pitch
 # / torch initialises causes a native DLL crash on Windows + Python 3.13.
 logger = logging.getLogger(__name__)
 
-# Team colours
-HOME_COLOR = "#E74C3C"   # red
-AWAY_COLOR = "#3498DB"   # blue
+# Team colours — kept identical to the dashboard theme tokens (--mm-home /
+# --mm-away in dashboard/theme.css) so the pitch and the HTML legend match.
+HOME_COLOR = "#EF4444"   # red
+AWAY_COLOR = "#3B82F6"   # blue
 # White filled "+" — a distinct shape AND colour from the round red/blue
 # player dots, so the ball never gets lost among them (was a yellow circle).
 BALL_COLOR = "#FFFFFF"
@@ -29,27 +30,27 @@ BALL_EDGE_COLOR = "#111111"
 BALL_MARKER = "P"        # matplotlib "filled plus"
 BALL_SIZE = 220
 FOCUS_RING_COLOR = "#FFFFFF"
-FOCUS_RING_SIZE = 600
-PLAYER_SIZE = 350
+FOCUS_RING_SIZE = 720
+PLAYER_SIZE = 420
 VISIBLE_AREA_COLOR = "#FFFFFF"
 
 # Recommendation arrows (render_advice_snapshot): solid gold = the ball travels
 # there (pass/dribble/shot/switch); dashed cyan = the PLAYER runs there and the
 # ball stays with its real carrier (off-ball movement) — same colour coding as
 # the moves_ball split in pitch_control/counterfactual_analyzer.py.
-ARROW_BALL_COLOR = "#FFD700"
-ARROW_RUN_COLOR = "#00E5FF"
-ARROW_ALT_COLOR = "#CCCCCC"
+ARROW_BALL_COLOR = "#FACC15"
+ARROW_RUN_COLOR = "#22D3EE"
+ARROW_ALT_COLOR = "#CBD5E1"
 
 # Dual (attack vs defense) rendering: the attacking focus keeps the standard
 # white ring + gold/cyan arrow; the defending focus gets its own ring + arrow
 # colour so the two recommendations never get confused on one image.
-DEFENSE_RING_COLOR = "#FFA500"
-DEFENSE_ARROW_COLOR = "#FF33CC"
+DEFENSE_RING_COLOR = "#F59E0B"
+DEFENSE_ARROW_COLOR = "#EC4899"
 
 # Fixed direction (up-right) the ball glyph is nudged toward when it would
 # otherwise sit on top of a player dot and hide the jersey number.
-_BALL_OFFSET_ANGLE_RAD = math.radians(50)
+_BALL_OFFSET_ANGLE_RAD = math.radians(-50)   # -y is UP on the inverted pitch
 
 
 def _touch_offset_metres(ax, fig, marker_s1: float, marker_s2: float, gap_pts: float = 2.0) -> float:
@@ -69,6 +70,27 @@ def _touch_offset_metres(ax, fig, marker_s1: float, marker_s2: float, gap_pts: f
     return (r1 + r2 + gap_pts) * data_per_pt
 
 
+def ball_glyph_position(
+    ball_xy: tuple[float, float], players: list, player_radius_m: float
+) -> tuple[float, float]:
+    """Where to draw the ball '+'.
+
+    A loose ball is drawn exactly where it is. A ball inside a player's dot (the
+    carrier — event location ≈ actor position) is drawn ON the dot's rim, up-right,
+    overlapping it: contact stays visible and most of the jersey number is still
+    readable. It used to be pushed fully outside the dot plus a gap, which with
+    the larger dots read as the ball being away from its carrier.
+    """
+    bx, by = ball_xy
+    nearest = min(players, key=lambda p: (p.x - bx) ** 2 + (p.y - by) ** 2, default=None)
+    if nearest is None or math.hypot(nearest.x - bx, nearest.y - by) >= player_radius_m:
+        return bx, by
+    offset = 0.75 * player_radius_m
+    x = nearest.x + offset * math.cos(_BALL_OFFSET_ANGLE_RAD)
+    y = nearest.y + offset * math.sin(_BALL_OFFSET_ANGLE_RAD)
+    return max(0.0, min(105.0, x)), max(0.0, min(68.0, y))
+
+
 def _draw_scene(
     ax,
     fig,
@@ -76,6 +98,7 @@ def _draw_scene(
     focus_player_id: int | None,
     show_pitch_control: bool,
     pitch_control_grid: np.ndarray | None,
+    trails: list | None = None,
 ) -> None:
     """Draw the shared base layer: heatmap, 360 visible area, players, ball.
 
@@ -114,6 +137,15 @@ def _draw_scene(
             )
         )
 
+    # ── Projection trails (estimated moves, see team_shift) ────
+    # Faded dot where the player was + a dashed line to where they are now, so
+    # a projected scene never passes for observed data.
+    for move in trails or []:
+        color = HOME_COLOR if move.team == "home" else AWAY_COLOR
+        (fx, fy), (tx, ty) = move.from_xy, move.to_xy
+        ax.scatter(fx, fy, c=color, s=PLAYER_SIZE, alpha=0.25, linewidths=0, zorder=3)
+        ax.plot([fx, tx], [fy, ty], color="white", alpha=0.55, linewidth=1.1, linestyle=(0, (3, 2)), zorder=3)
+
     # ── Draw players ─────────────────────────────────────────
     for player in state.players:
         color = HOME_COLOR if player.team == "home" else AWAY_COLOR
@@ -125,18 +157,20 @@ def _draw_scene(
                 player.x, player.y,
                 c=FOCUS_RING_COLOR,
                 s=FOCUS_RING_SIZE,
-                zorder=3,
+                zorder=6,   # above other players' dots, below the focus dot
                 linewidths=0,
             )
 
-        # Player dot
+        # Player dot — thin dark outline separates overlapping dots on the grass.
+        # The focus player sits above the other dots (below the ball): in a crowd
+        # around the ball the carrier was otherwise hidden under opponents' dots.
         ax.scatter(
             player.x, player.y,
             c=color,
             s=PLAYER_SIZE,
-            zorder=4,
-            edgecolors="white" if is_focus else "none",
-            linewidths=2 if is_focus else 0,
+            zorder=7 if is_focus else 4,
+            edgecolors="white" if is_focus else "#0B1120",
+            linewidths=2 if is_focus else 0.8,
         )
 
         # Player ID label
@@ -144,31 +178,16 @@ def _draw_scene(
             str(player.id),
             (player.x, player.y),
             ha="center", va="center",
-            fontsize=7, fontweight="bold",
+            fontsize=8.5, fontweight="bold",
             color="white",
-            zorder=5,
+            zorder=8 if is_focus else 5,
         )
 
     # ── Draw ball ─────────────────────────────────────────────
-    # Highest zorder — must never be hidden behind a player dot. If the ball
-    # sits on/inside the nearest player's dot (almost always true for the
-    # actual ball carrier, since event location ≈ actor position), nudge the
-    # ball glyph so the two markers are adjacent/touching instead of stacked —
-    # otherwise the ball glyph covers that player's jersey-number label.
-    draw_x, draw_y = state.ball.x, state.ball.y
-    nearest = min(
-        state.players,
-        key=lambda p: (p.x - draw_x) ** 2 + (p.y - draw_y) ** 2,
-        default=None,
-    )
-    if nearest is not None:
-        dist = math.hypot(nearest.x - draw_x, nearest.y - draw_y)
-        touch_dist = _touch_offset_metres(ax, fig, PLAYER_SIZE, BALL_SIZE)
-        if dist < touch_dist:
-            draw_x = nearest.x + touch_dist * math.cos(_BALL_OFFSET_ANGLE_RAD)
-            draw_y = nearest.y + touch_dist * math.sin(_BALL_OFFSET_ANGLE_RAD)
-            draw_x = max(0.0, min(105.0, draw_x))
-            draw_y = max(0.0, min(68.0, draw_y))
+    # Highest zorder — never hidden behind a dot. On its carrier it overlaps the
+    # dot's rim (see ball_glyph_position) so the contact is visible.
+    player_radius_m = _touch_offset_metres(ax, fig, PLAYER_SIZE, 0.0, gap_pts=0.0)
+    draw_x, draw_y = ball_glyph_position((state.ball.x, state.ball.y), state.players, player_radius_m)
 
     ax.scatter(
         draw_x, draw_y,
@@ -203,6 +222,8 @@ def render_snapshot(
     pitch_control_grid: np.ndarray | None = None,
     field_color: str = "dark_green",
     dpi: int = 120,
+    annotate: bool = True,
+    trails: list | None = None,
 ) -> str:
     """
     Render a MatchState as a pitch image PNG.
@@ -215,6 +236,8 @@ def render_snapshot(
         pitch_control_grid: 2D array from spearman_model (optional).
         field_color: Pitch background colour.
         dpi: Image DPI.
+        annotate: Draw the in-image title + legend. The dashboard passes False
+            because it renders both as HTML around the image instead.
 
     Returns:
         save_path (for convenience).
@@ -222,33 +245,31 @@ def render_snapshot(
     plt = _lazy_pyplot()
     fig, ax = plot_pitch(field_color=field_color, figsize=(10.5, 6.8))
 
-    _draw_scene(ax, fig, state, focus_player_id, show_pitch_control, pitch_control_grid)
+    _draw_scene(ax, fig, state, focus_player_id, show_pitch_control, pitch_control_grid, trails)
 
-    # ── Title ──────────────────────────────────────────────────
-    min_str = f"{state.minute}'"
-    score_str = f"Home {state.score_home}–{state.score_away} Away"
-    title = f"Match: {state.match_id} | {min_str} | {score_str}"
-    if focus_player_id is not None:
-        title += f" | Focus: Player {focus_player_id} (●)"
-    if state.visible_area:
-        # StatsBomb 360 only tracks players inside the broadcast camera view —
-        # real games run ~4-21 of 22 players, never all 22. Not a data bug.
-        title += f" | {len(state.players)} players in 360 view (dashed outline)"
-    ax.set_title(
-        title,
-        fontsize=9, pad=8,
-        color="white" if field_color == "dark_green" else "black",
-    )
-
-    # ── Legend ─────────────────────────────────────────────────
-    ax.legend(
-        handles=_base_legend(),
-        loc="upper right",
-        facecolor="black",
-        labelcolor="white",
-        fontsize=7,
-        framealpha=0.7,
-    )
+    if annotate:
+        min_str = f"{state.minute}'"
+        score_str = f"Home {state.score_home}–{state.score_away} Away"
+        title = f"Match: {state.match_id} | {min_str} | {score_str}"
+        if focus_player_id is not None:
+            title += f" | Focus: Player {focus_player_id} (●)"
+        if state.visible_area:
+            # StatsBomb 360 only tracks players inside the broadcast camera view —
+            # real games run ~4-21 of 22 players, never all 22. Not a data bug.
+            title += f" | {len(state.players)} players in 360 view (dashed outline)"
+        ax.set_title(
+            title,
+            fontsize=9, pad=8,
+            color="white" if field_color == "dark_green" else "black",
+        )
+        ax.legend(
+            handles=_base_legend(),
+            loc="upper right",
+            facecolor="black",
+            labelcolor="white",
+            fontsize=7,
+            framealpha=0.7,
+        )
 
     # ── Save ───────────────────────────────────────────────────
     save_path = str(save_path)
@@ -307,6 +328,8 @@ def render_advice_snapshot(
     field_color: str = "dark_green",
     dpi: int = 120,
     show_alternatives: bool = True,
+    annotate: bool = True,
+    trails: list | None = None,
 ) -> str:
     """
     Render the pitch AFTER the agent has produced advice, drawing the
@@ -328,7 +351,7 @@ def render_advice_snapshot(
     fig, ax = plot_pitch(field_color=field_color, figsize=(10.5, 6.8))
 
     focus_id = advice.focus_player_id
-    _draw_scene(ax, fig, state, focus_id, show_pitch_control, pitch_control_grid)
+    _draw_scene(ax, fig, state, focus_id, show_pitch_control, pitch_control_grid, trails)
 
     focus = state.get_player(focus_id) if focus_id is not None else None
     legend_extra: list = []
@@ -357,27 +380,27 @@ def render_advice_snapshot(
             if drew_alt:
                 legend_extra.append(_arrow_legend_entry("Alternative", ARROW_ALT_COLOR, "dotted"))
 
-    # ── Title: the recommendation itself, not just match metadata ─────
-    action_text = advice.recommended_action
-    if len(action_text) > 80:
-        action_text = action_text[:77] + "..."
-    title = f"Player {focus_id}: {action_text} (confidence {advice.confidence:.0%})"
-    if not drew_recommended:
-        title += "  [no geometric match — arrow not drawn]"
-    ax.set_title(
-        title,
-        fontsize=9, pad=8,
-        color="white" if field_color == "dark_green" else "black",
-    )
-
-    ax.legend(
-        handles=_base_legend(legend_extra),
-        loc="upper right",
-        facecolor="black",
-        labelcolor="white",
-        fontsize=7,
-        framealpha=0.7,
-    )
+    if annotate:
+        # Title = the recommendation itself, not just match metadata.
+        action_text = advice.recommended_action
+        if len(action_text) > 80:
+            action_text = action_text[:77] + "..."
+        title = f"Player {focus_id}: {action_text} (confidence {advice.confidence:.0%})"
+        if not drew_recommended:
+            title += "  [no geometric match — arrow not drawn]"
+        ax.set_title(
+            title,
+            fontsize=9, pad=8,
+            color="white" if field_color == "dark_green" else "black",
+        )
+        ax.legend(
+            handles=_base_legend(legend_extra),
+            loc="upper right",
+            facecolor="black",
+            labelcolor="white",
+            fontsize=7,
+            framealpha=0.7,
+        )
 
     save_path = str(save_path)
     Path(save_path).parent.mkdir(parents=True, exist_ok=True)
@@ -397,6 +420,8 @@ def render_dual_advice_snapshot(
     pitch_control_grid: np.ndarray | None = None,
     field_color: str = "dark_green",
     dpi: int = 120,
+    annotate: bool = True,
+    trails: list | None = None,
 ) -> str:
     """
     Render ONE pitch image with both sides' recommendations at once — the
@@ -414,7 +439,7 @@ def render_dual_advice_snapshot(
 
     # Base scene with the attacking player's ring (standard white); the
     # defending player's ring is added separately below in a different colour.
-    _draw_scene(ax, fig, state, att_id, show_pitch_control, pitch_control_grid)
+    _draw_scene(ax, fig, state, att_id, show_pitch_control, pitch_control_grid, trails)
 
     def_focus = state.get_player(def_id) if def_id is not None else None
     if def_focus is not None:
@@ -438,26 +463,26 @@ def render_dual_advice_snapshot(
             _draw_action_arrow(ax, (def_focus.x, def_focus.y), rec2.target_xy, DEFENSE_ARROW_COLOR, style2, 3.2, 1.0, zorder=8)
             legend_extra.append(_arrow_legend_entry(f"Defense (P{def_id})", DEFENSE_ARROW_COLOR, style2))
 
-    # ── Two-line title: one recommendation per side ──
-    att_text = attacking_advice.recommended_action
-    def_text = defending_advice.recommended_action
-    att_text = att_text[:62] + ("..." if len(att_text) > 62 else "")
-    def_text = def_text[:62] + ("..." if len(def_text) > 62 else "")
-    title = f"ATTACK P{att_id}: {att_text}\nDEFENSE P{def_id}: {def_text}"
-    ax.set_title(
-        title,
-        fontsize=8, pad=12,
-        color="white" if field_color == "dark_green" else "black",
-    )
-
-    ax.legend(
-        handles=_base_legend(legend_extra),
-        loc="upper right",
-        facecolor="black",
-        labelcolor="white",
-        fontsize=6.5,
-        framealpha=0.7,
-    )
+    if annotate:
+        # Two-line title: one recommendation per side.
+        att_text = attacking_advice.recommended_action
+        def_text = defending_advice.recommended_action
+        att_text = att_text[:62] + ("..." if len(att_text) > 62 else "")
+        def_text = def_text[:62] + ("..." if len(def_text) > 62 else "")
+        title = f"ATTACK P{att_id}: {att_text}\nDEFENSE P{def_id}: {def_text}"
+        ax.set_title(
+            title,
+            fontsize=8, pad=12,
+            color="white" if field_color == "dark_green" else "black",
+        )
+        ax.legend(
+            handles=_base_legend(legend_extra),
+            loc="upper right",
+            facecolor="black",
+            labelcolor="white",
+            fontsize=6.5,
+            framealpha=0.7,
+        )
 
     save_path = str(save_path)
     Path(save_path).parent.mkdir(parents=True, exist_ok=True)

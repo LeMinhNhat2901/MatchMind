@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_synchronized_counter_pressing_system",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Synchronized Counter-Pressing System",
+  "definition": "A high-intensity immediate pressing strategy requiring synchronized commitment from all players to regain possession within seconds of losing the ball.",
+  "content": "This tactical concept describes the immediate reaction to losing possession, where the team instinctively launches a coordinated counter-press to force turnovers. The system relies on high intensity and rapid movement, with specific players, such as the striker, leading the initial press to compress space. Success depends on total synchronization; if one element, like a center-back or full-back, fails to commit or lacks the pace to recover, the opposition gains a numerical overload in midfield or space behind the defensive line. This creates a vulnerability where aging or slower full-backs cannot track wingers, forcing center-backs to cover excessive ground. The effectiveness is measured by the number of opponent passes before a tackle is made, with elite teams limiting this to a very low count. However, inconsistency in individual effort or physical limitations can lead to defensive chaos, allowing opponents to exploit gaps with pace and movement. Coaches must ensure that all players understand their specific roles in the press to maintain the structural integrity of the defensive shape during the transition.",
+  "conditions": [
+    "immediate_loss_of_possession",
+    "high_team_intensity",
+    "synchronized_player_commitment"
+  ],
+  "objective": [
+    "regain_possession_rapidly",
+    "force_opponent_error",
+    "prevent_opponent_build_up"
+  ],
+  "possible_actions": [
+    "immediate_forward_press",
+    "close_down_ball_carrier",
+    "cover_passing_lanes",
+    "recover_position_rapidly"
+  ],
+  "contraindications": [
+    "lack_of_recovery_pace",
+    "unsynchronized_commitment",
+    "aging_fullbacks"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "press_intensity_high",
+    "nearest_opponent_distance_low"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "lead_press_from_front",
+    "angle_press",
+    "cover_space_behind"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_transition",
+    "pressing_triggers"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4917s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the name of the tactic where everyone dives in immediately after losing the ball?",
+    "Our team loses the ball and just stands there for ten seconds, how do we get everyone to press together instantly?",
+    "How should the winger react in the first three seconds after the midfielder loses possession to help win it back?",
+    "We struggle to regain the ball quickly after turnovers, what system can we implement to make our reaction faster and more unified?"
+  ]
+}

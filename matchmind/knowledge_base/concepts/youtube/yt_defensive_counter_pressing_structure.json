@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_defensive_counter_pressing_structure",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Defensive Counter-Pressing Structure",
+  "definition": "A coordinated defensive strategy where specific players apply immediate pressure to the ball carrier while others cover passing lanes and track runners to force turnovers.",
+  "content": "This tactical concept involves a structured approach to regaining possession by neutralizing the opponent's build-up play. When the opposition drops a wide player deep to drag the fullback out of position, the defensive team must react with specific roles. The nearest defender applies immediate, tight pressure to prevent the ball carrier from turning or making progressive passes. Simultaneously, a supporting midfielder or winger covers the primary passing lane to cut off easy options. If the ball is played to a central area, a designated player (often a winger or forward) cuts off the central passing lane rather than pressing the center-back directly, forcing the play wide or backward. Additionally, a disciplined defender tracks the overlapping runner to prevent them from receiving in behind. This structure relies on high work rates and clear communication; if the initial press fails, the team must quickly reorganize to cover the space left by the aggressive pressing players. The objective is to make the opponent's passing options so difficult that they are forced into low-risk, backward passes, allowing the team to regain possession in a high position and launch a counter-attack.",
+  "conditions": [
+    "opponent_build_up_play",
+    "wide_player_drops_deep",
+    "clear_passing_lanes_identified"
+  ],
+  "objective": [
+    "force_backward_pass",
+    "regain_possession_high",
+    "neutralize_progressive_pass"
+  ],
+  "possible_actions": [
+    "apply_immediate_pressure",
+    "cover_passing_lane",
+    "track_overlapping_runner",
+    "cut_off_central_lane"
+  ],
+  "contraindications": [
+    "excessive_gaps_in_defensive_line",
+    "lack_of_communication_between_pressers"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_high_press",
+    "phase_of_play_defensive_transition"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "track_runner"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "defensive_transition",
+    "counter_attack"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=519s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What should the team do immediately after we lose the ball to win it back quickly?",
+    "When our winger loses the ball, who exactly needs to close him down and who should cut off the pass to the center?",
+    "How do we organize ourselves to trap the opponent's defender the second he receives the ball in our half?",
+    "We keep getting counter-attacked because we don't pressure fast enough, so what is the right way to swarm the ball carrier?"
+  ]
+}

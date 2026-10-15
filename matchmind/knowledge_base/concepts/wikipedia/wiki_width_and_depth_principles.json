@@ -1,0 +1,43 @@
+{
+  "concept_id": "wiki_width_and_depth_principles",
+  "category": "fundamentals",
+  "phase": "general",
+  "title": "Width and Depth Principles",
+  "content": "Width and depth are foundational spatial principles governing both attacking and defensive structures. In attack, teams utilize width to stretch the opposition horizontally, creating gaps between defenders that can be exploited by wingers or rapid shifts to open lanes. Simultaneously, depth is employed by moving players vertically—either advancing from the rear or dropping from the front—to maintain a constant threat behind the defensive line, often anchored by a target striker. Defensively, teams counter these threats by contracting their shape to deny width, effectively shepherding attackers into crowded, narrow channels. Defensive depth involves marking supporting players and holding a cover man (sweeper/libero) to protect against through balls, or temporarily abandoning depth to set offside traps. Crucially, defensive balance requires maintaining even spatial coverage across the pitch, avoiding excessive clustering on the ball side which would leave the opposite flank exposed. These principles apply at all levels of play, though professional teams often layer more complex variations onto these fundamental spatial concepts to maximize tactical advantage.",
+  "conditions": [
+    "team_shape_defined",
+    "opponent_shape_visible"
+  ],
+  "objective": [
+    "stretch_defense_horizontally",
+    "create_vertical_threat",
+    "maintain_defensive_balance"
+  ],
+  "possible_actions": [
+    "shift_play_to_open_flank",
+    "drop_to_create_depth",
+    "contract_to_deny_width",
+    "hold_cover_man_back"
+  ],
+  "contraindications": [
+    "cluster_defenders_on_ball_side",
+    "ignore_opposite_flank_space"
+  ],
+  "trigger_conditions": [
+    "attacking_width_high",
+    "space_behind_defensive_line",
+    "team_compactness_high"
+  ],
+  "source": {
+    "name": "Wikipedia: Association football tactics",
+    "url": "https://en.wikipedia.org/wiki/Association_football_tactics",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "How do I stop the other team from stretching our back line too much?",
+    "Our wingers are staying too high and we have no one lurking behind their defenders, what should we change?",
+    "What should our striker do to keep the opposition center-backs on their toes when we are not in possession?",
+    "We keep getting caught out when the ball is played long because we lack a permanent threat behind the line, how do we fix this recurring issue?"
+  ]
+}

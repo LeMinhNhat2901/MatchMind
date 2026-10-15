@@ -1,0 +1,60 @@
+{
+  "concept_id": "fifa_conditional_mid_block_pressing",
+  "category": "defending",
+  "subcategory": "mid_block",
+  "phase": "out_of_possession",
+  "title": "Conditional Mid-Block Pressing",
+  "definition": "A defensive strategy using a compact mid-block to screen central zones and apply pressure only when specific coverage conditions are met.",
+  "content": "This tactical approach allows a team to control matches without holding possession by establishing a compact defensive shape in the middle third. The core principle is dictating where opponents can attack rather than chasing the ball aggressively across the pitch. Defenders maintain organized spacing to screen passing routes into dangerous central areas, engaging opponents selectively only when teammates provide adequate cover behind them. This conditional pressure forces errors without exposing vulnerable gaps. When opponents push play wide, a coordinated unit of a wide player, central midfielder, and full-back applies pressure, while the center-forward and defensive midfielder shift to protect the center, often blocking access to playmakers. Against switches of play, the ball-side unit defends with extra numbers while far-side defenders maintain central shape. This structure creates defensive solidity and counter-attacking opportunities by forcing recycled play deeper. However, it requires high alertness from the goalkeeper and defenders to retreat quickly if pressure fails, as open space exists behind the defensive line. It proves that tactical intent can be imposed through structure and organization rather than constant possession or high pressing.",
+  "conditions": [
+    "opponent_high_press",
+    "team_compactness_high",
+    "is_in_defensive_third"
+  ],
+  "objective": [
+    "screen_central_zones",
+    "force_errors",
+    "dictate_opponent_attack_direction"
+  ],
+  "possible_actions": [
+    "shift_defensive_line",
+    "apply_conditional_pressure",
+    "block_passing_lanes",
+    "maintain_mid_block_compactness"
+  ],
+  "contraindications": [
+    "exposing_space_behind_defense",
+    "risk_of_sweeping_opportunities"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_defensiveline_high",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "screen_passing_lane",
+    "shift_to_cover_center",
+    "wait_for_coverage"
+  ],
+  "related_concepts": [
+    "mid_block",
+    "counter_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Morocco: Control without possession",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/world-class-tactics/morocco--control-without-possession.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "When is the right time to step up from our mid-block?",
+    "We sit in a mid-block but only press when the ball is in certain zones, is that a specific tactic?",
+    "What should the striker do if the center-back turns with the ball in our mid-block?",
+    "We lose possession in the middle too often, how do we apply pressure only when it is safe?"
+  ]
+}

@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_fullback_inversion_for_midfield_density",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "possession",
+  "title": "Fullback Inversion for Midfield Density",
+  "definition": "A tactical adjustment where fullbacks move into central midfield to create numerical superiority and support the build-up, requiring wingers to occupy wide channels.",
+  "content": "Fullback inversion is a structural tactic used to increase midfield density and facilitate ball progression. By moving fullbacks into the central zones, a team can create a 4-4-2 or 4-3-3 shape in possession, allowing the defensive line to step up or the holding midfielder to drop deeper without losing midfield numbers. This approach relies on strict positional discipline; specifically, wingers must hug the touchlines to provide width, compensating for the lack of wide defenders. If wingers drift inward, the team loses width and becomes vulnerable to counterattacks through the center. This tactic is particularly effective when a team has technically capable fullbacks who can operate in high-pressure central areas. It allows for more predictable build-up options and reduces the risk of long passes from center-backs. However, it requires fullbacks with high technical ability and stamina to handle the increased workload in midfield. If the fullbacks lack these qualities, the team may struggle to retain possession under pressure, leading to turnovers in dangerous areas. Coaches must ensure that the inverted fullbacks understand their role in linking play and supporting the midfield pivot, while wingers must commit to wide positioning to maintain the team's structural balance.",
+  "conditions": [
+    "fullbacks_high_technical_ability",
+    "wingers_committed_to_width",
+    "midfield_numerical_deficit"
+  ],
+  "objective": [
+    "increase_midfield_density",
+    "secure_build_up_progression",
+    "maintain_wide_width"
+  ],
+  "possible_actions": [
+    "fullback_move_to_central_midfield",
+    "winger_hug_touchline",
+    "holding_midfielder_drop_deep"
+  ],
+  "contraindications": [
+    "fullbacks_low_technical_quality",
+    "wingers_drift_inward",
+    "opponent_high_press_on_center"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_negative",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "wide_winger_positioning"
+  ],
+  "player_behaviours": [
+    "fullback_inversion",
+    "winger_hold_width",
+    "midfielder_link_play"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "midfield_density"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4619s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

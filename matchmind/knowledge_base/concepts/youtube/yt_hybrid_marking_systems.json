@@ -1,0 +1,43 @@
+{
+  "concept_id": "yt_hybrid_marking_systems",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Hybrid Marking Systems",
+  "content": "Defensive marking strategies primarily divide into man-to-man and zonal approaches, though modern tactics often blend both for optimal coverage. In pure man marking, each defender tracks a specific opponent, which is effective against isolated threats but vulnerable to coordinated movement that drags defenders out of position. Conversely, zonal marking involves defenders protecting specific areas of the pitch, allowing them to maintain structural integrity but requiring high bravery to challenge for the ball. A hybrid system is the most robust approach, where defenders generally hold zonal positions to cover key spaces while being assigned to track specific high-danger opponents. This method prevents the defensive line from being stretched by clever off-ball runs while ensuring that primary threats are closely monitored. It is particularly crucial during set pieces and high-pressure phases where spatial discipline is paramount. Coaches must clearly communicate these assignments to avoid confusion, ensuring that if a zonal defender is drawn away by a man-marking assignment, another player immediately covers the vacated zone. This balance allows the team to remain compact and organized, reducing the risk of being exposed by either individual errors or collective positional drift.",
+  "conditions": [
+    "defensive_phase_active",
+    "set_piece_situation",
+    "opponent_has_key_threats"
+  ],
+  "objective": [
+    "maintain_defensive_compactness",
+    "cover_key_spatial_zones",
+    "neutralize_primary_threats"
+  ],
+  "possible_actions": [
+    "assign_man_marks_to_dangers",
+    "hold_zonal_positions",
+    "communicate_cover_swaps"
+  ],
+  "contraindications": [
+    "poor_communication_between_defenders",
+    "low_defensive_discipline"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "team_compactness_high",
+    "players_near_ball"
+  ],
+  "source": {
+    "name": "football explained",
+    "url": "https://www.youtube.com/watch?v=c3zzDOYvtJc&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "Should we stick to marking specific players or just cover our zones when they switch the ball?",
+    "When the opponent starts moving in coordinated waves, our man-marking defenders get dragged out of position; what is the best way to handle this?",
+    "As a center-back, do I follow the striker everywhere or stay in my area to protect the goal?",
+    "We lose our shape when we try to press high; how can we mix individual tracking with area responsibility to stay solid?"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_build_up_numerical_overload",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Build-Up Numerical Overload",
+  "definition": "A build-up strategy where a midfielder drops deep to create a numerical advantage in the defensive third, facilitating possession retention and progression.",
+  "content": "This tactical concept involves a defensive midfielder dropping into the back line to join the center-backs and goalkeeper, creating a 3v2 or 4v2 numerical superiority against the opposing press. The primary objective is to ensure safe ball circulation and break through high pressing lines by overwhelming the initial defensive layer. However, this approach requires specific player profiles; the center-backs must be capable of playing under pressure, ideally with both feet, to avoid being funneled into dangerous areas or forced onto their weaker foot. If the left-sided center-back is not technically proficient, opponents can exploit this by pressing aggressively to force errors or predictable passes. Additionally, dropping a midfielder deep leaves the central midfield area potentially exposed, reducing the team's ability to create overloads in the middle third if the remaining midfielders are lightweight or if the striker does not drop to support. Therefore, this tactic is most effective when the team has high technical quality in the back line and can maintain compactness to support the dropped player, ensuring that the numerical advantage in the back does not create a numerical disadvantage in the midfield.",
+  "conditions": [
+    "opponent_high_press",
+    "technical_center_backs",
+    "midfielder_available_to_drop"
+  ],
+  "objective": [
+    "secure_possession",
+    "break_pressing_line",
+    "create_numerical_advantage_defensive_third"
+  ],
+  "possible_actions": [
+    "drop_midfielder_deep",
+    "circulate_ball_back_line",
+    "switch_play_to_weak_side"
+  ],
+  "contraindications": [
+    "weak_footed_center_back",
+    "exposed_midfield_area",
+    "opponent_pressing_funnel"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_into_defensive_line",
+    "receive_ball_with_weak_foot",
+    "play_safe_pass_to_fullback"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "high_press",
+    "overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4467s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we make it easier to pass out of our own box?",
+    "Our center-backs feel overloaded when we start a move, how do we give them more options?",
+    "What should our box-to-box midfielder do to help our defenders get the ball out safely?",
+    "We keep turning the ball over in our defensive third, how do we create more passing lanes there?"
+  ]
+}

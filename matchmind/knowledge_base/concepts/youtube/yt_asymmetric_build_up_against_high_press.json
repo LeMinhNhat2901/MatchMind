@@ -1,0 +1,64 @@
+{
+  "concept_id": "yt_asymmetric_build_up_against_high_press",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Asymmetric Build-Up Against High Press",
+  "definition": "A tactical adjustment where the team forms an asymmetric 3+2 shape to create passing angles and relieve pressure from a high-intensity opponent press.",
+  "content": "When facing a high-pressing opponent with a high defensive line, standard overloads and ball-carrying by center-backs often lead to turnovers due to numerical inferiority. To counter this, the team adapts by splitting the center-backs wider and positioning pivots vertically. The ball-sided full-back retreats to form a partnership with the other pivot, creating an asymmetric 3+2 structure against the opponent's front line. This shape provides multiple passing angles for the center-backs to relieve pressure safely. Additionally, this configuration pulls the opponent's front line to one side, increasing space between the lines and on the opposite flank. The far-sided full-back and number 10 are then positioned to receive direct passes into this created space. To progress the ball on the same side and reduce the risk of turnovers during switches, pivots act as key connectors. The top pivot drops deep to receive from the center-back and quickly passes to the bottom pivot. This movement pulls the opponent's press closer, opening wide spaces for the full-back to receive as a third man. This combination of asymmetric shape and third-man runs allows the team to bypass the high press effectively.",
+  "conditions": [
+    "opponent_high_press",
+    "defensive_line_height_high",
+    "local_numerical_advantage_negative"
+  ],
+  "objective": [
+    "relieve_pressure",
+    "create_passing_angles",
+    "bypass_high_press"
+  ],
+  "possible_actions": [
+    "split_center_backs_wider",
+    "position_pivots_vertically",
+    "full_back_retreats_to_partner",
+    "execute_third_man_run",
+    "switch_play_to_opposite_side"
+  ],
+  "contraindications": [
+    "risk_of_turnover_in_vulnerable_zone",
+    "loss_of_possession_under_pressure"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "defensive_line_height_high",
+    "local_numerical_advantage_negative",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "asymmetric_3_plus_2_shape",
+    "space_between_lines",
+    "wide_space_on_opposite_flank"
+  ],
+  "player_behaviours": [
+    "center_back_splits_wide",
+    "pivot_drops_deep",
+    "full_back_retreats",
+    "third_man_run"
+  ],
+  "related_concepts": [
+    "third_man",
+    "overload",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=191s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get the ball out of our own half when they are pressing us so hard?",
+    "Our full-backs are getting isolated and losing the ball, what shape should we form to help them?",
+    "If the opponent presses our left side, how should we position our right-sided players to create space?",
+    "We keep turning the ball over in the first ten minutes of games, what tactical change can help us break the press?"
+  ]
+}

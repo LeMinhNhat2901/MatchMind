@@ -1,0 +1,45 @@
+{
+  "concept_id": "wiki_rainbow_kick_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Rainbow Kick Technique",
+  "content": "The rainbow kick is a specialized dribbling technique where a player steps beside the ball, rolls it up the back of one leg with the other foot, and flicks the standing foot upward to propel the ball over their head. This move creates a high, arcing trajectory that allows the player to bypass an opponent who is positioned directly in front of them. It is primarily used as a feint or a direct beat during one-on-one situations, particularly when the defender is close and the player is moving forward. While visually impressive, the move has a low success rate and is rarely used in modern professional matches due to the risk of losing possession. It is best suited for players with high confidence and technical proficiency who can execute the motion fluidly without losing balance. The technique can be adapted into variations, such as the 'Neymar Rocket,' which involves locking the ball between the ankles and jumping to release it. Coaches should view this as a niche skill for breaking down tight defensive structures rather than a standard progression tool, as it often disrupts the team's rhythm if attempted in crowded areas or under high pressure.",
+  "conditions": [
+    "one_on_one_situation",
+    "opponent_close_range",
+    "forward_momentum",
+    "high_technical_confidence"
+  ],
+  "objective": [
+    "beat_defender_directly",
+    "maintain_possession",
+    "create_space_ahead"
+  ],
+  "possible_actions": [
+    "execute_rainbow_flick",
+    "attempt_neymar_rocket_variation",
+    "use_as_feint_only"
+  ],
+  "contraindications": [
+    "crowded_defensive_area",
+    "low_confidence_player",
+    "high_press_intensity",
+    "need_for_quick_progression"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "is_in_attacking_third"
+  ],
+  "source": {
+    "name": "Wikipedia: Rainbow kick",
+    "url": "https://en.wikipedia.org/wiki/Rainbow_kick",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the name of that flashy move where you flick the ball over your head while running?",
+    "I'm trapped by a defender right in front of me with no space to go left or right, what trick can I use to get past him?",
+    "My winger loves to show off in one-on-ones, what specific skill should he practice to beat a tight marker by going over his head?",
+    "We keep losing the ball when our players try to dribble past defenders who are standing very close, is there a technique to bypass them without touching the ground?"
+  ]
+}

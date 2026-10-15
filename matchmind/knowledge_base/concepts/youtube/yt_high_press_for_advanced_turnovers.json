@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_high_press_for_advanced_turnovers",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "High Press for Advanced Turnovers",
+  "definition": "An aggressive man-to-man pressing strategy designed to win the ball in advanced areas to create immediate scoring opportunities.",
+  "content": "This tactical approach involves deploying a high defensive line to compress the playing space, forcing the opposition to play under pressure in their own half or the middle third. Unlike strategies focused solely on territorial control, the primary objective here is to actively recover possession in advanced areas, specifically the opponent's final third. By winning the ball high up the pitch, the team can immediately transition into attacking positions, often leading to high-quality shot opportunities before the opposition can reorganize their defensive shape. This method requires significant physical intensity and precise coordination among players to maintain compactness and close down passing lanes effectively. It transforms the defensive phase into a direct attacking weapon, creating a dynamic rhythm where possession is regained and utilized rapidly. The strategy relies on the team's ability to sustain high intensity and execute coordinated pressing triggers to isolate ball carriers. When successful, it generates a high volume of shots from turnovers, adding a critical dimension to a possession-based game by ensuring that defensive actions directly contribute to offensive output.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "team_compactness_high",
+    "press_intensity_capable"
+  ],
+  "objective": [
+    "win_ball_advanced_area",
+    "create_immediate_shooting_opportunity",
+    "compress_pitch_space"
+  ],
+  "possible_actions": [
+    "man_to_man_press",
+    "close_down_passing_lanes",
+    "force_backward_pass",
+    "intercept_ball"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "opponent_long_ball_ability",
+    "lack_of_midfield_screen"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "is_in_attacking_third",
+    "nearest_opponent_distance_low"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "sprint_to_ball"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "pressing_trap",
+    "defensive_line_height"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=D8AgTaSShmM&t=368s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we force the opponent to lose the ball right in front of their goal?",
+    "We keep getting caught deep when we press, how do we turn those mistakes into quick goals?",
+    "What should our strikers do to trap the center-backs in a 1v1 near the penalty box?",
+    "Why do we struggle to score immediately after winning the ball in the opponent's half?"
+  ]
+}

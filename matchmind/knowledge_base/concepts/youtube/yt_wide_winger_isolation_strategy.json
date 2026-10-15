@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_wide_winger_isolation_strategy",
+  "category": "attacking",
+  "subcategory": "width",
+  "phase": "possession",
+  "title": "Wide Winger Isolation Strategy",
+  "definition": "A tactical approach where wingers maintain extreme width until the final third to force opponents to spread out, creating isolation opportunities against fullbacks.",
+  "content": "This concept addresses the tactical error of wingers drifting into central areas too early, which narrows the attack and allows opponents to compress the center. By keeping wingers glued to the touchline until the ball enters the final third, the team forces the opposition to defend the entire width of the pitch. This prevents the opponent from simply protecting the central zones and forcing the fullbacks to carry the ball. Once the ball reaches the final third, the wide wingers can exploit the space created by the opponent's stretched defensive shape. This creates 1v1 isolation opportunities against the opposing fullbacks, allowing elite dribblers to beat them and deliver crosses or cut inside. The strategy relies on personnel capable of holding width and executing high-quality dribbles. It also requires a midfield structure that supports this width, often involving players occupying half-spaces to provide passing options while the wingers stretch the play. This approach maximizes the threat from out wide and makes the attack less predictable, as the opponent cannot easily predict whether the winger will stay wide or cut inside until the final moment.",
+  "conditions": [
+    "is_in_attacking_third",
+    "opponent_defensiveline_high",
+    "local_numerical_advantage_negative"
+  ],
+  "objective": [
+    "force_opponent_width",
+    "create_isolation_opportunity",
+    "beat_fullback_1v1"
+  ],
+  "possible_actions": [
+    "hold_width_until_final_third",
+    "dribble_past_fullback",
+    "cut_inside_after_beat",
+    "deliver_cross"
+  ],
+  "contraindications": [
+    "winger_lacks_dribbling_skill",
+    "opponent_compact_low_block",
+    "lack_of_supporting_midfield"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "ball_near_flank",
+    "space_ahead_large",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "wide_team_shape",
+    "full_pitch_width_utilization"
+  ],
+  "player_behaviours": [
+    "maintain_touchline_position",
+    "delay_cutting_inside",
+    "execute_1v1_dribble"
+  ],
+  "related_concepts": [
+    "half_space_occupation",
+    "positional_play",
+    "overload_flank"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3995s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we force the opponent to spread their defense so our striker can get free?",
+    "Our left winger is getting marked by two players, so he can't get to the byline; what should he do to create space for the rest of the team?",
+    "As a winger, should I stay on the touchline even if it means I'm 1v1 with their full back, or should I tuck in earlier?",
+    "We keep losing the ball in the wide areas because their full backs are always staying wide; how can we exploit this defensive setup?"
+  ]
+}

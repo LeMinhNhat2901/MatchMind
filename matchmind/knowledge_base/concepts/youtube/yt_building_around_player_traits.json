@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_building_around_player_traits",
+  "category": "fundamentals",
+  "subcategory": "tactical_adaptation",
+  "phase": "general",
+  "title": "Building Around Player Traits",
+  "definition": "A tactical approach where the team structure and roles are adjusted to maximize a specific player's unique strengths while mitigating their weaknesses through systemic support.",
+  "content": "This concept involves identifying a player with rare or asymmetric traits and designing the team's ecosystem to accommodate them rather than forcing them into a traditional role. For example, a winger with elite dribbling but poor defensive tracking might be supported by a midfielder who covers defensive duties, allowing the winger to focus on attacking progression. Alternatively, a striker with poor finishing but excellent link-up play might be deployed in a system that prioritizes creative involvement over direct goal scoring, or shifted to a wide position to leverage their creativity. The manager must accept that certain weaknesses will remain but believe the strengths outweigh the drawbacks. This requires a holistic view of the player's attributes within the team's broader tactical framework, ensuring that the player's specific skills facilitate the team's objectives, such as baiting opponents into pressing or creating space for others. It is a strategic decision to prioritize individual excellence over positional purity, often leading to unique team shapes or role definitions that exploit the player's specific profile.",
+  "conditions": [
+    "player_has_rare_traits",
+    "team_needs_specific_output",
+    "manager_willing_to_adapt"
+  ],
+  "objective": [
+    "maximize_player_strengths",
+    "mitigate_player_weaknesses",
+    "optimize_team_structure"
+  ],
+  "possible_actions": [
+    "adjust_team_shape",
+    "assign_supporting_roles",
+    "shift_player_position",
+    "modify_tactical_system"
+  ],
+  "contraindications": [
+    "player_weaknesses_critical_to_core_role",
+    "lack_of_supporting_players",
+    "inconsistent_player_performance"
+  ],
+  "trigger_conditions": [
+    "player_trait_mismatch",
+    "tactical_flexibility_required"
+  ],
+  "spatial_requirements": [
+    "flexible_team_shape",
+    "supporting_player_coverage"
+  ],
+  "player_behaviours": [
+    "focus_on_strengths",
+    "rely_on_team_support",
+    "adapt_to_system"
+  ],
+  "related_concepts": [
+    "positional_shift",
+    "role_definition",
+    "tactical_flexibility"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=kTWyahkAOYc&t=350s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we set up the team to make our star striker more effective?",
+    "Our best player is getting isolated, how should we adjust our shape to help him?",
+    "What should our wingers do to support our creative midfielder who struggles defensively?",
+    "We have a player who is great in one-on-ones but poor in tight spaces, how do we structure the team to use his strengths?"
+  ]
+}

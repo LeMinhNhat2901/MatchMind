@@ -1,0 +1,37 @@
+{
+  "concept_id": "wiki_catenaccio_defensive_system",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Catenaccio Defensive System",
+  "content": "Catenaccio is a defensive tactical system characterized by a highly organized, low-block structure designed to nullify opponent attacks and prevent goal-scoring opportunities. The core principle involves deploying a sweeper (libero) behind a line of fixed defenders, creating a numerical safety net in the final third. This formation typically utilizes a 5-3-2 or 4-4-2 shape where the sweeper covers space behind the back four, allowing the other defenders to maintain strict man-to-man marking or zonal discipline. The system prioritizes compactness and structural integrity over aggressive pressing, relying on the sweeper to intercept through balls and clear danger. It is particularly effective when facing physically superior or technically dominant opponents, as it minimizes exposure to counter-attacks by keeping the defensive line deep and cohesive. The objective is to frustrate the opposition, force them into low-percentage shots, and create opportunities for quick transitions from a stable defensive base.",
+  "conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "opponent_high_press"
+  ],
+  "objective": [
+    "nullify_opponent_attacks",
+    "maintain_defensive_structure",
+    "limit_goal_scoring_opportunities"
+  ],
+  "possible_actions": [
+    "deploy_sweeper_behind_backline",
+    "maintain_low_block_compactness",
+    "use_sweeper_to_cover_space"
+  ],
+  "contraindications": [
+    "opponent_weak_defense",
+    "need_to_score_quickly"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "is_in_defensive_third"
+  ],
+  "source": {
+    "name": "Wikipedia: Catenaccio",
+    "url": "https://en.wikipedia.org/wiki/Catenaccio",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  }
+}

@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_hybrid_pressing_trap_strategy",
+  "category": "defending",
+  "subcategory": "pressing_traps",
+  "phase": "out_of_possession",
+  "title": "Hybrid Pressing Trap Strategy",
+  "definition": "A defensive tactic that dynamically switches between zonal and man-to-man pressing to force errors and create counter-pressing opportunities.",
+  "content": "This tactical approach rejects rigid structural adherence in favor of dynamic, space-exploiting movement. Unlike possession-based systems that prioritize maintaining shape, this style encourages players to run into open space even without immediate passing options, creating surprise and disrupting the opponent's pre-set defensive structures. The primary objective is not to keep the ball for control, but to move it forward quickly to score. A key component is the use of a hybrid pressing trap, where the team alternates between zonal and man-to-man marking depending on the ball's location. For instance, when the ball is central, the team may start zonal before switching to man-orientation to isolate opponents. This flexibility allows the team to trigger intense counter-pressing when the ball is lost, particularly when few defenders are behind the ball. By playing long balls during buildup or allowing opponents to build up before pressing aggressively, the team creates scenarios where they can win the ball back in high-value areas. This method maximizes transition opportunities, turning defensive actions into immediate attacking threats by exploiting the chaos created by the shifting press.",
+  "conditions": [
+    "opponent_buildup_phase",
+    "ball_in_central_area",
+    "high_press_capability"
+  ],
+  "objective": [
+    "force_opponent_error",
+    "create_counter_press_opportunity",
+    "disrupt_opponent_structure"
+  ],
+  "possible_actions": [
+    "switch_pressing_orientation",
+    "press_aggressively_on_buildup",
+    "run_into_open_space"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "poor_communication_between_lines"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "switch_marking_scheme",
+    "angle_press",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "pressing_traps",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=RD3_slnkyMo&t=313s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we mix zone and man marking to force their keeper into a mistake?",
+    "Our team keeps getting caught out of position when we switch from zonal to man-to-man, how do we fix that transition?",
+    "What should the center-backs do when the winger receives the ball on the touchline in this mixed pressing scheme?",
+    "We lose intensity in the second half because we stick to one style, how can we vary our approach to keep them guessing?"
+  ]
+}

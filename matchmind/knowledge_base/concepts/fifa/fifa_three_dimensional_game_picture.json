@@ -1,0 +1,57 @@
+{
+  "concept_id": "fifa_three_dimensional_game_picture",
+  "category": "fundamentals",
+  "subcategory": "scanning",
+  "phase": "general",
+  "title": "Three-Dimensional Game Picture",
+  "definition": "A holistic cognitive framework combining spatial, positional, and peripheral awareness to enable rapid, informed decision-making.",
+  "content": "The 'game picture' is a dynamic mental map that elite players maintain to process complex on-pitch information. It operates across three distinct dimensions: spatial consciousness, positional awareness, and peripheral vision. Spatial consciousness involves sensing immediate proximity to opponents and teammates, allowing players to create separation or exploit tight gaps through subtle movement. Positional awareness requires understanding one's coordinates relative to defensive lines, goalkeeper angles, and team formations, ensuring players know their tactical role within the structure. Peripheral awareness utilizes distal vision to identify long-term opportunities and developing threats elsewhere on the field without turning the head. For instance, a player might sense a defender approaching, step back to create space, and simultaneously spot a goalkeeper out of position to execute a precise pass. Developing this skill requires foundational habits rather than complex tactical overload. Coaches should emphasize the 'look-move-receive' sequence through high-repetition drills, ensuring players scan before touching the ball. This habit allows athletes to process multiple inputs—such as a loose ball's trajectory or a teammate's run timing—simultaneously, leading to faster and more accurate decisions under pressure.",
+  "conditions": [
+    "high_pressure_situation",
+    "dynamic_game_state"
+  ],
+  "objective": [
+    "rapid_decision_making",
+    "situational_awareness",
+    "accurate_passing"
+  ],
+  "possible_actions": [
+    "scan_before_receiving",
+    "adjust_body_position",
+    "identify_open_space",
+    "execute_weighted_pass"
+  ],
+  "contraindications": [
+    "tunnel_vision",
+    "static_focus"
+  ],
+  "trigger_conditions": [
+    "players_near_ball",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "awareness_of_surrounding_space"
+  ],
+  "player_behaviours": [
+    "peripheral_scanning",
+    "spatial_adjustment",
+    "positional_mapping"
+  ],
+  "related_concepts": [
+    "scanning",
+    "decision_making",
+    "spatial_intelligence"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Speed of the Game 3: A clear game picture",
+    "url": "https://www.fifatrainingcentre.com/en/game/individual-qualities/speed-of-the-game/speed-of-the-game-3--a-clear-game-picture.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How can I improve my ability to see the whole field at once?",
+    "I often miss the open man behind the defense, what should I be looking at to spot him earlier?",
+    "As a full-back, how do I keep track of the opponent's movement while also watching my own team's play?",
+    "Why do I always seem to be late to the ball, and how can I improve my spatial awareness on the pitch?"
+  ]
+}

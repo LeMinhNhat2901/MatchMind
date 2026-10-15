@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_selective_pressing_and_compactness",
+  "category": "defending",
+  "subcategory": "mid_block",
+  "phase": "out_of_possession",
+  "title": "Selective Pressing and Compactness",
+  "definition": "A defensive strategy prioritizing structural compactness and forcing opponents wide over constant high-intensity pressing to mitigate counter-attack risks.",
+  "content": "This tactical adjustment addresses the vulnerability of high-pressing systems when key recovery assets (like full-backs) are unavailable or positioned high. Instead of relentlessly hunting the ball, the team adopts a more cautious, selective approach. The primary objective is to maintain a compact team shape, reducing the space between lines and forcing the opposition to play wide, effectively using the touchline as an additional defender. By allowing the opponent more possession (increasing passes per defensive action), the team conserves energy and reduces the risk of being bypassed and exposed on the counter. This method significantly lowers the quality of chances conceded, as evidenced by a drop in expected goals against, even if the team is no longer the most intense presser in the league. It is particularly useful when the team lacks numerical superiority in midfield or has reduced recovery pace, ensuring that defensive stability is maintained through structure rather than individual effort alone.",
+  "conditions": [
+    "reduced_recovery_pace",
+    "lack_of_midfield_numbers",
+    "opponent_high_press_vulnerable"
+  ],
+  "objective": [
+    "maintain_compact_shape",
+    "force_opponent_wide",
+    "reduce_xg_against"
+  ],
+  "possible_actions": [
+    "drop_into_mid_block",
+    "delay_opponent_progression",
+    "force_crosses"
+  ],
+  "contraindications": [
+    "opponent_weak_in_transition",
+    "team_has_high_recovery_athleticism"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_moderate",
+    "team_compactness_high",
+    "ball_near_flank"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "hold_defensive_position",
+    "delay_passing_options"
+  ],
+  "related_concepts": [
+    "low_block",
+    "counter_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=7002s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop the opponent from playing through the middle without tiring ourselves out?",
+    "We get caught in counter-attacks every time we press high, so what is a safer defensive shape?",
+    "What should the defensive midfielder do when the opponent switches play to the wide areas?",
+    "Why do we keep getting scored on from long balls even though we press hard for the first ten minutes?"
+  ]
+}

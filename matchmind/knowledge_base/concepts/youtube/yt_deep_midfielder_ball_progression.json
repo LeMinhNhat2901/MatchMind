@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_deep_midfielder_ball_progression",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Deep Midfielder Ball Progression",
+  "definition": "The use of a deep-lying midfielder's long-range passing and spatial awareness to bypass defensive blocks and initiate rapid transitions.",
+  "content": "This concept highlights the critical role of a deep-lying midfielder in breaking down compact defensive structures. Unlike players who rely on dribbling or short passing, which can be slow and predictable, a specialist deep midfielder uses long, progressive passes to switch play or break lines before the opposition can reorganize. This approach prevents the team from becoming static and allows wingers and fullbacks to receive the ball in advanced positions with space to accelerate. By bypassing the midfield congestion, the team creates immediate one-on-one opportunities and utilizes overlapping runs from fullbacks more effectively. The key is minimizing unnecessary movement to maintain positional stability while maximizing the range of passing options. This tactic is essential when opponents defend deep and horizontally compact, as it exploits the space behind their defensive line and between the lines, turning possession into attack quickly rather than allowing the defense to settle into a low block.",
+  "conditions": [
+    "opponent_low_block",
+    "compact_defensive_shape",
+    "deep_midfielder_available"
+  ],
+  "objective": [
+    "break_defensive_lines",
+    "switch_play_rapidly",
+    "create_one_on_one_opportunities"
+  ],
+  "possible_actions": [
+    "long_diagonal_pass",
+    "switch_to_wide_area",
+    "progressive_pass_to_half_space"
+  ],
+  "contraindications": [
+    "high_press_intense",
+    "lack_of_supporting_players"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "team_compactness_high",
+    "space_behind_defensive_line",
+    "switch_play_viable"
+  ],
+  "spatial_requirements": [
+    "wide_team_shape",
+    "deep_midfield_position"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "execute_long_pass",
+    "maintain_positional_balance"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "overlap"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=wZH52nypI0I&t=172s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I break through a low block without wasting time passing sideways?",
+    "My team gets stuck in the midfield when the opponent parks the bus, what kind of pass can unlock that defense?",
+    "As the deep midfielder, how do I use my vision to find the space behind their defensive line?",
+    "We struggle to transition quickly from defense to attack because we keep passing short, how can I change this?",
+    "What is the best way to use long-range passing to bypass a compact defensive shape?"
+  ]
+}

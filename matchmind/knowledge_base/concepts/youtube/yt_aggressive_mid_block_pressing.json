@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_aggressive_mid_block_pressing",
+  "category": "defending",
+  "subcategory": "mid_block",
+  "phase": "out_of_possession",
+  "title": "Aggressive Mid-Block Pressing",
+  "definition": "A defensive strategy that maintains a compact shape in the central third to restrict space, combined with aggressive, high-intensity pressing when the ball enters the midfield zone.",
+  "content": "This tactical approach rejects both the high press and the passive low block in favor of a dominant mid-block. By positioning five players high and five players deep, the team compresses the pitch, minimizing the space available for the opponent to operate. This spatial restriction forces the opposition into risky passes or turnovers. Crucially, this is not a passive 'parking the bus' strategy; it is an active, aggressive system. The front line does not press the backline directly but instead lures the ball into the midfield. Once the ball reaches a midfielder, the team executes a coordinated, intense press from all angles, often using aggressive tackling or tactical fouls to win possession. This method exploits the vulnerability of midfielders who have less space to turn and create, while the compactness behind them prevents through-balls to forwards. The objective is to win the ball in a high-value area, initiating quick transitions before the opponent can reorganize.",
+  "conditions": [
+    "team_compactness_high",
+    "ball_in_midfield",
+    "opponent_passing_into_midfield"
+  ],
+  "objective": [
+    "restrict_opponent_space",
+    "win_ball_in_midfield",
+    "force_risky_passes"
+  ],
+  "possible_actions": [
+    "lure_ball_into_midfield",
+    "coordinated_midfield_press",
+    "aggressive_tackling",
+    "maintain_compact_shape"
+  ],
+  "contraindications": [
+    "opponent_long_ball_threat",
+    "lack_of_midfield_density"
+  ],
+  "trigger_conditions": [
+    "ball_in_midfield",
+    "team_compactness_high",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines",
+    "central_third_dominance"
+  ],
+  "player_behaviours": [
+    "lure_opponent_pass",
+    "angle_press",
+    "aggressive_tackle",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "mid_block",
+    "pressing_traps",
+    "compactness"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=WgXKzg6vuHg&t=178s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why are we sitting so deep when we could be higher up the pitch?",
+    "The opponent is passing around our back line, how do we stop them from reaching our midfielders?",
+    "When the ball enters the central area, what should our midfielders do to regain possession quickly?",
+    "We are getting stretched too wide and losing shape, how can we stay compact in the middle of the park?"
+  ]
+}

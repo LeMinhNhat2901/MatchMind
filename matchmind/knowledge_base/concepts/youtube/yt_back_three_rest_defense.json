@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_back_three_rest_defense",
+  "category": "defending",
+  "subcategory": "rest_defence",
+  "phase": "out_of_possession",
+  "title": "Back Three Rest Defense",
+  "definition": "A defensive structure using a back three to protect central spaces when the team is out of possession, compensating for wide players who do not invert.",
+  "content": "This tactical adjustment is employed when a team utilizes athletic, wide fullbacks who operate high up the pitch but lack the technical ability to invert and provide central defensive cover. In such scenarios, the traditional back four leaves the central zones vulnerable, particularly if the defensive midfielder is isolated or if advanced midfielders like playmakers stay high. By shifting to a back three in the rest defense, the team creates a compact 3-1 shape that secures the central channels. This structure ensures that the space between the lines is covered, preventing opponents from exploiting the gaps left by the wide players. It allows the team to maintain defensive stability without requiring the fullbacks to drop into a narrow defensive line, preserving their attacking width. This approach is particularly effective when the team has a strong central defensive trio and a dedicated defensive midfielder who can link with the back three, creating a solid base for the build-up and a resilient shape in transition.",
+  "conditions": [
+    "fullbacks_do_not_invert",
+    "central_space_vulnerable",
+    "athletic_wide_players"
+  ],
+  "objective": [
+    "secure_central_channels",
+    "maintain_defensive_compactness",
+    "protect_against_counter_attack"
+  ],
+  "possible_actions": [
+    "shift_to_back_three",
+    "drop_defensive_midfielder",
+    "maintain_wide_attacking_shape"
+  ],
+  "contraindications": [
+    "lack_of_central_defensive_quality",
+    "opponent_overloads_wide_areas"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "space_between_lines",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_defensive_coverage"
+  ],
+  "player_behaviours": [
+    "drop_into_back_three",
+    "cover_central_passing_lanes"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "defensive_transition",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5074s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why would a team switch to three defenders when they lose the ball instead of staying with four?",
+    "Our wingers stay wide and don't tuck in, leaving the center exposed, what defensive shape covers that gap?",
+    "As a center-back, do I need to hold a higher line or drop deeper if we are playing with three at the back when out of possession?",
+    "We get beaten through the middle every time we lose the ball, is there a defensive structure that specifically protects the central channels?"
+  ]
+}

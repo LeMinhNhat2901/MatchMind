@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_double_false_nine_rotation",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Double False Nine Rotation",
+  "definition": "A tactical structure where two non-traditional forwards operate as a fluid front two, rotating positions to create indecision and overload the defensive line.",
+  "content": "The double false nine is an advanced attacking formation designed to disrupt defensive organization by introducing fluidity and unpredictability in the final third. Instead of relying on a single target man, two players (often a central midfielder and a winger or forward) operate as a front two. They constantly rotate, dropping deep to link play or pushing high to create shooting opportunities. This movement forces defenders to constantly reorient, creating indecision and gaps in the defensive line. The system relies on high technical quality and spatial awareness, as players must be comfortable receiving the ball in tight spaces and making late runs into the box. It is particularly effective against teams that sit deep or focus on marking specific players, as the rotating nature makes it difficult to assign clear defensive responsibilities. The presence of a solid double pivot in midfield provides the platform for this freedom, allowing the front two to drop deep without leaving the team exposed. This approach maximizes the threat from multiple angles, ensuring that at least one player is always in a dangerous position to receive a pass or make a run.",
+  "conditions": [
+    "high_technical_quality",
+    "solid_midfield_pivot",
+    "opponent_defensive_line_low"
+  ],
+  "objective": [
+    "create_defensive_indecision",
+    "overload_final_third",
+    "generate_late_runs"
+  ],
+  "possible_actions": [
+    "rotate_positions",
+    "drop_deep_to_link",
+    "make_late_runs_into_box",
+    "switch_play"
+  ],
+  "contraindications": [
+    "lack_of_midfield_control",
+    "opponent_high_press_aggressive"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_ahead_large",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "scan_before_receiving"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "false_nine",
+    "overload",
+    "fluidity"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6841s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we create confusion in their back four without having a traditional target man?",
+    "Our two forwards are getting marked individually, how can they work together to overload the defense?",
+    "What should our second striker do when the center-backs are unsure whether to follow him or stay on the ball carrier?",
+    "We lack a focal point in attack, how can we generate chances by having our front two swap positions constantly?"
+  ]
+}

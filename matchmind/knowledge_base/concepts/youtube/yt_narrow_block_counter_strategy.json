@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_narrow_block_counter_strategy",
+  "category": "defending",
+  "subcategory": "low_block",
+  "phase": "out_of_possession",
+  "title": "Narrow Block Counter-Strategy",
+  "definition": "A defensive tactic involving a super-narrow 4-4-2 shape that denies central penetration by refusing to press the ball carrier.",
+  "content": "This tactical approach is designed to neutralize possession-based teams that rely on central progression and quick transitions. Opponents adopt a super-narrow 4-4-2 formation, with wingers staying barely wider than the penalty area to create a compact defensive box, often just 15 yards across. The core principle is discipline: the front two refuse to be baited into pressing the center-backs, even when invited to do so. By avoiding the press, they prevent the deep-lying playmaker (e.g., Rodri) from receiving the ball in space, which would allow the attacking team to find rhythm and accelerate through phases of play. Instead, the defense forces the opponent to circulate the ball laterally or play around the block, rather than through it. This strategy effectively neutralizes midfield superiority by denying the central channels, making the game about patience and width rather than vertical penetration. It is particularly effective against teams that lack the width or patience to break down a compact low block, turning the opponent's possession into a liability by slowing down their transition speed.",
+  "conditions": [
+    "opponent_high_possession",
+    "opponent_central_progression",
+    "defensive_compactness_high"
+  ],
+  "objective": [
+    "deny_central_space",
+    "force_lateral_circulation",
+    "neutralize_deep_playmaker"
+  ],
+  "possible_actions": [
+    "maintain_narrow_shape",
+    "refuse_to_press_cb",
+    "stay_compact_in_box"
+  ],
+  "contraindications": [
+    "opponent_wide_overload",
+    "lack_of_defensive_discipline"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "super_narrow_defensive_block",
+    "compact_midfield_box"
+  ],
+  "player_behaviours": [
+    "stay_narrow_wingers",
+    "avoid_pressing_trigger"
+  ],
+  "related_concepts": [
+    "low_block",
+    "defensive_compactness",
+    "possession_dominance"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=8290s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I stop them from playing through the middle?",
+    "The opposition keeps passing through the center and creating chances, what should my midfielders do?",
+    "What should my defenders do when the opponent is passing the ball around in the center?",
+    "We keep getting scored against from central attacks, how can I tighten up my defense?"
+  ]
+}

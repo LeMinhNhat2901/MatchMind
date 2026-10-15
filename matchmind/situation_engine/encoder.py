@@ -13,6 +13,7 @@ from __future__ import annotations
 import logging
 
 from matchmind.schema.match_state import MatchState, SituationFeatures
+from matchmind.situation_engine.orientation import orient_for_team
 from matchmind.situation_engine.spatial_features import compute_spatial_features
 from matchmind.situation_engine.team_structure import compute_team_structure
 from matchmind.situation_engine.passing_analyzer import compute_passing_opportunities
@@ -82,6 +83,11 @@ def encode_situation(
 
     logger.debug(f"Encoding situation for player {focus_player_id} in match {state.match_id}")
 
+    # Every calculation below assumes the focus team attacks toward +x; turn the
+    # pitch round when it doesn't (no-op for an already-oriented state).
+    state, _ = orient_for_team(state, focus.team)
+    focus = state.get_player(focus_player_id, focus.team)
+
     # ── Step 1: Spatial ──────────────────────────────────────
     spatial = compute_spatial_features(state, focus_player_id)
     # Extract pre-computed lists for reuse
@@ -124,7 +130,8 @@ def encode_situation(
         "focus_player_x": focus.x,
         "focus_player_y": focus.y,
         "minute": state.minute,
-        "score_diff": state.score_diff_from_home,
+        # From the focus player's team (positive = their team leads).
+        "score_diff": state.score_for(focus.team)[0] - state.score_for(focus.team)[1],
         "open_lanes_count": len(passing.get("open_passing_lane_player_ids", [])),
         "progressive_passes_available": passing.get("progressive_passes_available", 0),
     }
@@ -155,6 +162,7 @@ def encode_situation(
         is_in_defensive_third=spatial["is_in_defensive_third"],
         # Team structure
         defensive_line_height=team_struct["defensive_line_height"],
+        defensive_line_visible=team_struct["defensive_line_visible"],
         team_compactness=team_struct["team_compactness"],
         attacking_width=team_struct["attacking_width"],
         numerical_superiority_zone=team_struct["numerical_superiority_zone"],
@@ -192,12 +200,34 @@ def _build_nl_description(
     """
     lines = []
 
-    # Player context
-    role_str = f" ({focus.role})" if focus.role else ""
+    # Player context — the real team name when the source provides it (StatsBomb
+    # "home" is the acting team, not the match's home side).
+    details = [d for d in (focus.name, focus.role) if d]
+    role_str = f" ({', '.join(details)})" if details else ""
+    named = state.home_team_name if focus.team == "home" else state.away_team_name
+    team_desc = f"({named})" if named else f"[{focus.team} team]"
     lines.append(
-        f"Player {focus.id}{role_str} [{focus.team} team] at position "
+        f"Player {focus.id}{role_str} {team_desc} at position "
         f"({focus.x:.1f}m, {focus.y:.1f}m)."
     )
+    # Partial camera views (StatsBomb 360, video) only show players near the ball;
+    # say so, so the LLM doesn't treat absent players as absent from the pitch.
+    if state.visible_area or len(state.players) < 22:
+        lines.append(f"Camera view shows {len(state.players)} of 22 players.")
+    if state.source == "statsbomb":
+        # 360 data identifies only the event's player; jersey_inference may also
+        # name players who touched the ball moments ago. Everyone else is anonymous.
+        identified = [p for p in state.players if p.name]
+        if identified:
+            names = ", ".join(f"#{p.id} {p.name}" for p in identified)
+            lines.append(
+                f"Identified players: {names}; every other number is a placeholder "
+                "(anonymous in the data), not a shirt number."
+            )
+        else:
+            lines.append(
+                "Players are anonymous in this data: every number is a placeholder, not a shirt number."
+            )
 
     # Possession — stated up front so retrieval + the LLM never confuse an
     # off-ball player for the ball carrier.
@@ -216,14 +246,11 @@ def _build_nl_description(
             lines.append(f"Player {focus.id} does NOT have the ball.")
 
     # Minute and score
-    score_desc = f"{state.score_home}–{state.score_away}"
-    lead_desc = (
-        "leading" if state.score_diff_from_home > 0 else
-        "trailing" if state.score_diff_from_home < 0 else "drawing"
-    )
+    # Told from the focus player's side ("home trailing" was misread as "our team
+    # is trailing" when the focus player was on the away team).
     lines.append(
-        f"Match situation: minute {state.minute}, score {score_desc} "
-        f"(home {lead_desc}). Phase: {state.phase_of_play or 'open play'}."
+        f"Match situation: minute {state.minute}, {state.score_line_for(focus.id, focus.team)}. "
+        f"Phase: {state.phase_of_play or 'open play'}."
     )
 
     # Distance to ball
@@ -232,12 +259,17 @@ def _build_nl_description(
 
     # Pressure
     d_opp = spatial["nearest_opponent_distance"]
-    pressure_desc = (
-        "under high pressure" if d_opp < 3 else
-        "with a nearby opponent" if d_opp < 7 else
-        "with space from nearest opponent"
-    )
-    lines.append(f"Player is {pressure_desc} ({d_opp:.1f}m away).")
+    if is_ball_carrier:
+        pressure_desc = (
+            "under high pressure" if d_opp < 3 else
+            "with a nearby opponent" if d_opp < 7 else
+            "with space from nearest opponent"
+        )
+        lines.append(f"Player is {pressure_desc} ({d_opp:.1f}m away).")
+    else:
+        # Off the ball "pressure" is ambiguous — a defender 2.7 m from the carrier
+        # is the one APPLYING pressure. State the fact only.
+        lines.append(f"Nearest opponent: {d_opp:.1f}m away.")
 
     # Space ahead
     space = spatial["space_ahead"]
@@ -255,22 +287,26 @@ def _build_nl_description(
     else:
         lines.append("Local numerical balance (equal numbers nearby).")
 
-    # Passing
-    if passing["passing_lane_open"]:
-        lane_ids = passing["open_passing_lane_player_ids"]
-        prog = passing["progressive_passes_available"]
-        lines.append(
-            f"Open passing lanes to {len(lane_ids)} teammate(s) "
-            f"(IDs: {lane_ids}), including {prog} progressive option(s)."
-        )
-    else:
-        lines.append("No clear passing lanes — under heavy press or congested area.")
+    # Passing — these are computed FROM the focus player's position, i.e. they are
+    # only this player's options if they hold the ball. For an off-ball player
+    # they read like the carrier's options and got misattributed ("the keeper's
+    # run opens 5 lanes for #10" — those were the keeper's own lanes).
+    if is_ball_carrier:
+        if passing["passing_lane_open"]:
+            lane_ids = passing["open_passing_lane_player_ids"]
+            prog = passing["progressive_passes_available"]
+            lines.append(
+                f"Open passing lanes to {len(lane_ids)} teammate(s) "
+                f"(IDs: {lane_ids}), including {prog} progressive option(s)."
+            )
+        else:
+            lines.append("No clear passing lanes — under heavy press or congested area.")
 
-    # Advanced opportunities
-    if passing["third_man_opportunity"]:
-        lines.append("Third-man run opportunity detected (combination play feasible).")
-    if passing["switch_play_viable"]:
-        lines.append("Switch of play viable — wide player free on opposite flank.")
+        # Advanced opportunities
+        if passing["third_man_opportunity"]:
+            lines.append("Third-man run opportunity detected (combination play feasible).")
+        if passing["switch_play_viable"]:
+            lines.append("Switch of play viable — wide player free on opposite flank.")
 
     # Zone context
     if spatial["half_space_occupied"]:
@@ -281,8 +317,10 @@ def _build_nl_description(
         lines.append("Player is in the defensive third.")
 
     # Team structure
-    def_line = team_struct["defensive_line_height"]
-    lines.append(f"Opponent defensive line at x={def_line:.1f}m.")
+    if team_struct["defensive_line_visible"]:
+        lines.append(f"Opponent defensive line at x={team_struct['defensive_line_height']:.1f}m.")
+    else:
+        lines.append("Opponent back line is not in the camera view (only players near the ball are visible).")
     if spatial.get("overload_left"):
         lines.append("Numerical overload on left flank.")
     if spatial.get("overload_right"):

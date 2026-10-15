@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_breaking_man_to_man_marking",
+  "category": "attacking",
+  "subcategory": "individual_dribbling",
+  "phase": "possession",
+  "title": "Breaking Man-to-Man Marking",
+  "definition": "Using individual skill to beat a specific defender in a man-marking system, thereby creating numerical overloads and collapsing the defensive structure.",
+  "content": "This concept addresses the tactical stalemate created by teams employing strict man-to-man marking to neutralize positional play. When every player is matched up, standard passing sequences often fail because there are no free spaces to exploit. The solution lies in individual brilliance, specifically the ability of a player to beat their direct marker. Beating one defender in a man-marking system does not just create a 2v1; it triggers a chain reaction. The second defender who steps up to cover the beaten player leaves their own man free, forcing a third defender to adjust, and so on. This cascading effect collapses the entire defensive structure, creating chaos and open space. Modern wingers and inside forwards are crucial here, combining the flair to dribble past a marker with the efficiency to exploit the resulting disorganization. This approach is particularly effective against deep blocks or highly organized systems that rely on individual accountability rather than zonal coverage. It requires players who are not only technically gifted but also physically robust to withstand challenges, ensuring that the initial beat leads to a sustained advantage rather than a turnover.",
+  "conditions": [
+    "opponent_man_marking",
+    "possession_safe_player_available",
+    "defensive_structure_compact"
+  ],
+  "objective": [
+    "beat_direct_marker",
+    "create_numerical_overload",
+    "disrupt_defensive_formation"
+  ],
+  "possible_actions": [
+    "dribble_past_marker",
+    "isolate_one_on_one",
+    "switch_play_after_beating_marker"
+  ],
+  "contraindications": [
+    "opponent_zonal_defending",
+    "low_confidence_in_individual_skill",
+    "high_press_intensity"
+  ],
+  "trigger_conditions": [
+    "opponent_man_marking",
+    "local_numerical_advantage_negative",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "isolated_1v1_space",
+    "supporting_players_in_position"
+  ],
+  "player_behaviours": [
+    "dribble_1v1",
+    "shield_ball",
+    "scan_for_support"
+  ],
+  "related_concepts": [
+    "man_marking",
+    "individual_dribbling",
+    "deep_block_breaking"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-izMUUfGnso&t=472s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we create space when every player is being marked tightly?",
+    "The other team is playing a strict man-marking system and we can't find gaps, what should we do?",
+    "What should our most skilled winger do to break down a dedicated one-on-one defender?",
+    "We keep getting caught offside because the opposition is marking us individually, how do we exploit this?"
+  ]
+}

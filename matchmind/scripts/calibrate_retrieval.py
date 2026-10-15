@@ -1,11 +1,12 @@
 """
 Calibrate the retrieval-confidence threshold.
 
-The re-retrieve branch fires when mean top-k cosine similarity < threshold.
-A hard-coded 0.5 is wrong for MiniLM on a ~30-doc KB. This script runs a set
-of labelled probe queries, takes the 25th percentile of the top-1 similarity
-of the "good" ones, and writes it to output/retrieval_calibration.json.
-config.Settings.effective_retrieval_threshold picks it up automatically.
+The re-retrieve branch fires when retrieval confidence < threshold. This
+script runs labelled probe queries through the HybridRetriever and puts the
+threshold in the middle of the gap between the weakest on-domain probe and the
+strongest off-domain one (see choose_threshold), writing it to
+output/retrieval_calibration.json, which
+config.Settings.effective_retrieval_threshold picks up automatically.
 
 Usage:
     python -m matchmind.scripts.build_kb --rebuild        # KB must exist first
@@ -26,8 +27,6 @@ import typer
 from rich.console import Console
 
 from matchmind.config import settings
-from matchmind.knowledge_base.embedder import TacticalEmbedder
-from matchmind.knowledge_base.vector_store import TacticalVectorStore
 
 app = typer.Typer()
 console = Console()
@@ -48,11 +47,28 @@ GOOD_PROBES = [
     "man-mark the opponent's key playmaker out of the game",
     "gegenpress immediately after losing possession in the final third",
 ]
+# Off-domain only. "what is the offside rule" used to be here, but with the
+# reranker it (correctly) retrieves Offside Trap at 0.98 and pushed the
+# threshold so high that almost every agent query re-retrieved.
 BAD_PROBES = [
-    "what is the offside rule in football",
     "history of the world cup trophy",
+    "who won the ballon d'or last year",
     "how to tie football boots correctly",
 ]
+
+
+def choose_threshold(good: list[float], bad: list[float], percentile: float = 25.0) -> float:
+    """Midpoint of the gap between the weakest good probe and the strongest bad
+    one. With a reranker, good probes cluster near 1.0 and junk near 0, so a
+    percentile of the good scores alone (the pre-V1 rule) lands near 1.0 and
+    makes real agent queries (typically 0.6-0.99) re-retrieve every time. If the
+    two sets overlap, fall back to the old percentile-with-guard rule."""
+    good_a, bad_a = np.asarray(good, dtype=float), np.asarray(bad, dtype=float)
+    if good_a.min() > bad_a.max():
+        threshold = (float(good_a.min()) + float(bad_a.max())) / 2.0
+    else:
+        threshold = max(float(np.percentile(good_a, percentile)), float(bad_a.max()) + 0.01)
+    return round(min(max(threshold, 0.1), 0.9), 3)
 
 
 @app.command()
@@ -61,23 +77,23 @@ def main(
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
     logging.basicConfig(level=logging.DEBUG if verbose else logging.INFO)
-    embedder = TacticalEmbedder()
-    store = TacticalVectorStore()
-    if store.count() == 0:
+    from matchmind.retrieval.hybrid import HybridRetriever
+    from matchmind.retrieval.types import RetrievalQuery
+
+    retriever = HybridRetriever()
+    if not retriever.concepts:
         console.print("[red]KB is empty — run build_kb first.[/red]")
         raise typer.Exit(1)
 
     def top1(q: str) -> float:
-        results, _ = store.retrieve_tactics(embedder.embed_query(q), k=1)
-        return results[0]["similarity"] if results else 0.0
+        # Same unit the agent compares against: HybridRetriever confidence
+        # (sigmoid rerank score of the top hit, or its dense similarity).
+        return retriever.retrieve(RetrievalQuery(question=q), k=1).confidence
 
     good = np.array([top1(q) for q in GOOD_PROBES])
     bad = np.array([top1(q) for q in BAD_PROBES])
 
-    threshold = float(np.percentile(good, percentile))
-    # Guard: keep it above the best off-domain score so junk still triggers re-retrieve.
-    threshold = max(threshold, float(bad.max()) + 0.01)
-    threshold = round(min(max(threshold, 0.1), 0.9), 3)
+    threshold = choose_threshold(list(good), list(bad), percentile)
 
     out = settings.retrieval_calibration_file
     out.parent.mkdir(parents=True, exist_ok=True)
@@ -90,6 +106,8 @@ def main(
                 "good_top1_min": round(float(good.min()), 3),
                 "bad_top1_max": round(float(bad.max()), 3),
                 "embedding_model": settings.embedding_model,
+                "strategy": "hybrid",
+                "reranker_model": settings.reranker_model,
             },
             indent=2,
         ),

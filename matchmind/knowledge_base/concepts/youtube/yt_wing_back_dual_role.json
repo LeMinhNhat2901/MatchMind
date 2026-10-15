@@ -1,0 +1,45 @@
+{
+  "concept_id": "yt_wing_back_dual_role",
+  "category": "defending",
+  "phase": "general",
+  "title": "Wing Back Dual Role",
+  "content": "The wing back is a hybrid position used primarily in three-center-back systems, combining the defensive duties of a fullback with the attacking responsibilities of a winger. Unlike traditional fullbacks, wing backs operate higher up the pitch and are responsible for covering the entire flank independently, as there is no overlapping fullback to support them. In defensive phases, they must track back aggressively to form a compact backline and prevent opposition wingers from exploiting the wide areas. During possession, they push forward to stretch the opponent’s defensive shape, provide width, deliver crosses, and occasionally enter the box to create scoring opportunities. This role demands exceptional stamina, speed, and tactical awareness, as players must constantly transition between deep defensive positioning and advanced attacking runs. Success in this role relies on the ability to maintain positional discipline when out of possession while maximizing vertical penetration when the team has the ball, effectively acting as the primary width provider for the team.",
+  "conditions": [
+    "formation_three_center_backs",
+    "wide_area_coverage_required",
+    "high_stamina_demand"
+  ],
+  "objective": [
+    "provide_attacking_width",
+    "defend_flank_independently",
+    "transition_between_phases"
+  ],
+  "possible_actions": [
+    "track_back_to_defense",
+    "push_high_to_attack",
+    "deliver_crosses",
+    "cover_entire_flank"
+  ],
+  "contraindications": [
+    "lack_of_stamina",
+    "poor_positional_discipline"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "is_in_attacking_third",
+    "is_in_defensive_third",
+    "space_ahead_large"
+  ],
+  "source": {
+    "name": "football explained",
+    "url": "https://www.youtube.com/watch?v=UTFSgD9jNS0&t=129s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the main difference between a fullback and the player who plays wide in a three-at-the-back system?",
+    "I am struggling to cover the entire flank on my own when we defend with three center backs; what is the correct approach?",
+    "As a player in a three-back formation, how should I balance my need to attack down the line with the need to track back?",
+    "Why does my team keep getting caught out when the opposition winger makes a run behind our wide defender?"
+  ]
+}

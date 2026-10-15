@@ -1,0 +1,64 @@
+{
+  "concept_id": "yt_total_football_positional_rotation",
+  "category": "terminology",
+  "subcategory": "positional_play",
+  "phase": "general",
+  "title": "Total Football Positional Rotation",
+  "definition": "A tactical system where players fluidly interchange positions while maintaining the team's structural integrity to create unpredictability and space.",
+  "content": "Total football, popularized by Rinus Michels in the 1970s, evolved from the 1-3-3 Catenaccio shape by allowing the sweeper to join midfield attacks, effectively forming a 3-4-3. Unlike rigid systems, this approach permits complete positional rotation, where any player can move into any role as long as the basic team structure is preserved. This fluidity makes the team nearly impossible to predict, as defenders can become attackers and vice versa, consistently generating spatial advantages. In possession, the team expands its shape to maximum width and depth to stretch the opposition, forcing them to cover broader areas and opening up passing lanes. Conversely, when out of possession, the team compresses vertically and horizontally, shrinking the space to force opponents into limited areas. This dynamic adjustment between expansive attacking shapes and compact defensive blocks allows for superior control of the pitch. The system relies on high tactical intelligence and fitness, ensuring that every player understands multiple roles. It contrasts with static formations by prioritizing functional relationships over fixed positions, creating a cohesive unit that adapts in real-time to the flow of the game.",
+  "conditions": [
+    "high_tactical_intelligence",
+    "players_understand_multiple_roles",
+    "team_structure_maintained"
+  ],
+  "objective": [
+    "create_unpredictability",
+    "stretch_opponent_shape",
+    "maintain_structural_integrity"
+  ],
+  "possible_actions": [
+    "positional_rotation",
+    "expand_shape_in_possession",
+    "compress_shape_out_of_possession",
+    "sweeper_joins_midfield"
+  ],
+  "contraindications": [
+    "lack_of_player_fitness",
+    "poor_communication",
+    "rigid_positional_discipline"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "is_in_defensive_third",
+    "team_compactness_high",
+    "team_compactness_low"
+  ],
+  "spatial_requirements": [
+    "dynamic_team_shape",
+    "wide_attacking_spread",
+    "compact_defensive_block"
+  ],
+  "player_behaviours": [
+    "interchange_positions",
+    "adjust_spacing_dynamically",
+    "cover_vacated_areas"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "catenaccio",
+    "fluid_defense"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=646s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop the opposition from tracking our players when everyone is constantly swapping roles?",
+    "My wingers keep drifting inside while the fullbacks push up, but we lose our shape; how do I manage this chaos?",
+    "What should our number ten do when he sees the center-backs are confused about who is marking him?",
+    "We struggle to keep our defensive line intact when we are pressing high because our midfielders are everywhere; what is the solution?",
+    "Why does my team look disorganized in the final third even though we have good players, and how do I fix the lack of structure?"
+  ]
+}

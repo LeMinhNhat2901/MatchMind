@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_expansive_build_up_with_inside_support",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Expansive Build-Up with Inside Support",
+  "definition": "A build-up strategy where wide players tuck inside to create central overloads while fullbacks provide width, aiming to disrupt opponent pressing structures and create multiple passing options.",
+  "content": "This tactic involves positioning wide midfielders or forwards in advanced, inside positions to create numerical advantages in central areas, often resulting in a 2v3 or 3v3 scenario against the opponent's midfield. The objective is to make the opponent's pressing awkward by forcing them to turn and re-orient, rather than allowing them to maintain a compact block. Simultaneously, fullbacks push high to provide width and serve as a 'first door' for the ball, ensuring that if the central play is blocked, the team can switch play or play into the front line. This approach is particularly effective against high-pressing teams that leave space behind their defensive line. However, it carries a significant risk of turnovers in transition, as the team is more exposed when possession is lost. Therefore, it requires high technical quality and quick decision-making from players in the inside positions to retain possession. The 'Y' player (often a central midfielder) must drop into an inside position to balance the shape and provide a passing outlet when the wide players are advanced. This method creates variety in the attack, preventing the opponent from settling into a predictable defensive rhythm.",
+  "conditions": [
+    "opponent_high_press",
+    "technical_quality_high",
+    "fullback_width_available"
+  ],
+  "objective": [
+    "disrupt_pressing_structure",
+    "create_central_overload",
+    "provide_switching_option"
+  ],
+  "possible_actions": [
+    "tuck_inside",
+    "push_high_fullback",
+    "play_into_front_line",
+    "switch_play"
+  ],
+  "contraindications": [
+    "low_technical_quality",
+    "opponent_low_block_compact",
+    "transition_vulnerability_high"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "space_ahead_large",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "wide_fullback_position",
+    "inside_wide_player_position"
+  ],
+  "player_behaviours": [
+    "angle_pass_central",
+    "hold_position_inside",
+    "provide_width"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "transition_defence"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=692s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we create space in the middle when the opponent is sitting deep and compact?",
+    "My wingers are too wide to receive the ball, so how do I get them to tuck in to help the midfielders?",
+    "What should the full-backs do to support the build-up when the wingers are moving inside?",
+    "We keep getting pressed out of possession in the final third, so how can we overload the center to break the press?"
+  ]
+}

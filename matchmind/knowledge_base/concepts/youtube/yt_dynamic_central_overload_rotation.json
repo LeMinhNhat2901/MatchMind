@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_dynamic_central_overload_rotation",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Dynamic Central Overload Rotation",
+  "definition": "A flexible build-up pattern where three central players rotate roles to create numerical superiority, drawing opponents in and exposing space behind the defensive line.",
+  "content": "This tactical concept describes a fluid attacking structure, often seen in modern possession-based teams, where three key players (typically wingers, number 10, and striker) act as interchangeable 'jokers' rather than adhering to rigid positional rules. Instead of static overloads, these players constantly roam to create vertical passing lanes. For instance, when the ball is with a center-back, two of these three players may drop deep to form a local numerical advantage with the pivot. This forces the opponent's midfield line to engage and narrow, increasing the gap to their defensive line. The third player then exploits this space by dropping deep to receive a second touch, allowing a pass to an incoming runner. This sequence pulls the defensive line forward, creating space behind them for a wide player to receive the final touch and face the goalkeeper. This approach requires high cognitive skills, specifically scanning and decision-making, to execute accurate direct passes under pressure. It is effective for breaking down compact defenses by manipulating their shape through dynamic movement rather than static positioning.",
+  "conditions": [
+    "possession_build_up",
+    "opponent_compact_defense",
+    "high_player_intelligence"
+  ],
+  "objective": [
+    "create_numerical_advantage",
+    "manipulate_defensive_shape",
+    "expose_space_behind_defense"
+  ],
+  "possible_actions": [
+    "drop_deep_to_receive",
+    "rotate_positions",
+    "pass_to_incoming_runner",
+    "switch_to_wide_player"
+  ],
+  "contraindications": [
+    "low_scanning_frequency",
+    "poor_passing_accuracy",
+    "opponent_high_press_immediate"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "local_numerical_advantage_positive",
+    "space_ahead_moderate",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "central_overload_zone",
+    "gap_between_midfield_and_defense"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "make_direct_pass",
+    "run_into_space"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "third_man_run",
+    "dynamic_roles"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=360s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we create extra space in the middle of the park?",
+    "Our three central midfielders are standing in a static triangle, how can we make this more dangerous?",
+    "What is the best way to get our number 6, 8, and 10 to move around to confuse the opposition?",
+    "We always get stuck in the center when we need to break through, what pattern should we use?"
+  ]
+}

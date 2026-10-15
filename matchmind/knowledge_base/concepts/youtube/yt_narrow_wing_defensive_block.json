@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_narrow_wing_defensive_block",
+  "category": "defending",
+  "subcategory": "low_block",
+  "phase": "out_of_possession",
+  "title": "Narrow Wing Defensive Block",
+  "definition": "A defensive tactic where wingers tuck in to clog the central channels, forcing the opponent to play wide.",
+  "content": "This tactical approach involves a team sitting in a deep, disciplined block while instructing their wingers to defend significantly narrower than their usual attacking positions. By tucking in, the wingers effectively clog the central areas of the pitch, denying the opposition access to the half-spaces and the central midfield. This spatial manipulation forces the attacking team to rely on the flanks as their primary outlets for progression, as the central passing lanes are congested. The objective is to limit the opponent's ability to penetrate through the middle, where the most dangerous attacking combinations often occur. This strategy is particularly effective against teams that prioritize central possession and vertical passing, such as Barcelona under Pep Guardiola. It requires high discipline from the wide players to resist the temptation to track the opposing wingers all the way to the touchline, instead prioritizing central compactness. While this leaves the flanks open, it allows the full-backs and center-backs to manage the wide threats more easily, often in a zonal or hybrid manner, rather than being stretched thin by one-on-one duels. The success of this tactic depends on the team's ability to maintain this narrow shape for extended periods without losing concentration.",
+  "conditions": [
+    "opponent_central_dominance",
+    "team_deep_block",
+    "winger_tuck_in"
+  ],
+  "objective": [
+    "clog_central_channels",
+    "force_play_wide",
+    "limit_half_space_access"
+  ],
+  "possible_actions": [
+    "winger_move_inward",
+    "maintain_deep_line",
+    "cover_central_passing_lanes"
+  ],
+  "contraindications": [
+    "opponent_wide_overload",
+    "lack_of_winger_discipline",
+    "fullback_exposure"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_low",
+    "team_compactness_high",
+    "ball_near_flank"
+  ],
+  "spatial_requirements": [
+    "narrow_wing_positioning",
+    "central_congestion",
+    "deep_defensive_line"
+  ],
+  "player_behaviours": [
+    "winger_tuck_in",
+    "cover_central_space",
+    "delay_wide_progression"
+  ],
+  "related_concepts": [
+    "low_block",
+    "zonal_defending",
+    "positional_compactness"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=_qwbNY7wVDU&t=1645s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I force the opponent to play out wide?",
+    "The other team is too strong in the middle, how can I limit their options there?",
+    "What should my wingers do when we are defending to stop the opponent from passing centrally?",
+    "We are getting overwhelmed in the center of the pitch, how can I adjust my defensive shape?"
+  ]
+}

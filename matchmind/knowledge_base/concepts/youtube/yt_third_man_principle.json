@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_third_man_principle",
+  "category": "attacking",
+  "subcategory": "third_man",
+  "phase": "possession",
+  "title": "Third Man Principle",
+  "definition": "A passing pattern where a third player provides a receiving option to bypass a direct press or block, enabling penetration of defensive lines.",
+  "content": "The third man principle is a fundamental tactical concept used to break down high defensive lines and overcome direct pressing. It involves a sequence of passes where the ball is moved from the initial passer to a second player, who then plays to a third player who is not directly involved in the initial exchange but is positioned to receive in a free space. This third player is crucial because they are often unmarked or have a clear line of sight to the goal or the defensive line. The concept relies on the movement of the second player to create space for the third, or the third player making a run into space created by the first two. It is particularly effective when the opponent's defensive line is high, as it allows the attacking team to bypass the first line of defense and attack the space behind it. The third man can then execute a final pass, a shot, or a one-two combination to create a scoring opportunity. This pattern is widely used in modern football to maintain possession under pressure and create high-quality chances in the final third.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "passing_lane_open",
+    "local_numerical_advantage_positive"
+  ],
+  "objective": [
+    "penetrate_defensive_line",
+    "create_scoring_opportunity",
+    "bypass_pressing"
+  ],
+  "possible_actions": [
+    "make_progressive_pass",
+    "run_into_space",
+    "execute_one_two",
+    "take_shot_on_goal"
+  ],
+  "contraindications": [
+    "tight_defensive_spacing",
+    "lack_of_supporting_players"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "passing_lane_open",
+    "third_man_opportunity"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "make_support_run"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "penetration"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=QzE2tQDlcsA&t=640s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best passing pattern to get past a team that presses us hard in the middle?",
+    "Our wingers are always caught offside or isolated, how can we create a better option for them to receive the ball?",
+    "When the first two passes are blocked, who should be there to take the next touch to keep the attack going?",
+    "We keep getting stuck in midfield because the opposition cuts off the direct route, how do we find a way around them?"
+  ]
+}

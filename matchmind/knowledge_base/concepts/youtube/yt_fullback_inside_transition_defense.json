@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_fullback_inside_transition_defense",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "defensive_transition",
+  "title": "Fullback Inside Transition Defense",
+  "definition": "A tactical adjustment where fullbacks move into midfield during possession to create a 5-2-3 defensive structure upon losing the ball, enhancing transition security.",
+  "content": "This concept involves positioning fullbacks inside the midfield line during the attacking phase to create a numerical advantage in central areas. The primary defensive benefit is that when possession is lost, the team does not revert to a vulnerable 3-2 or 4-2 shape, but instead maintains a compact 5-2-3 or similar structure with five players available to defend the transition. This prevents opponents from exploiting the space behind high fullbacks, a common weakness in 4-3-3 or 4-2-3-1 systems where fullbacks are advanced. By having an extra player in the middle, the team can better control the game and limit direct counter-attacks. Additionally, this positioning allows for overloads in the center (e.g., 4v3), facilitating better ball retention and forcing opponents to commit defenders centrally, which can isolate their wingers or create space for wide players to exploit later. It is a strategic trade-off: sacrificing some width in attack to gain significant stability and numerical superiority in the critical moments of defensive transition.",
+  "conditions": [
+    "possession_phase",
+    "opponent_high_press",
+    "transition_vulnerability_risk"
+  ],
+  "objective": [
+    "secure_defensive_transition",
+    "create_central_overload",
+    "limit_counter_attack_space"
+  ],
+  "possible_actions": [
+    "move_fullback_inside",
+    "occupy_half_space",
+    "maintain_compactness_on_loss"
+  ],
+  "contraindications": [
+    "reduced_wide_attacking_width",
+    "vulnerability_to_wide_counter_attacks"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "team_compactness_high",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_player_density"
+  ],
+  "player_behaviours": [
+    "fullback_inward_movement",
+    "midfield_screening"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "positional_play",
+    "overload"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I stop opponents from easily finding space in the midfield when we lose the ball high up?",
+    "My wingers are leaving huge gaps behind them when they push forward, and we keep getting punished on the break.",
+    "What should my right-back do immediately after we lose possession in the opponent's half?",
+    "We always seem to be one man short in the middle of the park right after a turnover; how can I fix this structural weakness?"
+  ]
+}

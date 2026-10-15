@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_modern_3_5_2_hybrid_shape",
+  "category": "formations",
+  "subcategory": "352",
+  "phase": "general",
+  "title": "Modern 3-5-2 Hybrid Shape",
+  "definition": "A tactical system using three center-backs and advanced fullbacks to create central overloads, often shifting to a 5-3-2 defensive block.",
+  "content": "The modern 3-5-2 formation evolves from traditional defensive structures by transforming the spare defender into a ball-playing center-back and elevating fullbacks into hybrid winger-fullback roles. This setup allows the team to dominate central areas through numerical overloads created by the advanced width of the fullbacks. Defensively, the shape naturally transitions into a compact 5-3-2, providing stability and covering all zones of the pitch. Advanced variations involve high positional rotation, where center-backs may push into midfield or attacking positions to confuse opposition marking structures. To address the lack of a dedicated central playmaker inherent in standard box-to-box midfield setups, this system often incorporates two narrow playmakers. These players connect the midfield and attack, allowing the double pivot to focus on defensive duties and forming a solid second line. However, this structure requires high defensive discipline; if the narrow playmakers fail to track back quickly during counter-attacks, the double pivot can become exposed, leaving gaps behind the defensive line. Coaches must balance the attacking freedom of the fullbacks and center-backs with the immediate defensive recovery of the midfielders to maintain structural integrity.",
+  "conditions": [
+    "fullbacks_capable_of_winger_duties",
+    "center_backs_with_ball_progression",
+    "midfielders_with_high_work_rate"
+  ],
+  "objective": [
+    "create_central_overloads",
+    "maintain_defensive_compactness",
+    "confuse_opposition_marking"
+  ],
+  "possible_actions": [
+    "advance_fullbacks_to_wing",
+    "shift_to_532_defensive_block",
+    "rotate_center_backs_forward",
+    "drop_narrow_playmakers_deep"
+  ],
+  "contraindications": [
+    "slow_midfield_recovery",
+    "lack_of_dedicated_playmaker",
+    "exposed_double_pivot"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "width_provided_by_fullbacks",
+    "central_density_high"
+  ],
+  "player_behaviours": [
+    "fullback_overlap",
+    "center_back_progression",
+    "narrow_playmaker_linking",
+    "double_pivot_screening"
+  ],
+  "related_concepts": [
+    "positional_rotation",
+    "defensive_transition",
+    "central_overload"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=1354s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What shape should I use if I want to dominate the center but stay solid at the back?",
+    "Our fullbacks are getting caught out wide when we lose the ball, how can I adjust my formation?",
+    "How should I set up my back line if I want my wide players to push high up the pitch?",
+    "We are struggling to cover the flanks when we are not in possession, what formation change helps?"
+  ]
+}

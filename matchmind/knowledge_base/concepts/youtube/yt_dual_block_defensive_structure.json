@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_dual_block_defensive_structure",
+  "category": "defending",
+  "subcategory": "low_block",
+  "phase": "out_of_possession",
+  "title": "Dual-Block Defensive Structure",
+  "definition": "A defensive strategy utilizing two deep, compact lines to neutralize high-pressing opponents by tracking dropping forwards and isolating the ball carrier.",
+  "content": "This tactical approach is designed to counter teams that employ a high hybrid press and commit heavily to attacking. Instead of engaging in chaotic rotations or trying to play out from the back under intense pressure, the defending team organizes into two distinct, deep defensive lines. The primary objective is to maintain structural integrity and patience. The second line (mid-block) focuses specifically on tracking the opposition's dropping forwards, preventing them from creating central overloads or receiving the ball in dangerous areas. Simultaneously, the last line (backline) focuses exclusively on the ball carrier, forcing them wide or into dead ends. This dual-line structure effectively locks the opponent's fluidity, as the space between the lines is compressed, and the central zone is protected by the tracking of the forwards. However, this tactic requires significant physical energy and discipline to sustain for 90 minutes, as any lapse in concentration or fatigue can break the compactness. It is particularly effective against teams that lack a natural pivot player to cover the space behind the defensive line during counter-attacks, as the opponent's forwards are forced into defensive roles they may not be accustomed to, leaving their own defensive flank vulnerable.",
+  "conditions": [
+    "opponent_high_press",
+    "team_compactness_high",
+    "defensive_line_height_low"
+  ],
+  "objective": [
+    "neutralize_opponent_fluidity",
+    "force_opponent_wide",
+    "protect_central_zone"
+  ],
+  "possible_actions": [
+    "track_dropping_forwards",
+    "maintain_two_deep_lines",
+    "force_ball_to_flank"
+  ],
+  "contraindications": [
+    "low_team_energy",
+    "lack_of_discipline",
+    "opponent_long_ball_threat"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "defensive_line_height_low",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "track_forward_movement",
+    "stay_in_position",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "low_block",
+    "defensive_transition",
+    "counter_press"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=ptjRqLo8QCc&t=510s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop a team that presses us high from getting behind our defense?",
+    "Our forwards drop deep to help, but we still get beaten by quick passes between the lines.",
+    "What should the winger do when the opponent's striker drops into midfield to receive the ball?",
+    "We keep getting scored against from counter-attacks even though we press hard in the first ten minutes."
+  ]
+}

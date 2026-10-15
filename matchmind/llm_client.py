@@ -13,6 +13,7 @@ import logging
 import os
 import re
 import time
+from datetime import date
 from pathlib import Path
 
 from matchmind.config import settings
@@ -40,6 +41,7 @@ def call_llm(
     json_mode: bool = False,
     thinking_budget: int | None = None,
     model: str | None = None,
+    provider: str | None = None,
 ) -> tuple[str, int]:
     """Call the configured LLM provider.
 
@@ -51,24 +53,182 @@ def call_llm(
         json_mode: ask the provider to emit application/json (Gemini/OpenAI).
         thinking_budget: Gemini 2.5 only — 0 disables "thinking" for cheap calls.
         model: override settings.llm_model.
+        provider: override settings.llm_provider (pass `model` too — the
+            default model name belongs to the default provider).
 
     Returns:
         (text, total_tokens)
-    """
-    provider = (settings.llm_provider or "gemini").lower()
-    model = model or settings.llm_model
 
+    With LLM_FALLBACK_CHAIN set (and no explicit provider/model), providers are
+    tried in order: see _call_with_failover.
+    """
+    kwargs = dict(image_path=image_path, max_tokens=max_tokens, temperature=temperature,
+                  json_mode=json_mode, thinking_budget=thinking_budget)
+    if provider is None and model is None and settings.llm_fallback_chain.strip():
+        return _call_with_failover(prompt, **kwargs)
+    provider = (provider or settings.llm_provider or "gemini").lower()
+    return _call_provider(provider, model or settings.llm_model, prompt, **kwargs)
+
+
+# ── Provider failover ────────────────────────────────────────────────────────
+#
+# Free tiers run out (Groq: 200k tokens/day) or go down (Gemini 503 "high
+# demand") mid-session — both happened on 2026-09-28 and blocked the chat.
+# LLM_FALLBACK_CHAIN lists "provider:model" entries tried in order. A daily
+# quota error takes that provider out until tomorrow (no pointless retry on
+# every later call); any other error just moves this one call to the next entry.
+
+# OpenAI-compatible endpoints: (base_url, settings attribute holding the key).
+_OPENAI_COMPATIBLE: dict[str, tuple[str, str]] = {
+    "cerebras": ("https://api.cerebras.ai/v1", "cerebras_api_key"),
+    "mistral": ("https://api.mistral.ai/v1", "mistral_api_key"),
+    "openrouter": ("https://openrouter.ai/api/v1", "openrouter_api_key"),
+}
+_ACCEPTS_REASONING_EFFORT = {"cerebras"}
+_KEY_ATTR: dict[str, str] = {
+    "gemini": "gemini_api_key", "groq": "groq_api_key", "openai": "openai_api_key",
+    "anthropic": "anthropic_api_key", **{p: attr for p, (_, attr) in _OPENAI_COMPATIBLE.items()},
+}
+_exhausted: dict[str, date] = {}          # provider -> day its daily quota ran out
+_last_provider: str | None = None
+
+
+def parse_fallback_chain(spec: str) -> list[tuple[str, str]]:
+    """"groq:qwen/qwen3.8-27b, cerebras:qwen-3.8-27b" -> [(provider, model), ...].
+    Splits on the FIRST colon only, so OpenRouter's "model:free" names survive."""
+    out = []
+    for part in spec.split(","):
+        part = part.strip()
+        if part and ":" in part:
+            provider, model = part.split(":", 1)
+            out.append((provider.strip().lower(), model.strip()))
+    return out
+
+
+def is_daily_quota_error(exc: Exception) -> bool:
+    msg = str(exc).lower()
+    return any(s in msg for s in ("tokens per day", "requests per day", "per day (", "(tpd)", "(rpd)", "daily limit"))
+
+
+def last_provider() -> str | None:
+    """Which provider answered the most recent call_llm (for traces/logs)."""
+    return _last_provider
+
+
+def _has_key(provider: str) -> bool:
+    attr = _KEY_ATTR.get(provider)
+    return bool(attr and getattr(settings, attr, ""))
+
+
+def _call_with_failover(prompt: str, **kwargs) -> tuple[str, int]:
+    global _last_provider
+    today = date.today()
+    failures: list[str] = []
+    for provider, model in parse_fallback_chain(settings.llm_fallback_chain):
+        if _exhausted.get(provider) == today:
+            failures.append(f"{provider}: daily quota used up")
+            continue
+        if not _has_key(provider):
+            failures.append(f"{provider}: no API key in .env")
+            continue
+        try:
+            result = _call_provider(provider, model, prompt, **kwargs)
+        except Exception as exc:  # noqa: BLE001 — any provider error moves on to the next one
+            if is_daily_quota_error(exc):
+                _exhausted[provider] = today
+                logger.warning(f"[llm] {provider} daily quota exhausted — skipping it until tomorrow")
+            else:
+                logger.warning(f"[llm] {provider} failed ({str(exc)[:120]}) — trying next provider")
+            failures.append(f"{provider}: {str(exc)[:160]}")
+            continue
+        _last_provider = provider
+        return result
+    raise RuntimeError("All LLM providers failed: " + " | ".join(failures))
+
+
+def _call_provider(provider: str, model: str, prompt: str, *, image_path=None, max_tokens=1000,
+                   temperature=None, json_mode=False, thinking_budget=None) -> tuple[str, int]:
+    global _last_provider
     if provider == "gemini":
-        return _call_gemini(prompt, image_path, max_tokens, temperature, json_mode, thinking_budget, model)
-    if provider == "anthropic":
-        return _call_anthropic(prompt, image_path, max_tokens, temperature, model)
-    if provider == "openai":
-        return _call_openai(prompt, image_path, max_tokens, temperature, json_mode, model)
-    if provider == "groq":
-        return _call_groq(prompt, image_path, max_tokens, temperature, json_mode, model)
-    raise ValueError(
-        f"Unknown LLM_PROVIDER={settings.llm_provider!r}. Use one of: gemini | anthropic | openai | groq"
-    )
+        result = _call_gemini(prompt, image_path, max_tokens, temperature, json_mode, thinking_budget, model)
+    elif provider == "anthropic":
+        result = _call_anthropic(prompt, image_path, max_tokens, temperature, model)
+    elif provider == "openai":
+        result = _call_openai(prompt, image_path, max_tokens, temperature, json_mode, model)
+    elif provider == "groq":
+        result = _call_groq(prompt, image_path, max_tokens, temperature, json_mode, model)
+    elif provider in _OPENAI_COMPATIBLE:
+        result = _call_openai_compatible(provider, prompt, max_tokens, temperature, json_mode, model,
+                                         thinking_budget=thinking_budget)
+    else:
+        raise ValueError(
+            f"Unknown LLM provider {provider!r}. Use one of: gemini | anthropic | openai | groq | "
+            + " | ".join(_OPENAI_COMPATIBLE)
+        )
+    _last_provider = provider
+    return result
+
+
+def _openai_client(base_url: str, api_key: str, **kwargs):
+    from openai import OpenAI
+
+    return OpenAI(base_url=base_url, api_key=api_key, **kwargs)
+
+
+def _call_openai_compatible(
+    provider: str, prompt: str, max_tokens: int, temperature: float | None, json_mode: bool, model: str,
+    thinking_budget: int | None = None,
+) -> tuple[str, int]:
+    """Cerebras / Mistral / OpenRouter — all speak the OpenAI chat API. Text only:
+    the pitch image is supporting context; the numbers in the prompt are primary.
+
+    thinking_budget=0 (the project's "cheap call, no thinking" signal) maps to
+    reasoning_effort="none" on providers that accept it: qwen-3.8-27b on Cerebras
+    otherwise spends hidden reasoning tokens INSIDE max_tokens (measured: 76 on a
+    one-line JSON request), so small calls come back empty.
+    """
+    base_url, key_attr = _OPENAI_COMPATIBLE[provider]
+    api_key = getattr(settings, key_attr, "")
+    if not api_key:
+        raise ValueError(f"{key_attr.upper()} not set in .env")
+    client = _openai_client(base_url=base_url, api_key=api_key, timeout=60.0, max_retries=0)
+    kwargs: dict = {"model": model, "messages": [{"role": "user", "content": prompt}], "max_tokens": max_tokens}
+    if temperature is not None:
+        kwargs["temperature"] = temperature
+    if json_mode:
+        kwargs["response_format"] = {"type": "json_object"}
+    if thinking_budget == 0 and provider in _ACCEPTS_REASONING_EFFORT:
+        kwargs["reasoning_effort"] = "none"
+    resp = client.chat.completions.create(**kwargs)
+    text = resp.choices[0].message.content or ""
+    if not text.strip():
+        # An empty completion (e.g. the budget went to hidden reasoning) is a
+        # failure, not an answer — raising lets the failover chain move on.
+        raise RuntimeError(f"{provider} returned an empty completion (max_tokens={max_tokens})")
+    tokens = int(resp.usage.total_tokens) if resp.usage else 0
+    return text, tokens
+
+
+def call_narrator_llm(prompt: str, **kwargs) -> tuple[str, int]:
+    """call_llm for the user-facing narration/translation step.
+
+    Uses NARRATOR_LLM_PROVIDER/NARRATOR_LLM_MODEL when set, and retries once on
+    the default provider if that override fails (e.g. a free-tier daily quota),
+    so configuring a better-but-scarcer model can never break the chat.
+    """
+    override_provider = settings.narrator_llm_provider.strip()
+    override_model = settings.narrator_llm_model.strip()
+    if override_provider or override_model:
+        try:
+            return call_llm(
+                prompt,
+                provider=override_provider or None,
+                model=override_model or None,
+                **kwargs,
+            )
+        except Exception as exc:  # noqa: BLE001 — fall back to the default provider below
+            logger.warning(f"Narrator LLM override failed, using default provider: {exc}")
+    return call_llm(prompt, **kwargs)
 
 
 def _image_bytes(image_path: str | None) -> bytes | None:
@@ -175,7 +335,9 @@ def _call_groq(
             logger.debug(f"[groq] model={use_model} tokens={tokens} max_tokens={kwargs['max_tokens']}")
             return text, tokens
         except Exception as exc:
-            if not _is_rate_limit_error(exc) or attempt == max_attempts - 1:
+            # A daily quota won't recover within any sensible retry; fail fast so
+            # the failover chain (or the caller) moves on.
+            if not _is_rate_limit_error(exc) or is_daily_quota_error(exc) or attempt == max_attempts - 1:
                 raise
             msg = str(exc)
             limit = _parse_groq_token_limit(msg)

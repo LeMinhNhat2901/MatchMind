@@ -1,0 +1,63 @@
+{
+  "concept_id": "fifa_effective_high_press_principles",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Effective High Press Principles",
+  "definition": "An aggressive defensive strategy involving a high defensive line and coordinated collective pressing to win possession in advanced areas.",
+  "content": "The high press is an aggressive defensive approach where the team maintains a defensive line deep in the opponent's territory, typically across the midfield, to disrupt build-up play. Success relies on three core principles: structural compactness, deliberate trapping, and managed intensity. First, the team must remain compact with tight spacing between lines to prevent through-balls from exploiting gaps behind the press. Second, players construct pressing traps by channeling opponents into specific zones, feigning passing options to force predictable plays that allow for interception. Third, intensity must be managed through specific triggers rather than constant exertion to avoid fatigue. When a trigger occurs, such as a defender receiving the ball in a vulnerable position, multiple players converge simultaneously to restrict passing lanes and force turnovers. This strategy requires the goalkeeper to adopt an advanced position to cover space behind the defensive line. Context is critical; teams may switch to a mid-block if leading to conserve energy, but when pressing, unified tactical understanding is essential. Every player must recognize trigger points and their specific roles to ensure the collective effort results in high-quality possession recovery and direct scoring opportunities.",
+  "conditions": [
+    "opponent_building_from_back",
+    "team_compactness_high",
+    "players_fit_for_high_intensity"
+  ],
+  "objective": [
+    "win_possession_advanced_area",
+    "disrupt_opponent_build_up",
+    "force_turnover"
+  ],
+  "possible_actions": [
+    "converge_on_ball_carrier",
+    "channel_opponent_to_weak_side",
+    "maintain_defensive_line_height",
+    "advance_goalkeeper_position"
+  ],
+  "contraindications": [
+    "risk_of_through_ball",
+    "player_fatigue",
+    "lack_of_team_cohesion"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "defensive_line_height_high",
+    "players_near_ball",
+    "press_intensity_capable"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines",
+    "advanced_goalkeeper_position"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "synchronize_pressing_moment"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "defensive_line",
+    "counter_press"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Understanding the principles behind an effective high press",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/out-of-possession/high-press.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we stop them from building up play comfortably from the back?",
+    "Our team keeps getting caught out of position when we try to press high, what are we doing wrong?",
+    "What should our center-backs do when the opposition goalkeeper starts playing out with short passes?",
+    "We lose the ball in midfield every time we push up, how can we make our pressing more coordinated?"
+  ]
+}

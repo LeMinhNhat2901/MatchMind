@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_adaptive_third_player_combinations",
+  "category": "attacking",
+  "subcategory": "third_man",
+  "phase": "possession",
+  "title": "Adaptive Third-Player Combinations",
+  "definition": "A flexible passing sequence where a deep midfielder adjusts their second touch based on defensive pressure to facilitate a forward pass to an advancing teammate.",
+  "content": "This tactical principle replaces rigid passing scripts with real-time adaptability in the build-up phase. The core mechanism involves a deep midfielder moving toward the ball to draw defenders inward, creating space behind the pressure. The midfielder’s second touch is the key variable: under tight marking, they execute an immediate first-time flick to a supporting player advancing beyond them, bypassing back-passes and allowing the recipient to receive on the move. Against lighter pressing, the midfielder uses a controlling touch to manipulate opponent positioning before releasing the third player into newly created gaps. If the primary option is covered, the intended recipient vacates their position to draw their marker away, opening alternative lanes. This collective problem-solving maintains the objective of creating and exploiting space through coordinated movement. The approach requires high technical execution and awareness from the initiating player to make split-second decisions. It transforms the standard 'up, back, and through' combination into a situational tool that adapts to immediate defensive contexts, ensuring continuous progression even when the original sequence is blocked.",
+  "conditions": [
+    "possession_in_midfield",
+    "opponent_pressing_present",
+    "supporting_player_advancing"
+  ],
+  "objective": [
+    "bypass_defensive_line",
+    "create_forward_passing_option",
+    "maintain_possession_under_pressure"
+  ],
+  "possible_actions": [
+    "first_time_flick",
+    "controlling_touch_to_manipulate",
+    "vacate_position_to_draw_marker",
+    "advance_beyond_deep_midfielder"
+  ],
+  "contraindications": [
+    "low_technical_quality_under_pressure",
+    "lack_of_forward_support",
+    "extreme_defensive_compactness_without_space"
+  ],
+  "trigger_conditions": [
+    "third_man_opportunity",
+    "opponent_high_press",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "space_behind_defensive_line",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "move_towards_ball_to_draw_defender",
+    "adjust_second_touch_based_on_pressure",
+    "receive_moving_forward"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "decision_making"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Croatia: Evolving third-player combinations",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/world-class-tactics/croatia-evolving-third-player-combinations.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the best way to break through a high press without losing possession on the first touch?",
+    "The opponent's presser is closing down our deep midfielder, so how should he adjust his next pass to keep the play moving forward?",
+    "As the deep-lying playmaker, how do I decide whether to hold the ball or release it immediately when a defender approaches?",
+    "We keep getting caught out with the ball in midfield because our passes are predictable, how can we make our combinations more flexible against pressure?"
+  ]
+}

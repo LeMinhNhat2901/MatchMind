@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_asymmetric_overload_and_switch",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Asymmetric Overload and Switch",
+  "definition": "A tactical structure that creates a numerical superiority on one flank to force defensive commitment, enabling a rapid switch of play to the opposite side.",
+  "content": "This concept involves organizing the team to create a dense 'box' or overload on one side of the pitch, typically involving the pivot, a wide forward, and a drifting full-back. By concentrating players in this zone, the team forces the opposition to commit significant defensive resources to cover the threat. If the opponent over-commits to the overloaded side, the team executes a quick switch of play to the opposite flank, where a lone player (often the other full-back) faces minimal defensive pressure. This allows for immediate progression or isolation. If the opponent spreads out to cover the switch, the team maintains a numerical advantage (e.g., 6v5) on the original side, facilitating one-touch passing and advanced positioning. This approach combines relational principles of one-sided overload with positional play structures. It is particularly effective against low blocks or compact defenses that struggle to cover both width and depth simultaneously, creating high-percentage chances through rapid transitions and spatial exploitation.",
+  "conditions": [
+    "opponent_defensive_line_low",
+    "team_compactness_high",
+    "wide_player_available"
+  ],
+  "objective": [
+    "force_defensive_commitment",
+    "create_numerical_superiority",
+    "isolate_opponent_on_weak_side"
+  ],
+  "possible_actions": [
+    "shift_full_back_wide",
+    "pivot_move_vertically",
+    "switch_play_to_opposite_flank",
+    "one_touch_passing_in_overload"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_wide_width"
+  ],
+  "trigger_conditions": [
+    "overload_flank",
+    "switch_play_viable",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drift_wide",
+    "shift_towards_overload",
+    "receive_isolated"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "switch_of_play",
+    "numerical_superiority"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=XHRhoYLuPNw&t=214s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I get my full-back and winger to pin down their opponents so I can hit the other side?",
+    "We keep getting stuck on the left because their right-back never comes forward, what should we do to break that deadlock?",
+    "As the left winger, should I stay wide to drag their full-back out of position or cut inside to help the midfield?",
+    "Why does our attack always die on one side, and how can we force the defense to commit so we can play the ball to the empty space on the other flank?"
+  ]
+}

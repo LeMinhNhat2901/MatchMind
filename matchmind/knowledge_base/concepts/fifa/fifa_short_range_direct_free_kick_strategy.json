@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_short_range_direct_free_kick_strategy",
+  "category": "attacking",
+  "subcategory": "set_piece_execution",
+  "phase": "possession",
+  "title": "Short-Range Direct Free Kick Strategy",
+  "definition": "A tactical framework for executing direct free kicks within 20 meters by selecting power, disguise, or precision based on defensive vulnerabilities.",
+  "content": "When a direct free kick is awarded within 20 meters of the goal, the reduced distance creates a critical tactical challenge: the ball reaches the goal in under one second, severely limiting the goalkeeper's reaction time. The defensive wall further complicates this by obscuring the shooter's contact point, forcing the keeper to rely on anticipation rather than visual tracking. To overcome these constraints, attackers employ three interconnected approaches. First, power-based strikes use an extended run-up and high velocity to overwhelm the goalkeeper's reaction window, ensuring the ball is too fast to save even without perfect placement. Second, disguise strategies manipulate anticipation by using body shape and approach paths to suggest a curved shot over the wall, while actually delivering a low, direct roll to exploit the near post. Third, precision-focused execution targets specific spatial gaps created by the wall's placement and the goalkeeper's positioning, using controlled inside-foot contact to thread the ball through narrow lanes. Effective takers do not rely on a single technique but read the defensive setup in advance. They identify whether the primary vulnerability is the keeper's reaction speed, their anticipatory bias, or a specific spatial gap, then select the most efficient technical solution accordingly. This decision-making process prioritizes tactical reading over raw individual brilliance, ensuring the chosen method directly counters the specific defensive alignment present.",
+  "conditions": [
+    "free_kick_within_20m",
+    "defensive_wall_present",
+    "goalkeeper_reaction_time_limited"
+  ],
+  "objective": [
+    "score_goal",
+    "exploit_defensive_vulnerability",
+    "bypass_defensive_wall"
+  ],
+  "possible_actions": [
+    "powerful_low_shot",
+    "disguised_low_roll",
+    "precision_threaded_shot",
+    "extended_run_up",
+    "body_shape_deception"
+  ],
+  "contraindications": [
+    "relying_on_single_technique",
+    "ignoring_goalkeeper_positioning",
+    "insufficient_run_up_for_power"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "nearest_opponent_distance_low"
+  ],
+  "spatial_requirements": [
+    "short_distance_to_goal",
+    "wall_obscuring_contact_point"
+  ],
+  "player_behaviours": [
+    "read_defensive_alignment",
+    "select_technical_approach",
+    "execute_disguised_movement"
+  ],
+  "related_concepts": [
+    "set_piece_tactics",
+    "goalkeeper_anticipation",
+    "shot_selection"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Direct free kicks: navigating fine margins at short distance",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/direct-free-kicks-fine-margins-at-short-distance.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the best way to score from a spot just outside the box?",
+    "The wall is set up tight and the keeper is on his line, so how do I get the ball in from this close range?",
+    "As the taker, should I aim for power or accuracy when the defender is standing right next to the ball?",
+    "We keep missing these close-range set pieces, what is the main mistake we are making with our approach?"
+  ]
+}

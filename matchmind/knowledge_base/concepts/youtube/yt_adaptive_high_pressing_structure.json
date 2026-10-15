@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_adaptive_high_pressing_structure",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Adaptive High Pressing Structure",
+  "definition": "A dynamic defensive system that shifts between narrow 4-2-2-2 and wide 4-4-2 shapes to force opponents into predictable passing lanes while maintaining aggressive man-orientation.",
+  "content": "This tactical approach begins with a narrow 4-2-2-2 shape where inverted wingers press the opponent's backline, blocking central passing options and forcing play wide to isolated fullbacks. Upon receiving the ball, the team’s wideback immediately applies a man-press, while the rest of the backline shifts to cover ball-sided forwards. If the opponent uses a back-three with attacking fullbacks, the shape widens; a striker moves up to create a three-man overload against the backline, and a pivot joins the number 10 to provide wide coverage. Once the opponent enters the attacking half, the team transitions to a 4-4-2, maintaining aggressive man-pressing rather than zonal compactness. Direct passes trigger immediate pressing from behind to force turnovers. When opponents advance from flanks, wingers support fullbacks to create 2-vs-1 situations. Crucially, the team maintains a strong central overload against crosses instead of tilting the shape, with one front player tracking back to cover gaps. This structure prioritizes winning the ball high up the pitch to initiate high-intensity counter-attacks, leveraging speed to beat the defensive line. While effective, this high-risk, vertical style increases the likelihood of passing errors and defensive vulnerabilities if the high line is manipulated.",
+  "conditions": [
+    "opponent_high_press",
+    "defensive_line_height_high",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "force_wide_play",
+    "win_ball_high",
+    "initiate_counter_attack"
+  ],
+  "possible_actions": [
+    "invert_wingers_to_press",
+    "shift_backline_to_cover",
+    "create_wide_overload",
+    "track_back_against_crosses"
+  ],
+  "contraindications": [
+    "high_risk_of_passing_errors",
+    "vulnerability_to_direct_balls"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "opponent_defensiveline_high",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "narrow_central_shape",
+    "high_defensive_line"
+  ],
+  "player_behaviours": [
+    "man_press_fullback",
+    "support_fullback_2v1",
+    "track_back_to_cover"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "positional_play",
+    "overload"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=G-Zm5PW8f14&t=694s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop the opponent from easily switching play to their wide men?",
+    "My full-backs are getting dragged out of position when we press, what shape should we use to stay compact?",
+    "Should our defensive line stay narrow or spread wide when the ball is in the opponent's midfield?",
+    "We keep losing the ball in the final third because our press is too static, how can we make it more dynamic?"
+  ]
+}

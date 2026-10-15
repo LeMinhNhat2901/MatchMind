@@ -1,0 +1,58 @@
+{
+  "concept_id": "fifa_dynamic_ball_proximity_principle",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Dynamic Ball Proximity Principle",
+  "definition": "A tactical organizing principle where players dynamically adjust their positioning to remain close to the ball carrier, prioritizing immediate passing options over rigid formation shapes.",
+  "content": "This concept involves players actively moving toward the ball holder during possession phases rather than maintaining static formation positions. By reducing the distance between the ball carrier and supporting teammates, the team creates multiple nearby passing angles, facilitating rapid one- and two-touch combinations even in congested areas. This tight clustering allows for quick exchanges that bypass defensive pressure and enables penetrative runs beyond the opponent's midfield line. Additionally, high proximity enhances possession retention by allowing the team to win contested second balls immediately and sustain attacks through rapid circulation. It also naturally supports counter-pressing, as players are already positioned near the ball when possession changes hands. The approach disrupts opposing defensive structures by drawing defenders toward the ball through quick passing and directional changes, creating space elsewhere for diagonal movements and shooting. However, tactical flexibility is required; against a low block, teams may revert to more deliberate spacing based on their formation structure rather than pure congregation. This method reduces reliance on predetermined patterns, allowing attacking situations to emerge organically from player interactions and maintaining unpredictability against various defensive responses.",
+  "conditions": [
+    "possession_phase",
+    "attacking_third_or_midfield"
+  ],
+  "objective": [
+    "create_passing_options",
+    "retain_possession",
+    "disrupt_defensive_shape"
+  ],
+  "possible_actions": [
+    "move_towards_ball",
+    "offer_close_passing_angle",
+    "execute_rapid_exchanges"
+  ],
+  "contraindications": [
+    "opponent_low_block",
+    "need_for_width"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "players_near_ball",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_players",
+    "compact_attacking_shape"
+  ],
+  "player_behaviours": [
+    "close_down_space",
+    "provide_support_angle",
+    "scan_for_next_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "counter_press",
+    "overload"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Argentina: Ball proximity in possession",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/world-class-tactics/argentina--ball-proximity-in-possession.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "Why do our players stay in their boxes instead of moving to support the ball carrier?",
+    "When we have the ball in midfield, should our wingers tuck in to create passing options?",
+    "What should our center-backs do when the ball is played to the opposite side of the field?",
+    "Our team looks rigid and predictable, how can we make our shape more fluid around the ball?"
+  ]
+}

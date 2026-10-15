@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_4222_build_up_with_midfield_overload",
+  "category": "terminology",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "4222 Build-Up with Midfield Overload",
+  "definition": "A 4-2-2-2 formation strategy that uses central midfield triangles and wide width to create numerical superiority and bypass high pressing.",
+  "content": "This tactical approach utilizes a 4-2-2-2 structure to build play from the back, specifically designed to counter high-intensity pressing. The core principle involves positioning the two central midfielders close together but not on the same line, creating dynamic triangles with the center-backs and goalkeeper. When the opponent presses aggressively, the team aims to attract pressure to specific zones, allowing the ball to be played into the half-spaces or between the lines. The wide players (wingers) are crucial for maintaining width, pinning the opposition full-backs to the touchline. This action stretches the opponent horizontally, creating vertical space in the central midfield for the 'number 10' roles (the advanced midfielders or strikers dropping deep) to receive the ball. By overloading the midfield with the two central players and the dropping forwards, the team creates local numerical superiority. The objective is to find the 'third man' in passing sequences to bypass the first line of pressure. This method relies on precise timing and movement to exploit the gaps left by the opponent's high press, turning defensive pressure into an attacking opportunity by jumping lines.",
+  "conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "bypass_first_line_of_pressure",
+    "create_local_numerical_advantage",
+    "open_passing_lanes_to_half_space"
+  ],
+  "possible_actions": [
+    "drop_deep_to_receive",
+    "pin_fullback_to_touchline",
+    "play_progressive_pass_to_third_man",
+    "shift_ball_to_opposite_flank"
+  ],
+  "contraindications": [
+    "opponent_low_block",
+    "lack_of_wide_width",
+    "poor_passing_accuracy"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "local_numerical_advantage_positive",
+    "space_between_lines"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "wide_player_positioning",
+    "central_midfield_proximity"
+  ],
+  "player_behaviours": [
+    "angle_pass_to_third_man",
+    "drop_into_half_space",
+    "maintain_width_on_flanks"
+  ],
+  "related_concepts": [
+    "third_man_run",
+    "positional_play",
+    "high_press_counter"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qLmV-m0SxhI&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get the ball out of our own half when they press high?",
+    "Our center-backs are getting isolated when we try to play out, how can we use our midfield to bypass their press?",
+    "What should our defensive midfielder do to link up with the full-backs and create a triangle in the middle?",
+    "We struggle to retain possession in the final third because we don't have enough options in the middle, how do we set up our build-up to create numerical superiority?"
+  ]
+}

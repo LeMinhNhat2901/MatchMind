@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_front_footed_pressing_blocks",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Front-Footed Pressing Blocks",
+  "definition": "A defensive structure dividing the team into a front three and a seven-player block to maintain constant, front-footed pressure across the entire pitch.",
+  "content": "This tactical concept involves splitting the team into two distinct units: a front three responsible for directly engaging five to six opponents, and a supporting block of seven players tasked with closing central spaces and remaining ready to jump in. The core objective is to maintain a 'front-footed' mentality, where players actively chase the ball rather than waiting for it, making the pressing unpredictable and intense. The front three must be capable of covering multiple passing lanes simultaneously, while the seven-player block provides immediate support to ensure compactness. This approach transforms the entire pitch into a pressing zone, allowing the team to win the ball high up and immediately transition into attack with the first pass. Success relies on consistent training to build the stamina and spatial awareness required to sustain this pressure, ensuring that every player, from the strikers to the defenders, is prepared to make the final pass after regaining possession. It emphasizes collective effort and individual quality in executing rapid transitions from defense to attack.",
+  "conditions": [
+    "high_stamina_levels",
+    "clear_role_definition",
+    "compact_team_shape"
+  ],
+  "objective": [
+    "win_ball_high",
+    "immediate_transition",
+    "disrupt_opponent_buildup"
+  ],
+  "possible_actions": [
+    "front_three_engage",
+    "seven_block_close_center",
+    "jump_to_ball",
+    "play_first_pass_forward"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "disorganized_team_shape"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "phase_of_play_defensive",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "support_press"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "pressing_traps",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=839s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I make sure my team presses effectively from the start of the game?",
+    "My players are too passive in the first ten minutes, how do I get them to press harder?",
+    "What is the best way to organize my team to press the opponent's goalkeeper?",
+    "We keep losing the ball in our own half because we don't press enough, how do I fix this?"
+  ]
+}

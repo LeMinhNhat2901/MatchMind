@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_striker_dropping_to_overload",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Striker Dropping to Overload",
+  "definition": "A tactical adjustment where a forward drops into midfield to create a numerical superiority, compensating for a lack of progressive passing options in the opposition's defensive structure.",
+  "content": "This concept addresses the tactical dilemma faced when an opposition team parks the bus with low-quality ball carriers who offer limited progressive threats. Instead of forcing risky passes through tight central channels, the attacking team can increase the midfield overload by having a forward drop into the half-space or central midfield. This move creates a local numerical advantage, allowing the team to retain possession and cycle the ball until a defensive error or gap appears. It is particularly effective when the traditional striker is willing to perform defensive duties and link-up play, rather than solely waiting for service in the box. By dropping deep, the striker pins the opposition's deepest midfielder or center-back, stretching their defensive shape and creating space for wingers or full-backs to exploit. However, this approach requires the striker to have high work rates and technical ability to hold the ball under pressure. If the striker lacks these attributes, the team may lose its cutting edge in the final third, leading to a sterile possession game. Therefore, this tactic is best deployed when the team has a versatile forward who can contribute to both build-up and finishing, or when the primary objective is to control the game's tempo rather than immediate penetration.",
+  "conditions": [
+    "opponent_low_block",
+    "limited_progressive_pass_options",
+    "striker_willing_to_drop"
+  ],
+  "objective": [
+    "create_midfield_overload",
+    "retain_possession",
+    "stretch_opponent_defense"
+  ],
+  "possible_actions": [
+    "forward_drop_deep",
+    "pin_center_back",
+    "cycle_ball_central"
+  ],
+  "contraindications": [
+    "lack_of_cutting_edge",
+    "striker_low_work_rate",
+    "opponent_high_press"
+  ],
+  "trigger_conditions": [
+    "space_ahead_small",
+    "progressive_pass_not_available",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_midfield_density"
+  ],
+  "player_behaviours": [
+    "drop_into_midfield",
+    "hold_ball_under_pressure",
+    "link_up_passing"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "false_nine",
+    "midfield_overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4765s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can I get an extra player into the midfield when we are struggling to pass the ball out?",
+    "We are getting pressed hard in our own half and have no one to pass to, should my forward come back to help?",
+    "What is the best role for my striker when the opposition has a high defensive line and leaves space behind them?",
+    "Our midfielders are always outnumbered by the other team, how can I use my forwards to balance the numbers?"
+  ]
+}

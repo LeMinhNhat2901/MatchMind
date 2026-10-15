@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_inverted_fullback_counter_press_security",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Inverted Fullback Counter-Press Security",
+  "definition": "A tactical setup where fullbacks occupy central midfield positions during possession to provide immediate numerical and spatial security for the counter-press upon loss of the ball.",
+  "content": "This concept describes a specific structural advantage used in high-pressing systems, particularly those employing inverted fullbacks. When a team attacks with fullbacks tucking into central midfield zones, they are already positioned in the areas where the opponent's defensive line and midfield meet. Consequently, when possession is lost, these players do not need to make long lateral or vertical runs to join the press; they are already in the 'hot zone' of the defensive transition. This proximity allows the team to engage the counter-press immediately, often within seconds of losing the ball, creating a suffocating intensity that prevents the opponent from building out safely. The presence of these central players acts as a 'security layer,' ensuring that even if the front line is bypassed, there is immediate support to cut passing lanes or win the ball back. This setup is crucial for teams that rely on high defensive lines and aggressive pressing triggers, as it minimizes the time and distance required to reorganize into a compact defensive shape. It effectively turns the attacking structure into a defensive asset, ensuring that the transition from attack to defense is seamless and rapid.",
+  "conditions": [
+    "inverted_fullback_role",
+    "high_pressing_system",
+    "possession_lost"
+  ],
+  "objective": [
+    "immediate_counter_press",
+    "secure_midfield_transition",
+    "prevent_opponent_build_up"
+  ],
+  "possible_actions": [
+    "fullback_hold_central_position",
+    "trigger_press_on_loss",
+    "cover_central_passing_lanes"
+  ],
+  "contraindications": [
+    "fullback_fatigue",
+    "opponent_wide_overload",
+    "lack_of_midfield_support"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "players_near_ball",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "fullbacks_in_central_zones",
+    "compact_midfield_block"
+  ],
+  "player_behaviours": [
+    "inverted_fullback_positioning",
+    "immediate_press_engagement"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "inverted_fullback",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=4147s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why are our full-backs sitting in the middle of the park instead of tracking the wingers when we lose the ball?",
+    "We keep getting caught out of position in midfield after losing possession because our full-backs are too far inside; how do we stop this?",
+    "As a full-back, should I stay wide to cover the winger or move into the center to help press if we turn the ball over?",
+    "Our team struggles to win the ball back quickly in the middle because there are never enough bodies there; what is the tactical fix for this?"
+  ]
+}

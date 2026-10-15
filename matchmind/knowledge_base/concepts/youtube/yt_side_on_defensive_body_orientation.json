@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_side_on_defensive_body_orientation",
+  "category": "defending",
+  "subcategory": "body_orientation",
+  "phase": "out_of_possession",
+  "title": "Side-On Defensive Body Orientation",
+  "definition": "A defensive technique where players align their bodies perpendicular to the goal line to optimize reaction speed and tracking ability against direct attacks.",
+  "content": "This tactical principle focuses on the physical positioning of defenders, specifically the backline, to enhance their ability to react to opposition movements. Instead of facing the goal directly (horizontally), defenders are instructed to stand side-on (vertically) relative to the pitch. This orientation allows them to engage in a quicker initial reaction and track the runs of attackers with greater speed, as they do not need to rotate their entire body before initiating a sprint. If defenders face the goal, a direct pass forces them to turn, creating a delay that attackers can exploit to gain a speed advantage. This concept is particularly crucial in high-pressing or counter-pressing systems where the defensive line may be exposed to direct balls over the top. By maintaining a side-on stance, defenders can cover more ground laterally and respond to through-balls more effectively, reducing the likelihood of being caught out of position. It is a fundamental micro-tactic that supports broader defensive structures, ensuring that even when the team is compact or pressing high, the individual defenders remain agile and responsive to sudden changes in the game's flow.",
+  "conditions": [
+    "defensive_line_high",
+    "opponent_direct_pass_threat",
+    "defenders_in_backline"
+  ],
+  "objective": [
+    "minimize_reaction_time",
+    "maintain_tracking_speed",
+    "prevent_beaten_by_direct_balls"
+  ],
+  "possible_actions": [
+    "align_body_perpendicular_to_goal",
+    "track_attacker_run",
+    "react_to_through_ball"
+  ],
+  "contraindications": [
+    "reduced_lateral_coverage_if_static",
+    "requires_high_concentration"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_high",
+    "space_behind_defensive_line",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "side_on_stance",
+    "quick_turn_to_track"
+  ],
+  "related_concepts": [
+    "defensive_line",
+    "counter_press",
+    "reaction_speed"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=521s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to stand when marking a winger who is about to receive the ball?",
+    "I keep getting beaten by inside cuts because I am facing the ball directly, how should I adjust my stance?",
+    "As a full-back, how should I position my feet and torso when the opponent is driving down the flank?",
+    "Why do we struggle to track runners coming off the bench when they make sudden diagonal runs into the box?"
+  ]
+}

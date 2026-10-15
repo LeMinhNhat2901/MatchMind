@@ -1,87 +1,142 @@
 """
-Situation Panel — displays computed situation features.
+Situation Panel Component — player dossier & spatial telemetry.
+
+Displays the Situation Engine's computed features as scouting-style cards.
 """
 from __future__ import annotations
 
+import html
+
 import streamlit as st
 
+from matchmind.dashboard.components.ui import icon, render_html
 from matchmind.schema.match_state import MatchState
 
 
-def render_situation_panel(state: MatchState, focus_player_id: int) -> None:
-    """Render the computed situation features panel."""
-    st.markdown("### 📊 Situation Analysis")
-
-    focus = state.get_player(focus_player_id)
-    if focus is None:
-        st.warning(f"Player {focus_player_id} not found in this snapshot.")
-        return
-
-    # Compute features
-    with st.spinner("Computing situation features..."):
-        try:
-            from matchmind.situation_engine.encoder import encode_situation
-            features = encode_situation(state, focus_player_id)
-        except Exception as exc:
-            st.error(f"Situation engine error: {exc}")
-            return
-
-    # Player info
-    role = focus.role or "Unknown"
-    st.markdown(
-        f"**Player {focus_player_id}** | {role.replace('_', ' ').title()} | "
-        f"Team: {focus.team.title()} | Position: ({focus.x:.1f}m, {focus.y:.1f}m)"
+def _metric(label: str, value: str, unit: str, footer: str, tone: str = "") -> str:
+    unit_html = f'<span class="metric-unit">{unit}</span>' if unit else ""
+    return (
+        f'<div class="metric-box"><div class="metric-label" title="{label}">{label}</div>'
+        f'<div class="metric-value {tone}">{value}{unit_html}</div>'
+        f'<div class="metric-footer">{footer}</div></div>'
     )
 
-    # Spatial metrics
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        st.metric("📏 Dist to Ball", f"{features.distance_to_ball:.1f}m")
-        st.metric("👥 Nearest Opp", f"{features.nearest_opponent_distance:.1f}m",
-                  delta=None, delta_color="off")
-    with col2:
-        st.metric("🚀 Space Ahead", f"{features.space_ahead:.1f}m")
-        st.metric("🤝 Nearest TM", f"{features.nearest_teammate_distance:.1f}m")
-    with col3:
-        adv = features.local_numerical_advantage
-        st.metric("⚡ Local Advantage", f"{adv:+d}",
-                  delta=f"{'Overload' if adv > 0 else 'Underload' if adv < 0 else 'Equal'}",
-                  delta_color="normal" if adv >= 0 else "inverse")
 
-    st.divider()
+def render_situation_panel(state: MatchState, focus_player_id: int) -> None:
+    """Render the tactical situation dossier for the selected focus player."""
+    focus = state.get_player(focus_player_id)
+    if focus is None:
+        st.warning(f"Player #{focus_player_id} is not in this snapshot.")
+        return
 
-    # Tactical flags
-    st.markdown("**Tactical Flags**")
-    flags = {
-        "🔓 Passing Lane Open": features.passing_lane_open,
-        "🎯 Progressive Passes": features.progressive_passes_available > 0,
-        "👨‍👧‍👦 Third-Man Opportunity": features.third_man_opportunity,
-        "↔️ Switch Play Viable": features.switch_play_viable,
-        "🌓 Half-Space": features.half_space_occupied,
-        "⚔️ Attacking Third": features.is_in_attacking_third,
-        "🛡️ Defensive Third": features.is_in_defensive_third,
-        "📦 Overload Left": features.overload_left,
-        "📦 Overload Right": features.overload_right,
-    }
+    with st.spinner("Computing spatial metrics..."):
+        try:
+            from matchmind.situation_engine.encoder import encode_situation
 
-    flag_cols = st.columns(2)
-    for i, (label, value) in enumerate(flags.items()):
-        with flag_cols[i % 2]:
-            colour = "🟢" if value else "⚪"
-            st.markdown(f"{colour} {label}")
+            features = encode_situation(state, focus_player_id)
+        except Exception as exc:
+            st.error(f"Situation Engine error: {exc}")
+            return
 
-    st.divider()
+    third_str = "Attacking third" if features.is_in_attacking_third else (
+        "Defensive third" if features.is_in_defensive_third else "Middle third"
+    )
+    lane_str = "Half-space" if features.half_space_occupied else "Central channel"
 
-    # Team structure
-    st.markdown("**Team Structure**")
-    tc1, tc2, tc3 = st.columns(3)
-    with tc1:
-        st.metric("🏰 Def Line", f"{features.defensive_line_height:.0f}m")
-    with tc2:
-        st.metric("📐 Compactness", f"{features.team_compactness:.1f}m")
-    with tc3:
-        st.metric("↔️ Attack Width", f"{features.attacking_width:.1f}m")
+    opp_dist = features.nearest_opponent_distance
+    if opp_dist < 2.0:
+        pressure_tag = '<span class="pressure-pill pressure-high"><span class="status-dot"></span>High pressure</span>'
+        opp_tone = "bad"
+    elif opp_dist < 4.0:
+        pressure_tag = '<span class="pressure-pill pressure-med"><span class="status-dot"></span>Contested</span>'
+        opp_tone = "warn"
+    else:
+        pressure_tag = '<span class="pressure-pill pressure-low"><span class="status-dot"></span>Unmarked</span>'
+        opp_tone = "good"
 
-    # NL description expander
-    with st.expander("💬 Natural Language Description (RAG Query)"):
-        st.caption(features.natural_language_description)
+    is_carrier = features.is_ball_carrier
+    carrier_badge = (
+        f'<span class="tactical-badge badge-carrier">{icon("ball", 13)}On-ball</span>'
+        if is_carrier
+        else f'<span class="tactical-badge badge-offball">{icon("footprints", 13)}Off-ball</span>'
+    )
+
+    team_color_class = "team-home-badge" if focus.team == "home" else "team-away-badge"
+    role_label = html.escape((focus.role or "Player").replace("_", " "))
+
+    render_html(
+        f"""
+        <div class="scout-card">
+            <div class="scout-header">
+                <div class="scout-identity">
+                    <div class="jersey-circle {team_color_class}">{focus.id}</div>
+                    <div>
+                        <div class="scout-role">{role_label}</div>
+                        <div class="scout-team-sub">{focus.team.title()} team · {third_str} · {lane_str}</div>
+                    </div>
+                </div>
+                <div class="scout-badges">{carrier_badge}{pressure_tag}</div>
+            </div>
+            <div class="coords-strip">
+                <span>X {focus.x:.1f} m</span><span>Y {focus.y:.1f} m</span><span>Speed {focus.speed:.1f} m/s</span>
+            </div>
+        </div>
+        """
+    )
+
+    adv = features.local_numerical_advantage
+    if adv > 0:
+        adv_tone, adv_text = "good", "Overload"
+    elif adv < 0:
+        adv_tone, adv_text = "bad", "Underload"
+    else:
+        adv_tone, adv_text = "", "Balanced"
+    carrier_info = "In possession" if is_carrier else f"Carrier #{features.ball_carrier_id or '?'}"
+
+    render_html('<div class="mm-kicker">Spatial telemetry</div>')
+    render_html(
+        '<div class="metric-grid">'
+        + _metric("Ball distance", f"{features.distance_to_ball:.1f}", "m", carrier_info)
+        + _metric("Nearest opponent", f"{opp_dist:.1f}", "m",
+                  f"Teammate {features.nearest_teammate_distance:.1f}&nbsp;m", opp_tone)
+        + _metric("Local balance · 15 m", f"{adv:+d}", "", adv_text, adv_tone)
+        + "</div>"
+    )
+
+    flags = [
+        ("Passing lane", "Open" if features.passing_lane_open else "Blocked", features.passing_lane_open),
+        ("Progressive route", f"{features.progressive_passes_available} available",
+         features.progressive_passes_available > 0),
+        ("Third-man option", "Viable" if features.third_man_opportunity else "None", features.third_man_opportunity),
+        ("Switch of play", "Feasible" if features.switch_play_viable else "Not viable", features.switch_play_viable),
+        ("Half-space", "Occupied" if features.half_space_occupied else "Outside", features.half_space_occupied),
+        ("Flank overload", "Left" if features.overload_left else ("Right" if features.overload_right else "Central"),
+         features.overload_left or features.overload_right),
+    ]
+    rows = "".join(
+        f'<div class="tactical-flag-row{" on" if on else ""}">'
+        f'<span class="flag-label">{label}</span>'
+        f'<span class="flag-val {"val-active" if on else "val-dim"}">{val}</span></div>'
+        for label, val, on in flags
+    )
+    render_html('<div class="mm-kicker">Lanes &amp; options</div>')
+    render_html(f'<div class="flag-grid">{rows}</div>')
+
+    def_height = features.defensive_line_height
+    if features.defensive_line_visible:
+        line_value, line_label = f"{def_height:.1f}", (
+            "High line" if def_height > 60 else ("Mid block" if def_height > 40 else "Low block"))
+    else:
+        # Partial camera view: the opponent's back line isn't in frame.
+        line_value, line_label = "—", "Not in camera view"
+    render_html('<div class="mm-kicker">Team shape</div>')
+    render_html(
+        '<div class="metric-grid">'
+        + _metric("Defensive line", line_value, "m" if features.defensive_line_visible else "", line_label)
+        + _metric("Compactness", f"{features.team_compactness:.1f}", "m", "Block spread")
+        + _metric("Attack width", f"{features.attacking_width:.1f}", "m", "Pitch coverage")
+        + "</div>"
+    )
+
+    with st.expander("Situation briefing", icon=":material/description:"):
+        render_html(f'<div class="analyst-memo">{html.escape(features.natural_language_description)}</div>')

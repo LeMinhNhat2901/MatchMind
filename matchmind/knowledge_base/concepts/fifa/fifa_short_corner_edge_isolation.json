@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_short_corner_edge_isolation",
+  "category": "attacking",
+  "subcategory": "set_piece",
+  "phase": "possession",
+  "title": "Short Corner Edge Isolation",
+  "definition": "A set-piece strategy using short passes and decoy movements to isolate a shooter at the edge of the box for a long-range strike.",
+  "content": "This tactical approach shifts the focus of a corner kick from aerial duels inside the penalty area to creating shooting opportunities just outside the box. The execution relies on psychological manipulation and spatial deception. Initially, several attackers position themselves deep toward the far post to create a visual expectation of a long delivery, luring defenders into concentrating their coverage in that zone. Simultaneously, playmakers use quick ground passes to drift into open space, eventually isolating a designated midfielder at the edge of the penalty area. The target runner initially holds back, allowing markers to commit to tracking the decoy threats. Once the defensive structure is disrupted and the immediate area is vacated, the runner receives the ball in a free position to strike from distance. This method is particularly effective against man-marking systems, as the multiple movement patterns overwhelm individual trackers. If defenders over-commit to pressing the short exchange, the shooter can also exploit the space behind them to enter the box. The ideal executor requires high technical proficiency in striking with both feet, as the tactic depends on converting the created space before defenders can reorganize.",
+  "conditions": [
+    "set_piece_corner_kick",
+    "opponent_man_marking",
+    "technical_shooter_available"
+  ],
+  "objective": [
+    "isolate_shooter_edge_box",
+    "create_long_range_shooting_opportunity",
+    "disrupt_defensive_structure"
+  ],
+  "possible_actions": [
+    "short_pass_exchange",
+    "decoy_movement_far_post",
+    "delayed_run_edge_box",
+    "strike_from_distance"
+  ],
+  "contraindications": [
+    "opponent_zonal_defense_compact",
+    "lack_of_technical_shooter",
+    "strong_winds_affecting_ground_passes"
+  ],
+  "trigger_conditions": [
+    "set_piece_corner_kick",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "space_edge_penalty_area",
+    "decoy_coverage_far_post"
+  ],
+  "player_behaviours": [
+    "hold_position_initially",
+    "drift_into_space",
+    "receive_ground_pass",
+    "strike_powerfully"
+  ],
+  "related_concepts": [
+    "set_piece_deception",
+    "edge_of_box_shooting",
+    "man_marking_exploitation"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Argentina: Freeing the edge for attempts at goal",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/corners/attacking-corners.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is a good trick to get a shot on goal from the corner without crossing it in?",
+    "The defense is packed into the box, how can we get a player open for a long shot instead?",
+    "As the player receiving the short corner, how do I get myself into a position to shoot from the edge of the area?",
+    "We always cross the ball into a crowd and it gets cleared, how can we use short corners to create a better scoring chance?"
+  ]
+}

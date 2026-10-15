@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_inverted_full_back_attacking_shape",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Inverted Full-Back Attacking Shape",
+  "definition": "A tactical setup where full-backs move into central midfield zones while wingers hug the touchline to create width and numerical superiority in the middle.",
+  "content": "This concept describes a specific attacking configuration often used in possession-based systems, particularly when a team has high-quality wingers and ball-playing full-backs. Instead of overlapping, the full-backs invert into the half-spaces or central midfield, effectively turning a 4-3-3 or 4-2-3-1 into a 2-3-5 or 2-4-4 shape in the final third. This movement allows the team to overload central areas, creating passing triangles and numerical advantages against the opponent's midfield line. Simultaneously, the wingers stay wide, hugging the touchline to stretch the opponent's defensive block horizontally. This combination of central overloads and extreme width forces the opposition to commit defenders to the flanks, opening up space for the inverted full-backs to make late runs or for central players to penetrate. It is highly effective against teams that sit in a mid-block or low-block, as it disrupts their defensive lines by forcing them to track the inverted full-backs centrally while covering the wide wingers. The key requirement is that the full-backs possess the technical ability to operate in tight central spaces and make progressive passes, while the wingers must have the pace and directness to exploit the space behind the full-backs.",
+  "conditions": [
+    "possession_phase",
+    "attacking_third",
+    "opponent_mid_block_or_low_block"
+  ],
+  "objective": [
+    "central_overload",
+    "stretch_defensive_width",
+    "create_passing_triangles"
+  ],
+  "possible_actions": [
+    "full_back_inverts_to_half_space",
+    "winger_hugs_touchline",
+    "central_player_drags_defender",
+    "late_run_from_full_back"
+  ],
+  "contraindications": [
+    "opponent_high_press_with_wide_cover",
+    "lack_of_winger_pace",
+    "full_back_lacks_technical_quality"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "attacking_width_high"
+  ],
+  "spatial_requirements": [
+    "wide_winger_position",
+    "central_midfield_overload",
+    "compact_attacking_shape"
+  ],
+  "player_behaviours": [
+    "invert_into_central_zone",
+    "maintain_width_on_flank",
+    "scan_for_central_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "half_space",
+    "width"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5241s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why do our full-backs keep drifting into the middle of the pitch when we have the ball?",
+    "Our wingers are staying wide but our full-backs are cutting inside, which leaves us with no one on the flank; is this a mistake or a plan?",
+    "If I am playing left-back, should I stay on the touchline or move into the central midfield zone when we are building up play?",
+    "We are getting outnumbered in the middle because our wide players are hugging the line and our full-backs are tucking in; how do we balance this?"
+  ]
+}

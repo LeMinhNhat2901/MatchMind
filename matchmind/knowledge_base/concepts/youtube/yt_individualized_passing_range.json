@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_individualized_passing_range",
+  "category": "fundamentals",
+  "subcategory": "decision_making",
+  "phase": "possession",
+  "title": "Individualized Passing Range",
+  "definition": "A tactical principle where players are encouraged to utilize their full technical range, including long direct passes, rather than being restricted to short passing patterns.",
+  "content": "This concept challenges the modern dogma of exclusive short-passing football by advocating for the utilization of individual player strengths. Coaches should assess each player's specific technical capabilities, such as the ability to execute high-quality long balls, and integrate these into the team's tactical plan. For instance, a full-back with elite long-passing ability should not be restricted to 10-yard passes into midfield if a direct diagonal pass to a winger offers a more penetrative option. The most effective first pass is often the one that bypasses defensive lines entirely, such as a direct switch to an opponent making a run off the shoulder. Restricting such players to short passing undermines their talent and limits the team's attacking potential. The tactical design, such as a 4-4-2 formation, should be structured to maximize these individual strengths, allowing players to operate in ways that suit their natural abilities. This approach not only enhances immediate tactical effectiveness but also aids in player development, as players who are allowed to express their full range often improve more rapidly and become more valuable assets. Coaches must resist external pressure to conform to generic trends and instead focus on what gives their specific squad the best chance of success.",
+  "conditions": [
+    "player_has_long_passing_ability",
+    "defensive_line_compact",
+    "space_behind_defensive_line"
+  ],
+  "objective": [
+    "bypass_midfield_defense",
+    "maximize_individual_strengths",
+    "create_penetrative_first_pass"
+  ],
+  "possible_actions": [
+    "direct_diagonal_pass",
+    "switch_play_long_ball",
+    "target_run_off_shoulder"
+  ],
+  "contraindications": [
+    "player_lacks_long_pass_accuracy",
+    "opponent_high_press_with_no_space"
+  ],
+  "trigger_conditions": [
+    "space_behind_defensive_line",
+    "passing_lane_open",
+    "switch_play_viable"
+  ],
+  "spatial_requirements": [
+    "width_available_for_switch"
+  ],
+  "player_behaviours": [
+    "scan_for_long_option",
+    "execute_direct_pass"
+  ],
+  "related_concepts": [
+    "switch_play",
+    "direct_football",
+    "individual_talent_maximization"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=o3YY7PY-IH0&t=1002s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Is it okay for our midfielders to try long switches of play, or do we have to stick to short triangles?",
+    "Our team looks stagnant because everyone is afraid to play a long ball, even though our captain has great range; how do we fix this?",
+    "As a deep-lying midfielder, should I be looking for those 40-yard diagonal passes to the winger, or is that against our game plan?",
+    "We keep getting stuck in our own half because we only play short passes, but I feel like we have the skill to hit it over the top; what should we do?"
+  ]
+}

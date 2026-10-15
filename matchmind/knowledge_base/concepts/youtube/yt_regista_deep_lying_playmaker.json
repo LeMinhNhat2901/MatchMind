@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_regista_deep_lying_playmaker",
+  "category": "individual",
+  "subcategory": "deep_lying_playmaker",
+  "phase": "possession",
+  "title": "Regista Deep Lying Playmaker",
+  "definition": "A creative midfielder positioned deep in the defensive third who acts as the primary passing hub to initiate attacks from a static, low position.",
+  "content": "The Regista role represents a tactical evolution of the number six position, shifting from a purely defensive 'second wall' to a creative director. Unlike a traditional holding midfielder who focuses on tackling and interceptions, the Regista sits deep to maximize vision and time, allowing them to scan the entire pitch and release progressive passes to forwards before opponents can close down. This role solves the common issue of a missing link between defense and attack, preventing the burden of vertical progression from falling solely on central midfielders who are often under pressure. While historically associated with Italian football, the concept is distinct from the modern 'deep-lying playmaker' (DLP), which blends creative distribution with higher defensive work rates. A pure Regista offers less defensive cover, often requiring a partner in midfield to handle ball-winning duties. This positioning allows the player to exploit space between the lines or behind the defensive line with precise through balls, effectively directing the team's offensive flow from a low vantage point.",
+  "conditions": [
+    "possession_in_defensive_third",
+    "creative_midfielder_available",
+    "defensive_partner_present"
+  ],
+  "objective": [
+    "initiate_attack_from_depth",
+    "create_progressive_passing_option",
+    "maintain_team_shape"
+  ],
+  "possible_actions": [
+    "receive_ball_deep",
+    "scan_pitch_for_open_lanes",
+    "play_progressive_pass_forward",
+    "switch_play_to_wide_areas"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "lack_of_defensive_cover",
+    "limited_vision_due_to_crowding"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "passing_lane_open",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "hold_position_deep",
+    "angle_body_to_open_passing_lanes",
+    "delay_pass_until_space_opens"
+  ],
+  "related_concepts": [
+    "deep_lying_playmaker",
+    "positional_play",
+    "midfield_pivot"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=163s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Who should hold the ball in the middle of the park to start our attacks?",
+    "We keep losing the ball in the final third, so I want a player to sit deep and distribute to the wingers instead of pushing up.",
+    "Should our number six stay back near our own box to pick up the ball and launch long switches, or should he join the press?",
+    "Every time we build from the back, we get stuck because no one is positioned to receive the ball between the lines and the back four."
+  ]
+}

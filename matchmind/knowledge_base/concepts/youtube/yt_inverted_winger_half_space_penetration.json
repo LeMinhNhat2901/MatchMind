@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_inverted_winger_half_space_penetration",
+  "category": "attacking",
+  "subcategory": "half_space",
+  "phase": "possession",
+  "title": "Inverted Winger Half-Space Penetration",
+  "definition": "A tactical role where wide players cut inside to occupy the half-space, creating numerical overloads against the defensive midfielder and generating goal threats from central areas.",
+  "content": "This concept addresses the tactical shift away from traditional wide crossing, which became less effective as the pure striker role declined. Instead of hugging the touchline, wingers and inside forwards are instructed to invert, moving into the half-space between the fullback and center-back lines. This movement creates a critical 2v1 situation against the opposing defensive midfielder (the 'destroyer'), allowing the team to either pass into central zones or make penetrating runs. If the defensive midfielder commits to tracking the inverting winger, space opens up for the central attacking midfielder or false nine to drop into that vacated area. This approach transforms the flank from a mere width provider into a primary goal-scoring zone. It requires the team to maintain possession in the final third and exploit the gaps left by defenders who are forced to choose between covering the wide area or the central overload. The objective is to break down compact defensive blocks by creating local numerical superiority in high-value areas, rather than relying on low-percentage crosses.",
+  "conditions": [
+    "is_in_attacking_third",
+    "opponent_defensiveline_high",
+    "half_space_available"
+  ],
+  "objective": [
+    "create_local_overload",
+    "penetrate_half_space",
+    "generate_central_goal_threat"
+  ],
+  "possible_actions": [
+    "invert_winger",
+    "cut_inside",
+    "drop_into_half_space",
+    "create_2v1_against_dmf"
+  ],
+  "contraindications": [
+    "opponent_wide_defense_compact",
+    "lack_of_central_support"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_run_into_half_space",
+    "scan_central_zones",
+    "receive_in_half_space"
+  ],
+  "related_concepts": [
+    "inverted_winger",
+    "inside_forward",
+    "numerical_overload",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-izMUUfGnso&t=313s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why does our winger keep cutting inside to the middle instead of staying on the touchline?",
+    "We are getting overloaded in the center because our wingers are tucking in, but we are not creating chances from the wide areas; what is going wrong?",
+    "If I am playing on the right wing, should I stay wide to stretch the defense or cut inside to join the midfielders in the half-space?",
+    "Our wide players are too passive when they cut inside and just stand there; how do we get them to actually threaten the goal from that central position?"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "concept_id": "yt_mid_block_compactness_and_relational_attacking",
+  "category": "defending",
+  "subcategory": "mid_block",
+  "phase": "out_of_possession",
+  "title": "Mid-Block Compactness and Relational Attacking",
+  "definition": "A defensive strategy using a mid-block to maintain compactness while employing relational player clusters in attack to create unpredictability.",
+  "content": "This tactical approach combines a mid-block defensive structure with flexible, relational attacking principles. In defense, the team maintains a middle defensive line, positioning itself neither too high nor too low. This allows the team to stay compact, reducing the space between lines and preventing opponents from easily playing through the center. Wingers are tasked with drifting inside to cover spaces between lines or supporting the back four, ensuring central protection. In the final third, the system shifts from fixed zones to relational play. Players with strong chemistry form clusters on one side, creating overloads and breaking lines through quick combinations, while a dribbler operates in isolation on the opposite flank. This setup provides unpredictability; if the opponent overloads the relational side, the isolated player offers a clear outlet. The mid-block ensures defensive stability, while the relational attack exploits spatial gaps created by the opponent's focus on the clustered players, allowing for effective penetration without rigid positional constraints.",
+  "conditions": [
+    "team_compactness_high",
+    "mid_block_defensive_structure",
+    "relational_player_chemistry"
+  ],
+  "objective": [
+    "reduce_space_between_lines",
+    "create_attacking_unpredictability",
+    "protect_central_defensive_areas"
+  ],
+  "possible_actions": [
+    "winger_drift_inside",
+    "form_relational_cluster",
+    "isolate_dribbler_on_flank",
+    "maintain_mid_block_height"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_player_chemistry",
+    "excessive_space_behind_defensive_line"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "team_compactness_high",
+    "space_between_lines",
+    "local_numerical_advantage"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines",
+    "central_defensive_coverage"
+  ],
+  "player_behaviours": [
+    "drift_inside_to_cover",
+    "combine_in_tight_spaces",
+    "hold_isolated_position"
+  ],
+  "related_concepts": [
+    "mid_block",
+    "relational_play",
+    "compactness",
+    "overload"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=UlAs0moqVbU&t=172s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stay compact in the middle of the pitch while still creating chances in attack?",
+    "We get stretched out when we lose the ball in the middle, how can we maintain our shape?",
+    "What should my midfielders do to create unpredictability in the final third?",
+    "Our team keeps getting caught out of position when we transition from defense to attack, how do we fix this?"
+  ]
+}

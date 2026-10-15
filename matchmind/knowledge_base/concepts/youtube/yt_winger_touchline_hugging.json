@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_winger_touchline_hugging",
+  "category": "attacking",
+  "subcategory": "width",
+  "phase": "possession",
+  "title": "Winger Touchline Hugging",
+  "definition": "A tactical instruction for wingers to maintain extreme width by hugging the touchline, stretching the opposition defense to create central overloads.",
+  "content": "This concept involves instructing wide attackers to stay on the touchline for the majority of the match, particularly in the first two-thirds of the pitch. By refusing to drift inside or combine centrally, these players force opposition full-backs to stay wide, thereby stretching the defensive block to its maximum horizontal limit. This extreme width creates significant spatial gaps in the half-spaces and central areas, allowing central midfielders or advanced midfielders to operate freely between the lines without immediate defensive pressure. The strategy effectively creates a numerical superiority in the central zones, often resulting in a five-versus-four advantage against a back four. This allows central players to make penetrating runs into the half-spaces to receive the ball or deliver low crosses. The approach relies on the wingers' ability to hold their position and threaten the space behind the full-backs, ensuring that the defense cannot compact centrally without leaving the flanks exposed. It is a structural method to bypass high pressing by utilizing the goalkeeper's distribution to the wide areas, where the wingers can then isolate their markers or trigger central overloads.",
+  "conditions": [
+    "wingers_high_position",
+    "central_midfielders_available",
+    "opponent_fullbacks_wide"
+  ],
+  "objective": [
+    "stretch_defense_horizontally",
+    "create_central_overload",
+    "isolate_fullbacks"
+  ],
+  "possible_actions": [
+    "hold_touchline_position",
+    "run_into_half_space",
+    "deliver_low_cross",
+    "isolate_1v1"
+  ],
+  "contraindications": [
+    "winger_lack_of_acceleration",
+    "opponent_wingback_speed",
+    "lack_of_central_support"
+  ],
+  "trigger_conditions": [
+    "attacking_width_high",
+    "ball_near_flank",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "maximum_horizontal_width",
+    "central_space_available"
+  ],
+  "player_behaviours": [
+    "hug_touchline",
+    "stay_wide",
+    "threaten_behind_fullback"
+  ],
+  "related_concepts": [
+    "overload",
+    "half_space",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=5396s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can I make the opposition defense spread out so my teammates have more space in the middle?",
+    "My winger keeps drifting into the center, leaving the flank empty; what instruction should I give him?",
+    "What should my right winger do to ensure the left side of the pitch is fully utilized for our attacks?",
+    "We are struggling to create overloads in the center because our wide players are not stretching the play; how can we fix this?"
+  ]
+}

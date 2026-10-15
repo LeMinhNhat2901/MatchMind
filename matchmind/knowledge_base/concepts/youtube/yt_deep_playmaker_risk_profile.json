@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_deep_playmaker_risk_profile",
+  "category": "individual",
+  "subcategory": "decision_making",
+  "phase": "possession",
+  "title": "Deep Playmaker Risk Profile",
+  "definition": "The tactical trade-off of deploying a creative, risk-taking midfielder in a deep pivot role to improve build-up progression at the cost of increased turnover risk and reduced final-third impact.",
+  "content": "This concept addresses the strategic dilemma of positioning a high-risk, high-reward creative midfielder (like a number 10) in a deeper, defensive pivot role to solve build-up issues. While this placement can enhance possession retention and allow for progressive passing out of the back, it exposes the player to situations where their natural tendency to attempt line-breaking or switching passes leads to costly turnovers in dangerous areas. Furthermore, it often results in a net loss of attacking quality because the player is removed from their optimal zone of influence, and their replacement in the advanced role is typically a downgrade in terms of mobility and final-third threat. This tactical adjustment is often a reactive measure to address a lack of deep progression or to accommodate a defensive shape, but it requires careful management of the player's decision-making to mitigate the heightened risk of losing possession in the defensive third.",
+  "conditions": [
+    "lack_of_deep_progression",
+    "creative_player_available",
+    "defensive_shape_requirement"
+  ],
+  "objective": [
+    "improve_build_up_quality",
+    "retain_possession_in_defensive_third",
+    "create_progressive_passing_options"
+  ],
+  "possible_actions": [
+    "drop_creative_midfielder_to_pivot",
+    "assign_deep_progression_duty",
+    "manage_risk_in_passing_selection"
+  ],
+  "contraindications": [
+    "high_risk_of_turnover_in_defensive_third",
+    "reduced_final_third_threat",
+    "downgrade_in_advanced_role"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "progressive_pass_not_available",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "scan_for_progressive_pass",
+    "hold_position_in_pivot",
+    "switch_play_laterally"
+  ],
+  "related_concepts": [
+    "deep_lie",
+    "build_up",
+    "possession_retention"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=4708s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Is it worth putting our most creative midfielder in the very back line to help us get the ball out?",
+    "We keep losing possession in the first third when our main creator tries to play through the press from deep.",
+    "Should our best passer drop all the way back to the defensive line, or will he be too far from the goal to be effective?",
+    "Why does our team struggle to progress the ball when we rely on a single high-risk player to break lines from the back?"
+  ]
+}

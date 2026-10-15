@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_back_three_buildup_structure",
+  "category": "terminology",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Back Three Buildup Structure",
+  "definition": "A tactical structure where a defensive midfielder drops between center-backs to form a back three, creating numerical superiority to bypass high pressing.",
+  "content": "When a team faces intense high pressing that disrupts short passing options, a common tactical adjustment is to transition from a back four to a back three. This involves dropping a defensive midfielder or pivot deep into the defensive line to create a 3v2 numerical advantage against the opposing front two. This structure allows the team to safely circulate the ball and bypass the initial press. However, this tactic requires the dropping player to possess high technical quality and vision to progress the ball effectively, as they become the primary outlet. If the player lacks these attributes, the team may struggle to advance the ball, leading to stagnation. Additionally, dropping a midfielder deep reduces the team's presence in the middle third, potentially leaving the remaining midfielders isolated and vulnerable to counter-pressing. Therefore, this tactic is most effective when the dropping player can dictate play and when the team has sufficient width from full-backs or wingers to support the buildup.",
+  "conditions": [
+    "opponent_high_press",
+    "short_passing_blocked",
+    "defensive_midfielder_available"
+  ],
+  "objective": [
+    "create_numerical_superiority",
+    "bypass_high_press",
+    "secure_ball_progression"
+  ],
+  "possible_actions": [
+    "drop_midfielder_deep",
+    "form_back_three",
+    "circulate_ball_short",
+    "switch_play_wide"
+  ],
+  "contraindications": [
+    "reduced_midfield_presence",
+    "vulnerable_to_counter_press",
+    "requires_high_technical_quality"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage_negative",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_defensive_line",
+    "width_from_fullbacks"
+  ],
+  "player_behaviours": [
+    "drop_into_defensive_line",
+    "receive_between_center_backs",
+    "progress_ball_forward"
+  ],
+  "related_concepts": [
+    "high_press",
+    "numerical_superiority",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3569s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get the ball out from the back when the opponent is pressing us hard with their front three?",
+    "We keep losing the ball in our own box because the full-backs are isolated, what is a better way to structure our first pass?",
+    "As the defensive midfielder, should I drop between the center-backs to help with the build-up or stay high to support the wingers?",
+    "Our team struggles to bypass high pressing, how can we create a numerical advantage in the back line to keep possession?"
+  ]
+}

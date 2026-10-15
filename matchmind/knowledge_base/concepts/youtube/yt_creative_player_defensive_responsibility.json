@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_creative_player_defensive_responsibility",
+  "category": "fundamentals",
+  "subcategory": "individual_role",
+  "phase": "general",
+  "title": "Creative Player Defensive Responsibility",
+  "definition": "The tactical necessity for creative players to contribute to defensive duties to prevent opponents from exploiting their lack of pressing intensity.",
+  "content": "Historically, creative 'number 10' players were often exempted from defensive work, relying on their ability to create magic in the final third. However, as tactical sophistication increased, this approach became a significant liability. Opponents identified that these creative players rarely pressed, allowing defensive midfielders or 'destroyers' to operate with freedom. By not closing down these creative players, teams inadvertently created numerical advantages for the opposition in midfield, often turning a balanced midfield into a 3v2 scenario for the opponent. This allowed the opposing team to build possession comfortably and dictate the tempo. Modern tactical theory dictates that every player, regardless of their primary creative role, must contribute to the team's defensive structure. If a creative player fails to press or track back, they leave a spatial void that opponents can exploit to bypass the midfield line. Therefore, the 'artist' must now also be a 'worker,' ensuring that their defensive actions deny the opponent the space and time needed to organize their build-up play. This balance between creative freedom and defensive discipline is essential for maintaining team compactness and preventing the opponent from gaining a structural advantage in the middle third.",
+  "conditions": [
+    "opponent_has_defensive_midfielder",
+    "team_playing_high_press",
+    "creative_player_in_midfield"
+  ],
+  "objective": [
+    "deny_opponent_space",
+    "maintain_midfield_balance",
+    "prevent_numerical_disadvantage"
+  ],
+  "possible_actions": [
+    "press_opponent_midfielder",
+    "track_back_on_counter",
+    "cover_passing_lane"
+  ],
+  "contraindications": [
+    "leaving_midfield_void",
+    "allowing_opponent_free_kick"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage_negative",
+    "space_between_lines"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "pressing_triggers",
+    "defensive_transition",
+    "midfield_balance"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-izMUUfGnso&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why does our best attacker not track back when we lose the ball?",
+    "Our number ten is great in attack but leaves us short a man when the opponent counters; how do we fix that?",
+    "What should our creative midfielder do when the ball is lost in the final third?",
+    "The opponent always targets our playmaker when we lose possession because he never helps out in defense."
+  ]
+}

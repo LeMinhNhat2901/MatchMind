@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_high_press_structural_integrity",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "High Press Structural Integrity",
+  "definition": "The requirement for a high defensive line, mobile defenders, and a sweeping goalkeeper to sustain an aggressive pressing structure without exposing fatal gaps.",
+  "content": "Effective high pressing is not merely about individual intensity but relies on a cohesive structural framework. For a high press to be sustainable, the team must maintain a high defensive line to compress the space between the opponent's defensive line and their own. This compression denies opponents time and space to play through the pressing unit. However, this approach demands specific personnel qualities: center-backs must possess the pace and mobility to track wingers and cover space behind, while the goalkeeper must be willing to sweep up behind the defensive line to clear balls played over the top. If any of these elements are missing—such as a slow defensive line or a goalkeeper who stays on their line—the space between the pressing forwards and the defensive line expands significantly. This creates a 'dead zone' where opponents can easily bypass the press by playing long or switching play. In such cases, the entire pressing structure collapses, leaving the team vulnerable to counter-attacks. Therefore, before implementing a high press, coaches must assess if their squad possesses the necessary physical attributes and tactical discipline to maintain the required compactness and defensive line height.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "team_compactness_high",
+    "press_intensity_high"
+  ],
+  "objective": [
+    "compress_space_between_lines",
+    "force_error_in_build_up",
+    "win_ball_high_up_pitch"
+  ],
+  "possible_actions": [
+    "maintain_high_defensive_line",
+    "sweep_behind_defense",
+    "coordinate_pressing_triggers"
+  ],
+  "contraindications": [
+    "lack_of_defensive_mobility",
+    "goalkeeper_unwilling_to_sweep",
+    "excessive_space_behind_defense"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_high",
+    "opponent_high_press",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "track_winger_back",
+    "sweep_clearance",
+    "angle_press"
+  ],
+  "related_concepts": [
+    "defensive_line",
+    "rest_defence",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3058s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What do we need to fix so we don't get run through the middle when we press high?",
+    "Our goalkeeper is getting caught out of position every time we push up, what is missing from our setup?",
+    "How can our defenders stay safe when the opposing winger beats our fullback in a high line?",
+    "We keep conceding long balls over the top, what structural element are we ignoring in our defensive shape?"
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "concept_id": "wiki_chip_shot_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Chip Shot Technique",
+  "content": "The chip, or lob, is a specialized kicking technique used to bypass opponents or goalkeepers by launching the ball high into the air with precision rather than maximum force. Executed by striking the underside of the ball with the front of the foot and toe, the action imparts backspin to control the trajectory. This skill is primarily employed in two tactical scenarios: first, to pass over the heads of pressing defenders when a low passing lane is blocked; second, to score a goal by lofting the ball over a goalkeeper who is off their line or positioned low. Success depends on accurate vertical height calculation to ensure the ball drops into the target area before the defender can react. While often associated with finishing, it is also a viable passing option in tight spaces where direct ground passes are intercepted. The technique requires significant practice to master the balance between lift and distance, making it a high-risk, high-reward option for players facing specific defensive setups.",
+  "conditions": [
+    "defender_low_position",
+    "passing_lane_blocked",
+    "goalkeeper_off_line"
+  ],
+  "objective": [
+    "bypass_defender",
+    "score_over_keeper"
+  ],
+  "possible_actions": [
+    "execute_chip_pass",
+    "execute_chip_shot"
+  ],
+  "contraindications": [
+    "strong_wind_conditions",
+    "defender_tall_and_jumping",
+    "long_distance_required"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "passing_lane_open",
+    "is_in_attacking_third"
+  ],
+  "source": {
+    "name": "Wikipedia: Chip (association football)",
+    "url": "https://en.wikipedia.org/wiki/Chip_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What do you call a pass that goes over the top of the defense instead of through the gap?",
+    "The goalkeeper is rushing out to smother the ball, so how do I get it past him into the empty net?",
+    "As a winger, when should I choose to loft the ball over the keeper rather than aiming for the far post?",
+    "We always get tackled when we try to play low passes through the middle; is there a better way to bypass their press?"
+  ]
+}

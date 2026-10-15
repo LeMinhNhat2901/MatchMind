@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_midfield_overload_vs_deep_block",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Midfield Overload vs Deep Block",
+  "definition": "A tactical approach where a team creates numerical superiority in the midfield by shifting wide players inward to exploit the lack of space behind deep defensive lines.",
+  "content": "When facing a deep block that denies space for vertical runs, the attacking team must prioritize control and midfield dominance over direct penetration. This strategy involves repositioning a central creator or winger into a nominal wide role to provide width, while simultaneously allowing another midfielder to drift inside. This movement creates an overwhelming numerical advantage in the central zones, forcing the opposition to commit players to cover the ball. The objective is not to score immediately but to move the defense laterally and vertically through patient possession, waiting for a momentary lapse in concentration or a poor defensive decision. This approach requires full-backs to push high and wide to maintain the team's structural width, ensuring that the central congestion does not collapse the entire shape. It is particularly effective against opponents who prioritize defensive solidity over pressing intensity, as it neutralizes their counter-attacking threats by keeping the ball away from dangerous areas and exhausting their defensive shape through constant movement.",
+  "conditions": [
+    "opponent_deep_block",
+    "space_behind_defensive_line_limited",
+    "possession_dominance"
+  ],
+  "objective": [
+    "create_midfield_numerical_advantage",
+    "force_opponent_lateral_movement",
+    "maintain_possession"
+  ],
+  "possible_actions": [
+    "drift_winger_inside",
+    "push_fullback_high_and_wide",
+    "short_passing_circulation",
+    "wait_for_defensive_error"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "space_ahead_large",
+    "transition_speed_required"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "space_ahead_small",
+    "local_numerical_advantage_positive",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_cluster",
+    "wide_fullback_positioning"
+  ],
+  "player_behaviours": [
+    "central_creator_drifts_inside",
+    "fullback_provides_width",
+    "midfielders_close_proximity"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "midfield_dominance",
+    "patient_build_up"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1287s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we break down a team that parks the bus?",
+    "The opponent is sitting very deep and there is no space behind them, what should we try?",
+    "What is the best way for our wingers to help when the defense is parked in their own box?",
+    "We keep hitting a brick wall when they defend in numbers at the back, how do we solve this?"
+  ]
+}

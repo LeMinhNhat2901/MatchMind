@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_advanced_outlet_corner_defense",
+  "category": "defending",
+  "subcategory": "set_piece_defense",
+  "phase": "out_of_possession",
+  "title": "Advanced Outlet Corner Defense",
+  "definition": "A defensive corner strategy where one or more forwards remain advanced beyond the midline to create immediate counter-attack opportunities and reduce opposition box congestion.",
+  "content": "This tactical approach redefines corner defense from a purely reactive block into a proactive transitional tool. By positioning one or multiple forwards high up the pitch, beyond the halfway line, the team forces the opposition to commit defensive resources backward, thereby reducing the number of attackers crowding the penalty area. This structural adjustment shrinks the effective attacking zone for the opponent and introduces psychological pressure, disrupting their set-play rhythm. For teams with forwards who possess pace but limited defensive capability, this role is ideal; they can dictate counter-attack tempo by dropping short or running deep to draw defenders out of position while teammates clear the ball. When deploying multiple advanced outlets, the tactic becomes more complex, with players occupying different heights and angles to confuse defenders before the ball is played. This presence alone can force the opponent to reassign key aerial defenders downfield, altering their attacking structure. Success depends on balancing genuine defensive coverage with a credible transitional threat, requiring clear structural roles and collective understanding to exploit the space created behind the opponent's defensive line immediately upon clearance.",
+  "conditions": [
+    "opponent_set_piece",
+    "forwards_with_pace_available",
+    "defensive_clearance_capability"
+  ],
+  "objective": [
+    "reduce_opponent_box_congestion",
+    "create_immediate_counter_attack",
+    "disrupt_opponent_set_play_rhythm"
+  ],
+  "possible_actions": [
+    "position_forwards_beyond_midline",
+    "drop_short_to_receive",
+    "run_deep_to_draw_defender",
+    "occupy_wide_channels"
+  ],
+  "contraindications": [
+    "lack_of_clearance_capability",
+    "opponent_superior_aerial_threat",
+    "forwards_lacking_pace"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "opponent_set_piece",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "forwards_beyond_midline",
+    "staggered_forward_positioning"
+  ],
+  "player_behaviours": [
+    "maintain_high_position",
+    "scan_for_transition",
+    "dictate_counter_tempo"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "set_piece_defense",
+    "transitional_play"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Defensive corners: changing the narrative",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/defensive-corners-changing-the-narrative.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "Is it worth keeping a striker high up the pitch during a corner kick to catch the opposition on the break?",
+    "The opposition is packing the box too tightly, so how can we use our forwards to create space for a quick counter-attack?",
+    "As a forward, should I drop into the box to defend the corner or stay near the halfway line to exploit the space behind their defense?",
+    "We are conceding too many headers in the box during set pieces, what is a smarter defensive strategy that reduces congestion while keeping counter-attack options open?"
+  ]
+}

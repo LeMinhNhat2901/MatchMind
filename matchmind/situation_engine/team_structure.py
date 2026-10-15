@@ -39,8 +39,11 @@ def compute_team_structure(state: MatchState, focus_team: str) -> dict:
     opp_players = _exclude_gk(state.get_opponents(focus_team))
 
     return {
-        # Defensive line = y-position of the defensive team's deepest outfield line
-        "defensive_line_height": _defensive_line_height(opp_players, focus_team),
+        # The opponent's back line: the x of their deepest outfield players. The
+        # state is oriented so the focus team attacks +x (see orientation.py), so
+        # "deepest" is always the highest x.
+        "defensive_line_height": _defensive_line_height(opp_players),
+        "defensive_line_visible": _defensive_line_visible(state, opp_players),
 
         # Compactness = average inter-player distance of the focus team
         "team_compactness": _team_compactness(focus_players),
@@ -75,31 +78,36 @@ def _exclude_gk(players: list[PlayerState]) -> list[PlayerState]:
     return filtered if filtered else players  # fallback: keep all
 
 
-def _defensive_line_height(
-    defending_players: list[PlayerState],
-    attacking_team: str,
-) -> float:
+def _defensive_line_height(defending_players: list[PlayerState]) -> float:
     """
-    The x-coordinate of the defensive line (deepest outfield defenders).
+    Mean x of the defending team's 4 deepest outfield players (their back line).
 
-    For 'home' attacking (left→right): defenders are at high x, so line = min(x) of back 4.
-    For 'away' attacking: defenders are at low x, so line = max(x) of back 4.
-
-    Returns x in metres (0–105). Higher x = higher defensive line.
+    The state is oriented so the attacking (focus) team goes toward x=105, so the
+    defenders' own goal is at x=105 and "deepest" = highest x. The old version
+    took the 4 LOWEST x for a home focus team — the opponent's most advanced
+    players — and reported a back line at x≈55 when the centre-backs stood at 82.
     """
     if not defending_players:
         return 52.5  # default: halfway line
+    x_values = sorted(p.x for p in defending_players)
+    return round(float(np.mean(x_values[-4:])), 2)
 
-    x_values = sorted([p.x for p in defending_players])
-    # Defensive line = the 4 deepest defenders (lowest x for home attack)
-    if attacking_team == "home":
-        # Defenders at low x (their own half)
-        line_x = float(np.mean(x_values[:4]))
-    else:
-        # Defenders at high x
-        line_x = float(np.mean(x_values[-4:]))
 
-    return round(line_x, 2)
+def _defensive_line_visible(state: MatchState, defending_players: list[PlayerState]) -> bool:
+    """Can the opponent's back line actually be measured from this snapshot?
+
+    A partial camera view (StatsBomb 360 today, video later) only shows players
+    near the ball; the deepest opponent in frame is then often a presser, not a
+    defender. Trust the line only if the camera also sees ≥5 m of pitch behind
+    the deepest visible opponent (nobody is hiding further back), or — without a
+    view polygon — if the frame holds (nearly) every player.
+    """
+    if not defending_players:
+        return False
+    if state.visible_area:
+        deepest = max(p.x for p in defending_players)
+        return max(x for x, _ in state.visible_area) >= deepest + 5.0
+    return len(state.players) >= 20
 
 
 def _team_compactness(players: list[PlayerState]) -> float:

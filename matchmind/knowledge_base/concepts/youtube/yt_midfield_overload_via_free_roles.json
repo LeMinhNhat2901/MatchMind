@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_midfield_overload_via_free_roles",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Midfield Overload via Free Roles",
+  "definition": "A tactical structure where a free-roaming attacking midfielder and aggressive wing-backs create numerical superiority in the midfield to dominate possession.",
+  "content": "This concept describes how a team can dominate the midfield by utilizing a flexible shape that generates local numerical advantages. In the described scenario, Argentina used a system where wing-backs operated aggressively high on the flanks, while a key playmaker operated in a free role as an attacking midfielder. This setup allowed the double pivot to shift higher up the pitch, creating a 4v2 or 4v3 advantage against the opposition's midfielders. Even when opponents tucked in or dropped back, the team maintained possession by having additional players, such as wide forwards, occupy central midfield spaces when moving infield. This approach ensures that the team can control the tempo and retain the ball in the final third or midfield area. It is particularly effective when the opposition commits players to wide areas, leaving the central zones vulnerable to penetration. The key is maintaining compactness while allowing specific players the freedom to drift into central spaces to exploit gaps left by the opponent's defensive structure.",
+  "conditions": [
+    "opponent_wide_commitment",
+    "central_space_available"
+  ],
+  "objective": [
+    "dominate_midfield",
+    "retain_possession"
+  ],
+  "possible_actions": [
+    "shift_pivot_high",
+    "drift_infield",
+    "occupy_half_space"
+  ],
+  "contraindications": [
+    "opponent_midfield_density_high",
+    "lack_of_wide_support"
+  ],
+  "trigger_conditions": [
+    "half_space_free",
+    "local_numerical_advantage_positive",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "drift_into_centre"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "half_space"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=8YmhU6cbO_8&t=344s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I get more bodies in the middle without dropping my striker?",
+    "My team keeps losing the ball in the center because we are outnumbered, what can I do?",
+    "What should my attacking midfielder do to help us dominate the center of the park?",
+    "We struggle to keep possession when the opposition sits back, how can we fix this?"
+  ]
+}

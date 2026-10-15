@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_horizontal_line_interchange",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Horizontal Line Interchange",
+  "definition": "A tactical approach where entire horizontal lines of players interchange roles and positions to manipulate opponent defensive structures and create spatial advantages.",
+  "content": "This concept describes a hybrid tactical system that combines positional structure with relational fluidity. Unlike traditional positional play where players rotate within fixed zones, this system allows entire horizontal lines (e.g., backline and midfield) to interchange roles completely. For instance, midfielders may drop deep to join the goalkeeper, creating a numerical overload in the backline. This forces the opposing press to track the overload, leaving space behind their defensive line. Simultaneously, center-backs make advancing runs into this vacated space, effectively becoming temporary midfielders or wingers. This unpredictability dismantles opposition marking schemes because players are not confined to their traditional comfort zones. The primary objective is to manipulate the opponent's defensive lines, creating large pockets of space for creative players to exploit. This approach requires high tactical discipline and communication, as players must constantly reassess their roles based on the ball's position and opponent reactions. It is particularly effective against low-pressing teams that do not engage the backline, allowing the team to control the tempo and dictate the game's flow through spatial manipulation rather than individual brilliance.",
+  "conditions": [
+    "opponent_low_press",
+    "high_tactical_discipline",
+    "players_comfortable_in_multiple_roles"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "manipulate_opponent_defensive_lines",
+    "generate_space_behind_press"
+  ],
+  "possible_actions": [
+    "midfielders_drop_deep",
+    "center_backs_advance_into_midfield",
+    "interchange_horizontal_lines",
+    "create_overload_in_backline"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_communication",
+    "players_resistant_to_role_change"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "local_numerical_advantage_positive",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_into_backline",
+    "make_advancing_runs",
+    "interchange_positions"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "build_up"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we get our midfielders to swap places with the fullbacks to confuse the opposition?",
+    "When the other team's center-backs are tracking our wingers, how can our entire back line shift sideways to open up gaps?",
+    "What should our left-back do when the right-back moves into midfield to create a numerical advantage on the flank?",
+    "We keep getting caught out of position when our players swap roles; how do we organize these lateral shifts without leaving holes behind?"
+  ]
+}

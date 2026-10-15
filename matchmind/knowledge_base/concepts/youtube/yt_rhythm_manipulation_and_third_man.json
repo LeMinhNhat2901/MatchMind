@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_rhythm_manipulation_and_third_man",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Rhythm Manipulation and Third Man",
+  "definition": "A tactical approach combining third-man passing networks with deliberate manipulation of game tempo to create space and control the match flow.",
+  "content": "This concept integrates two core principles: the use of third-man passes and the manipulation of time. In the build-up phase, teams utilize an extended web of third-man passes between midfielders, center-backs, and forwards. Players actively look to receive the second pass rather than the first, creating progressive triangles that break through lines of opposition pressure. This structure is virtually impossible to defend if executed correctly. Beyond spatial movement, the team manipulates tempo by cycling through different rhythms. They may play slowly, stop completely, or accelerate rapidly. This static-to-dynamic shift is provocative, forcing opponents to become frustrated and overcommit to pressing. When the opposition’s frustration peaks and they push up, space between the lines opens up. The team then exploits this newly created space quickly and decisively. By controlling the rhythm, the team becomes the 'protagonist,' forcing the opponent to play on their terms. This approach not only controls the game flow but also creates high-quality chances by giving attackers the luxury of space, effectively simulating counter-attack conditions during open play.",
+  "conditions": [
+    "possession_phase",
+    "opponent_high_press",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "create_space_between_lines",
+    "control_game_tempo",
+    "break_opposition_lines"
+  ],
+  "possible_actions": [
+    "execute_third_man_pass",
+    "hold_ball_to_manipulate_tempo",
+    "accelerate_into_open_space",
+    "rotate_positions_to_create_overload"
+  ],
+  "contraindications": [
+    "opponent_low_block_compact",
+    "lack_of_patience_in_squad",
+    "high_intensity_counter_press"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "space_between_lines",
+    "third_man_opportunity",
+    "phase_of_play_attacking"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "compact_team_shape"
+  ],
+  "player_behaviours": [
+    "receive_second_pass",
+    "hold_position_to_wait",
+    "scan_for_tempo_change"
+  ],
+  "related_concepts": [
+    "third_man_run",
+    "positional_play",
+    "tempo_control",
+    "pressing_trap"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=D8AgTaSShmM&t=196s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we use quick one-twos to break down a low block without losing the ball?",
+    "Our team keeps getting caught out of position when we try to pass out of the back against a mid-block.",
+    "What should the left winger do to help the full-back escape pressure in the final third?",
+    "Why do we always lose possession in the midfield when the opponent starts pressing high?"
+  ]
+}

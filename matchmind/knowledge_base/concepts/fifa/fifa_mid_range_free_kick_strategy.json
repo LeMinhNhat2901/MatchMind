@@ -1,0 +1,58 @@
+{
+  "concept_id": "fifa_mid_range_free_kick_strategy",
+  "category": "attacking",
+  "subcategory": "set_piece_execution",
+  "phase": "possession",
+  "title": "Mid-Range Free Kick Strategy",
+  "definition": "A tactical approach to direct free kicks from 20-30 yards that maximizes threat by exploiting the spatial dilemma between the defensive wall and goalkeeper.",
+  "content": "Mid-range direct free kicks (20-30 yards) represent a tactical sweet spot where attackers can effectively outmaneuver both the defensive wall and the goalkeeper. This distance allows for superior variability compared to shorter or longer attempts, as it balances technical control with the ability to bypass multiple defensive layers. The core tactical challenge involves exploiting the goalkeeper's decision-making dilemma: they must choose between trusting the wall's coverage or shifting centrally, which inevitably leaves one area exposed. Three primary technical solutions exist: using sidespin to lift the ball over the wall, forcing the keeper to track lateral movement; striking with a flat, fast trajectory around the wall's perimeter to limit reaction time; or employing a 'wrongfoot' strategy by targeting the side opposite the wall to exploit surprise. Success in this phase depends less on raw power and more on intelligent decision-making. Elite practitioners assess the specific context—such as wall height, keeper positioning, and available space—to select the most appropriate option, whether it be technical manipulation or tactical surprise, rather than relying on a single repetitive technique.",
+  "conditions": [
+    "free_kick_mid_range",
+    "wall_present",
+    "goalkeeper_positioned"
+  ],
+  "objective": [
+    "bypass_defensive_wall",
+    "exploit_keeper_dilemma",
+    "score_direct_goal"
+  ],
+  "possible_actions": [
+    "strike_over_wall_sidespin",
+    "strike_around_wall_flat",
+    "target_opposite_corner_surprise"
+  ],
+  "contraindications": [
+    "repetitive_technique_use",
+    "ignoring_keeper_position"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "players_near_ball"
+  ],
+  "spatial_requirements": [
+    "wall_fixed_position",
+    "goalkeeper_central_or_shifted"
+  ],
+  "player_behaviours": [
+    "assess_wall_height",
+    "disguise_intent",
+    "select_trajectory_based_on_context"
+  ],
+  "related_concepts": [
+    "set_piece_tactics",
+    "decision_making",
+    "goalkeeper_positioning"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Direct free kicks: why mid-range means maximum threat",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/direct-free-kicks-why-mid-range-means-maximum-threat.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the best way to beat a keeper who is standing on his line from 25 yards out?",
+    "The wall is set up to block the near post, but the keeper is covering the far corner, so where do we aim the shot?",
+    "As the designated taker, how do I decide whether to curl it over the wall or blast it at the top corner from this distance?",
+    "We keep missing our set pieces from the edge of the box because the wall is too tight, what should we change?"
+  ]
+}

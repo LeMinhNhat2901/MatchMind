@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_geometric_compactness_and_rest_defence",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "general",
+  "title": "Geometric Compactness and Rest Defence",
+  "definition": "A structural principle where players maintain equal distances to form triangles, ensuring passing options in possession and immediate proximity for rapid ball recovery in transition.",
+  "content": "This concept, rooted in Total Football and refined by Pep Guardiola, emphasizes maintaining a geometric structure of five horizontal lines with equal spacing. The primary objective is to create a network of triangles between adjacent players, ensuring the ball carrier always has a passing option and a 'third man' available. This structure allows the team to circulate the ball effectively, identifying unmarked players with time and space to generate threats. Crucially, this same discipline serves a defensive purpose known as rest defence. By keeping every player within approximately 10 meters of a teammate, the team ensures that upon losing possession, there are always one or more players close enough to apply immediate pressure. This reduces the distance required to recover the ball, making defensive transitions more efficient and less reliant on individual sprinting effort. The system transforms defensive recovery from a chaotic chase into a structured, positional response, allowing the team to regain control quickly through collective proximity rather than individual heroics.",
+  "conditions": [
+    "team_compactness_high",
+    "positional_discipline_maintained"
+  ],
+  "objective": [
+    "ensure_passing_options",
+    "minimize_recovery_distance",
+    "create_immediate_pressure"
+  ],
+  "possible_actions": [
+    "maintain_equal_spacing",
+    "form_triangles",
+    "apply_immediate_pressure",
+    "circulate_ball"
+  ],
+  "contraindications": [
+    "loss_of_structural_discipline",
+    "excessive_spacing_between_lines"
+  ],
+  "trigger_conditions": [
+    "team_compactness_high",
+    "phase_of_play_defensive_transition",
+    "nearest_opponent_distance_low"
+  ],
+  "spatial_requirements": [
+    "equal_distance_between_lines",
+    "triangular_formation_between_players",
+    "max_10m_distance_to_teammate"
+  ],
+  "player_behaviours": [
+    "maintain_positional_balance",
+    "offer_passing_angle",
+    "close_down_ball_carrier"
+  ],
+  "related_concepts": [
+    "rest_defence",
+    "third_man",
+    "positional_play",
+    "counter_press"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=r97WqheJVd4&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can I ensure my players are always in a position to recover the ball quickly if we lose it?",
+    "My team looks stretched out and disconnected when we have the ball, making it easy for them to press us.",
+    "What should my midfielders do to support the striker when he is under pressure from two defenders?",
+    "We often find ourselves in 1v1 situations because our teammates are too far away to offer a pass; how do I fix this spacing issue?"
+  ]
+}

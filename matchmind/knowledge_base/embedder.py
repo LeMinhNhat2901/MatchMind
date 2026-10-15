@@ -84,6 +84,15 @@ class TacticalEmbedder:
         return " ".join(parts)
 
 
+def concept_files(concepts_dir: Path | str) -> list[Path]:
+    """Every concept JSON under concepts_dir. Directories starting with "_"
+    (e.g. _state/, where the ingest scripts keep their processed-video list)
+    hold bookkeeping, not concepts, and are skipped."""
+    root = Path(concepts_dir)
+    return sorted(p for p in root.rglob("*.json")
+                  if not any(part.startswith("_") for part in p.relative_to(root).parts[:-1]))
+
+
 def load_all_concepts(
     concepts_dir: Path | None = None,
 ) -> list[TacticalConcept]:
@@ -100,7 +109,7 @@ def load_all_concepts(
         raise FileNotFoundError(f"Concepts directory not found: {concepts_dir}")
 
     concepts = []
-    json_files = sorted(concepts_dir.rglob("*.json"))
+    json_files = concept_files(concepts_dir)
 
     logger.info(f"Found {len(json_files)} concept files in {concepts_dir}")
 

@@ -1,0 +1,43 @@
+{
+  "concept_id": "wiki_vertical_and_horizontal_channels",
+  "category": "fundamentals",
+  "phase": "general",
+  "title": "Vertical and Horizontal Channels",
+  "content": "Channels are specific spatial zones defined by the gaps between opposing players or lines, categorized into vertical and horizontal types. Vertical channels exist between full-backs and center-backs, typically occupied by wide strikers or wingers. Receiving the ball here creates defensive confusion regarding marking responsibilities, allowing the attacker to hold possession and distract defenders from other movements. Horizontal channels are the spaces between defensive, midfield, and attacking lines. These zones are often contested by deep-lying playmakers or defensive midfielders. Tactical formations like 4-2-3-1 or 4-3-3 are designed to minimize these gaps by positioning players to cover the space between lines, effectively 'cancelling' the channels. Conversely, teams can exploit these spaces by using fluid movement, such as dropping into the opponent's defensive-midfield gap or advancing into the midfield-attack gap, to create passing lanes and numerical advantages. Understanding channel management is crucial for both creating space for progression and denying it to the opposition.",
+  "conditions": [
+    "formation_gap_present",
+    "opponent_line_spacing_wide"
+  ],
+  "objective": [
+    "create_defensive_confusion",
+    "exploit_space_between_lines",
+    "neutralize_opponent_channels"
+  ],
+  "possible_actions": [
+    "receive_in_vertical_channel",
+    "drop_into_horizontal_gap",
+    "advance_into_forward_channel",
+    "position_midfielder_to_cover_gap"
+  ],
+  "contraindications": [
+    "opponent_compact_formation",
+    "no_available_channel_space"
+  ],
+  "trigger_conditions": [
+    "space_between_lines",
+    "half_space_free",
+    "space_ahead_large"
+  ],
+  "source": {
+    "name": "Wikipedia: Channel (association football)",
+    "url": "https://en.wikipedia.org/wiki/Channel_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "Where should our wingers position themselves to be most dangerous?",
+    "We keep getting caught out of position when the ball goes to the edge of the box, how do we defend the spaces between our defenders?",
+    "What should our left-back do when the opponent is trying to play the ball into the space behind him?",
+    "Why do we struggle to pass through the middle of the pitch when the opponent is pressing high?"
+  ]
+}

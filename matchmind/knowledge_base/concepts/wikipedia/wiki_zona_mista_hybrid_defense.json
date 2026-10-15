@@ -1,0 +1,44 @@
+{
+  "concept_id": "wiki_zona_mista_hybrid_defense",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Zona Mista Hybrid Defense",
+  "content": "Zona mista is a tactical hybrid that merges zonal marking with the individual defensive responsibilities of catenaccio. Unlike pure zonal systems where players strictly cover fixed areas, this approach requires outfield players to dynamically shift positions to maintain structural integrity while engaging in direct man-marking when necessary. The system prioritizes rapid transitions from defense to attack over sustained ball possession, aiming to exploit spaces behind the opponent’s rearguard. Key roles include a roaming sweeper (libero) who covers gaps, full-backs who provide width and defensive cover, and a playmaker who joins the attack. When a player moves out of their designated zone, a teammate immediately compensates to preserve the team’s shape. This flexibility allows for a more fluid and versatile defensive structure compared to rigid traditional Italian schemes, effectively combining the organizational discipline of zonal defense with the aggressive pressing and individual marking traits of total football. It is particularly effective for teams seeking to balance defensive solidity with offensive creativity through quick counter-attacks.",
+  "conditions": [
+    "team_compactness_high",
+    "opponent_high_press",
+    "space_behind_defensive_line"
+  ],
+  "objective": [
+    "maintain_structural_integrity",
+    "rapid_defensive_to_offensive_transition",
+    "neutralize_key_opponents"
+  ],
+  "possible_actions": [
+    "shift_zone_coverage",
+    "engage_in_individual_marking",
+    "sweeper_covers_gap",
+    "fullback_provides_width"
+  ],
+  "contraindications": [
+    "low_team_discipline",
+    "lack_of_athleticism_for_transitions"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "team_compactness_high",
+    "space_behind_defensive_line"
+  ],
+  "source": {
+    "name": "Wikipedia: Zona mista",
+    "url": "https://en.wikipedia.org/wiki/Zona_mista",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the best way to mix zonal and man-marking to stop their creative players?",
+    "Our full-backs are getting dragged out of position when we try to hold a zone, how do we balance covering space with marking specific threats?",
+    "Should our central defenders drop into midfield to mark their number ten or stay in their zone to cover the space?",
+    "We struggle to transition quickly from defense to attack because our players are too focused on holding their zones, what system would help us counter-attack faster?"
+  ]
+}

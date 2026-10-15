@@ -1,12 +1,37 @@
 {
   "concept_id": "numerical_superiority_local",
-  "category": "spatial_principles",
+  "category": "fundamentals",
   "phase": "possession",
   "title": "Local Numerical Superiority",
   "content": "Creating a local numerical overload in a specific zone (more attackers than defenders there) is the foundation of nearly all successful attacking play. A 3v2 in a zone near the penalty area, a 2v1 on the flank, or a 4v3 in central midfield — each forces a defender to make an impossible choice: cover two players simultaneously or concede one free. The overload is created by rotations, third-man movements, and positional play bringing players into the key zone before the ball arrives. Important distinction: numerical overload does not mean crowding into a small area — the overload should be in a zone with enough space that superior numbers can be used effectively. Three players in 5m radius are easy to block; three players in 20m radius with movement creates a genuine dilemma.",
-  "conditions": ["more_attackers_than_defenders_in_zone", "space_available_to_exploit_overload", "ball_reachable_to_overload_zone"],
-  "objective": ["force_defender_dilemma", "create_free_player_in_dangerous_zone", "exploit_numerical_advantage_immediately"],
-  "possible_actions": ["pass_to_free_player_in_overload", "third_man_run_into_overload", "combination_through_overloaded_zone"],
-  "contraindications": ["no_numerical_advantage_defender_covered_all", "space_too_cramped_to_use_overload"],
-  "trigger_conditions": ["local_numerical_advantage_positive", "overload_left_or_right", "numerical_superiority_zone"]
+  "conditions": [
+    "more_attackers_than_defenders_in_zone",
+    "space_available_to_exploit_overload",
+    "ball_reachable_to_overload_zone"
+  ],
+  "objective": [
+    "force_defender_dilemma",
+    "create_free_player_in_dangerous_zone",
+    "exploit_numerical_advantage_immediately"
+  ],
+  "possible_actions": [
+    "pass_to_free_player_in_overload",
+    "third_man_run_into_overload",
+    "combination_through_overloaded_zone"
+  ],
+  "contraindications": [
+    "no_numerical_advantage_defender_covered_all",
+    "space_too_cramped_to_use_overload"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "overload_left_or_right",
+    "numerical_superiority_zone"
+  ],
+  "example_questions": [
+    "How do we create a situation where we have more players than the other team in a specific area?",
+    "Our team often gets outnumbered in midfield; what can we do to ensure we always have an extra player in the key zones?",
+    "As a fullback, when should I push up to help create an overload on the flank for our winger?",
+    "We keep losing the ball because we are always 1v1 or 2v2; how can we change our shape to get a numerical advantage?"
+  ]
 }

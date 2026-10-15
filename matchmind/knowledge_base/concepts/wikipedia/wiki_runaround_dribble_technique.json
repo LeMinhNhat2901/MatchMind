@@ -1,0 +1,46 @@
+{
+  "concept_id": "wiki_runaround_dribble_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Runaround Dribble Technique",
+  "content": "The runaround is an advanced 1v1 dribbling technique used to bypass an opponent by allowing the ball to pass them before sprinting around to collect it on the far side. This move is particularly effective in tight spaces or when facing a goalkeeper who has rushed off their line. The core mechanic involves a 'selling the dummy' feint: the player lets the ball roll past the defender while simultaneously accelerating in the opposite direction. This creates a spatial separation where the defender is committed to the ball's initial trajectory, leaving the attacker free to circle back and gain possession. It can be executed with high speed in emergency situations or with deceptive footwork when there is more time and space. The move requires precise timing, judgment, and the ability to shield the ball while turning. It is a high-risk, high-reward skill that can lead to immediate goal-scoring opportunities if the defender is caught out of position, but failure results in a turnover. Coaches should emphasize the importance of reading the defender's commitment and the angle of approach before attempting this maneuver.",
+  "conditions": [
+    "1v1_situation",
+    "opponent_committed_to_ball",
+    "tight_space",
+    "goalkeeper_off_line"
+  ],
+  "objective": [
+    "bypass_defender",
+    "gain_positional_advantage",
+    "create_shooting_angle"
+  ],
+  "possible_actions": [
+    "let_ball_roll_past",
+    "sprint_around_opponent",
+    "collect_ball_far_side",
+    "shield_and_turn"
+  ],
+  "contraindications": [
+    "multiple_defenders_nearby",
+    "low_confidence_in_dribbling",
+    "no_space_behind_defender"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "space_ahead_small",
+    "is_in_attacking_third"
+  ],
+  "source": {
+    "name": "Wikipedia: Runaround move",
+    "url": "https://en.wikipedia.org/wiki/Runaround_move",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the name of the move where you let the ball roll past the keeper and then sprint around to get it?",
+    "The goalkeeper has rushed off his line and is standing wide, what is the best way to beat him without trying to shoot over him?",
+    "My striker is very fast but struggles when the keeper comes out early, what specific 1v1 move should he learn to exploit this?",
+    "We often find ourselves in tight spaces near the goal where we can't pass, what dribbling technique allows us to bypass the last defender by going around the ball?"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_systematic_positional_rigidity",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "general",
+  "title": "Systematic Positional Rigidity",
+  "definition": "A tactical approach where strict positional parameters and pre-defined decision trees reduce reliance on individual creativity in favor of collective mechanical precision.",
+  "content": "This concept describes a high-level implementation of positional play where the team functions as a cohesive machine. The core principle is that every player has a defined role and knows exactly where they and their teammates should be in almost any scenario. By establishing specific parameters and objectives, the system minimizes the need for individual uniqueness or improvisation, relying instead on raw technical ingredients that can be molded to fit the structure. This rigidity allows for drastic player substitutions without significantly affecting the team's dynamic, as the system dictates the play rather than the individual. It is particularly effective in safeguarding against injury or loss of key personnel, ensuring consistency. However, it raises philosophical questions about the loss of football's essence, chance, and error. The coaching staff treats game preparation like chess, solving specific board positions with pre-planned moves. While this creates awe-inspiring cohesion and collective rhythm, it requires players to execute perfect actions within a narrow margin of error, potentially suppressing the spontaneous creativity that often defines elite football.",
+  "conditions": [
+    "high_tactical_discipline",
+    "consistent_player_quality",
+    "detailed_game_planning"
+  ],
+  "objective": [
+    "maximize_collective_cohesion",
+    "reduce_decision_variance",
+    "ensure_structural_consistency"
+  ],
+  "possible_actions": [
+    "execute_predefined_moves",
+    "maintain_positional_shape",
+    "follow_scripted_sequences"
+  ],
+  "contraindications": [
+    "reliance_on_individual_genius",
+    "low_tactical_discipline",
+    "need_for_improvisation"
+  ],
+  "trigger_conditions": [
+    "team_compactness_high",
+    "phase_of_play_attacking",
+    "phase_of_play_defensive"
+  ],
+  "spatial_requirements": [
+    "defined_positional_zones",
+    "consistent_spacing"
+  ],
+  "player_behaviours": [
+    "maintain_positional_reference",
+    "execute_scripted_passing_options",
+    "anticipate_teammate_movement"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "tactical_discipline",
+    "collective_rhythm"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=D8AgTaSShmM&t=550s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is it called when a coach demands players stick to exact spots rather than improvising?",
+    "Our team looks like a machine where everyone moves in perfect sync without any individual flair, is that a specific style?",
+    "How should a midfielder decide where to run if the game plan strictly dictates his movement based on the ball's location?",
+    "We rely too much on one creative player, how can we structure the team so that every player has a fixed role and decision path?"
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_back_three_midfield_overload",
+  "category": "formations",
+  "subcategory": "352",
+  "phase": "possession",
+  "title": "Back Three Midfield Overload",
+  "definition": "A tactical shift to a three-defender system designed to guarantee numerical superiority in the midfield and dominate central areas.",
+  "content": "This tactical adjustment involves deploying a back three to flood the midfield, ensuring a numerical advantage against opposition forwards and securing central domination. The primary objective is to allow the team to control the tempo and spend minimal time in their own defensive third by leveraging the extra body in the middle. However, this approach requires specific personnel; the center-backs must be comfortable in possession, and the midfield must retain defensive stability. A key risk is the reduction in defensive physicality if a deep-lying playmaker replaces a more robust destroyer, potentially leaving gaps for counterattacks. Furthermore, if the opposition compresses into a narrow low block, the technical midfielders may struggle to find space without sufficient width. Therefore, this system is most effective when the team can maintain possession and exploit the numerical edge, but it becomes vulnerable against high-intensity counter-pressing or if the defensive line lacks cohesion and experience in the new roles.",
+  "conditions": [
+    "possession_dominance_required",
+    "midfield_numerical_superiority_needed",
+    "defensive_line_cohesion_high"
+  ],
+  "objective": [
+    "dominate_central_areas",
+    "reduce_time_in_own_third",
+    "control_match_tempo"
+  ],
+  "possible_actions": [
+    "deploy_back_three",
+    "flood_midfield_with_players",
+    "rotate_midfield_positions"
+  ],
+  "contraindications": [
+    "vulnerability_to_counterattacks",
+    "reduced_defensive_physicality",
+    "narrow_opponent_low_block"
+  ],
+  "trigger_conditions": [
+    "local_numerical_advantage_positive",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "central_midfield_density_high",
+    "defensive_line_width_moderate"
+  ],
+  "player_behaviours": [
+    "hold_position_in_back_three",
+    "dictate_tempo_from_deep",
+    "cover_central_channels"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "midfield_overload",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=1940s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can I ensure my team always has more players in the center of the park than the opposition?",
+    "Our team gets stuck in the middle third because the other side has five midfielders, what change in our back line could fix this?",
+    "As a central midfielder, should I expect a defender to join me in the center to help control the game?",
+    "We lose the ball constantly in the middle of the field, is there a way to structurally guarantee we have the numbers to keep it?"
+  ]
+}

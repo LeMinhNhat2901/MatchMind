@@ -32,6 +32,10 @@ CACHE_DIR = Path("./data_cache")
 @app.command()
 def main(
     n_cases: int = typer.Option(30, "--n-cases", help="StatsBomb test cases to cache"),
+    local: bool = typer.Option(
+        True, "--local/--network",
+        help="Read settings.statsbomb_open_data_dir instead of calling statsbombpy",
+    ),
     verbose: bool = typer.Option(False, "--verbose", "-v"),
 ) -> None:
     """Fetch StatsBomb 360 test cases once and store them as JSON."""
@@ -40,15 +44,20 @@ def main(
 
     console.print("[bold green]MatchMind — data cache builder[/bold green]")
 
-    try:
-        from matchmind.data_sources.statsbomb_adapter import StatsBombAdapter
-    except ImportError as exc:
-        console.print(f"[red]statsbombpy not available: {exc}[/red]")
-        raise typer.Exit(1)
+    if local:
+        from matchmind.data_sources.statsbomb_local import StatsBombLocalLoader
 
-    adapter = StatsBombAdapter()
-    console.print(f"Fetching {n_cases} StatsBomb 360 test cases (this hits the network once)...")
-    cases = adapter.load_test_cases(n=n_cases)
+        loader = StatsBombLocalLoader(settings.statsbomb_open_data_dir)
+        console.print(f"Reading {n_cases} test cases from {settings.statsbomb_open_data_dir} ...")
+        cases = loader.load_test_cases(n=n_cases)
+    else:
+        try:
+            from matchmind.data_sources.statsbomb_adapter import StatsBombAdapter
+        except ImportError as exc:
+            console.print(f"[red]statsbombpy not available: {exc}[/red]")
+            raise typer.Exit(1)
+        console.print(f"Fetching {n_cases} StatsBomb 360 test cases (this hits the network once)...")
+        cases = StatsBombAdapter().load_test_cases(n=n_cases)
 
     out = CACHE_DIR / "statsbomb_testcases.json"
     serialisable = [

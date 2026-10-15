@@ -1,0 +1,48 @@
+{
+  "concept_id": "wiki_long_cross_field_switch",
+  "category": "attacking",
+  "phase": "possession",
+  "title": "Long Cross-Field Switch",
+  "content": "The Flo Pass is a tactical switching play designed to bypass midfield congestion by executing a long, diagonal pass from one full-back to a wide target man on the opposite flank. This maneuver exploits the spatial and physical mismatch between a tall, aerially dominant wide player and the opposing full-back, who is typically less robust in the air than central defenders. By winning the header in advanced territory, the team creates an immediate numerical advantage in the wide area, allowing for a quick second ball to a central midfielder or striker. This tactic is particularly effective for teams with limited technical depth, as it relies on directness and physicality rather than intricate short passing. It forces the opposition to react to a sudden change of direction, often catching their defensive line out of position or disorganized. The primary objective is to transition quickly from defense to attack, utilizing the height and reach of the wide target to secure possession in dangerous areas before the opponent can re-establish their defensive shape.",
+  "conditions": [
+    "tall_wide_target_available",
+    "opponent_fullback_aerial_weakness",
+    "fullback_in_position",
+    "midfield_congested"
+  ],
+  "objective": [
+    "win_second_ball_wide",
+    "create_numerical_advantage_flank",
+    "bypass_midfield_pressure",
+    "initiate_rapid_attack"
+  ],
+  "possible_actions": [
+    "execute_long_diagonal_pass",
+    "target_man_win_header",
+    "pass_to_central_midfielder",
+    "pass_to_striker"
+  ],
+  "contraindications": [
+    "opponent_fullback_aerial_strong",
+    "no_tall_wide_player",
+    "midfield_open_for_short_passes"
+  ],
+  "trigger_conditions": [
+    "switch_play_viable",
+    "ball_near_flank",
+    "is_in_attacking_third",
+    "space_ahead_large"
+  ],
+  "source": {
+    "name": "Wikipedia: Flo pass",
+    "url": "https://en.wikipedia.org/wiki/Flo_pass",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the best way to quickly move the ball to the other side when the middle is too crowded?",
+    "Our left-back has the ball but the right winger is standing alone against a slow defender; what should we do with the ball?",
+    "I am a tall winger on the right, how can I get the ball in a position where I can easily win headers against the left-back?",
+    "We keep getting stuck in the center and losing possession, is there a specific passing pattern to break that deadlock?"
+  ]
+}

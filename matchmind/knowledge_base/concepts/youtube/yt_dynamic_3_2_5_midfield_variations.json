@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_dynamic_3_2_5_midfield_variations",
+  "category": "formations",
+  "subcategory": "formation_transitions",
+  "phase": "possession",
+  "title": "Dynamic 3-2-5 Midfield Variations",
+  "definition": "A tactical structure where a 3-2-5 or similar shape is achieved through varied personnel roles and dynamic midfield movements to manipulate opposition defensive lines.",
+  "content": "This concept highlights that while teams may arrive at a similar on-pitch shape (such as a 3-2-5 or 3-4-3), the underlying mechanisms differ significantly. The primary variation lies in how width is generated: some teams use natural wing-backs (e.g., Leverkusen), while others rely on inverted full-backs or center-backs stepping into midfield (e.g., Guardiola's systems, Chelsea). A critical tactical lever is the behavior of the attacking midfielders. They can push high to pin the opposition defensive line, drop deep to form a box midfield, or drift into wide areas. This dynamic movement creates a dilemma for opponents: should they mark the creative player tightly, risking gaps elsewhere, or allow them space to receive, risking penetration? The choice of personnel is also vital; using natural defensive players in pivot roles (like Chelsea) offers stability, while using creative players (like Liverpool's Trent Alexander-Arnold) offers progressive passing options. Coaches must decide whether to prioritize structural solidity or creative freedom based on the specific match context and opponent's defensive setup.",
+  "conditions": [
+    "possession_phase",
+    "midfield_dominance_sought"
+  ],
+  "objective": [
+    "create_numerical_superiority_midfield",
+    "manipulate_opponent_defensive_line",
+    "generate_width_from_depth"
+  ],
+  "possible_actions": [
+    "invert_fullback_into_midfield",
+    "drop_winger_into_half_space",
+    "hold_high_line_with_wingbacks",
+    "use_pivot_players_for_progression"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "lack_of_progressive_passing_options"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "receive_in_half_space"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "inverted_fullback"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=AsZ4ea-pR_w&t=153s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we shift from a 4-3-3 to a 3-2-5 shape during possession?",
+    "We get stuck when the opponent sits in a low block and we can't break them down.",
+    "What should the left-back do when we are building up play from the back?",
+    "Why do we lose our shape when we try to overload the midfield?"
+  ]
+}

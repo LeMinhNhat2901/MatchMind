@@ -1,0 +1,47 @@
+{
+  "concept_id": "wiki_long_ball_direct_attack",
+  "category": "attacking",
+  "phase": "attacking_transition",
+  "title": "Long Ball Direct Attack",
+  "content": "The long ball is a direct attacking tactic involving a high, long-distance aerial pass from a defender or goalkeeper, bypassing the midfield to target a forward. Unlike precise through balls, this technique relies on the ball traveling high and far, allowing the receiver time to run onto it while challenging defenders in the air. It is particularly effective when a team possesses fast or tall strikers who can win aerial duels or outrun the defensive line. This approach is most viable during counter-attacks or when breaking out of deep defensive blocks, as it can catch opponents off-guard and create immediate one-on-one situations or loose-ball scrambles in the final third. While often criticized for lacking technical refinement, it remains a valid spatial principle for exploiting vertical space when short passing lanes are congested or when the opponent’s defensive line is high and vulnerable to balls played behind it. Success depends on the striker’s ability to hold up play or win the header, with supporting midfielders arriving to collect any deflections.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "space_behind_defensive_line",
+    "striker_role",
+    "phase_of_play_attacking_transition"
+  ],
+  "objective": [
+    "bypass_midfield",
+    "create_aerial_duel",
+    "exploit_vertical_space"
+  ],
+  "possible_actions": [
+    "kick_high_long_ball",
+    "run_onto_ball",
+    "win_aerial_duel",
+    "support_loose_ball"
+  ],
+  "contraindications": [
+    "opponent_defensiveline_low",
+    "no_tall_striker",
+    "strong_short_passing_network"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "space_behind_defensive_line",
+    "phase_of_play_attacking_transition",
+    "striker_role"
+  ],
+  "source": {
+    "name": "Wikipedia: Long ball",
+    "url": "https://en.wikipedia.org/wiki/Long_ball",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the tactic called where the keeper or defender hits the ball straight over the top to the striker?",
+    "We are stuck in our own half with no passing options, when is it best to just hit the ball long to our target man?",
+    "As a tall striker, what should I do when I see the defender preparing to loft the ball over the midfield?",
+    "Our midfield is being overrun, how can we bypass their pressure and get the ball to our forwards quickly?"
+  ]
+}

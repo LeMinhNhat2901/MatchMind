@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_false_nine_and_wide_rotation",
+  "category": "formations",
+  "subcategory": "false_nine",
+  "phase": "possession",
+  "title": "False Nine and Wide Rotation",
+  "definition": "A tactical setup where a central forward drops deep to create midfield overloads, while wide players rotate to cover vacated spaces.",
+  "content": "This concept addresses the structural challenge of implementing a false nine system when the primary wide attackers are unavailable or rotating. In this scenario, the center forward (e.g., Mandžukić) lacks the willingness or ability to drop deep, creating a void in midfield control. To compensate, a versatile player (e.g., Müller) assumes the 'floating nine' role, ghosting into unconventional spaces to drag defenders out of position, even if with fewer touches than a traditional creator. Simultaneously, the wide regions suffer from inconsistency due to injury or rotation policies. When the primary wingers are absent, utility players or the false nine himself may shift out wide, altering the team's width and depth. This forces full-backs to adjust their overlapping timing; for instance, if the winger holds width, the full-back can bomb on, but if the winger drifts inside, the full-back must provide the width. The key tactical takeaway is that the false nine's movement dictates the defensive shape, and the wide players' availability directly impacts the team's ability to maintain structural balance and create overloads in the final third.",
+  "conditions": [
+    "center_forward_lacks_drop_deep_ability",
+    "wide_player_unavailable_or_rotating",
+    "midfield_overload_needed"
+  ],
+  "objective": [
+    "create_midfield_numerical_advantage",
+    "drag_defenders_out_of_position",
+    "maintain_wide_structure"
+  ],
+  "possible_actions": [
+    "drop_deep_to_link_play",
+    "drift_into_half_space",
+    "full_back_provide_width",
+    "rotate_wide_positions"
+  ],
+  "contraindications": [
+    "opponent_high_press_on_deep_lie",
+    "lack_of_wide_coverage"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "half_space_free",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_block",
+    "wide_full_back_positioning"
+  ],
+  "player_behaviours": [
+    "ghost_into_space",
+    "angle_run_to_drag_defender",
+    "overlap_outside"
+  ],
+  "related_concepts": [
+    "false_nine",
+    "positional_rotation",
+    "midfield_overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2745s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to use a striker who drops deep to help us control the midfield?",
+    "Our winger keeps getting isolated when our number ten drops back, how do we fix that spacing issue?",
+    "If I play a striker who acts like an extra midfielder, what should my full-backs be doing to cover the space behind them?",
+    "We struggle to maintain possession in the middle third because our forwards stay too high, what tactical change could help?"
+  ]
+}

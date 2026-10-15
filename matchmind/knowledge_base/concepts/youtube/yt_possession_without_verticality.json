@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_possession_without_verticality",
+  "category": "attacking",
+  "subcategory": "final_third",
+  "phase": "possession",
+  "title": "Possession Without Verticality",
+  "definition": "A tactical failure mode where high possession and lateral movement in the middle third fail to generate goal threats due to a lack of vertical penetration and unpredictability.",
+  "content": "This concept describes a common trap in possession-based systems where a team dominates the ball but fails to create meaningful scoring chances. It often occurs when a team relies heavily on calculated, predictable patterns of play, such as wingers cutting inside from wide positions, without sufficient vertical threat. While the team may move the ball effectively from their own third to the middle third, the attack becomes narrow and stagnant. The absence of players willing or able to run in behind the defensive line means the opposition can sit deep and absorb pressure easily. This leads to low shot volume despite high possession statistics. To break this deadlock, a team needs to introduce elements of unpredictability, such as direct vertical transitions, pace, or individual improvisation that disrupts the opponent's defensive organization. Without this vertical dimension, possession becomes a metric of control rather than a tool for creating danger, resulting in a team that is safe but ineffective in the final third.",
+  "conditions": [
+    "high_possession_percentage",
+    "lateral_movement_dominant",
+    "lack_of_vertical_threat",
+    "predictable_attacking_patterns"
+  ],
+  "objective": [
+    "create_goal_threat",
+    "penetrate_defensive_lines",
+    "increase_shot_volume"
+  ],
+  "possible_actions": [
+    "introduce_vertical_runs",
+    "utilize_pace_in_behind",
+    "vary_tempo_of_attack",
+    "switch_play_to_break_lines"
+  ],
+  "contraindications": [
+    "over_reliance_on_lateral_passing",
+    "stagnant_midfield_structure",
+    "lack_of_winger_cutting_in_variety"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_ahead_small",
+    "passing_lane_open",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "narrow_attacking_shape",
+    "lack_of_depth_in_final_third"
+  ],
+  "player_behaviours": [
+    "cut_inside_from_flank",
+    "hold_position_in_midfield",
+    "avoid_risk_of_vertical_pass"
+  ],
+  "related_concepts": [
+    "possession_dominance",
+    "vertical_transition",
+    "final_third_creativity"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=1170s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "We have the ball a lot but never get close to the goal, what is wrong?",
+    "The team keeps passing side to side in the middle of the pitch without making progress, how do we break that cycle?",
+    "What should I do when I have the ball in the center but no one is making runs into the box?",
+    "Why do we dominate possession but still lose games because we don't create clear chances?"
+  ]
+}

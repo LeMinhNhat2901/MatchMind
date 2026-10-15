@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_isolation_via_defensive_commitment",
+  "category": "defending",
+  "subcategory": "defensive_transition",
+  "phase": "out_of_possession",
+  "title": "Isolation via Defensive Commitment",
+  "definition": "A tactical dynamic where an opponent's commitment to wide defensive duties isolates their central striker, creating numerical advantages for the defending team's center-backs.",
+  "content": "This concept describes how a team can exploit an opponent's structural rigidity to isolate their primary target man. When a team with a high defensive line or committed fullbacks forces the opposition wingers to drop deep and wide to maintain defensive shape, the central striker is left isolated in the middle. This isolation is particularly dangerous if the striker lacks the individual defensive capability to press effectively on their own. For example, if a striker like Costa is forced to hold a high line while wingers track back, the opposing center-backs gain a two-versus-one advantage in the final third. This allows the opposition to bypass the isolated striker easily, often by playing through the center or switching play, forcing the isolated player to chase the ball rather than maintain shape. The key tactical insight is that individual player attributes (like a striker's defensive work rate) interact with team shape; a low-energy striker cannot compensate for the structural gap created by wide defensive commitments, leading to sustained possession dominance for the attacking team.",
+  "conditions": [
+    "opponent_high_defensive_line",
+    "striker_low_defensive_work_rate",
+    "wingers_committed_to_defense"
+  ],
+  "objective": [
+    "isolate_opponent_striker",
+    "create_numerical_advantage_center_backs",
+    "bypass_high_line"
+  ],
+  "possible_actions": [
+    "play_through_center",
+    "switch_play_to_opposite_flank",
+    "maintain_possession"
+  ],
+  "contraindications": [
+    "striker_high_pressing_capability",
+    "opponent_wingers_do_not_drop"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_high",
+    "is_in_defensive_third",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "wide_defensive_commitment",
+    "central_isolation_zone"
+  ],
+  "player_behaviours": [
+    "drop_deep_and_wide",
+    "hold_high_line",
+    "track_back"
+  ],
+  "related_concepts": [
+    "high_press",
+    "defensive_line",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=A_XLSnPdrlY&t=303s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why is the opposing striker always left alone against our two center-backs?",
+    "When the opponent's wingers drop deep to defend, how can we exploit the space around their target man?",
+    "What should our center-backs do when the opposing forward is isolated because their wide men are tracking our full-backs?",
+    "We keep getting beaten by long balls to the striker because our wide players are too high up the pitch, how do we fix this defensive gap?"
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_staggered_pivots_for_vertical_progression",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Staggered Pivots for Vertical Progression",
+  "definition": "A positional arrangement where central midfielders occupy different vertical depths to create passing lanes and facilitate vertical ball progression.",
+  "content": "Staggered pivots are a core tactical principle used to break down defensive lines by ensuring central midfielders are not aligned on the same horizontal plane. When two pivots are level, they block each other's passing lanes and make it easier for opponents to press them simultaneously. By staggering their positions—one player higher and one deeper—the team creates diagonal and vertical passing options that allow for quicker ball circulation and penetration. This structure is particularly effective in the build-up phase, as it provides the deeper player with a safe outlet while the higher player acts as a platform to drive forward. If the pivots remain horizontally aligned, the team often struggles to bypass the opponent's first line of pressure, leading to cautious, lateral passing rather than direct progression. Coaches should emphasize this spatial separation to ensure that at least one midfielder is always available to receive the ball in a forward-facing orientation, enabling the team to transition from defense to attack more efficiently and exploit gaps between the opponent's defensive lines.",
+  "conditions": [
+    "possession_in_midfield",
+    "opponent_mid_block",
+    "two_central_midfielders"
+  ],
+  "objective": [
+    "create_vertical_passing_lanes",
+    "bypass_first_press_line",
+    "facilitate_ball_progression"
+  ],
+  "possible_actions": [
+    "adjust_vertical_position",
+    "receive_ball_forward_facing",
+    "play_diagonal_pass"
+  ],
+  "contraindications": [
+    "opponent_high_press_intense",
+    "lack_of_wide_support"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_between_lines",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "vertical_separation_between_pivots",
+    "compact_midfield_block"
+  ],
+  "player_behaviours": [
+    "drop_deep_for_outlet",
+    "step_up_to_receive",
+    "scan_for_forward_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up_structure",
+    "midfield_overload"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=4QjPuVe77q0&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I stop my midfielders from bunching up in the same horizontal line?",
+    "We keep getting stuck in the middle third because everyone is waiting for the ball at the same depth, what should I change?",
+    "Should my box-to-box midfielder stay higher up the pitch while my deep-lying playmaker drops lower to create a passing lane?",
+    "Why does our team struggle to move the ball forward when the opposition sits in a compact block, and how can I fix my players' positioning?"
+  ]
+}

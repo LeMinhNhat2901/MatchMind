@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_denying_dribbler_orientation",
+  "category": "defending",
+  "subcategory": "individual_defense",
+  "phase": "out_of_possession",
+  "title": "Denying Dribbler Orientation",
+  "definition": "A defensive principle where players position themselves to prevent elite dribblers from facing the goal, thereby neutralizing their primary threat.",
+  "content": "This tactical concept focuses on neutralizing elite dribblers by controlling their body orientation rather than just their position. The core objective is to prevent the opponent from facing the goal, as this allows them to utilize their speed and dribbling skills to penetrate the defensive line. Defenders must approach the ball carrier from an angle that forces them to turn away from the goal or into a support zone, effectively 'cutting the pathways' to the final third. This approach requires high discipline and spatial awareness, as giving a dribbler space to face forward is considered a critical error, often stemming from excessive respect for the player's reputation. By denying the dribbler the ability to orient their body towards the goal, the team reduces the likelihood of 1v1 situations turning into shots or through-balls. This principle is particularly effective against players who rely on acceleration and close control, such as Messi or Coutinho, where the defender's primary task is to block the direct line of attack and force the ball carrier into less dangerous areas or into the reach of supporting defenders. It emphasizes proactive positioning over reactive chasing.",
+  "conditions": [
+    "elite_dribbler_in_possession",
+    "defender_near_ball_carrier"
+  ],
+  "objective": [
+    "prevent_facing_goal",
+    "neutralize_dribbling_threat",
+    "force_turn_away"
+  ],
+  "possible_actions": [
+    "angle_approach",
+    "block_direct_path",
+    "force_lateral_movement"
+  ],
+  "contraindications": [
+    "giving_space_to_face_forward",
+    "over_respecting_opponent"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "supporting_defender_close"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane"
+  ],
+  "related_concepts": [
+    "body_orientation",
+    "pressing_traps"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=235s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I stop a fast winger from turning inside?",
+    "Our defender is always facing the wrong way when the opponent has the ball, what is the fix?",
+    "What should our left-back do when the opposing right winger is about to receive the ball?",
+    "We keep getting beaten one-on-one because our defenders are too far out, how do we close them down better?"
+  ]
+}

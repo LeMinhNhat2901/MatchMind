@@ -149,6 +149,9 @@ def _render_report(report) -> None:
     t.add_section()
     t.add_row("2. Groundedness", "Citation validity", pct(report.citation_validity_rate))
     t.add_row("", "Logical consistency (LLM judge)", pct(report.logical_consistency_rate))
+    t.add_row("", "Concept faithfulness (LLM judge)", pct(report.concept_faithfulness_rate))
+    t.add_row("0. Retrieval (golden)", "hit@3 / nDCG@5",
+              f"{pct(report.golden_hit_at_3)} / {pct(report.golden_ndcg_at_5)}")
     t.add_row("", "Groundedness score", pct(report.groundedness_score))
     t.add_section()
     a = report.actionability_score

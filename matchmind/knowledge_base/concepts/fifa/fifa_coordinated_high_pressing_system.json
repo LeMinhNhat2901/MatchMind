@@ -1,0 +1,63 @@
+{
+  "concept_id": "fifa_coordinated_high_pressing_system",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Coordinated High Pressing System",
+  "definition": "An aggressive defensive strategy where the team applies immediate, coordinated pressure on the opponent's build-up to force errors and regain possession high up the pitch.",
+  "content": "High pressing involves all outfield players aggressively pursuing the ball from the opponent's earliest build-up phase, rather than retreating into a deep block. This approach demands exceptional physical conditioning and mental sharpness, as players must maintain intense pressure for the full match and quickly recover to defensive shape if possession is lost. The core principle is to eliminate the ball-holder's decision-making freedom by applying immediate pressure while simultaneously blocking passing lanes to unmarked teammates. Coordination is critical: strikers often initiate the press by blocking central defenders and preventing wide play, while central midfielders shift dynamically across the pitch to maintain compact spacing. Wing-backs adjust their vertical positioning to support midfield pressure or drop back into the defensive line. This coordinated shifting can create gaps on the opposite flank, but collective intensity aims to prevent exploitation. If the press is broken, the team must rapidly transition into a mid-block to defend and initiate counter-attacks. Against stronger opposition, sustaining this high-intensity press for 90 minutes may be unrealistic, potentially requiring a shift to a lower-block, counter-attacking approach to manage fatigue and risk.",
+  "conditions": [
+    "high_stamina_levels",
+    "tactical_discipline",
+    "opponent_build_up_phase"
+  ],
+  "objective": [
+    "force_turnover_high",
+    "limit_passing_options",
+    "regain_possession_quickly"
+  ],
+  "possible_actions": [
+    "press_ball_holder",
+    "block_passing_lanes",
+    "shift_laterally_as_unit",
+    "drop_into_mid_block"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "opponent_superiority_in_build_up",
+    "lack_of_tactical_familiarity"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "team_compactness_high",
+    "press_intensity_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "shift_with_ball",
+    "recover_to_shape"
+  ],
+  "related_concepts": [
+    "pressing_trap",
+    "counter_press",
+    "mid_block"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Analysing the basic principles of Qatar's high press",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-insights/qatars-high-press.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we make sure everyone presses at the same time?",
+    "We want to win the ball back in their half, what is the best way to organize that?",
+    "What should the full-backs do when the opponent starts building up from the back?",
+    "We keep getting bypassed by long balls when we press high, how do we fix that?"
+  ]
+}

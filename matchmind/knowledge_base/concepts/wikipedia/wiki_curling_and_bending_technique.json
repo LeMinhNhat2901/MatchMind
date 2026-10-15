@@ -1,0 +1,47 @@
+{
+  "concept_id": "wiki_curling_and_bending_technique",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Curling and Bending Technique",
+  "content": "Curling, or bending, is a technical skill involving applying spin to the ball to create a curved trajectory in the air, governed by the Magnus effect. This technique is primarily executed using the inside of the foot for standard side-spin, or the outside of the foot (trivela) for lateral movement or when facing sideways. It is tactically vital for bypassing defensive structures without direct confrontation. In set pieces, curling allows free-kick takers to arc the ball over or around defensive walls and into the far corner, while in-swinging corners draw the ball toward the goalmouth for better finishing angles. During open play, curled passes enable players to thread the needle between defenders or execute long diagonal switches of play that maintain possession under pressure. The choice between high spin (finesse) and low spin (knuckleball) depends on the desired unpredictability and distance. Mastery of this skill expands the passing and shooting menu, allowing players to exploit spatial gaps that straight-line actions cannot access, particularly when facing compact defensive blocks or when needing to change the angle of attack rapidly.",
+  "conditions": [
+    "defensive_wall_present",
+    "lateral_defender_blocking",
+    "set_piece_opportunity",
+    "long_diagonal_pass_needed"
+  ],
+  "objective": [
+    "bypass_defensive_barrier",
+    "create_curved_trajectory",
+    "switch_play_angle",
+    "increase_finishing_angle"
+  ],
+  "possible_actions": [
+    "inside_of_foot_curl",
+    "outside_of_foot_trivela",
+    "in_swinging_corner",
+    "curled_free_kick"
+  ],
+  "contraindications": [
+    "short_range_power_shot",
+    "immediate_through_ball_needed",
+    "wet_surface_conditions"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "passing_lane_open",
+    "space_ahead_moderate"
+  ],
+  "source": {
+    "name": "Wikipedia: Curl (association football)",
+    "url": "https://en.wikipedia.org/wiki/Curl_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "How do you hit the ball so it curves around the wall on a free kick?",
+    "I want to send a cross that bends into the box rather than going straight; what part of my foot should I use?",
+    "As a left-footed player, how can I bend the ball into the far corner when I am facing the goal from the right side?",
+    "Our set pieces are always blocked by the defensive wall; what technique can we use to get the ball over their heads?"
+  ]
+}

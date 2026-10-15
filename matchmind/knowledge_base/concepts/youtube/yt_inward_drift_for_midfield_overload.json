@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_inward_drift_for_midfield_overload",
+  "category": "attacking",
+  "subcategory": "movement",
+  "phase": "possession",
+  "title": "Inward Drift for Midfield Overload",
+  "definition": "A wide attacker moves inward to create a numerical advantage in the midfield and facilitate deeper drops by central players.",
+  "content": "This tactical adjustment involves a wide forward, typically operating on the flank, drifting inside earlier in the build-up phase rather than maintaining width or making forward runs. The primary objective is to recreate a numerical superiority in the midfield zone, particularly when the opposition sits deep and refuses to press high, thereby neutralizing the need for emergency outlet passes to a target man. By occupying the half-space or central area, the drifting player allows the central midfielder on that side to drop deeper, linking with the defensive pivot, while simultaneously amplifying the attacking output of the full-back, who can now overlap more freely. This movement transforms the wide channel into a support lane rather than a primary penetration route. However, this strategy carries significant risks if not managed carefully. If a central striker or another creative player also occupies the same central zone, it creates a tactical conflict, leading to predictable play and reduced defensive pressure. The success of this movement relies on clear role separation: the wide player must commit to the inside to free up space for others, ensuring that the team maintains structural balance and does not leave the flank vulnerable to counter-attacks.",
+  "conditions": [
+    "opponent_low_block",
+    "midfield_numerical_disadvantage",
+    "wide_forward_available"
+  ],
+  "objective": [
+    "create_midfield_overload",
+    "facilitate_deep_drop",
+    "amplify_fullback_attack"
+  ],
+  "possible_actions": [
+    "drift_inside_from_wing",
+    "drop_deeper_to_link",
+    "overlap_from_wide_position"
+  ],
+  "contraindications": [
+    "central_zone_congestion",
+    "lack_of_width_coverage",
+    "predictable_player_positions"
+  ],
+  "trigger_conditions": [
+    "opponent_defensiveline_low",
+    "is_in_attacking_third",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "half_space_available",
+    "central_midfield_open"
+  ],
+  "player_behaviours": [
+    "move_inwards_towards_centre",
+    "drop_into_defensive_third",
+    "make_overlapping_run"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "numerical_superiority",
+    "half_space_utilization"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=967s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why does our team look crowded in the center but still struggle to pass the ball out?",
+    "Our right winger is tucking inside to join the midfield, but our left full-back is struggling to find space, what is the solution?",
+    "When the opponent presses high, should my wide midfielder stay wide or move into the half-space?",
+    "We are constantly outnumbered in the middle of the park, how can we create a numerical advantage without changing our formation?"
+  ]
+}

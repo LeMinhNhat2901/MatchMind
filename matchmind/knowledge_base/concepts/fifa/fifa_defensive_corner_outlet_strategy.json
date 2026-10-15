@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_defensive_corner_outlet_strategy",
+  "category": "defending",
+  "subcategory": "set_piece_defense",
+  "phase": "out_of_possession",
+  "title": "Defensive Corner Outlet Strategy",
+  "definition": "A defensive corner tactic that positions a designated attacking player zonally to serve as an immediate counter-attack outlet upon regaining possession.",
+  "content": "This tactical approach redefines defensive corners as launchpads for rapid transitions rather than static defensive events. The core principle involves assigning a high-positioned, pacey attacker a specific zonal responsibility, typically near the near post or just outside the box, rather than a man-mark. This positioning allows the player to contribute to pressing short-corner combinations while remaining free to exploit space behind the opposing defensive line. By using zonal marking for this outlet, the team prevents the opposition from manipulating the player into a deep defensive position, thereby preserving their ability to break forward instantly. The presence of this outlet forces opposing defenders to track them tightly, inadvertently creating spatial gaps for teammates. Success depends on clear assignments that balance defensive duties with attacking potential, direct clearances aimed at this outlet, and the outlet player's ability to immediately accelerate into open space. This method transforms a defensive set-piece into a high-reward attacking opportunity by leveraging the element of surprise and the speed of the transition from defense to attack.",
+  "conditions": [
+    "defensive_corner_kick",
+    "opponent_high_defensive_line",
+    "available_pacey_outlet_player"
+  ],
+  "objective": [
+    "rapid_counter_attack",
+    "exploit_space_behind_defense",
+    "maintain_defensive_structure"
+  ],
+  "possible_actions": [
+    "position_outlet_near_post",
+    "press_short_corner_options",
+    "clear_ball_to_outlet",
+    "sprint_into_open_space"
+  ],
+  "contraindications": [
+    "opponent_low_block",
+    "lack_of_pacey_players",
+    "poor_clearance_accuracy"
+  ],
+  "trigger_conditions": [
+    "defensive_corner_kick",
+    "space_behind_defensive_line",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "compact_defensive_shape",
+    "outlet_player_clear_of_mark"
+  ],
+  "player_behaviours": [
+    "zonal_marking",
+    "aggressive_pressing_near_post",
+    "immediate_forward_run"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "set_piece_defense",
+    "transition_speed"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Defensive corners: exploiting attacking outlets",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/defensive-corners-exploiting-attacking-outlets.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "Who should we leave up top to catch the ball if we clear the corner?",
+    "When we are defending a corner, should we have a player ready to receive a long clearance for a quick attack?",
+    "What should our striker do if the ball is cleared from the box during a defensive corner?",
+    "We often just clear the ball long and lose possession, how can we use that clearance to start a counter-attack?"
+  ]
+}

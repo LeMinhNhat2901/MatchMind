@@ -1,0 +1,57 @@
+{
+  "concept_id": "yt_adaptive_defensive_shape_shift",
+  "category": "defending",
+  "subcategory": "formation_transitions",
+  "phase": "out_of_possession",
+  "title": "Adaptive Defensive Shape Shift",
+  "definition": "A tactical adjustment where a team shifts from a high-intensity 4-3-3 press to a more compact 4-4-2 block to conserve energy and protect central zones.",
+  "content": "This concept describes a strategic modification in defensive organization, specifically transitioning from a high-intensity 4-3-3 pressing structure to a 4-4-2 formation. The primary objective is to manage player fatigue, particularly for aging front-line players, by reducing the individual distance they must cover during defensive actions. In the 4-4-2 setup, the two forwards operate as a pair, creating a smaller, more manageable zone to press, which allows them to conserve energy for attacking phases. This is supported by two midfielders positioned behind the front line who possess the stamina to cover the full 90 minutes, providing a solid defensive layer. This shift results in a less intense but more structurally sound press that prioritizes protecting the center of the pitch. It is applicable when key pressing players are fatigued or aging, or when the team needs to maintain defensive solidity over the entire duration of the match rather than relying on short bursts of high intensity. This approach can lead to more consistent defensive performance and better protection of central areas, reducing the risk of being exposed by counter-attacks.",
+  "conditions": [
+    "aging_front_line",
+    "high_fatigue_risk",
+    "need_central_protection"
+  ],
+  "objective": [
+    "conserve_player_energy",
+    "maintain_defensive_solidity",
+    "protect_central_zones"
+  ],
+  "possible_actions": [
+    "shift_to_442_shape",
+    "pair_forward_pressing",
+    "increase_midfield_density"
+  ],
+  "contraindications": [
+    "opponent_weak_in_mid_block",
+    "lack_of_midfield_stamina"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "joint_forward_press",
+    "midfield_screening"
+  ],
+  "related_concepts": [
+    "low_block",
+    "mid_block",
+    "pressing_triggers"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=6013s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop getting exhausted by pressing high and then getting punished for the space behind us?",
+    "Our high press is working early in the game but failing in the second half, what should we change to stay safe?",
+    "I want to protect the central zones without burning out my midfielders, how can I adjust our defensive block as the game progresses?",
+    "We keep getting caught out of position when we try to press too high, is there a way to drop into a more compact shape to reduce the risk of counter-attacks?"
+  ]
+}

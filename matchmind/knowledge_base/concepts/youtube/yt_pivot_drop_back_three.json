@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_pivot_drop_back_three",
+  "category": "defending",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Pivot Drop Back Three",
+  "definition": "A tactical adjustment where the defensive midfielder drops between the center-backs to form a temporary back three, facilitating safe ball progression under pressure.",
+  "content": "The 'La Salida Lavolpiana' or pivot drop is a structural shift used to bypass high pressing. When the opposition presses aggressively, the deep-lying midfielder (pivot) drops between the two center-backs, creating a temporary three-man defensive line. This maneuver provides the center-backs with additional passing angles and relieves pressure from less technically gifted defenders. Crucially, it liberates the full-backs to push higher up the pitch, often transforming them into auxiliary wingers who can create numerical overloads in wide areas. This setup also discourages the opponent from maintaining a high line, as the pivot and midfielders can exploit the space behind the defense with long diagonal passes. If the opponent retreats to a lower block, the pivot can rejoin the midfield, restoring the original shape and creating new overloads in the middle third. This dynamic allows the team to maintain possession, control the tempo, and transition from a defensive structure to an attacking one seamlessly, ensuring that technical players receive the ball with time and space.",
+  "conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "defensive_line_height_high"
+  ],
+  "objective": [
+    "bypass_high_press",
+    "create_passing_angles",
+    "liberate_fullbacks"
+  ],
+  "possible_actions": [
+    "pivot_drops_between_cb",
+    "fullback_pushes_high",
+    "long_diagonal_pass",
+    "rejoin_midfield"
+  ],
+  "contraindications": [
+    "opponent_low_block",
+    "lack_of_wide_support"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "defensive_line_height_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "receive_between_lines"
+  ],
+  "related_concepts": [
+    "build_up",
+    "overload",
+    "positional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=493s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we safely move the ball out of the back when we are under intense pressure?",
+    "We are getting pressed in our own box and can't find a passing lane, what should our midfield do?",
+    "As the defensive midfielder, when should I drop between the center-backs to help build up play?",
+    "Our goalkeeper often has to punt the ball because our back line is isolated, how can we create a safer outlet?"
+  ]
+}

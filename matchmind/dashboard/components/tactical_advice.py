@@ -1,108 +1,140 @@
 """
-Tactical Advice Panel — displays agent output.
+Tactical Advice Panel Component — Chief Tactical Analyst Report & Decision Matrix.
+
+Presents MatchMind tactical intelligence as a professional coaching decision matrix
+(inspired by StatsBomb IQ, Opta Pro, and Wyscout), replacing AI-style prose with
+structured scouting cards, concise tactical takeaways, and pitch control deltas.
 """
 from __future__ import annotations
 
+import html
+
 import streamlit as st
 
+from matchmind.dashboard.components.ui import icon, render_html
 from matchmind.schema.match_state import TacticalAdvice
 
 
-def render_advice_panel(advice: TacticalAdvice, trace: list[dict]) -> None:
-    """Render the tactical advice output panel."""
-    st.markdown("## 🧠 Tactical Agent Output")
+def _delta_chip(delta: float | None) -> str:
+    """Pitch-control delta chip. Unknown stays unknown ("—"): never show a
+    placeholder number, since users read these as computed model output."""
+    if delta is None:
+        return '<span class="delta-chip delta-neutral" title="No pitch-control delta computed">—</span>'
+    cls = "delta-pos" if delta >= 0 else "delta-neg"
+    return f'<span class="delta-chip {cls}">{delta:+.1f}% PC</span>'
 
-    # Confidence colour
+
+def briefing_bullets(advice: TacticalAdvice) -> list[str]:
+    """The briefing card's bullets: the narrator's numbers-backed rationale, or —
+    when narration didn't run — the first sentences of the structured reasoning."""
+    if advice.rationale:
+        return list(advice.rationale)
+    sentences = [s.strip().rstrip(".") for s in advice.reasoning.replace("\n", ". ").split(". ")]
+    return [f"{s}." for s in sentences if len(s) > 8][:4] or [advice.reasoning]
+
+
+def render_advice_panel(advice: TacticalAdvice, trace: list[dict] | None = None) -> None:
+    """Render the structured tactical analyst report and decision matrix."""
     conf = advice.confidence
     if conf >= 0.75:
-        pill_class = "pill-green"
-    elif conf >= 0.5:
-        pill_class = "pill-amber"
+        tone, conf_label, directive_border = "badge-green", "High confidence", "directive-border-green"
+    elif conf >= 0.50:
+        tone, conf_label, directive_border = "badge-amber", "Moderate confidence", "directive-border-amber"
     else:
-        pill_class = "pill-red"
+        tone, conf_label, directive_border = "badge-red", "Low confidence", "directive-border-red"
+    conf_pill = f'<span class="tactical-badge {tone}"><span class="status-dot"></span>{conf:.0%} · {conf_label}</span>'
 
-    # Header with confidence
-    header_col, conf_col = st.columns([4, 1])
-    with header_col:
-        st.markdown("### ✅ Recommended Action")
-    with conf_col:
-        st.markdown(
-            f'<span class="pill {pill_class}">⭐ {conf:.0%} confidence</span>',
-            unsafe_allow_html=True,
-        )
+    target_player = f"Player #{advice.focus_player_id}" if advice.focus_player_id is not None else "Tactical focus"
+    action_code = html.escape(advice.recommended_action_id or "unmatched")
+    rec_action_escaped = html.escape(advice.recommended_action)
 
-    st.markdown(
-        f'<div class="recommend-box"><b>{advice.recommended_action}</b></div>',
-        unsafe_allow_html=True,
+    render_html(
+        f"""
+        <div class="directive-card {directive_border}">
+            <div class="directive-card-top">
+                <span class="directive-primary-badge">Primary directive · {target_player}</span>
+                {conf_pill}
+            </div>
+            <div class="directive-main-text">{rec_action_escaped}</div>
+            <div class="directive-card-bottom">
+                <span class="action-id-pill">action: {action_code}</span>
+            </div>
+        </div>
+        """
     )
 
-    st.divider()
+    render_html('<div class="mm-kicker">Decision matrix</div>')
 
-    # Layout: reasoning + alternatives + evidence
-    reason_col, cf_col = st.columns([3, 2], gap="medium")
+    # The recommended action's own delta, when the LLM also listed it among the
+    # alternatives (it usually doesn't — then it's genuinely unknown here).
+    rec_delta = next(
+        (a.delta_pitch_control for a in advice.alternatives
+         if a.action_id and a.action_id == advice.recommended_action_id),
+        None,
+    )
+    rec_cand = advice.resolve_action(advice.recommended_action_id)
+    if rec_cand is not None:
+        kind = "Ball action" if rec_cand.moves_ball else "Off-ball run"
+        rec_detail = (
+            f'<div class="decision-risk-text"><span class="decision-risk-label">{kind}:</span> '
+            f"{html.escape(rec_cand.label)}</div>"
+        )
+    else:
+        rec_detail = ""
 
-    with reason_col:
-        st.markdown("### 💭 Reasoning")
-        st.markdown(advice.reasoning)
+    cards = [
+        f"""
+        <div class="decision-card decision-card-preferred">
+            <div class="decision-card-top">
+                <span class="decision-status-pill status-pref-pill">{icon("check", 14)}Preferred</span>
+                {_delta_chip(rec_delta)}
+            </div>
+            <div class="decision-action-title">{rec_action_escaped}</div>
+            {rec_detail}
+        </div>
+        """
+    ]
+    for alt in advice.alternatives:
+        if alt.action_id and alt.action_id == advice.recommended_action_id:
+            continue
+        cards.append(
+            f"""
+            <div class="decision-card decision-card-alt">
+                <div class="decision-card-top">
+                    <span class="decision-status-pill status-alt-pill">{icon("x", 14)}Rejected</span>
+                    {_delta_chip(alt.delta_pitch_control)}
+                </div>
+                <div class="decision-action-title">{html.escape(alt.action)}</div>
+                <div class="decision-risk-text">
+                    <span class="decision-risk-label">Why not:</span> {html.escape(alt.why_not)}
+                </div>
+            </div>
+            """
+        )
+    render_html(f'<div class="decision-deck">{"".join(cards)}</div>')
 
-        if advice.cited_concepts:
-            st.markdown("**📚 Cited Concepts:**")
-            for concept in advice.cited_concepts:
-                st.markdown(f"  - 📌 *{concept}*")
+    render_html('<div class="mm-kicker">Coaching briefing</div>')
 
-    with cf_col:
-        st.markdown("### 🔄 Alternatives Considered")
-        if advice.alternatives:
-            for alt in advice.alternatives[:3]:
-                delta_str = ""
-                if alt.delta_pitch_control is not None:
-                    sign = "+" if alt.delta_pitch_control >= 0 else ""
-                    delta_str = f" | Δ PC: {sign}{alt.delta_pitch_control:.1f}%"
+    # Bullets only — the narrative paragraph is already the chat answer, so
+    # repeating it here was just noise (user feedback 2026-09-30).
+    bullet_items = "".join(f'<li class="briefing-li">{html.escape(b)}</li>' for b in briefing_bullets(advice))
+    render_html(f'<div class="briefing-box"><ul class="briefing-list">{bullet_items}</ul></div>')
 
-                with st.expander(f"❌ {alt.action[:40]}"):
-                    st.markdown(f"**Why not:** {alt.why_not}{delta_str}")
-        else:
-            st.caption("No alternatives recorded.")
+    if advice.narrative:
+        with st.expander("Structured reasoning (pre-narration)", icon=":material/psychology:"):
+            st.markdown(advice.reasoning)
 
-    # Evidence table
-    st.divider()
-    st.markdown("### 📋 Evidence Used")
+    if advice.cited_concepts:
+        render_html('<div class="mm-kicker">Playbook references</div>')
+        chips = "".join(
+            f'<span class="concept-chip">{icon("book", 13)}{html.escape(c)}</span>' for c in advice.cited_concepts
+        )
+        render_html(f'<div class="concept-chips-wrap">{chips}</div>')
 
-    rag_ev = [e for e in advice.evidence if e.source == "rag"]
-    stats_ev = [e for e in advice.evidence if e.source == "stats"]
-    ctx_ev = [e for e in advice.evidence if e.source == "context"]
-
-    ev_col1, ev_col2, ev_col3 = st.columns(3)
-
-    with ev_col1:
-        st.markdown("**📚 RAG (Tactical KB)**")
-        for e in rag_ev:
-            st.markdown(f"- {e.id}")
-
-    with ev_col2:
-        st.markdown("**📊 Stats (Computed)**")
-        for e in stats_ev:
-            st.caption(e.content[:120])
-
-    with ev_col3:
-        st.markdown("**🌍 Context (Match)**")
-        for e in ctx_ev:
-            st.caption(e.content[:120])
-
-    # Pipeline trace
-    if trace:
-        with st.expander("🔍 Agent Pipeline Trace"):
-            total_ms = sum(s.get("latency_ms", 0) for s in trace)
-            total_tok = sum(s.get("tokens", 0) for s in trace)
-            st.caption(f"Total: {total_ms:.0f}ms | {total_tok} tokens")
-
-            import pandas as pd
-            trace_df = pd.DataFrame([
-                {
-                    "Node": s.get("node", ""),
-                    "Latency (ms)": s.get("latency_ms", 0),
-                    "Notes": str({k: v for k, v in s.items() if k not in ["node", "latency_ms"]})[:80],
-                }
-                for s in trace
-            ])
-            st.dataframe(trace_df, use_container_width=True, hide_index=True)
+    with st.expander("Evidence sources", icon=":material/fact_check:"):
+        ev_items = "".join(
+            f'<div class="ev-row"><span class="ev-tag">{html.escape(e.source.upper())}</span>'
+            f"{html.escape(e.id)} — {html.escape(e.content[:140])}</div>"
+            for e in advice.evidence[:6]
+        )
+        render_html(f'<div class="ev-container">{ev_items}</div>')

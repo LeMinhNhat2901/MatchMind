@@ -1,0 +1,45 @@
+{
+  "concept_id": "wiki_off_ball_work_rate",
+  "category": "terminology",
+  "phase": "out_of_possession",
+  "title": "Off-Ball Work Rate",
+  "content": "Work rate quantifies a player's physical contribution during periods without the ball, measured by distance covered, pressing intensity, and tracking of opponents. It is a critical tactical metric, particularly for midfielders and substitutes, as it reflects the team's collective effort in defending and supporting attacks. High work rate enables players to maintain structural integrity, close down passing lanes, and recover possession quickly. However, tactical effectiveness is not solely dependent on high volume; elite players may conserve energy for high-impact moments, prioritizing intelligent positioning over constant sprinting. Coaches must balance raw distance metrics with situational awareness, as excessive chasing can lead to fatigue and positional errors. Conversely, low work rate can be a strategic choice for players who rely on explosive bursts rather than sustained endurance. Understanding this concept helps in managing player rotation, setting pressing triggers, and evaluating whether a player's movement aligns with the team's defensive shape and transition speed. It is essential for assessing if a player is actively contributing to the team's defensive compactness or if they are drifting out of position, thereby creating exploitable gaps for the opposition.",
+  "conditions": [
+    "player_out_of_possession",
+    "midfield_role",
+    "high_intensity_phase"
+  ],
+  "objective": [
+    "maintain_defensive_shape",
+    "recover_possession",
+    "support_attacking_transition"
+  ],
+  "possible_actions": [
+    "press_opponent",
+    "track_runner",
+    "cover_space",
+    "conserve_energy"
+  ],
+  "contraindications": [
+    "fatigue_management",
+    "positional_drift"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "phase_of_play_defensive_transition",
+    "team_compactness_high",
+    "press_intensity_high"
+  ],
+  "source": {
+    "name": "Wikipedia: Work rate",
+    "url": "https://en.wikipedia.org/wiki/Work_rate",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "Why do some players seem to do nothing when they don't have the ball, and how does that affect the team's shape?",
+    "Our substitute striker comes on and just stands around, what should he be doing to help the team defend and support the attack?",
+    "As a midfielder, what specific actions should I take when the opponent has the ball to ensure we stay compact and recover possession quickly?",
+    "We keep getting tired in the second half because we don't track back enough; what is the key metric we need to improve to fix our defensive structure?"
+  ]
+}

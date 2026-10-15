@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_dynamic_role_adaptation_in_double_pivot",
+  "category": "individual",
+  "subcategory": "role_adaptation",
+  "phase": "possession",
+  "title": "Dynamic Role Adaptation in Double Pivot",
+  "definition": "Adjusting individual positioning and passing responsibilities based on the specific attributes of the partner in a double-pivot midfield structure.",
+  "content": "In a 4-2-3-1 formation utilizing a double pivot, the two central midfielders must dynamically adjust their roles based on their partner's profile to maintain balance and create space. If one midfielder is highly positional and combative, the other must adopt a more advanced role, linking with wingers and strikers to exploit space. Conversely, if the partner is more mobile or makes offensive runs, the player must hold a deeper, more positional role to provide stability and cover. This concept emphasizes 'game intelligence' and reading the opponent's defensive shape to identify the 'free man.' The objective is to ensure that at least one midfielder is always available to receive the ball in advanced areas, often between the lines, while the other provides defensive cover or width. This interplay allows for quick transitions and direct play, leveraging the connection between midfield and attack to break down compact defenses. It requires constant communication and spatial awareness to switch roles seamlessly without leaving gaps in the defensive structure.",
+  "conditions": [
+    "double_pivot_formation",
+    "partner_has_specific_profile",
+    "opponent_defensive_shape_compact"
+  ],
+  "objective": [
+    "maintain_midfield_balance",
+    "create_space_for_free_man",
+    "link_midfield_and_attack"
+  ],
+  "possible_actions": [
+    "advance_to_link_with_wingers",
+    "hold_deep_positional_role",
+    "identify_and_pass_to_free_man",
+    "adjust_depth_based_on_partner"
+  ],
+  "contraindications": [
+    "both_midfielders_advance_simultaneously",
+    "lack_of_communication_between_pivots"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_between_lines",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "scan_for_free_man",
+    "adjust_body_orientation",
+    "make_progressive_pass"
+  ],
+  "related_concepts": [
+    "double_pivot",
+    "positional_play",
+    "game_intelligence"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=8OcXUJ2M7gA&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How should my two central midfielders adjust their roles if one is a deep-lying playmaker and the other is a box-to-box runner?",
+    "When my partner is holding the ball, should I drop deeper to offer a pass or push higher to stretch the defense?",
+    "What is the best way for a defensive midfielder to support a more attacking partner without leaving a gap in the middle?",
+    "Our midfield duo often ends up in the same spot, so how do we define who holds the line and who makes the runs?"
+  ]
+}

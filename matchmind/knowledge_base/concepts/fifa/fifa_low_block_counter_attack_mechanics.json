@@ -1,0 +1,63 @@
+{
+  "concept_id": "fifa_low_block_counter_attack_mechanics",
+  "category": "transitions",
+  "subcategory": "counter_attack",
+  "phase": "defensive_transition",
+  "title": "Low Block Counter-Attack Mechanics",
+  "definition": "A tactical system where a compact low block invites pressure to create space for rapid, vertical transitions upon regaining possession.",
+  "content": "This tactical approach treats defensive compactness as a springboard for explosive attacking movement. The team positions centrally to shield the goal's core, deliberately leaving wide zones exposed to force opponents into predictable wide attacks. Centre-backs play an assertive role, stepping forward to intercept passes, while wide defenders press wingers and centre-backs shuffle laterally to cover vacated space. Central midfielders block passing lanes into strikers, further forcing play wide. Upon regaining possession, the immediate objective is vertical progression; horizontal or backward passes are avoided to prevent opponents from reorganizing. The centre-forward uses short movements to drag defenders out of position before spinning into space, while wingers sprint into channels simultaneously. This coordinated running creates numerical superiority in the final third. Supporting runs from midfielders and wide players provide passing alternatives if the initial attack breaks down. The defensive line advances rapidly to the halfway line to compress space and prevent deep counter-attacks. Under pressure, the ball is played quickly, typically within two touches, to exploit the momentary disorganization of the opposing team.",
+  "conditions": [
+    "team_compactness_high",
+    "defensive_line_height_low",
+    "opponent_high_press"
+  ],
+  "objective": [
+    "rapid_vertical_progression",
+    "create_numerical_superiority",
+    "exploit_space_behind_def_line"
+  ],
+  "possible_actions": [
+    "centre_back_intercept",
+    "winger_sprint_channel",
+    "striker_spin_move",
+    "defensive_line_advance"
+  ],
+  "contraindications": [
+    "slow_transition_speed",
+    "opponent_deep_block",
+    "lack_of_supporting_runs"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "space_behind_defensive_line",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "central_defensive_density",
+    "wide_zones_exposed",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "step_forward_intercept",
+    "lateral_shuffle_cover",
+    "block_passing_lane",
+    "immediate_forward_pass"
+  ],
+  "related_concepts": [
+    "low_block",
+    "counter_press",
+    "vertical_transition"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: The mechanics of Al Ahly's counter-attack from a low block",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-insights/al-ahlys-counter-attack.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we stop getting pinned back in our own box while still catching them on the break?",
+    "We keep sitting deep when they pass around the back, but then we have no room to run forward when we win it back.",
+    "What should the striker do when the team is parked in the bus to ensure he gets the ball quickly after a turnover?",
+    "Why does our team struggle to find space behind their defense every time we regain possession in the final third?"
+  ]
+}

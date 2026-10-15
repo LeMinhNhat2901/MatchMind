@@ -13,6 +13,7 @@ import time
 from matchmind.agent.state import AgentState
 from matchmind.config import settings
 from matchmind.knowledge_base.vector_store import TacticalVectorStore
+from matchmind.retrieval import build_retrieval_query, get_hybrid_retriever
 
 logger = logging.getLogger(__name__)
 
@@ -29,30 +30,44 @@ def _get_vector_store() -> TacticalVectorStore:
 
 def retrieve_node(state: AgentState) -> AgentState:
     """
-    Node: Retrieve tactical concepts from ChromaDB using query text.
+    Node: retrieve tactical concepts.
 
-    ChromaDB's built-in EF embeds the query string internally — no manual
-    sentence-transformers call inside this thread.
+    settings.retrieval_strategy == "hybrid" (default): user question + number-free
+    tactical phrases -> HybridRetriever (dense + BM25 + condition match, RRF,
+    rerank, diversity). "dense": the pre-V1 single-query Chroma search, kept
+    for A/B comparison.
 
-    Input:  state.situation_features, state.expanded_query (optional)
-    Output: state.retrieved_tactics, state.retrieval_confidence
+    On the re-retrieve branch (retrieval_retry_count > 0) the hybrid path runs
+    relaxed (possession gating off, numeric situation text added as a sub-query)
+    plus the expanded query from build_expanded_query.
+
+    Output: state.retrieved_tactics (list[dict], unchanged format), state.retrieval_confidence
     """
     t0 = time.time()
-
     features = state["situation_features"]
-    query_text = state.get("expanded_query") or features.natural_language_description
+    retry = state.get("retrieval_retry_count", 0) or 0
+    k = settings.retrieval_top_k
 
-    store = _get_vector_store()
-    results, confidence = store.retrieve_tactics(
-        query_text=query_text,
-        k=settings.retrieval_top_k,
-    )
+    if settings.retrieval_strategy == "dense":
+        query_text = state.get("expanded_query") or features.natural_language_description
+        results, confidence = _get_vector_store().retrieve_tactics(query_text=query_text, k=k)
+        strategy, subqueries, sources = "dense", [query_text], [[] for _ in results]
+    else:
+        query = build_retrieval_query(features, state["match_state"], state.get("question") or "")
+        if state.get("expanded_query"):
+            query = query.model_copy(update={"extra": [state["expanded_query"]]})
+        retriever = get_hybrid_retriever()
+        result = retriever.retrieve(
+            query, k=k, relax=retry > 0,
+            features=features, match_state=state["match_state"],
+        )
+        results, confidence = retriever.to_legacy_dicts(result), result.confidence
+        strategy = result.strategy
+        subqueries = query.subqueries() + ([query.situation_text] if retry > 0 else [])
+        sources = [i.sources for i in result.items]
 
     elapsed = (time.time() - t0) * 1000
-    logger.debug(
-        f"[retrieve] {elapsed:.1f}ms | k={len(results)}, "
-        f"confidence={confidence:.3f}, retry={state.get('retrieval_retry_count', 0)}"
-    )
+    logger.debug(f"[retrieve] {strategy} {elapsed:.1f}ms k={len(results)} conf={confidence:.3f} retry={retry}")
 
     trace = state.get("trace") or []
     trace.append({
@@ -60,18 +75,15 @@ def retrieve_node(state: AgentState) -> AgentState:
         "latency_ms": round(elapsed, 1),
         "confidence": round(confidence, 4),
         "n_results": len(results),
-        "retry": state.get("retrieval_retry_count", 0),
+        "retry": retry,
+        "strategy": strategy,
+        "subqueries": subqueries,
+        "sources": sources,
         # consumed by evaluation.retrieval_quality (Dim 0)
         "concept_ids": [r["concept_id"] for r in results],
         "titles": [r["title"] for r in results],
     })
-
-    return {
-        **state,
-        "retrieved_tactics": results,
-        "retrieval_confidence": confidence,
-        "trace": trace,
-    }
+    return {**state, "retrieved_tactics": results, "retrieval_confidence": confidence, "trace": trace}
 
 
 def build_expanded_query(state: AgentState) -> AgentState:
@@ -111,7 +123,7 @@ def check_retrieval_quality(state: AgentState) -> str:
     """
     confidence = state.get("retrieval_confidence") or 0.0
     retry_count = state.get("retrieval_retry_count") or 0
-    threshold = settings.retrieval_confidence_threshold
+    threshold = settings.effective_retrieval_threshold
     max_retries = settings.agent_max_retries
 
     if confidence < threshold and retry_count < max_retries:

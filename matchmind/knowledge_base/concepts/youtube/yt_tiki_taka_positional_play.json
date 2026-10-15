@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_tiki_taka_positional_play",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Tiki Taka Positional Play",
+  "definition": "A possession-based tactical system relying on strict positional zoning and continuous movement to create passing options and manipulate opponent shape.",
+  "content": "Tiki Taka is a tactical framework evolved from Total Football, characterized not merely by high-frequency passing, but by structured, predefined positional movements. The core principle involves dividing the pitch into specific zones with strict occupancy rules, such as limiting players to two per vertical line and three per horizontal line. This spatial discipline ensures that the ball carrier always has multiple passing options, allowing the team to manipulate the opposition's defensive shape and create penetration opportunities. The system requires players to maintain constant motion to keep these zones fluid and effective. While highly effective for controlling possession and dictating the tempo, Tiki Taka demands exceptional technical skill, tactical intelligence, and physical fitness from all outfield players. It is particularly vulnerable to high-intensity pressing systems that can disrupt the rhythm and force turnovers in dangerous areas. Consequently, this approach is less common in modern football unless a squad possesses the specific talent profile and training infrastructure to sustain such a demanding style of play.",
+  "conditions": [
+    "high_technical_skill",
+    "tactical_intelligence",
+    "possession_dominance"
+  ],
+  "objective": [
+    "maintain_possession",
+    "manipulate_opponent_shape",
+    "create_passing_options"
+  ],
+  "possible_actions": [
+    "short_passing",
+    "positional_rotation",
+    "zone_occupancy"
+  ],
+  "contraindications": [
+    "vulnerable_to_high_press",
+    "requires_high_fitness"
+  ],
+  "trigger_conditions": [
+    "possession_dominance",
+    "opponent_defensive_shape_compact"
+  ],
+  "spatial_requirements": [
+    "strict_zone_occupancy",
+    "balanced_horizontal_width"
+  ],
+  "player_behaviours": [
+    "continuous_movement",
+    "scanning_for_passes",
+    "maintaining_spacing"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "possession_game",
+    "total_football"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=1178s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we keep the ball moving without just passing sideways all the time?",
+    "What is the tactical system that relies on players constantly shifting positions to open up gaps?",
+    "Our team looks static when we have the ball, how do we create continuous passing options?",
+    "How can we manipulate the opponent's defensive shape to create space for a shot?"
+  ]
+}

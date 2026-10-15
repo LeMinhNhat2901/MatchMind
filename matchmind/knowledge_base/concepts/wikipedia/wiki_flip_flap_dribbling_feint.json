@@ -1,0 +1,45 @@
+{
+  "concept_id": "wiki_flip_flap_dribbling_feint",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Flip Flap Dribbling Feint",
+  "content": "The flip flap, also known as the elástico or snakebite, is a close-control dribbling technique designed to deceive an opponent by creating a false directional cue. The player initiates the move by pushing the ball outward with the outside of their dominant foot, then rapidly swings the same foot around the ball to push it sharply to the non-dominant side. This sudden change in direction, combined with the footwork, tricks the defender into committing to the wrong side. Success relies not just on footwork precision but on explosive acceleration from a stationary or slow-moving position to exploit the space created by the defender’s misstep. It is most effective when the attacker has time to set up the move and the defender is close enough to be deceived but not so close that the ball is easily stolen. The move is particularly useful in tight spaces where a quick change of direction can bypass a one-on-one challenge.",
+  "conditions": [
+    "one_on_one_situation",
+    "defender_close",
+    "space_available_lateral",
+    "attacker_in_control"
+  ],
+  "objective": [
+    "beat_defender_one_on_one",
+    "create_space_for_progression",
+    "disrupt_defensive_rhythm"
+  ],
+  "possible_actions": [
+    "execute_flip_flap_feint",
+    "accelerate_past_defender",
+    "switch_direction_after_feint"
+  ],
+  "contraindications": [
+    "defender_too_far",
+    "no_space_to_accelerate",
+    "multiple_pressers_converging"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "is_in_attacking_third",
+    "local_numerical_advantage_negative"
+  ],
+  "source": {
+    "name": "Wikipedia: Flip flap (association football)",
+    "url": "https://en.wikipedia.org/wiki/Flip_flap_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the name of the move where you push the ball out and then whip it back inside with the same foot?",
+    "I keep getting tackled when I try to beat the fullback on the wing, is there a specific footwork trick to make them step the wrong way?",
+    "As a winger, what specific move should I use to create separation from a tight defender without losing possession?",
+    "My team struggles to break down low blocks, what individual skill can help our attackers create one-on-one chances in tight spaces?"
+  ]
+}

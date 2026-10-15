@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_man_to_man_pressing_transition",
+  "category": "defending",
+  "subcategory": "man_to_man_defence",
+  "phase": "defensive_transition",
+  "title": "Man-to-Man Pressing Transition",
+  "definition": "A defensive strategy where players maintain tight individual marking to win the ball, creating immediate spatial pockets for rapid vertical counter-attacks.",
+  "content": "This concept describes a specific defensive approach, often associated with managers like Marcelo Bielsa, that prioritizes strict man-to-man marking over zonal defending in all phases of play. Unlike hybrid systems that switch to zonal shapes after losing the ball, this method requires every player to stay tightly attached to their assigned opponent, acting like magnets. The primary tactical advantage is not just ball recovery, but the immediate creation of multiple pockets of space across the pitch. Because defenders are locked onto their markers, they cannot easily shift to cover zones, leaving gaps between lines and flanks. When the team wins the ball back, these gaps allow attackers to instantly run into open spaces, facilitating a fast vertical transition. This approach contrasts with standard zonal defending, where players stay close to each other to protect areas. By using man-to-man pressure, the team forces the opposition to play in tight spaces, increasing the likelihood of turnovers. Upon regaining possession, the team can exploit the disorganization of the opponent, who is still focused on their individual markers, to launch immediate attacks into the newly created separation. This requires high discipline and stamina from all players to maintain individual focus without losing the overall team shape.",
+  "conditions": [
+    "high_stamina_levels",
+    "individual_marking_discipline",
+    "opponent_structured_defence"
+  ],
+  "objective": [
+    "win_ball_high_up_pitch",
+    "create_immediate_separation",
+    "initiate_fast_vertical_transition"
+  ],
+  "possible_actions": [
+    "maintain_tight_individual_mark",
+    "press_opponent_marker",
+    "run_into_open_pocket",
+    "switch_play_to_free_zone"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "opponent_superior_individual_skill",
+    "lack_of_team_communication"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "nearest_opponent_distance_low",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "tight_individual_spacing",
+    "multiple_open_pockets"
+  ],
+  "player_behaviours": [
+    "shadow_opponent_marker",
+    "delay_passing_option",
+    "explode_into_gap"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "high_press",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=344s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to win the ball back and immediately launch a fast break?",
+    "We often lose the ball in the middle and get caught out of position, how can we use individual marking to create space for a quick counter?",
+    "Should my winger stay tight on the opponent's fullback or drop back to help in midfield when we lose possession?",
+    "Our team keeps getting caught in transition after losing the ball, how can we maintain individual pressure to recover it faster?"
+  ]
+}

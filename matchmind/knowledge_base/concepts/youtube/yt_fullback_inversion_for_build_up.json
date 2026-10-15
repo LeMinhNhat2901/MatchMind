@@ -1,0 +1,65 @@
+{
+  "concept_id": "yt_fullback_inversion_for_build_up",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Fullback Inversion for Build-Up",
+  "definition": "A tactical adjustment where a fullback moves into a central midfield position to create numerical superiority and facilitate progression against compact defensive blocks.",
+  "content": "This concept involves a fullback stepping inside to join the midfield, effectively turning a back four into a back three plus an extra central midfielder. This movement is particularly effective against opponents using a 4-4-2 or similar compact shapes, as it creates a local numerical advantage in the central zones. The inverted fullback must possess high technical quality to operate in tight spaces, often referred to as moving in 'traffic,' to receive the ball without immediate pressure. By occupying this central pocket, the fullback provides a safe passing option for the center-backs or the dropping striker, allowing the team to bypass the opponent's initial pressing line. This setup enables wingers or attacking midfielders to receive the ball with more time and space, as the central overload draws defenders away from the flanks. Crucially, if possession is lost while the fullback is inverted, the team should maintain this shape initially to apply immediate counter-pressing aggression rather than dropping back into a traditional back four. The fullback only returns to the wide defensive position if the opponent retains possession for several passes, ensuring the team remains compact and aggressive during the transition phase.",
+  "conditions": [
+    "opponent_defensive_block_compact",
+    "possession_phase_build_up",
+    "fullback_high_technical_quality"
+  ],
+  "objective": [
+    "create_central_numerical_advantage",
+    "bypass_first_pressing_line",
+    "provide_safe_passing_option"
+  ],
+  "possible_actions": [
+    "fullback_moves_inside",
+    "receive_ball_in_central_pocket",
+    "progressive_pass_to_winger",
+    "maintain_shape_on_turnover"
+  ],
+  "contraindications": [
+    "fullback_lacks_technical_composure",
+    "opponent_high_press_with_wide_cover",
+    "immediate_counter_attack_risk_high"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "local_numerical_advantage_negative",
+    "space_ahead_small",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "central_zone_occupied",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "move_in_small_space",
+    "receive_with_body_orientation_open",
+    "scan_before_receiving",
+    "counter_press_immediately"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "counter_press",
+    "build_up"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=qyUu1PN8ELA&t=459s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to break down a team that sits in a deep, low block?",
+    "Our wingers are getting isolated on the flanks when we try to pass out from the back, and we keep losing the ball.",
+    "Should my left-back stay wide or move into the center to help us progress the ball against a packed defense?",
+    "We struggle to find passing lanes in the final third because the opposition is so compact; what positional change can help us?"
+  ]
+}

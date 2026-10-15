@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_zonal_containment_of_wingers",
+  "category": "defending",
+  "subcategory": "positional_defence",
+  "phase": "out_of_possession",
+  "title": "Zonal Containment of Wingers",
+  "definition": "A defensive strategy where a specific zone is assigned to a player to contain a high-risk opponent, preventing them from operating in dangerous areas between the lines.",
+  "content": "This tactical concept involves assigning a specific defensive responsibility to a zone rather than a specific opponent to neutralize a key threat, such as a winger who cuts inside. In the described scenario, the team faced an opponent with a high-risk player (Messi) who operated in the half-space between the lines. Instead of using a pure man-to-man mark, which would drag defenders out of position and create gaps, the team adopted a hybrid approach. A specific defender was tasked with controlling the zone where the threat operated, maintaining constant communication with the fullback. If the threat moved into that zone, the defender engaged; if the threat moved elsewhere, the defender held their position to cover the space. This method prevents the opponent from playing freely in high-danger areas without sacrificing the team's overall structural integrity. It is particularly effective against players who rely on spatial freedom rather than direct 1v1 dominance, allowing the team to maintain compactness while denying the opponent their preferred operating space.",
+  "conditions": [
+    "opponent_has_key_winger",
+    "threat_operates_between_lines",
+    "team_needs_structural_integrity"
+  ],
+  "objective": [
+    "deny_space_between_lines",
+    "prevent_opponent_cutting_inside",
+    "maintain_defensive_compactness"
+  ],
+  "possible_actions": [
+    "hold_zone_position",
+    "communicate_with_fullback",
+    "engage_only_when_threat_enters_zone",
+    "cover_passing_lanes"
+  ],
+  "contraindications": [
+    "opponent_threat_is_static",
+    "team_lacks_defensive_discipline",
+    "high_press_required_immediately"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "half_space_occupied",
+    "opponent_high_press"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "zone_control",
+    "delay_and_cover",
+    "switch_marking_focus"
+  ],
+  "related_concepts": [
+    "positional_defence",
+    "zonal_defending",
+    "containment"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=4wAG5ZUJ4eI&t=6s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I stop their right winger from cutting inside without losing my fullback?",
+    "Our left-back keeps getting beaten by their winger on the overlap, what should he do differently?",
+    "We keep getting scored on from crosses because their wide man is always free in the box, how do we fix this?",
+    "What is the best way to mark a dangerous wide player so he cannot drift into the half-spaces?"
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "concept_id": "fifa_goal_kick_build_up_strategies",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Goal Kick Build-Up Strategies",
+  "definition": "A tactical framework for restarting play from a goal kick that combines short passing sequences with long distribution to manipulate opponent pressing structures.",
+  "content": "Modern goal kick restarts require teams to treat the goalkeeper as an active outfield player to navigate high-pressing systems. Relying solely on short passes makes teams predictable, while consistent long balls allow opponents to settle defensively. Effective strategies blend these approaches: using short sequences to manipulate pressing lines and create space, then exploiting gaps with longer switches or penetrative passes. The build-up zone has expanded, demanding that centre-backs operate as complete players capable of receiving under pressure and turning in both directions. Full-backs need strong first-touch control for advanced distributions, while midfielders must scan and use two-footed technique to escape pressure. Goalkeepers require three-dimensional vision to judge angles and distances for difficult passes. Teams should categorize their options into five types: supporting play to centre-backs, passing through press lines to midfielders, delivering to advanced wide areas, direct forward play to strikers, and passes behind defensive lines. By varying these methods, teams can exploit spacing dynamics; for instance, narrow centre-back positioning opens wing space, while wider positioning creates central opportunities. Goalkeepers must maintain positioning to recycle possession if initial passes return, ensuring seamless continuation of the attacking sequence.",
+  "conditions": [
+    "possession_after_goal_kick",
+    "opponent_high_press",
+    "goalkeeper_in_play"
+  ],
+  "objective": [
+    "manipulate_pressing_lines",
+    "create_numerical_advantage",
+    "progress_ball_into_midfield"
+  ],
+  "possible_actions": [
+    "short_pass_to_centre_back",
+    "long_switch_to_wing",
+    "penetrative_pass_to_midfielder",
+    "direct_forward_distribution",
+    "pass_behind_defensive_line"
+  ],
+  "contraindications": [
+    "predictable_short_passing_only",
+    "consistent_long_ball_default",
+    "goalkeeper_isolated_from_buildup"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_attacking_transition",
+    "opponent_high_press",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "expanded_buildup_zone",
+    "wide_centre_back_positioning",
+    "available_wing_space"
+  ],
+  "player_behaviours": [
+    "goalkeeper_distributes_under_pressure",
+    "centre_back_turns_in_both_directions",
+    "full_back_controls_first_touch",
+    "midfielder_scans_for_passing_lanes"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "high_press",
+    "rest_defence"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Different strategies when building out from goal kicks",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-insights/building-from-goal-kicks.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we stop the other team from sitting deep when we restart from our own goal line?",
+    "My keeper is getting pinned to his own box every time we take a restart, what should we change?",
+    "What is the best way to use the goalkeeper to break the first line of pressure immediately after a restart?",
+    "We keep losing the ball in our own third right after restarting play, how can we fix this recurring issue?"
+  ]
+}

@@ -1,0 +1,58 @@
+{
+  "concept_id": "yt_4_4_2_diamond_midfield_structure",
+  "category": "formations",
+  "subcategory": "442_diamond",
+  "phase": "general",
+  "title": "4-4-2 Diamond Midfield Structure",
+  "definition": "A 4-4-2 formation variant where the midfield is arranged in a diamond shape to enhance central control and vertical connectivity.",
+  "content": "The 4-4-2 diamond is a tactical evolution of the flat 4-4-2, designed to address weaknesses in central coverage and vertical spacing. In the standard flat 4-4-2, teams often struggle against narrow midfield three opponents and may leave gaps between lines due to the flat structure. By rotating the midfield into a diamond, the team creates a more defined vertical axis. The top player in the diamond acts as a central playmaker, linking defense and attack, while the wide midfielders invert centrally to provide numerical superiority in the middle. This structure allows for better control of central zones and creates triangular passing options that facilitate quick transitions and counterattacks. However, this formation has specific limitations. It often lacks sufficient width in the final third, as the wide midfielders are positioned centrally. Additionally, the team may struggle to generate attacking numbers up front if the forwards are not supported by wide overloads. Coaches must balance central dominance with the need for width, often requiring full-backs to provide the necessary lateral stretch to exploit spaces left by the inverted midfielders.",
+  "conditions": [
+    "central_control_priority",
+    "narrow_opponent_midfield",
+    "need_vertical_connectivity"
+  ],
+  "objective": [
+    "dominate_central_zones",
+    "create_triangular_passing_options",
+    "enhance_counter_attack_speed"
+  ],
+  "possible_actions": [
+    "invert_wide_midfielders",
+    "position_playmaker_high",
+    "overload_central_areas"
+  ],
+  "contraindications": [
+    "lack_of_attacking_width",
+    "vulnerability_to_wide_overloads"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "local_numerical_advantage_positive",
+    "space_between_lines"
+  ],
+  "spatial_requirements": [
+    "central_midfield_density",
+    "vertical_midfield_alignment"
+  ],
+  "player_behaviours": [
+    "central_inversion",
+    "playmaking_from_depth"
+  ],
+  "related_concepts": [
+    "flat_442",
+    "christmas_tree_formation",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=nAsLa3wWypQ&t=832s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we dominate the center of the park without leaving our wide areas empty?",
+    "We struggle to connect our midfield to our attack, is there a shape that helps us move the ball vertically more effectively?",
+    "My central midfielders are getting overrun, what formation change can give us an extra body in the middle without sacrificing width?",
+    "We keep losing possession in the final third because we lack options in the center, how can we structure our midfield to create more passing lanes?"
+  ]
+}

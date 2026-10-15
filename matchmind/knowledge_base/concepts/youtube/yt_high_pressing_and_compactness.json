@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_high_pressing_and_compactness",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "High Pressing and Compactness",
+  "definition": "A defensive strategy involving a high defensive line and aggressive pressing to deny opponents time and space in the final third.",
+  "content": "This tactical concept emphasizes the necessity of combining a high defensive line with intense pressure on the ball to prevent opponents from exploiting space behind the defense. When a team adopts a narrow back line or leaves space in behind, it must compensate with high-intensity pressing to force turnovers in dangerous areas. The source highlights that Argentina's initial success relied on a compact shape with players between the lines, allowing them to control the game and limit France's options. However, when Argentina dropped their defensive line and reduced pressing intensity, France gained more possession and created clearer chances. The text illustrates that without sustained pressure, even strong individual defenders cannot compensate for structural gaps. Coaches should ensure that if the defensive line is high, the midfield and forward lines are compact and actively pressing to trigger turnovers. This approach reduces the time opponents have to organize attacks and forces them into low-percentage passes or long balls, which are easier to defend. It is crucial to maintain this intensity throughout the match, as dropping the line late can lead to sudden shifts in momentum and goals from turnovers.",
+  "conditions": [
+    "opponent_defensiveline_high",
+    "team_compactness_high",
+    "press_intensity_high"
+  ],
+  "objective": [
+    "force_turnover_in_final_third",
+    "deny_space_behind_defense",
+    "limit_opponent_passing_options"
+  ],
+  "possible_actions": [
+    "press_ball_carrier",
+    "close_down_passing_lanes",
+    "maintain_high_defensive_line"
+  ],
+  "contraindications": [
+    "opponent_fast_counter_attackers",
+    "low_team_stamina",
+    "poor_defensive_organisation"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "opponent_high_press",
+    "space_behind_defensive_line"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "trigger_press"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "defensive_line_height",
+    "positional_play"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=sH5beYkoVXA&t=502s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we stop the other team from having any time to think in their own half?",
+    "The opponent keeps passing sideways to escape our pressure, how do we close down those spaces faster?",
+    "What should our midfielders do to deny the opposing playmaker any room to turn and drive forward?",
+    "Why do we always seem to have too much space between our lines when we try to press aggressively?"
+  ]
+}

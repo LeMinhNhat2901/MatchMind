@@ -1,0 +1,54 @@
+{
+  "concept_id": "yt_inverted_fullback_system",
+  "category": "formations",
+  "subcategory": "inverted_fullback",
+  "phase": "possession",
+  "title": "Inverted Fullback System",
+  "definition": "A tactical setup where fullbacks move into central midfield positions to provide numerical superiority and passing options in the build-up phase.",
+  "content": "The inverted fullback system is a structural adaptation often employed to enhance build-up play and create overloads in central areas. In this configuration, fullbacks, typically possessing high technical quality and positional intelligence, tuck in towards the center of the pitch rather than hugging the touchline. This movement allows the team to form a 3-2 or 4-2 shape in the defensive third, facilitating safer passing options and better control of the game's tempo. The strategy relies on the fullback's ability to operate in tight spaces, receive the ball under pressure, and distribute effectively to wingers or midfielders. It is particularly useful when facing high-pressing opponents who occupy the wide channels, as it bypasses their initial defensive line by playing through the middle. However, this approach requires the wingers to provide width and defensive cover on the flanks, as the fullbacks are no longer available to track opposing wingers. The system demands high tactical discipline and communication to ensure that the central overload does not leave the wide areas vulnerable to counter-attacks. It is a hallmark of possession-based teams seeking to dominate the midfield and control the rhythm of the match.",
+  "conditions": [
+    "possession_based_style",
+    "high_technical_fullbacks",
+    "opponent_high_press"
+  ],
+  "objective": [
+    "create_central_overload",
+    "bypass_high_press",
+    "control_build_up"
+  ],
+  "possible_actions": [
+    "tuck_in_fullback",
+    "pass_to_central_fullback",
+    "winger_hold_width"
+  ],
+  "contraindications": [
+    "lack_of_winger_width",
+    "fullback_lacks_technical_security",
+    "opponent_counter_presses_wide"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "local_numerical_advantage_negative"
+  ],
+  "spatial_requirements": [
+    "central_overload",
+    "wide_winger_positioning"
+  ],
+  "player_behaviours": [
+    "fullback_tuck_in",
+    "winger_hold_line",
+    "midfielder_drop_deep"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "build_up",
+    "overload"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=3840s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  }
+}

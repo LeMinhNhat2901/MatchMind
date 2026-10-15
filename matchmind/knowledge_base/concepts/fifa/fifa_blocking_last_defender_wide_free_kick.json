@@ -1,0 +1,62 @@
+{
+  "concept_id": "fifa_blocking_last_defender_wide_free_kick",
+  "category": "attacking",
+  "subcategory": "set_piece",
+  "phase": "possession",
+  "title": "Blocking Last Defender Wide Free Kick",
+  "definition": "A set-piece tactic where an attacker physically screens the last defender in the defensive line to create space for a far-post goal.",
+  "content": "This advanced set-piece strategy targets the structural vulnerability of zonal marking systems during wide free kicks. By positioning a physically dominant player to block the last defender in the defensive line, the attacking team creates immediate numerical disadvantages for the defense, particularly at the far post. The success of this routine relies on precise timing and coordination: runners initiate depth runs from offside positions, using the free-kick taker's movement as a trigger to synchronize their entry and regain onside status exactly as the ball is delivered. Decoy attackers are essential to occupy defenders and obscure the blocking intent. The blocker should use a screening technique, keeping their back to the defender to reposition them without committing a foul, thereby opening a clear passing lane or shooting angle for a teammate. This approach exploits the fact that when defenders concentrate near the ball to block short options, the protective line thins out. It is most effective against teams that maintain a high defensive line and rely on zonal rather than man-to-man marking, as it disrupts the integrity of the defensive wall and creates high-probability scoring opportunities in the penalty area.",
+  "conditions": [
+    "wide_free_kick",
+    "zonal_defensive_structure",
+    "high_defensive_line",
+    "physically_dominant_blocker_available"
+  ],
+  "objective": [
+    "create_far_post_space",
+    "disrupt_defensive_line_integrity",
+    "generate_numerical_advantage"
+  ],
+  "possible_actions": [
+    "screen_last_defender",
+    "synchronize_offside_run",
+    "deliver_cross_to_far_post",
+    "use_decoy_runners"
+  ],
+  "contraindications": [
+    "man_to_man_marking_system",
+    "low_defensive_line",
+    "lack_of_physical_dominance"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "defensive_line_height_high",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "space_behind_defensive_line",
+    "compact_attacking_cluster_near_ball"
+  ],
+  "player_behaviours": [
+    "back_screen_defender",
+    "time_offside_run",
+    "occupy_defender_with_decoy"
+  ],
+  "related_concepts": [
+    "set_piece_routine",
+    "far_post_run",
+    "zonal_defending_weakness"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Wide free kicks: blocking the last defender in the line",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/wide-free-kicks-blocking-the-last-defender-in-the-line.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the best way to stop a defender from seeing the ball on a wide set piece?",
+    "We are struggling to score from wide corners because the last man always has a clear view, can you suggest a tactic to fix this?",
+    "As a striker, how should I position myself to help my teammate take a free kick from the right side of the box?",
+    "Our opponents always manage to clear the ball from wide set pieces, is there a specific formation or movement we can use to block their view?"
+  ]
+}

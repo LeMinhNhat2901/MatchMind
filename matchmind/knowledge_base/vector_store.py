@@ -39,6 +39,12 @@ def _get_chroma_ef():
         return None
 
 
+def _distance_to_similarity(distance: float) -> float:
+    """Chroma cosine distance (0..2) -> similarity in [0, 1] (project-wide convention;
+    calibrate_retrieval.py thresholds are expressed in this unit)."""
+    return max(0.0, 1.0 - distance / 2.0)
+
+
 class TacticalVectorStore:
     """
     ChromaDB-backed vector store for football tactical concepts.
@@ -72,6 +78,7 @@ class TacticalVectorStore:
 
         # Use ChromaDB's EF for query — handles Windows threading safely
         self._ef = _get_chroma_ef() if use_chroma_ef else None
+        self._vectors: tuple[list[str], np.ndarray] | None = None   # dense_rank cache
 
         # Collection with cosine similarity
         self._collection = self._client.get_or_create_collection(
@@ -109,12 +116,19 @@ class TacticalVectorStore:
             {
                 "title": c.title,
                 "category": c.category,
+                "subcategory": c.subcategory or "",
                 "phase": c.phase,
+                "definition": c.definition or "",
                 "conditions": ",".join(c.conditions),
                 "objective": ",".join(c.objective),
                 "possible_actions": ",".join(c.possible_actions),
                 "contraindications": ",".join(c.contraindications),
                 "trigger_conditions": ",".join(c.trigger_conditions),
+                "spatial_requirements": ",".join(c.spatial_requirements),
+                "player_behaviours": ",".join(c.player_behaviours),
+                "related_concepts": ",".join(c.related_concepts),
+                "source_name": c.source.name if c.source else "",
+                "source_url": c.source.url if c.source else "",
             }
             for c in concepts
         ]
@@ -134,6 +148,7 @@ class TacticalVectorStore:
                 metadatas=metas,
             )
 
+        self._vectors = None
         logger.info(f"Upserted {len(concepts)} concepts into ChromaDB")
 
     def delete_all(self) -> None:
@@ -144,6 +159,7 @@ class TacticalVectorStore:
             metadata={"hnsw:space": "cosine"},
             embedding_function=self._ef,
         )
+        self._vectors = None
         logger.warning(f"Deleted and recreated collection '{self._collection_name}'")
 
     # ──────────────────────────────────────────────────────────
@@ -200,7 +216,7 @@ class TacticalVectorStore:
         metas = query_results["metadatas"][0]
         distances = query_results["distances"][0]
 
-        similarities = [max(0.0, 1.0 - d / 2.0) for d in distances]
+        similarities = [_distance_to_similarity(d) for d in distances]
         confidence = float(np.mean(similarities)) if similarities else 0.0
 
         results = [
@@ -209,11 +225,15 @@ class TacticalVectorStore:
                 "title": meta.get("title", cid),
                 "content": doc,
                 "category": meta.get("category", ""),
+                "subcategory": meta.get("subcategory") or None,
                 "phase": meta.get("phase", ""),
+                "definition": meta.get("definition") or None,
                 "conditions": meta.get("conditions", "").split(","),
                 "possible_actions": meta.get("possible_actions", "").split(","),
                 "contraindications": meta.get("contraindications", "").split(","),
                 "similarity": round(sim, 4),
+                "source_name": meta.get("source_name") or None,
+                "source_url": meta.get("source_url") or None,
             }
             for cid, doc, meta, sim in zip(ids, docs, metas, similarities)
         ]
@@ -238,6 +258,56 @@ class TacticalVectorStore:
             return self.retrieve_tactics(query_embedding=emb, k=k, filter_category=filter_category)
         else:
             raise ValueError("Need either ChromaDB EF or an embedder to query by text")
+
+    def dense_rank(self, query_texts: list[str], n: int) -> list[list[tuple[str, float]]]:
+        """One ranked (concept_id, similarity) list per query text — EXACT cosine
+        against every stored vector, ties broken by id.
+
+        Not Chroma's HNSW query: that search is approximate, and on the ~330-concept
+        KB it sometimes dropped a top-10 concept, differently in each process (the
+        golden bench flipped between two scores on identical data). Scoring a KB this
+        size exactly takes milliseconds. Similarity keeps the project-wide unit
+        (1 - cosine_distance / 2, see _distance_to_similarity).
+        """
+        if not query_texts:
+            return []
+        ids, matrix = self._all_vectors()
+        if not ids:
+            return [[] for _ in query_texts]
+        if self._ef is None:
+            raise RuntimeError("dense_rank needs the Chroma embedding function (use_chroma_ef=True)")
+        queries = np.asarray(self._ef(list(query_texts)), dtype=float)
+        queries /= np.maximum(np.linalg.norm(queries, axis=1, keepdims=True), 1e-12)
+        out = []
+        for cos in queries @ matrix.T:
+            sims = [(cid, _distance_to_similarity(1.0 - float(c))) for cid, c in zip(ids, cos)]
+            sims.sort(key=lambda p: (-p[1], p[0]))
+            out.append(sims[:n])
+        return out
+
+    def embed_queries(self, texts: list[str]) -> np.ndarray:
+        """Query-time embeddings with the collection's model (used by the example-question ranker)."""
+        if self._ef is None:
+            raise RuntimeError("embed_queries needs the Chroma embedding function (use_chroma_ef=True)")
+        return np.asarray(self._ef(list(texts)), dtype=float)
+
+    def _all_vectors(self) -> tuple[list[str], np.ndarray]:
+        """Every stored (id, unit vector), cached until the collection changes."""
+        if self._vectors is None:
+            res = self._collection.get(include=["embeddings"])
+            ids = list(res["ids"])
+            if not ids:
+                return [], np.zeros((0, 0))
+            m = np.asarray(res["embeddings"], dtype=float)
+            m /= np.maximum(np.linalg.norm(m, axis=1, keepdims=True), 1e-12)
+            self._vectors = (ids, m)
+        return self._vectors
+
+    def get_embeddings(self, ids: list[str]) -> dict[str, np.ndarray]:
+        if not ids:
+            return {}
+        res = self._collection.get(ids=ids, include=["embeddings"])
+        return {cid: np.asarray(e, dtype=float) for cid, e in zip(res["ids"], res["embeddings"])}
 
     def get_all_titles(self) -> list[str]:
         results = self._collection.get(include=["metadatas"])

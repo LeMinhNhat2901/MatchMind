@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_second_phase_transition_strategy",
+  "category": "transitions",
+  "subcategory": "second_phase",
+  "phase": "attacking_transition",
+  "title": "Second Phase Transition Strategy",
+  "definition": "A tactical approach prioritizing the recovery of loose balls after long passes or crosses rather than winning the initial aerial duel.",
+  "content": "This strategy involves directing long balls toward specific opponents or zones not to win the first contact, but to disrupt the receiver and create predictable loose balls. The team structures itself to outnumber the opposition in the second phase, often by having defenders or midfielders step into central areas to create numerical superiority around the ball. For example, a fullback or center-back may advance into midfield to support the recovery, ensuring that even if the opponent wins the header, they are immediately surrounded. The objective is to force awkward clearances or loose touches that can be intercepted quickly. Once possession is regained in the second phase, the team launches rapid attacks, often utilizing mobile forwards who make runs into space behind the defensive line. This method relies on calculated territory play rather than random long balls, using structure and timing to exploit the gap between the opponent's first and second phase actions. It is particularly effective against teams with strong aerial defenders who may lack the urgency to recover position quickly after winning the initial ball.",
+  "conditions": [
+    "opponent_strong_aerial_defense",
+    "team_has_mobile_forwards",
+    "ability_to_create_numerical_advantage_second_phase"
+  ],
+  "objective": [
+    "disrupt_opponent_receiver",
+    "win_second_ball",
+    "launch_rapid_counter_attack"
+  ],
+  "possible_actions": [
+    "direct_long_ball_to_target_zone",
+    "press_to_disrupt_not_win",
+    "step_forward_into_midfield",
+    "attack_loose_ball_immediately",
+    "run_into_space_behind_defense"
+  ],
+  "contraindications": [
+    "opponent_has_fast_recovery_speed",
+    "lack_of_numerical_superiority_in_second_phase"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "space_behind_defensive_line",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "numerical_superiority_zone"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "make_run_into_space"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "overload",
+    "positional_play"
+  ],
+  "source": {
+    "name": "The Tactics Guy",
+    "url": "https://www.youtube.com/watch?v=gRheEuU8u7Y&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best tactic when we keep losing the initial header but still manage to score?",
+    "Our wingers are jumping for every cross but we rarely win the first touch, so how should we adjust our pressing in the box?",
+    "As a striker, should I focus on winning the first ball or positioning myself to collect the deflection?",
+    "We seem to be too focused on the first touch and miss the follow-up chances, what is the name of this specific defensive error?"
+  ]
+}

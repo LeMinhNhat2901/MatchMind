@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_offering_to_receive",
+  "category": "attacking",
+  "subcategory": "receiving",
+  "phase": "possession",
+  "title": "Offering to Receive",
+  "definition": "A deliberate movement or signal by an off-ball player to communicate readiness to accept a pass and advance possession.",
+  "content": "Offering to receive is a critical off-ball action where a player intentionally signals their availability to a teammate in possession. Unlike passive running, this involves specific physical movements, body orientation, or directional cues that clearly communicate tactical intent and readiness to accept the ball. This concept is vital because players control the ball for very little time during a match, making off-ball actions the primary driver of team performance. Effective offers disrupt the opposing defensive shape by forcing defenders to make difficult decisions about which player to mark. While high volume of offers is beneficial, quality is paramount; offers made in dangerous zones, such as behind the opposition's defensive line, have a significantly higher conversion rate into goal attempts. Teams that prioritize high-quality, well-timed offers in advanced positions can generate more attacking efficiency than those relying solely on volume. Coaches should emphasize that an offer is a form of communication, requiring players to actively engage with the ball carrier rather than just occupying space. This principle transforms abstract positioning into measurable tactical components, highlighting the importance of deliberate movement in creating scoring opportunities and breaking down defensive structures.",
+  "conditions": [
+    "teammate_in_possession",
+    "clear_passing_lane_available",
+    "defensive_shape_vulnerable"
+  ],
+  "objective": [
+    "create_passing_option",
+    "disrupt_defensive_organisation",
+    "advance_possession"
+  ],
+  "possible_actions": [
+    "make_run_behind_defense",
+    "adjust_body_orientation",
+    "signal_readiness_with_hand",
+    "move_into_half_space"
+  ],
+  "contraindications": [
+    "passing_lane_blocked",
+    "no_clear_advantage",
+    "risk_of_turnover"
+  ],
+  "trigger_conditions": [
+    "passing_lane_open",
+    "space_behind_defensive_line",
+    "half_space_free"
+  ],
+  "spatial_requirements": [
+    "space_between_lines",
+    "space_behind_def_line"
+  ],
+  "player_behaviours": [
+    "angle_run",
+    "body_shape_adjustment",
+    "eye_contact_with_carrier"
+  ],
+  "related_concepts": [
+    "third_man_run",
+    "penetration",
+    "scanning"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Offering to receive",
+    "url": "https://www.fifatrainingcentre.com/en/game/performance-analysis/football-language-analysis/offering-to-receive.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do I let my teammate know I am ready for the ball without shouting?",
+    "I am standing still on the wing and my winger never passes to me because he doesn't know if I want the ball.",
+    "What movement should I make to show the midfielder that I have space and am ready to take a pass?",
+    "Why does our midfield seem disconnected because our players are not clearly signaling their availability for the ball?"
+  ]
+}

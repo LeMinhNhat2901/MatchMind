@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_box_to_box_center_back",
+  "category": "defending",
+  "subcategory": "defensive_line",
+  "phase": "possession",
+  "title": "Box-to-Box Center Back",
+  "definition": "A tactical role where a center back advances into the midfield box to provide numerical superiority during possession while retaining the ability to drop back quickly for defense.",
+  "content": "This concept describes a specific evolution in defensive line behavior, primarily associated with modern back-three systems. Unlike traditional center backs who remain static or only step up slightly, the 'box-to-box center back' actively pushes high into the final third or midfield box to join the midfield unit. This movement creates a temporary numerical advantage in central areas, allowing the team to dominate possession and progress the ball through the middle. The key tactical advantage over an inverted fullback performing a similar role is the speed of recovery; because the center back starts from a deeper, more central position, they can return to their defensive line much faster than a wide player drifting inwards. This role requires a defender with high technical ability, spatial awareness, and stamina to cover the vertical distance repeatedly. It is most effective when the team has a stable midfield structure that can hold shape while the defender is advanced, ensuring that the defensive line does not become exposed to counter-attacks. The player must be disciplined to drop back immediately when possession is lost, maintaining the integrity of the defensive block.",
+  "conditions": [
+    "playing_in_back_three",
+    "possession_phase",
+    "midfield_numerical_need"
+  ],
+  "objective": [
+    "create_midfield_overload",
+    "progress_ball_central",
+    "maintain_defensive_integrity"
+  ],
+  "possible_actions": [
+    "advance_into_midfield_box",
+    "receive_pass_in_half_space",
+    "drop_back_to_defensive_line"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_midfield_cover",
+    "slow_recovery_speed"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_negative",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_midfield_unit",
+    "central_space_available"
+  ],
+  "player_behaviours": [
+    "vertical_run_into_box",
+    "quick_recovery_run"
+  ],
+  "related_concepts": [
+    "inverted_fullback",
+    "box_midfield",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=OTQ4CjZTAuM&t=669s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I get more bodies in the midfield without pulling a midfielder out of position?",
+    "My back four sits too deep when we have the ball, leaving us short in the middle third, what should I change?",
+    "What specific instructions should I give to my right center back to help us dominate the center circle?",
+    "We keep losing possession in the midfield because we are outnumbered there, how can I fix this structural issue?"
+  ]
+}

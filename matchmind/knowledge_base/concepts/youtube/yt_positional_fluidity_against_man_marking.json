@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_positional_fluidity_against_man_marking",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Positional Fluidity Against Man-Marking",
+  "definition": "A tactical approach using extreme player mobility and role interchange to disrupt man-to-man defensive structures by creating free men or dragging defenders out of position.",
+  "content": "Positional fluidity is a strategic response to man-oriented defensive systems, rooted in the concept of 'organized disorder.' When opponents adopt strict man-to-man marking to eliminate gaps, static positional play becomes ineffective. The solution is to introduce extreme fluidity where players, particularly forwards and midfielders, roam and interchange roles unpredictably. This forces defenders into a dilemma: if they follow the roaming player, they abandon their zonal responsibilities and drag the defensive structure apart, creating space for teammates. If they do not follow, the roaming player becomes a free man with a passing option. This tactic requires players with high versatility who can operate in multiple positions without a drop in performance. It is not just about individual dribbling, but about collective movement patterns that exploit the rigidity of man-marking. By constantly shifting positions, the attacking team creates local numerical advantages and passing lanes that a static man-marking system cannot cover effectively. This approach is crucial in modern football where physicality and man-orientated pressing are common, requiring a squad built for flexibility and continuous rotation to maintain structural integrity while attacking.",
+  "conditions": [
+    "opponent_man_marking",
+    "high_player_versatility",
+    "possession_phase"
+  ],
+  "objective": [
+    "create_free_man",
+    "disrupt_defensive_structure",
+    "generate_passing_options"
+  ],
+  "possible_actions": [
+    "role_interchange",
+    "diagonal_run",
+    "temporal_position_shift",
+    "continuous_rotation"
+  ],
+  "contraindications": [
+    "low_player_versatility",
+    "opponent_zonal_defense",
+    "lack_of_team_coordination"
+  ],
+  "trigger_conditions": [
+    "opponent_man_marking",
+    "passing_lane_open",
+    "local_numerical_advantage"
+  ],
+  "spatial_requirements": [
+    "wide_attacking_shape",
+    "deep_support_lines"
+  ],
+  "player_behaviours": [
+    "roam_unpredictably",
+    "switch_positions",
+    "maintain_off_ball_movement"
+  ],
+  "related_concepts": [
+    "organized_disorder",
+    "man_marking_counter",
+    "positional_flexibility"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=fB8gT9TvKXs&t=321s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we break down a team that assigns a dedicated marker to every one of our players?",
+    "Our attackers are getting caught offside because the opposing defenders are sticking to them like glue in a man-marking system.",
+    "What should our central striker do to create space for the wingers when the opposition uses a strict man-to-man setup?",
+    "We keep finding ourselves with one extra player in the box when we constantly swap positions with our full-backs and wingers."
+  ]
+}

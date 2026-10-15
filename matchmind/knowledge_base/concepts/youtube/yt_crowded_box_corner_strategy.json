@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_crowded_box_corner_strategy",
+  "category": "attacking",
+  "subcategory": "set_pieces",
+  "phase": "possession",
+  "title": "Crowded Box Corner Strategy",
+  "definition": "A corner kick tactic that saturates the six-yard box with near-post runners to create congestion, while assigning specific roles for second-ball recovery and goalkeeper blocking.",
+  "content": "This tactical approach maximizes the threat of corner kicks by concentrating multiple players in the high-probability scoring zone near the goal. The primary delivery is an inswinger, which curves into the crowded area, making it difficult for defenders to clear the ball effectively. At least three attackers target the near post, creating a wall of bodies that forces defenders to react to immediate threats. Simultaneously, two other players position themselves in the central and far-post areas to exploit the space created by the initial congestion or to finish from deflections. A dedicated player is assigned to block the goalkeeper’s line of sight, preventing easy saves. Crucially, additional players remain outside the main box to contest second balls if the cross is cleared. This structure balances immediate scoring threats with secondary possession opportunities, ensuring that even if the first touch is defended, the team retains a high chance of regaining possession in a dangerous area. It is particularly effective against teams that struggle with aerial duels in tight spaces or have slow reaction times to clustered movements.",
+  "conditions": [
+    "corner_kick_situation",
+    "inswinger_delivery_available",
+    "near_post_congestion_achieved"
+  ],
+  "objective": [
+    "create_scoring_threat_near_post",
+    "block_goalkeeper_view",
+    "secure_second_ball_possession"
+  ],
+  "possible_actions": [
+    "deliver_inswinger_cross",
+    "run_to_near_post",
+    "block_keeper_line_of_sight",
+    "position_for_second_ball"
+  ],
+  "contraindications": [
+    "opponent_superior_aerial_dominance",
+    "lack_of_delivery_accuracy"
+  ],
+  "trigger_conditions": [
+    "corner_kick",
+    "is_in_attacking_third"
+  ],
+  "spatial_requirements": [
+    "crowded_six_yard_box",
+    "players_outside_box_for_second_balls"
+  ],
+  "player_behaviours": [
+    "angle_run_near_post",
+    "screen_goalkeeper",
+    "track_second_ball"
+  ],
+  "related_concepts": [
+    "set_piece_organization",
+    "aerial_dominance",
+    "second_ball_recovery"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=SKfV99LZBgw&t=353s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the best way to overload the penalty area during a set piece?",
+    "My team keeps winning the first header but loses the second ball because nobody is tracking the follow-up, how do I fix that?",
+    "Should our fullback stay back to block the goalkeeper or run into the box to add a body?",
+    "We struggle to clear the ball on corners because the opposition has too much space, what formation should we use?"
+  ]
+}

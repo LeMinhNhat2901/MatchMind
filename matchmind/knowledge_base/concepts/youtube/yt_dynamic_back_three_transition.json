@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_dynamic_back_three_transition",
+  "category": "defending",
+  "subcategory": "formation_transitions",
+  "phase": "out_of_possession",
+  "title": "Dynamic Back Three Transition",
+  "definition": "A defensive structure that dynamically shifts from a back three to a back five based on the ball's horizontal position to maintain central compactness and wide coverage.",
+  "content": "This tactical concept involves a fluid defensive shape that adapts to the opponent's attacking direction. When the ball is in central areas, the team maintains a 3-2-4-1 structure, with center-backs pressing high to intercept midfielders while the CDM drops to cover the striker. This setup allows the team to protect the central zones effectively. However, when the opposition shifts the ball wide, the defensive line transitions into a compact 5-4-1 shape. The center-backs drift back to form a back five, which enables the full-backs to press aggressively on the wings without leaving gaps in the central defense. This dynamic adjustment ensures that the team maintains both vertical and horizontal compactness, making it difficult for opponents to exploit spaces between lines. The system relies on specific player roles, such as libero center-backs who move dynamically to confuse markers and playmakers who provide distribution from deep. By switching shapes based on ball location, the team can counter-press with numerical superiority in central areas while securing wide flanks, ultimately reducing the risk of conceding goals and maintaining control over the game's spatial dynamics.",
+  "conditions": [
+    "ball_in_central_area",
+    "opponent_attacking_wide",
+    "team_compactness_high"
+  ],
+  "objective": [
+    "maintain_central_compactness",
+    "cover_wide_flanks",
+    "enable_aggressive_wing_press"
+  ],
+  "possible_actions": [
+    "shift_to_back_five",
+    "drift_center_backs_wide",
+    "press_high_central_midfielders"
+  ],
+  "contraindications": [
+    "poor_lateral_movement",
+    "lack_of_communication_between_defenders"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drift_wide_to_form_back_five",
+    "press_high_to_intercept",
+    "drop_deeper_to_cover_striker"
+  ],
+  "related_concepts": [
+    "dynamic_defense",
+    "positional_rotation",
+    "compactness"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=jLdhDE73HUU&t=396s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we cover the wide areas when we lose the ball in the center?",
+    "Our fullbacks get caught high up the pitch and we get exposed on the flanks.",
+    "What should the center-backs do when the ball is played wide to the opponent's winger?",
+    "We keep getting beaten by quick switches of play to the other side of the field."
+  ]
+}

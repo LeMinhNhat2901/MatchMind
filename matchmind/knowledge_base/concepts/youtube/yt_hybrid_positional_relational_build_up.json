@@ -1,0 +1,63 @@
+{
+  "concept_id": "yt_hybrid_positional_relational_build_up",
+  "category": "formations",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Hybrid Positional-Relational Build-Up",
+  "definition": "A tactical approach that blends structured positional play with relational freedom, using a 6-0-5 shape to bypass high pressing by eliminating traditional midfield pivots.",
+  "content": "This concept describes a hybrid tactical ideology that merges the structural rigidity of positionism with the fluid, relationship-based movement of relationism. In this system, the team does not rely on a traditional midfield pivot to break lines against high-pressing opponents. Instead, the build-up shape transforms into a 6-0-5 configuration: the goalkeeper steps up to join the backline, one center-back moves into the pivot role, and the remaining defenders and attacking wingbacks form a front five. This creates a massive numerical presence in the back and front lines while leaving the midfield empty. The primary objective is to force the opposing pressing structure into difficult decisions, as their midfielders must choose whether to drop deep to cover the pivot or stay high, potentially leaving space behind. This approach allows for specific players to roam freely within a structured framework, creating overloads in small spaces without losing the overall team shape. It is particularly effective against man-to-man high presses, as it disrupts the opponent's defensive organization by removing the expected passing options in the middle third.",
+  "conditions": [
+    "opponent_high_press",
+    "man_to_man_pressing",
+    "goalkeeper_active_in_buildup"
+  ],
+  "objective": [
+    "bypass_midfield_press",
+    "create_numerical_overload",
+    "force_opponent_decision"
+  ],
+  "possible_actions": [
+    "goalkeeper_steps_up",
+    "center_back_moves_to_pivot",
+    "fullbacks_push_high",
+    "midfielders_join_front_line"
+  ],
+  "contraindications": [
+    "vulnerable_to_counter_attack",
+    "requires_high_tactical_discipline",
+    "risk_of_midfield_exposure"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "phase_of_play_attacking_transition",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "six_player_backline",
+    "five_player_frontline",
+    "empty_midfield_zone"
+  ],
+  "player_behaviours": [
+    "goalkeeper_distributes",
+    "center_back_holds_position",
+    "wingbacks_attack_flanks"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "relationism",
+    "high_press",
+    "build_up"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we bypass their aggressive first press without relying on a traditional deep-lying playmaker?",
+    "When the opponent presses high, our midfielders get isolated; how do we use a six-defender shape to keep the ball safe?",
+    "What should the fullbacks do when the center-backs drop deep to create a numerical advantage in the back line?",
+    "We keep losing possession in the build-up phase because our structure is too rigid; how do we add flexibility to our low block?"
+  ]
+}

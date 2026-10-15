@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_pivot_role_mental_intelligence",
+  "category": "fundamentals",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Pivot Role Mental Intelligence",
+  "definition": "The central pivot role relies primarily on decision-making and spatial intelligence rather than physical attributes to facilitate build-up play.",
+  "content": "In modern tactical systems, particularly those emphasizing possession and build-up from the back, the central pivot is the hub of the team's structure. While traditionally associated with physicality and technical skill, the role is increasingly defined by mental processing and decision-making. A player in this position must possess the cognitive ability to read the game, identify passing lanes, and regulate tempo. This allows for flexible personnel selection; a player with elite game understanding can occupy the pivot even if they lack the typical physical stature or defensive robustness. When the primary pivot is unavailable, a manager may deploy a player from another position (e.g., a full-back) into this role if they possess superior spatial awareness. This player must know when to drop into the defensive line to create a temporary back three, when to play safe passes to maintain possession, and when to accelerate the tempo to transition into attack. The success of the team's build-up phase often hinges on this player's ability to make correct decisions under pressure, effectively acting as the 'invisible spine' that connects defense and attack.",
+  "conditions": [
+    "possession_based_system",
+    "build_up_from_back",
+    "elite_pivot_unavailable"
+  ],
+  "objective": [
+    "maintain_possession",
+    "regulate_tempo",
+    "facilitate_progression"
+  ],
+  "possible_actions": [
+    "drop_between_center_backs",
+    "play_safe_pass",
+    "accelerate_tempo",
+    "turn_and_advance"
+  ],
+  "contraindications": [
+    "low_decision_making_speed",
+    "poor_spatial_awareness"
+  ],
+  "trigger_conditions": [
+    "is_in_defensive_third",
+    "passing_lane_open",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "temporary_back_three_formation",
+    "central_position_between_lines"
+  ],
+  "player_behaviours": [
+    "scan_before_receiving",
+    "select_passing_option",
+    "adjust_body_orientation"
+  ],
+  "related_concepts": [
+    "build_up",
+    "positional_play",
+    "decision_making"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=-g03xcSrPtw&t=2591s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Why does our deep-lying midfielder struggle to find passing lanes even though he has excellent vision?",
+    "Our central anchor keeps getting isolated because he waits for instructions instead of reading the space ahead.",
+    "What should I tell my holding midfielder to improve his ability to switch play without looking at the ball?",
+    "We keep losing possession in the middle third because our deep player lacks the cognitive speed to process defensive pressure."
+  ]
+}

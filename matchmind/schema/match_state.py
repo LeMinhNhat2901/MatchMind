@@ -101,6 +101,10 @@ class PlayerState(BaseModel):
         default=None,
         description="Positional role e.g. 'center_back', 'attacking_midfielder'",
     )
+    name: str | None = Field(
+        default=None,
+        description="Player name when the source identifies them (None = anonymous, e.g. 360 frames)",
+    )
     x: float = Field(..., ge=0.0, le=105.0)
     y: float = Field(..., ge=0.0, le=68.0)
     # Velocity components — required for pitch control model; default 0 when not available
@@ -162,6 +166,21 @@ class MatchState(BaseModel):
     visible_area: list[tuple[float, float]] | None = Field(
         default=None,
         description="360 camera field-of-view polygon in pitch metres, if known.",
+    )
+
+    # Real team names when the source knows them (StatsBomb: "home" is the team
+    # performing the event, which is often NOT the match's home side — so a bare
+    # "home"/"away" label misleads). None = fall back to "home"/"away".
+    home_team_name: str | None = Field(default=None, description="Name of the team labelled 'home' here")
+    away_team_name: str | None = Field(default=None, description="Name of the team labelled 'away' here")
+
+    # Attacking direction. The situation engine analyses a team as attacking +x;
+    # situation_engine/orientation.py rotates the pitch for a team attacking -x.
+    # None = infer from the goalkeepers (see attacks_right). StatsBomb adapters
+    # set True (their coordinates put the acting team, "home", attacking +x).
+    home_attacks_right: bool | None = Field(
+        default=None,
+        description="Whether the home team attacks toward x=105. None = inferred from keeper positions.",
     )
 
     # True only when player velocities (vx, vy) are real (Metrica frames, CV tracking).
@@ -249,6 +268,57 @@ class MatchState(BaseModel):
         """Positive = home winning, negative = home losing."""
         return self.score_home - self.score_away
 
+    def attacks_right(self, team: Literal["home", "away"]) -> bool:
+        """Does `team` attack toward x=105 in this snapshot?"""
+        home_right = self.home_attacks_right
+        if home_right is None:
+            home_right = self._infer_home_attacks_right()
+        return home_right if team == "home" else not home_right
+
+    def _infer_home_attacks_right(self) -> bool:
+        # Keepers are the most reliable signal (Metrica swaps ends at half-time).
+        keepers: dict[str, float] = {}
+        for p in self.players:
+            if (p.role or "").lower() in {"goalkeeper", "gk", "keeper"}:
+                keepers.setdefault(p.team, p.x)
+        if "home" in keepers and "away" in keepers:
+            return keepers["home"] < keepers["away"]
+        if "home" in keepers:
+            return keepers["home"] < 52.5
+        if "away" in keepers:
+            return keepers["away"] > 52.5
+        # No keeper in frame (partial camera views): the deeper team defends the
+        # left goal. A heuristic, which is why adapters should set the field.
+        home = [p.x for p in self.players if p.team == "home"]
+        away = [p.x for p in self.players if p.team == "away"]
+        if home and away:
+            return sum(home) / len(home) <= sum(away) / len(away)
+        return True
+
+    def score_for(self, team: Literal["home", "away"]) -> tuple[int, int]:
+        """(goals for `team`, goals against `team`)."""
+        return (self.score_home, self.score_away) if team == "home" else (self.score_away, self.score_home)
+
+    def result_for(self, team: Literal["home", "away"]) -> Literal["leading", "trailing", "drawing"]:
+        own, opp = self.score_for(team)
+        return "leading" if own > opp else "trailing" if own < opp else "drawing"
+
+    def team_label(self, team: Literal["home", "away"]) -> str:
+        """The team's real name when known, else "home"/"away"."""
+        name = self.home_team_name if team == "home" else self.away_team_name
+        return name or team
+
+    def score_line_for(self, player_id: int, team: Literal["home", "away"]) -> str:
+        """"Player 23's team (away) is leading 1–0" — told from the focus player's
+        side. A bare "home trailing" was read by the LLM as the focus player's own
+        team even when that player was on the away side. With real names:
+        "Player 23's team (Turkey) is leading 1–0 against Italy"."""
+        own, opp = self.score_for(team)
+        other = "away" if team == "home" else "home"
+        line = f"Player {player_id}'s team ({self.team_label(team)}) is {self.result_for(team)} {own}–{opp}"
+        opponent_name = self.away_team_name if team == "home" else self.home_team_name
+        return f"{line} against {self.team_label(other)}" if opponent_name else line
+
 
 # ──────────────────────────────────────────────────────────────────────────────
 # Situation representation (computed by Situation Engine, not adapters)
@@ -315,7 +385,12 @@ class SituationFeatures(BaseModel):
 
     # ── Team structure ───────────────────────────────────────
     defensive_line_height: float = Field(
-        ..., description="y-coordinate of opposing defensive line"
+        ..., description="x of the opposing back line (focus team attacking +x)"
+    )
+    defensive_line_visible: bool = Field(
+        default=True,
+        description="False when a partial camera view cannot show the opponent's back line "
+                    "— defensive_line_height is then a guess and must not be stated as fact",
     )
     team_compactness: float = Field(
         ..., description="Average inter-player distance for focus player's team (m)"
@@ -401,19 +476,82 @@ class MatchEvent(BaseModel):
 # ──────────────────────────────────────────────────────────────────────────────
 
 
+class ConceptSource(BaseModel):
+    """Attribution for a concept adapted from an external work (Wikipedia, a
+    YouTube video, a paper, ...). Required whenever a concept isn't original
+    hand-written content, so the repo can show provenance per knowledge_bonus.md."""
+
+    name: str = Field(..., description="e.g. 'Wikipedia: Gegenpressing' or 'Tifo Football — video title'")
+    url: str
+    license: str = Field(
+        default="CC BY-SA 4.0",
+        description="'CC BY-SA 4.0' for Wikipedia; 'fair-use paraphrase' for YouTube transcripts",
+    )
+    retrieved_at: str | None = Field(default=None, description="ISO date the source was fetched")
+
+
 class TacticalConcept(BaseModel):
-    """A single entry in the Tactical Knowledge Base."""
+    """A single entry in the Tactical Knowledge Base.
+
+    Schema v2 (2026-09): adds definition/subcategory/spatial_requirements/
+    player_behaviours/related_concepts per knowledge_base.md's richer taxonomy
+    proposal. All new fields are optional with empty/None defaults so the 66
+    existing concepts (schema v1: concept_id/category/phase/title/content/
+    conditions/objective/possible_actions/contraindications/trigger_conditions/
+    source) keep loading and validating without being rewritten.
+    """
 
     concept_id: str
-    category: str
+    category: str = Field(
+        ...,
+        description=(
+            "Top-level taxonomy bucket: fundamentals | attacking | defending | "
+            "transitions | formations | individual | terminology (the last for "
+            "glossary-style entries that don't fit a tactical family)."
+        ),
+    )
+    subcategory: str | None = Field(
+        default=None,
+        description="Specific concept family within the category, e.g. 'high_press', 'half_space', '433'.",
+    )
     phase: str
+    applicable_phases: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Every phase this concept helps with, when that differs from `phase` (where it is set up). "
+            "E.g. rest defence lives in possession but answers defensive-transition problems. "
+            "Empty = just `phase`. Scope gating keeps a concept if any of these fits the question."
+        ),
+    )
     title: str
+    definition: str | None = Field(
+        default=None, description="Concise 1-2 sentence definition, distinct from the fuller `content` explanation."
+    )
     content: str
     conditions: list[str] = Field(default_factory=list)
     objective: list[str] = Field(default_factory=list)
     possible_actions: list[str] = Field(default_factory=list)
-    contraindications: list[str] = Field(default_factory=list)
-    trigger_conditions: list[str] = Field(default_factory=list)
+    contraindications: list[str] = Field(default_factory=list, description="a.k.a. risks")
+    trigger_conditions: list[str] = Field(default_factory=list, description="a.k.a. triggers")
+    spatial_requirements: list[str] = Field(
+        default_factory=list, description="e.g. 'compact_team_shape', 'short_distance_between_lines'"
+    )
+    player_behaviours: list[str] = Field(
+        default_factory=list, description="e.g. 'angle_press', 'cover_passing_lane', 'squeeze_space'"
+    )
+    example_questions: list[str] = Field(
+        default_factory=list,
+        description=(
+            "3-5 plain-language questions this concept answers (doc2query, written once by an LLM "
+            "from the concept itself). Indexed by BM25 and by a per-question dense ranker."
+        ),
+    )
+    related_concepts: list[str] = Field(
+        default_factory=list, description="concept_ids of related concepts, e.g. ['pressing_trap', 'counter_press']"
+    )
+    source: ConceptSource | None = Field(
+        default=None, description="Attribution when adapted from an external source; None for original hand-written concepts"
+    )
 
 
 # ──────────────────────────────────────────────────────────────────────────────
@@ -425,7 +563,7 @@ class EvidenceItem(BaseModel):
     """A single piece of evidence used by the agent."""
 
     id: str = Field(..., description="Concept ID (RAG), feature name (stats), or field name (context)")
-    source: Literal["rag", "stats", "context"] = Field(
+    source: Literal["rag", "stats", "context", "example"] = Field(
         ..., description="Which evidence bucket this came from"
     )
     content: str = Field(..., description="Human-readable evidence text")
@@ -455,25 +593,27 @@ class AlternativeAction(BaseModel):
     @field_validator("delta_pitch_control", mode="before")
     @classmethod
     def _coerce_delta(cls, v: Any) -> Any:
-        """LLMs return '+2.1%' / '-3%' / '0.021' / 'null' — normalise to percentage points."""
+        """LLMs return 2.1 / '+2.1%' / '-3%' / 'null' — normalise to a float in
+        percentage points.
+
+        No "small number = fraction, multiply by 100" guessing: the reasoner
+        only ever sees deltas already formatted in percentage points
+        (counterfactual_analyzer prints `delta*100:.1f%`), and real deltas are
+        routinely below 1pp — that heuristic turned an LLM's 0.1 (for "+0.1%")
+        into a displayed +10.0%.
+        """
         if v is None:
             return None
         if isinstance(v, (int, float)):
-            # A fraction like 0.021 almost certainly means 2.1 percentage points.
-            return round(float(v) * 100, 2) if abs(v) < 1 else float(v)
+            return round(float(v), 2)
         if isinstance(v, str):
-            s = v.strip().replace("+", "").strip()
-            had_pct = s.endswith("%")
-            s = s.rstrip("%").strip()
+            s = v.strip().replace("+", "").rstrip("%").strip()
             if s.lower() in ("", "null", "none", "n/a", "na"):
                 return None
             try:
-                num = float(s)
+                return round(float(s), 2)
             except ValueError:
                 return None
-            if not had_pct and abs(num) < 1:
-                num *= 100  # bare fraction → percentage points
-            return round(num, 2)
         return v
 
 
@@ -527,6 +667,30 @@ class TacticalAdvice(BaseModel):
     focus_player_id: int | None = None
     match_id: str | None = None
     timestamp: float | None = None
+    narrative: str | None = Field(
+        default=None,
+        description=(
+            "Natural-language, analyst-style retelling of this advice (generated by "
+            "narrator_node from the fields above, never the other way around) — for "
+            "display to end users. reasoning/evidence/alternatives remain the source "
+            "of truth for validation, citation-checking, and logging; this field must "
+            "not introduce any fact not already present in them. None if narration "
+            "wasn't run or failed — callers should fall back to `reasoning`."
+        ),
+    )
+    rationale: list[str] = Field(
+        default_factory=list,
+        description=(
+            "Short bullets (from narrator_node) justifying the decision with the "
+            "concrete numbers — distances, numerical advantage, pitch-control changes, "
+            "why each alternative lost. Kept separate from `narrative` so the answer "
+            "itself can stay persuasive prose instead of a list of figures."
+        ),
+    )
+    narrative_language: str | None = Field(
+        default=None,
+        description="Language `narrative`/`rationale` were written in (e.g. 'Vietnamese').",
+    )
 
     def resolve_action(self, action_id: str | None) -> "CandidateAction | None":
         """Look up a CandidateAction by id from this advice's shortlist, or None."""
@@ -577,6 +741,12 @@ class EvaluationReport(BaseModel):
     citation_validity_rate: float = Field(..., ge=0.0, le=1.0)
     logical_consistency_rate: float | None = Field(default=None, ge=0.0, le=1.0)
     groundedness_score: float = Field(..., ge=0.0, le=1.0)
+
+    # RAG faithfulness + golden retrieval (V1)
+    concept_faithfulness_rate: float | None = Field(default=None, ge=0.0, le=1.0)
+    golden_hit_at_3: float | None = Field(default=None, ge=0.0, le=1.0)
+    golden_ndcg_at_5: float | None = Field(default=None, ge=0.0, le=1.0)
+    retrieval_strategy: str | None = None
 
     # Dim 3 — Actionability
     actionability_score: float | None = Field(default=None, ge=1.0, le=5.0)

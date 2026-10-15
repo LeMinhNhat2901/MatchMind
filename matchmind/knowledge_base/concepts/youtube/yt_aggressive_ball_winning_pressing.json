@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_aggressive_ball_winning_pressing",
+  "category": "defending",
+  "subcategory": "high_press",
+  "phase": "out_of_possession",
+  "title": "Aggressive Ball-Winning Pressing",
+  "definition": "A pressing philosophy focused on immediate ball recovery for counter-attacking rather than forcing opponents into specific passing lanes or maintaining positional traps.",
+  "content": "This concept distinguishes between 'chasing' and traditional positional pressing. While many teams press to force the ball to a specific side or into a trap, this approach prioritizes the direct theft of the ball to initiate an immediate attack. The primary objective is not to control the opponent's movement or hold a defensive position, but to execute the final two meters of the press with high intensity to win possession. This method is particularly effective against teams that rely on slow buildup, temporization, or holding the ball in central areas, as it disrupts their rhythm and creates high-value turnovers. It requires players to commit fully to the press, accepting the risk of being bypassed in exchange for the potential to launch a rapid counter-attack. The strategy emphasizes that the value of the press lies in the transition to attack, not in the defensive structure itself. It is a high-risk, high-reward tactic that relies on the team's ability to recover quickly if the press is beaten, but its core identity is the relentless pursuit of the ball to create scoring opportunities from turnovers.",
+  "conditions": [
+    "opponent_slow_buildup",
+    "high_stamina_levels",
+    "commitment_to_recovery"
+  ],
+  "objective": [
+    "immediate_ball_recovery",
+    "initiate_counter_attack",
+    "disrupt_opponent_rhythm"
+  ],
+  "possible_actions": [
+    "commit_full_press",
+    "steal_ball_in_final_meters",
+    "transition_to_attack_immediately"
+  ],
+  "contraindications": [
+    "low_team_stamina",
+    "opponent_high_quality_wingers",
+    "lack_of_recovery_speed"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "ball_near_flank",
+    "is_in_defensive_third"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "commit_to_steal",
+    "immediate_forward_run"
+  ],
+  "related_concepts": [
+    "counter_attack",
+    "pressing_triggers",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "Coaches' Voice",
+    "url": "https://www.youtube.com/watch?v=zlwVZTtR0zQ&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the main goal of our press when we are out of possession?",
+    "We are trapping the ball in the corners but not scoring, should we change our approach to win it back faster?",
+    "If the goalkeeper passes to the center-back, what should the nearest defender do immediately?",
+    "Our team often concedes goals after losing the ball in midfield, how can we improve our immediate recovery?"
+  ]
+}

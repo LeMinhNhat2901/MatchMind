@@ -1,0 +1,43 @@
+{
+  "concept_id": "yt_mid_block_defensive_organization",
+  "category": "defending",
+  "phase": "out_of_possession",
+  "title": "Mid Block Defensive Organization",
+  "content": "The mid block is a balanced defensive strategy where the team defends around the halfway line, avoiding the extreme energy demands of a high press while maintaining better positional advantage than a deep low block. In this setup, forwards and midfielders actively block central passing lanes, forcing the opponent to play sideways or backwards rather than progressing through the middle. The back line holds a medium height, positioned to step up and intercept passes but also capable of dropping if a ball is played behind the defensive line. This approach is popular because it conserves energy compared to constant high pressing while still offering opportunities to win the ball in decent positions for quick counter-attacks. It is particularly effective for teams that want to control the game's tempo without committing to full-intensity pressing, providing a stable structure that limits the opponent's central options while keeping the team compact enough to react to through balls.",
+  "conditions": [
+    "defensive_line_height_medium",
+    "opponent_in_possession",
+    "central_passing_lanes_open"
+  ],
+  "objective": [
+    "block_central_progression",
+    "force_wide_play",
+    "maintain_energy_levels"
+  ],
+  "possible_actions": [
+    "block_central_passes",
+    "hold_medium_defensive_line",
+    "force_backward_passes"
+  ],
+  "contraindications": [
+    "opponent_has_fast_wingers",
+    "team_lacks_stamina"
+  ],
+  "trigger_conditions": [
+    "defensive_line_height_medium",
+    "is_in_defensive_third",
+    "team_compactness_high"
+  ],
+  "source": {
+    "name": "football explained",
+    "url": "https://www.youtube.com/watch?v=c3zzDOYvtJc&t=160s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "How can we defend without getting tired from pressing high but also avoid sitting too deep in our own box?",
+    "The team is struggling to find a balance between chasing the ball everywhere and staying organized, is there a middle ground for our defensive line?",
+    "As a center-back, where should I position myself if we are not pressing high but also not sitting in a low block, so I can step up when needed?",
+    "We often get caught out of position when the opponent plays through the middle, how can we organize our shape to force them to go sideways instead?"
+  ]
+}

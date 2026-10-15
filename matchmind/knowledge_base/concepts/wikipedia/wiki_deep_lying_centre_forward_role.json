@@ -1,0 +1,43 @@
+{
+  "concept_id": "wiki_deep_lying_centre_forward_role",
+  "category": "attacking",
+  "phase": "possession",
+  "title": "Deep-Lying Centre-Forward Role",
+  "content": "The deep-lying centre-forward, historically known as the Revie Plan, is a tactical variation where the primary striker drops deep into midfield to receive the ball. This movement is designed to draw the opposing centre-half out of position, creating a numerical advantage in central areas and disrupting the opponent's defensive line. By occupying the space between the lines, the striker acts as a pivot, linking play and initiating attacks from deeper zones rather than staying high up the pitch. This role is the historical precursor to the modern 'false 9'. It requires the striker to have strong technical ability, vision, and the discipline to resist the temptation to chase the ball forward, instead focusing on controlling the tempo and creating space for wingers or midfielders to exploit. The system is most effective when the team has a solid defensive structure behind the dropping striker, as the absence of a fixed target man can leave the team vulnerable to counter-attacks if possession is lost.",
+  "conditions": [
+    "striker_role",
+    "is_in_attacking_third",
+    "space_between_lines"
+  ],
+  "objective": [
+    "draw_opponent_defender_out",
+    "create_numerical_advantage_midfield",
+    "link_play_deep_to_forward"
+  ],
+  "possible_actions": [
+    "drop_into_midfield",
+    "receive_ball_deep",
+    "pivot_and_distribute"
+  ],
+  "contraindications": [
+    "opponent_high_press",
+    "lack_of_midfield_support"
+  ],
+  "trigger_conditions": [
+    "striker_role",
+    "space_between_lines",
+    "is_in_attacking_third"
+  ],
+  "source": {
+    "name": "Wikipedia: Revie Plan",
+    "url": "https://en.wikipedia.org/wiki/Revie_Plan",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the tactical term for when the main striker drops back into midfield to help build play?",
+    "Our striker is staying too high up the pitch, which leaves us short in the middle; how can we use his movement to create space for our wingers?",
+    "If I am the only forward, should I drop deep to receive the ball from the midfielders to draw the opposing center-backs out of position?",
+    "We struggle to break down low blocks because our attackers are isolated; how can we use our striker to disrupt their defensive line?"
+  ]
+}

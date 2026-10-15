@@ -1,0 +1,60 @@
+{
+  "concept_id": "yt_pivot_tactical_leadership",
+  "category": "individual",
+  "subcategory": "pivot_role",
+  "phase": "general",
+  "title": "Pivot Tactical Leadership",
+  "definition": "The defensive midfielder's role as a tactical organizer who monitors the entire pitch to reorganize team shape and direct teammates in real-time.",
+  "content": "The pivot position, often occupied by a defensive midfielder, serves as the tactical hub of the team. Beyond standard defensive duties like tackling and intercepting, this role requires a player to act as a 'tactical mouthpiece' on the pitch. The player must possess exceptional spatial awareness to monitor the opposition's shape, identify emerging spaces, and track the movement of all teammates. This constant scanning allows the pivot to verbally and physically reorganize the team structure, ensuring compactness and correct positioning even when the ball is far away. The mental load is significant, as the player must process information from the entire field, including the bench, to anticipate changes in the game flow. This role is critical for maintaining the team's philosophical identity and structural integrity, especially during transitions or when the opponent changes their formation. It is not merely about individual defensive stats but about facilitating the collective tactical execution, ensuring that the team remains cohesive and responsive to the dynamic demands of the match.",
+  "conditions": [
+    "possession_or_out_of_possession",
+    "central_position",
+    "high_spatial_awareness"
+  ],
+  "objective": [
+    "maintain_team_shape",
+    "direct_teammate_movement",
+    "monitor_opposition_structure"
+  ],
+  "possible_actions": [
+    "verbal_communication",
+    "scanning_pitch",
+    "reorganizing_lines",
+    "calling_for_press"
+  ],
+  "contraindications": [
+    "low_attention_span",
+    "poor_communication_skills"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_transition",
+    "opponent_high_press",
+    "team_compactness_low"
+  ],
+  "spatial_requirements": [
+    "central_pivot_position",
+    "clear_view_of_pitch"
+  ],
+  "player_behaviours": [
+    "scanning",
+    "verbal_cueing",
+    "positional_adjustment"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "scanning",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "The Purist Football",
+    "url": "https://www.youtube.com/watch?v=lEmz3dGqe24&t=373s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "Who is responsible for calling out the defensive shape when we lose the ball in the opponent's half?",
+    "Our team looks disorganized after turnovers because no one is directing the pressing triggers from the center.",
+    "What specific duties should our defensive anchor have to ensure the back four stays compact during transitions?",
+    "We often concede second-ball goals because our central organizer fails to monitor the wide areas when we are out of possession."
+  ]
+}

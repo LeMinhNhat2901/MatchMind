@@ -15,12 +15,15 @@ Usage:
 from __future__ import annotations
 
 import logging
-from typing import Any
+from typing import TYPE_CHECKING, Any
 
 import pandas as pd
 
 from matchmind.data_sources.base_adapter import BaseAdapter
 from matchmind.schema.match_state import BallState, MatchState, PlayerState
+
+if TYPE_CHECKING:
+    from matchmind.data_sources.jersey_inference import JerseyInference
 
 logger = logging.getLogger(__name__)
 
@@ -114,6 +117,31 @@ PHASE_MAP: dict[str, str] = {
 }
 
 
+def _roster(match_id: int) -> dict[int, tuple[int, str]]:
+    """StatsBomb player_id -> (jersey number, nickname or name) via statsbombpy
+    lineups. Empty on any failure — callers then fall back to StatsBomb ids."""
+    try:
+        from statsbombpy import sb
+
+        out: dict[int, tuple[int, str]] = {}
+        for df in sb.lineups(match_id=match_id).values():
+            for _, p in df.iterrows():
+                if pd.notna(p.get("jersey_number")):
+                    name = p.get("player_nickname") if pd.notna(p.get("player_nickname")) else p.get("player_name")
+                    out[int(p["player_id"])] = (int(p["jersey_number"]), name)
+        return out
+    except Exception as exc:  # noqa: BLE001 — names are a nicety, not a requirement
+        logger.debug(f"lineups unavailable for {match_id}: {exc}")
+        return {}
+
+
+def _team_names(events: pd.DataFrame) -> list[str]:
+    """Both teams' names from a statsbombpy events frame ("team" column)."""
+    if "team" not in events:
+        return []
+    return [str(n) for n in events["team"].dropna().unique()]
+
+
 class StatsBombAdapter(BaseAdapter):
     """
     Adapter for StatsBomb Open Data (including 360 freeze-frames).
@@ -157,7 +185,8 @@ class StatsBombAdapter(BaseAdapter):
         frames = sb.frames(match_id=match_id)
 
         event_row = events.iloc[event_index]
-        return self._event_to_match_state(event_row, frames, match_id)
+        return self._event_to_match_state(event_row, frames, match_id, _team_names(events), _roster(match_id),
+                                          _jersey_inference(events))
 
     def load_test_cases(self, n: int = 25) -> list[dict]:
         """
@@ -220,13 +249,33 @@ class StatsBombAdapter(BaseAdapter):
         event: pd.Series,
         frames: pd.DataFrame,
         match_id: int,
+        team_names: list[str] | None = None,
+        roster: dict[int, tuple[int, str]] | None = None,
+        inference: "JerseyInference | None" = None,
     ) -> MatchState:
-        """Convert a StatsBomb event row + 360 frames → MatchState."""
+        """Convert a StatsBomb event row + 360 frames → MatchState.
+
+        team_names: both teams' names in this match; "home" becomes the acting
+        team's name and "away" the other one.
+        roster: StatsBomb player_id -> (jersey number, name) from the lineups, so
+        the actor is labelled with a real shirt number instead of an internal id.
+        inference: names anonymous players who touched the ball moments ago
+        (see jersey_inference); everyone else keeps a placeholder.
+        """
         event_id = event["id"]
+        acting_team = event.get("team") if isinstance(event.get("team"), str) else None
+        actor_id: int | None = None
+        actor_name = event.get("player") if isinstance(event.get("player"), str) else None
+        sb_id: int | None = None
+        if pd.notna(event.get("player_id")):
+            sb_id = int(event.get("player_id"))
+            actor_id, roster_name = (roster or {}).get(sb_id, (sb_id, None))
+            actor_name = roster_name or actor_name
 
         # Get freeze frame for this event
         frame_rows = frames[frames["id"] == event_id]
-        players = self._parse_freeze_frame(frame_rows, event)
+        known = _identify_rows(frame_rows, event_id, sb_id if actor_id is not None else None, roster, inference)
+        players = self._parse_freeze_frame(frame_rows, event, actor_id, actor_name, known)
         visible_area = self._parse_visible_area(frame_rows)
 
         # Ball position — StatsBomb units (0-120, 0-80) rescaled to metres
@@ -254,15 +303,22 @@ class StatsBombAdapter(BaseAdapter):
             visible_area=visible_area,
             # StatsBomb 360 is a single freeze-frame → no velocity → degraded pitch control.
             has_velocity=False,
+            # The acting team ("home") attacks +x in StatsBomb coordinates.
+            home_attacks_right=True,
+            home_team_name=acting_team,
+            away_team_name=next((n for n in (team_names or []) if n != acting_team), None),
             source="statsbomb",
             event_type=event_type,
-            event_player_id=int(event.get("player_id", -1)) if pd.notna(event.get("player_id")) else None,
+            event_player_id=actor_id,
         )
 
     def _parse_freeze_frame(
         self,
         frame_rows: pd.DataFrame,
         event: pd.Series,
+        actor_id: int | None = None,
+        actor_name: str | None = None,
+        known: dict[int, tuple[int, str]] | None = None,
     ) -> list[PlayerState]:
         """Parse StatsBomb 360 freeze_frame → list[PlayerState].
 
@@ -277,7 +333,20 @@ class StatsBombAdapter(BaseAdapter):
             logger.debug(f"No freeze frame for event {event.get('id')} — using synthetic data")
             return self._make_synthetic_players(event)
 
-        for _, row in frame_rows.iterrows():
+        # 360 frames identify only the actor; everyone else is anonymous in the
+        # data and gets a placeholder that can't pass for a shirt number
+        # (teammates 51+, opponents 101+, never the actor's own number).
+        # `known` = rows jersey_inference could name: {row position: (number, name)}.
+        known = known or {}
+        reserved = {actor_id} | {num for num, _ in known.values()}
+
+        def placeholder(n: int) -> int:
+            while n in reserved:
+                n += 1
+            return n
+
+        next_mate, next_opp = 51, 101
+        for pos, (_, row) in enumerate(frame_rows.iterrows()):
             teammate = row.get("teammate", True)
             team: str = "home" if teammate else "away"
 
@@ -286,15 +355,31 @@ class StatsBombAdapter(BaseAdapter):
                 continue
             px, py = _sb_to_metres(float(loc[0]), float(loc[1]))
 
-            player_id = int(row.get("player_id", len(players) + 1)) if pd.notna(row.get("player_id", None)) else len(players) + 1
+            name = None
+            # `== True`, not `is True`: pandas hands back numpy.bool_, and NaN == True is False.
+            if row.get("actor") == True and actor_id is not None:  # noqa: E712
+                # The actor IS the event's player (shirt number when the lineup
+                # knows it). Without this the case's focus player never exists.
+                player_id, name = actor_id, actor_name
+            elif pos in known:
+                player_id, name = known[pos]
+            elif team == "home":
+                player_id = placeholder(next_mate)
+                next_mate = player_id + 1
+            else:
+                player_id = placeholder(next_opp)
+                next_opp = player_id + 1
             position_name = str(row.get("position", ""))
             role = SB_POSITION_MAP.get(position_name, position_name.lower().replace(" ", "_") or None)
+            if row.get("keeper") == True:  # noqa: E712
+                role = "goalkeeper"
 
             players.append(
                 PlayerState(
                     id=player_id,
                     team=team,
                     role=role,
+                    name=name,
                     x=px,
                     y=py,
                 )
@@ -349,6 +434,9 @@ class StatsBombAdapter(BaseAdapter):
 
         events = sb.events(match_id=match_id, fmt="dataframe")
         frames = sb.frames(match_id=match_id)
+        names = _team_names(events)
+        roster = _roster(match_id)
+        inference = _jersey_inference(events)
 
         cases = []
         for idx, row in events.iterrows():
@@ -364,13 +452,14 @@ class StatsBombAdapter(BaseAdapter):
                 continue
 
             try:
-                snapshot = self._event_to_match_state(row, frames, match_id)
+                snapshot = self._event_to_match_state(row, frames, match_id, names, roster, inference)
             except Exception as exc:
                 logger.debug(f"Skipping event {idx}: {exc}")
                 continue
 
             # Focus on the player who performed the event
-            focus_id = int(row.get("player_id", snapshot.players[0].id)) if pd.notna(row.get("player_id", None)) else snapshot.players[0].id
+            # The actor's label in the snapshot (shirt number when the lineup knows it).
+            focus_id = snapshot.event_player_id if snapshot.event_player_id is not None else snapshot.players[0].id
 
             # Ground truth = the event_type itself
             gt_action = event_type.lower()
@@ -386,3 +475,34 @@ class StatsBombAdapter(BaseAdapter):
             )
 
         return cases
+
+
+def _jersey_inference(events: pd.DataFrame) -> "JerseyInference | None":
+    """One per match, from statsbombpy's events DataFrame (None if it can't be built)."""
+    from matchmind.data_sources.jersey_inference import EventRecord, JerseyInference
+
+    try:
+        return JerseyInference(EventRecord.from_statsbombpy(r) for _, r in events.iterrows())
+    except Exception as exc:  # noqa: BLE001 — labels are a nicety; never block a snapshot
+        logger.debug(f"jersey inference unavailable: {exc}")
+        return None
+
+
+def _identify_rows(frame_rows: pd.DataFrame, event_id: str, actor_sb_id: int | None,
+                   roster: dict[int, tuple[int, str]] | None,
+                   inference: "JerseyInference | None") -> dict[int, tuple[int, str]]:
+    """{row position in frame_rows: (jersey number, name)} for anonymous rows
+    jersey_inference names with confidence."""
+    from matchmind.data_sources.jersey_inference import FrameDot
+
+    if inference is None or not roster or frame_rows.empty:
+        return {}
+    positions, dots = [], []
+    for pos, (_, row) in enumerate(frame_rows.iterrows()):
+        loc = row.get("location")
+        if isinstance(loc, (list, tuple)) and len(loc) >= 2:
+            positions.append(pos)
+            dots.append(FrameDot(row.get("teammate") == True, row.get("actor") == True,  # noqa: E712
+                                 row.get("keeper") == True, float(loc[0]), float(loc[1])))  # noqa: E712
+    got = inference.identify(str(event_id), dots, actor_sb_id)
+    return {positions[i]: roster[pid] for i, pid in got.items() if pid in roster}

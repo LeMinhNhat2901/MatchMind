@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_dynamic_build_up_against_man_mark",
+  "category": "attacking",
+  "subcategory": "build_up",
+  "phase": "possession",
+  "title": "Dynamic Build-Up Against Man-Mark",
+  "definition": "A flexible build-up strategy that uses positional fluidity and asymmetric overloads to bypass high-intensity man-to-man pressing systems.",
+  "content": "This tactical approach addresses the modern trend of opponents deploying high-intensity man-to-man presses to block central passing lanes and third-man combinations. Instead of relying on static positional play, which often forces teams into risky long balls or predictable patterns, this system utilizes dynamic shape changes. The team adapts its formation based on the specific weaknesses of the opposition, such as shifting a winger to the opposite flank to create a numerical overload on the stronger side of the opponent. This fluidity allows players to occupy spaces that are not strictly defined by their nominal positions, effectively breaking the press by creating local numerical advantages and exploiting gaps left by the opponent's high defensive line. The core principle is that rigid positional instructions can limit a team's ability to react to the game's demands; therefore, players must be empowered to move freely to support the ball carrier or isolate specific opponents. This method combines control with freedom, making the team's build-up unpredictable and difficult to mark, ultimately allowing them to progress the ball into the final third despite intense defensive pressure.",
+  "conditions": [
+    "opponent_high_press",
+    "man_to_man_pressing",
+    "central_space_blocked"
+  ],
+  "objective": [
+    "bypass_pressing_block",
+    "create_numerical_overload",
+    "progress_ball_into_final_third"
+  ],
+  "possible_actions": [
+    "shift_winger_to_opposite_flank",
+    "create_local_overload",
+    "use_third_man_passing",
+    "dynamic_formation_change"
+  ],
+  "contraindications": [
+    "rigid_positional_discipline",
+    "lack_of_player_autonomy",
+    "opponent_low_block"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "is_in_defensive_third",
+    "space_ahead_small"
+  ],
+  "spatial_requirements": [
+    "flexible_team_shape",
+    "asymmetric_width"
+  ],
+  "player_behaviours": [
+    "move_to_opposite_flank",
+    "support_ball_carrier",
+    "isolate_opponent"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "third_man"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=98BkEsAUr9k&t=0s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we beat a team that sticks to their players like glue?",
+    "Our center-backs are getting isolated because the opposition marks them tight, how do we create freedom for them?",
+    "What should our midfielders do when they are being shadowed by a dedicated marker?",
+    "We struggle to progress the ball because every player has a specific defender on them, what is the solution?"
+  ]
+}

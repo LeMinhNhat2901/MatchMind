@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_back_three_possession_overload",
+  "category": "formations",
+  "subcategory": "316_shape",
+  "phase": "possession",
+  "title": "Back Three Possession Overload",
+  "definition": "A tactical structure where the fullback drops into the back line to form a back three, enabling the remaining midfielders and forwards to push high and create numerical overloads in the final third.",
+  "content": "This concept involves shifting from a standard four-back line to a three-back line during possession, typically by dropping a fullback (often the more technically capable one) alongside the center-backs. This structural change allows the team to push the remaining midfielders and wingers higher up the pitch, creating significant numerical superiority in advanced zones. The primary objective is to generate quick combinations and overloads around the penalty area, utilizing players who can receive between the lines to break down compact defenses. However, this system relies heavily on a single pivot or progressive passer to manage the buildup from deep. If this key player is isolated or effectively pressed, the entire structure can collapse, forcing the team into long balls or inefficient play. To mitigate this risk, teams may invert a fullback to provide a secondary central outlet or adjust the depth of the pivot. Despite the theoretical advantage of having six attackers in advanced positions, the system is vulnerable if the opposition prioritizes cutting out the primary progressive passer, leaving the team without a clear route to progress the ball into the final third.",
+  "conditions": [
+    "possession_phase",
+    "back_three_available",
+    "numerical_superiority_final_third"
+  ],
+  "objective": [
+    "create_final_third_overload",
+    "progress_ball_via_pivot",
+    "break_down_compact_defense"
+  ],
+  "possible_actions": [
+    "drop_fullback_into_back_line",
+    "push_midfielders_high",
+    "combine_between_lines",
+    "invert_fullback_for_support"
+  ],
+  "contraindications": [
+    "isolation_of_single_pivot",
+    "lack_of_secondary_progressive_passer",
+    "opponent_high_press_on_pivot"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "local_numerical_advantage_positive",
+    "passing_lane_open"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "drop_into_defensive_line",
+    "receive_between_lines",
+    "progressive_pass"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "build_up"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3728s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "What is the tactical benefit of having a full-back drop deep to join the center-backs?",
+    "When we have the ball, our wingers are isolated, how can we create more options in the final third by changing our back line?",
+    "As a wide midfielder, should I push higher up the pitch if one of the full-backs is sitting in the defense?",
+    "We struggle to break down low blocks because we don't have enough bodies in the box, how does dropping a full-back help with that?"
+  ]
+}

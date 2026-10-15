@@ -1,0 +1,65 @@
+{
+  "concept_id": "fifa_compact_out_of_possession_organization",
+  "category": "defending",
+  "subcategory": "compactness",
+  "phase": "out_of_possession",
+  "title": "Compact Out-of-Possession Organization",
+  "definition": "A defensive structure where the team compresses horizontal and vertical space to restrict opponent passing options and force play toward the flanks.",
+  "content": "This tactical concept describes how a team organizes itself when out of possession to control space and force turnovers. The core principle is compactness: all ten outfield players reduce the distance between lines and shift horizontally to narrow the available playing area. By compressing the pitch, the team limits the opponent's passing angles from 360 degrees to roughly 180 degrees, often funneling play toward the touchlines where interception is easier. The structure typically involves three distinct layers (defense, midfield, attack) that move as a coordinated unit rather than individual chasers. Wide players tuck inside to maintain horizontal tightness, while the defensive line positions itself near the penalty area width to eliminate central space. The ball-side central midfielder plays a critical role in blocking central passing lanes, channeling the ball outward. The nearest striker initiates the press to disrupt rhythm, but the primary goal is to maintain structural integrity. This proactive approach transforms defense from reactive scrambling into spatial control, ensuring that when possession is regained, the team is already positioned for a rapid transition or immediate re-establishment of possession, rather than being exposed to counter-attacks.",
+  "conditions": [
+    "team_out_of_possession",
+    "opponent_in_possession",
+    "defensive_structure_intact"
+  ],
+  "objective": [
+    "reduce_opponent_passing_options",
+    "force_play_to_flanks",
+    "maintain_team_compactness",
+    "create_interception_opportunities"
+  ],
+  "possible_actions": [
+    "shift_team_horizontally",
+    "compress_vertical_space",
+    "tuck_wide_players_in",
+    "block_central_passing_lanes",
+    "initiate_press_from_front_line"
+  ],
+  "contraindications": [
+    "excessive_gaps_between_lines",
+    "individual_chasing_instinct",
+    "loss_of_horizontal_tightness"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive",
+    "team_compactness_high",
+    "ball_near_flank"
+  ],
+  "spatial_requirements": [
+    "short_distance_between_lines",
+    "narrow_horizontal_width",
+    "defensive_line_near_penalty_area"
+  ],
+  "player_behaviours": [
+    "shift_infield",
+    "cover_central_lanes",
+    "apply_initial_press"
+  ],
+  "related_concepts": [
+    "low_block",
+    "mid_block",
+    "pressing_traps",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Team organisation out of possession",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/out-of-possession/team-organisation--out-of-possession-.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "How do we stop them from passing through the middle?",
+    "They keep finding space in the pockets between our lines, what should we adjust?",
+    "What should our midfielders do to keep the team narrow when we don't have the ball?",
+    "We always get stretched wide, how can we force them to play out the sides?"
+  ]
+}

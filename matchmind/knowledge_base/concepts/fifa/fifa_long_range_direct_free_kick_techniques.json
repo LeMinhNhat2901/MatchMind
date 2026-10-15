@@ -1,0 +1,62 @@
+{
+  "concept_id": "fifa_long_range_direct_free_kick_techniques",
+  "category": "individual",
+  "subcategory": "set_piece_execution",
+  "phase": "possession",
+  "title": "Long-Range Direct Free Kick Techniques",
+  "definition": "Technical methods for scoring from long-distance direct free kicks using spin, minimal spin, or maximum power to bypass defensive walls and goalkeepers.",
+  "content": "Scoring from long-range direct free kicks is challenging due to organized defensive walls and advanced goalkeeping. Teams often opt for indirect routines or box deliveries, but specialists can succeed using three distinct technical approaches. The first is controlled spin delivery, where a shorter, angled run-up allows for maximum hip rotation and inside-of-the-foot contact. This generates sidespin, causing the ball to curve away from the goalkeeper after clearing the wall, prioritizing precision and repeatability to target the far post. The second method is the knuckleball effect, achieved through a frontal run-up and subtle ankle rotation to minimize spin. This creates late, unpredictable movement that is difficult for goalkeepers to anticipate, relying on speed and trajectory instability rather than precise placement. The third approach is maximum-power striking, using an explosive full-body action with instep contact to generate high velocity. This produces a rising trajectory that bypasses the wall laterally, relying on overwhelming pace rather than finesse. Effective execution requires understanding ball behavior over distance, wall positioning, and goalkeeper tendencies. Coaches should advise players to select the technique that best matches their technical strengths and the specific defensive setup, adapting between spin, instability, or power to exploit weaknesses in the opposing wall or keeper.",
+  "conditions": [
+    "direct_free_kick_long_range",
+    "defensive_wall_present",
+    "goalkeeper_positioned"
+  ],
+  "objective": [
+    "score_directly",
+    "bypass_defensive_wall",
+    "deceive_goalkeeper"
+  ],
+  "possible_actions": [
+    "apply_sidespin_curve",
+    "execute_knuckleball_strike",
+    "generate_max_power_shot",
+    "target_far_post",
+    "aim_over_wall"
+  ],
+  "contraindications": [
+    "inconsistent_technique",
+    "poor_wall_positioning_awareness",
+    "goalkeeper_close_to_wall"
+  ],
+  "trigger_conditions": [
+    "is_in_attacking_third",
+    "space_ahead_large"
+  ],
+  "spatial_requirements": [
+    "distance_to_goal_greater_than_25m",
+    "wall_between_ball_and_goal"
+  ],
+  "player_behaviours": [
+    "angle_run_up_for_spin",
+    "frontal_run_up_for_knuckle",
+    "explosive_leg_whip_for_power",
+    "read_wall_gaps"
+  ],
+  "related_concepts": [
+    "set_piece_routine",
+    "goalkeeper_positioning",
+    "ball_flight_dynamics"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Direct free kicks: overcoming long distances",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/set-plays/set-play-routines/direct-free-kicks-overcoming-long-distances.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the best way to score from a free kick that is 30 yards out?",
+    "The wall is too close and the keeper is on his line, how do I beat them from a distance?",
+    "Should I use spin or power when taking a free kick from the edge of the box?",
+    "We rarely score from long-range set pieces, what technique should our specialist focus on to improve this?"
+  ]
+}

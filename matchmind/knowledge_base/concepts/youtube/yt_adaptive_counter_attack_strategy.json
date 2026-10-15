@@ -1,0 +1,61 @@
+{
+  "concept_id": "yt_adaptive_counter_attack_strategy",
+  "category": "transitions",
+  "subcategory": "counter_attack",
+  "phase": "attacking_transition",
+  "title": "Adaptive Counter-Attack Strategy",
+  "definition": "A tactical shift to prioritizing rapid counter-attacks when a team lacks the personnel or structure to sustain high-intensity pressing and possession.",
+  "content": "This concept addresses the tactical dilemma when a squad is ill-suited for high-intensity pressing systems, often due to lack of coordination or individual defensive reluctance. Instead of forcing a high press that leads to structural collapse, the team adopts a deeper defensive line to invite opponents forward. This deliberate concession of possession creates significant space behind the opponent's defensive line. The primary objective shifts from maintaining possession to exploiting these transitional moments with pace. By allowing the opposition to commit players forward, the team creates numerical advantages in transition, enabling quick vertical passes to fast wingers or strikers. This approach transforms a defensive weakness into an attacking asset, focusing on efficiency in the final third rather than control in the middle third. It is particularly effective when the team possesses high-quality pace merchants who can exploit the space created by the opponent's advanced positioning. The strategy requires disciplined defensive shape to ensure the space behind is not overrun, but rather used as a trap for the counter-attack.",
+  "conditions": [
+    "squad_lacks_pressing_intensity",
+    "opponent_high_press",
+    "pace_merchants_available"
+  ],
+  "objective": [
+    "exploit_space_behind_def_line",
+    "rapid_transition_to_attack",
+    "maximize_counter_attack_efficiency"
+  ],
+  "possible_actions": [
+    "drop_defensive_line",
+    "invite_opponent_forward",
+    "quick_vertical_pass",
+    "sprint_into_space"
+  ],
+  "contraindications": [
+    "lack_of_pace_in_squad",
+    "opponent_low_block",
+    "poor_defensive_shape"
+  ],
+  "trigger_conditions": [
+    "space_behind_defensive_line",
+    "phase_of_play_defensive_transition",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "deep_defensive_line",
+    "space_behind_opponent_defense"
+  ],
+  "player_behaviours": [
+    "delay_opponent_advance",
+    "quick_ball_progression",
+    "run_into_space"
+  ],
+  "related_concepts": [
+    "counter_press",
+    "low_block",
+    "transitional_play"
+  ],
+  "source": {
+    "name": "Football Made Simple",
+    "url": "https://www.youtube.com/watch?v=Dki5tjN0rDE&t=3893s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "We can't keep the ball against stronger teams, so what should we focus on when we win it back?",
+    "Our players are too tired to press high for 90 minutes, how do we turn our defensive efforts into scoring chances?",
+    "When we lose the ball in our own half, what is the fastest way to get our forwards into dangerous positions?",
+    "We keep getting pinned back and can't build up play, is there a better way to use our speed on the break instead of trying to possess the ball?"
+  ]
+}

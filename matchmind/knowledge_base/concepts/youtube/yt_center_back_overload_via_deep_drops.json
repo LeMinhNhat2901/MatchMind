@@ -1,0 +1,65 @@
+{
+  "concept_id": "yt_center_back_overload_via_deep_drops",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "Center-Back Overload via Deep Drops",
+  "definition": "A tactical sequence where midfielders and strikers drop deep to pull defensive lines, allowing a center-back to advance into the final third to create a numerical overload.",
+  "content": "This concept addresses breaking rigid zonal defenses that resist horizontal rotations. When the opposition stays compact, the team initiates a vertical penetration sequence. First, an advanced midfielder drops deep to receive the ball, dragging the opponent's second line backward. This creates space behind the pressers, which a center-back exploits with a forward run to receive a return pass. Simultaneously, the striker drops deep, pulling the final defensive line further back. This leaves the center-back with clear space to receive the ball in advanced positions, effectively creating a numerical overload in the final third. If the opposition remains rigid, the team may revert to deeper positions, but the center-back often stays forward. This positioning opens space behind the defense, tempting the opponent to press aggressively to exploit the gap. The team uses this press as bait, maintaining the front overload to find an extra man and launch a second, more effective attack. This strategy relies on high player versatility and the ability to adapt roles dynamically, requiring extensive training to execute under pressure.",
+  "conditions": [
+    "opponent_defensive_line_rigid",
+    "zonal_defense_opponent",
+    "horizontal_rotation_stalled"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "penetrate_defensive_lines",
+    "exploit_space_behind_press"
+  ],
+  "possible_actions": [
+    "midfielder_drop_deep",
+    "center_back_forward_run",
+    "striker_drop_deep",
+    "return_pass_to_center_back",
+    "maintain_forward_position_on_reversion"
+  ],
+  "contraindications": [
+    "opponent_man_marking",
+    "lack_of_player_versatility",
+    "excessive_space_behind_own_defense"
+  ],
+  "trigger_conditions": [
+    "opponent_high_press",
+    "local_numerical_advantage_positive",
+    "space_behind_defensive_line",
+    "phase_of_play_attacking"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "angle_press",
+    "cover_passing_lane",
+    "scan_for_return_pass",
+    "maintain_forward_position"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "counter_press",
+    "defensive_transition"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=4nLJJgsEV1I&t=168s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do I get my defenders into the final third to create extra bodies in the box?",
+    "Our forwards are dropping deep but we still feel outnumbered in the attacking third, what am I missing?",
+    "When should my center-backs push up to join the attack?",
+    "We struggle to create overloads in the final third, how can I use my defensive structure to fix this?"
+  ]
+}

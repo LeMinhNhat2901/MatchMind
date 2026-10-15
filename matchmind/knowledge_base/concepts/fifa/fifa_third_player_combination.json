@@ -1,0 +1,61 @@
+{
+  "concept_id": "fifa_third_player_combination",
+  "category": "attacking",
+  "subcategory": "third_man",
+  "phase": "possession",
+  "title": "Third-Player Combination",
+  "definition": "A three-player passing sequence involving a pass, a quick return, and a forward pass to a third player moving into vacated space to break defensive lines.",
+  "content": "The third-player combination is a sophisticated tactical tool used to dismantle organized defensive structures by introducing an additional moving element into a passing sequence. Unlike simple two-player exchanges, which are easier for defenders to anticipate, this pattern involves four distinct phases: an initial quality pass, a rapid bounce pass (ideally first-time), a timed off-the-ball run by the third player into the space vacated by the first passer, and a final forward pass into that opened area. The success of this maneuver relies heavily on the composure and precision of the second player, whose return pass enables the combination, as well as the anticipatory awareness of the third player. By forcing defenders to track both the ball carrier and the off-the-ball runner, the team disrupts the opposition's defensive shape and creates local numerical advantages. This technique is particularly effective in the midfield and attacking third, allowing teams to penetrate mid-blocks or high presses. Once the third player receives the ball in space facing the goal, the team's positional geometry improves, offering better vision and options for subsequent attacking decisions. Mastery of this pattern requires deep familiarity among teammates, transforming structured play into instinctive, rhythmic movement that is difficult to intercept.",
+  "conditions": [
+    "possession",
+    "organized_defensive_structure",
+    "teammate_synchronization"
+  ],
+  "objective": [
+    "break_defensive_line",
+    "create_numerical_advantage",
+    "progress_ball_forward"
+  ],
+  "possible_actions": [
+    "make_initial_pass",
+    "execute_bounce_pass",
+    "make_off_ball_run",
+    "receive_in_space"
+  ],
+  "contraindications": [
+    "poor_passing_accuracy",
+    "lack_of_team_familiarity",
+    "high_press_intensity_without_support"
+  ],
+  "trigger_conditions": [
+    "third_man_opportunity",
+    "passing_lane_open",
+    "local_numerical_advantage_positive"
+  ],
+  "spatial_requirements": [
+    "vacated_space_available",
+    "short_distance_between_players"
+  ],
+  "player_behaviours": [
+    "anticipate_teammate_movement",
+    "control_bounce_pass_first_time",
+    "time_run_into_space"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "overload",
+    "penetration"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: Using third-player combinations in possession",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/in-possession/third-player-combinations.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What is the name of the pass-back-and-forward move with three players?",
+    "Two defenders are marking my winger, so how can I use a quick one-two-three to get him free?",
+    "As the central midfielder, how do I execute the quick return pass to open up space for my teammate?",
+    "We keep getting blocked by the defensive line, what is the best passing pattern to bypass them without dribbling?"
+  ]
+}

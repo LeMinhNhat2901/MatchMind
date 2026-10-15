@@ -1,0 +1,59 @@
+{
+  "concept_id": "yt_false_10_dynamic_overload",
+  "category": "attacking",
+  "subcategory": "overload",
+  "phase": "possession",
+  "title": "False 10 Dynamic Overload",
+  "definition": "A tactical role where a central attacker drifts wide to create numerical superiority, forcing defensive shifts that open central spaces for teammates.",
+  "content": "The False 10 role involves a central player abandoning a fixed position to roam dynamically, primarily drifting wide to support wingbacks and wingers. When the ball is on the flank, the False 10 joins the attack to create a 3v2 or 2v1 numerical advantage, compelling the opposition to commit additional defenders to that side. This defensive shift creates significant space in the central areas or on the opposite flank, which the remaining front-line players exploit through intelligent movement and runs. This flexibility transforms the False 10 into a hybrid playmaker-forward, capable of pulling markers away from central zones or arriving in unexpected spaces to score. The strategy is highly effective in systems with a back three, as the wide overloads stretch the opponent horizontally. While this leaves the backline exposed to counters, the risk is mitigated by an aggressive counter-pressing structure. Upon losing possession, the team immediately transitions to a compact defensive shape, often forming a narrow pentagon with the front three and pivots to block central passing lanes, forcing the opponent to play wide where the wingbacks can apply intense man-to-man pressure.",
+  "conditions": [
+    "ball_near_flank",
+    "local_numerical_advantage_negative",
+    "opponent_defensiveline_high"
+  ],
+  "objective": [
+    "create_numerical_overload",
+    "force_defensive_shift",
+    "open_central_space"
+  ],
+  "possible_actions": [
+    "drift_wide_to_support",
+    "make_run_into_central_space",
+    "switch_play_to_opposite_side"
+  ],
+  "contraindications": [
+    "risk_of_counter_attack",
+    "exposed_back_three"
+  ],
+  "trigger_conditions": [
+    "ball_near_flank",
+    "local_numerical_advantage_negative",
+    "opponent_defensiveline_high"
+  ],
+  "spatial_requirements": [
+    "wide_team_shape",
+    "central_space_available"
+  ],
+  "player_behaviours": [
+    "roam_dynamically",
+    "join_wide_attack",
+    "pull_marker_away"
+  ],
+  "related_concepts": [
+    "overload_flank",
+    "counter_press",
+    "positional_play"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=F0DoGmDje1g&t=347s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How can we create more space in the middle without adding another striker?",
+    "Our central midfielder is always marked, what can the attacking midfielder do to help?",
+    "When should the number ten drift out wide to create a numerical advantage?",
+    "We struggle to break through the center, how can we use movement to overload one side?"
+  ]
+}

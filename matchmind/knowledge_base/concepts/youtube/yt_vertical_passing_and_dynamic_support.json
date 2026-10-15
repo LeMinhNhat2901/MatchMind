@@ -1,0 +1,62 @@
+{
+  "concept_id": "yt_vertical_passing_and_dynamic_support",
+  "category": "attacking",
+  "subcategory": "positional_play",
+  "phase": "possession",
+  "title": "Vertical Passing and Dynamic Support",
+  "definition": "A tactical approach prioritizing vertical ball progression through constant movement of both passer and receiver to create passing lanes against compact defenses.",
+  "content": "This concept emphasizes that static positioning leads to high interception risk, particularly when facing compact defensive blocks. Instead of relying on safe lateral or backward passes, the team must prioritize verticality to advance the ball quickly. To execute this, players must not stand still; both the ball carrier and supporting teammates must constantly move to open passing lanes. When a teammate moves away from the crowded area, the pressure on the ball carrier decreases, creating a viable option for a progressive pass. This principle is crucial for breaking down low blocks where space is limited. It requires high intensity and constant motion, as static play allows opponents to close down passing angles. The objective is to make transitions fast and smooth by maintaining vertical orientation, ensuring that even basic movements become tactical weapons. This approach demands that players are conditioned to sustain high-intensity running, as the effectiveness of vertical passing relies on the ability to create and exploit fleeting moments of space through coordinated movement rather than individual brilliance alone.",
+  "conditions": [
+    "opponent_compact_defense",
+    "possession_phase",
+    "high_intensity_conditioning"
+  ],
+  "objective": [
+    "create_passing_lane",
+    "advance_ball_vertically",
+    "reduce_interception_risk"
+  ],
+  "possible_actions": [
+    "move_off_ball",
+    "make_progressive_pass",
+    "rotate_positions",
+    "sprint_to_open_space"
+  ],
+  "contraindications": [
+    "low_stamina_levels",
+    "lack_of_team_coordination",
+    "over_reliance_on_lateral_passes"
+  ],
+  "trigger_conditions": [
+    "space_ahead_small",
+    "opponent_defensiveline_high",
+    "passing_lane_open",
+    "team_compactness_high"
+  ],
+  "spatial_requirements": [
+    "dynamic_spacing",
+    "vertical_orientation"
+  ],
+  "player_behaviours": [
+    "constant_movement",
+    "angle_pass",
+    "support_run"
+  ],
+  "related_concepts": [
+    "positional_play",
+    "vertical_passing",
+    "dynamic_support"
+  ],
+  "source": {
+    "name": "DK FALCON",
+    "url": "https://www.youtube.com/watch?v=KgFGmWNWf78&t=173s",
+    "license": "fair-use paraphrase (transcript, not redistributed verbatim)",
+    "retrieved_at": "2026-09-30"
+  },
+  "example_questions": [
+    "How do we break down a low block that sits deep and compact without just passing sideways?",
+    "My players are too static when they have the ball; how do I get them to move into space to open up passing lanes?",
+    "What should our winger do immediately after receiving the ball to help the team progress vertically?",
+    "We lose the ball too often in the final third because our support is slow; how do we improve our movement to keep the ball moving forward?"
+  ]
+}

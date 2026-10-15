@@ -1,0 +1,43 @@
+{
+  "concept_id": "wiki_marseille_turn_dribble",
+  "category": "individual",
+  "phase": "possession",
+  "title": "Marseille Turn Dribble",
+  "content": "The Marseille turn, also known as the 360 or spin, is a specialized dribbling technique used to evade defenders by combining a drag-back with a full body rotation. The move begins by dragging the ball backward with the sole or inside of the foot, removing it from the opponent's tackling arc. As the ball moves back, the player pivots 360 degrees, positioning their back between the defender and the ball to shield possession. This continuous shielding, combined with the sudden change in direction, makes the move highly effective at speed, as it disrupts the defender's balance and timing. Variations exist, such as using the inside of the foot for the initial drag when running fast, or dragging the ball behind the standing foot rather than to the side. The primary tactical value lies in creating immediate separation from a close-marking opponent, allowing the attacker to accelerate away or change direction sharply. It is best employed when a defender is pressing tightly from the front or side, and the player has sufficient space to complete the rotation without losing control.",
+  "conditions": [
+    "defender_close_marking",
+    "space_ahead_moderate",
+    "ball_controlled"
+  ],
+  "objective": [
+    "evade_defender",
+    "shield_ball",
+    "change_direction"
+  ],
+  "possible_actions": [
+    "drag_ball_back",
+    "pivot_body_360",
+    "accelerate_away"
+  ],
+  "contraindications": [
+    "insufficient_space",
+    "multiple_defenders_pressing",
+    "low_speed_scenario"
+  ],
+  "trigger_conditions": [
+    "nearest_opponent_distance_low",
+    "space_ahead_moderate"
+  ],
+  "source": {
+    "name": "Wikipedia: Marseille turn",
+    "url": "https://en.wikipedia.org/wiki/Marseille_turn",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the name of the move where you drag the ball back and spin around to keep the defender behind you?",
+    "A defender is pressing me from the side and I want to shield the ball while changing direction without turning my back completely; what technique should I use?",
+    "I am a left-footed player being chased by a faster defender, how can I use my body to protect the ball and escape to the open space?",
+    "Every time I try to turn with the ball, the defender tackles it; what is a reliable skill to create space and protect possession in tight areas?"
+  ]
+}

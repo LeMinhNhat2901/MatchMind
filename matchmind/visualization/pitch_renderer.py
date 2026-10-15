@@ -2,7 +2,9 @@
 Pitch Renderer — adapted from LaurieOnTracking/Metrica_Viz.py.
 
 Draws a proper football pitch with standard markings.
-Adapted to use our coordinate system (0–105m × 0–68m, origin bottom-left).
+Adapted to use our coordinate system (0–105m × 0–68m), drawn broadcast-style:
+y = 0 at the TOP. In StatsBomb/Metrica data y = 0 is the attacking team's left
+touchline, so a team attacking right shows its left flank at the top, as on TV.
 
 Original: @EightyFivePoint (Laurie Shaw)
 Adaptation: MatchMind project
@@ -48,7 +50,7 @@ def plot_pitch(
     Plot a full football pitch with proper markings.
 
     Adapted from LaurieOnTracking/Metrica_Viz.py (Laurie Shaw @EightyFivePoint).
-    Coordinate system: 0–105m (x, left→right) × 0–68m (y, bottom→top).
+    Coordinate system: 0–105m (x, left→right) × 0–68m (y, top→bottom).
 
     Args:
         field_color: Background colour.
@@ -66,11 +68,11 @@ def plot_pitch(
     else:
         fig = ax.get_figure()
 
-    # Colour scheme
+    # Colour scheme ("stripe" = alternate mowing band, broadcast-pitch look)
     colors = {
-        "green": {"bg": "#4CAF50", "line": "white", "spot": "white"},
-        "dark_green": {"bg": "#2D6A2D", "line": "#F0F0E8", "spot": "#F0F0E8"},
-        "white": {"bg": "white", "line": "black", "spot": "black"},
+        "green": {"bg": "#4CAF50", "line": "white", "spot": "white", "stripe": None},
+        "dark_green": {"bg": "#1F6B35", "line": "#F0F0E8", "spot": "#F0F0E8", "stripe": "#24773C"},
+        "white": {"bg": "white", "line": "black", "spot": "black", "stripe": None},
     }
     c = colors.get(field_color, colors["dark_green"])
 
@@ -78,6 +80,16 @@ def plot_pitch(
     fig.patch.set_facecolor(c["bg"])
     lc = c["line"]  # line colour
     pc = c["spot"]  # spot colour
+
+    if c["stripe"]:
+        from matplotlib.patches import Rectangle
+
+        n_bands = 12
+        band = PITCH_LENGTH / n_bands
+        for i in range(1, n_bands, 2):
+            ax.add_patch(
+                Rectangle((i * band, 0), band, PITCH_WIDTH, facecolor=c["stripe"], edgecolor="none", zorder=0)
+            )
 
     # ── Pitch dimensions ──────────────────────────────────────
     hl = PITCH_LENGTH / 2  # half length
@@ -159,7 +171,8 @@ def plot_pitch(
             )
 
     ax.set_xlim(-2, PITCH_LENGTH + 2)
-    ax.set_ylim(-2, PITCH_WIDTH + 2)
+    # Inverted: y = 0 (attacking team's left in the data) at the top.
+    ax.set_ylim(PITCH_WIDTH + 2, -2)
     ax.set_aspect("equal")
     ax.axis("off")
 

@@ -1,0 +1,62 @@
+{
+  "concept_id": "fifa_individual_and_collective_counter_pressing",
+  "category": "defending",
+  "subcategory": "counter_press",
+  "phase": "defensive_transition",
+  "title": "Individual and Collective Counter-Pressing",
+  "definition": "The immediate tactical response to losing possession, ranging from individual pursuit by the ball-loser to coordinated team-wide pressure to regain control high up the pitch.",
+  "content": "Modern tactical play prioritizes rapid possession recovery through two distinct methodologies: individual and collective counter-pressing. The individual approach involves the player who lost the ball immediately pursuing the opponent to force a turnover. This method is simple and preserves team structure, as fewer players are committed if the press fails. In contrast, collective counter-pressing is a sophisticated, coordinated effort where multiple players simultaneously apply pressure based on specific triggers. The objective is not just to win the ball, but to restrict passing options and force errors or clearances. Success relies on three key elements: aggressive intensity from the first moment to unsettle opponents, anticipation to predict loose ball trajectories, and persistent momentum to prevent the opponent from settling into possession. Effective execution denies the opposition time and space to build attacks, while positioning multiple players in advanced areas to facilitate immediate counter-attacks upon recovery. This dual approach allows teams to adapt their defensive transition based on the situation, balancing individual aggression with organized structural pressure.",
+  "conditions": [
+    "possession_lost",
+    "opponent_in_possession"
+  ],
+  "objective": [
+    "regain_possession_rapidly",
+    "restrict_passing_options",
+    "force_error_or_clearance",
+    "position_for_counter_attack"
+  ],
+  "possible_actions": [
+    "immediate_individual_pursuit",
+    "coordinated_team_pressure",
+    "angle_passing_lanes",
+    "maintain_high_intensity"
+  ],
+  "contraindications": [
+    "team_shape_compromised",
+    "opponent_has_clear_passing_lane",
+    "fatigue_reducing_intensity"
+  ],
+  "trigger_conditions": [
+    "phase_of_play_defensive_transition",
+    "players_near_ball",
+    "press_intensity_high"
+  ],
+  "spatial_requirements": [
+    "compact_team_shape",
+    "short_distance_between_lines"
+  ],
+  "player_behaviours": [
+    "pursue_ball_carrier",
+    "cover_passing_lane",
+    "anticipate_loose_ball",
+    "apply_simultaneous_pressure"
+  ],
+  "related_concepts": [
+    "defensive_transition",
+    "pressing_triggers",
+    "counter_attack"
+  ],
+  "source": {
+    "name": "FIFA Training Centre: The reaction to losing the ball: Individual and collective",
+    "url": "https://www.fifatrainingcentre.com/en/game/game-analysis/transition-to-defending/the-reaction-to-losing-the-ball.php",
+    "license": "fair-use paraphrase (not redistributed verbatim)",
+    "retrieved_at": "2026-09-16"
+  },
+  "example_questions": [
+    "What do we do in the first five seconds after we lose the ball?",
+    "Our players just stand and watch when the opponent has the ball, how do we get them to chase it?",
+    "How should the player who just lost the ball react to stop a counter-attack right away?",
+    "We keep getting caught out of position after turning the ball over, what is the best way to organize our immediate reaction?"
+  ]
+}

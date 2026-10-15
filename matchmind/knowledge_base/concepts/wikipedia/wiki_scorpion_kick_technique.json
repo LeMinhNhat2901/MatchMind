@@ -1,0 +1,45 @@
+{
+  "concept_id": "wiki_scorpion_kick_technique",
+  "category": "individual",
+  "phase": "general",
+  "title": "Scorpion Kick Technique",
+  "content": "The scorpion kick is an advanced aerial technique used to strike a ball that is too high for a standard header or bicycle kick. The player dives forward, places their hands on the ground for support, and arches their back to swing their heels forward, mimicking a scorpion’s tail. This move is primarily a defensive emergency or a last-resort attacking option when the ball is in a difficult position above the head. It requires significant core strength, flexibility, and timing to execute safely and effectively. While often associated with goalkeepers or defenders clearing danger, forwards may use it to score from crosses. The technique involves a high risk of injury if the landing is incorrect, so it should only be attempted when the ball’s trajectory makes other options impossible. Variations include standing and spinning versions, but the classic diving form is the most recognized. Coaches should emphasize that this is a specialized skill, not a routine part of play, and should be practiced with proper safety measures to prevent back or neck injuries.",
+  "conditions": [
+    "ball_high_above_head",
+    "aerial_duel",
+    "emergency_clearance",
+    "last_resort_option"
+  ],
+  "objective": [
+    "clear_danger",
+    "score_from_cross",
+    "prevent_goal"
+  ],
+  "possible_actions": [
+    "dive_forward",
+    "place_hands_on_ground",
+    "swing_heels_forward",
+    "land_on_back"
+  ],
+  "contraindications": [
+    "ball_low_enough_for_header",
+    "insufficient_flexibility",
+    "high_injury_risk_zone"
+  ],
+  "trigger_conditions": [
+    "ball_high_above_head",
+    "aerial_duel"
+  ],
+  "source": {
+    "name": "Wikipedia: Scorpion kick (association football)",
+    "url": "https://en.wikipedia.org/wiki/Scorpion_kick_(association_football)",
+    "license": "CC BY-SA 4.0",
+    "retrieved_at": "2026-09-11"
+  },
+  "example_questions": [
+    "What is the name of that extreme acrobatic kick where a player dives and swings their heels to hit a high ball?",
+    "A ball is coming in high above my head and I can't get a header on it, what is the last-resort move I can try to clear or score?",
+    "I want to impress the fans with a spectacular save or goal from a difficult aerial position, what advanced technique should I practice?",
+    "We keep conceding from high crosses that our defenders can't head away, is there a desperate acrobatic move they can use to clear the danger?"
+  ]
+}

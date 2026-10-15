@@ -28,6 +28,9 @@ class AgentState(TypedDict, total=False):
     match_state: MatchState
     focus_player_id: int
     question: str
+    # Language the user-facing answer should be written in (narrator_node only —
+    # every other node stays English-only). Defaults to "English".
+    response_language: str
 
     # ── Situation encoding (encode_situation node) ──────────
     situation_features: SituationFeatures | None
@@ -47,6 +50,10 @@ class AgentState(TypedDict, total=False):
     retrieval_confidence: float | None
     retrieval_retry_count: int               # counts re-retrieve attempts
     expanded_query: str | None              # used in re-retrieve
+
+    # ── Example Library (retrieve_examples node) ──────────────
+    similar_examples: list[dict] | None      # nearest real StatsBomb situations
+    similar_examples_summary: str | None     # one-line count summary for the prompt
 
     # ── Evidence assembly (assemble_evidence node) ────────────
     evidence_set: dict[str, Any] | None     # {"rag": [...], "stats": {...}, "context": {...}}
